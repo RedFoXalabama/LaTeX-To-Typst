@@ -1,0 +1,29 @@
+﻿------------------------------------------------------------------------------------------------------------------------
+let file = LatexParser::parse(Rule::file, input)
+        .expect("Errore nel parsing") // Se fallisce, il programma si ferma qui
+        .next()
+        .unwrap();
+
+Questa sequenza costruisce il nodo radice del parse tree a partire dall’input testuale. Il punto di ingresso è:
+
+LatexParser::parse(Rule::file, input)
+
+Qui il parser prova a interpretare input usando la regola grammaticale file (la regola top-level definita in latex.pest).
+Il risultato non è direttamente un singolo nodo, ma un iteratore di match (Pairs), perché in generale una parse può produrre più elementi.
+Subito dopo, il codice converte un possibile errore di parsing in panic con messaggio leggibile:
+
+.expect("Errore nel parsing")
+
+Se l’input non rispetta la grammatica, il programma termina qui.
+È una scelta comune in prototipi o CLI piccole: invece di propagare l’errore, si fallisce velocemente con un messaggio esplicito.
+La parte finale estrae il primo elemento dell’iteratore e assume che esista sempre:
+
+.next().unwrap();
+
+.next() prende il primo Pair prodotto (atteso: il nodo file), mentre .unwrap() panica se non c’è niente.
+In pratica, il codice fa due assunzioni forti: (1) il parse ha avuto successo (garantito da expect), e (2) il risultato contiene almeno un nodo.
+Quando entrambe valgono, la variabile file contiene il nodo radice su cui poi il resto del programma itera (file.into_inner()).
+In sintesi, il blocco implementa una pipeline lineare: parse -> fail-fast su errore -> prendi il root node.
+È molto compatto e funzionale, ma volutamente poco difensivo: in un’app più robusta potresti sostituire expect/unwrap
+con gestione esplicita degli errori (Result) per evitare panic a runtime.
+------------------------------------------------------------------------------------------------------------------------

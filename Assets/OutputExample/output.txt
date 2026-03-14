@@ -1,0 +1,60 @@
+[
+    Pair {
+        rule: file,
+        span: Span {
+            str: "Ciao \\textbf{Mondo}\r\n",
+            range: 0..21,
+        },
+        inner: [
+            Pair {
+                rule: text,
+                span: Span {
+                    str: "Ciao ",
+                    range: 0..5,
+                },
+                inner: [],
+            },
+            Pair {
+                rule: command,
+                span: Span {
+                    str: "\\textbf{Mondo}",
+                    range: 5..19,
+                },
+                inner: [
+                    Pair {
+                        rule: name,
+                        span: Span {
+                            str: "textbf",
+                            range: 6..12,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: argument,
+                        span: Span {
+                            str: "Mondo",
+                            range: 13..18,
+                        },
+                        inner: [],
+                    },
+                ],
+            },
+            Pair {
+                rule: text,
+                span: Span {
+                    str: "\r\n",
+                    range: 19..21,
+                },
+                inner: [],
+            },
+            Pair {
+                rule: EOI,
+                span: Span {
+                    str: "",
+                    range: 21..21,
+                },
+                inner: [],
+            },
+        ],
+    },
+]

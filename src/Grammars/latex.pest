@@ -1,14 +1,36 @@
-// Il documento è composto da uno o più item
-file = { SOI ~ item+ ~ EOI }
+file = { SOI ~ item* ~ EOI }
 
-// Un item può essere un comando o del semplice testo
-item = _{ command | text }
+item = { command | text | newline }
 
-// Testo: qualsiasi carattere che non sia l'inizio di un comando
-text = { (!"\\" ~ ANY)+ }
+text = { (!("\\" | NEWLINE) ~ ANY)+ }
 
-// Comando: \nome{argomento}
-// Usiamo regole semplici: nome solo lettere, argomento tutto ciò che non è "}"
-command = { "\\" ~ name ~ "{" ~ argument ~ "}" }
-name    = { ASCII_ALPHA+ }
-argument = { (!"}" ~ ANY)* }
+command = { "\\" ~ name ~ optional_arg* ~ required_arg* }
+name = { ASCII_ALPHA+ }
+
+required_arg = { "{" ~ argument ~ "}" }
+argument = { arg_item* }
+arg_item = { command | required_arg | newline | arg_text }
+arg_text = { (!("\\" | "{" | "}" | NEWLINE) ~ ANY)+ }
+
+optional_arg = { "[" ~ optional_list? ~ "]" } // Un argomento opzionale può essere vuoto o contenere una lista di opzioni
+optional_list = { opt_entry ~ ("," ~ opt_entry)* } // Una lista di opzioni è composta da coppie chiave-valore o valori singoli separati da virgole
+opt_entry = { (WHITE_SPACE* ~ kv_pair ~ WHITE_SPACE*) | opt_item+ } // Una voce di opzione può essere una coppia chiave-valore o un valore singolo
+
+kv_pair = { key ~ WHITE_SPACE* ~ "=" ~ WHITE_SPACE* ~ value } // Una coppia chiave-valore è composta da una chiave, un segno di uguale e un valore. La chiave non può contenere "=", "," o "]", mentre il valore può contenere qualsiasi cosa tranne "]".
+key     = { (!(special_char | WHITE_SPACE) ~ ANY)+ } // La chiave è composta da uno o più caratteri che non possono essere "=", "," o "]"
+value   = { value_list | simple_value  } // Il valore può contenere comandi o testo
+simple_value = { (!( "," | "]" ) ~ ANY)+ }
+value_list = {"{" ~ WHITE_SPACE* ~ sub_value_list ~ (WHITE_SPACE* ~ "," ~ WHITE_SPACE* ~ sub_value_list)* ~ WHITE_SPACE* ~ "}"} // {1, cane,3 ,4}
+sub_value_list = { (!special_char ~ ANY)+}
+
+// single_value = { opt_item+ } // Un valore singolo è composto da uno o più elementi di opzione, che possono essere comandi o testo. Questo permette di avere valori che contengono spazi o altri caratteri speciali, purché non siano chiusi da "]".
+
+// optional_content = { opt_item* }
+opt_item = { command | required_arg | newline | opt_text }
+opt_text = { (!("\\" | "[" | "]" | NEWLINE) ~ ANY)+ }
+
+newline = { NEWLINE+ }
+
+// Da utilizzare se assumiamo che ci siano errori nel file di latex, altrimenti non è necessario escludere questi
+// caratteri nei vari argomenti, dato che la sintassi di LaTeX prevede che siano usati in modo specifico e non come testo normale.
+special_char = { "\\" | "{" | "}" | "[" | "]"  | "," | "=" | WHITE_SPACE}

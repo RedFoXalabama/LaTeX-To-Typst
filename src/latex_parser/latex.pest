@@ -1,6 +1,8 @@
 file = { SOI ~ item* ~ EOI }
 
-item = { command | text | newline }
+item = { command | text | newlines }
+
+newlines = { NEWLINE+ }
 
 text = { (!("\\" | NEWLINE) ~ ANY)+ }
 
@@ -9,7 +11,7 @@ name = { ASCII_ALPHA+ }
 
 required_arg = { "{" ~ argument ~ "}" }
 argument = { arg_item* }
-arg_item = { command | required_arg | newline | arg_text }
+arg_item = { command | required_arg | newlines | arg_text }
 arg_text = { (!("\\" | "{" | "}" | NEWLINE) ~ ANY)+ }
 
 optional_arg = { "[" ~ optional_list? ~ "]" } // Un argomento opzionale può essere vuoto o contenere una lista di opzioni
@@ -23,13 +25,8 @@ simple_value = { (!( "," | "]" ) ~ ANY)+ }
 value_list = {"{" ~ WHITE_SPACE* ~ sub_value_list ~ (WHITE_SPACE* ~ "," ~ WHITE_SPACE* ~ sub_value_list)* ~ WHITE_SPACE* ~ "}"} // {1, cane,3 ,4}
 sub_value_list = { (!special_char ~ ANY)+}
 
-// single_value = { opt_item+ } // Un valore singolo è composto da uno o più elementi di opzione, che possono essere comandi o testo. Questo permette di avere valori che contengono spazi o altri caratteri speciali, purché non siano chiusi da "]".
-
-// optional_content = { opt_item* }
-opt_item = { command | required_arg | newline | opt_text }
+opt_item = { command | required_arg | newlines | opt_text }
 opt_text = { (!("\\" | "[" | "]" | NEWLINE) ~ ANY)+ }
-
-newline = { NEWLINE+ }
 
 // Da utilizzare se assumiamo che ci siano errori nel file di latex, altrimenti non è necessario escludere questi
 // caratteri nei vari argomenti, dato che la sintassi di LaTeX prevede che siano usati in modo specifico e non come testo normale.

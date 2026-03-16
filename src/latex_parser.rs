@@ -5,7 +5,7 @@ use std::fs;
 use std::path::Path;
 
 #[derive(Parser)]
-#[grammar = "Grammars/latex.pest"]
+#[grammar = "latex_parser/latex.pest"] // specifica il file .pest che contiene la grammatica
 pub struct LatexParser;
 
 /// Legge un file LaTeX e ne restituisce il contenuto.

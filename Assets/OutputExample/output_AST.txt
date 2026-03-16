@@ -1,0 +1,157 @@
+AstDocument {
+    items: [
+        Text(
+            TextNode {
+                value: "prova",
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 2,
+            },
+        ),
+        Text(
+            TextNode {
+                value: "Ciao ",
+            },
+        ),
+        Command(
+            CommandNode {
+                name: "textbf",
+                optional_args: [],
+                required_args: [
+                    RequiredArgNode {
+                        items: [
+                            Command(
+                                CommandNode {
+                                    name: "title",
+                                    optional_args: [
+                                        OptionalArgNode {
+                                            entries: [
+                                                Items(
+                                                    [
+                                                        Text(
+                                                            TextNode {
+                                                                value: "opt1 ",
+                                                            },
+                                                        ),
+                                                        Command(
+                                                            CommandNode {
+                                                                name: "textbf",
+                                                                optional_args: [],
+                                                                required_args: [
+                                                                    RequiredArgNode {
+                                                                        items: [
+                                                                            Text(
+                                                                                TextNode {
+                                                                                    value: "opt2",
+                                                                                },
+                                                                            ),
+                                                                        ],
+                                                                    },
+                                                                ],
+                                                            },
+                                                        ),
+                                                    ],
+                                                ),
+                                            ],
+                                        },
+                                    ],
+                                    required_args: [
+                                        RequiredArgNode {
+                                            items: [
+                                                Text(
+                                                    TextNode {
+                                                        value: "Mondo",
+                                                    },
+                                                ),
+                                            ],
+                                        },
+                                    ],
+                                },
+                            ),
+                        ],
+                    },
+                ],
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 2,
+            },
+        ),
+        Command(
+            CommandNode {
+                name: "usepackage",
+                optional_args: [
+                    OptionalArgNode {
+                        entries: [
+                            KeyValue(
+                                KvPairNode {
+                                    key: "letterpaper",
+                                    value: Simple(
+                                        "true",
+                                    ),
+                                },
+                            ),
+                            KeyValue(
+                                KvPairNode {
+                                    key: "top",
+                                    value: Simple(
+                                        "2cm\\textwidth",
+                                    ),
+                                },
+                            ),
+                            KeyValue(
+                                KvPairNode {
+                                    key: "points",
+                                    value: List(
+                                        [
+                                            "1",
+                                            "cane",
+                                            "3",
+                                            "4",
+                                        ],
+                                    ),
+                                },
+                            ),
+                        ],
+                    },
+                ],
+                required_args: [
+                    RequiredArgNode {
+                        items: [
+                            Text(
+                                TextNode {
+                                    value: "geometry",
+                                },
+                            ),
+                        ],
+                    },
+                ],
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Command(
+            CommandNode {
+                name: "href",
+                optional_args: [],
+                required_args: [
+                    RequiredArgNode {
+                        items: [
+                            Text(
+                                TextNode {
+                                    value: "https://www.overleaf.com/learn",
+                                },
+                            ),
+                        ],
+                    },
+                ],
+            },
+        ),
+    ],
+}

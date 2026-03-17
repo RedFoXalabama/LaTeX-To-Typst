@@ -2,6 +2,8 @@
 use std::path::Path;
 use crate::latex_semantic::AstDocument;
 
+
+// Salva un output in un file di testo, creando la cartella parent se necessario (es. "OutputExample/")
 pub fn save_output_file<P: AsRef<Path>>(path: P, content: &str) -> Result<(), std::io::Error> {
     let path = path.as_ref();
 
@@ -13,7 +15,8 @@ pub fn save_output_file<P: AsRef<Path>>(path: P, content: &str) -> Result<(), st
     fs::write(path, content)
 }
 
-// Salva l'AST in formato debug leggibile (pretty)
+// Salva l'AST in formato debug leggibile
+// prende in input una Path ed un AstDocument
 pub fn save_ast_to_file<P: AsRef<Path>>(path: P, ast: &AstDocument) -> Result<(), std::io::Error> {
     let path = path.as_ref();
 

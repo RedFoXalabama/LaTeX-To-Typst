@@ -1,11 +1,13 @@
-﻿mod latex_parser;
-mod utils;
+﻿mod codegen;
+mod latex_parser;
 mod latex_semantic;
+mod utils;
 
 // IMPOSTO PATH PER IL SALVATAGGIO DEGLI OUTPUT INTERMEDI
 static INPUT_PATH: &str = "Assets/InputExample/input.tex";
 static OUTPUT_PARSETREE_PATH: &str = "Assets/OutputExample/output_ParseTree.txt";
 static OUTPUT_AST_PATH: &str = "Assets/OutputExample/output_AST.txt";
+static OUTPUT_CODEGEN_PATH: &str = "Assets/OutputExample/output_codegen.txt";
 
 // ------------------------------ MAIN EXECUTION ---------------------------------------------------
 fn main() -> Result<(), Box<dyn std::error::Error>> {
@@ -20,12 +22,14 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     // Costruiamo un AST tramite strutture ed enumerativi astraendo il Parse Tree
     // La definizione della struttura dell'AST si trova in ast_structure
-    let ast = latex_semantic::build_ast(parse_tree).map_err(|e| {
-        std::io::Error::new(std::io::ErrorKind::InvalidData, format!("{e:?}"))
-    })?; // Effettuiamo la mappatura e conversione dell'errore in modo che il main possa restituirlo.
+    let ast = latex_semantic::build_ast(parse_tree)
+        .map_err(|e| std::io::Error::new(std::io::ErrorKind::InvalidData, format!("{e:?}")))?; // Effettuiamo la mappatura e conversione dell'errore in modo che il main possa restituirlo.
     // Per ora non faccio che il main restituisca un SemanticError, per tenerlo generalizzato in caso di altri errori.
 
     utils::save_ast_to_file(OUTPUT_AST_PATH, &ast)?;
+
+    let typst_output = codegen::ast_to_typst(&ast);
+    utils::save_output_file(OUTPUT_CODEGEN_PATH, &typst_output)?;
 
     Ok(())
 }

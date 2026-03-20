@@ -1,9 +1,8 @@
 ﻿mod ast_structure;
-pub use ast_structure::AstDocument;
-use crate::latex_semantic::ast_structure::*; //importo tutte le strutture e gli enumerati che compongono l'AST
+pub use ast_structure::*; //importo tutte le strutture e gli enumerati che compongono l'AST
 
-use pest::iterators::{Pair, Pairs};
 use crate::latex_parser::Rule;
+use pest::iterators::{Pair, Pairs};
 
 // ALBERO AST (Abstract Syntax Tree) - rappresentazione ad albero della struttura sintattica del documento LaTeX,
 // costruita a partire dal parse tree di pest.
@@ -15,11 +14,10 @@ use crate::latex_parser::Rule;
 //          ├─ build_text
 //          ├─ build_newline
 //          └─ build_command (name + optional_arg* + required_arg*)
-    //          ├─ build_optional_arg → build_opt_entry
-    //          │   ├─ build_kv_pair → build_value
-    //          │   └─ build_opt_item
-    //          └─ build_required_arg → build_arg_item
-
+//          ├─ build_optional_arg → build_opt_entry
+//          │   ├─ build_kv_pair → build_value
+//          │   └─ build_opt_item
+//          └─ build_required_arg → build_arg_item
 
 // FUNZIONE PRINCIPALE PER LA COSTRUZIONE DELL'AST, CHE VERRÀ CHIAMATA DAL MAIN DOPO AVER OTTENUTO IL PARSE TREE DI PEST
 // prende in input Pairs<Rule>, quindi un insieme su cui iterare di Pair<Rule>, che rappresentano i nodi del Parse Tree
@@ -58,7 +56,10 @@ fn build_document(file_pair: Pair<Rule>) -> Result<AstDocument, SemanticError> {
 // se l'elemento non corrisponde a nessuno di questi elementi, beh cacca addosso -> UnexpectedRule
 // item = { command | text | newlines }
 fn build_item(pair: Pair<Rule>) -> Result<AstItemNode, SemanticError> {
-    let child = pair.into_inner().next().ok_or(SemanticError::MissingItemChild)?;
+    let child = pair
+        .into_inner()
+        .next()
+        .ok_or(SemanticError::MissingItemChild)?;
 
     match child.as_rule() {
         Rule::text => Ok(AstItemNode::Text(build_text(child)?)),
@@ -76,9 +77,8 @@ fn build_text(pair: Pair<Rule>) -> Result<TextNode, SemanticError> {
     if value.is_empty() {
         return Err(SemanticError::EmptyTextValue);
     }
-    Ok(TextNode {value})
+    Ok(TextNode { value })
 }
-
 
 // Una nuova linea é composta da uno o più caratteri di nuova linea (\n), e viene rappresentata da un nodo che conta quante nuove linee ci sono
 // se il nodo é segnato come NEWLINE, ma non contiene "nuove linee", allora cacca addosso -> InvalidNewlineCount
@@ -88,7 +88,7 @@ fn build_newlines(pair: Pair<Rule>) -> Result<NewlinesNode, SemanticError> {
     if count == 0 {
         return Err(SemanticError::InvalidNewlineCount);
     }
-    Ok(NewlinesNode {count})
+    Ok(NewlinesNode { count })
 }
 
 // Una comando é composto da un nome (che segue il \) e da una serie di argomenti opzionali (racchiusi tra []) e argomenti obbligatori (racchiusi tra {})
@@ -111,13 +111,12 @@ fn build_command(pair: Pair<Rule>) -> Result<CommandNode, SemanticError> {
     Ok(CommandNode {
         name: name.ok_or(SemanticError::MissingCommandName)?,
         optional_args,
-        required_args
+        required_args,
     })
 }
 
 // --------------------------------- REQUIRED ARG --------------------------------------------------
 // il required argument é utilizzato anche per identificare ogni elemento racchiuso tra { }
-
 
 // Un Required Argument é un argomento obbligatorio di un comando che può essere composto da un argument
 // un argument é composto da arg_item multipli poiché possiamo avere comandi e testo insieme o anche un altro elemento rinchiuso in {esempio}
@@ -129,11 +128,12 @@ fn build_required_arg(pair: Pair<Rule>) -> Result<RequiredArgNode, SemanticError
     // iteriamo per estrarre ogni arg_item che può rappresentare differenti strutture di Nodi
     for child in pair.into_inner() {
         match child.as_rule() {
-            Rule::argument => { // argument = { arg_item* }
+            Rule::argument => {
+                // argument = { arg_item* }
                 for arg_item in child.into_inner() {
                     match arg_item.as_rule() {
                         Rule::arg_item => items.push(build_arg_item(arg_item)?),
-                        other          => return Err(SemanticError::UnexpectedArgItemRule(other)),
+                        other => return Err(SemanticError::UnexpectedArgItemRule(other)),
                     }
                 }
             }
@@ -150,17 +150,19 @@ fn build_required_arg(pair: Pair<Rule>) -> Result<RequiredArgNode, SemanticError
 // Ex: \textbf{\title[opt1]{Il gatto} era sul \n tavolo {} }
 // arg_item = { command | required_arg | newline | arg_text }
 fn build_arg_item(pair: Pair<Rule>) -> Result<ArgItemNode, SemanticError> {
-    let child = pair.into_inner().next().ok_or(SemanticError::MissingItemChild)?;
+    let child = pair
+        .into_inner()
+        .next()
+        .ok_or(SemanticError::MissingItemChild)?;
 
     match child.as_rule() {
-        Rule::command      => Ok(ArgItemNode::Command(build_command(child)?)),
+        Rule::command => Ok(ArgItemNode::Command(build_command(child)?)),
         Rule::required_arg => Ok(ArgItemNode::Group(build_required_arg(child)?)),
-        Rule::newlines      => Ok(ArgItemNode::Newlines(build_newlines(child)?)),
-        Rule::arg_text     => Ok(ArgItemNode::Text(build_text(child)?)), //usiamo la stessa regola per buildare il testo
-        other              => Err(SemanticError::UnexpectedArgItemRule(other)),
+        Rule::newlines => Ok(ArgItemNode::Newlines(build_newlines(child)?)),
+        Rule::arg_text => Ok(ArgItemNode::Text(build_text(child)?)), //usiamo la stessa regola per buildare il testo
+        other => Err(SemanticError::UnexpectedArgItemRule(other)),
     }
 }
-
 
 // --------------------------------- OPTIONAL ARG --------------------------------------------------
 
@@ -173,11 +175,12 @@ fn build_optional_arg(pair: Pair<Rule>) -> Result<OptionalArgNode, SemanticError
 
     for child in pair.into_inner() {
         match child.as_rule() {
-            Rule::optional_list => { // optional_list = { opt_entry ~ ("," ~ opt_entry)* }
+            Rule::optional_list => {
+                // optional_list = { opt_entry ~ ("," ~ opt_entry)* }
                 for entry in child.into_inner() {
                     match entry.as_rule() {
                         Rule::opt_entry => entries.push(build_opt_entry(entry)?),
-                        other           => return Err(SemanticError::UnexpectedOptionalEntryRule(other)),
+                        other => return Err(SemanticError::UnexpectedOptionalEntryRule(other)),
                     }
                 }
             }
@@ -200,14 +203,12 @@ fn build_opt_entry(pair: Pair<Rule>) -> Result<OptionalEntryNode, SemanticError>
             Ok(OptionalEntryNode::KeyValue(kv))
         }
         Some(Rule::opt_item) => {
-            let items: Result<Vec<OptItemNode>, SemanticError> = pair
-                .into_inner()
-                .map(build_opt_item)
-                .collect();
+            let items: Result<Vec<OptItemNode>, SemanticError> =
+                pair.into_inner().map(build_opt_item).collect();
             Ok(OptionalEntryNode::Items(items?))
         }
         Some(other) => Err(SemanticError::UnexpectedOptionalEntryRule(other)),
-        None        => Err(SemanticError::MissingOptionalEntryItems),
+        None => Err(SemanticError::MissingOptionalEntryItems),
     }
 }
 
@@ -222,14 +223,14 @@ fn build_kv_pair(pair: Pair<Rule>) -> Result<KvPairNode, SemanticError> {
 
     for child in pair.into_inner() {
         match child.as_rule() {
-            Rule::key   => key = Some(child.as_str().to_string()), // strina
+            Rule::key => key = Some(child.as_str().to_string()), // strina
             Rule::value => value = Some(build_value(child)?), // stringa semplice o lista di valori tra {,}
-            other       => return Err(SemanticError::UnexpectedRule(other)),
+            other => return Err(SemanticError::UnexpectedRule(other)),
         }
     }
 
     Ok(KvPairNode {
-        key:   key.ok_or(SemanticError::MissingKeyInKvPair)?,
+        key: key.ok_or(SemanticError::MissingKeyInKvPair)?,
         value: value.ok_or(SemanticError::MissingValueInKvPair)?,
     })
 }
@@ -239,11 +240,15 @@ fn build_kv_pair(pair: Pair<Rule>) -> Result<KvPairNode, SemanticError> {
 // ex: \usepackage[letterpaper = true,top=2cm\textwidth, points={1, cane,3 ,4}]{geometry}
 // value = { value_list | simple_value }
 fn build_value(pair: Pair<Rule>) -> Result<OptValueNode, SemanticError> {
-    let child = pair.into_inner().next().ok_or(SemanticError::MissingValueInKvPair)?;
+    let child = pair
+        .into_inner()
+        .next()
+        .ok_or(SemanticError::MissingValueInKvPair)?;
 
     match child.as_rule() {
         Rule::simple_value => Ok(OptValueNode::Simple(child.as_str().trim().to_string())), // simple_value = { (!( "," | "]" ) ~ ANY)+ }
-        Rule::value_list   => { // value_list   = { "{" ~ sub_value_list ~ ("," ~ sub_value_list)* ~ "}" }
+        Rule::value_list => {
+            // value_list   = { "{" ~ sub_value_list ~ ("," ~ sub_value_list)* ~ "}" }
             let sub_values: Vec<String> = child
                 .into_inner()
                 .filter(|p| p.as_rule() == Rule::sub_value_list)
@@ -259,13 +264,16 @@ fn build_value(pair: Pair<Rule>) -> Result<OptValueNode, SemanticError> {
 // opt_text, é differente da arg_text, infatti opt_text = { (!("\\" | "[" | "]" | NEWLINE) ~ ANY)+ }, quindi non può iniziare con altre [] o nuove linee
 // opt_item = { command | required_arg | newline | opt_text }
 fn build_opt_item(pair: Pair<Rule>) -> Result<OptItemNode, SemanticError> {
-    let child = pair.into_inner().next().ok_or(SemanticError::MissingItemChild)?;
+    let child = pair
+        .into_inner()
+        .next()
+        .ok_or(SemanticError::MissingItemChild)?;
 
     match child.as_rule() {
-        Rule::command      => Ok(OptItemNode::Command(build_command(child)?)),
+        Rule::command => Ok(OptItemNode::Command(build_command(child)?)),
         Rule::required_arg => Ok(OptItemNode::Group(build_required_arg(child)?)),
-        Rule::newlines      => Ok(OptItemNode::Newline(build_newlines(child)?)),
-        Rule::opt_text     => Ok(OptItemNode::Text(build_text(child)?)), // usiamo la stessa funzione per buildare tanto é sempre testo
-        other              => Err(SemanticError::UnexpectedOptItemRule(other)),
+        Rule::newlines => Ok(OptItemNode::Newline(build_newlines(child)?)),
+        Rule::opt_text => Ok(OptItemNode::Text(build_text(child)?)), // usiamo la stessa funzione per buildare tanto é sempre testo
+        other => Err(SemanticError::UnexpectedOptItemRule(other)),
     }
 }

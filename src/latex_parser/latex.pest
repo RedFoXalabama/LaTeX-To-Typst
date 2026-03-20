@@ -19,15 +19,15 @@ optional_list = { opt_entry ~ ("," ~ opt_entry)* } // Una lista di opzioni è co
 opt_entry = { (WHITE_SPACE* ~ kv_pair ~ WHITE_SPACE*) | opt_item+ } // Una voce di opzione può essere una coppia chiave-valore o un valore singolo
 
 kv_pair = { key ~ WHITE_SPACE* ~ "=" ~ WHITE_SPACE* ~ value } // Una coppia chiave-valore è composta da una chiave, un segno di uguale e un valore. La chiave non può contenere "=", "," o "]", mentre il valore può contenere qualsiasi cosa tranne "]".
-key     = { (!(special_char | WHITE_SPACE) ~ ANY)+ } // La chiave è composta da uno o più caratteri che non possono essere "=", "," o "]"
+key     = { (!(forbidden_char | WHITE_SPACE) ~ ANY)+ } // La chiave è composta da uno o più caratteri che non possono essere "=", "," o "]"
 value   = { value_list | simple_value  } // Il valore può contenere comandi o testo
 simple_value = { (!( "," | "]" ) ~ ANY)+ }
 value_list = {"{" ~ WHITE_SPACE* ~ sub_value_list ~ (WHITE_SPACE* ~ "," ~ WHITE_SPACE* ~ sub_value_list)* ~ WHITE_SPACE* ~ "}"} // {1, cane,3 ,4}
-sub_value_list = { (!special_char ~ ANY)+}
+sub_value_list = { (!forbidden_char ~ ANY)+}
 
 opt_item = { command | required_arg | newlines | opt_text }
 opt_text = { (!("\\" | "[" | "]" | NEWLINE) ~ ANY)+ }
 
 // Da utilizzare se assumiamo che ci siano errori nel file di latex, altrimenti non è necessario escludere questi
 // caratteri nei vari argomenti, dato che la sintassi di LaTeX prevede che siano usati in modo specifico e non come testo normale.
-special_char = { "\\" | "{" | "}" | "[" | "]"  | "," | "=" | WHITE_SPACE}
+forbidden_char = { "\\" | "{" | "}" | "[" | "]"  | "," | "=" | WHITE_SPACE}

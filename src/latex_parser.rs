@@ -5,7 +5,7 @@ use std::fs;
 use std::path::Path;
 
 // Definisce il parser per LaTeX utilizzando pest. La grammatica è definita in un file .pest separato (latex.pest).
-// !! ⚠ SE SI VUOLE AGGIORNARE LA GRAMMATICA E NON AVERE ERRORE NELL'IDE PER CHIAMATE A RULE -> RIAVVIARE L'IDE ⚠ !!
+// !! ⚠ SE SI VUOLE AGGIORNARE LA GRAMMATICA E NON AVERE ERRORE NELL'IDE PER CHIAMATE A RULE -> Cargo clean -> Cargo check -> RIAVVIARE L'IDE ⚠ !!
 // ️ per ora non ho trovato altra soluzione
 #[derive(Parser)]
 #[grammar = "latex_parser/latex.pest"] // specifica il file .pest che contiene la grammatica

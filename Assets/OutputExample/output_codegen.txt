@@ -1,5 +1,8 @@
-prova
-*Mondo*prova *testo*
+prova-tra parentesi graffe-
+*Bold*
+_italic_
+#underline[underline]
+
 
 Ciao *RENDER-ERROR*
 

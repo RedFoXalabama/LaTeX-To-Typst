@@ -2,7 +2,7 @@ AstDocument {
     items: [
         Text(
             TextNode {
-                value: "prova",
+                value: "prova{-tra parentesi graffe-}",
             },
         ),
         Newlines(
@@ -19,16 +19,7 @@ AstDocument {
                         items: [
                             Text(
                                 TextNode {
-                                    value: "Mondo",
-                                },
-                            ),
-                        ],
-                    },
-                    RequiredArgNode {
-                        items: [
-                            Text(
-                                TextNode {
-                                    value: "prova",
+                                    value: "Bold",
                                 },
                             ),
                         ],
@@ -36,21 +27,21 @@ AstDocument {
                 ],
             },
         ),
-        Text(
-            TextNode {
-                value: " {",
+        Newlines(
+            NewlinesNode {
+                count: 1,
             },
         ),
         Command(
             CommandNode {
-                name: "textbf",
+                name: "textit",
                 optional_args: [],
                 required_args: [
                     RequiredArgNode {
                         items: [
                             Text(
                                 TextNode {
-                                    value: "testo",
+                                    value: "italic",
                                 },
                             ),
                         ],
@@ -58,14 +49,31 @@ AstDocument {
                 ],
             },
         ),
-        Text(
-            TextNode {
-                value: "}",
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Command(
+            CommandNode {
+                name: "underline",
+                optional_args: [],
+                required_args: [
+                    RequiredArgNode {
+                        items: [
+                            Text(
+                                TextNode {
+                                    value: "underline",
+                                },
+                            ),
+                        ],
+                    },
+                ],
             },
         ),
         Newlines(
             NewlinesNode {
-                count: 2,
+                count: 3,
             },
         ),
         Text(

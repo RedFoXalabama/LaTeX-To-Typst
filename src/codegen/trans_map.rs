@@ -4,9 +4,10 @@ use std::collections::HashMap;
 use std::sync::OnceLock;
 
 mod text_formatting;
+mod text_alignment;
 
 // FUNZIONE PER I COMMAND
-type TranslationFn = fn(Vec<RequiredArgNode>, Vec<OptionalArgNode>) -> String;
+type TranslationFn = fn(name: &str, Vec<RequiredArgNode>, Vec<OptionalArgNode>) -> String;
 
 // OnceLock inizializzarla una sola volta e renderla disponibile ovunque
 static TRANS_MAP: OnceLock<HashMap<&'static str, TranslationFn>> = OnceLock::new();
@@ -17,9 +18,9 @@ static TRANS_MAP: OnceLock<HashMap<&'static str, TranslationFn>> = OnceLock::new
 fn get_trans_map() -> &'static HashMap<&'static str, TranslationFn> {
     TRANS_MAP.get_or_init(|| {
         let mut m = HashMap::new();
-        m.insert("textbf", text_formatting::render_bold as TranslationFn);
-        m.insert("textit", text_formatting::render_italic as TranslationFn);
-        m.insert("underline", text_formatting::render_underline as TranslationFn);
+        m.insert("textbf", text_formatting::render_formatting as TranslationFn);
+        m.insert("textit", text_formatting::render_formatting as TranslationFn);
+        m.insert("underline", text_formatting::render_formatting as TranslationFn);
         m
     })
 }
@@ -27,7 +28,7 @@ fn get_trans_map() -> &'static HashMap<&'static str, TranslationFn> {
 pub fn translate_command(command: &CommandNode) -> Option<String> {
     let map = get_trans_map();
     map.get(command.name.as_str())
-        .map(|f| f(command.required_args.clone(), command.optional_args.clone()))
+        .map(|f| f(&*command.name, command.required_args.clone(), command.optional_args.clone()))
 }
 
 // -------------------------------------------------------------------------------------------------

@@ -73,7 +73,336 @@ AstDocument {
         ),
         Newlines(
             NewlinesNode {
-                count: 3,
+                count: 2,
+            },
+        ),
+        Command(
+            CommandNode {
+                name: "centering",
+                optional_args: [],
+                required_args: [],
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Command(
+            CommandNode {
+                name: "raggedright",
+                optional_args: [],
+                required_args: [],
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Command(
+            CommandNode {
+                name: "raggedleft",
+                optional_args: [],
+                required_args: [],
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Command(
+            CommandNode {
+                name: "flushright",
+                optional_args: [],
+                required_args: [],
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Command(
+            CommandNode {
+                name: "flushleft",
+                optional_args: [],
+                required_args: [],
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Command(
+            CommandNode {
+                name: "usepackage",
+                optional_args: [],
+                required_args: [
+                    RequiredArgNode {
+                        items: [
+                            Text(
+                                TextNode {
+                                    value: "ragged2e",
+                                },
+                            ),
+                        ],
+                    },
+                ],
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Command(
+            CommandNode {
+                name: "begin",
+                optional_args: [],
+                required_args: [
+                    RequiredArgNode {
+                        items: [
+                            Text(
+                                TextNode {
+                                    value: "center",
+                                },
+                            ),
+                        ],
+                    },
+                ],
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Text(
+            TextNode {
+                value: "    center block ",
+            },
+        ),
+        Command(
+            CommandNode {
+                name: "textbf",
+                optional_args: [],
+                required_args: [
+                    RequiredArgNode {
+                        items: [
+                            Text(
+                                TextNode {
+                                    value: "bold",
+                                },
+                            ),
+                        ],
+                    },
+                ],
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Command(
+            CommandNode {
+                name: "end",
+                optional_args: [],
+                required_args: [
+                    RequiredArgNode {
+                        items: [
+                            Text(
+                                TextNode {
+                                    value: "center",
+                                },
+                            ),
+                        ],
+                    },
+                ],
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Command(
+            CommandNode {
+                name: "begin",
+                optional_args: [],
+                required_args: [
+                    RequiredArgNode {
+                        items: [
+                            Text(
+                                TextNode {
+                                    value: "flushleft",
+                                },
+                            ),
+                        ],
+                    },
+                ],
+            },
+        ),
+        Text(
+            TextNode {
+                value: " flushleft block ",
+            },
+        ),
+        Command(
+            CommandNode {
+                name: "end",
+                optional_args: [],
+                required_args: [
+                    RequiredArgNode {
+                        items: [
+                            Text(
+                                TextNode {
+                                    value: "flushleft",
+                                },
+                            ),
+                        ],
+                    },
+                ],
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Command(
+            CommandNode {
+                name: "begin",
+                optional_args: [],
+                required_args: [
+                    RequiredArgNode {
+                        items: [
+                            Text(
+                                TextNode {
+                                    value: "flushright",
+                                },
+                            ),
+                        ],
+                    },
+                ],
+            },
+        ),
+        Text(
+            TextNode {
+                value: " flushright block ",
+            },
+        ),
+        Command(
+            CommandNode {
+                name: "end",
+                optional_args: [],
+                required_args: [
+                    RequiredArgNode {
+                        items: [
+                            Text(
+                                TextNode {
+                                    value: "flushright",
+                                },
+                            ),
+                        ],
+                    },
+                ],
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Command(
+            CommandNode {
+                name: "begin",
+                optional_args: [],
+                required_args: [
+                    RequiredArgNode {
+                        items: [
+                            Text(
+                                TextNode {
+                                    value: "FlushLeft",
+                                },
+                            ),
+                        ],
+                    },
+                ],
+            },
+        ),
+        Text(
+            TextNode {
+                value: " FlushLeft block ",
+            },
+        ),
+        Command(
+            CommandNode {
+                name: "end",
+                optional_args: [],
+                required_args: [
+                    RequiredArgNode {
+                        items: [
+                            Text(
+                                TextNode {
+                                    value: "FlushLeft",
+                                },
+                            ),
+                        ],
+                    },
+                ],
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Command(
+            CommandNode {
+                name: "begin",
+                optional_args: [],
+                required_args: [
+                    RequiredArgNode {
+                        items: [
+                            Text(
+                                TextNode {
+                                    value: "FlushRight",
+                                },
+                            ),
+                        ],
+                    },
+                ],
+            },
+        ),
+        Text(
+            TextNode {
+                value: " FlushRight block ",
+            },
+        ),
+        Command(
+            CommandNode {
+                name: "end",
+                optional_args: [],
+                required_args: [
+                    RequiredArgNode {
+                        items: [
+                            Text(
+                                TextNode {
+                                    value: "FlushRight",
+                                },
+                            ),
+                        ],
+                    },
+                ],
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 2,
             },
         ),
         Text(

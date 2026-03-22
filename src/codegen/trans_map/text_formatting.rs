@@ -11,7 +11,7 @@ pub fn render_formatting(name: &str, reqs: Vec<RequiredArgNode>, opts: Vec<Optio
             "textbf" => out.push_str(&format!("*{}*", render_args_item(&first.items))),
             "textit" => out.push_str(&format!("_{}_", render_args_item(&first.items))),
             "underline" => out.push_str(&format!("#underline[{}]", render_args_item(&first.items))),
-            _ => out.push_str(&render_args_item(&first.items)),
+            _ => out.push_str("RENDER-ERROR"),
         }
     }
 

@@ -7,7 +7,11 @@ pub fn package_handler(_name: &str, reqs: Vec<RequiredArgNode>, _opts: Vec<Optio
     if let Some(first) = reqs.first() {
         let req_arg = render_args_item(&first.items);
         match req_arg.as_str() {
+
             "ragged2e" => out.push_str("/* usepackage{ragged2e} */"),
+
+            "verbatim" => out.push_str("/* usepackage{verbatim} */"),
+
             _ => out.push_str("RENDER-ERROR"),
         }
     }

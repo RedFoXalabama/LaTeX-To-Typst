@@ -14,7 +14,8 @@ pub enum AstItemNode{
     Text(TextNode), // rule: text
     Newlines(NewlinesNode), // rule: newlines,
     Linebreak(LinebreakNode), // rule: linebreak
-    Command(CommandNode) // rule: command
+    Command(CommandNode), // rule: command
+    Comment(CommentNode), // rule: COMMENT
 }
 
 // TextNode rappresenta del semplice testo da mostrare a schermo
@@ -33,6 +34,12 @@ pub struct NewlinesNode {
 // Linebreak raccoglie le \\ che vengono rappresentate con \\\\
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub struct LinebreakNode {
+    pub value: String
+}
+
+// COMMENT commenti mono riga preceduti da %
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct CommentNode {
     pub value: String
 }
 
@@ -116,6 +123,7 @@ pub enum SemanticError {
     MissingKeyInKvPair,
     MissingValueInKvPair,
     EmptyTextValue,
+    EmptyCommentValue,
     InvalidNewlineCount,
     InvalidLinebreakValue,
     UnexpectedItemRule(Rule),

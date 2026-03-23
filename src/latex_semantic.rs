@@ -66,6 +66,7 @@ fn build_item(pair: Pair<Rule>) -> Result<AstItemNode, SemanticError> {
         Rule::newlines => Ok(AstItemNode::Newlines(build_newlines(child)?)),
         Rule::command => Ok(AstItemNode::Command(build_command(child)?)),
         Rule::linebreak => Ok(AstItemNode::Linebreak(build_linebreak(child)?)), // trattiamo i linebreak come newlines, visto che rappresentano un andare a capo
+        Rule::comment => Ok(AstItemNode::Comment(build_comment(child)?)),
         other => Err(SemanticError::UnexpectedRule(other)),
     }
 }
@@ -92,12 +93,27 @@ fn build_newlines(pair: Pair<Rule>) -> Result<NewlinesNode, SemanticError> {
     Ok(NewlinesNode { count })
 }
 
+// Gestisce le \\ presenti in latex che servono per creare un nuovo paragrafo.
+// Ci sono altri metodi e sono trattati insieme agli altri comandi di spacing e break nel file space_breaks.rs nella transmap
+// linebreak = { "\\\\" }
 fn build_linebreak(pair: Pair<Rule>) -> Result<LinebreakNode, SemanticError> {
     let value = pair.as_str().to_string();
     if value != "\\\\" {
         return Err(SemanticError::InvalidLinebreakValue);
     }
     Ok(LinebreakNode { value })
+}
+
+// Un commento é una stringa che inizia con % e continua fino alla fine della linea, e viene rappresentato da un nodo CommentNode
+// Sono i commenti monoriga, quelli con più blocchi vengono gestiti nella sezione command poiché rappresentati in latex come:
+// \begin{comment} \end{comment}
+// COMMENT = COMMENT = { ("%" ~ (!NEWLINE ~ ANY)*) }
+fn build_comment(pair: Pair<Rule>) -> Result<CommentNode, SemanticError> {
+    let value = pair.as_str().to_string();
+    if value.is_empty() {
+        return Err(SemanticError::EmptyCommentValue);
+    }
+    Ok(CommentNode { value })
 }
 
 // Una comando é composto da un nome (che segue il \) e da una serie di argomenti opzionali (racchiusi tra []) e argomenti obbligatori (racchiusi tra {})

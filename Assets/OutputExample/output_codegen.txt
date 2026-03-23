@@ -7,6 +7,13 @@
   spacing: 1.2em,         // Spazio tra paragrafi
 )
 prova-tra parentesi graffe-
+
+testo pre commento // prova commento monolinea
+/* usepackage{verbatim} */
+/*
+    Questo é un commento multilinea
+*/
+
 *Bold*
 _italic_
 #underline[underline]
@@ -33,6 +40,7 @@ _italic_
 #pagebreak()
 #pagebreak()
 #pagebreak()
+
 
 Ciao *RENDER-ERROR*
 

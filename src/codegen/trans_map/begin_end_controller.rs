@@ -10,7 +10,8 @@ pub fn begin_handler(name: &str, reqs: Vec<RequiredArgNode>, _opts: Vec<Optional
             "center" | "Center" => out.push_str("#align(center)["),
             "flushright" | "FlushRight" => out.push_str("#align(right)["),
             "flushleft" | "FlushLeft" => out.push_str("#align(left)["),
-
+            // COMMENT (con il pacchetto verbatim in latex)
+            "comment" => out.push_str("/*"),
             _ => out.push_str("RENDER-ERROR"),
         }
     }
@@ -29,7 +30,8 @@ pub fn end_handler(name: &str, reqs: Vec<RequiredArgNode>, _opts: Vec<OptionalAr
             "center" | "Center" |
             "flushright" | "FlushRight" |
             "flushleft" | "FlushLeft" => out.push_str("]"),
-
+            // COMMENT (con il pacchetto verbatim in latex)
+            "comment" => out.push_str("*/"),
             _ => out.push_str("RENDER-ERROR"),
         }
     }

@@ -1,11 +1,12 @@
 file = { SOI ~ item* ~ EOI }
 
-item = { command | text | newlines | linebreak}
+item = { command | text | newlines | linebreak | comment }
 
 linebreak = { "\\\\" }
 newlines = { NEWLINE+ }
+comment = { ("%" ~ (!NEWLINE ~ ANY)*) }
 
-text = { (!("\\" | NEWLINE) ~ ANY)+ }
+text = { (!("\\" | NEWLINE | comment) ~ ANY)+ }
 
 command = { "\\" ~ name ~ optional_arg* ~ required_arg* }
 name = { ASCII_ALPHA+ }

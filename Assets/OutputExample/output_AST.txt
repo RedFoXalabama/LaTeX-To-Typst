@@ -7,7 +7,98 @@ AstDocument {
         ),
         Newlines(
             NewlinesNode {
+                count: 2,
+            },
+        ),
+        Text(
+            TextNode {
+                value: "testo pre commento ",
+            },
+        ),
+        Comment(
+            CommentNode {
+                value: "% prova commento monolinea",
+            },
+        ),
+        Newlines(
+            NewlinesNode {
                 count: 1,
+            },
+        ),
+        Command(
+            CommandNode {
+                name: "usepackage",
+                optional_args: [],
+                required_args: [
+                    RequiredArgNode {
+                        items: [
+                            Text(
+                                TextNode {
+                                    value: "verbatim",
+                                },
+                            ),
+                        ],
+                    },
+                ],
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Command(
+            CommandNode {
+                name: "begin",
+                optional_args: [],
+                required_args: [
+                    RequiredArgNode {
+                        items: [
+                            Text(
+                                TextNode {
+                                    value: "comment",
+                                },
+                            ),
+                        ],
+                    },
+                ],
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Text(
+            TextNode {
+                value: "    Questo é un commento multilinea",
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Command(
+            CommandNode {
+                name: "end",
+                optional_args: [],
+                required_args: [
+                    RequiredArgNode {
+                        items: [
+                            Text(
+                                TextNode {
+                                    value: "comment",
+                                },
+                            ),
+                        ],
+                    },
+                ],
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 2,
             },
         ),
         Command(
@@ -496,7 +587,7 @@ AstDocument {
         ),
         Newlines(
             NewlinesNode {
-                count: 2,
+                count: 3,
             },
         ),
         Text(

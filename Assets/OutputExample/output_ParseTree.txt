@@ -2,8 +2,8 @@
     Pair {
         rule: file,
         span: Span {
-            str: "prova{-tra parentesi graffe-}\r\n\\textbf{Bold}\r\n\\textit{italic}\r\n\\underline{underline}\r\n\r\n\\centering\r\n\\raggedright\r\n\\raggedleft\r\n\\flushright\r\n\\flushleft\r\n\\usepackage{ragged2e}\r\n\\begin{center}\r\n    center block \\textbf{bold}\r\n\\end{center}\r\n\\begin{flushleft} flushleft block \\end{flushleft}\r\n\\begin{flushright} flushright block \\end{flushright}\r\n\\begin{FlushLeft} FlushLeft block \\end{FlushLeft}\r\n\\begin{FlushRight} FlushRight block \\end{FlushRight}\r\n\r\nCiao \\textbf{\\title[opt1 \\textbf{opt2}]{Mondo}}\r\n\r\n\\usepackage[letterpaper = true,top=2cm\\textwidth, points={1, cane,3 ,4}]{geometry}\r\n\\href{https://www.overleaf.com/learn}",
-            range: 0..621,
+            str: "prova{-tra parentesi graffe-}\r\n\\textbf{Bold}\r\n\\textit{italic}\r\n\\underline{underline}\r\n\r\n\\centering\r\n\\raggedright\r\n\\raggedleft\r\n\\flushright\r\n\\flushleft\r\n\\usepackage{ragged2e}\r\n\\begin{center}\r\n    center block \\textbf{bold}\r\n\\end{center}\r\n\\begin{flushleft} flushleft block \\end{flushleft}\r\n\\begin{flushright} flushright block \\end{flushright}\r\n\\begin{FlushLeft} FlushLeft block \\end{FlushLeft}\r\n\\begin{FlushRight} FlushRight block \\end{FlushRight}\r\n\r\n\\\\\r\n\\newline\r\n\\break\r\n\\hfill\r\n\\vfill\r\n\\pagebreak\r\n\\newpage\r\n\\clearpage\r\n\r\nCiao \\textbf{\\title[opt1 \\textbf{opt2}]{Mondo}}\r\n\r\n\\usepackage[letterpaper = true,top=2cm\\textwidth, points={1, cane,3 ,4}]{geometry}\r\n\\href{https://www.overleaf.com/learn}",
+            range: 0..695,
         },
         inner: [
             Pair {
@@ -1445,15 +1445,350 @@
             Pair {
                 rule: item,
                 span: Span {
+                    str: "\\\\",
+                    range: 449..451,
+                },
+                inner: [
+                    Pair {
+                        rule: linebreak,
+                        span: Span {
+                            str: "\\\\",
+                            range: 449..451,
+                        },
+                        inner: [],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\r\n",
+                    range: 451..453,
+                },
+                inner: [
+                    Pair {
+                        rule: newlines,
+                        span: Span {
+                            str: "\r\n",
+                            range: 451..453,
+                        },
+                        inner: [],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\\newline",
+                    range: 453..461,
+                },
+                inner: [
+                    Pair {
+                        rule: command,
+                        span: Span {
+                            str: "\\newline",
+                            range: 453..461,
+                        },
+                        inner: [
+                            Pair {
+                                rule: name,
+                                span: Span {
+                                    str: "newline",
+                                    range: 454..461,
+                                },
+                                inner: [],
+                            },
+                        ],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\r\n",
+                    range: 461..463,
+                },
+                inner: [
+                    Pair {
+                        rule: newlines,
+                        span: Span {
+                            str: "\r\n",
+                            range: 461..463,
+                        },
+                        inner: [],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\\break",
+                    range: 463..469,
+                },
+                inner: [
+                    Pair {
+                        rule: command,
+                        span: Span {
+                            str: "\\break",
+                            range: 463..469,
+                        },
+                        inner: [
+                            Pair {
+                                rule: name,
+                                span: Span {
+                                    str: "break",
+                                    range: 464..469,
+                                },
+                                inner: [],
+                            },
+                        ],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\r\n",
+                    range: 469..471,
+                },
+                inner: [
+                    Pair {
+                        rule: newlines,
+                        span: Span {
+                            str: "\r\n",
+                            range: 469..471,
+                        },
+                        inner: [],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\\hfill",
+                    range: 471..477,
+                },
+                inner: [
+                    Pair {
+                        rule: command,
+                        span: Span {
+                            str: "\\hfill",
+                            range: 471..477,
+                        },
+                        inner: [
+                            Pair {
+                                rule: name,
+                                span: Span {
+                                    str: "hfill",
+                                    range: 472..477,
+                                },
+                                inner: [],
+                            },
+                        ],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\r\n",
+                    range: 477..479,
+                },
+                inner: [
+                    Pair {
+                        rule: newlines,
+                        span: Span {
+                            str: "\r\n",
+                            range: 477..479,
+                        },
+                        inner: [],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\\vfill",
+                    range: 479..485,
+                },
+                inner: [
+                    Pair {
+                        rule: command,
+                        span: Span {
+                            str: "\\vfill",
+                            range: 479..485,
+                        },
+                        inner: [
+                            Pair {
+                                rule: name,
+                                span: Span {
+                                    str: "vfill",
+                                    range: 480..485,
+                                },
+                                inner: [],
+                            },
+                        ],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\r\n",
+                    range: 485..487,
+                },
+                inner: [
+                    Pair {
+                        rule: newlines,
+                        span: Span {
+                            str: "\r\n",
+                            range: 485..487,
+                        },
+                        inner: [],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\\pagebreak",
+                    range: 487..497,
+                },
+                inner: [
+                    Pair {
+                        rule: command,
+                        span: Span {
+                            str: "\\pagebreak",
+                            range: 487..497,
+                        },
+                        inner: [
+                            Pair {
+                                rule: name,
+                                span: Span {
+                                    str: "pagebreak",
+                                    range: 488..497,
+                                },
+                                inner: [],
+                            },
+                        ],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\r\n",
+                    range: 497..499,
+                },
+                inner: [
+                    Pair {
+                        rule: newlines,
+                        span: Span {
+                            str: "\r\n",
+                            range: 497..499,
+                        },
+                        inner: [],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\\newpage",
+                    range: 499..507,
+                },
+                inner: [
+                    Pair {
+                        rule: command,
+                        span: Span {
+                            str: "\\newpage",
+                            range: 499..507,
+                        },
+                        inner: [
+                            Pair {
+                                rule: name,
+                                span: Span {
+                                    str: "newpage",
+                                    range: 500..507,
+                                },
+                                inner: [],
+                            },
+                        ],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\r\n",
+                    range: 507..509,
+                },
+                inner: [
+                    Pair {
+                        rule: newlines,
+                        span: Span {
+                            str: "\r\n",
+                            range: 507..509,
+                        },
+                        inner: [],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\\clearpage",
+                    range: 509..519,
+                },
+                inner: [
+                    Pair {
+                        rule: command,
+                        span: Span {
+                            str: "\\clearpage",
+                            range: 509..519,
+                        },
+                        inner: [
+                            Pair {
+                                rule: name,
+                                span: Span {
+                                    str: "clearpage",
+                                    range: 510..519,
+                                },
+                                inner: [],
+                            },
+                        ],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\r\n\r\n",
+                    range: 519..523,
+                },
+                inner: [
+                    Pair {
+                        rule: newlines,
+                        span: Span {
+                            str: "\r\n\r\n",
+                            range: 519..523,
+                        },
+                        inner: [],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
                     str: "Ciao ",
-                    range: 449..454,
+                    range: 523..528,
                 },
                 inner: [
                     Pair {
                         rule: text,
                         span: Span {
                             str: "Ciao ",
-                            range: 449..454,
+                            range: 523..528,
                         },
                         inner: [],
                     },
@@ -1463,21 +1798,21 @@
                 rule: item,
                 span: Span {
                     str: "\\textbf{\\title[opt1 \\textbf{opt2}]{Mondo}}",
-                    range: 454..496,
+                    range: 528..570,
                 },
                 inner: [
                     Pair {
                         rule: command,
                         span: Span {
                             str: "\\textbf{\\title[opt1 \\textbf{opt2}]{Mondo}}",
-                            range: 454..496,
+                            range: 528..570,
                         },
                         inner: [
                             Pair {
                                 rule: name,
                                 span: Span {
                                     str: "textbf",
-                                    range: 455..461,
+                                    range: 529..535,
                                 },
                                 inner: [],
                             },
@@ -1485,35 +1820,35 @@
                                 rule: required_arg,
                                 span: Span {
                                     str: "{\\title[opt1 \\textbf{opt2}]{Mondo}}",
-                                    range: 461..496,
+                                    range: 535..570,
                                 },
                                 inner: [
                                     Pair {
                                         rule: argument,
                                         span: Span {
                                             str: "\\title[opt1 \\textbf{opt2}]{Mondo}",
-                                            range: 462..495,
+                                            range: 536..569,
                                         },
                                         inner: [
                                             Pair {
                                                 rule: arg_item,
                                                 span: Span {
                                                     str: "\\title[opt1 \\textbf{opt2}]{Mondo}",
-                                                    range: 462..495,
+                                                    range: 536..569,
                                                 },
                                                 inner: [
                                                     Pair {
                                                         rule: command,
                                                         span: Span {
                                                             str: "\\title[opt1 \\textbf{opt2}]{Mondo}",
-                                                            range: 462..495,
+                                                            range: 536..569,
                                                         },
                                                         inner: [
                                                             Pair {
                                                                 rule: name,
                                                                 span: Span {
                                                                     str: "title",
-                                                                    range: 463..468,
+                                                                    range: 537..542,
                                                                 },
                                                                 inner: [],
                                                             },
@@ -1521,35 +1856,35 @@
                                                                 rule: optional_arg,
                                                                 span: Span {
                                                                     str: "[opt1 \\textbf{opt2}]",
-                                                                    range: 468..488,
+                                                                    range: 542..562,
                                                                 },
                                                                 inner: [
                                                                     Pair {
                                                                         rule: optional_list,
                                                                         span: Span {
                                                                             str: "opt1 \\textbf{opt2}",
-                                                                            range: 469..487,
+                                                                            range: 543..561,
                                                                         },
                                                                         inner: [
                                                                             Pair {
                                                                                 rule: opt_entry,
                                                                                 span: Span {
                                                                                     str: "opt1 \\textbf{opt2}",
-                                                                                    range: 469..487,
+                                                                                    range: 543..561,
                                                                                 },
                                                                                 inner: [
                                                                                     Pair {
                                                                                         rule: opt_item,
                                                                                         span: Span {
                                                                                             str: "opt1 ",
-                                                                                            range: 469..474,
+                                                                                            range: 543..548,
                                                                                         },
                                                                                         inner: [
                                                                                             Pair {
                                                                                                 rule: opt_text,
                                                                                                 span: Span {
                                                                                                     str: "opt1 ",
-                                                                                                    range: 469..474,
+                                                                                                    range: 543..548,
                                                                                                 },
                                                                                                 inner: [],
                                                                                             },
@@ -1559,21 +1894,21 @@
                                                                                         rule: opt_item,
                                                                                         span: Span {
                                                                                             str: "\\textbf{opt2}",
-                                                                                            range: 474..487,
+                                                                                            range: 548..561,
                                                                                         },
                                                                                         inner: [
                                                                                             Pair {
                                                                                                 rule: command,
                                                                                                 span: Span {
                                                                                                     str: "\\textbf{opt2}",
-                                                                                                    range: 474..487,
+                                                                                                    range: 548..561,
                                                                                                 },
                                                                                                 inner: [
                                                                                                     Pair {
                                                                                                         rule: name,
                                                                                                         span: Span {
                                                                                                             str: "textbf",
-                                                                                                            range: 475..481,
+                                                                                                            range: 549..555,
                                                                                                         },
                                                                                                         inner: [],
                                                                                                     },
@@ -1581,28 +1916,28 @@
                                                                                                         rule: required_arg,
                                                                                                         span: Span {
                                                                                                             str: "{opt2}",
-                                                                                                            range: 481..487,
+                                                                                                            range: 555..561,
                                                                                                         },
                                                                                                         inner: [
                                                                                                             Pair {
                                                                                                                 rule: argument,
                                                                                                                 span: Span {
                                                                                                                     str: "opt2",
-                                                                                                                    range: 482..486,
+                                                                                                                    range: 556..560,
                                                                                                                 },
                                                                                                                 inner: [
                                                                                                                     Pair {
                                                                                                                         rule: arg_item,
                                                                                                                         span: Span {
                                                                                                                             str: "opt2",
-                                                                                                                            range: 482..486,
+                                                                                                                            range: 556..560,
                                                                                                                         },
                                                                                                                         inner: [
                                                                                                                             Pair {
                                                                                                                                 rule: arg_text,
                                                                                                                                 span: Span {
                                                                                                                                     str: "opt2",
-                                                                                                                                    range: 482..486,
+                                                                                                                                    range: 556..560,
                                                                                                                                 },
                                                                                                                                 inner: [],
                                                                                                                             },
@@ -1626,28 +1961,28 @@
                                                                 rule: required_arg,
                                                                 span: Span {
                                                                     str: "{Mondo}",
-                                                                    range: 488..495,
+                                                                    range: 562..569,
                                                                 },
                                                                 inner: [
                                                                     Pair {
                                                                         rule: argument,
                                                                         span: Span {
                                                                             str: "Mondo",
-                                                                            range: 489..494,
+                                                                            range: 563..568,
                                                                         },
                                                                         inner: [
                                                                             Pair {
                                                                                 rule: arg_item,
                                                                                 span: Span {
                                                                                     str: "Mondo",
-                                                                                    range: 489..494,
+                                                                                    range: 563..568,
                                                                                 },
                                                                                 inner: [
                                                                                     Pair {
                                                                                         rule: arg_text,
                                                                                         span: Span {
                                                                                             str: "Mondo",
-                                                                                            range: 489..494,
+                                                                                            range: 563..568,
                                                                                         },
                                                                                         inner: [],
                                                                                     },
@@ -1673,14 +2008,14 @@
                 rule: item,
                 span: Span {
                     str: "\r\n\r\n",
-                    range: 496..500,
+                    range: 570..574,
                 },
                 inner: [
                     Pair {
                         rule: newlines,
                         span: Span {
                             str: "\r\n\r\n",
-                            range: 496..500,
+                            range: 570..574,
                         },
                         inner: [],
                     },
@@ -1690,21 +2025,21 @@
                 rule: item,
                 span: Span {
                     str: "\\usepackage[letterpaper = true,top=2cm\\textwidth, points={1, cane,3 ,4}]{geometry}",
-                    range: 500..582,
+                    range: 574..656,
                 },
                 inner: [
                     Pair {
                         rule: command,
                         span: Span {
                             str: "\\usepackage[letterpaper = true,top=2cm\\textwidth, points={1, cane,3 ,4}]{geometry}",
-                            range: 500..582,
+                            range: 574..656,
                         },
                         inner: [
                             Pair {
                                 rule: name,
                                 span: Span {
                                     str: "usepackage",
-                                    range: 501..511,
+                                    range: 575..585,
                                 },
                                 inner: [],
                             },
@@ -1712,35 +2047,35 @@
                                 rule: optional_arg,
                                 span: Span {
                                     str: "[letterpaper = true,top=2cm\\textwidth, points={1, cane,3 ,4}]",
-                                    range: 511..572,
+                                    range: 585..646,
                                 },
                                 inner: [
                                     Pair {
                                         rule: optional_list,
                                         span: Span {
                                             str: "letterpaper = true,top=2cm\\textwidth, points={1, cane,3 ,4}",
-                                            range: 512..571,
+                                            range: 586..645,
                                         },
                                         inner: [
                                             Pair {
                                                 rule: opt_entry,
                                                 span: Span {
                                                     str: "letterpaper = true",
-                                                    range: 512..530,
+                                                    range: 586..604,
                                                 },
                                                 inner: [
                                                     Pair {
                                                         rule: kv_pair,
                                                         span: Span {
                                                             str: "letterpaper = true",
-                                                            range: 512..530,
+                                                            range: 586..604,
                                                         },
                                                         inner: [
                                                             Pair {
                                                                 rule: key,
                                                                 span: Span {
                                                                     str: "letterpaper",
-                                                                    range: 512..523,
+                                                                    range: 586..597,
                                                                 },
                                                                 inner: [],
                                                             },
@@ -1748,14 +2083,14 @@
                                                                 rule: value,
                                                                 span: Span {
                                                                     str: "true",
-                                                                    range: 526..530,
+                                                                    range: 600..604,
                                                                 },
                                                                 inner: [
                                                                     Pair {
                                                                         rule: simple_value,
                                                                         span: Span {
                                                                             str: "true",
-                                                                            range: 526..530,
+                                                                            range: 600..604,
                                                                         },
                                                                         inner: [],
                                                                     },
@@ -1769,21 +2104,21 @@
                                                 rule: opt_entry,
                                                 span: Span {
                                                     str: "top=2cm\\textwidth",
-                                                    range: 531..548,
+                                                    range: 605..622,
                                                 },
                                                 inner: [
                                                     Pair {
                                                         rule: kv_pair,
                                                         span: Span {
                                                             str: "top=2cm\\textwidth",
-                                                            range: 531..548,
+                                                            range: 605..622,
                                                         },
                                                         inner: [
                                                             Pair {
                                                                 rule: key,
                                                                 span: Span {
                                                                     str: "top",
-                                                                    range: 531..534,
+                                                                    range: 605..608,
                                                                 },
                                                                 inner: [],
                                                             },
@@ -1791,14 +2126,14 @@
                                                                 rule: value,
                                                                 span: Span {
                                                                     str: "2cm\\textwidth",
-                                                                    range: 535..548,
+                                                                    range: 609..622,
                                                                 },
                                                                 inner: [
                                                                     Pair {
                                                                         rule: simple_value,
                                                                         span: Span {
                                                                             str: "2cm\\textwidth",
-                                                                            range: 535..548,
+                                                                            range: 609..622,
                                                                         },
                                                                         inner: [],
                                                                     },
@@ -1812,21 +2147,21 @@
                                                 rule: opt_entry,
                                                 span: Span {
                                                     str: " points={1, cane,3 ,4}",
-                                                    range: 549..571,
+                                                    range: 623..645,
                                                 },
                                                 inner: [
                                                     Pair {
                                                         rule: kv_pair,
                                                         span: Span {
                                                             str: "points={1, cane,3 ,4}",
-                                                            range: 550..571,
+                                                            range: 624..645,
                                                         },
                                                         inner: [
                                                             Pair {
                                                                 rule: key,
                                                                 span: Span {
                                                                     str: "points",
-                                                                    range: 550..556,
+                                                                    range: 624..630,
                                                                 },
                                                                 inner: [],
                                                             },
@@ -1834,21 +2169,21 @@
                                                                 rule: value,
                                                                 span: Span {
                                                                     str: "{1, cane,3 ,4}",
-                                                                    range: 557..571,
+                                                                    range: 631..645,
                                                                 },
                                                                 inner: [
                                                                     Pair {
                                                                         rule: value_list,
                                                                         span: Span {
                                                                             str: "{1, cane,3 ,4}",
-                                                                            range: 557..571,
+                                                                            range: 631..645,
                                                                         },
                                                                         inner: [
                                                                             Pair {
                                                                                 rule: sub_value_list,
                                                                                 span: Span {
                                                                                     str: "1",
-                                                                                    range: 558..559,
+                                                                                    range: 632..633,
                                                                                 },
                                                                                 inner: [],
                                                                             },
@@ -1856,7 +2191,7 @@
                                                                                 rule: sub_value_list,
                                                                                 span: Span {
                                                                                     str: "cane",
-                                                                                    range: 561..565,
+                                                                                    range: 635..639,
                                                                                 },
                                                                                 inner: [],
                                                                             },
@@ -1864,7 +2199,7 @@
                                                                                 rule: sub_value_list,
                                                                                 span: Span {
                                                                                     str: "3",
-                                                                                    range: 566..567,
+                                                                                    range: 640..641,
                                                                                 },
                                                                                 inner: [],
                                                                             },
@@ -1872,7 +2207,7 @@
                                                                                 rule: sub_value_list,
                                                                                 span: Span {
                                                                                     str: "4",
-                                                                                    range: 569..570,
+                                                                                    range: 643..644,
                                                                                 },
                                                                                 inner: [],
                                                                             },
@@ -1892,28 +2227,28 @@
                                 rule: required_arg,
                                 span: Span {
                                     str: "{geometry}",
-                                    range: 572..582,
+                                    range: 646..656,
                                 },
                                 inner: [
                                     Pair {
                                         rule: argument,
                                         span: Span {
                                             str: "geometry",
-                                            range: 573..581,
+                                            range: 647..655,
                                         },
                                         inner: [
                                             Pair {
                                                 rule: arg_item,
                                                 span: Span {
                                                     str: "geometry",
-                                                    range: 573..581,
+                                                    range: 647..655,
                                                 },
                                                 inner: [
                                                     Pair {
                                                         rule: arg_text,
                                                         span: Span {
                                                             str: "geometry",
-                                                            range: 573..581,
+                                                            range: 647..655,
                                                         },
                                                         inner: [],
                                                     },
@@ -1931,14 +2266,14 @@
                 rule: item,
                 span: Span {
                     str: "\r\n",
-                    range: 582..584,
+                    range: 656..658,
                 },
                 inner: [
                     Pair {
                         rule: newlines,
                         span: Span {
                             str: "\r\n",
-                            range: 582..584,
+                            range: 656..658,
                         },
                         inner: [],
                     },
@@ -1948,21 +2283,21 @@
                 rule: item,
                 span: Span {
                     str: "\\href{https://www.overleaf.com/learn}",
-                    range: 584..621,
+                    range: 658..695,
                 },
                 inner: [
                     Pair {
                         rule: command,
                         span: Span {
                             str: "\\href{https://www.overleaf.com/learn}",
-                            range: 584..621,
+                            range: 658..695,
                         },
                         inner: [
                             Pair {
                                 rule: name,
                                 span: Span {
                                     str: "href",
-                                    range: 585..589,
+                                    range: 659..663,
                                 },
                                 inner: [],
                             },
@@ -1970,28 +2305,28 @@
                                 rule: required_arg,
                                 span: Span {
                                     str: "{https://www.overleaf.com/learn}",
-                                    range: 589..621,
+                                    range: 663..695,
                                 },
                                 inner: [
                                     Pair {
                                         rule: argument,
                                         span: Span {
                                             str: "https://www.overleaf.com/learn",
-                                            range: 590..620,
+                                            range: 664..694,
                                         },
                                         inner: [
                                             Pair {
                                                 rule: arg_item,
                                                 span: Span {
                                                     str: "https://www.overleaf.com/learn",
-                                                    range: 590..620,
+                                                    range: 664..694,
                                                 },
                                                 inner: [
                                                     Pair {
                                                         rule: arg_text,
                                                         span: Span {
                                                             str: "https://www.overleaf.com/learn",
-                                                            range: 590..620,
+                                                            range: 664..694,
                                                         },
                                                         inner: [],
                                                     },
@@ -2009,7 +2344,7 @@
                 rule: EOI,
                 span: Span {
                     str: "",
-                    range: 621..621,
+                    range: 695..695,
                 },
                 inner: [],
             },

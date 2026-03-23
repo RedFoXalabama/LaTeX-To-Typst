@@ -6,7 +6,8 @@ use std::sync::OnceLock;
 mod text_formatting;
 mod text_alignment;
 mod begin_end_controller;
-mod preamble_controller;
+mod package_controller;
+mod space_breaks;
 
 // FUNZIONE PER I COMMAND
 type TranslationFn = fn(name: &str, Vec<RequiredArgNode>, Vec<OptionalArgNode>) -> String;
@@ -21,7 +22,7 @@ fn get_trans_map() -> &'static HashMap<&'static str, TranslationFn> {
     TRANS_MAP.get_or_init(|| {
         let mut m = HashMap::new();
         // PACKAGE HANDLER
-        m.insert("usepackage", preamble_controller::package_handler as TranslationFn);
+        m.insert("usepackage", package_controller::package_handler as TranslationFn);
         // BEGIN HANDLER
         m.insert("begin", begin_end_controller::begin_handler as TranslationFn);
         m.insert("end", begin_end_controller::end_handler as TranslationFn);
@@ -35,7 +36,14 @@ fn get_trans_map() -> &'static HashMap<&'static str, TranslationFn> {
         m.insert("raggedleft", text_alignment::render_document_alignment as TranslationFn);
         m.insert("flushright", text_alignment::render_document_alignment as TranslationFn);
         m.insert("flushleft", text_alignment::render_document_alignment as TranslationFn);
-
+        // SPACE AND BREAKS
+        m.insert("newline", space_breaks::render_space_breaks as TranslationFn);
+        m.insert("break", space_breaks::render_space_breaks as TranslationFn);
+        m.insert("hfill", space_breaks::render_space_breaks as TranslationFn);
+        m.insert("vfill", space_breaks::render_space_breaks as TranslationFn);
+        m.insert("pagebreak", space_breaks::render_space_breaks as TranslationFn);
+        m.insert("newpage", space_breaks::render_space_breaks as TranslationFn);
+        m.insert("clearpage", space_breaks::render_space_breaks as TranslationFn);
         m
     })
 }
@@ -61,7 +69,8 @@ fn render_args_item(seq: &Vec<ArgItemNode>) -> String {
         .map(|item| match item {
             ArgItemNode::Command(cmd) => codegen::render_command(&cmd),
             ArgItemNode::Group(group) => render_args_item(&group.items),
-            ArgItemNode::Newlines(newlines) => "\n".repeat(newlines.count),
+            ArgItemNode::Newlines(newlines) => codegen::render_newlines(&newlines),
+            ArgItemNode::Linebreak(linebreak) => codegen::render_linebreak(&linebreak),
             ArgItemNode::Text(text) => codegen::render_text(&text),
         })
         .collect()

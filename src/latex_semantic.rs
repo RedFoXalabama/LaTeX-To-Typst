@@ -50,7 +50,7 @@ fn build_document(file_pair: Pair<Rule>) -> Result<AstDocument, SemanticError> {
     Ok(AstDocument { items })
 }
 
-// ----------------------------- ITEM = COMMAND | TEXT | NEWLINES ----------------------------------
+// ----------------------------- ITEM = COMMAND | TEXT | NEWLINES | LINEBREAK ----------------------------------
 
 // Un item può essere composto da un comando, un testo o una nuova linea a capo
 // se l'elemento non corrisponde a nessuno di questi elementi, beh cacca addosso -> UnexpectedRule
@@ -65,6 +65,7 @@ fn build_item(pair: Pair<Rule>) -> Result<AstItemNode, SemanticError> {
         Rule::text => Ok(AstItemNode::Text(build_text(child)?)),
         Rule::newlines => Ok(AstItemNode::Newlines(build_newlines(child)?)),
         Rule::command => Ok(AstItemNode::Command(build_command(child)?)),
+        Rule::linebreak => Ok(AstItemNode::Linebreak(build_linebreak(child)?)), // trattiamo i linebreak come newlines, visto che rappresentano un andare a capo
         other => Err(SemanticError::UnexpectedRule(other)),
     }
 }
@@ -89,6 +90,14 @@ fn build_newlines(pair: Pair<Rule>) -> Result<NewlinesNode, SemanticError> {
         return Err(SemanticError::InvalidNewlineCount);
     }
     Ok(NewlinesNode { count })
+}
+
+fn build_linebreak(pair: Pair<Rule>) -> Result<LinebreakNode, SemanticError> {
+    let value = pair.as_str().to_string();
+    if value != "\\\\" {
+        return Err(SemanticError::InvalidLinebreakValue);
+    }
+    Ok(LinebreakNode { value })
 }
 
 // Una comando é composto da un nome (che segue il \) e da una serie di argomenti opzionali (racchiusi tra []) e argomenti obbligatori (racchiusi tra {})
@@ -159,6 +168,7 @@ fn build_arg_item(pair: Pair<Rule>) -> Result<ArgItemNode, SemanticError> {
         Rule::command => Ok(ArgItemNode::Command(build_command(child)?)),
         Rule::required_arg => Ok(ArgItemNode::Group(build_required_arg(child)?)),
         Rule::newlines => Ok(ArgItemNode::Newlines(build_newlines(child)?)),
+        Rule::linebreak => Ok(ArgItemNode::Linebreak(build_linebreak(child)?)),
         Rule::arg_text => Ok(ArgItemNode::Text(build_text(child)?)), //usiamo la stessa regola per buildare il testo
         other => Err(SemanticError::UnexpectedArgItemRule(other)),
     }

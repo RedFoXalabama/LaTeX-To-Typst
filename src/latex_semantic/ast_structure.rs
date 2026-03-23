@@ -13,6 +13,7 @@ pub struct AstDocument{
 pub enum AstItemNode{
     Text(TextNode), // rule: text
     Newlines(NewlinesNode), // rule: newlines,
+    Linebreak(LinebreakNode), // rule: linebreak
     Command(CommandNode) // rule: command
 }
 
@@ -27,6 +28,12 @@ pub struct TextNode{
 pub struct NewlinesNode {
     // utile se vuoi distinguere "\n" da "\n\n"
     pub count: usize,
+}
+
+// Linebreak raccoglie le \\ che vengono rappresentate con \\\\
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct LinebreakNode {
+    pub value: String
 }
 
 // CommandNode rappresenta i comandi di LaTeX, con il loro nome e i loro argomenti (opzionali e obbligatori).
@@ -51,6 +58,7 @@ pub enum ArgItemNode {
     Command(CommandNode),      // rule: command
     Group(RequiredArgNode),    // rule: required_arg annidato
     Newlines(NewlinesNode),      // rule: newlines
+    Linebreak(LinebreakNode),  // rule: linebreak
     Text(TextNode),            // rule: arg_text
 }
 
@@ -109,6 +117,7 @@ pub enum SemanticError {
     MissingValueInKvPair,
     EmptyTextValue,
     InvalidNewlineCount,
+    InvalidLinebreakValue,
     UnexpectedItemRule(Rule),
     UnexpectedArgItemRule(Rule),
     UnexpectedOptItemRule(Rule),

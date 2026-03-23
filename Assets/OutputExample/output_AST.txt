@@ -405,6 +405,100 @@ AstDocument {
                 count: 2,
             },
         ),
+        Linebreak(
+            LinebreakNode {
+                value: "\\\\",
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Command(
+            CommandNode {
+                name: "newline",
+                optional_args: [],
+                required_args: [],
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Command(
+            CommandNode {
+                name: "break",
+                optional_args: [],
+                required_args: [],
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Command(
+            CommandNode {
+                name: "hfill",
+                optional_args: [],
+                required_args: [],
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Command(
+            CommandNode {
+                name: "vfill",
+                optional_args: [],
+                required_args: [],
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Command(
+            CommandNode {
+                name: "pagebreak",
+                optional_args: [],
+                required_args: [],
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Command(
+            CommandNode {
+                name: "newpage",
+                optional_args: [],
+                required_args: [],
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Command(
+            CommandNode {
+                name: "clearpage",
+                optional_args: [],
+                required_args: [],
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 2,
+            },
+        ),
         Text(
             TextNode {
                 value: "Ciao ",

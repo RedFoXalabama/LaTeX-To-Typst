@@ -1,3 +1,11 @@
+﻿#set page(paper: "a4")
+#set heading(numbering: "1.")
+#set math.equation(numbering: "(1)")
+#set par(
+  first-line-indent: 1em, // Rientro di un carattere
+  leading: 0.65em,        // Interlinea
+  spacing: 1.2em,         // Spazio tra paragrafi
+)
 prova-tra parentesi graffe-
 *Bold*
 _italic_
@@ -16,6 +24,15 @@ _italic_
 #align(right)[ flushright block ]
 #align(left)[ FlushLeft block ]
 #align(right)[ FlushRight block ]
+
+\
+\
+\
+#h(1fr)
+#v(1fr)
+#pagebreak()
+#pagebreak()
+#pagebreak()
 
 Ciao *RENDER-ERROR*
 

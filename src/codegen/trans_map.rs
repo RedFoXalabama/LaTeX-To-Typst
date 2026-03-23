@@ -30,6 +30,7 @@ fn get_trans_map() -> &'static HashMap<&'static str, TranslationFn> {
         m.insert("textbf", text_formatting::render_formatting as TranslationFn);
         m.insert("textit", text_formatting::render_formatting as TranslationFn);
         m.insert("underline", text_formatting::render_formatting as TranslationFn);
+        m.insert("textcolor", text_formatting::render_textcolor as TranslationFn);
         // TEXT ALIGNMENT
         m.insert("centering", text_alignment::render_document_alignment as TranslationFn);
         m.insert("raggedright", text_alignment::render_document_alignment as TranslationFn);

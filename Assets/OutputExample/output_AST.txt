@@ -733,5 +733,58 @@ AstDocument {
                 ],
             },
         ),
+        Newlines(
+            NewlinesNode {
+                count: 2,
+            },
+        ),
+        Command(
+            CommandNode {
+                name: "textcolor",
+                optional_args: [],
+                required_args: [
+                    RequiredArgNode {
+                        items: [
+                            Text(
+                                TextNode {
+                                    value: "blue",
+                                },
+                            ),
+                        ],
+                    },
+                    RequiredArgNode {
+                        items: [
+                            Text(
+                                TextNode {
+                                    value: "This is ",
+                                },
+                            ),
+                            Command(
+                                CommandNode {
+                                    name: "textbf",
+                                    optional_args: [],
+                                    required_args: [
+                                        RequiredArgNode {
+                                            items: [
+                                                Text(
+                                                    TextNode {
+                                                        value: "bold and blue",
+                                                    },
+                                                ),
+                                            ],
+                                        },
+                                    ],
+                                },
+                            ),
+                            Text(
+                                TextNode {
+                                    value: ".",
+                                },
+                            ),
+                        ],
+                    },
+                ],
+            },
+        ),
     ],
 }

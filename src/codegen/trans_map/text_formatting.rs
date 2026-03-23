@@ -20,6 +20,19 @@ pub fn render_formatting(name: &str, reqs: Vec<RequiredArgNode>, opts: Vec<Optio
     out
 }
 
+pub fn render_textcolor(name: &str, reqs: Vec<RequiredArgNode>, opts: Vec<OptionalArgNode>) -> String {
+    let mut out = String::new();
+    if reqs.len() >= 2 {
+        let color_arg = &reqs[0];
+        let text_arg = &reqs[1];
+        out.push_str(&format!("#text({})[{}]", render_args_item(&color_arg.items), render_args_item(&text_arg.items)));
+    }
+
+    // metto in coda gli altri elementi in modo che rispetti l'ordine dell'input
+    out.push_str(&out_of_bounds_reqs_arg(&reqs, 2));
+    out
+}
+
 // ------------------------------ SINGOLE FUNZIONI -------------------------------------------------
 // DEAD CODE
 pub fn render_bold(name: &str, reqs: Vec<RequiredArgNode>, opts: Vec<OptionalArgNode>) -> String {

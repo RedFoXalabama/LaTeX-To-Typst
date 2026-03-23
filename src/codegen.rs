@@ -52,7 +52,8 @@ fn render_command(command_node: &CommandNode) -> String {
 fn add_header(body: String, header: &str) -> String {
     let mut out = String::new();
     out.push_str(header);
-    if !header.ends_with('\n') { // aggiungo una linea per separare
+    if !header.ends_with('\n') {
+        // aggiungo una linea per separare
         out.push('\n');
     }
     out.push_str(&body);

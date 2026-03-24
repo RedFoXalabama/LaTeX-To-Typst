@@ -13,6 +13,8 @@ pub fn render_formatting(name: &str, reqs: Vec<RequiredArgNode>, opts: Vec<Optio
             "underline" => out.push_str(&format!("#underline[{}]", render_args_item(&first.items))),
             _ => out.push_str("RENDER-ERROR"),
         }
+    } else {
+        
     }
 
     // metto in coda gli altri elementi in modo che rispetti l'ordine dell'input

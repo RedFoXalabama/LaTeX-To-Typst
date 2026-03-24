@@ -105,6 +105,23 @@ AstDocument {
             CommandNode {
                 name: "textbf",
                 optional_args: [],
+                required_args: [],
+            },
+        ),
+        Text(
+            TextNode {
+                value: "{",
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Command(
+            CommandNode {
+                name: "textbf",
+                optional_args: [],
                 required_args: [
                     RequiredArgNode {
                         items: [
@@ -587,7 +604,541 @@ AstDocument {
         ),
         Newlines(
             NewlinesNode {
-                count: 3,
+                count: 2,
+            },
+        ),
+        Command(
+            CommandNode {
+                name: "begin",
+                optional_args: [],
+                required_args: [
+                    RequiredArgNode {
+                        items: [
+                            Text(
+                                TextNode {
+                                    value: "itemize",
+                                },
+                            ),
+                        ],
+                    },
+                ],
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Text(
+            TextNode {
+                value: "    ",
+            },
+        ),
+        Command(
+            CommandNode {
+                name: "item",
+                optional_args: [
+                    OptionalArgNode {
+                        entries: [
+                            Items(
+                                [
+                                    Text(
+                                        TextNode {
+                                            value: "!",
+                                        },
+                                    ),
+                                ],
+                            ),
+                        ],
+                    },
+                ],
+                required_args: [],
+            },
+        ),
+        Text(
+            TextNode {
+                value: " itemize 1",
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Text(
+            TextNode {
+                value: "    ",
+            },
+        ),
+        Command(
+            CommandNode {
+                name: "item",
+                optional_args: [],
+                required_args: [],
+            },
+        ),
+        Text(
+            TextNode {
+                value: " ",
+            },
+        ),
+        Command(
+            CommandNode {
+                name: "begin",
+                optional_args: [],
+                required_args: [
+                    RequiredArgNode {
+                        items: [
+                            Text(
+                                TextNode {
+                                    value: "enumerate",
+                                },
+                            ),
+                        ],
+                    },
+                ],
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Text(
+            TextNode {
+                value: "              ",
+            },
+        ),
+        Command(
+            CommandNode {
+                name: "item",
+                optional_args: [],
+                required_args: [],
+            },
+        ),
+        Text(
+            TextNode {
+                value: " enumerate 1",
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Text(
+            TextNode {
+                value: "              ",
+            },
+        ),
+        Command(
+            CommandNode {
+                name: "item",
+                optional_args: [],
+                required_args: [],
+            },
+        ),
+        Text(
+            TextNode {
+                value: " ",
+            },
+        ),
+        Command(
+            CommandNode {
+                name: "begin",
+                optional_args: [],
+                required_args: [
+                    RequiredArgNode {
+                        items: [
+                            Text(
+                                TextNode {
+                                    value: "itemize",
+                                },
+                            ),
+                        ],
+                    },
+                ],
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Text(
+            TextNode {
+                value: "                        ",
+            },
+        ),
+        Command(
+            CommandNode {
+                name: "item",
+                optional_args: [],
+                required_args: [],
+            },
+        ),
+        Text(
+            TextNode {
+                value: " itemize 3",
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Text(
+            TextNode {
+                value: "                        ",
+            },
+        ),
+        Command(
+            CommandNode {
+                name: "item",
+                optional_args: [],
+                required_args: [],
+            },
+        ),
+        Text(
+            TextNode {
+                value: " ",
+            },
+        ),
+        Command(
+            CommandNode {
+                name: "begin",
+                optional_args: [],
+                required_args: [
+                    RequiredArgNode {
+                        items: [
+                            Text(
+                                TextNode {
+                                    value: "enumerate",
+                                },
+                            ),
+                        ],
+                    },
+                ],
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Text(
+            TextNode {
+                value: "                                  ",
+            },
+        ),
+        Command(
+            CommandNode {
+                name: "item",
+                optional_args: [],
+                required_args: [],
+            },
+        ),
+        Text(
+            TextNode {
+                value: " enum 2",
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Text(
+            TextNode {
+                value: "                                  ",
+            },
+        ),
+        Command(
+            CommandNode {
+                name: "item",
+                optional_args: [],
+                required_args: [],
+            },
+        ),
+        Text(
+            TextNode {
+                value: " ",
+            },
+        ),
+        Command(
+            CommandNode {
+                name: "begin",
+                optional_args: [],
+                required_args: [
+                    RequiredArgNode {
+                        items: [
+                            Text(
+                                TextNode {
+                                    value: "enumerate",
+                                },
+                            ),
+                        ],
+                    },
+                ],
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Text(
+            TextNode {
+                value: "                                            ",
+            },
+        ),
+        Command(
+            CommandNode {
+                name: "item",
+                optional_args: [],
+                required_args: [],
+            },
+        ),
+        Text(
+            TextNode {
+                value: " enum 3",
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Text(
+            TextNode {
+                value: "                                  ",
+            },
+        ),
+        Command(
+            CommandNode {
+                name: "end",
+                optional_args: [],
+                required_args: [
+                    RequiredArgNode {
+                        items: [
+                            Text(
+                                TextNode {
+                                    value: "enumerate",
+                                },
+                            ),
+                        ],
+                    },
+                ],
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Text(
+            TextNode {
+                value: "                        ",
+            },
+        ),
+        Command(
+            CommandNode {
+                name: "end",
+                optional_args: [],
+                required_args: [
+                    RequiredArgNode {
+                        items: [
+                            Text(
+                                TextNode {
+                                    value: "enumerate",
+                                },
+                            ),
+                        ],
+                    },
+                ],
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Text(
+            TextNode {
+                value: "              ",
+            },
+        ),
+        Command(
+            CommandNode {
+                name: "end",
+                optional_args: [],
+                required_args: [
+                    RequiredArgNode {
+                        items: [
+                            Text(
+                                TextNode {
+                                    value: "itemize",
+                                },
+                            ),
+                        ],
+                    },
+                ],
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Text(
+            TextNode {
+                value: "    ",
+            },
+        ),
+        Command(
+            CommandNode {
+                name: "end",
+                optional_args: [],
+                required_args: [
+                    RequiredArgNode {
+                        items: [
+                            Text(
+                                TextNode {
+                                    value: "enumerate",
+                                },
+                            ),
+                        ],
+                    },
+                ],
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Text(
+            TextNode {
+                value: "    ",
+            },
+        ),
+        Command(
+            CommandNode {
+                name: "item",
+                optional_args: [],
+                required_args: [],
+            },
+        ),
+        Text(
+            TextNode {
+                value: " itemize 2",
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Command(
+            CommandNode {
+                name: "end",
+                optional_args: [],
+                required_args: [
+                    RequiredArgNode {
+                        items: [
+                            Text(
+                                TextNode {
+                                    value: "itemize",
+                                },
+                            ),
+                        ],
+                    },
+                ],
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Command(
+            CommandNode {
+                name: "begin",
+                optional_args: [],
+                required_args: [
+                    RequiredArgNode {
+                        items: [
+                            Text(
+                                TextNode {
+                                    value: "description",
+                                },
+                            ),
+                        ],
+                    },
+                ],
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Text(
+            TextNode {
+                value: "    ",
+            },
+        ),
+        Command(
+            CommandNode {
+                name: "item",
+                optional_args: [
+                    OptionalArgNode {
+                        entries: [
+                            Items(
+                                [
+                                    Text(
+                                        TextNode {
+                                            value: "description 1",
+                                        },
+                                    ),
+                                ],
+                            ),
+                        ],
+                    },
+                ],
+                required_args: [],
+            },
+        ),
+        Text(
+            TextNode {
+                value: " description text 1",
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Command(
+            CommandNode {
+                name: "end",
+                optional_args: [],
+                required_args: [
+                    RequiredArgNode {
+                        items: [
+                            Text(
+                                TextNode {
+                                    value: "description",
+                                },
+                            ),
+                        ],
+                    },
+                ],
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 2,
             },
         ),
         Text(

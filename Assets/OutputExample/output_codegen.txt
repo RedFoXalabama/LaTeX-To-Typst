@@ -14,6 +14,7 @@ testo pre commento // prova commento monolinea
     Questo é un commento multilinea
 */
 
+
 *Bold*
 _italic_
 #underline[underline]
@@ -41,6 +42,19 @@ _italic_
 #pagebreak()
 #pagebreak()
 
+    
+- [!] itemize 1    
+-               
+	+ enumerate 1              
+	+                         
+		- itemize 3                        
+		-                                   
+			+ enum 2                                  
+			+                                             
+				+ enum 3                                                                                
+- itemize 2
+    
+/ description 1: description text 1
 
 Ciao *RENDER-ERROR*
 

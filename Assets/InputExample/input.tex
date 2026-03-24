@@ -6,6 +6,7 @@ testo pre commento % prova commento monolinea
     Questo é un commento multilinea
 \end{comment}
 
+\textbf{
 \textbf{Bold}
 \textit{italic}
 \underline{underline}
@@ -33,6 +34,25 @@ testo pre commento % prova commento monolinea
 \newpage
 \clearpage
 
+\begin{itemize}
+    \item[!] itemize 1
+    \item \begin{enumerate}
+              \item enumerate 1
+              \item \begin{itemize}
+                        \item itemize 3
+                        \item \begin{enumerate}
+                                  \item enum 2
+                                  \item \begin{enumerate}
+                                            \item enum 3
+                                  \end{enumerate}
+                        \end{enumerate}
+              \end{itemize}
+    \end{enumerate}
+    \item itemize 2
+\end{itemize}
+\begin{description}
+    \item[description 1] description text 1
+\end{description}
 
 Ciao \textbf{\title[opt1 \textbf{opt2}]{Mondo}}
 

@@ -298,7 +298,7 @@ fn build_opt_item(pair: Pair<Rule>) -> Result<OptItemNode, SemanticError> {
     match child.as_rule() {
         Rule::command => Ok(OptItemNode::Command(build_command(child)?)),
         Rule::required_arg => Ok(OptItemNode::Group(build_required_arg(child)?)),
-        Rule::newlines => Ok(OptItemNode::Newline(build_newlines(child)?)),
+        Rule::newlines => Ok(OptItemNode::Newlines(build_newlines(child)?)),
         Rule::opt_text => Ok(OptItemNode::Text(build_text(child)?)), // usiamo la stessa funzione per buildare tanto é sempre testo
         other => Err(SemanticError::UnexpectedOptItemRule(other)),
     }

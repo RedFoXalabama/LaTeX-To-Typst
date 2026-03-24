@@ -106,7 +106,7 @@ pub enum OptValueNode {
 pub enum OptItemNode {
     Command(CommandNode),      // rule: command
     Group(RequiredArgNode),    // rule: required_arg
-    Newline(NewlinesNode),      // rule: newlines
+    Newlines(NewlinesNode),      // rule: newlines
     Text(TextNode),            // rule: opt_text
 }
 

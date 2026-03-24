@@ -1,13 +1,15 @@
 ﻿use crate::codegen;
-use crate::latex_semantic::{ArgItemNode, CommandNode, OptionalArgNode, RequiredArgNode};
+use crate::latex_semantic::{ArgItemNode, CommandNode, KvPairNode, OptItemNode, OptValueNode, OptionalArgNode, OptionalEntryNode, RequiredArgNode};
 use std::collections::HashMap;
 use std::sync::OnceLock;
+use crate::latex_parser::Rule::kv_pair;
 
 mod text_formatting;
 mod text_alignment;
 mod begin_end_controller;
 mod package_controller;
 mod space_breaks;
+mod text_listing;
 
 // FUNZIONE PER I COMMAND
 type TranslationFn = fn(name: &str, Vec<RequiredArgNode>, Vec<OptionalArgNode>) -> String;
@@ -45,6 +47,8 @@ fn get_trans_map() -> &'static HashMap<&'static str, TranslationFn> {
         m.insert("pagebreak", space_breaks::render_space_breaks as TranslationFn);
         m.insert("newpage", space_breaks::render_space_breaks as TranslationFn);
         m.insert("clearpage", space_breaks::render_space_breaks as TranslationFn);
+        // LISTING
+        m.insert("item", text_listing::render_list as TranslationFn);
         m
     })
 }
@@ -55,7 +59,7 @@ pub fn translate_command(command: &CommandNode) -> Option<String> {
         .map(|f| f(&*command.name, command.required_args.clone(), command.optional_args.clone()))
 }
 
-// -------------------------------------------------------------------------------------------------
+// ------------------------------------ ARGUMENT RENDERING------------------------------------------
 
 fn out_of_bounds_reqs_arg(reqs: &[RequiredArgNode], start: usize) -> String {
     let mut extra = String::new();
@@ -77,4 +81,35 @@ fn render_args_item(seq: &Vec<ArgItemNode>) -> String {
         .collect()
 }
 
+fn render_opt_entry(seq: &Vec<OptionalEntryNode>) -> String {
+    seq.into_iter()
+        .map(|item| match item {
+            OptionalEntryNode::KeyValue(kvPair) => render_kv_pair(&kvPair),
+            OptionalEntryNode::Items(items) => render_opt_items(&items),
+    })
+    .collect()
+}
 
+fn render_kv_pair(kvPair: &KvPairNode) -> String {
+    let mut out = String::new();
+    out.push_str(&format!("{}={}", kvPair.key, render_kv_value(&kvPair.value)));
+    out
+}
+
+fn render_kv_value(value: &OptValueNode) -> String {
+    match value {
+        OptValueNode::Simple(s) => s.clone(),
+        OptValueNode::List(lst) => lst.join(","),
+    }
+}
+
+fn render_opt_items(items: &Vec<OptItemNode>) -> String {
+    items.into_iter()
+        .map(|item| match item {
+            OptItemNode::Command(cmd) => codegen::render_command(&cmd),
+            OptItemNode::Group(group) => render_args_item(&group.items),
+            OptItemNode::Newlines(newlines) => codegen::render_newlines(&newlines),
+            OptItemNode::Text(text) => codegen::render_text(&text),
+        })
+        .collect()
+}

@@ -9,6 +9,7 @@ comment = { ("%" ~ (!NEWLINE ~ ANY)*) }
 text = { (!("\\" | NEWLINE | comment) ~ ANY)+ }
 
 command = { "\\" ~ name ~ optional_arg* ~ required_arg* }
+textbf = { "\\textbf" ~ optional_arg* ~ required_arg* }
 name = { ASCII_ALPHA+ }
 
 required_arg = { "{" ~ argument ~ "}" }
@@ -33,3 +34,6 @@ opt_text = { (!("\\" | "[" | "]" | NEWLINE) ~ ANY)+ }
 // Da utilizzare se assumiamo che ci siano errori nel file di latex, altrimenti non è necessario escludere questi
 // caratteri nei vari argomenti, dato che la sintassi di LaTeX prevede che siano usati in modo specifico e non come testo normale.
 forbidden_char = { "\\" | "{" | "}" | "[" | "]"  | "," | "=" | WHITE_SPACE}
+
+// ------------------------------
+

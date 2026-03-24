@@ -4,6 +4,7 @@ mod codegen;
 mod latex_parser;
 mod latex_semantic;
 mod utils;
+mod globals;
 
 // IMPOSTO PATH PER IL SALVATAGGIO DEGLI OUTPUT INTERMEDI
 static INPUT_PATH: &str = "Assets/InputExample/input.tex";

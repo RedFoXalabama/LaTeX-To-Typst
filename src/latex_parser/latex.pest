@@ -9,9 +9,9 @@ comment = { ("%" ~ (!NEWLINE ~ ANY)*) }
 text = { (!("\\" | NEWLINE | comment) ~ ANY)+ }
 
 command = { "\\" ~ name ~ optional_arg* ~ required_arg* }
-textbf = { "\\textbf" ~ optional_arg* ~ required_arg* }
 name = { ASCII_ALPHA+ }
-
+//mono_arg = { !(ASCII_ALPHA*) ~ ANY+ }
+//required_arg = {(WHITE_SPACE* ~ mono_arg) | ("{" ~ argument ~ "}") }
 required_arg = { "{" ~ argument ~ "}" }
 argument = { arg_item* } //se si vuole avere un req_arg vuoto impostare -> * invece che +, con + almeno 1 arg
 arg_item = { command | required_arg | newlines | linebreak | arg_text }

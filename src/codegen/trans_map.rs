@@ -49,7 +49,7 @@ fn get_trans_map() -> &'static HashMap<&'static str, TranslationFn> {
         m.insert("clearpage", space_breaks::render_space_breaks as TranslationFn);
         // LISTING
         m.insert("item", text_listing::render_list as TranslationFn);
-        // SECTION AND CHAPTER
+        // SECTION CHAPTER TITLE
         m.insert("part", sections_chapter::render_section_chapter as TranslationFn);
         m.insert("chapter", sections_chapter::render_section_chapter as TranslationFn);
         m.insert("section", sections_chapter::render_section_chapter as TranslationFn);
@@ -57,7 +57,12 @@ fn get_trans_map() -> &'static HashMap<&'static str, TranslationFn> {
         m.insert("subsubsection", sections_chapter::render_section_chapter as TranslationFn);
         m.insert("paragraph", sections_chapter::render_section_chapter as TranslationFn);
         m.insert("subparagraph", sections_chapter::render_section_chapter as TranslationFn);
-        
+        m.insert("title", sections_chapter::render_info_document as TranslationFn);
+        m.insert("maketitle", sections_chapter::render_info_document as TranslationFn);
+        m.insert("author", sections_chapter::render_info_document as TranslationFn);
+        m.insert("date", sections_chapter::render_info_document as TranslationFn);
+        m.insert("today", sections_chapter::render_info_document as TranslationFn);
+
         m
     })
 }

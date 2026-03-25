@@ -6,6 +6,19 @@
   leading: 0.65em,        // Interlinea
   spacing: 1.2em,         // Spazio tra paragrafi
 )
+#let title = [LaTeX To Typst]
+#set document(title: title)
+#align(center)[
+#text(2em, weight: "bold")[#title]
+]
+#let author = "Gianfranco e Vito"
+#set document(author: author)
+#let date = datetime.today()
+#set document(date: date)
+#let date = datetime(day: 25, month: 06, year: 2002)
+#set document(date: date)
+
+
 prova-tra parentesi graffe-
 
 testo pre commento // prova commento monolinea
@@ -85,9 +98,9 @@ _italic_
 ====== subparagraph
 
 
-Ciao *RENDER-ERROR*
+Ciao *#let title = [Mondo]*
 
-RENDER-ERROR
-RENDER-ERROR
+RENDER-ERROR = usepackage
+NOT IMPLEMENTED COMMAND RENDER-ERROR
 
 #text(blue)[This is *bold and blue*.]

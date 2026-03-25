@@ -23,3 +23,45 @@ pub fn render_section_chapter(name: &str, reqs: Vec<RequiredArgNode>, _opts: Vec
     out
 }
 
+pub fn render_info_document(name: &str, reqs: Vec<RequiredArgNode>, _opts: Vec<OptionalArgNode>) -> String {
+    let mut out = String::new();
+    match name {
+        "title" => out.push_str(format!("#let title = [{}]", render_args_item(&reqs[0].items)).as_str()),
+        "maketitle" => out.push_str("#set document(title: title)\n#align(center)[\n#text(2em, weight: \"bold\")[#title]\n]"),
+
+        "author" => out.push_str(format!("#let author = \"{}\"\n#set document(author: author)" , render_args_item(&reqs[0].items)).as_str()),
+        "date" => out.push_str(&format!("#let date = {}\n#set document(date: date)", render_daytime(render_args_item(&reqs[0].items)))),
+        "today" => out.push_str("datetime.today()"),
+        "maketitle" => todo!(),
+        "tableofcontents" => todo!(),
+
+        _ => out.push_str(format!("RENDER-ERROR = {}", name).as_str()),
+    }
+
+    out.push_str(&out_of_bounds_reqs_arg(&reqs, 1));
+    out
+}
+
+fn render_daytime(date: String) -> String {
+    if date == "datetime.today()" {
+        return date
+    }
+
+    // let accepted = vec![
+    //     "03/31/2014",
+    // ];
+    // for date_str in accepted {
+    //     let result = date_str.parse::<DateTimeUtc>();
+    //     print!("Parsing date string '{:?}': ", result);
+    //     assert!(result.is_ok())
+    // }
+
+    let mut parts = date.split('/');
+
+    let part1 = parts.next().unwrap_or_default().to_string();
+    let part2 = parts.next().unwrap_or_default().to_string();
+    let part3 = parts.next().unwrap_or_default().to_string();
+
+    format!("datetime(day: {}, month: {}, year: {})", part1, part2, part3)
+
+}

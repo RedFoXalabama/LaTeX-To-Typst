@@ -56,6 +56,36 @@ _italic_
     
 / description 1: description text 1
 
+
+#v(2em)
+#align(center)[
+#text(1.2em)[Part I]
+#v(0.5em)
+#text(2em, weight: "bold")[part 1]
+]
+#v(2em)
+
+#v(2em)
+#align(center)[
+#text(1.2em)[Part II]
+#v(0.5em)
+#text(2em, weight: "bold")[part 2]
+]
+#v(2em)
+
+= chapter
+
+== section
+
+=== subsection
+
+==== subsubsection
+
+===== paragraph
+
+====== subparagraph
+
+
 Ciao *RENDER-ERROR*
 
 RENDER-ERROR

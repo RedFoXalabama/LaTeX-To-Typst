@@ -1,5 +1,5 @@
 ﻿// Il comando \\ é gestito tramite la grammatica che lo considera una regola Linebreak e non command e lo gestisce con la sua funzione
-use crate::codegen::trans_map::{out_of_bounds_reqs_arg, render_args_item};
+use crate::codegen::trans_map::{out_of_bounds_reqs_arg};
 use crate::latex_semantic::{OptionalArgNode, RequiredArgNode};
 
 pub fn render_space_breaks(name: &str, reqs: Vec<RequiredArgNode>, opts: Vec<OptionalArgNode>) -> String {

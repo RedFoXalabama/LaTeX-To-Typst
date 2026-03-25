@@ -10,6 +10,7 @@ mod begin_end_controller;
 mod package_controller;
 mod space_breaks;
 mod text_listing;
+mod sections_chapter;
 
 // FUNZIONE PER I COMMAND
 type TranslationFn = fn(name: &str, Vec<RequiredArgNode>, Vec<OptionalArgNode>) -> String;
@@ -49,6 +50,15 @@ fn get_trans_map() -> &'static HashMap<&'static str, TranslationFn> {
         m.insert("clearpage", space_breaks::render_space_breaks as TranslationFn);
         // LISTING
         m.insert("item", text_listing::render_list as TranslationFn);
+        // SECTION AND CHAPTER
+        m.insert("part", sections_chapter::render_section_chapter as TranslationFn);
+        m.insert("chapter", sections_chapter::render_section_chapter as TranslationFn);
+        m.insert("section", sections_chapter::render_section_chapter as TranslationFn);
+        m.insert("subsection", sections_chapter::render_section_chapter as TranslationFn);
+        m.insert("subsubsection", sections_chapter::render_section_chapter as TranslationFn);
+        m.insert("paragraph", sections_chapter::render_section_chapter as TranslationFn);
+        m.insert("subparagraph", sections_chapter::render_section_chapter as TranslationFn);
+        
         m
     })
 }

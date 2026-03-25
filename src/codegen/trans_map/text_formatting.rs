@@ -18,7 +18,7 @@ pub fn render_formatting(name: &str, reqs: Vec<RequiredArgNode>, opts: Vec<Optio
     }
 
     // metto in coda gli altri elementi in modo che rispetti l'ordine dell'input
-    out.push_str(&out_of_bounds_reqs_arg(&reqs, 1));
+    
     out
 }
 

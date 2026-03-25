@@ -9,7 +9,7 @@ pub fn render_space_breaks(name: &str, reqs: Vec<RequiredArgNode>, _opts: Vec<Op
         "hfill" => out.push_str("#h(1fr)"),
         "vfill" => out.push_str("#v(1fr)"),
         "pagebreak" | "newpage" | "clearpage" => out.push_str("#pagebreak()"),
-        _ => out.push_str("RENDER-ERROR"),
+        _ => out.push_str(format!("RENDER-ERROR = {}", name).as_str()),
     }
 
     // metto in coda gli altri elementi in modo che rispetti l'ordine dell'input

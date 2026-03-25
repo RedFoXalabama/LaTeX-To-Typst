@@ -17,8 +17,9 @@ pub fn render_section_chapter(name: &str, reqs: Vec<RequiredArgNode>, _opts: Vec
         "subparagraph" => out.push_str(format!("====== {}\n", render_args_item(&reqs[0].items)).as_str()),
 
 
-        _ => out.push_str("RENDER-ERROR"),
+        _ => out.push_str(format!("RENDER-ERROR = {}", name).as_str()),
     }
     out.push_str(&out_of_bounds_reqs_arg(&reqs, 1));
     out
 }
+

@@ -2,7 +2,7 @@
 use crate::latex_semantic::{OptionalArgNode, RequiredArgNode};
 
 //---------------------------------------- PACKAGE HANDLER -----------------------------------------
-pub fn package_handler(_name: &str, reqs: Vec<RequiredArgNode>, _opts: Vec<OptionalArgNode>) -> String {
+pub fn package_handler(name: &str, reqs: Vec<RequiredArgNode>, _opts: Vec<OptionalArgNode>) -> String {
     let mut out = String::new();
     if let Some(first) = reqs.first() {
         let req_arg = render_args_item(&first.items);
@@ -12,7 +12,7 @@ pub fn package_handler(_name: &str, reqs: Vec<RequiredArgNode>, _opts: Vec<Optio
 
             "verbatim" => out.push_str("/* usepackage{verbatim} */"),
 
-            _ => out.push_str("RENDER-ERROR"),
+            _ => out.push_str(format!("RENDER-ERROR = {}", name).as_str()),
         }
     }
     out.push_str(&out_of_bounds_reqs_arg(&reqs, 1));

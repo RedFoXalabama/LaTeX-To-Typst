@@ -2,7 +2,7 @@
 use crate::globals::{add_in_listing_priority, pop_in_listing_priority, ListType};
 use crate::latex_semantic::{OptionalArgNode, RequiredArgNode};
 
-pub fn begin_handler(_name: &str, reqs: Vec<RequiredArgNode>, _opts: Vec<OptionalArgNode>) -> String {
+pub fn begin_handler(name: &str, reqs: Vec<RequiredArgNode>, _opts: Vec<OptionalArgNode>) -> String {
     let mut out = String::new();
     if let Some(first) = reqs.first() {
         let req_arg = render_args_item(&first.items);
@@ -20,7 +20,7 @@ pub fn begin_handler(_name: &str, reqs: Vec<RequiredArgNode>, _opts: Vec<Optiona
             "enumerate" => { add_in_listing_priority(ListType::Enumerate); }
             "description" => { add_in_listing_priority(ListType::Description); }
             
-            _ => out.push_str("RENDER-ERROR"),
+            _ => out.push_str(format!("RENDER-ERROR = {}", name).as_str()),
         }
     }
 
@@ -29,7 +29,7 @@ pub fn begin_handler(_name: &str, reqs: Vec<RequiredArgNode>, _opts: Vec<Optiona
     out
 }
 
-pub fn end_handler(_name: &str, reqs: Vec<RequiredArgNode>, _opts: Vec<OptionalArgNode>) -> String {
+pub fn end_handler(name: &str, reqs: Vec<RequiredArgNode>, _opts: Vec<OptionalArgNode>) -> String {
     let mut out = String::new();
     if let Some(first) = reqs.first() {
         let req_arg = render_args_item(&first.items);
@@ -46,7 +46,7 @@ pub fn end_handler(_name: &str, reqs: Vec<RequiredArgNode>, _opts: Vec<OptionalA
             // il value bool per controllare in_listing é modificato solo se la lista priorità é vuota
             "itemize" | "enumerate" | "description" => { pop_in_listing_priority(); },
             
-            _ => out.push_str("RENDER-ERROR"),
+            _ => out.push_str(format!("RENDER-ERROR = {}", name).as_str()),
         }
     }
 

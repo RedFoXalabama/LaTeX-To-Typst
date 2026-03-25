@@ -50,7 +50,7 @@ fn render_command(command_node: &CommandNode) -> String {
     if let Some(rendered) = trans_map::translate_command(command_node) {
         rendered
     } else {
-        "RENDER-ERROR".to_string()
+        "NOT IMPLEMENTED COMMAND RENDER-ERROR".to_string()
     }
 }
 

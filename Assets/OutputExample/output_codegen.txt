@@ -14,7 +14,6 @@ testo pre commento // prova commento monolinea
     Questo é un commento multilinea
 */
 
-
 *Bold*
 _italic_
 #underline[underline]

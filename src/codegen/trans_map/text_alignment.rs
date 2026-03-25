@@ -1,7 +1,7 @@
-﻿use crate::codegen::trans_map::{out_of_bounds_reqs_arg, render_args_item};
+﻿use crate::codegen::trans_map::{out_of_bounds_reqs_arg};
 use crate::latex_semantic::{OptionalArgNode, RequiredArgNode};
 
-pub fn render_document_alignment(name: &str, reqs: Vec<RequiredArgNode>, opts: Vec<OptionalArgNode>) -> String {
+pub fn render_document_alignment(name: &str, reqs: Vec<RequiredArgNode>, _opts: Vec<OptionalArgNode>) -> String {
     let mut out = String::new();
     match name {
         "centering" | "Centering" => out.push_str("#set align(center);"),

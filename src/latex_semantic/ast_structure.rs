@@ -116,7 +116,6 @@ pub enum SemanticError {
     MissingFileNode,
     MissingItemChild,
     MissingCommandName,
-    MissingCommandArgument,
     MissingRequiredArgItems,
     MissingOptionalArgEntries,
     MissingOptionalEntryItems,

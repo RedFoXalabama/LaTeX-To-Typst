@@ -1,6 +1,6 @@
 ﻿mod trans_map;
 
-use crate::globals::{get_in_listing_value, get_in_listing_priority};
+use crate::globals::{get_in_listing_value};
 use crate::latex_semantic::*;
 
 pub fn ast_to_typst(doc: &AstDocument, header: String) -> String {
@@ -34,7 +34,7 @@ fn render_newlines(newlines_node: &NewlinesNode) -> String {
     "\n".repeat(count)
 }
 
-fn render_linebreak(linebreak_node: &LinebreakNode) -> String {
+fn render_linebreak(_linebreak_node: &LinebreakNode) -> String {
     "\\".to_string()
 }
 

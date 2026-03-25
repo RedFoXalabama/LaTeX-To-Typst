@@ -67,7 +67,7 @@ fn build_item(pair: Pair<Rule>) -> Result<AstItemNode, SemanticError> {
         Rule::command => Ok(AstItemNode::Command(build_command(child)?)),
         Rule::linebreak => Ok(AstItemNode::Linebreak(build_linebreak(child)?)), // trattiamo i linebreak come newlines, visto che rappresentano un andare a capo
         Rule::comment => Ok(AstItemNode::Comment(build_comment(child)?)),
-        other => Err(SemanticError::UnexpectedRule(other)),
+        other => Err(SemanticError::UnexpectedItemRule(other)),
     }
 }
 
@@ -154,7 +154,6 @@ fn build_required_arg(pair: Pair<Rule>) -> Result<RequiredArgNode, SemanticError
     for child in pair.into_inner() {
         match child.as_rule() {
             Rule::argument => {
-                // argument = { arg_item* }
                 for arg_item in child.into_inner() {
                     match arg_item.as_rule() {
                         Rule::arg_item => items.push(build_arg_item(arg_item)?),
@@ -164,6 +163,10 @@ fn build_required_arg(pair: Pair<Rule>) -> Result<RequiredArgNode, SemanticError
             }
             other => return Err(SemanticError::UnexpectedRule(other)),
         }
+    }
+
+    if items.is_empty() {
+        return Err(SemanticError::MissingRequiredArgItems);
     }
 
     Ok(RequiredArgNode { items })
@@ -212,6 +215,10 @@ fn build_optional_arg(pair: Pair<Rule>) -> Result<OptionalArgNode, SemanticError
             }
             other => return Err(SemanticError::UnexpectedRule(other)),
         }
+    }
+
+    if entries.is_empty() {
+        return Err(SemanticError::MissingOptionalArgEntries);
     }
 
     Ok(OptionalArgNode { entries })

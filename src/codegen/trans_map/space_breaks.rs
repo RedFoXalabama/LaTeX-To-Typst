@@ -2,7 +2,7 @@
 use crate::codegen::trans_map::{out_of_bounds_reqs_arg};
 use crate::latex_semantic::{OptionalArgNode, RequiredArgNode};
 
-pub fn render_space_breaks(name: &str, reqs: Vec<RequiredArgNode>, opts: Vec<OptionalArgNode>) -> String {
+pub fn render_space_breaks(name: &str, reqs: Vec<RequiredArgNode>, _opts: Vec<OptionalArgNode>) -> String {
     let mut out = String::new();
     match name {
         "newline" | "break" => out.push_str("\\"),

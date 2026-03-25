@@ -1,9 +1,8 @@
-﻿use std::sync::atomic::Ordering;
-use crate::codegen::trans_map::{out_of_bounds_reqs_arg, render_args_item};
-use crate::globals::{add_in_listing_priority, pop_in_listing_priority, set_in_listing_value, ListType};
+﻿use crate::codegen::trans_map::{out_of_bounds_reqs_arg, render_args_item};
+use crate::globals::{add_in_listing_priority, pop_in_listing_priority, ListType};
 use crate::latex_semantic::{OptionalArgNode, RequiredArgNode};
 
-pub fn begin_handler(name: &str, reqs: Vec<RequiredArgNode>, _opts: Vec<OptionalArgNode>) -> String {
+pub fn begin_handler(_name: &str, reqs: Vec<RequiredArgNode>, _opts: Vec<OptionalArgNode>) -> String {
     let mut out = String::new();
     if let Some(first) = reqs.first() {
         let req_arg = render_args_item(&first.items);
@@ -30,7 +29,7 @@ pub fn begin_handler(name: &str, reqs: Vec<RequiredArgNode>, _opts: Vec<Optional
     out
 }
 
-pub fn end_handler(name: &str, reqs: Vec<RequiredArgNode>, _opts: Vec<OptionalArgNode>) -> String {
+pub fn end_handler(_name: &str, reqs: Vec<RequiredArgNode>, _opts: Vec<OptionalArgNode>) -> String {
     let mut out = String::new();
     if let Some(first) = reqs.first() {
         let req_arg = render_args_item(&first.items);

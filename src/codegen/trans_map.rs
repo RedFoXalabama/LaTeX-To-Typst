@@ -2,7 +2,6 @@
 use crate::latex_semantic::{ArgItemNode, CommandNode, KvPairNode, OptItemNode, OptValueNode, OptionalArgNode, OptionalEntryNode, RequiredArgNode};
 use std::collections::HashMap;
 use std::sync::OnceLock;
-use crate::latex_parser::Rule::kv_pair;
 
 mod text_formatting;
 mod text_alignment;
@@ -94,15 +93,15 @@ fn render_args_item(seq: &Vec<ArgItemNode>) -> String {
 fn render_opt_entry(seq: &Vec<OptionalEntryNode>) -> String {
     seq.into_iter()
         .map(|item| match item {
-            OptionalEntryNode::KeyValue(kvPair) => render_kv_pair(&kvPair),
+            OptionalEntryNode::KeyValue(kv_pair) => render_kv_pair(&kv_pair),
             OptionalEntryNode::Items(items) => render_opt_items(&items),
     })
     .collect()
 }
 
-fn render_kv_pair(kvPair: &KvPairNode) -> String {
+fn render_kv_pair(kv_pair: &KvPairNode) -> String {
     let mut out = String::new();
-    out.push_str(&format!("{}={}", kvPair.key, render_kv_value(&kvPair.value)));
+    out.push_str(&format!("{}={}", kv_pair.key, render_kv_value(&kv_pair.value)));
     out
 }
 

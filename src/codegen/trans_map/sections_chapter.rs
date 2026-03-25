@@ -1,8 +1,8 @@
 ﻿use crate::codegen::trans_map::{out_of_bounds_reqs_arg, render_args_item};
-use crate::globals::{get_part_counter, update_part_counter, PART_COUNTER};
+use crate::globals::{get_part_counter, update_part_counter};
 use crate::latex_semantic::{OptionalArgNode, RequiredArgNode};
 
-pub fn render_section_chapter(name: &str, reqs: Vec<RequiredArgNode>, opts: Vec<OptionalArgNode>) -> String {
+pub fn render_section_chapter(name: &str, reqs: Vec<RequiredArgNode>, _opts: Vec<OptionalArgNode>) -> String {
     let mut out = String::new();
     match name {
         "part" => {

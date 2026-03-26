@@ -103,5 +103,4 @@ pub fn render_doc_class(_name: &str, reqs: Vec<RequiredArgNode>, _opts: Vec<Opti
     // metto in coda gli altri elementi in modo che rispetti l'ordine dell'input
     out.push_str(&out_of_bounds_reqs_arg(&reqs, 1));
     out
-
 }

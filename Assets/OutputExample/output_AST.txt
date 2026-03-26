@@ -109,6 +109,28 @@ AstDocument {
         ),
         Newlines(
             NewlinesNode {
+                count: 2,
+            },
+        ),
+        Command(
+            CommandNode {
+                name: "begin",
+                optional_args: [],
+                required_args: [
+                    RequiredArgNode {
+                        items: [
+                            Text(
+                                TextNode {
+                                    value: "document",
+                                },
+                            ),
+                        ],
+                    },
+                ],
+            },
+        ),
+        Newlines(
+            NewlinesNode {
                 count: 1,
             },
         ),
@@ -143,7 +165,7 @@ AstDocument {
         ),
         Newlines(
             NewlinesNode {
-                count: 2,
+                count: 1,
             },
         ),
         Text(
@@ -1436,64 +1458,47 @@ AstDocument {
                 count: 2,
             },
         ),
-        Text(
-            TextNode {
-                value: "Ciao ",
-            },
-        ),
         Command(
             CommandNode {
-                name: "textbf",
+                name: "textcolor",
                 optional_args: [],
                 required_args: [
                     RequiredArgNode {
                         items: [
+                            Text(
+                                TextNode {
+                                    value: "blue",
+                                },
+                            ),
+                        ],
+                    },
+                    RequiredArgNode {
+                        items: [
+                            Text(
+                                TextNode {
+                                    value: "This is ",
+                                },
+                            ),
                             Command(
                                 CommandNode {
-                                    name: "title",
-                                    optional_args: [
-                                        OptionalArgNode {
-                                            entries: [
-                                                Items(
-                                                    [
-                                                        Text(
-                                                            TextNode {
-                                                                value: "opt1 ",
-                                                            },
-                                                        ),
-                                                        Command(
-                                                            CommandNode {
-                                                                name: "textbf",
-                                                                optional_args: [],
-                                                                required_args: [
-                                                                    RequiredArgNode {
-                                                                        items: [
-                                                                            Text(
-                                                                                TextNode {
-                                                                                    value: "opt2",
-                                                                                },
-                                                                            ),
-                                                                        ],
-                                                                    },
-                                                                ],
-                                                            },
-                                                        ),
-                                                    ],
-                                                ),
-                                            ],
-                                        },
-                                    ],
+                                    name: "textbf",
+                                    optional_args: [],
                                     required_args: [
                                         RequiredArgNode {
                                             items: [
                                                 Text(
                                                     TextNode {
-                                                        value: "Mondo",
+                                                        value: "bold and blue",
                                                     },
                                                 ),
                                             ],
                                         },
                                     ],
+                                },
+                            ),
+                            Text(
+                                TextNode {
+                                    value: ".",
                                 },
                             ),
                         ],
@@ -1503,7 +1508,7 @@ AstDocument {
         ),
         Newlines(
             NewlinesNode {
-                count: 2,
+                count: 1,
             },
         ),
         Command(
@@ -1581,50 +1586,19 @@ AstDocument {
         ),
         Newlines(
             NewlinesNode {
-                count: 2,
+                count: 1,
             },
         ),
         Command(
             CommandNode {
-                name: "textcolor",
+                name: "end",
                 optional_args: [],
                 required_args: [
                     RequiredArgNode {
                         items: [
                             Text(
                                 TextNode {
-                                    value: "blue",
-                                },
-                            ),
-                        ],
-                    },
-                    RequiredArgNode {
-                        items: [
-                            Text(
-                                TextNode {
-                                    value: "This is ",
-                                },
-                            ),
-                            Command(
-                                CommandNode {
-                                    name: "textbf",
-                                    optional_args: [],
-                                    required_args: [
-                                        RequiredArgNode {
-                                            items: [
-                                                Text(
-                                                    TextNode {
-                                                        value: "bold and blue",
-                                                    },
-                                                ),
-                                            ],
-                                        },
-                                    ],
-                                },
-                            ),
-                            Text(
-                                TextNode {
-                                    value: ".",
+                                    value: "document",
                                 },
                             ),
                         ],

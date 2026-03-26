@@ -19,6 +19,10 @@ pub fn begin_handler(name: &str, reqs: Vec<RequiredArgNode>, _opts: Vec<Optional
             "itemize" => { add_in_listing_priority(ListType::Itemize); },
             "enumerate" => { add_in_listing_priority(ListType::Enumerate); }
             "description" => { add_in_listing_priority(ListType::Description); }
+
+            // DOCUMENT
+            // (non esiste un equivalente in typst poiché pe typ é tutto un flusso continuo, non ci sono separé)
+            "document" => { /* non serve fare nulla */ },
             
             _ => out.push_str(format!("RENDER-ERROR = {}", name).as_str()),
         }
@@ -45,7 +49,11 @@ pub fn end_handler(name: &str, reqs: Vec<RequiredArgNode>, _opts: Vec<OptionalAr
             // LISTING
             // il value bool per controllare in_listing é modificato solo se la lista priorità é vuota
             "itemize" | "enumerate" | "description" => { pop_in_listing_priority(); },
-            
+
+            // DOCUMENT
+            // (non esiste un equivalente in typst poiché pe typ é tutto un flusso continuo, non ci sono separé)
+            "document" => { /* non serve fare nulla */ },
+
             _ => out.push_str(format!("RENDER-ERROR = {}", name).as_str()),
         }
     }

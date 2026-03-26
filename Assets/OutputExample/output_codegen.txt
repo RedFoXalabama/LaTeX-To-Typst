@@ -31,6 +31,8 @@
 #set document(date: date)
 #let date = datetime(day: 31, month: 12, year: 2026)
 #set document(date: date)
+
+
 #set document(title: title)
 #align(center)[
 #text(3em, weight: "bold")[#title]
@@ -43,7 +45,6 @@
 #outline()
 
 prova-tra parentesi graffe-
-
 testo pre commento // prova commento monolinea
 /* usepackage{verbatim} */
 /*
@@ -121,9 +122,6 @@ _italic_
 ====== subparagraph
 
 
-Ciao *#let title = [Mondo]*
-
+#text(blue)[This is *bold and blue*.]
 RENDER-ERROR = usepackage
 NOT IMPLEMENTED COMMAND RENDER-ERROR
-
-#text(blue)[This is *bold and blue*.]

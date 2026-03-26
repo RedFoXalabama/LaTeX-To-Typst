@@ -7,17 +7,22 @@
   spacing: 1.2em,         // Spazio tra paragrafi
 )
 #let title = [LaTeX To Typst]
-#set document(title: title)
-#align(center)[
-#text(2em, weight: "bold")[#title]
-]
 #let author = "Gianfranco e Vito"
 #set document(author: author)
 #let date = datetime.today()
 #set document(date: date)
-#let date = datetime(day: 25, month: 06, year: 2002)
+#let date = datetime(day: 31, month: 12, year: 2026)
 #set document(date: date)
-
+#set document(title: title)
+#align(center)[
+#text(3em, weight: "bold")[#title]
+#v(0em)
+#text(1.8em)[#author]
+#v(0em)
+#text(1.5em)[#date.display("[day] [month repr:long] [year]")]
+]
+#v(2em)
+#outline()
 
 prova-tra parentesi graffe-
 

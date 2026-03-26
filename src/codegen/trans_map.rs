@@ -62,6 +62,7 @@ fn get_trans_map() -> &'static HashMap<&'static str, TranslationFn> {
         m.insert("author", sections_chapter::render_info_document as TranslationFn);
         m.insert("date", sections_chapter::render_info_document as TranslationFn);
         m.insert("today", sections_chapter::render_info_document as TranslationFn);
+        m.insert("tableofcontents", sections_chapter::render_info_document as TranslationFn);
 
         m
     })

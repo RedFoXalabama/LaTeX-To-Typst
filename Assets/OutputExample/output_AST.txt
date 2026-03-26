@@ -24,18 +24,6 @@ AstDocument {
         ),
         Command(
             CommandNode {
-                name: "maketitle",
-                optional_args: [],
-                required_args: [],
-            },
-        ),
-        Newlines(
-            NewlinesNode {
-                count: 1,
-            },
-        ),
-        Command(
-            CommandNode {
                 name: "author",
                 optional_args: [],
                 required_args: [
@@ -89,7 +77,7 @@ AstDocument {
                         items: [
                             Text(
                                 TextNode {
-                                    value: "25/06/2002",
+                                    value: "31/12/2026",
                                 },
                             ),
                         ],
@@ -99,7 +87,31 @@ AstDocument {
         ),
         Newlines(
             NewlinesNode {
-                count: 3,
+                count: 1,
+            },
+        ),
+        Command(
+            CommandNode {
+                name: "maketitle",
+                optional_args: [],
+                required_args: [],
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Command(
+            CommandNode {
+                name: "tableofcontents",
+                optional_args: [],
+                required_args: [],
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 2,
             },
         ),
         Text(

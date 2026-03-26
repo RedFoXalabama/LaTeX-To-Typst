@@ -1,4 +1,6 @@
-﻿use crate::codegen::trans_map::{out_of_bounds_reqs_arg, render_args_item};
+﻿use chrono::Datelike;
+use chrono::NaiveDate;
+use crate::codegen::trans_map::{out_of_bounds_reqs_arg, render_args_item};
 use crate::globals::{get_part_counter, update_part_counter};
 use crate::latex_semantic::{OptionalArgNode, RequiredArgNode};
 
@@ -27,13 +29,12 @@ pub fn render_info_document(name: &str, reqs: Vec<RequiredArgNode>, _opts: Vec<O
     let mut out = String::new();
     match name {
         "title" => out.push_str(format!("#let title = [{}]", render_args_item(&reqs[0].items)).as_str()),
-        "maketitle" => out.push_str("#set document(title: title)\n#align(center)[\n#text(2em, weight: \"bold\")[#title]\n]"),
-
         "author" => out.push_str(format!("#let author = \"{}\"\n#set document(author: author)" , render_args_item(&reqs[0].items)).as_str()),
         "date" => out.push_str(&format!("#let date = {}\n#set document(date: date)", render_daytime(render_args_item(&reqs[0].items)))),
         "today" => out.push_str("datetime.today()"),
-        "maketitle" => todo!(),
-        "tableofcontents" => todo!(),
+        // ASSUNZIONE: nel file di typst é presente sempre Titolo, Autore e Data
+        "maketitle" => out.push_str("#set document(title: title)\n#align(center)[\n#text(3em, weight: \"bold\")[#title]\n#v(0em)\n#text(1.8em)[#author]\n#v(0em)\n#text(1.5em)[#date.display(\"[day] [month repr:long] [year]\")]\n]\n#v(2em)"),
+        "tableofcontents" => out.push_str("#outline()"),
 
         _ => out.push_str(format!("RENDER-ERROR = {}", name).as_str()),
     }
@@ -43,25 +44,34 @@ pub fn render_info_document(name: &str, reqs: Vec<RequiredArgNode>, _opts: Vec<O
 }
 
 fn render_daytime(date: String) -> String {
-    if date == "datetime.today()" {
-        return date
+    let d = date.trim();
+    if d == "datetime.today()" {
+        return d.to_string();
+    }
+    let mut normalized_date = String::new();
+
+    let formats = [
+        "%d/%m/%Y", "%Y/%m/%d", "%m/%d/%Y",
+        "%d-%m-%Y", "%Y-%m-%d", "%m-%d-%Y",
+        "%d.%m.%Y", "%Y.%m.%d", "%m.%d.%Y",
+        "%d:%m:%Y", "%Y:%m:%d", "%m:%d:%Y",
+        "%d %m %Y", "%Y %m %d", "%m %d %Y",
+        "%Y%m%d", "%d%m%Y", "%m%d%Y",
+        "%d %B %Y", "%B %d %Y", "%d %b %Y", "%b %d %Y",
+        //AGGIUNGERE ALTRI TIPI DI DATE SE SI VUOLE
+    ];
+
+    for fmt in formats {
+        if let Ok(parsed) = NaiveDate::parse_from_str(d, fmt) {
+            normalized_date = format!(
+                "datetime(day: {}, month: {}, year: {})",
+                parsed.day(),
+                parsed.month(),
+                parsed.year()
+            );
+        }
     }
 
-    // let accepted = vec![
-    //     "03/31/2014",
-    // ];
-    // for date_str in accepted {
-    //     let result = date_str.parse::<DateTimeUtc>();
-    //     print!("Parsing date string '{:?}': ", result);
-    //     assert!(result.is_ok())
-    // }
-
-    let mut parts = date.split('/');
-
-    let part1 = parts.next().unwrap_or_default().to_string();
-    let part2 = parts.next().unwrap_or_default().to_string();
-    let part3 = parts.next().unwrap_or_default().to_string();
-
-    format!("datetime(day: {}, month: {}, year: {})", part1, part2, part3)
+    normalized_date
 
 }

@@ -4,13 +4,15 @@
 \date{\today}
 \date{31/12/2026}
 
+\usepackage{verbatim}
+\usepackage{hyperref}
+
 \begin{document}
 \maketitle
 \tableofcontents
 
 prova{-tra parentesi graffe-}
 testo pre commento % prova commento monolinea
-\usepackage{verbatim}
 \begin{comment}
     Questo é un commento multilinea
 \end{comment}
@@ -73,6 +75,10 @@ testo pre commento % prova commento monolinea
 \subparagraph{subparagraph}
 
 \textcolor{blue}{This is \textbf{bold and blue}.}
-\usepackage[letterpaper = true,top=2cm\textwidth, points={1, cane,3 ,4}]{geometry}
+
 \href{https://www.overleaf.com/learn}
+\href{https://www.overleaf.com/learn}{Overleaf Learn} % testo del link
+
+\usepackage[letterpaper = true,top=2cm\textwidth, points={1, cane,3 ,4}]{geometry}
+
 \end{document}

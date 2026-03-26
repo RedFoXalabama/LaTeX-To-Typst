@@ -1,4 +1,5 @@
-﻿#set page(paper: "a4")
+﻿//------------------------ START STANDARD HEADER -----------------------
+#set page(paper: "a4")
 #set heading(numbering: "1.")
 #set math.equation(numbering: "(1)")
 #set par(
@@ -6,3 +7,6 @@
   leading: 0.65em,        // Interlinea
   spacing: 1.2em,         // Spazio tra paragrafi
 )
+
+#show link: underline // Impostiano lo stile dei link a sottolineato
+//------------------------ END STANDARD HEADER -----------------------

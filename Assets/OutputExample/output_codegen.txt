@@ -21,6 +21,8 @@
   leading: 0.65em,        // Interlinea
   spacing: 1.2em,         // Spazio tra paragrafi
 )
+
+#show link: underline // Impostiano lo stile dei link a sottolineato
 // ----------------------- END ARTICLE HEADER -----------------------
 
 
@@ -31,6 +33,9 @@
 #set document(date: date)
 #let date = datetime(day: 31, month: 12, year: 2026)
 #set document(date: date)
+
+/* usepackage{verbatim} */
+/* usepackage{hyperref} */
 
 
 #set document(title: title)
@@ -46,7 +51,6 @@
 
 prova-tra parentesi graffe-
 testo pre commento // prova commento monolinea
-/* usepackage{verbatim} */
 /*
     Questo é un commento multilinea
 */
@@ -123,5 +127,9 @@ _italic_
 
 
 #text(blue)[This is *bold and blue*.]
+
+#link("https://www.overleaf.com/learn")
+#link("https://www.overleaf.com/learn")[Overleaf Learn] // testo del link
+
 RENDER-ERROR = usepackage
-NOT IMPLEMENTED COMMAND RENDER-ERROR
+

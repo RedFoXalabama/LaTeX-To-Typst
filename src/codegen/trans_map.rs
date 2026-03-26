@@ -10,6 +10,7 @@ mod package_controller;
 mod space_breaks;
 mod text_listing;
 mod sections_chapter;
+mod hyperlinks;
 
 // FUNZIONE PER I COMMAND
 type TranslationFn = fn(name: &str, Vec<RequiredArgNode>, Vec<OptionalArgNode>) -> String;
@@ -64,7 +65,8 @@ fn get_trans_map() -> &'static HashMap<&'static str, TranslationFn> {
         m.insert("today", sections_chapter::render_info_document as TranslationFn);
         m.insert("tableofcontents", sections_chapter::render_info_document as TranslationFn);
         m.insert("documentclass", sections_chapter::render_doc_class as TranslationFn);
-
+        // HYPERLINKS
+        m.insert("href", hyperlinks::render_href as TranslationFn);
         m
     })
 }

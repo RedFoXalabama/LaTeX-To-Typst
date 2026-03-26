@@ -21,4 +21,6 @@
   leading: 0.65em,        // Interlinea
   spacing: 1.2em,         // Spazio tra paragrafi
 )
+
+#show link: underline // Impostiano lo stile dei link a sottolineato
 // ----------------------- END REPORT HEADER -----------------------

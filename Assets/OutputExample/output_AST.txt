@@ -114,6 +114,50 @@ AstDocument {
         ),
         Command(
             CommandNode {
+                name: "usepackage",
+                optional_args: [],
+                required_args: [
+                    RequiredArgNode {
+                        items: [
+                            Text(
+                                TextNode {
+                                    value: "verbatim",
+                                },
+                            ),
+                        ],
+                    },
+                ],
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Command(
+            CommandNode {
+                name: "usepackage",
+                optional_args: [],
+                required_args: [
+                    RequiredArgNode {
+                        items: [
+                            Text(
+                                TextNode {
+                                    value: "hyperref",
+                                },
+                            ),
+                        ],
+                    },
+                ],
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 2,
+            },
+        ),
+        Command(
+            CommandNode {
                 name: "begin",
                 optional_args: [],
                 required_args: [
@@ -176,28 +220,6 @@ AstDocument {
         Comment(
             CommentNode {
                 value: "% prova commento monolinea",
-            },
-        ),
-        Newlines(
-            NewlinesNode {
-                count: 1,
-            },
-        ),
-        Command(
-            CommandNode {
-                name: "usepackage",
-                optional_args: [],
-                required_args: [
-                    RequiredArgNode {
-                        items: [
-                            Text(
-                                TextNode {
-                                    value: "verbatim",
-                                },
-                            ),
-                        ],
-                    },
-                ],
             },
         ),
         Newlines(
@@ -1508,7 +1530,70 @@ AstDocument {
         ),
         Newlines(
             NewlinesNode {
+                count: 2,
+            },
+        ),
+        Command(
+            CommandNode {
+                name: "href",
+                optional_args: [],
+                required_args: [
+                    RequiredArgNode {
+                        items: [
+                            Text(
+                                TextNode {
+                                    value: "https://www.overleaf.com/learn",
+                                },
+                            ),
+                        ],
+                    },
+                ],
+            },
+        ),
+        Newlines(
+            NewlinesNode {
                 count: 1,
+            },
+        ),
+        Command(
+            CommandNode {
+                name: "href",
+                optional_args: [],
+                required_args: [
+                    RequiredArgNode {
+                        items: [
+                            Text(
+                                TextNode {
+                                    value: "https://www.overleaf.com/learn",
+                                },
+                            ),
+                        ],
+                    },
+                    RequiredArgNode {
+                        items: [
+                            Text(
+                                TextNode {
+                                    value: "Overleaf Learn",
+                                },
+                            ),
+                        ],
+                    },
+                ],
+            },
+        ),
+        Text(
+            TextNode {
+                value: " ",
+            },
+        ),
+        Comment(
+            CommentNode {
+                value: "% testo del link",
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 2,
             },
         ),
         Command(
@@ -1564,29 +1649,7 @@ AstDocument {
         ),
         Newlines(
             NewlinesNode {
-                count: 1,
-            },
-        ),
-        Command(
-            CommandNode {
-                name: "href",
-                optional_args: [],
-                required_args: [
-                    RequiredArgNode {
-                        items: [
-                            Text(
-                                TextNode {
-                                    value: "https://www.overleaf.com/learn",
-                                },
-                            ),
-                        ],
-                    },
-                ],
-            },
-        ),
-        Newlines(
-            NewlinesNode {
-                count: 1,
+                count: 2,
             },
         ),
         Command(

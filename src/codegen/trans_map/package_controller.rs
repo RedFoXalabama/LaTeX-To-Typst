@@ -12,6 +12,8 @@ pub fn package_handler(name: &str, reqs: Vec<RequiredArgNode>, _opts: Vec<Option
 
             "verbatim" => out.push_str("/* usepackage{verbatim} */"),
 
+            "hyperref" => out.push_str("/* usepackage{hyperref} */"),
+
             _ => out.push_str(format!("RENDER-ERROR = {}", name).as_str()),
         }
     }

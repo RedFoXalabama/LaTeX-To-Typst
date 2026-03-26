@@ -1,8 +1,15 @@
-﻿use chrono::Datelike;
+﻿use std::fs;
+use chrono::Datelike;
 use chrono::NaiveDate;
 use crate::codegen::trans_map::{out_of_bounds_reqs_arg, render_args_item};
 use crate::globals::{get_part_counter, update_part_counter};
 use crate::latex_semantic::{OptionalArgNode, RequiredArgNode};
+
+
+static ARTICLE_HEADER: &str = "Assets/Headers/article_header.txt";
+static REPORT_HEADER: &str = "Assets/Headers/report_header.txt";
+static BOOK_HEADER: &str = "Assets/Headers/book_header.txt";
+static STANDARD_HEADER: &str = "Assets/Headers/standard_header.txt";
 
 pub fn render_section_chapter(name: &str, reqs: Vec<RequiredArgNode>, _opts: Vec<OptionalArgNode>) -> String {
     let mut out = String::new();
@@ -73,5 +80,28 @@ fn render_daytime(date: String) -> String {
     }
 
     normalized_date
+
+}
+
+pub fn render_doc_class(_name: &str, reqs: Vec<RequiredArgNode>, _opts: Vec<OptionalArgNode>) -> String {
+    let mut out = String::new();
+    let mut header_path = String::new();
+    if let Some(first) = reqs.first() {
+        match render_args_item(&first.items).as_str() {
+            "article" => header_path = ARTICLE_HEADER.to_string(),
+            "report" => header_path = REPORT_HEADER.to_string(),
+            "book" => header_path = BOOK_HEADER.to_string(),
+
+            _ => header_path = STANDARD_HEADER.to_string(),
+
+        }
+    }
+    let header = fs::read_to_string(header_path).unwrap();
+    out.push_str(&header);
+    out.push_str("\n\n");
+
+    // metto in coda gli altri elementi in modo che rispetti l'ordine dell'input
+    out.push_str(&out_of_bounds_reqs_arg(&reqs, 1));
+    out
 
 }

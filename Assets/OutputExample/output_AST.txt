@@ -2,6 +2,28 @@ AstDocument {
     items: [
         Command(
             CommandNode {
+                name: "documentclass",
+                optional_args: [],
+                required_args: [
+                    RequiredArgNode {
+                        items: [
+                            Text(
+                                TextNode {
+                                    value: "article",
+                                },
+                            ),
+                        ],
+                    },
+                ],
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Command(
+            CommandNode {
                 name: "title",
                 optional_args: [],
                 required_args: [

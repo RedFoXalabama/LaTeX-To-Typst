@@ -1,6 +1,4 @@
-﻿use std::fs;
-
-mod codegen;
+﻿mod codegen;
 mod latex_parser;
 mod latex_semantic;
 mod utils;
@@ -11,9 +9,6 @@ static INPUT_PATH: &str = "Assets/InputExample/input.tex";
 static OUTPUT_PARSETREE_PATH: &str = "Assets/OutputExample/output_ParseTree.txt";
 static OUTPUT_AST_PATH: &str = "Assets/OutputExample/output_AST.txt";
 static OUTPUT_CODEGEN_PATH: &str = "Assets/OutputExample/output_codegen.txt";
-
-// HEADER
-static HEADER: &str = "Assets/header.txt";
 
 // ------------------------------ MAIN EXECUTION ---------------------------------------------------
 fn main() -> Result<(), Box<dyn std::error::Error>> {
@@ -35,9 +30,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     utils::save_ast_to_file(OUTPUT_AST_PATH, &ast)?;
     
     // -------------------------------- TYPST GENERATION -------------------------------------------
-    // estraiamo l'header standard dagli assets
-    let header = fs::read_to_string(HEADER);
-    let typst_output = codegen::ast_to_typst(&ast, header?);
+    let typst_output = codegen::ast_to_typst(&ast);
     utils::save_output_file(OUTPUT_CODEGEN_PATH, &typst_output)?;
 
     Ok(())

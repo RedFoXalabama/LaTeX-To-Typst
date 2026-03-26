@@ -1,11 +1,9 @@
 ﻿mod trans_map;
-
 use crate::globals::{get_in_listing_value};
 use crate::latex_semantic::*;
 
-pub fn ast_to_typst(doc: &AstDocument, header: String) -> String {
-    let body: String = doc.items.iter().map(render_item).collect();
-    add_header(body, &header)
+pub fn ast_to_typst(doc: &AstDocument) -> String {
+    doc.items.iter().map(render_item).collect()
 }
 
 fn render_item(item: &AstItemNode) -> String {
@@ -52,15 +50,4 @@ fn render_command(command_node: &CommandNode) -> String {
     } else {
         "NOT IMPLEMENTED COMMAND RENDER-ERROR".to_string()
     }
-}
-
-fn add_header(body: String, header: &str) -> String {
-    let mut out = String::new();
-    out.push_str(header);
-    if !header.ends_with('\n') {
-        // aggiungo una linea per separare
-        out.push('\n');
-    }
-    out.push_str(&body);
-    out
 }

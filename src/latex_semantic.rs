@@ -1,4 +1,4 @@
-﻿mod ast_structure;
+mod ast_structure;
 pub use ast_structure::*; //importo tutte le strutture e gli enumerati che compongono l'AST
 
 use crate::latex_parser::Rule;
@@ -14,10 +14,10 @@ use pest::iterators::{Pair, Pairs};
 //          ├─ build_text
 //          ├─ build_newline
 //          └─ build_command (name + optional_arg* + required_arg*)
-//          ├─ build_optional_arg → build_opt_entry
-//          │   ├─ build_kv_pair → build_value
-//          │   └─ build_opt_item
-//          └─ build_required_arg → build_arg_item
+//              ├─ build_optional_arg → build_opt_entry
+//              │   ├─ build_kv_pair → build_value
+//              │   └─ build_opt_item
+//              └─ build_required_arg → build_arg_item
 
 // FUNZIONE PRINCIPALE PER LA COSTRUZIONE DELL'AST, CHE VERRÀ CHIAMATA DAL MAIN DOPO AVER OTTENUTO IL PARSE TREE DI PEST
 // prende in input Pairs<Rule>, quindi un insieme su cui iterare di Pair<Rule>, che rappresentano i nodi del Parse Tree
@@ -62,13 +62,61 @@ fn build_item(pair: Pair<Rule>) -> Result<AstItemNode, SemanticError> {
         .ok_or(SemanticError::MissingItemChild)?;
 
     match child.as_rule() {
+        Rule::block => Ok(AstItemNode::Block(build_block(child)?)),
+        Rule::command => Ok(AstItemNode::Command(build_command(child)?)),
         Rule::text => Ok(AstItemNode::Text(build_text(child)?)),
         Rule::newlines => Ok(AstItemNode::Newlines(build_newlines(child)?)),
-        Rule::command => Ok(AstItemNode::Command(build_command(child)?)),
         Rule::linebreak => Ok(AstItemNode::Linebreak(build_linebreak(child)?)), // trattiamo i linebreak come newlines, visto che rappresentano un andare a capo
         Rule::comment => Ok(AstItemNode::Comment(build_comment(child)?)),
         other => Err(SemanticError::UnexpectedItemRule(other)),
     }
+}
+
+fn build_block(pair: Pair<Rule>) -> Result<BlockNode, SemanticError> {
+    let mut optional_args: Vec<OptionalArgNode> = Vec::new();
+    let mut required_args: Vec<RequiredArgNode> = Vec::new();
+    let mut items: Vec<AstItemNode> = Vec::new();
+
+    for child in pair.into_inner() {
+        match child.as_rule() {
+            Rule::optional_arg => optional_args.push(build_optional_arg(child)?),
+            Rule::required_arg => required_args.push(build_required_arg(child)?),
+            Rule::block_content => {
+                for item in child.into_inner() {
+                    match item.as_rule() {
+                        Rule::item => items.push(build_item(item)?),
+                        other => return Err(SemanticError::UnexpectedRule(other)),
+                    }
+                }
+            }
+            _ => {}
+        }
+    }
+
+    // Il nome dell'ambiente è il primo argomento obbligatorio.
+    let name = if let Some(first_req) = required_args.first() {
+        first_req
+            .items
+            .iter()
+            .filter_map(|i| {
+                if let ArgItemNode::Text(t) = i {
+                    Some(t.value.clone())
+                } else {
+                    None
+                }
+            })
+            .collect::<Vec<_>>()
+            .join("")
+    } else {
+        String::new()
+    };
+
+    Ok(BlockNode {
+        name,
+        optional_args,
+        required_args,
+        items,
+    })
 }
 
 // Un testo é qualsiasi cosa che non inizi con un \ di comando o una nuova linea ed é composto da qualsiasi carattere

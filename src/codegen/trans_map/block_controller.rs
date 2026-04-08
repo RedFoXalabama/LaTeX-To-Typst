@@ -1,8 +1,8 @@
-﻿use crate::codegen::trans_map::{out_of_bounds_reqs_arg, render_args_item};
-use crate::globals::{add_in_listing_priority, pop_in_listing_priority, ListType};
-use crate::latex_semantic::{OptionalArgNode, RequiredArgNode};
+use crate::codegen::trans_map::{out_of_bounds_reqs_arg, render_args_item};
+use crate::globals::{ListType, add_in_listing_priority, pop_in_listing_priority};
+use crate::latex_semantic::{AstItemNode, OptionalArgNode, RequiredArgNode};
 
-pub fn begin_handler(name: &str, reqs: Vec<RequiredArgNode>, _opts: Vec<OptionalArgNode>) -> String {
+pub fn begin_handler(name: &str, reqs: Vec<RequiredArgNode>, _opts: Vec<OptionalArgNode>, items: Vec<AstItemNode>) -> String {
     let mut out = String::new();
     if let Some(first) = reqs.first() {
         let req_arg = render_args_item(&first.items);
@@ -11,6 +11,9 @@ pub fn begin_handler(name: &str, reqs: Vec<RequiredArgNode>, _opts: Vec<Optional
             "center" | "Center" => out.push_str("#align(center)["),
             "flushright" | "FlushRight" => out.push_str("#align(right)["),
             "flushleft" | "FlushLeft" => out.push_str("#align(left)["),
+
+            // TABLE
+            "tabular" => { /* gestito a livello di blocco in ast_to_typst */ }
 
             // COMMENT (con il pacchetto verbatim in latex)
             "comment" => out.push_str("/*"),
@@ -33,7 +36,7 @@ pub fn begin_handler(name: &str, reqs: Vec<RequiredArgNode>, _opts: Vec<Optional
     out
 }
 
-pub fn end_handler(name: &str, reqs: Vec<RequiredArgNode>, _opts: Vec<OptionalArgNode>) -> String {
+pub fn end_handler(name: &str, reqs: Vec<RequiredArgNode>, _opts: Vec<OptionalArgNode>, items: Vec<AstItemNode>) -> String {
     let mut out = String::new();
     if let Some(first) = reqs.first() {
         let req_arg = render_args_item(&first.items);
@@ -42,6 +45,9 @@ pub fn end_handler(name: &str, reqs: Vec<RequiredArgNode>, _opts: Vec<OptionalAr
             "center" | "Center" |
             "flushright" | "FlushRight" |
             "flushleft" | "FlushLeft" => out.push_str("]"),
+
+            // TABLE
+            "tabular" => { /* gestito a livello di blocco in ast_to_typst */ }
 
             // COMMENT (con il pacchetto verbatim in latex)
             "comment" => out.push_str("*/"),

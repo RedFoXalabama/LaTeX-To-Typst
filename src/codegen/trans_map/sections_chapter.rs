@@ -1,4 +1,4 @@
-﻿use std::fs;
+use std::fs;
 use chrono::Datelike;
 use chrono::NaiveDate;
 use crate::codegen::trans_map::{out_of_bounds_reqs_arg, render_args_item};

@@ -1654,6 +1654,172 @@ AstDocument {
         ),
         Command(
             CommandNode {
+                name: "begin",
+                optional_args: [],
+                required_args: [
+                    RequiredArgNode {
+                        items: [
+                            Text(
+                                TextNode {
+                                    value: "tabular",
+                                },
+                            ),
+                        ],
+                    },
+                    RequiredArgNode {
+                        items: [
+                            Text(
+                                TextNode {
+                                    value: " |c|c|c| ",
+                                },
+                            ),
+                        ],
+                    },
+                ],
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Text(
+            TextNode {
+                value: "    ",
+            },
+        ),
+        Command(
+            CommandNode {
+                name: "hline",
+                optional_args: [],
+                required_args: [],
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Text(
+            TextNode {
+                value: "    cell1 & cell2 & cell3 ",
+            },
+        ),
+        Linebreak(
+            LinebreakNode {
+                value: "\\\\",
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Text(
+            TextNode {
+                value: "    ",
+            },
+        ),
+        Command(
+            CommandNode {
+                name: "hline",
+                optional_args: [],
+                required_args: [],
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Text(
+            TextNode {
+                value: "    cell4 & cell5 & cell6 ",
+            },
+        ),
+        Linebreak(
+            LinebreakNode {
+                value: "\\\\",
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Text(
+            TextNode {
+                value: "    ",
+            },
+        ),
+        Command(
+            CommandNode {
+                name: "hline",
+                optional_args: [],
+                required_args: [],
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Text(
+            TextNode {
+                value: "    cell7 & cell8 & cell9 ",
+            },
+        ),
+        Linebreak(
+            LinebreakNode {
+                value: "\\\\",
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Text(
+            TextNode {
+                value: "    ",
+            },
+        ),
+        Command(
+            CommandNode {
+                name: "hline",
+                optional_args: [],
+                required_args: [],
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Command(
+            CommandNode {
+                name: "end",
+                optional_args: [],
+                required_args: [
+                    RequiredArgNode {
+                        items: [
+                            Text(
+                                TextNode {
+                                    value: "tabular",
+                                },
+                            ),
+                        ],
+                    },
+                ],
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 2,
+            },
+        ),
+        Command(
+            CommandNode {
                 name: "end",
                 optional_args: [],
                 required_args: [

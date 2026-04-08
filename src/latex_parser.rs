@@ -1,4 +1,4 @@
-﻿use pest_derive::Parser;
+use pest_derive::Parser;
 use pest::iterators::Pairs;
 use pest::Parser;
 use std::fs;

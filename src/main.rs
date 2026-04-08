@@ -1,4 +1,4 @@
-﻿mod codegen;
+mod codegen;
 mod latex_parser;
 mod latex_semantic;
 mod utils;

@@ -1,6 +1,9 @@
 file = { SOI ~ item* ~ EOI }
 
-item = { command | text | newlines | linebreak | comment }
+item = { block | command | text | newlines | linebreak | comment }
+
+block = { "\\begin" ~ optional_arg* ~ required_arg* ~ block_content ~ "\\end" }
+block_content = { item* }
 
 linebreak = { "\\\\" }
 newlines = { NEWLINE+ }
@@ -9,7 +12,7 @@ comment = { ("%" ~ (!NEWLINE ~ ANY)*) }
 text = { (!("\\" | NEWLINE | comment) ~ ANY)+ }
 
 command = { "\\" ~ name ~ optional_arg* ~ required_arg* }
-name = { ASCII_ALPHA+ }
+name = { ASCII_ALPHA+ } // Il nome del comando è composto da lettere ASCII, ma non può essere vuoto. Se si vuole permettere anche comandi con nomi più complessi, si potrebbe modificare questa regola.
 //mono_arg = { !(ASCII_ALPHA*) ~ ANY+ }
 //required_arg = {(WHITE_SPACE* ~ mono_arg) | ("{" ~ argument ~ "}") }
 required_arg = { "{" ~ argument ~ "}" }
@@ -34,6 +37,5 @@ opt_text = { (!("\\" | "[" | "]" | NEWLINE) ~ ANY)+ }
 // Da utilizzare se assumiamo che ci siano errori nel file di latex, altrimenti non è necessario escludere questi
 // caratteri nei vari argomenti, dato che la sintassi di LaTeX prevede che siano usati in modo specifico e non come testo normale.
 forbidden_char = { "\\" | "{" | "}" | "[" | "]"  | "," | "=" | WHITE_SPACE}
-
 // ------------------------------
 

@@ -37,7 +37,7 @@
 /* usepackage{verbatim} */
 /* usepackage{hyperref} */
 
-
+NOT IMPLEMENTED COMMAND RENDER-ERROR
 #set document(title: title)
 #align(center)[
 #text(3em, weight: "bold")[#title]
@@ -51,9 +51,9 @@
 
 prova-tra parentesi graffe-
 testo pre commento // prova commento monolinea
-/*
+NOT IMPLEMENTED COMMAND RENDER-ERROR
     Questo é un commento multilinea
-*/
+NOT IMPLEMENTED COMMAND RENDER-ERROR
 
 *Bold*
 _italic_
@@ -65,13 +65,13 @@ _italic_
 #set align(right);
 #set align(left);
 /* usepackage{ragged2e} */
-#align(center)[
+NOT IMPLEMENTED COMMAND RENDER-ERROR
     center block *bold*
-]
-#align(left)[ flushleft block ]
-#align(right)[ flushright block ]
-#align(left)[ FlushLeft block ]
-#align(right)[ FlushRight block ]
+NOT IMPLEMENTED COMMAND RENDER-ERROR
+NOT IMPLEMENTED COMMAND RENDER-ERROR flushleft block NOT IMPLEMENTED COMMAND RENDER-ERROR
+NOT IMPLEMENTED COMMAND RENDER-ERROR flushright block NOT IMPLEMENTED COMMAND RENDER-ERROR
+NOT IMPLEMENTED COMMAND RENDER-ERROR FlushLeft block NOT IMPLEMENTED COMMAND RENDER-ERROR
+NOT IMPLEMENTED COMMAND RENDER-ERROR FlushRight block NOT IMPLEMENTED COMMAND RENDER-ERROR
 
 \
 \
@@ -82,19 +82,25 @@ _italic_
 #pagebreak()
 #pagebreak()
 
-    
-- [!] itemize 1    
--               
-	+ enumerate 1              
-	+                         
-		- itemize 3                        
-		-                                   
-			+ enum 2                                  
-			+                                             
-				+ enum 3                                                                                
-- itemize 2
-    
-/ description 1: description text 1
+NOT IMPLEMENTED COMMAND RENDER-ERROR
+    RENDER-ERROR = item itemize 1
+    RENDER-ERROR = item NOT IMPLEMENTED COMMAND RENDER-ERROR
+              RENDER-ERROR = item enumerate 1
+              RENDER-ERROR = item NOT IMPLEMENTED COMMAND RENDER-ERROR
+                        RENDER-ERROR = item itemize 3
+                        RENDER-ERROR = item NOT IMPLEMENTED COMMAND RENDER-ERROR
+                                  RENDER-ERROR = item enum 2
+                                  RENDER-ERROR = item NOT IMPLEMENTED COMMAND RENDER-ERROR
+                                            RENDER-ERROR = item enum 3
+                                  NOT IMPLEMENTED COMMAND RENDER-ERROR
+                        NOT IMPLEMENTED COMMAND RENDER-ERROR
+              NOT IMPLEMENTED COMMAND RENDER-ERROR
+    NOT IMPLEMENTED COMMAND RENDER-ERROR
+    RENDER-ERROR = item itemize 2
+NOT IMPLEMENTED COMMAND RENDER-ERROR
+NOT IMPLEMENTED COMMAND RENDER-ERROR
+    RENDER-ERROR = item description text 1
+NOT IMPLEMENTED COMMAND RENDER-ERROR
 
 
 #v(2em)
@@ -133,3 +139,17 @@ _italic_
 
 RENDER-ERROR = usepackage
 
+#table(
+	columns: 3,
+	[cell1],
+	[cell2],
+	[cell3],
+	[cell4],
+	[cell5],
+	[cell6],
+	[cell7],
+	[cell8],
+	[cell9],
+)
+
+NOT IMPLEMENTED COMMAND RENDER-ERROR

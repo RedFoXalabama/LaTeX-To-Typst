@@ -1,25 +1,15 @@
-mod trans_map;
+pub mod trans_map;
+mod command_trans_map;
+mod block_trans_map;
+
 use crate::globals::get_in_listing_value;
 use crate::latex_semantic::*;
+use crate::codegen::trans_map::TransMap;
+use crate::codegen::block_trans_map::BlockTransMap;
+use crate::codegen::command_trans_map::CommandTransMap;
 
 pub fn ast_to_typst(doc: &AstDocument) -> String {
-    let mut out = String::new();
-    let mut index = 0;
-    while index < doc.items.len() {
-        let item = &doc.items[index];
-        if let AstItemNode::Command(cmd) = item {
-            if is_begin_tabular(cmd) {
-                let config_arg = cmd.required_args.get(1); // tabular usually has {cols}
-                let (body, next_index) = collect_tabular_body(&doc.items, index + 1);
-                out.push_str(&trans_map::tables::render_table(config_arg, &body));
-                index = next_index;
-                continue;
-            }
-        }
-        out.push_str(&render_item(item));
-        index += 1;
-    }
-    out
+    doc.items.iter().map(render_item).collect()
 }
 
 fn render_item(item: &AstItemNode) -> String {
@@ -34,7 +24,7 @@ fn render_item(item: &AstItemNode) -> String {
 }
 
 pub(crate) fn render_block(block_node: &BlockNode) -> String {
-    if let Some(rendered) = trans_map::translate_block(block_node) {
+    if let Some(rendered) = BlockTransMap::translate(block_node) {
         rendered
     } else {
         // Fallback: render the items inside the block normally
@@ -71,7 +61,7 @@ pub(crate) fn render_comment(comment_node: &CommentNode) -> String {
 }
 
 pub(crate) fn render_command(command_node: &CommandNode) -> String {
-    if let Some(rendered) = trans_map::translate_command(command_node) {
+    if let Some(rendered) = CommandTransMap::translate(command_node) {
         rendered
     } else {
         "NOT IMPLEMENTED COMMAND RENDER-ERROR".to_string()
@@ -83,7 +73,7 @@ fn is_begin_tabular(command_node: &CommandNode) -> bool {
         && command_node
             .required_args
             .first()
-            .map(|arg| trans_map::render_args_item(&arg.items) == "tabular")
+            .map(|arg| command_trans_map::render_args_item(&arg.items) == "tabular")
             .unwrap_or(false)
 }
 
@@ -92,7 +82,7 @@ fn is_end_tabular(command_node: &CommandNode) -> bool {
         && command_node
             .required_args
             .first()
-            .map(|arg| trans_map::render_args_item(&arg.items) == "tabular")
+            .map(|arg| command_trans_map::render_args_item(&arg.items) == "tabular")
             .unwrap_or(false)
 }
 

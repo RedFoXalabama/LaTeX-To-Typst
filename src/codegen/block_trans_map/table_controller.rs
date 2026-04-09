@@ -1,5 +1,5 @@
-use crate::codegen::trans_map::render_args_item;
-use crate::codegen::{render_command, render_text};
+use crate::codegen::command_trans_map::render_args_item;
+use crate::codegen::render_command;
 use crate::latex_semantic::{AstItemNode, OptionalArgNode, RequiredArgNode};
 
 #[derive(Debug)]
@@ -8,13 +8,18 @@ enum TableEntry {
     HLine,
 }
 
-pub fn render_table(arg: Option<&RequiredArgNode>, body: &[AstItemNode]) -> String {
+pub fn render_table(
+    _name: &str,
+    required_args: Vec<RequiredArgNode>,
+    _optional_args: Vec<OptionalArgNode>,
+    items: Vec<AstItemNode>,
+) -> String {
     let mut out = String::new();
-    let columns = count_columns(arg).max(1);
+    let columns = count_columns(required_args.first()).max(1);
 
     out.push_str(&format!("#table(\n\tcolumns: {},\n", columns));
 
-    for entry in build_table_entries(body) {
+    for entry in build_table_entries(&items) {
         match entry {
             TableEntry::Row(cells) => {
                 for cell in cells {

@@ -156,1682 +156,1333 @@ AstDocument {
                 count: 2,
             },
         ),
-        Command(
-            CommandNode {
-                name: "begin",
-                optional_args: [],
-                required_args: [
-                    RequiredArgNode {
-                        items: [
-                            Text(
-                                TextNode {
-                                    value: "document",
-                                },
-                            ),
-                        ],
-                    },
-                ],
-            },
-        ),
-        Newlines(
-            NewlinesNode {
-                count: 1,
-            },
-        ),
-        Command(
-            CommandNode {
-                name: "maketitle",
-                optional_args: [],
+        Block(
+            BlockNode {
+                name: "document",
                 required_args: [],
-            },
-        ),
-        Newlines(
-            NewlinesNode {
-                count: 1,
-            },
-        ),
-        Command(
-            CommandNode {
-                name: "tableofcontents",
                 optional_args: [],
-                required_args: [],
-            },
-        ),
-        Newlines(
-            NewlinesNode {
-                count: 2,
-            },
-        ),
-        Text(
-            TextNode {
-                value: "prova{-tra parentesi graffe-}",
-            },
-        ),
-        Newlines(
-            NewlinesNode {
-                count: 1,
-            },
-        ),
-        Text(
-            TextNode {
-                value: "testo pre commento ",
-            },
-        ),
-        Comment(
-            CommentNode {
-                value: "% prova commento monolinea",
-            },
-        ),
-        Newlines(
-            NewlinesNode {
-                count: 1,
-            },
-        ),
-        Command(
-            CommandNode {
-                name: "begin",
-                optional_args: [],
-                required_args: [
-                    RequiredArgNode {
-                        items: [
-                            Text(
-                                TextNode {
-                                    value: "comment",
-                                },
-                            ),
-                        ],
-                    },
-                ],
-            },
-        ),
-        Newlines(
-            NewlinesNode {
-                count: 1,
-            },
-        ),
-        Text(
-            TextNode {
-                value: "    Questo é un commento multilinea",
-            },
-        ),
-        Newlines(
-            NewlinesNode {
-                count: 1,
-            },
-        ),
-        Command(
-            CommandNode {
-                name: "end",
-                optional_args: [],
-                required_args: [
-                    RequiredArgNode {
-                        items: [
-                            Text(
-                                TextNode {
-                                    value: "comment",
-                                },
-                            ),
-                        ],
-                    },
-                ],
-            },
-        ),
-        Newlines(
-            NewlinesNode {
-                count: 2,
-            },
-        ),
-        Command(
-            CommandNode {
-                name: "textbf",
-                optional_args: [],
-                required_args: [
-                    RequiredArgNode {
-                        items: [
-                            Text(
-                                TextNode {
-                                    value: "Bold",
-                                },
-                            ),
-                        ],
-                    },
-                ],
-            },
-        ),
-        Newlines(
-            NewlinesNode {
-                count: 1,
-            },
-        ),
-        Command(
-            CommandNode {
-                name: "textit",
-                optional_args: [],
-                required_args: [
-                    RequiredArgNode {
-                        items: [
-                            Text(
-                                TextNode {
-                                    value: "italic",
-                                },
-                            ),
-                        ],
-                    },
-                ],
-            },
-        ),
-        Newlines(
-            NewlinesNode {
-                count: 1,
-            },
-        ),
-        Command(
-            CommandNode {
-                name: "underline",
-                optional_args: [],
-                required_args: [
-                    RequiredArgNode {
-                        items: [
-                            Text(
-                                TextNode {
-                                    value: "underline",
-                                },
-                            ),
-                        ],
-                    },
-                ],
-            },
-        ),
-        Newlines(
-            NewlinesNode {
-                count: 2,
-            },
-        ),
-        Command(
-            CommandNode {
-                name: "centering",
-                optional_args: [],
-                required_args: [],
-            },
-        ),
-        Newlines(
-            NewlinesNode {
-                count: 1,
-            },
-        ),
-        Command(
-            CommandNode {
-                name: "raggedright",
-                optional_args: [],
-                required_args: [],
-            },
-        ),
-        Newlines(
-            NewlinesNode {
-                count: 1,
-            },
-        ),
-        Command(
-            CommandNode {
-                name: "raggedleft",
-                optional_args: [],
-                required_args: [],
-            },
-        ),
-        Newlines(
-            NewlinesNode {
-                count: 1,
-            },
-        ),
-        Command(
-            CommandNode {
-                name: "flushright",
-                optional_args: [],
-                required_args: [],
-            },
-        ),
-        Newlines(
-            NewlinesNode {
-                count: 1,
-            },
-        ),
-        Command(
-            CommandNode {
-                name: "flushleft",
-                optional_args: [],
-                required_args: [],
-            },
-        ),
-        Newlines(
-            NewlinesNode {
-                count: 1,
-            },
-        ),
-        Command(
-            CommandNode {
-                name: "usepackage",
-                optional_args: [],
-                required_args: [
-                    RequiredArgNode {
-                        items: [
-                            Text(
-                                TextNode {
-                                    value: "ragged2e",
-                                },
-                            ),
-                        ],
-                    },
-                ],
-            },
-        ),
-        Newlines(
-            NewlinesNode {
-                count: 1,
-            },
-        ),
-        Command(
-            CommandNode {
-                name: "begin",
-                optional_args: [],
-                required_args: [
-                    RequiredArgNode {
-                        items: [
-                            Text(
-                                TextNode {
-                                    value: "center",
-                                },
-                            ),
-                        ],
-                    },
-                ],
-            },
-        ),
-        Newlines(
-            NewlinesNode {
-                count: 1,
-            },
-        ),
-        Text(
-            TextNode {
-                value: "    center block ",
-            },
-        ),
-        Command(
-            CommandNode {
-                name: "textbf",
-                optional_args: [],
-                required_args: [
-                    RequiredArgNode {
-                        items: [
-                            Text(
-                                TextNode {
-                                    value: "bold",
-                                },
-                            ),
-                        ],
-                    },
-                ],
-            },
-        ),
-        Newlines(
-            NewlinesNode {
-                count: 1,
-            },
-        ),
-        Command(
-            CommandNode {
-                name: "end",
-                optional_args: [],
-                required_args: [
-                    RequiredArgNode {
-                        items: [
-                            Text(
-                                TextNode {
-                                    value: "center",
-                                },
-                            ),
-                        ],
-                    },
-                ],
-            },
-        ),
-        Newlines(
-            NewlinesNode {
-                count: 1,
-            },
-        ),
-        Command(
-            CommandNode {
-                name: "begin",
-                optional_args: [],
-                required_args: [
-                    RequiredArgNode {
-                        items: [
-                            Text(
-                                TextNode {
-                                    value: "flushleft",
-                                },
-                            ),
-                        ],
-                    },
-                ],
-            },
-        ),
-        Text(
-            TextNode {
-                value: " flushleft block ",
-            },
-        ),
-        Command(
-            CommandNode {
-                name: "end",
-                optional_args: [],
-                required_args: [
-                    RequiredArgNode {
-                        items: [
-                            Text(
-                                TextNode {
-                                    value: "flushleft",
-                                },
-                            ),
-                        ],
-                    },
-                ],
-            },
-        ),
-        Newlines(
-            NewlinesNode {
-                count: 1,
-            },
-        ),
-        Command(
-            CommandNode {
-                name: "begin",
-                optional_args: [],
-                required_args: [
-                    RequiredArgNode {
-                        items: [
-                            Text(
-                                TextNode {
-                                    value: "flushright",
-                                },
-                            ),
-                        ],
-                    },
-                ],
-            },
-        ),
-        Text(
-            TextNode {
-                value: " flushright block ",
-            },
-        ),
-        Command(
-            CommandNode {
-                name: "end",
-                optional_args: [],
-                required_args: [
-                    RequiredArgNode {
-                        items: [
-                            Text(
-                                TextNode {
-                                    value: "flushright",
-                                },
-                            ),
-                        ],
-                    },
-                ],
-            },
-        ),
-        Newlines(
-            NewlinesNode {
-                count: 1,
-            },
-        ),
-        Command(
-            CommandNode {
-                name: "begin",
-                optional_args: [],
-                required_args: [
-                    RequiredArgNode {
-                        items: [
-                            Text(
-                                TextNode {
-                                    value: "FlushLeft",
-                                },
-                            ),
-                        ],
-                    },
-                ],
-            },
-        ),
-        Text(
-            TextNode {
-                value: " FlushLeft block ",
-            },
-        ),
-        Command(
-            CommandNode {
-                name: "end",
-                optional_args: [],
-                required_args: [
-                    RequiredArgNode {
-                        items: [
-                            Text(
-                                TextNode {
-                                    value: "FlushLeft",
-                                },
-                            ),
-                        ],
-                    },
-                ],
-            },
-        ),
-        Newlines(
-            NewlinesNode {
-                count: 1,
-            },
-        ),
-        Command(
-            CommandNode {
-                name: "begin",
-                optional_args: [],
-                required_args: [
-                    RequiredArgNode {
-                        items: [
-                            Text(
-                                TextNode {
-                                    value: "FlushRight",
-                                },
-                            ),
-                        ],
-                    },
-                ],
-            },
-        ),
-        Text(
-            TextNode {
-                value: " FlushRight block ",
-            },
-        ),
-        Command(
-            CommandNode {
-                name: "end",
-                optional_args: [],
-                required_args: [
-                    RequiredArgNode {
-                        items: [
-                            Text(
-                                TextNode {
-                                    value: "FlushRight",
-                                },
-                            ),
-                        ],
-                    },
-                ],
-            },
-        ),
-        Newlines(
-            NewlinesNode {
-                count: 2,
-            },
-        ),
-        Linebreak(
-            LinebreakNode {
-                value: "\\\\",
-            },
-        ),
-        Newlines(
-            NewlinesNode {
-                count: 1,
-            },
-        ),
-        Command(
-            CommandNode {
-                name: "newline",
-                optional_args: [],
-                required_args: [],
-            },
-        ),
-        Newlines(
-            NewlinesNode {
-                count: 1,
-            },
-        ),
-        Command(
-            CommandNode {
-                name: "break",
-                optional_args: [],
-                required_args: [],
-            },
-        ),
-        Newlines(
-            NewlinesNode {
-                count: 1,
-            },
-        ),
-        Command(
-            CommandNode {
-                name: "hfill",
-                optional_args: [],
-                required_args: [],
-            },
-        ),
-        Newlines(
-            NewlinesNode {
-                count: 1,
-            },
-        ),
-        Command(
-            CommandNode {
-                name: "vfill",
-                optional_args: [],
-                required_args: [],
-            },
-        ),
-        Newlines(
-            NewlinesNode {
-                count: 1,
-            },
-        ),
-        Command(
-            CommandNode {
-                name: "pagebreak",
-                optional_args: [],
-                required_args: [],
-            },
-        ),
-        Newlines(
-            NewlinesNode {
-                count: 1,
-            },
-        ),
-        Command(
-            CommandNode {
-                name: "newpage",
-                optional_args: [],
-                required_args: [],
-            },
-        ),
-        Newlines(
-            NewlinesNode {
-                count: 1,
-            },
-        ),
-        Command(
-            CommandNode {
-                name: "clearpage",
-                optional_args: [],
-                required_args: [],
-            },
-        ),
-        Newlines(
-            NewlinesNode {
-                count: 2,
-            },
-        ),
-        Command(
-            CommandNode {
-                name: "begin",
-                optional_args: [],
-                required_args: [
-                    RequiredArgNode {
-                        items: [
-                            Text(
-                                TextNode {
-                                    value: "itemize",
-                                },
-                            ),
-                        ],
-                    },
-                ],
-            },
-        ),
-        Newlines(
-            NewlinesNode {
-                count: 1,
-            },
-        ),
-        Text(
-            TextNode {
-                value: "    ",
-            },
-        ),
-        Command(
-            CommandNode {
-                name: "item",
-                optional_args: [
-                    OptionalArgNode {
-                        entries: [
-                            Items(
-                                [
-                                    Text(
-                                        TextNode {
-                                            value: "!",
-                                        },
-                                    ),
-                                ],
-                            ),
-                        ],
-                    },
-                ],
-                required_args: [],
-            },
-        ),
-        Text(
-            TextNode {
-                value: " itemize 1",
-            },
-        ),
-        Newlines(
-            NewlinesNode {
-                count: 1,
-            },
-        ),
-        Text(
-            TextNode {
-                value: "    ",
-            },
-        ),
-        Command(
-            CommandNode {
-                name: "item",
-                optional_args: [],
-                required_args: [],
-            },
-        ),
-        Text(
-            TextNode {
-                value: " ",
-            },
-        ),
-        Command(
-            CommandNode {
-                name: "begin",
-                optional_args: [],
-                required_args: [
-                    RequiredArgNode {
-                        items: [
-                            Text(
-                                TextNode {
-                                    value: "enumerate",
-                                },
-                            ),
-                        ],
-                    },
-                ],
-            },
-        ),
-        Newlines(
-            NewlinesNode {
-                count: 1,
-            },
-        ),
-        Text(
-            TextNode {
-                value: "              ",
-            },
-        ),
-        Command(
-            CommandNode {
-                name: "item",
-                optional_args: [],
-                required_args: [],
-            },
-        ),
-        Text(
-            TextNode {
-                value: " enumerate 1",
-            },
-        ),
-        Newlines(
-            NewlinesNode {
-                count: 1,
-            },
-        ),
-        Text(
-            TextNode {
-                value: "              ",
-            },
-        ),
-        Command(
-            CommandNode {
-                name: "item",
-                optional_args: [],
-                required_args: [],
-            },
-        ),
-        Text(
-            TextNode {
-                value: " ",
-            },
-        ),
-        Command(
-            CommandNode {
-                name: "begin",
-                optional_args: [],
-                required_args: [
-                    RequiredArgNode {
-                        items: [
-                            Text(
-                                TextNode {
-                                    value: "itemize",
-                                },
-                            ),
-                        ],
-                    },
-                ],
-            },
-        ),
-        Newlines(
-            NewlinesNode {
-                count: 1,
-            },
-        ),
-        Text(
-            TextNode {
-                value: "                        ",
-            },
-        ),
-        Command(
-            CommandNode {
-                name: "item",
-                optional_args: [],
-                required_args: [],
-            },
-        ),
-        Text(
-            TextNode {
-                value: " itemize 3",
-            },
-        ),
-        Newlines(
-            NewlinesNode {
-                count: 1,
-            },
-        ),
-        Text(
-            TextNode {
-                value: "                        ",
-            },
-        ),
-        Command(
-            CommandNode {
-                name: "item",
-                optional_args: [],
-                required_args: [],
-            },
-        ),
-        Text(
-            TextNode {
-                value: " ",
-            },
-        ),
-        Command(
-            CommandNode {
-                name: "begin",
-                optional_args: [],
-                required_args: [
-                    RequiredArgNode {
-                        items: [
-                            Text(
-                                TextNode {
-                                    value: "enumerate",
-                                },
-                            ),
-                        ],
-                    },
-                ],
-            },
-        ),
-        Newlines(
-            NewlinesNode {
-                count: 1,
-            },
-        ),
-        Text(
-            TextNode {
-                value: "                                  ",
-            },
-        ),
-        Command(
-            CommandNode {
-                name: "item",
-                optional_args: [],
-                required_args: [],
-            },
-        ),
-        Text(
-            TextNode {
-                value: " enum 2",
-            },
-        ),
-        Newlines(
-            NewlinesNode {
-                count: 1,
-            },
-        ),
-        Text(
-            TextNode {
-                value: "                                  ",
-            },
-        ),
-        Command(
-            CommandNode {
-                name: "item",
-                optional_args: [],
-                required_args: [],
-            },
-        ),
-        Text(
-            TextNode {
-                value: " ",
-            },
-        ),
-        Command(
-            CommandNode {
-                name: "begin",
-                optional_args: [],
-                required_args: [
-                    RequiredArgNode {
-                        items: [
-                            Text(
-                                TextNode {
-                                    value: "enumerate",
-                                },
-                            ),
-                        ],
-                    },
-                ],
-            },
-        ),
-        Newlines(
-            NewlinesNode {
-                count: 1,
-            },
-        ),
-        Text(
-            TextNode {
-                value: "                                            ",
-            },
-        ),
-        Command(
-            CommandNode {
-                name: "item",
-                optional_args: [],
-                required_args: [],
-            },
-        ),
-        Text(
-            TextNode {
-                value: " enum 3",
-            },
-        ),
-        Newlines(
-            NewlinesNode {
-                count: 1,
-            },
-        ),
-        Text(
-            TextNode {
-                value: "                                  ",
-            },
-        ),
-        Command(
-            CommandNode {
-                name: "end",
-                optional_args: [],
-                required_args: [
-                    RequiredArgNode {
-                        items: [
-                            Text(
-                                TextNode {
-                                    value: "enumerate",
-                                },
-                            ),
-                        ],
-                    },
-                ],
-            },
-        ),
-        Newlines(
-            NewlinesNode {
-                count: 1,
-            },
-        ),
-        Text(
-            TextNode {
-                value: "                        ",
-            },
-        ),
-        Command(
-            CommandNode {
-                name: "end",
-                optional_args: [],
-                required_args: [
-                    RequiredArgNode {
-                        items: [
-                            Text(
-                                TextNode {
-                                    value: "enumerate",
-                                },
-                            ),
-                        ],
-                    },
-                ],
-            },
-        ),
-        Newlines(
-            NewlinesNode {
-                count: 1,
-            },
-        ),
-        Text(
-            TextNode {
-                value: "              ",
-            },
-        ),
-        Command(
-            CommandNode {
-                name: "end",
-                optional_args: [],
-                required_args: [
-                    RequiredArgNode {
-                        items: [
-                            Text(
-                                TextNode {
-                                    value: "itemize",
-                                },
-                            ),
-                        ],
-                    },
-                ],
-            },
-        ),
-        Newlines(
-            NewlinesNode {
-                count: 1,
-            },
-        ),
-        Text(
-            TextNode {
-                value: "    ",
-            },
-        ),
-        Command(
-            CommandNode {
-                name: "end",
-                optional_args: [],
-                required_args: [
-                    RequiredArgNode {
-                        items: [
-                            Text(
-                                TextNode {
-                                    value: "enumerate",
-                                },
-                            ),
-                        ],
-                    },
-                ],
-            },
-        ),
-        Newlines(
-            NewlinesNode {
-                count: 1,
-            },
-        ),
-        Text(
-            TextNode {
-                value: "    ",
-            },
-        ),
-        Command(
-            CommandNode {
-                name: "item",
-                optional_args: [],
-                required_args: [],
-            },
-        ),
-        Text(
-            TextNode {
-                value: " itemize 2",
-            },
-        ),
-        Newlines(
-            NewlinesNode {
-                count: 1,
-            },
-        ),
-        Command(
-            CommandNode {
-                name: "end",
-                optional_args: [],
-                required_args: [
-                    RequiredArgNode {
-                        items: [
-                            Text(
-                                TextNode {
-                                    value: "itemize",
-                                },
-                            ),
-                        ],
-                    },
-                ],
-            },
-        ),
-        Newlines(
-            NewlinesNode {
-                count: 1,
-            },
-        ),
-        Command(
-            CommandNode {
-                name: "begin",
-                optional_args: [],
-                required_args: [
-                    RequiredArgNode {
-                        items: [
-                            Text(
-                                TextNode {
-                                    value: "description",
-                                },
-                            ),
-                        ],
-                    },
-                ],
-            },
-        ),
-        Newlines(
-            NewlinesNode {
-                count: 1,
-            },
-        ),
-        Text(
-            TextNode {
-                value: "    ",
-            },
-        ),
-        Command(
-            CommandNode {
-                name: "item",
-                optional_args: [
-                    OptionalArgNode {
-                        entries: [
-                            Items(
-                                [
-                                    Text(
-                                        TextNode {
-                                            value: "description 1",
-                                        },
-                                    ),
-                                ],
-                            ),
-                        ],
-                    },
-                ],
-                required_args: [],
-            },
-        ),
-        Text(
-            TextNode {
-                value: " description text 1",
-            },
-        ),
-        Newlines(
-            NewlinesNode {
-                count: 1,
-            },
-        ),
-        Command(
-            CommandNode {
-                name: "end",
-                optional_args: [],
-                required_args: [
-                    RequiredArgNode {
-                        items: [
-                            Text(
-                                TextNode {
-                                    value: "description",
-                                },
-                            ),
-                        ],
-                    },
-                ],
-            },
-        ),
-        Newlines(
-            NewlinesNode {
-                count: 3,
-            },
-        ),
-        Command(
-            CommandNode {
-                name: "part",
-                optional_args: [],
-                required_args: [
-                    RequiredArgNode {
-                        items: [
-                            Text(
-                                TextNode {
-                                    value: "part 1",
-                                },
-                            ),
-                        ],
-                    },
-                ],
-            },
-        ),
-        Newlines(
-            NewlinesNode {
-                count: 1,
-            },
-        ),
-        Command(
-            CommandNode {
-                name: "part",
-                optional_args: [],
-                required_args: [
-                    RequiredArgNode {
-                        items: [
-                            Text(
-                                TextNode {
-                                    value: "part 2",
-                                },
-                            ),
-                        ],
-                    },
-                ],
-            },
-        ),
-        Newlines(
-            NewlinesNode {
-                count: 1,
-            },
-        ),
-        Command(
-            CommandNode {
-                name: "chapter",
-                optional_args: [],
-                required_args: [
-                    RequiredArgNode {
-                        items: [
-                            Text(
-                                TextNode {
-                                    value: "chapter",
-                                },
-                            ),
-                        ],
-                    },
-                ],
-            },
-        ),
-        Newlines(
-            NewlinesNode {
-                count: 1,
-            },
-        ),
-        Command(
-            CommandNode {
-                name: "section",
-                optional_args: [],
-                required_args: [
-                    RequiredArgNode {
-                        items: [
-                            Text(
-                                TextNode {
-                                    value: "section",
-                                },
-                            ),
-                        ],
-                    },
-                ],
-            },
-        ),
-        Newlines(
-            NewlinesNode {
-                count: 1,
-            },
-        ),
-        Command(
-            CommandNode {
-                name: "subsection",
-                optional_args: [],
-                required_args: [
-                    RequiredArgNode {
-                        items: [
-                            Text(
-                                TextNode {
-                                    value: "subsection",
-                                },
-                            ),
-                        ],
-                    },
-                ],
-            },
-        ),
-        Newlines(
-            NewlinesNode {
-                count: 1,
-            },
-        ),
-        Command(
-            CommandNode {
-                name: "subsubsection",
-                optional_args: [],
-                required_args: [
-                    RequiredArgNode {
-                        items: [
-                            Text(
-                                TextNode {
-                                    value: "subsubsection",
-                                },
-                            ),
-                        ],
-                    },
-                ],
-            },
-        ),
-        Newlines(
-            NewlinesNode {
-                count: 1,
-            },
-        ),
-        Command(
-            CommandNode {
-                name: "paragraph",
-                optional_args: [],
-                required_args: [
-                    RequiredArgNode {
-                        items: [
-                            Text(
-                                TextNode {
-                                    value: "paragraph",
-                                },
-                            ),
-                        ],
-                    },
-                ],
-            },
-        ),
-        Newlines(
-            NewlinesNode {
-                count: 1,
-            },
-        ),
-        Command(
-            CommandNode {
-                name: "subparagraph",
-                optional_args: [],
-                required_args: [
-                    RequiredArgNode {
-                        items: [
-                            Text(
-                                TextNode {
-                                    value: "subparagraph",
-                                },
-                            ),
-                        ],
-                    },
-                ],
-            },
-        ),
-        Newlines(
-            NewlinesNode {
-                count: 2,
-            },
-        ),
-        Command(
-            CommandNode {
-                name: "textcolor",
-                optional_args: [],
-                required_args: [
-                    RequiredArgNode {
-                        items: [
-                            Text(
-                                TextNode {
-                                    value: "blue",
-                                },
-                            ),
-                        ],
-                    },
-                    RequiredArgNode {
-                        items: [
-                            Text(
-                                TextNode {
-                                    value: "This is ",
-                                },
-                            ),
-                            Command(
-                                CommandNode {
-                                    name: "textbf",
-                                    optional_args: [],
-                                    required_args: [
-                                        RequiredArgNode {
-                                            items: [
-                                                Text(
-                                                    TextNode {
-                                                        value: "bold and blue",
-                                                    },
-                                                ),
-                                            ],
-                                        },
+                items: [
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "maketitle",
+                            optional_args: [],
+                            required_args: [],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "tableofcontents",
+                            optional_args: [],
+                            required_args: [],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 2,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "prova{-tra parentesi graffe-}",
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "testo pre commento ",
+                        },
+                    ),
+                    Comment(
+                        CommentNode {
+                            value: "% prova commento monolinea",
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Block(
+                        BlockNode {
+                            name: "comment",
+                            required_args: [],
+                            optional_args: [],
+                            items: [
+                                Newlines(
+                                    NewlinesNode {
+                                        count: 1,
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: "    Questo é un commento multilinea",
+                                    },
+                                ),
+                                Newlines(
+                                    NewlinesNode {
+                                        count: 1,
+                                    },
+                                ),
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 2,
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "textbf",
+                            optional_args: [],
+                            required_args: [
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "Bold",
+                                            },
+                                        ),
                                     ],
                                 },
-                            ),
-                            Text(
-                                TextNode {
-                                    value: ".",
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "textit",
+                            optional_args: [],
+                            required_args: [
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "italic",
+                                            },
+                                        ),
+                                    ],
                                 },
-                            ),
-                        ],
-                    },
-                ],
-            },
-        ),
-        Newlines(
-            NewlinesNode {
-                count: 2,
-            },
-        ),
-        Command(
-            CommandNode {
-                name: "href",
-                optional_args: [],
-                required_args: [
-                    RequiredArgNode {
-                        items: [
-                            Text(
-                                TextNode {
-                                    value: "https://www.overleaf.com/learn",
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "underline",
+                            optional_args: [],
+                            required_args: [
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "underline",
+                                            },
+                                        ),
+                                    ],
                                 },
-                            ),
-                        ],
-                    },
-                ],
-            },
-        ),
-        Newlines(
-            NewlinesNode {
-                count: 1,
-            },
-        ),
-        Command(
-            CommandNode {
-                name: "href",
-                optional_args: [],
-                required_args: [
-                    RequiredArgNode {
-                        items: [
-                            Text(
-                                TextNode {
-                                    value: "https://www.overleaf.com/learn",
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 2,
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "centering",
+                            optional_args: [],
+                            required_args: [],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "raggedright",
+                            optional_args: [],
+                            required_args: [],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "raggedleft",
+                            optional_args: [],
+                            required_args: [],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "flushright",
+                            optional_args: [],
+                            required_args: [],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "flushleft",
+                            optional_args: [],
+                            required_args: [],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "usepackage",
+                            optional_args: [],
+                            required_args: [
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "ragged2e",
+                                            },
+                                        ),
+                                    ],
                                 },
-                            ),
-                        ],
-                    },
-                    RequiredArgNode {
-                        items: [
-                            Text(
-                                TextNode {
-                                    value: "Overleaf Learn",
-                                },
-                            ),
-                        ],
-                    },
-                ],
-            },
-        ),
-        Text(
-            TextNode {
-                value: " ",
-            },
-        ),
-        Comment(
-            CommentNode {
-                value: "% testo del link",
-            },
-        ),
-        Newlines(
-            NewlinesNode {
-                count: 2,
-            },
-        ),
-        Command(
-            CommandNode {
-                name: "usepackage",
-                optional_args: [
-                    OptionalArgNode {
-                        entries: [
-                            KeyValue(
-                                KvPairNode {
-                                    key: "letterpaper",
-                                    value: Simple(
-                                        "true",
-                                    ),
-                                },
-                            ),
-                            KeyValue(
-                                KvPairNode {
-                                    key: "top",
-                                    value: Simple(
-                                        "2cm\\textwidth",
-                                    ),
-                                },
-                            ),
-                            KeyValue(
-                                KvPairNode {
-                                    key: "points",
-                                    value: List(
-                                        [
-                                            "1",
-                                            "cane",
-                                            "3",
-                                            "4",
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Block(
+                        BlockNode {
+                            name: "center",
+                            required_args: [],
+                            optional_args: [],
+                            items: [
+                                Newlines(
+                                    NewlinesNode {
+                                        count: 1,
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: "    center block ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "textbf",
+                                        optional_args: [],
+                                        required_args: [
+                                            RequiredArgNode {
+                                                items: [
+                                                    Text(
+                                                        TextNode {
+                                                            value: "bold",
+                                                        },
+                                                    ),
+                                                ],
+                                            },
                                         ],
-                                    ),
+                                    },
+                                ),
+                                Newlines(
+                                    NewlinesNode {
+                                        count: 1,
+                                    },
+                                ),
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Block(
+                        BlockNode {
+                            name: "flushleft",
+                            required_args: [],
+                            optional_args: [],
+                            items: [
+                                Text(
+                                    TextNode {
+                                        value: " flushleft block ",
+                                    },
+                                ),
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Block(
+                        BlockNode {
+                            name: "flushright",
+                            required_args: [],
+                            optional_args: [],
+                            items: [
+                                Text(
+                                    TextNode {
+                                        value: " flushright block ",
+                                    },
+                                ),
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Block(
+                        BlockNode {
+                            name: "FlushLeft",
+                            required_args: [],
+                            optional_args: [],
+                            items: [
+                                Text(
+                                    TextNode {
+                                        value: " FlushLeft block ",
+                                    },
+                                ),
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Block(
+                        BlockNode {
+                            name: "FlushRight",
+                            required_args: [],
+                            optional_args: [],
+                            items: [
+                                Text(
+                                    TextNode {
+                                        value: " FlushRight block ",
+                                    },
+                                ),
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 2,
+                        },
+                    ),
+                    Linebreak(
+                        LinebreakNode {
+                            value: "\\\\",
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "newline",
+                            optional_args: [],
+                            required_args: [],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "break",
+                            optional_args: [],
+                            required_args: [],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "hfill",
+                            optional_args: [],
+                            required_args: [],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "vfill",
+                            optional_args: [],
+                            required_args: [],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "pagebreak",
+                            optional_args: [],
+                            required_args: [],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "newpage",
+                            optional_args: [],
+                            required_args: [],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "clearpage",
+                            optional_args: [],
+                            required_args: [],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 2,
+                        },
+                    ),
+                    Block(
+                        BlockNode {
+                            name: "itemize",
+                            required_args: [],
+                            optional_args: [],
+                            items: [
+                                Newlines(
+                                    NewlinesNode {
+                                        count: 1,
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: "    ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "item",
+                                        optional_args: [
+                                            OptionalArgNode {
+                                                entries: [
+                                                    Items(
+                                                        [
+                                                            Text(
+                                                                TextNode {
+                                                                    value: "!",
+                                                                },
+                                                            ),
+                                                        ],
+                                                    ),
+                                                ],
+                                            },
+                                        ],
+                                        required_args: [],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: " itemize 1",
+                                    },
+                                ),
+                                Newlines(
+                                    NewlinesNode {
+                                        count: 1,
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: "    ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "item",
+                                        optional_args: [],
+                                        required_args: [],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: " ",
+                                    },
+                                ),
+                                Block(
+                                    BlockNode {
+                                        name: "enumerate",
+                                        required_args: [],
+                                        optional_args: [],
+                                        items: [
+                                            Newlines(
+                                                NewlinesNode {
+                                                    count: 1,
+                                                },
+                                            ),
+                                            Text(
+                                                TextNode {
+                                                    value: "              ",
+                                                },
+                                            ),
+                                            Command(
+                                                CommandNode {
+                                                    name: "item",
+                                                    optional_args: [],
+                                                    required_args: [],
+                                                },
+                                            ),
+                                            Text(
+                                                TextNode {
+                                                    value: " enumerate 1",
+                                                },
+                                            ),
+                                            Newlines(
+                                                NewlinesNode {
+                                                    count: 1,
+                                                },
+                                            ),
+                                            Text(
+                                                TextNode {
+                                                    value: "              ",
+                                                },
+                                            ),
+                                            Command(
+                                                CommandNode {
+                                                    name: "item",
+                                                    optional_args: [],
+                                                    required_args: [],
+                                                },
+                                            ),
+                                            Text(
+                                                TextNode {
+                                                    value: " ",
+                                                },
+                                            ),
+                                            Block(
+                                                BlockNode {
+                                                    name: "itemize",
+                                                    required_args: [],
+                                                    optional_args: [],
+                                                    items: [
+                                                        Newlines(
+                                                            NewlinesNode {
+                                                                count: 1,
+                                                            },
+                                                        ),
+                                                        Text(
+                                                            TextNode {
+                                                                value: "                        ",
+                                                            },
+                                                        ),
+                                                        Command(
+                                                            CommandNode {
+                                                                name: "item",
+                                                                optional_args: [],
+                                                                required_args: [],
+                                                            },
+                                                        ),
+                                                        Text(
+                                                            TextNode {
+                                                                value: " itemize 3",
+                                                            },
+                                                        ),
+                                                        Newlines(
+                                                            NewlinesNode {
+                                                                count: 1,
+                                                            },
+                                                        ),
+                                                        Text(
+                                                            TextNode {
+                                                                value: "                        ",
+                                                            },
+                                                        ),
+                                                        Command(
+                                                            CommandNode {
+                                                                name: "item",
+                                                                optional_args: [],
+                                                                required_args: [],
+                                                            },
+                                                        ),
+                                                        Text(
+                                                            TextNode {
+                                                                value: " ",
+                                                            },
+                                                        ),
+                                                        Block(
+                                                            BlockNode {
+                                                                name: "enumerate",
+                                                                required_args: [],
+                                                                optional_args: [],
+                                                                items: [
+                                                                    Newlines(
+                                                                        NewlinesNode {
+                                                                            count: 1,
+                                                                        },
+                                                                    ),
+                                                                    Text(
+                                                                        TextNode {
+                                                                            value: "                                  ",
+                                                                        },
+                                                                    ),
+                                                                    Command(
+                                                                        CommandNode {
+                                                                            name: "item",
+                                                                            optional_args: [],
+                                                                            required_args: [],
+                                                                        },
+                                                                    ),
+                                                                    Text(
+                                                                        TextNode {
+                                                                            value: " enum 2",
+                                                                        },
+                                                                    ),
+                                                                    Newlines(
+                                                                        NewlinesNode {
+                                                                            count: 1,
+                                                                        },
+                                                                    ),
+                                                                    Text(
+                                                                        TextNode {
+                                                                            value: "                                  ",
+                                                                        },
+                                                                    ),
+                                                                    Command(
+                                                                        CommandNode {
+                                                                            name: "item",
+                                                                            optional_args: [],
+                                                                            required_args: [],
+                                                                        },
+                                                                    ),
+                                                                    Text(
+                                                                        TextNode {
+                                                                            value: " ",
+                                                                        },
+                                                                    ),
+                                                                    Block(
+                                                                        BlockNode {
+                                                                            name: "enumerate",
+                                                                            required_args: [],
+                                                                            optional_args: [],
+                                                                            items: [
+                                                                                Newlines(
+                                                                                    NewlinesNode {
+                                                                                        count: 1,
+                                                                                    },
+                                                                                ),
+                                                                                Text(
+                                                                                    TextNode {
+                                                                                        value: "                                            ",
+                                                                                    },
+                                                                                ),
+                                                                                Command(
+                                                                                    CommandNode {
+                                                                                        name: "item",
+                                                                                        optional_args: [],
+                                                                                        required_args: [],
+                                                                                    },
+                                                                                ),
+                                                                                Text(
+                                                                                    TextNode {
+                                                                                        value: " enum 3",
+                                                                                    },
+                                                                                ),
+                                                                                Newlines(
+                                                                                    NewlinesNode {
+                                                                                        count: 1,
+                                                                                    },
+                                                                                ),
+                                                                                Text(
+                                                                                    TextNode {
+                                                                                        value: "                                  ",
+                                                                                    },
+                                                                                ),
+                                                                            ],
+                                                                        },
+                                                                    ),
+                                                                    Newlines(
+                                                                        NewlinesNode {
+                                                                            count: 1,
+                                                                        },
+                                                                    ),
+                                                                    Text(
+                                                                        TextNode {
+                                                                            value: "                        ",
+                                                                        },
+                                                                    ),
+                                                                ],
+                                                            },
+                                                        ),
+                                                        Newlines(
+                                                            NewlinesNode {
+                                                                count: 1,
+                                                            },
+                                                        ),
+                                                        Text(
+                                                            TextNode {
+                                                                value: "              ",
+                                                            },
+                                                        ),
+                                                    ],
+                                                },
+                                            ),
+                                            Newlines(
+                                                NewlinesNode {
+                                                    count: 1,
+                                                },
+                                            ),
+                                            Text(
+                                                TextNode {
+                                                    value: "    ",
+                                                },
+                                            ),
+                                        ],
+                                    },
+                                ),
+                                Newlines(
+                                    NewlinesNode {
+                                        count: 1,
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: "    ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "item",
+                                        optional_args: [],
+                                        required_args: [],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: " itemize 2",
+                                    },
+                                ),
+                                Newlines(
+                                    NewlinesNode {
+                                        count: 1,
+                                    },
+                                ),
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Block(
+                        BlockNode {
+                            name: "description",
+                            required_args: [],
+                            optional_args: [],
+                            items: [
+                                Newlines(
+                                    NewlinesNode {
+                                        count: 1,
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: "    ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "item",
+                                        optional_args: [
+                                            OptionalArgNode {
+                                                entries: [
+                                                    Items(
+                                                        [
+                                                            Text(
+                                                                TextNode {
+                                                                    value: "description 1",
+                                                                },
+                                                            ),
+                                                        ],
+                                                    ),
+                                                ],
+                                            },
+                                        ],
+                                        required_args: [],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: " description text 1",
+                                    },
+                                ),
+                                Newlines(
+                                    NewlinesNode {
+                                        count: 1,
+                                    },
+                                ),
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 3,
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "part",
+                            optional_args: [],
+                            required_args: [
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "part 1",
+                                            },
+                                        ),
+                                    ],
                                 },
-                            ),
-                        ],
-                    },
-                ],
-                required_args: [
-                    RequiredArgNode {
-                        items: [
-                            Text(
-                                TextNode {
-                                    value: "geometry",
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "part",
+                            optional_args: [],
+                            required_args: [
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "part 2",
+                                            },
+                                        ),
+                                    ],
                                 },
-                            ),
-                        ],
-                    },
-                ],
-            },
-        ),
-        Newlines(
-            NewlinesNode {
-                count: 2,
-            },
-        ),
-        Command(
-            CommandNode {
-                name: "begin",
-                optional_args: [],
-                required_args: [
-                    RequiredArgNode {
-                        items: [
-                            Text(
-                                TextNode {
-                                    value: "tabular",
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "chapter",
+                            optional_args: [],
+                            required_args: [
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "chapter",
+                                            },
+                                        ),
+                                    ],
                                 },
-                            ),
-                        ],
-                    },
-                    RequiredArgNode {
-                        items: [
-                            Text(
-                                TextNode {
-                                    value: " |c|c|c| ",
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "section",
+                            optional_args: [],
+                            required_args: [
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "section",
+                                            },
+                                        ),
+                                    ],
                                 },
-                            ),
-                        ],
-                    },
-                ],
-            },
-        ),
-        Newlines(
-            NewlinesNode {
-                count: 1,
-            },
-        ),
-        Text(
-            TextNode {
-                value: "    ",
-            },
-        ),
-        Command(
-            CommandNode {
-                name: "hline",
-                optional_args: [],
-                required_args: [],
-            },
-        ),
-        Newlines(
-            NewlinesNode {
-                count: 1,
-            },
-        ),
-        Text(
-            TextNode {
-                value: "    cell1 & cell2 & cell3 ",
-            },
-        ),
-        Linebreak(
-            LinebreakNode {
-                value: "\\\\",
-            },
-        ),
-        Newlines(
-            NewlinesNode {
-                count: 1,
-            },
-        ),
-        Text(
-            TextNode {
-                value: "    ",
-            },
-        ),
-        Command(
-            CommandNode {
-                name: "hline",
-                optional_args: [],
-                required_args: [],
-            },
-        ),
-        Newlines(
-            NewlinesNode {
-                count: 1,
-            },
-        ),
-        Text(
-            TextNode {
-                value: "    cell4 & cell5 & cell6 ",
-            },
-        ),
-        Linebreak(
-            LinebreakNode {
-                value: "\\\\",
-            },
-        ),
-        Newlines(
-            NewlinesNode {
-                count: 1,
-            },
-        ),
-        Text(
-            TextNode {
-                value: "    ",
-            },
-        ),
-        Command(
-            CommandNode {
-                name: "hline",
-                optional_args: [],
-                required_args: [],
-            },
-        ),
-        Newlines(
-            NewlinesNode {
-                count: 1,
-            },
-        ),
-        Text(
-            TextNode {
-                value: "    cell7 & cell8 & cell9 ",
-            },
-        ),
-        Linebreak(
-            LinebreakNode {
-                value: "\\\\",
-            },
-        ),
-        Newlines(
-            NewlinesNode {
-                count: 1,
-            },
-        ),
-        Text(
-            TextNode {
-                value: "    ",
-            },
-        ),
-        Command(
-            CommandNode {
-                name: "hline",
-                optional_args: [],
-                required_args: [],
-            },
-        ),
-        Newlines(
-            NewlinesNode {
-                count: 1,
-            },
-        ),
-        Command(
-            CommandNode {
-                name: "end",
-                optional_args: [],
-                required_args: [
-                    RequiredArgNode {
-                        items: [
-                            Text(
-                                TextNode {
-                                    value: "tabular",
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "subsection",
+                            optional_args: [],
+                            required_args: [
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "subsection",
+                                            },
+                                        ),
+                                    ],
                                 },
-                            ),
-                        ],
-                    },
-                ],
-            },
-        ),
-        Newlines(
-            NewlinesNode {
-                count: 2,
-            },
-        ),
-        Command(
-            CommandNode {
-                name: "end",
-                optional_args: [],
-                required_args: [
-                    RequiredArgNode {
-                        items: [
-                            Text(
-                                TextNode {
-                                    value: "document",
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "subsubsection",
+                            optional_args: [],
+                            required_args: [
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "subsubsection",
+                                            },
+                                        ),
+                                    ],
                                 },
-                            ),
-                        ],
-                    },
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "paragraph",
+                            optional_args: [],
+                            required_args: [
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "paragraph",
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "subparagraph",
+                            optional_args: [],
+                            required_args: [
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "subparagraph",
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 2,
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "textcolor",
+                            optional_args: [],
+                            required_args: [
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "blue",
+                                            },
+                                        ),
+                                    ],
+                                },
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "This is ",
+                                            },
+                                        ),
+                                        Command(
+                                            CommandNode {
+                                                name: "textbf",
+                                                optional_args: [],
+                                                required_args: [
+                                                    RequiredArgNode {
+                                                        items: [
+                                                            Text(
+                                                                TextNode {
+                                                                    value: "bold and blue",
+                                                                },
+                                                            ),
+                                                        ],
+                                                    },
+                                                ],
+                                            },
+                                        ),
+                                        Text(
+                                            TextNode {
+                                                value: ".",
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 2,
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "href",
+                            optional_args: [],
+                            required_args: [
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "https://www.overleaf.com/learn",
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "href",
+                            optional_args: [],
+                            required_args: [
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "https://www.overleaf.com/learn",
+                                            },
+                                        ),
+                                    ],
+                                },
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "Overleaf Learn",
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: " ",
+                        },
+                    ),
+                    Comment(
+                        CommentNode {
+                            value: "% testo del link",
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 2,
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "usepackage",
+                            optional_args: [
+                                OptionalArgNode {
+                                    entries: [
+                                        KeyValue(
+                                            KvPairNode {
+                                                key: "letterpaper",
+                                                value: Simple(
+                                                    "true",
+                                                ),
+                                            },
+                                        ),
+                                        KeyValue(
+                                            KvPairNode {
+                                                key: "top",
+                                                value: Simple(
+                                                    "2cm\\textwidth",
+                                                ),
+                                            },
+                                        ),
+                                        KeyValue(
+                                            KvPairNode {
+                                                key: "points",
+                                                value: List(
+                                                    [
+                                                        "1",
+                                                        "cane",
+                                                        "3",
+                                                        "4",
+                                                    ],
+                                                ),
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                            required_args: [
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "geometry",
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 2,
+                        },
+                    ),
+                    Block(
+                        BlockNode {
+                            name: "tabular",
+                            required_args: [
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: " |c|c|c| ",
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                            optional_args: [],
+                            items: [
+                                Newlines(
+                                    NewlinesNode {
+                                        count: 1,
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: "    ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "hline",
+                                        optional_args: [],
+                                        required_args: [],
+                                    },
+                                ),
+                                Newlines(
+                                    NewlinesNode {
+                                        count: 1,
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: "    cell1 & cell2 & cell3 ",
+                                    },
+                                ),
+                                Linebreak(
+                                    LinebreakNode {
+                                        value: "\\\\",
+                                    },
+                                ),
+                                Newlines(
+                                    NewlinesNode {
+                                        count: 1,
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: "    ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "hline",
+                                        optional_args: [],
+                                        required_args: [],
+                                    },
+                                ),
+                                Newlines(
+                                    NewlinesNode {
+                                        count: 1,
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: "    cell4 & cell5 & cell6 ",
+                                    },
+                                ),
+                                Linebreak(
+                                    LinebreakNode {
+                                        value: "\\\\",
+                                    },
+                                ),
+                                Newlines(
+                                    NewlinesNode {
+                                        count: 1,
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: "    ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "hline",
+                                        optional_args: [],
+                                        required_args: [],
+                                    },
+                                ),
+                                Newlines(
+                                    NewlinesNode {
+                                        count: 1,
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: "    cell7 & cell8 & cell9 ",
+                                    },
+                                ),
+                                Linebreak(
+                                    LinebreakNode {
+                                        value: "\\\\",
+                                    },
+                                ),
+                                Newlines(
+                                    NewlinesNode {
+                                        count: 1,
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: "    ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "hline",
+                                        optional_args: [],
+                                        required_args: [],
+                                    },
+                                ),
+                                Newlines(
+                                    NewlinesNode {
+                                        count: 1,
+                                    },
+                                ),
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 2,
+                        },
+                    ),
                 ],
             },
         ),

@@ -1,8 +1,8 @@
-use crate::codegen::trans_map::{out_of_bounds_reqs_arg, render_args_item};
+use crate::codegen::command_trans_map::{out_of_bounds_reqs_arg, render_args_item};
 use crate::globals::{ListType, add_in_listing_priority, pop_in_listing_priority};
 use crate::latex_semantic::{AstItemNode, OptionalArgNode, RequiredArgNode};
 
-pub fn begin_handler(name: &str, reqs: Vec<RequiredArgNode>, _opts: Vec<OptionalArgNode>, items: Vec<AstItemNode>) -> String {
+pub fn begin_handler(name: &str, reqs: Vec<RequiredArgNode>, _opts: Vec<OptionalArgNode>, _items: Vec<AstItemNode>) -> String {
     let mut out = String::new();
     if let Some(first) = reqs.first() {
         let req_arg = render_args_item(&first.items);
@@ -36,7 +36,7 @@ pub fn begin_handler(name: &str, reqs: Vec<RequiredArgNode>, _opts: Vec<Optional
     out
 }
 
-pub fn end_handler(name: &str, reqs: Vec<RequiredArgNode>, _opts: Vec<OptionalArgNode>, items: Vec<AstItemNode>) -> String {
+pub fn end_handler(name: &str, reqs: Vec<RequiredArgNode>, _opts: Vec<OptionalArgNode>, _items: Vec<AstItemNode>) -> String {
     let mut out = String::new();
     if let Some(first) = reqs.first() {
         let req_arg = render_args_item(&first.items);

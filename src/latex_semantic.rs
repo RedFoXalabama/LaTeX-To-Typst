@@ -72,16 +72,21 @@ fn build_item(pair: Pair<Rule>) -> Result<AstItemNode, SemanticError> {
     }
 }
 
+// Un blocco rappresenta un ambiente LaTeX (come \begin{...} ... \end{...}) e viene trasformato in un BlockNode.
+// Contiene il nome dell'ambiente, gli argomenti opzionali e obbligatori, e il contenuto interno (items).
+// block = { "\\begin{" ~ name ~ "}" ~ optional_arg* ~ required_arg* ~ block_content ~ "\\end{" ~ name ~ "}" }
 fn build_block(pair: Pair<Rule>) -> Result<BlockNode, SemanticError> {
+    let mut name: String = String::new();
     let mut optional_args: Vec<OptionalArgNode> = Vec::new();
     let mut required_args: Vec<RequiredArgNode> = Vec::new();
     let mut items: Vec<AstItemNode> = Vec::new();
 
     for child in pair.into_inner() {
         match child.as_rule() {
+            Rule::name => name = Some(child.as_str().to_string()).ok_or(SemanticError::MissingBlockName)?,
             Rule::optional_arg => optional_args.push(build_optional_arg(child)?),
             Rule::required_arg => required_args.push(build_required_arg(child)?),
-            Rule::block_content => {
+            Rule::content => {
                 for item in child.into_inner() {
                     match item.as_rule() {
                         Rule::item => items.push(build_item(item)?),
@@ -93,24 +98,6 @@ fn build_block(pair: Pair<Rule>) -> Result<BlockNode, SemanticError> {
         }
     }
 
-    // Il nome dell'ambiente è il primo argomento obbligatorio.
-    let name = if let Some(first_req) = required_args.first() {
-        first_req
-            .items
-            .iter()
-            .filter_map(|i| {
-                if let ArgItemNode::Text(t) = i {
-                    Some(t.value.clone())
-                } else {
-                    None
-                }
-            })
-            .collect::<Vec<_>>()
-            .join("")
-    } else {
-        String::new()
-    };
-
     Ok(BlockNode {
         name,
         optional_args,
@@ -118,6 +105,31 @@ fn build_block(pair: Pair<Rule>) -> Result<BlockNode, SemanticError> {
         items,
     })
 }
+
+// Un comando é composto da un nome (che segue il \) e da una serie di argomenti opzionali (racchiusi tra []) e argomenti obbligatori (racchiusi tra {})
+// se il comando presenta elementi che non rispecchiano le Rule degli elementi, allora cacca addosso -> UnexpectedRule
+// command = { "\\" ~ name ~ optional_arg* ~ required_arg* }
+fn build_command(pair: Pair<Rule>) -> Result<CommandNode, SemanticError> {
+    let mut name: String = String::new();
+    let mut optional_args: Vec<OptionalArgNode> = Vec::new();
+    let mut required_args: Vec<RequiredArgNode> = Vec::new();
+
+    for child in pair.into_inner() {
+        match child.as_rule() {
+            Rule::name => name = Some(child.as_str().to_string()).ok_or(SemanticError::MissingCommandName)?, // Some diventerà string
+            Rule::optional_arg => optional_args.push(build_optional_arg(child)?), // optional_arg = { "[" ~ optional_list? ~ "]" }
+            Rule::required_arg => required_args.push(build_required_arg(child)?), // required_arg = { "{" ~ argument ~ "}" }
+            other => return Err(SemanticError::UnexpectedRule(other)),
+        }
+    }
+
+    Ok(CommandNode {
+        name,
+        optional_args,
+        required_args,
+    })
+}
+
 
 // Un testo é qualsiasi cosa che non inizi con un \ di comando o una nuova linea ed é composto da qualsiasi carattere
 // se il nodo é vuoto (anche se non dovrebbe esserlo, visto che la regola richiede almeno un carattere), allora cacca addosso -> EmptyTextValue
@@ -162,30 +174,6 @@ fn build_comment(pair: Pair<Rule>) -> Result<CommentNode, SemanticError> {
         return Err(SemanticError::EmptyCommentValue);
     }
     Ok(CommentNode { value })
-}
-
-// Una comando é composto da un nome (che segue il \) e da una serie di argomenti opzionali (racchiusi tra []) e argomenti obbligatori (racchiusi tra {})
-// se il comando presenta elementi che non rispecchiano le Rule degli elementi, allora cacca addosso -> UnexpectedRule
-// command = { "\\" ~ name ~ optional_arg* ~ required_arg* }
-fn build_command(pair: Pair<Rule>) -> Result<CommandNode, SemanticError> {
-    let mut name: Option<String> = None;
-    let mut optional_args: Vec<OptionalArgNode> = Vec::new();
-    let mut required_args: Vec<RequiredArgNode> = Vec::new();
-
-    for child in pair.into_inner() {
-        match child.as_rule() {
-            Rule::name => name = Some(child.as_str().to_string()), // Some diventerà string
-            Rule::optional_arg => optional_args.push(build_optional_arg(child)?), // optional_arg = { "[" ~ optional_list? ~ "]" }
-            Rule::required_arg => required_args.push(build_required_arg(child)?), // required_arg = { "{" ~ argument ~ "}" }
-            other => return Err(SemanticError::UnexpectedRule(other)),
-        }
-    }
-
-    Ok(CommandNode {
-        name: name.ok_or(SemanticError::MissingCommandName)?,
-        optional_args,
-        required_args,
-    })
 }
 
 // --------------------------------- REQUIRED ARG --------------------------------------------------

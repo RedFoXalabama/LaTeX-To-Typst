@@ -1,7 +1,7 @@
 use std::fs;
 use chrono::Datelike;
 use chrono::NaiveDate;
-use crate::codegen::trans_map::{out_of_bounds_reqs_arg, render_args_item};
+use crate::codegen::command_trans_map::{out_of_bounds_reqs_arg, render_args_item};
 use crate::globals::{get_part_counter, update_part_counter};
 use crate::latex_semantic::{OptionalArgNode, RequiredArgNode};
 

@@ -13,6 +13,8 @@ static OUTPUT_CODEGEN_PATH: &str = "Assets/OutputExample/output_codegen.txt";
 // ------------------------------ MAIN EXECUTION ---------------------------------------------------
 fn main() -> Result<(), Box<dyn std::error::Error>> {
 
+    println!("cargo:rerun-if-changed=src/latex_parser/latex.pest");
+
     // -------------------------------- PARTSING----------------------------------------------------
     // Prendo l'input da un file .tex
     let source = latex_parser::read_latex_file(INPUT_PATH)?;

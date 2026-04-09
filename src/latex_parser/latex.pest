@@ -1,9 +1,16 @@
 file = { SOI ~ item* ~ EOI }
 
+// Add alignment_tab to items
 item = { block | command | text | newlines | linebreak | comment }
 
-block = { "\\begin" ~ optional_arg* ~ required_arg* ~ block_content ~ "\\end" }
-block_content = { item* }
+name = { ASCII_ALPHA+ } // Il nome del comando è composto da lettere ASCII, ma non può essere vuoto. Se si vuole permettere anche comandi con nomi più complessi, si potrebbe modificare questa regola.
+
+// la regola chiamata block è usata per modellare gli ambienti di Latex (blocchi di testo racchiusi tra \begin{name} ... \end{name})
+block = { "\\begin{" ~ name ~ "}" ~ optional_arg* ~ required_arg* ~ content ~ "\\end{" ~ name ~ "}" }
+    content = { item* }
+
+// Only match command if it is NOT followed by "begin{" or "end{"
+command = { "\\" ~ !("begin{" | "end{") ~ name ~ optional_arg* ~ required_arg* }
 
 linebreak = { "\\\\" }
 newlines = { NEWLINE+ }
@@ -11,28 +18,26 @@ comment = { ("%" ~ (!NEWLINE ~ ANY)*) }
 
 text = { (!("\\" | NEWLINE | comment) ~ ANY)+ }
 
-command = { "\\" ~ name ~ optional_arg* ~ required_arg* }
-name = { ASCII_ALPHA+ } // Il nome del comando è composto da lettere ASCII, ma non può essere vuoto. Se si vuole permettere anche comandi con nomi più complessi, si potrebbe modificare questa regola.
 //mono_arg = { !(ASCII_ALPHA*) ~ ANY+ }
 //required_arg = {(WHITE_SPACE* ~ mono_arg) | ("{" ~ argument ~ "}") }
 required_arg = { "{" ~ argument ~ "}" }
-argument = { arg_item* } //se si vuole avere un req_arg vuoto impostare -> * invece che +, con + almeno 1 arg
-arg_item = { command | required_arg | newlines | linebreak | arg_text }
-arg_text = { (!("\\" | "{" | "}" | NEWLINE) ~ ANY)+ }
+    argument = { arg_item* } //se si vuole avere un req_arg vuoto impostare -> * invece che +, con + almeno 1 arg
+        arg_item = { command | required_arg | newlines | linebreak | arg_text }
+            arg_text = { (!("\\" | "{" | "}" | NEWLINE) ~ ANY)+ }
 
 optional_arg = { "[" ~ optional_list? ~ "]" } // Un argomento opzionale può essere vuoto o contenere una lista di opzioni
-optional_list = { opt_entry ~ ("," ~ opt_entry)* } // Una lista di opzioni è composta da coppie chiave-valore o valori singoli separati da virgole
-opt_entry = { (WHITE_SPACE* ~ kv_pair ~ WHITE_SPACE*) | opt_item+ } // Una voce di opzione può essere una coppia chiave-valore o un valore singolo
+    optional_list = { opt_entry ~ ("," ~ opt_entry)* } // Una lista di opzioni è composta da coppie chiave-valore o valori singoli separati da virgole
+        opt_entry = { (WHITE_SPACE* ~ kv_pair ~ WHITE_SPACE*) | opt_item+ } // Una voce di opzione può essere una coppia chiave-valore o un valore singolo
 
-kv_pair = { key ~ WHITE_SPACE* ~ "=" ~ WHITE_SPACE* ~ value } // Una coppia chiave-valore è composta da una chiave, un segno di uguale e un valore. La chiave non può contenere "=", "," o "]", mentre il valore può contenere qualsiasi cosa tranne "]".
-key     = { (!(forbidden_char | WHITE_SPACE) ~ ANY)+ } // La chiave è composta da uno o più caratteri che non possono essere "=", "," o "]"
-value   = { value_list | simple_value  } // Il valore può contenere comandi o testo
-simple_value = { (!( "," | "]" ) ~ ANY)+ }
-value_list = {"{" ~ WHITE_SPACE* ~ sub_value_list ~ (WHITE_SPACE* ~ "," ~ WHITE_SPACE* ~ sub_value_list)* ~ WHITE_SPACE* ~ "}"} // {1, cane,3 ,4}
-sub_value_list = { (!forbidden_char ~ ANY)+}
+            kv_pair = { key ~ WHITE_SPACE* ~ "=" ~ WHITE_SPACE* ~ value } // Una coppia chiave-valore è composta da una chiave, un segno di uguale e un valore. La chiave non può contenere "=", "," o "]", mentre il valore può contenere qualsiasi cosa tranne "]".
+                key     = { (!(forbidden_char | WHITE_SPACE) ~ ANY)+ } // La chiave è composta da uno o più caratteri che non possono essere "=", "," o "]"
+                value   = { value_list | simple_value  } // Il valore può contenere comandi o testo
+                    simple_value = { (!( "," | "]" ) ~ ANY)+ }
+                    value_list = {"{" ~ WHITE_SPACE* ~ sub_value_list ~ (WHITE_SPACE* ~ "," ~ WHITE_SPACE* ~ sub_value_list)* ~ WHITE_SPACE* ~ "}"} // {1, cane,3 ,4}
+                        sub_value_list = { (!forbidden_char ~ ANY)+}
 
-opt_item = { command | required_arg | newlines | opt_text } //non sono presenti linebreak, ASSUMO CHE NON CI SIANO LINEBREAK ALL'INTERNO DEGLI ARGOMENTI OPZIONALI
-opt_text = { (!("\\" | "[" | "]" | NEWLINE) ~ ANY)+ }
+            opt_item = { command | required_arg | newlines | opt_text } //non sono presenti linebreak, ASSUMO CHE NON CI SIANO LINEBREAK ALL'INTERNO DEGLI ARGOMENTI OPZIONALI
+                opt_text = { (!("\\" | "[" | "]" | NEWLINE) ~ ANY)+ }
 
 // Da utilizzare se assumiamo che ci siano errori nel file di latex, altrimenti non è necessario escludere questi
 // caratteri nei vari argomenti, dato che la sintassi di LaTeX prevede che siano usati in modo specifico e non come testo normale.

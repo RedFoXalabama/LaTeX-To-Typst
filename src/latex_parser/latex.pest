@@ -6,7 +6,7 @@ item = { block | command | text | newlines | linebreak | comment }
 name = { ASCII_ALPHA+ } // Il nome del comando è composto da lettere ASCII, ma non può essere vuoto. Se si vuole permettere anche comandi con nomi più complessi, si potrebbe modificare questa regola.
 
 // la regola chiamata block è usata per modellare gli ambienti di Latex (blocchi di testo racchiusi tra \begin{name} ... \end{name})
-block = { "\\begin{" ~ name ~ "}" ~ optional_arg* ~ required_arg* ~ content ~ "\\end{" ~ name ~ "}" }
+block = {  "\\begin{" ~ PUSH(name) ~ "}" ~ optional_arg* ~ required_arg* ~ content ~ "\\end{" ~ POP ~ "}" }
     content = { item* }
 
 // Only match command if it is NOT followed by "begin{" or "end{"

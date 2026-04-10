@@ -860,14 +860,6 @@
                                                             },
                                                         ],
                                                     },
-                                                    Pair {
-                                                        rule: name,
-                                                        span: Span {
-                                                            str: "comment",
-                                                            range: 332..339,
-                                                        },
-                                                        inner: [],
-                                                    },
                                                 ],
                                             },
                                         ],
@@ -1559,14 +1551,6 @@
                                                             },
                                                         ],
                                                     },
-                                                    Pair {
-                                                        rule: name,
-                                                        span: Span {
-                                                            str: "center",
-                                                            range: 527..533,
-                                                        },
-                                                        inner: [],
-                                                    },
                                                 ],
                                             },
                                         ],
@@ -1635,14 +1619,6 @@
                                                                 ],
                                                             },
                                                         ],
-                                                    },
-                                                    Pair {
-                                                        rule: name,
-                                                        span: Span {
-                                                            str: "flushleft",
-                                                            range: 574..583,
-                                                        },
-                                                        inner: [],
                                                     },
                                                 ],
                                             },
@@ -1713,14 +1689,6 @@
                                                             },
                                                         ],
                                                     },
-                                                    Pair {
-                                                        rule: name,
-                                                        span: Span {
-                                                            str: "flushright",
-                                                            range: 626..636,
-                                                        },
-                                                        inner: [],
-                                                    },
                                                 ],
                                             },
                                         ],
@@ -1790,14 +1758,6 @@
                                                             },
                                                         ],
                                                     },
-                                                    Pair {
-                                                        rule: name,
-                                                        span: Span {
-                                                            str: "FlushLeft",
-                                                            range: 677..686,
-                                                        },
-                                                        inner: [],
-                                                    },
                                                 ],
                                             },
                                         ],
@@ -1866,14 +1826,6 @@
                                                                 ],
                                                             },
                                                         ],
-                                                    },
-                                                    Pair {
-                                                        rule: name,
-                                                        span: Span {
-                                                            str: "FlushRight",
-                                                            range: 729..739,
-                                                        },
-                                                        inner: [],
                                                     },
                                                 ],
                                             },
@@ -3149,14 +3101,6 @@
                                                                                                                                                             },
                                                                                                                                                         ],
                                                                                                                                                     },
-                                                                                                                                                    Pair {
-                                                                                                                                                        rule: name,
-                                                                                                                                                        span: Span {
-                                                                                                                                                            str: "enumerate",
-                                                                                                                                                            range: 1231..1240,
-                                                                                                                                                        },
-                                                                                                                                                        inner: [],
-                                                                                                                                                    },
                                                                                                                                                 ],
                                                                                                                                             },
                                                                                                                                         ],
@@ -3196,14 +3140,6 @@
                                                                                                                                         ],
                                                                                                                                     },
                                                                                                                                 ],
-                                                                                                                            },
-                                                                                                                            Pair {
-                                                                                                                                rule: name,
-                                                                                                                                span: Span {
-                                                                                                                                    str: "enumerate",
-                                                                                                                                    range: 1271..1280,
-                                                                                                                                },
-                                                                                                                                inner: [],
                                                                                                                             },
                                                                                                                         ],
                                                                                                                     },
@@ -3245,14 +3181,6 @@
                                                                                                             },
                                                                                                         ],
                                                                                                     },
-                                                                                                    Pair {
-                                                                                                        rule: name,
-                                                                                                        span: Span {
-                                                                                                            str: "itemize",
-                                                                                                            range: 1301..1308,
-                                                                                                        },
-                                                                                                        inner: [],
-                                                                                                    },
                                                                                                 ],
                                                                                             },
                                                                                         ],
@@ -3292,14 +3220,6 @@
                                                                                         ],
                                                                                     },
                                                                                 ],
-                                                                            },
-                                                                            Pair {
-                                                                                rule: name,
-                                                                                span: Span {
-                                                                                    str: "enumerate",
-                                                                                    range: 1319..1328,
-                                                                                },
-                                                                                inner: [],
                                                                             },
                                                                         ],
                                                                     },
@@ -3400,14 +3320,6 @@
                                                                 ],
                                                             },
                                                         ],
-                                                    },
-                                                    Pair {
-                                                        rule: name,
-                                                        span: Span {
-                                                            str: "itemize",
-                                                            range: 1355..1362,
-                                                        },
-                                                        inner: [],
                                                     },
                                                 ],
                                             },
@@ -3598,14 +3510,6 @@
                                                                 ],
                                                             },
                                                         ],
-                                                    },
-                                                    Pair {
-                                                        rule: name,
-                                                        span: Span {
-                                                            str: "description",
-                                                            range: 1433..1444,
-                                                        },
-                                                        inner: [],
                                                     },
                                                 ],
                                             },
@@ -5480,14 +5384,6 @@
                                                             },
                                                         ],
                                                     },
-                                                    Pair {
-                                                        rule: name,
-                                                        span: Span {
-                                                            str: "tabular",
-                                                            range: 2034..2041,
-                                                        },
-                                                        inner: [],
-                                                    },
                                                 ],
                                             },
                                         ],
@@ -5510,14 +5406,6 @@
                                         ],
                                     },
                                 ],
-                            },
-                            Pair {
-                                rule: name,
-                                span: Span {
-                                    str: "document",
-                                    range: 2049..2057,
-                                },
-                                inner: [],
                             },
                         ],
                     },

@@ -1,7 +1,10 @@
-pub mod block_controller;
+pub mod alignment;
+pub mod comments;
+pub mod listings;
 pub mod table_controller;
 
 use crate::codegen::trans_map::{BlockTranslationFn, TransMap};
+use crate::codegen::translate_items;
 use crate::latex_semantic::BlockNode;
 use std::collections::HashMap;
 use std::sync::OnceLock;
@@ -20,36 +23,33 @@ fn get_trans_map() -> &'static HashMap<&'static str, BlockTranslationFn> {
         );
         m.insert(
             "center",
-            block_controller::render_center_block as BlockTranslationFn,
+            alignment::render_center_block as BlockTranslationFn,
         );
         m.insert(
             "flushright",
-            block_controller::render_flushright_block as BlockTranslationFn,
+            alignment::render_flushright_block as BlockTranslationFn,
         );
         m.insert(
             "flushleft",
-            block_controller::render_flushleft_block as BlockTranslationFn,
+            alignment::render_flushleft_block as BlockTranslationFn,
         );
         m.insert(
             "comment",
-            block_controller::render_comment_block as BlockTranslationFn,
+            comments::render_comment_block as BlockTranslationFn,
         );
         m.insert(
             "itemize",
-            block_controller::render_itemize_block as BlockTranslationFn,
+            listings::render_itemize_block as BlockTranslationFn,
         );
         m.insert(
             "enumerate",
-            block_controller::render_enumerate_block as BlockTranslationFn,
+            listings::render_enumerate_block as BlockTranslationFn,
         );
         m.insert(
             "description",
-            block_controller::render_description_block as BlockTranslationFn,
+            listings::render_description_block as BlockTranslationFn,
         );
-        m.insert(
-            "document",
-            block_controller::render_document_block as BlockTranslationFn,
-        );
+        m.insert("document", |_, _, _, items| translate_items(items));
         m
     })
 }

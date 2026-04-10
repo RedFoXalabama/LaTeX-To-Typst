@@ -70,8 +70,8 @@ _italic_
 ]
 #align(left)[ flushleft block ]
 #align(right)[ flushright block ]
-#align(left)[ FlushLeft block ]
-#align(right)[ FlushRight block ]
+ FlushLeft block 
+ FlushRight block 
 
 \
 \
@@ -132,4 +132,17 @@ _italic_
 #link("https://www.overleaf.com/learn")[Overleaf Learn] // testo del link
 
 RENDER-ERROR = usepackage
+
+#table(
+	columns: 3,
+	[*cell1*],
+	[cell2],
+	[cell3],
+	[cell4],
+	[cell5],
+	[cell6],
+	[cell7],
+	[cell8],
+	[cell9],
+)
 

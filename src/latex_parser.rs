@@ -1,6 +1,6 @@
-﻿use pest_derive::Parser;
-use pest::iterators::Pairs;
 use pest::Parser;
+use pest_derive::Parser;
+use pest::iterators::Pairs;
 use std::fs;
 use std::path::Path;
 

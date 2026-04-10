@@ -1,4 +1,4 @@
-﻿use crate::codegen::trans_map::{out_of_bounds_reqs_arg};
+﻿use crate::codegen::command_trans_map::{out_of_bounds_reqs_arg};
 use crate::latex_semantic::{OptionalArgNode, RequiredArgNode};
 
 pub fn render_document_alignment(name: &str, reqs: Vec<RequiredArgNode>, _opts: Vec<OptionalArgNode>) -> String {

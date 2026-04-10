@@ -1,4 +1,4 @@
-﻿use crate::codegen::trans_map::{out_of_bounds_reqs_arg, render_opt_entry};
+﻿use crate::codegen::command_trans_map::{out_of_bounds_reqs_arg, render_opt_entry};
 use crate::globals::{get_in_listing_priority, read_in_listing_priority, ListType};
 use crate::latex_semantic::{OptionalArgNode, RequiredArgNode};
 

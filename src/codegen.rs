@@ -1,13 +1,24 @@
-﻿mod trans_map;
-use crate::globals::{get_in_listing_value};
+pub mod trans_map;
+mod command_trans_map;
+mod block_trans_map;
+
+use crate::globals::get_in_listing_value;
 use crate::latex_semantic::*;
+use crate::codegen::trans_map::TransMap;
+use crate::codegen::block_trans_map::BlockTransMap;
+use crate::codegen::command_trans_map::CommandTransMap;
 
 pub fn ast_to_typst(doc: &AstDocument) -> String {
     doc.items.iter().map(render_item).collect()
 }
 
-fn render_item(item: &AstItemNode) -> String {
+pub fn translate_items(items: Vec<AstItemNode>) -> String {
+    items.iter().map(render_item).collect()
+}
+
+pub(crate) fn render_item(item: &AstItemNode) -> String {
     match item {
+        AstItemNode::Block(block_node) => render_block(block_node),
         AstItemNode::Text(text_node) => render_text(text_node),
         AstItemNode::Newlines(newlines_node) => render_newlines(newlines_node),
         AstItemNode::Command(command_node) => render_command(command_node),
@@ -16,7 +27,16 @@ fn render_item(item: &AstItemNode) -> String {
     }
 }
 
-fn render_text(text_node: &TextNode) -> String {
+pub(crate) fn render_block(block_node: &BlockNode) -> String {
+    if let Some(rendered) = BlockTransMap::translate(block_node) {
+        rendered
+    } else {
+        // Fallback: render the items inside the block normally
+        block_node.items.iter().map(render_item).collect()
+    }
+}
+
+pub(crate) fn render_text(text_node: &TextNode) -> String {
     text_node
         .value
         .chars()
@@ -24,7 +44,7 @@ fn render_text(text_node: &TextNode) -> String {
         .collect()
 }
 
-fn render_newlines(newlines_node: &NewlinesNode) -> String {
+pub(crate) fn render_newlines(newlines_node: &NewlinesNode) -> String {
     let mut count = newlines_node.count;
     if get_in_listing_value() {
         count = count - 1;
@@ -32,11 +52,11 @@ fn render_newlines(newlines_node: &NewlinesNode) -> String {
     "\n".repeat(count)
 }
 
-fn render_linebreak(_linebreak_node: &LinebreakNode) -> String {
+pub(crate) fn render_linebreak(_linebreak_node: &LinebreakNode) -> String {
     "\\".to_string()
 }
 
-fn render_comment(comment_node: &CommentNode) -> String {
+pub(crate) fn render_comment(comment_node: &CommentNode) -> String {
     let value = comment_node //eliminiamo il % del commento cosi da conservare solo il testo
         .value
         .strip_prefix('%')
@@ -44,10 +64,12 @@ fn render_comment(comment_node: &CommentNode) -> String {
     format!("//{}", value)
 }
 
-fn render_command(command_node: &CommandNode) -> String {
-    if let Some(rendered) = trans_map::translate_command(command_node) {
+pub(crate) fn render_command(command_node: &CommandNode) -> String {
+    if let Some(rendered) = CommandTransMap::translate(command_node) {
         rendered
     } else {
         "NOT IMPLEMENTED COMMAND RENDER-ERROR".to_string()
     }
 }
+
+

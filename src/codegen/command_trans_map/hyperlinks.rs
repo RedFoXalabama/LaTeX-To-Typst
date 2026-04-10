@@ -1,4 +1,4 @@
-﻿use crate::codegen::trans_map::{out_of_bounds_reqs_arg, render_args_item};
+use crate::codegen::command_trans_map::{out_of_bounds_reqs_arg, render_args_item};
 use crate::latex_semantic::{OptionalArgNode, RequiredArgNode};
 
 pub fn render_href(_name: &str, reqs: Vec<RequiredArgNode>, _opts: Vec<OptionalArgNode>) -> String {

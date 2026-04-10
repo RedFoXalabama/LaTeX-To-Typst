@@ -1,4 +1,4 @@
-﻿use crate::codegen::trans_map::{out_of_bounds_reqs_arg, render_args_item};
+use crate::codegen::command_trans_map::{out_of_bounds_reqs_arg, render_args_item};
 use crate::latex_semantic::{OptionalArgNode, RequiredArgNode};
 
 //---------------------------------------- PACKAGE HANDLER -----------------------------------------
@@ -14,7 +14,7 @@ pub fn package_handler(name: &str, reqs: Vec<RequiredArgNode>, _opts: Vec<Option
 
             "hyperref" => out.push_str("/* usepackage{hyperref} */"),
 
-            _ => out.push_str(format!("RENDER-ERROR = {}", name).as_str()),
+            _ => out.push_str(format!("RENDER-ERROR = {}", "usepackage").as_str()),
         }
     }
     out.push_str(&out_of_bounds_reqs_arg(&reqs, 1));

@@ -141,7 +141,7 @@ RENDER-ERROR = usepackage
 
 #table(
 	columns: 3,
-	[cell1],
+	[*cell1*],
 	[cell2],
 	[cell3],
 	[cell4],

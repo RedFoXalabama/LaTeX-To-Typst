@@ -1381,7 +1381,29 @@ AstDocument {
                                 ),
                                 Text(
                                     TextNode {
-                                        value: "    cell1 & cell2 & cell3 ",
+                                        value: "    ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "textbf",
+                                        optional_args: [],
+                                        required_args: [
+                                            RequiredArgNode {
+                                                items: [
+                                                    Text(
+                                                        TextNode {
+                                                            value: "cell1",
+                                                        },
+                                                    ),
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: " & cell2 & cell3 ",
                                     },
                                 ),
                                 Linebreak(

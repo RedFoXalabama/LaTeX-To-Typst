@@ -2,8 +2,8 @@
     Pair {
         rule: file,
         span: Span {
-            str: "\\documentclass{article}\n\\title{LaTeX To Typst}\n\\author{Gianfranco e Vito}\n\\date{\\today}\n\\date{31/12/2026}\n\n\\usepackage{verbatim}\n\\usepackage{hyperref}\n\n\\begin{document}\n\\maketitle\n\\tableofcontents\n\nprova{-tra parentesi graffe-}\ntesto pre commento % prova commento monolinea\n\\begin{comment}\n    Questo é un commento multilinea\n\\end{comment}\n\n\\textbf{Bold}\n\\textit{italic}\n\\underline{underline}\n\n\\centering\n\\raggedright\n\\raggedleft\n\\flushright\n\\flushleft\n\\usepackage{ragged2e}\n\\begin{center}\n    center block \\textbf{bold}\n\\end{center}\n\\begin{flushleft} flushleft block \\end{flushleft}\n\\begin{flushright} flushright block \\end{flushright}\n\\begin{FlushLeft} FlushLeft block \\end{FlushLeft}\n\\begin{FlushRight} FlushRight block \\end{FlushRight}\n\n\\\\\n\\newline\n\\break\n\\hfill\n\\vfill\n\\pagebreak\n\\newpage\n\\clearpage\n\n\\begin{itemize}\n    \\item[!] itemize 1\n    \\item \\begin{enumerate}\n              \\item enumerate 1\n              \\item \\begin{itemize}\n                        \\item itemize 3\n                        \\item \\begin{enumerate}\n                                  \\item enum 2\n                                  \\item \\begin{enumerate}\n                                            \\item enum 3\n                                  \\end{enumerate}\n                        \\end{enumerate}\n              \\end{itemize}\n    \\end{enumerate}\n    \\item itemize 2\n\\end{itemize}\n\\begin{description}\n    \\item[description 1] description text 1\n\\end{description}\n\n\n\\part{part 1}\n\\part{part 2}\n\\chapter{chapter}\n\\section{section}\n\\subsection{subsection}\n\\subsubsection{subsubsection}\n\\paragraph{paragraph}\n\\subparagraph{subparagraph}\n\n\\textcolor{blue}{This is \\textbf{bold and blue}.}\n\n\\href{https://www.overleaf.com/learn}\n\\href{https://www.overleaf.com/learn}{Overleaf Learn} % testo del link\n\n\\usepackage[letterpaper = true,top=2cm\\textwidth, points={1, cane,3 ,4}]{geometry}\n\n\\begin{tabular}{ |c|c|c| }\n    \\hline\n    cell1 & cell2 & cell3 \\\\\n    \\hline\n    cell4 & cell5 & cell6 \\\\\n    \\hline\n    cell7 & cell8 & cell9 \\\\\n    \\hline\n\\end{tabular}\n\n\\end{document}",
-            range: 0..2049,
+            str: "\\documentclass{article}\n\\title{LaTeX To Typst}\n\\author{Gianfranco e Vito}\n\\date{\\today}\n\\date{31/12/2026}\n\n\\usepackage{verbatim}\n\\usepackage{hyperref}\n\n\\begin{document}\n\\maketitle\n\\tableofcontents\n\nprova{-tra parentesi graffe-}\ntesto pre commento % prova commento monolinea\n\\begin{comment}\n    Questo é un commento multilinea\n\\end{comment}\n\n\\textbf{Bold}\n\\textit{italic}\n\\underline{underline}\n\n\\centering\n\\raggedright\n\\raggedleft\n\\flushright\n\\flushleft\n\\usepackage{ragged2e}\n\\begin{center}\n    center block \\textbf{bold}\n\\end{center}\n\\begin{flushleft} flushleft block \\end{flushleft}\n\\begin{flushright} flushright block \\end{flushright}\n\\begin{FlushLeft} FlushLeft block \\end{FlushLeft}\n\\begin{FlushRight} FlushRight block \\end{FlushRight}\n\n\\\\\n\\newline\n\\break\n\\hfill\n\\vfill\n\\pagebreak\n\\newpage\n\\clearpage\n\n\\begin{itemize}\n    \\item[!] itemize 1\n    \\item \\begin{enumerate}\n              \\item enumerate 1\n              \\item \\begin{itemize}\n                        \\item itemize 3\n                        \\item \\begin{enumerate}\n                                  \\item enum 2\n                                  \\item \\begin{enumerate}\n                                            \\item enum 3\n                                  \\end{enumerate}\n                        \\end{enumerate}\n              \\end{itemize}\n    \\end{enumerate}\n    \\item itemize 2\n\\end{itemize}\n\\begin{description}\n    \\item[description 1] description text 1\n\\end{description}\n\n\n\\part{part 1}\n\\part{part 2}\n\\chapter{chapter}\n\\section{section}\n\\subsection{subsection}\n\\subsubsection{subsubsection}\n\\paragraph{paragraph}\n\\subparagraph{subparagraph}\n\n\\textcolor{blue}{This is \\textbf{bold and blue}.}\n\n\\href{https://www.overleaf.com/learn}\n\\href{https://www.overleaf.com/learn}{Overleaf Learn} % testo del link\n\n\\usepackage[letterpaper = true,top=2cm\\textwidth, points={1, cane,3 ,4}]{geometry}\n\n\\begin{tabular}{ |c|c|c| }\n    \\hline\n    \\textbf{cell1} & cell2 & cell3 \\\\\n    \\hline\n    cell4 & cell5 & cell6 \\\\\n    \\hline\n    cell7 & cell8 & cell9 \\\\\n    \\hline\n\\end{tabular}\n\n\\end{document}",
+            range: 0..2058,
         },
         inner: [
             Pair {
@@ -564,15 +564,15 @@
             Pair {
                 rule: item,
                 span: Span {
-                    str: "\\begin{document}\n\\maketitle\n\\tableofcontents\n\nprova{-tra parentesi graffe-}\ntesto pre commento % prova commento monolinea\n\\begin{comment}\n    Questo é un commento multilinea\n\\end{comment}\n\n\\textbf{Bold}\n\\textit{italic}\n\\underline{underline}\n\n\\centering\n\\raggedright\n\\raggedleft\n\\flushright\n\\flushleft\n\\usepackage{ragged2e}\n\\begin{center}\n    center block \\textbf{bold}\n\\end{center}\n\\begin{flushleft} flushleft block \\end{flushleft}\n\\begin{flushright} flushright block \\end{flushright}\n\\begin{FlushLeft} FlushLeft block \\end{FlushLeft}\n\\begin{FlushRight} FlushRight block \\end{FlushRight}\n\n\\\\\n\\newline\n\\break\n\\hfill\n\\vfill\n\\pagebreak\n\\newpage\n\\clearpage\n\n\\begin{itemize}\n    \\item[!] itemize 1\n    \\item \\begin{enumerate}\n              \\item enumerate 1\n              \\item \\begin{itemize}\n                        \\item itemize 3\n                        \\item \\begin{enumerate}\n                                  \\item enum 2\n                                  \\item \\begin{enumerate}\n                                            \\item enum 3\n                                  \\end{enumerate}\n                        \\end{enumerate}\n              \\end{itemize}\n    \\end{enumerate}\n    \\item itemize 2\n\\end{itemize}\n\\begin{description}\n    \\item[description 1] description text 1\n\\end{description}\n\n\n\\part{part 1}\n\\part{part 2}\n\\chapter{chapter}\n\\section{section}\n\\subsection{subsection}\n\\subsubsection{subsubsection}\n\\paragraph{paragraph}\n\\subparagraph{subparagraph}\n\n\\textcolor{blue}{This is \\textbf{bold and blue}.}\n\n\\href{https://www.overleaf.com/learn}\n\\href{https://www.overleaf.com/learn}{Overleaf Learn} % testo del link\n\n\\usepackage[letterpaper = true,top=2cm\\textwidth, points={1, cane,3 ,4}]{geometry}\n\n\\begin{tabular}{ |c|c|c| }\n    \\hline\n    cell1 & cell2 & cell3 \\\\\n    \\hline\n    cell4 & cell5 & cell6 \\\\\n    \\hline\n    cell7 & cell8 & cell9 \\\\\n    \\hline\n\\end{tabular}\n\n\\end{document}",
-                    range: 152..2049,
+                    str: "\\begin{document}\n\\maketitle\n\\tableofcontents\n\nprova{-tra parentesi graffe-}\ntesto pre commento % prova commento monolinea\n\\begin{comment}\n    Questo é un commento multilinea\n\\end{comment}\n\n\\textbf{Bold}\n\\textit{italic}\n\\underline{underline}\n\n\\centering\n\\raggedright\n\\raggedleft\n\\flushright\n\\flushleft\n\\usepackage{ragged2e}\n\\begin{center}\n    center block \\textbf{bold}\n\\end{center}\n\\begin{flushleft} flushleft block \\end{flushleft}\n\\begin{flushright} flushright block \\end{flushright}\n\\begin{FlushLeft} FlushLeft block \\end{FlushLeft}\n\\begin{FlushRight} FlushRight block \\end{FlushRight}\n\n\\\\\n\\newline\n\\break\n\\hfill\n\\vfill\n\\pagebreak\n\\newpage\n\\clearpage\n\n\\begin{itemize}\n    \\item[!] itemize 1\n    \\item \\begin{enumerate}\n              \\item enumerate 1\n              \\item \\begin{itemize}\n                        \\item itemize 3\n                        \\item \\begin{enumerate}\n                                  \\item enum 2\n                                  \\item \\begin{enumerate}\n                                            \\item enum 3\n                                  \\end{enumerate}\n                        \\end{enumerate}\n              \\end{itemize}\n    \\end{enumerate}\n    \\item itemize 2\n\\end{itemize}\n\\begin{description}\n    \\item[description 1] description text 1\n\\end{description}\n\n\n\\part{part 1}\n\\part{part 2}\n\\chapter{chapter}\n\\section{section}\n\\subsection{subsection}\n\\subsubsection{subsubsection}\n\\paragraph{paragraph}\n\\subparagraph{subparagraph}\n\n\\textcolor{blue}{This is \\textbf{bold and blue}.}\n\n\\href{https://www.overleaf.com/learn}\n\\href{https://www.overleaf.com/learn}{Overleaf Learn} % testo del link\n\n\\usepackage[letterpaper = true,top=2cm\\textwidth, points={1, cane,3 ,4}]{geometry}\n\n\\begin{tabular}{ |c|c|c| }\n    \\hline\n    \\textbf{cell1} & cell2 & cell3 \\\\\n    \\hline\n    cell4 & cell5 & cell6 \\\\\n    \\hline\n    cell7 & cell8 & cell9 \\\\\n    \\hline\n\\end{tabular}\n\n\\end{document}",
+                    range: 152..2058,
                 },
                 inner: [
                     Pair {
                         rule: block,
                         span: Span {
-                            str: "\\begin{document}\n\\maketitle\n\\tableofcontents\n\nprova{-tra parentesi graffe-}\ntesto pre commento % prova commento monolinea\n\\begin{comment}\n    Questo é un commento multilinea\n\\end{comment}\n\n\\textbf{Bold}\n\\textit{italic}\n\\underline{underline}\n\n\\centering\n\\raggedright\n\\raggedleft\n\\flushright\n\\flushleft\n\\usepackage{ragged2e}\n\\begin{center}\n    center block \\textbf{bold}\n\\end{center}\n\\begin{flushleft} flushleft block \\end{flushleft}\n\\begin{flushright} flushright block \\end{flushright}\n\\begin{FlushLeft} FlushLeft block \\end{FlushLeft}\n\\begin{FlushRight} FlushRight block \\end{FlushRight}\n\n\\\\\n\\newline\n\\break\n\\hfill\n\\vfill\n\\pagebreak\n\\newpage\n\\clearpage\n\n\\begin{itemize}\n    \\item[!] itemize 1\n    \\item \\begin{enumerate}\n              \\item enumerate 1\n              \\item \\begin{itemize}\n                        \\item itemize 3\n                        \\item \\begin{enumerate}\n                                  \\item enum 2\n                                  \\item \\begin{enumerate}\n                                            \\item enum 3\n                                  \\end{enumerate}\n                        \\end{enumerate}\n              \\end{itemize}\n    \\end{enumerate}\n    \\item itemize 2\n\\end{itemize}\n\\begin{description}\n    \\item[description 1] description text 1\n\\end{description}\n\n\n\\part{part 1}\n\\part{part 2}\n\\chapter{chapter}\n\\section{section}\n\\subsection{subsection}\n\\subsubsection{subsubsection}\n\\paragraph{paragraph}\n\\subparagraph{subparagraph}\n\n\\textcolor{blue}{This is \\textbf{bold and blue}.}\n\n\\href{https://www.overleaf.com/learn}\n\\href{https://www.overleaf.com/learn}{Overleaf Learn} % testo del link\n\n\\usepackage[letterpaper = true,top=2cm\\textwidth, points={1, cane,3 ,4}]{geometry}\n\n\\begin{tabular}{ |c|c|c| }\n    \\hline\n    cell1 & cell2 & cell3 \\\\\n    \\hline\n    cell4 & cell5 & cell6 \\\\\n    \\hline\n    cell7 & cell8 & cell9 \\\\\n    \\hline\n\\end{tabular}\n\n\\end{document}",
-                            range: 152..2049,
+                            str: "\\begin{document}\n\\maketitle\n\\tableofcontents\n\nprova{-tra parentesi graffe-}\ntesto pre commento % prova commento monolinea\n\\begin{comment}\n    Questo é un commento multilinea\n\\end{comment}\n\n\\textbf{Bold}\n\\textit{italic}\n\\underline{underline}\n\n\\centering\n\\raggedright\n\\raggedleft\n\\flushright\n\\flushleft\n\\usepackage{ragged2e}\n\\begin{center}\n    center block \\textbf{bold}\n\\end{center}\n\\begin{flushleft} flushleft block \\end{flushleft}\n\\begin{flushright} flushright block \\end{flushright}\n\\begin{FlushLeft} FlushLeft block \\end{FlushLeft}\n\\begin{FlushRight} FlushRight block \\end{FlushRight}\n\n\\\\\n\\newline\n\\break\n\\hfill\n\\vfill\n\\pagebreak\n\\newpage\n\\clearpage\n\n\\begin{itemize}\n    \\item[!] itemize 1\n    \\item \\begin{enumerate}\n              \\item enumerate 1\n              \\item \\begin{itemize}\n                        \\item itemize 3\n                        \\item \\begin{enumerate}\n                                  \\item enum 2\n                                  \\item \\begin{enumerate}\n                                            \\item enum 3\n                                  \\end{enumerate}\n                        \\end{enumerate}\n              \\end{itemize}\n    \\end{enumerate}\n    \\item itemize 2\n\\end{itemize}\n\\begin{description}\n    \\item[description 1] description text 1\n\\end{description}\n\n\n\\part{part 1}\n\\part{part 2}\n\\chapter{chapter}\n\\section{section}\n\\subsection{subsection}\n\\subsubsection{subsubsection}\n\\paragraph{paragraph}\n\\subparagraph{subparagraph}\n\n\\textcolor{blue}{This is \\textbf{bold and blue}.}\n\n\\href{https://www.overleaf.com/learn}\n\\href{https://www.overleaf.com/learn}{Overleaf Learn} % testo del link\n\n\\usepackage[letterpaper = true,top=2cm\\textwidth, points={1, cane,3 ,4}]{geometry}\n\n\\begin{tabular}{ |c|c|c| }\n    \\hline\n    \\textbf{cell1} & cell2 & cell3 \\\\\n    \\hline\n    cell4 & cell5 & cell6 \\\\\n    \\hline\n    cell7 & cell8 & cell9 \\\\\n    \\hline\n\\end{tabular}\n\n\\end{document}",
+                            range: 152..2058,
                         },
                         inner: [
                             Pair {
@@ -586,8 +586,8 @@
                             Pair {
                                 rule: content,
                                 span: Span {
-                                    str: "\n\\maketitle\n\\tableofcontents\n\nprova{-tra parentesi graffe-}\ntesto pre commento % prova commento monolinea\n\\begin{comment}\n    Questo é un commento multilinea\n\\end{comment}\n\n\\textbf{Bold}\n\\textit{italic}\n\\underline{underline}\n\n\\centering\n\\raggedright\n\\raggedleft\n\\flushright\n\\flushleft\n\\usepackage{ragged2e}\n\\begin{center}\n    center block \\textbf{bold}\n\\end{center}\n\\begin{flushleft} flushleft block \\end{flushleft}\n\\begin{flushright} flushright block \\end{flushright}\n\\begin{FlushLeft} FlushLeft block \\end{FlushLeft}\n\\begin{FlushRight} FlushRight block \\end{FlushRight}\n\n\\\\\n\\newline\n\\break\n\\hfill\n\\vfill\n\\pagebreak\n\\newpage\n\\clearpage\n\n\\begin{itemize}\n    \\item[!] itemize 1\n    \\item \\begin{enumerate}\n              \\item enumerate 1\n              \\item \\begin{itemize}\n                        \\item itemize 3\n                        \\item \\begin{enumerate}\n                                  \\item enum 2\n                                  \\item \\begin{enumerate}\n                                            \\item enum 3\n                                  \\end{enumerate}\n                        \\end{enumerate}\n              \\end{itemize}\n    \\end{enumerate}\n    \\item itemize 2\n\\end{itemize}\n\\begin{description}\n    \\item[description 1] description text 1\n\\end{description}\n\n\n\\part{part 1}\n\\part{part 2}\n\\chapter{chapter}\n\\section{section}\n\\subsection{subsection}\n\\subsubsection{subsubsection}\n\\paragraph{paragraph}\n\\subparagraph{subparagraph}\n\n\\textcolor{blue}{This is \\textbf{bold and blue}.}\n\n\\href{https://www.overleaf.com/learn}\n\\href{https://www.overleaf.com/learn}{Overleaf Learn} % testo del link\n\n\\usepackage[letterpaper = true,top=2cm\\textwidth, points={1, cane,3 ,4}]{geometry}\n\n\\begin{tabular}{ |c|c|c| }\n    \\hline\n    cell1 & cell2 & cell3 \\\\\n    \\hline\n    cell4 & cell5 & cell6 \\\\\n    \\hline\n    cell7 & cell8 & cell9 \\\\\n    \\hline\n\\end{tabular}\n\n",
-                                    range: 168..2035,
+                                    str: "\n\\maketitle\n\\tableofcontents\n\nprova{-tra parentesi graffe-}\ntesto pre commento % prova commento monolinea\n\\begin{comment}\n    Questo é un commento multilinea\n\\end{comment}\n\n\\textbf{Bold}\n\\textit{italic}\n\\underline{underline}\n\n\\centering\n\\raggedright\n\\raggedleft\n\\flushright\n\\flushleft\n\\usepackage{ragged2e}\n\\begin{center}\n    center block \\textbf{bold}\n\\end{center}\n\\begin{flushleft} flushleft block \\end{flushleft}\n\\begin{flushright} flushright block \\end{flushright}\n\\begin{FlushLeft} FlushLeft block \\end{FlushLeft}\n\\begin{FlushRight} FlushRight block \\end{FlushRight}\n\n\\\\\n\\newline\n\\break\n\\hfill\n\\vfill\n\\pagebreak\n\\newpage\n\\clearpage\n\n\\begin{itemize}\n    \\item[!] itemize 1\n    \\item \\begin{enumerate}\n              \\item enumerate 1\n              \\item \\begin{itemize}\n                        \\item itemize 3\n                        \\item \\begin{enumerate}\n                                  \\item enum 2\n                                  \\item \\begin{enumerate}\n                                            \\item enum 3\n                                  \\end{enumerate}\n                        \\end{enumerate}\n              \\end{itemize}\n    \\end{enumerate}\n    \\item itemize 2\n\\end{itemize}\n\\begin{description}\n    \\item[description 1] description text 1\n\\end{description}\n\n\n\\part{part 1}\n\\part{part 2}\n\\chapter{chapter}\n\\section{section}\n\\subsection{subsection}\n\\subsubsection{subsubsection}\n\\paragraph{paragraph}\n\\subparagraph{subparagraph}\n\n\\textcolor{blue}{This is \\textbf{bold and blue}.}\n\n\\href{https://www.overleaf.com/learn}\n\\href{https://www.overleaf.com/learn}{Overleaf Learn} % testo del link\n\n\\usepackage[letterpaper = true,top=2cm\\textwidth, points={1, cane,3 ,4}]{geometry}\n\n\\begin{tabular}{ |c|c|c| }\n    \\hline\n    \\textbf{cell1} & cell2 & cell3 \\\\\n    \\hline\n    cell4 & cell5 & cell6 \\\\\n    \\hline\n    cell7 & cell8 & cell9 \\\\\n    \\hline\n\\end{tabular}\n\n",
+                                    range: 168..2044,
                                 },
                                 inner: [
                                     Pair {
@@ -4929,15 +4929,15 @@
                                     Pair {
                                         rule: item,
                                         span: Span {
-                                            str: "\\begin{tabular}{ |c|c|c| }\n    \\hline\n    cell1 & cell2 & cell3 \\\\\n    \\hline\n    cell4 & cell5 & cell6 \\\\\n    \\hline\n    cell7 & cell8 & cell9 \\\\\n    \\hline\n\\end{tabular}",
-                                            range: 1862..2033,
+                                            str: "\\begin{tabular}{ |c|c|c| }\n    \\hline\n    \\textbf{cell1} & cell2 & cell3 \\\\\n    \\hline\n    cell4 & cell5 & cell6 \\\\\n    \\hline\n    cell7 & cell8 & cell9 \\\\\n    \\hline\n\\end{tabular}",
+                                            range: 1862..2042,
                                         },
                                         inner: [
                                             Pair {
                                                 rule: block,
                                                 span: Span {
-                                                    str: "\\begin{tabular}{ |c|c|c| }\n    \\hline\n    cell1 & cell2 & cell3 \\\\\n    \\hline\n    cell4 & cell5 & cell6 \\\\\n    \\hline\n    cell7 & cell8 & cell9 \\\\\n    \\hline\n\\end{tabular}",
-                                                    range: 1862..2033,
+                                                    str: "\\begin{tabular}{ |c|c|c| }\n    \\hline\n    \\textbf{cell1} & cell2 & cell3 \\\\\n    \\hline\n    cell4 & cell5 & cell6 \\\\\n    \\hline\n    cell7 & cell8 & cell9 \\\\\n    \\hline\n\\end{tabular}",
+                                                    range: 1862..2042,
                                                 },
                                                 inner: [
                                                     Pair {
@@ -4986,8 +4986,8 @@
                                                     Pair {
                                                         rule: content,
                                                         span: Span {
-                                                            str: "\n    \\hline\n    cell1 & cell2 & cell3 \\\\\n    \\hline\n    cell4 & cell5 & cell6 \\\\\n    \\hline\n    cell7 & cell8 & cell9 \\\\\n    \\hline\n",
-                                                            range: 1888..2020,
+                                                            str: "\n    \\hline\n    \\textbf{cell1} & cell2 & cell3 \\\\\n    \\hline\n    cell4 & cell5 & cell6 \\\\\n    \\hline\n    cell7 & cell8 & cell9 \\\\\n    \\hline\n",
+                                                            range: 1888..2029,
                                                         },
                                                         inner: [
                                                             Pair {
@@ -5070,15 +5070,93 @@
                                                             Pair {
                                                                 rule: item,
                                                                 span: Span {
-                                                                    str: "    cell1 & cell2 & cell3 ",
-                                                                    range: 1900..1926,
+                                                                    str: "    ",
+                                                                    range: 1900..1904,
                                                                 },
                                                                 inner: [
                                                                     Pair {
                                                                         rule: text,
                                                                         span: Span {
-                                                                            str: "    cell1 & cell2 & cell3 ",
-                                                                            range: 1900..1926,
+                                                                            str: "    ",
+                                                                            range: 1900..1904,
+                                                                        },
+                                                                        inner: [],
+                                                                    },
+                                                                ],
+                                                            },
+                                                            Pair {
+                                                                rule: item,
+                                                                span: Span {
+                                                                    str: "\\textbf{cell1}",
+                                                                    range: 1904..1918,
+                                                                },
+                                                                inner: [
+                                                                    Pair {
+                                                                        rule: command,
+                                                                        span: Span {
+                                                                            str: "\\textbf{cell1}",
+                                                                            range: 1904..1918,
+                                                                        },
+                                                                        inner: [
+                                                                            Pair {
+                                                                                rule: name,
+                                                                                span: Span {
+                                                                                    str: "textbf",
+                                                                                    range: 1905..1911,
+                                                                                },
+                                                                                inner: [],
+                                                                            },
+                                                                            Pair {
+                                                                                rule: required_arg,
+                                                                                span: Span {
+                                                                                    str: "{cell1}",
+                                                                                    range: 1911..1918,
+                                                                                },
+                                                                                inner: [
+                                                                                    Pair {
+                                                                                        rule: argument,
+                                                                                        span: Span {
+                                                                                            str: "cell1",
+                                                                                            range: 1912..1917,
+                                                                                        },
+                                                                                        inner: [
+                                                                                            Pair {
+                                                                                                rule: arg_item,
+                                                                                                span: Span {
+                                                                                                    str: "cell1",
+                                                                                                    range: 1912..1917,
+                                                                                                },
+                                                                                                inner: [
+                                                                                                    Pair {
+                                                                                                        rule: arg_text,
+                                                                                                        span: Span {
+                                                                                                            str: "cell1",
+                                                                                                            range: 1912..1917,
+                                                                                                        },
+                                                                                                        inner: [],
+                                                                                                    },
+                                                                                                ],
+                                                                                            },
+                                                                                        ],
+                                                                                    },
+                                                                                ],
+                                                                            },
+                                                                        ],
+                                                                    },
+                                                                ],
+                                                            },
+                                                            Pair {
+                                                                rule: item,
+                                                                span: Span {
+                                                                    str: " & cell2 & cell3 ",
+                                                                    range: 1918..1935,
+                                                                },
+                                                                inner: [
+                                                                    Pair {
+                                                                        rule: text,
+                                                                        span: Span {
+                                                                            str: " & cell2 & cell3 ",
+                                                                            range: 1918..1935,
                                                                         },
                                                                         inner: [],
                                                                     },
@@ -5088,14 +5166,14 @@
                                                                 rule: item,
                                                                 span: Span {
                                                                     str: "\\\\",
-                                                                    range: 1926..1928,
+                                                                    range: 1935..1937,
                                                                 },
                                                                 inner: [
                                                                     Pair {
                                                                         rule: linebreak,
                                                                         span: Span {
                                                                             str: "\\\\",
-                                                                            range: 1926..1928,
+                                                                            range: 1935..1937,
                                                                         },
                                                                         inner: [],
                                                                     },
@@ -5105,14 +5183,14 @@
                                                                 rule: item,
                                                                 span: Span {
                                                                     str: "\n",
-                                                                    range: 1928..1929,
+                                                                    range: 1937..1938,
                                                                 },
                                                                 inner: [
                                                                     Pair {
                                                                         rule: newlines,
                                                                         span: Span {
                                                                             str: "\n",
-                                                                            range: 1928..1929,
+                                                                            range: 1937..1938,
                                                                         },
                                                                         inner: [],
                                                                     },
@@ -5122,14 +5200,14 @@
                                                                 rule: item,
                                                                 span: Span {
                                                                     str: "    ",
-                                                                    range: 1929..1933,
+                                                                    range: 1938..1942,
                                                                 },
                                                                 inner: [
                                                                     Pair {
                                                                         rule: text,
                                                                         span: Span {
                                                                             str: "    ",
-                                                                            range: 1929..1933,
+                                                                            range: 1938..1942,
                                                                         },
                                                                         inner: [],
                                                                     },
@@ -5139,21 +5217,21 @@
                                                                 rule: item,
                                                                 span: Span {
                                                                     str: "\\hline",
-                                                                    range: 1933..1939,
+                                                                    range: 1942..1948,
                                                                 },
                                                                 inner: [
                                                                     Pair {
                                                                         rule: command,
                                                                         span: Span {
                                                                             str: "\\hline",
-                                                                            range: 1933..1939,
+                                                                            range: 1942..1948,
                                                                         },
                                                                         inner: [
                                                                             Pair {
                                                                                 rule: name,
                                                                                 span: Span {
                                                                                     str: "hline",
-                                                                                    range: 1934..1939,
+                                                                                    range: 1943..1948,
                                                                                 },
                                                                                 inner: [],
                                                                             },
@@ -5165,14 +5243,14 @@
                                                                 rule: item,
                                                                 span: Span {
                                                                     str: "\n",
-                                                                    range: 1939..1940,
+                                                                    range: 1948..1949,
                                                                 },
                                                                 inner: [
                                                                     Pair {
                                                                         rule: newlines,
                                                                         span: Span {
                                                                             str: "\n",
-                                                                            range: 1939..1940,
+                                                                            range: 1948..1949,
                                                                         },
                                                                         inner: [],
                                                                     },
@@ -5182,14 +5260,14 @@
                                                                 rule: item,
                                                                 span: Span {
                                                                     str: "    cell4 & cell5 & cell6 ",
-                                                                    range: 1940..1966,
+                                                                    range: 1949..1975,
                                                                 },
                                                                 inner: [
                                                                     Pair {
                                                                         rule: text,
                                                                         span: Span {
                                                                             str: "    cell4 & cell5 & cell6 ",
-                                                                            range: 1940..1966,
+                                                                            range: 1949..1975,
                                                                         },
                                                                         inner: [],
                                                                     },
@@ -5199,14 +5277,14 @@
                                                                 rule: item,
                                                                 span: Span {
                                                                     str: "\\\\",
-                                                                    range: 1966..1968,
+                                                                    range: 1975..1977,
                                                                 },
                                                                 inner: [
                                                                     Pair {
                                                                         rule: linebreak,
                                                                         span: Span {
                                                                             str: "\\\\",
-                                                                            range: 1966..1968,
+                                                                            range: 1975..1977,
                                                                         },
                                                                         inner: [],
                                                                     },
@@ -5216,14 +5294,14 @@
                                                                 rule: item,
                                                                 span: Span {
                                                                     str: "\n",
-                                                                    range: 1968..1969,
+                                                                    range: 1977..1978,
                                                                 },
                                                                 inner: [
                                                                     Pair {
                                                                         rule: newlines,
                                                                         span: Span {
                                                                             str: "\n",
-                                                                            range: 1968..1969,
+                                                                            range: 1977..1978,
                                                                         },
                                                                         inner: [],
                                                                     },
@@ -5233,14 +5311,14 @@
                                                                 rule: item,
                                                                 span: Span {
                                                                     str: "    ",
-                                                                    range: 1969..1973,
+                                                                    range: 1978..1982,
                                                                 },
                                                                 inner: [
                                                                     Pair {
                                                                         rule: text,
                                                                         span: Span {
                                                                             str: "    ",
-                                                                            range: 1969..1973,
+                                                                            range: 1978..1982,
                                                                         },
                                                                         inner: [],
                                                                     },
@@ -5250,21 +5328,21 @@
                                                                 rule: item,
                                                                 span: Span {
                                                                     str: "\\hline",
-                                                                    range: 1973..1979,
+                                                                    range: 1982..1988,
                                                                 },
                                                                 inner: [
                                                                     Pair {
                                                                         rule: command,
                                                                         span: Span {
                                                                             str: "\\hline",
-                                                                            range: 1973..1979,
+                                                                            range: 1982..1988,
                                                                         },
                                                                         inner: [
                                                                             Pair {
                                                                                 rule: name,
                                                                                 span: Span {
                                                                                     str: "hline",
-                                                                                    range: 1974..1979,
+                                                                                    range: 1983..1988,
                                                                                 },
                                                                                 inner: [],
                                                                             },
@@ -5276,14 +5354,14 @@
                                                                 rule: item,
                                                                 span: Span {
                                                                     str: "\n",
-                                                                    range: 1979..1980,
+                                                                    range: 1988..1989,
                                                                 },
                                                                 inner: [
                                                                     Pair {
                                                                         rule: newlines,
                                                                         span: Span {
                                                                             str: "\n",
-                                                                            range: 1979..1980,
+                                                                            range: 1988..1989,
                                                                         },
                                                                         inner: [],
                                                                     },
@@ -5293,14 +5371,14 @@
                                                                 rule: item,
                                                                 span: Span {
                                                                     str: "    cell7 & cell8 & cell9 ",
-                                                                    range: 1980..2006,
+                                                                    range: 1989..2015,
                                                                 },
                                                                 inner: [
                                                                     Pair {
                                                                         rule: text,
                                                                         span: Span {
                                                                             str: "    cell7 & cell8 & cell9 ",
-                                                                            range: 1980..2006,
+                                                                            range: 1989..2015,
                                                                         },
                                                                         inner: [],
                                                                     },
@@ -5310,14 +5388,14 @@
                                                                 rule: item,
                                                                 span: Span {
                                                                     str: "\\\\",
-                                                                    range: 2006..2008,
+                                                                    range: 2015..2017,
                                                                 },
                                                                 inner: [
                                                                     Pair {
                                                                         rule: linebreak,
                                                                         span: Span {
                                                                             str: "\\\\",
-                                                                            range: 2006..2008,
+                                                                            range: 2015..2017,
                                                                         },
                                                                         inner: [],
                                                                     },
@@ -5327,14 +5405,14 @@
                                                                 rule: item,
                                                                 span: Span {
                                                                     str: "\n",
-                                                                    range: 2008..2009,
+                                                                    range: 2017..2018,
                                                                 },
                                                                 inner: [
                                                                     Pair {
                                                                         rule: newlines,
                                                                         span: Span {
                                                                             str: "\n",
-                                                                            range: 2008..2009,
+                                                                            range: 2017..2018,
                                                                         },
                                                                         inner: [],
                                                                     },
@@ -5344,14 +5422,14 @@
                                                                 rule: item,
                                                                 span: Span {
                                                                     str: "    ",
-                                                                    range: 2009..2013,
+                                                                    range: 2018..2022,
                                                                 },
                                                                 inner: [
                                                                     Pair {
                                                                         rule: text,
                                                                         span: Span {
                                                                             str: "    ",
-                                                                            range: 2009..2013,
+                                                                            range: 2018..2022,
                                                                         },
                                                                         inner: [],
                                                                     },
@@ -5361,21 +5439,21 @@
                                                                 rule: item,
                                                                 span: Span {
                                                                     str: "\\hline",
-                                                                    range: 2013..2019,
+                                                                    range: 2022..2028,
                                                                 },
                                                                 inner: [
                                                                     Pair {
                                                                         rule: command,
                                                                         span: Span {
                                                                             str: "\\hline",
-                                                                            range: 2013..2019,
+                                                                            range: 2022..2028,
                                                                         },
                                                                         inner: [
                                                                             Pair {
                                                                                 rule: name,
                                                                                 span: Span {
                                                                                     str: "hline",
-                                                                                    range: 2014..2019,
+                                                                                    range: 2023..2028,
                                                                                 },
                                                                                 inner: [],
                                                                             },
@@ -5387,14 +5465,14 @@
                                                                 rule: item,
                                                                 span: Span {
                                                                     str: "\n",
-                                                                    range: 2019..2020,
+                                                                    range: 2028..2029,
                                                                 },
                                                                 inner: [
                                                                     Pair {
                                                                         rule: newlines,
                                                                         span: Span {
                                                                             str: "\n",
-                                                                            range: 2019..2020,
+                                                                            range: 2028..2029,
                                                                         },
                                                                         inner: [],
                                                                     },
@@ -5406,7 +5484,7 @@
                                                         rule: name,
                                                         span: Span {
                                                             str: "tabular",
-                                                            range: 2025..2032,
+                                                            range: 2034..2041,
                                                         },
                                                         inner: [],
                                                     },
@@ -5418,14 +5496,14 @@
                                         rule: item,
                                         span: Span {
                                             str: "\n\n",
-                                            range: 2033..2035,
+                                            range: 2042..2044,
                                         },
                                         inner: [
                                             Pair {
                                                 rule: newlines,
                                                 span: Span {
                                                     str: "\n\n",
-                                                    range: 2033..2035,
+                                                    range: 2042..2044,
                                                 },
                                                 inner: [],
                                             },
@@ -5437,7 +5515,7 @@
                                 rule: name,
                                 span: Span {
                                     str: "document",
-                                    range: 2040..2048,
+                                    range: 2049..2057,
                                 },
                                 inner: [],
                             },
@@ -5449,7 +5527,7 @@
                 rule: EOI,
                 span: Span {
                     str: "",
-                    range: 2049..2049,
+                    range: 2058..2058,
                 },
                 inner: [],
             },

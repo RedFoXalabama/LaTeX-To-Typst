@@ -1,4 +1,5 @@
 use crate::latex_semantic::{AstItemNode, OptionalArgNode, RequiredArgNode};
+pub use crate::codegen::translate_items;
 
 // Firma funzione per i comandi
 pub type CommandTranslationFn =

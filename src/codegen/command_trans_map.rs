@@ -1,15 +1,14 @@
 use crate::codegen;
 use crate::codegen::trans_map::{CommandTranslationFn, TransMap};
 use crate::latex_semantic::{
-    ArgItemNode, CommandNode, KvPairNode, OptItemNode, OptValueNode,
-    OptionalEntryNode, RequiredArgNode,
+    ArgItemNode, CommandNode, KvPairNode, OptItemNode, OptValueNode, OptionalEntryNode,
+    RequiredArgNode,
 };
 use std::collections::HashMap;
 use std::sync::OnceLock;
 
 pub struct CommandTransMap;
 
-pub mod block_controller;
 mod hyperlinks;
 mod package_controller;
 mod sections_chapter;
@@ -96,9 +95,7 @@ fn get_trans_map() -> &'static HashMap<&'static str, CommandTranslationFn> {
             space_breaks::render_space_breaks as CommandTranslationFn,
         );
         m.insert(
-            "hfill",
-            space_breaks::render_space_breaks as CommandTranslationFn,
-        );
+            "hfill", space_breaks::render_space_breaks as CommandTranslationFn, );
         m.insert(
             "vfill",
             space_breaks::render_space_breaks as CommandTranslationFn,

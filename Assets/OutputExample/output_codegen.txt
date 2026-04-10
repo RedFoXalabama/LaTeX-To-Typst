@@ -51,9 +51,9 @@
 
 prova-tra parentesi graffe-
 testo pre commento // prova commento monolinea
-
+/*
     Questo é un commento multilinea
-
+*/
 
 *Bold*
 _italic_
@@ -65,11 +65,11 @@ _italic_
 #set align(right);
 #set align(left);
 /* usepackage{ragged2e} */
-
+#align(center)[
     center block *bold*
-
- flushleft block 
- flushright block 
+]
+#align(left)[ flushleft block ]
+#align(right)[ flushright block ]
  FlushLeft block 
  FlushRight block 
 
@@ -82,25 +82,19 @@ _italic_
 #pagebreak()
 #pagebreak()
 
-
-    RENDER-ERROR = item itemize 1
-    RENDER-ERROR = item 
-              RENDER-ERROR = item enumerate 1
-              RENDER-ERROR = item 
-                        RENDER-ERROR = item itemize 3
-                        RENDER-ERROR = item 
-                                  RENDER-ERROR = item enum 2
-                                  RENDER-ERROR = item 
-                                            RENDER-ERROR = item enum 3
-                                  
-                        
-              
     
-    RENDER-ERROR = item itemize 2
-
-
-    RENDER-ERROR = item description text 1
-
+- [!] itemize 1    
+-               
+	+ enumerate 1              
+	+                         
+		- itemize 3                        
+		-                                   
+			+ enum 2                                  
+			+                                             
+				+ enum 3                                                                                
+- itemize 2
+    
+/ description 1: description text 1
 
 
 #v(2em)

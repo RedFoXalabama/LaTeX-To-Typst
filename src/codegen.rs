@@ -12,7 +12,11 @@ pub fn ast_to_typst(doc: &AstDocument) -> String {
     doc.items.iter().map(render_item).collect()
 }
 
-fn render_item(item: &AstItemNode) -> String {
+pub fn translate_items(items: Vec<AstItemNode>) -> String {
+    items.iter().map(render_item).collect()
+}
+
+pub(crate) fn render_item(item: &AstItemNode) -> String {
     match item {
         AstItemNode::Block(block_node) => render_block(block_node),
         AstItemNode::Text(text_node) => render_text(text_node),
@@ -68,46 +72,4 @@ pub(crate) fn render_command(command_node: &CommandNode) -> String {
     }
 }
 
-fn is_begin_tabular(command_node: &CommandNode) -> bool {
-    command_node.name == "begin"
-        && command_node
-            .required_args
-            .first()
-            .map(|arg| command_trans_map::render_args_item(&arg.items) == "tabular")
-            .unwrap_or(false)
-}
 
-fn is_end_tabular(command_node: &CommandNode) -> bool {
-    command_node.name == "end"
-        && command_node
-            .required_args
-            .first()
-            .map(|arg| command_trans_map::render_args_item(&arg.items) == "tabular")
-            .unwrap_or(false)
-}
-
-fn collect_tabular_body(items: &[AstItemNode], mut index: usize) -> (Vec<AstItemNode>, usize) {
-    let mut depth = 0usize;
-    let mut body = Vec::new();
-
-    while index < items.len() {
-        match &items[index] {
-            AstItemNode::Command(command_node) if is_begin_tabular(command_node) => {
-                depth += 1;
-                body.push(items[index].clone());
-            }
-            AstItemNode::Command(command_node) if is_end_tabular(command_node) => {
-                if depth == 0 {
-                    return (body, index + 1);
-                }
-                depth -= 1;
-                body.push(items[index].clone());
-            }
-            _ => body.push(items[index].clone()),
-        }
-
-        index += 1;
-    }
-
-    (body, index)
-}

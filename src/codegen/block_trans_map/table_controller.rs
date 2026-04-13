@@ -81,6 +81,12 @@ fn build_table_entries(items: &[AstItemNode]) -> Vec<TableEntry> {
                     entries.push(TableEntry::Row(vec![rendered]));
                 }
             }
+            AstItemNode::RawText(text) => {
+                let rendered = text.value.clone();
+                if !rendered.is_empty() {
+                    entries.push(TableEntry::Row(vec![rendered]));
+                }
+            }
         }
     }
 

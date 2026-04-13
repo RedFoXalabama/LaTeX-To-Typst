@@ -35,6 +35,7 @@
 #set document(date: date)
 
 /* usepackage{verbatim} */
+RENDER-ERROR = usepackage
 /* usepackage{hyperref} */
 
 
@@ -52,8 +53,24 @@
 prova-tra parentesi graffe-
 testo pre commento // prova commento monolinea
 /*
-    Questo é un commento multilinea
+    Questo é un commento multilinea *ciao*
 */
+
+/*
+    #table(
+	columns: 3,
+	[*cell1*],
+	[cell2],
+	[cell3],
+	[cell4],
+	[cell5],
+	[cell6],
+	[cell7],
+	[cell8],
+	[cell9],
+)
+*/
+
 
 *Bold*
 _italic_
@@ -131,6 +148,7 @@ _italic_
 #link("https://www.overleaf.com/learn")
 #link("https://www.overleaf.com/learn")[Overleaf Learn] // testo del link
 
+geometry
 RENDER-ERROR = usepackage
 
 #table(
@@ -145,4 +163,42 @@ RENDER-ERROR = usepackage
 	[cell8],
 	[cell9],
 )
+
+```
+    Text enclosed inside \texttt{verbatim} environment
+    is printed directly
+    and all \LaTeX{} commands are ignored.
+```
+
+```python
+import numpy as np
+
+def incmatrix(genl1,genl2):
+    m = len(genl1)
+    n = len(genl2)
+    M = None #to become the incidence matrix
+    VT = np.zeros((n*m,1), int)  #dummy variable
+
+    #compute the bitwise xor matrix
+    M1 = bitxormatrix(genl1)
+    M2 = np.triu(bitxormatrix(genl2),1)
+
+    for i in range(m-1):
+        for j in range(i+1, m):
+            [r,c] = np.where(M2 == M1[i,j])
+            for k in range(len(r)):
+                VT[(i)*n + r[k]] = 1;
+                VT[(i)*n + c[k]] = 1;
+                VT[(j)*n + r[k]] = 1;
+                VT[(j)*n + c[k]] = 1;
+
+                if M is None:
+                    M = np.copy(VT)
+                else:
+                    M = np.concatenate((M, VT), 1)
+
+                VT = np.zeros((n*m,1), int)
+
+    return M
+```
 

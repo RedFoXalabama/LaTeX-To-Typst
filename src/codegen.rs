@@ -1,12 +1,12 @@
-pub mod trans_map;
-mod command_trans_map;
 mod block_trans_map;
+mod command_trans_map;
+pub mod trans_map;
 
-use crate::globals::get_in_listing_value;
-use crate::latex_semantic::*;
-use crate::codegen::trans_map::TransMap;
 use crate::codegen::block_trans_map::BlockTransMap;
 use crate::codegen::command_trans_map::CommandTransMap;
+use crate::codegen::trans_map::TransMap;
+use crate::globals::get_in_listing_value;
+use crate::latex_semantic::*;
 
 pub fn ast_to_typst(doc: &AstDocument) -> String {
     doc.items.iter().map(render_item).collect()
@@ -20,9 +20,10 @@ pub(crate) fn render_item(item: &AstItemNode) -> String {
     match item {
         AstItemNode::Block(block_node) => render_block(block_node),
         AstItemNode::Text(text_node) => render_text(text_node),
+        AstItemNode::RawText(text_node) => render_raw_text(text_node),
         AstItemNode::Newlines(newlines_node) => render_newlines(newlines_node),
         AstItemNode::Command(command_node) => render_command(command_node),
-        AstItemNode::Linebreak(linebreak_node) => render_linebreak(linebreak_node), // per ora lascio così, ma potrei renderizzare in modo diverso
+        AstItemNode::Linebreak(linebreak_node) => render_linebreak(linebreak_node),
         AstItemNode::Comment(comment_node) => render_comment(comment_node),
     }
 }
@@ -72,4 +73,6 @@ pub(crate) fn render_command(command_node: &CommandNode) -> String {
     }
 }
 
-
+pub(crate) fn render_raw_text(raw_text_node: &TextNode) -> String {
+    raw_text_node.value.clone()
+}

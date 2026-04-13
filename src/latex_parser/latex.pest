@@ -10,7 +10,7 @@ block = {  "\\begin{" ~ PUSH(name) ~ "}" ~ required_arg* ~ optional_arg* ~ conte
     content = { item* }
 
 block_raw = {  "\\begin{" ~ PUSH(raw_name) ~ "}" ~ required_arg* ~ optional_arg* ~ content_raw ~ "\\end{" ~ POP ~ "}" }
-    raw_name = { "verbatim" | "lstlisting" }
+    raw_name = { "verbatim" | "lstlisting" | "comment" }
     content_raw = { (!("\\end{" ~ PEEK ~ "}") ~ ANY)* }
 
 // Only match command if it is NOT followed by "begin{" or "end{"

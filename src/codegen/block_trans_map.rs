@@ -1,8 +1,8 @@
 pub mod alignment;
+mod code;
 pub mod comments;
 pub mod listings;
 pub mod table_controller;
-mod code;
 
 use crate::codegen::trans_map::{BlockTranslationFn, TransMap};
 use crate::codegen::translate_items;

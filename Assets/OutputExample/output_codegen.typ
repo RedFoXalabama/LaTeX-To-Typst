@@ -35,7 +35,7 @@
 #set document(date: date)
 
 /* usepackage{verbatim} */
-RENDER-ERROR = usepackage
+/*RENDER-ERROR = usepackage*/
 /* usepackage{hyperref} */
 
 
@@ -53,22 +53,19 @@ RENDER-ERROR = usepackage
 prova-tra parentesi graffe-
 testo pre commento // prova commento monolinea
 /*
-    Questo é un commento multilinea *ciao*
+    Questo é un commento multilinea \textbf{aa}
 */
 
 /*
-    #table(
-	columns: 3,
-	[*cell1*],
-	[cell2],
-	[cell3],
-	[cell4],
-	[cell5],
-	[cell6],
-	[cell7],
-	[cell8],
-	[cell9],
-)
+    \begin{tabular}{ |c|c|c| }
+        \hline
+        \textbf{cell1} & cell2 & cell3 \\
+        \hline
+        cell4 & cell5 & cell6 \\
+        \hline
+        cell7 & cell8 & cell9 \\
+        \hline
+    \end{tabular}
 */
 
 
@@ -130,17 +127,16 @@ _italic_
 ]
 #v(2em)
 
-= chapter
+/*RENDER-ERROR = chapter*/
+= section
 
-== section
+== subsection
 
-=== subsection
+=== subsubsection
 
-==== subsubsection
+==== paragraph
 
-===== paragraph
-
-====== subparagraph
+===== subparagraph
 
 
 #text(blue)[This is *bold and blue*.]
@@ -149,7 +145,7 @@ _italic_
 #link("https://www.overleaf.com/learn")[Overleaf Learn] // testo del link
 
 geometry
-RENDER-ERROR = usepackage
+/*RENDER-ERROR = usepackage*/
 
 #table(
 	columns: 3,

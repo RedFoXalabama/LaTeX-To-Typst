@@ -37,11 +37,35 @@ pub fn build_ast(mut pairs: Pairs<Rule>) -> Result<AstDocument, SemanticError> {
 // file = { SOI ~ item* ~ EOI }
 fn build_document(file_pair: Pair<Rule>) -> Result<AstDocument, SemanticError> {
     let mut items: Vec<AstItemNode> = Vec::new();
+    let mut found_document = false;
 
     // iteriamo sui figli del nodo file, che possono essere item o EOI (End Of Input)
     for child in file_pair.into_inner() {
         match child.as_rule() {
-            Rule::item => items.push(build_item(child)?),
+            Rule::item => {
+                let item = build_item(child)?;
+                
+                // Track where we are regarding `\begin{document}`
+                if let AstItemNode::Block(b) = &item {
+                    if b.name == "document" {
+                        found_document = true;
+                    }
+                }
+                
+                // Check for text before `\begin{document}`
+                if !found_document {
+                    match &item {
+                        AstItemNode::Text(t) | AstItemNode::RawText(t) => {
+                            if !t.value.trim().is_empty() {
+                                return Err(SemanticError::TextBeforeDocument);
+                            }
+                        }
+                        _ => {}
+                    }
+                }
+
+                items.push(item);
+            }
             Rule::EOI => {} // ignorato nell'AST
             other => return Err(SemanticError::UnexpectedRule(other)),
         }
@@ -146,7 +170,7 @@ fn build_command(pair: Pair<Rule>) -> Result<CommandNode, SemanticError> {
 
     for child in pair.into_inner() {
         match child.as_rule() {
-            Rule::name => {
+            Rule::name | Rule::escaped_symbols => {
                 name = Some(child.as_str().to_string()).ok_or(SemanticError::MissingCommandName)?
             } // Some diventerà string
             Rule::optional_arg => optional_args.push(build_optional_arg(child)?), // optional_arg = { "[" ~ optional_list? ~ "]" }

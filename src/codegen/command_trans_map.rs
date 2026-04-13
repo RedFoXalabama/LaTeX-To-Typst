@@ -37,6 +37,10 @@ impl TransMap<CommandNode> for CommandTransMap {
             )
         })
     }
+    
+    fn is_supported(name: &str) -> bool {
+        get_trans_map().contains_key(name)
+    }
 }
 
 fn get_trans_map() -> &'static HashMap<&'static str, CommandTranslationFn> {
@@ -64,6 +68,13 @@ fn get_trans_map() -> &'static HashMap<&'static str, CommandTranslationFn> {
             "textcolor",
             text_formatting::render_textcolor as CommandTranslationFn,
         );
+        m.insert("{", text_formatting::render_formatting as CommandTranslationFn);
+        m.insert("}", text_formatting::render_formatting as CommandTranslationFn);
+        m.insert("%", text_formatting::render_formatting as CommandTranslationFn);
+        m.insert("&", text_formatting::render_formatting as CommandTranslationFn);
+        m.insert("$", text_formatting::render_formatting as CommandTranslationFn);
+        m.insert("#", text_formatting::render_formatting as CommandTranslationFn);
+        m.insert("_", text_formatting::render_formatting as CommandTranslationFn);
         // TEXT ALIGNMENT
         m.insert(
             "centering",

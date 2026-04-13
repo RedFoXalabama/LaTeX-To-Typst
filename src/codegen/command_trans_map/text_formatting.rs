@@ -14,7 +14,10 @@ pub fn render_formatting(name: &str, reqs: Vec<RequiredArgNode>, _opts: Vec<Opti
             _ => out.push_str(format!("RENDER-ERROR = {}", name).as_str()),
         }
     } else {
-        
+        match name {
+            "{" | "}" | "%" | "&" | "$" | "#" | "_" => out.push_str(&format!("\\{}", name)),
+            _ => out.push_str(format!("RENDER-ERROR = {}", name).as_str()),
+        }
     }
 
     // metto in coda gli altri elementi in modo che rispetti l'ordine dell'input

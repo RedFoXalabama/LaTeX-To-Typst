@@ -18,6 +18,10 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     // -------------------------------- PARTSING----------------------------------------------------
     // Prendo l'input da un file .tex
     let source = latex_parser::read_latex_file(INPUT_PATH)?;
+    
+    // Scansione preliminare per eventuali errori formali semplici
+    latex_parser::scan_latex(&source)?;
+
     // Effettuo il parsing del LaTeX, ottenendo un parse tree (Pest Pairs)
     let parse_tree = latex_parser::parse_latex(&source)?;
     // Salvo il parse tree in un file di testo (in formato debug leggibile)
@@ -30,6 +34,10 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         .map_err(|e| std::io::Error::new(std::io::ErrorKind::InvalidData, format!("{e:?}")))?; // Effettuiamo la mappatura e conversione dell'errore in modo che il main possa restituirlo.
     // Per ora non faccio che il main restituisca un SemanticError, per tenerlo generalizzato in caso di altri errori.
     utils::save_ast_to_file(OUTPUT_AST_PATH, &ast)?;
+    
+    // Validazione AST (es. comandi supportati)
+    codegen::validate_ast(&ast)
+        .map_err(|e| std::io::Error::new(std::io::ErrorKind::InvalidData, format!("{e:?}")))?;
     
     // -------------------------------- TYPST GENERATION -------------------------------------------
     let typst_output = codegen::ast_to_typst(&ast);

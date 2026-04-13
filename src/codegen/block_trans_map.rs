@@ -69,4 +69,8 @@ impl TransMap<BlockNode> for BlockTransMap {
             )
         })
     }
+    
+    fn is_supported(name: &str) -> bool {
+        get_trans_map().contains_key(name)
+    }
 }

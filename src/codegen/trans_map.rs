@@ -11,4 +11,5 @@ pub type BlockTranslationFn =
 
 pub trait TransMap<T> {
     fn translate(node: &T) -> Option<String>;
+    fn is_supported(name: &str) -> bool;
 }

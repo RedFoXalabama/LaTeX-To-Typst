@@ -142,5 +142,8 @@ pub enum SemanticError {
     UnexpectedArgItemRule(Rule),
     UnexpectedOptItemRule(Rule),
     UnexpectedOptionalEntryRule(Rule),
+    UnsupportedCommand(String),
+    MissingArgsForCommand(String, usize, usize),
+    TextBeforeDocument,
     UnexpectedRule(Rule),
 }

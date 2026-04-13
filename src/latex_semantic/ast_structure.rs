@@ -17,6 +17,7 @@ pub enum AstItemNode {
     Linebreak(LinebreakNode), // rule: linebreak
     Command(CommandNode),     // rule: command
     Comment(CommentNode),     // rule: comment
+    RawText(TextNode),        // rule: text (raw)
 }
 
 // BlockNode rappresenta una qualsiasi porzione di codice Latex racchiuso tra i comandi \begin e \end.

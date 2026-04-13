@@ -8,7 +8,7 @@ mod globals;
 static INPUT_PATH: &str = "Assets/InputExample/input.tex";
 static OUTPUT_PARSETREE_PATH: &str = "Assets/OutputExample/output_ParseTree.txt";
 static OUTPUT_AST_PATH: &str = "Assets/OutputExample/output_AST.txt";
-static OUTPUT_CODEGEN_PATH: &str = "Assets/OutputExample/output_codegen.txt";
+static OUTPUT_CODEGEN_PATH: &str = "Assets/OutputExample/output_codegen.typ";
 
 // ------------------------------ MAIN EXECUTION ---------------------------------------------------
 fn main() -> Result<(), Box<dyn std::error::Error>> {

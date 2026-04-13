@@ -52,7 +52,7 @@
 prova-tra parentesi graffe-
 testo pre commento // prova commento monolinea
 /*
-    Questo é un commento multilinea
+    Questo é un commento multilinea *aa*
 */
 
 *Bold*
@@ -113,17 +113,16 @@ _italic_
 ]
 #v(2em)
 
-= chapter
+/*RENDER-ERROR = chapter*/
+= section
 
-== section
+== subsection
 
-=== subsection
+=== subsubsection
 
-==== subsubsection
+==== paragraph
 
-===== paragraph
-
-====== subparagraph
+===== subparagraph
 
 
 #text(blue)[This is *bold and blue*.]
@@ -131,7 +130,7 @@ _italic_
 #link("https://www.overleaf.com/learn")
 #link("https://www.overleaf.com/learn")[Overleaf Learn] // testo del link
 
-RENDER-ERROR = usepackage
+/*RENDER-ERROR = usepackage*/
 
 #table(
 	columns: 3,

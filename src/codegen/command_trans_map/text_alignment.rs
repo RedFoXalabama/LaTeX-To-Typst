@@ -8,7 +8,7 @@ pub fn render_document_alignment(name: &str, reqs: Vec<RequiredArgNode>, _opts: 
         "raggedright" | "RaggedRight" | "flushleft" | "FlushLeft" => out.push_str("#set align(left);"), //ragged é al contrario su latex
         "raggedleft" | "RaggedLeft" | "flushright" | "FlushRight" => out.push_str("#set align(right);"), //ragged é al contrario su latex
         "justifying" => out.push_str("JUSTIFY NOT YET SUPPORTED (#set par(justify: true);)"),
-        _ => out.push_str(format!("RENDER-ERROR = {}", name).as_str()),
+        _ => out.push_str(format!("/*RENDER-ERROR = {}*/", name).as_str()),
     }
 
 

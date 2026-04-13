@@ -229,7 +229,24 @@ AstDocument {
                                 ),
                                 Text(
                                     TextNode {
-                                        value: "    Questo é un commento multilinea",
+                                        value: "    Questo é un commento multilinea ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "textbf",
+                                        optional_args: [],
+                                        required_args: [
+                                            RequiredArgNode {
+                                                items: [
+                                                    Text(
+                                                        TextNode {
+                                                            value: "aa",
+                                                        },
+                                                    ),
+                                                ],
+                                            },
+                                        ],
                                     },
                                 ),
                                 Newlines(

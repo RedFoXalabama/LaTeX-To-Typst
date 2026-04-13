@@ -27,10 +27,10 @@ pub fn render_list(name: &str, reqs: Vec<RequiredArgNode>, opts: Vec<OptionalArg
                         }
                     }
                 },
-                None => { out.push_str(format!("RENDER-ERROR = {}", name).as_str()) }
+                None => { out.push_str(format!("/*RENDER-ERROR = {}*/", name).as_str()) }
             }
         },
-        _ => out.push_str(format!("RENDER-ERROR = {}", name).as_str()),
+        _ => out.push_str(format!("/*RENDER-ERROR = {}*/", name).as_str()),
     }
     out_of_bounds_reqs_arg(&reqs, 0);
     out

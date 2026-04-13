@@ -2,6 +2,7 @@ pub mod alignment;
 pub mod comments;
 pub mod listings;
 pub mod table_controller;
+mod code;
 
 use crate::codegen::trans_map::{BlockTranslationFn, TransMap};
 use crate::codegen::translate_items;
@@ -49,6 +50,8 @@ fn get_trans_map() -> &'static HashMap<&'static str, BlockTranslationFn> {
             "description",
             listings::render_description_block as BlockTranslationFn,
         );
+        m.insert("verbatim", code::render_verbatim as BlockTranslationFn);
+        m.insert("lstlisting", code::render_lstlisting as BlockTranslationFn);
         m.insert("document", |_, _, _, items| translate_items(items));
         m
     })

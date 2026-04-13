@@ -143,6 +143,28 @@ AstDocument {
                         items: [
                             Text(
                                 TextNode {
+                                    value: "lstlisting",
+                                },
+                            ),
+                        ],
+                    },
+                ],
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Command(
+            CommandNode {
+                name: "usepackage",
+                optional_args: [],
+                required_args: [
+                    RequiredArgNode {
+                        items: [
+                            Text(
+                                TextNode {
                                     value: "hyperref",
                                 },
                             ),
@@ -222,19 +244,9 @@ AstDocument {
                             required_args: [],
                             optional_args: [],
                             items: [
-                                Newlines(
-                                    NewlinesNode {
-                                        count: 1,
-                                    },
-                                ),
                                 Text(
                                     TextNode {
-                                        value: "    Questo é un commento multilinea",
-                                    },
-                                ),
-                                Newlines(
-                                    NewlinesNode {
-                                        count: 1,
+                                        value: "\n    Questo é un commento multilinea\n",
                                     },
                                 ),
                             ],
@@ -1323,12 +1335,29 @@ AstDocument {
                                     ],
                                 },
                             ],
+                            required_args: [],
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "{geometry}",
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "usepackage",
+                            optional_args: [],
                             required_args: [
                                 RequiredArgNode {
                                     items: [
                                         Text(
                                             TextNode {
-                                                value: "geometry",
+                                                value: "listings",
                                             },
                                         ),
                                     ],
@@ -1495,6 +1524,57 @@ AstDocument {
                                 Newlines(
                                     NewlinesNode {
                                         count: 1,
+                                    },
+                                ),
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 2,
+                        },
+                    ),
+                    Block(
+                        BlockNode {
+                            name: "verbatim",
+                            required_args: [],
+                            optional_args: [],
+                            items: [
+                                Text(
+                                    TextNode {
+                                        value: "\n    Text enclosed inside \\texttt{verbatim} environment\n    is printed directly\n    and all \\LaTeX{} commands are ignored.\n",
+                                    },
+                                ),
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 2,
+                        },
+                    ),
+                    Block(
+                        BlockNode {
+                            name: "lstlisting",
+                            required_args: [],
+                            optional_args: [
+                                OptionalArgNode {
+                                    entries: [
+                                        KeyValue(
+                                            KvPairNode {
+                                                key: "language",
+                                                value: Simple(
+                                                    "Python",
+                                                ),
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                            items: [
+                                Text(
+                                    TextNode {
+                                        value: "\nimport numpy as np\n\ndef incmatrix(genl1,genl2):\n    m = len(genl1)\n    n = len(genl2)\n    M = None #to become the incidence matrix\n    VT = np.zeros((n*m,1), int)  #dummy variable\n\n    #compute the bitwise xor matrix\n    M1 = bitxormatrix(genl1)\n    M2 = np.triu(bitxormatrix(genl2),1)\n\n    for i in range(m-1):\n        for j in range(i+1, m):\n            [r,c] = np.where(M2 == M1[i,j])\n            for k in range(len(r)):\n                VT[(i)*n + r[k]] = 1;\n                VT[(i)*n + c[k]] = 1;\n                VT[(j)*n + r[k]] = 1;\n                VT[(j)*n + c[k]] = 1;\n\n                if M is None:\n                    M = np.copy(VT)\n                else:\n                    M = np.concatenate((M, VT), 1)\n\n                VT = np.zeros((n*m,1), int)\n\n    return M\n",
                                     },
                                 ),
                             ],

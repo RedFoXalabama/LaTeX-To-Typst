@@ -87,12 +87,20 @@ fn build_block(pair: Pair<Rule>) -> Result<BlockNode, SemanticError> {
             Rule::optional_arg => optional_args.push(build_optional_arg(child)?),
             Rule::required_arg => required_args.push(build_required_arg(child)?),
             Rule::content => {
-                for item in child.into_inner() {
-                    match item.as_rule() {
-                        Rule::item => items.push(build_item(item)?),
-                        other => return Err(SemanticError::UnexpectedRule(other)),
+
+                if matches!(name.as_str(), "comment" | "verbatim" | "lstlisting") {
+                    // Se siamo in un ambiente verbatim o comment, trattiamo tutto il contenuto come testo, senza cercare di interpretarlo
+                    let verbatim_content = child.as_str().to_string();
+                    items.push(AstItemNode::Text(TextNode { value: verbatim_content }));
+                } else {
+                    for item in child.into_inner() {
+                        match item.as_rule() {
+                            Rule::item => items.push(build_item(item)?),
+                            other => return Err(SemanticError::UnexpectedRule(other)),
+                        }
                     }
                 }
+
             }
             _ => {}
         }

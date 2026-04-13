@@ -53,8 +53,24 @@ RENDER-ERROR = usepackage
 prova-tra parentesi graffe-
 testo pre commento // prova commento monolinea
 /*
-    Questo é un commento multilinea
+    Questo é un commento multilinea *ciao*
 */
+
+/*
+    #table(
+	columns: 3,
+	[*cell1*],
+	[cell2],
+	[cell3],
+	[cell4],
+	[cell5],
+	[cell6],
+	[cell7],
+	[cell8],
+	[cell9],
+)
+*/
+
 
 *Bold*
 _italic_
@@ -149,9 +165,9 @@ RENDER-ERROR = usepackage
 )
 
 ```
-    Text enclosed inside \textttverbatim environment
+    Text enclosed inside \texttt{verbatim} environment
     is printed directly
-    and all \LaTeX commands are ignored.
+    and all \LaTeX{} commands are ignored.
 ```
 
 ```python

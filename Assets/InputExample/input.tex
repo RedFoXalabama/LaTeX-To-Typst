@@ -5,7 +5,7 @@
 \date{31/12/2026}
 
 \usepackage{verbatim}
-\usepackage{lstlisting}
+\usepackage{listing}
 \usepackage{hyperref}
 
 \begin{document}
@@ -15,8 +15,21 @@
 prova{-tra parentesi graffe-}
 testo pre commento % prova commento monolinea
 \begin{comment}
-    Questo é un commento multilinea
+    Questo é un commento multilinea \textbf{ciao}
 \end{comment}
+
+\begin{comment}
+    \begin{tabular}{ |c|c|c| }
+        \hline
+        \textbf{cell1} & cell2 & cell3 \\
+        \hline
+        cell4 & cell5 & cell6 \\
+        \hline
+        cell7 & cell8 & cell9 \\
+        \hline
+    \end{tabular}
+\end{comment}
+
 
 \textbf{Bold}
 \textit{italic}

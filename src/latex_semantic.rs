@@ -63,6 +63,7 @@ fn build_item(pair: Pair<Rule>) -> Result<AstItemNode, SemanticError> {
 
     match child.as_rule() {
         Rule::block => Ok(AstItemNode::Block(build_block(child)?)),
+        Rule::block_raw => Ok(AstItemNode::Block(build_block_raw(child)?)),
         Rule::command => Ok(AstItemNode::Command(build_command(child)?)),
         Rule::text => Ok(AstItemNode::Text(build_text(child)?)),
         Rule::newlines => Ok(AstItemNode::Newlines(build_newlines(child)?)),
@@ -83,25 +84,46 @@ fn build_block(pair: Pair<Rule>) -> Result<BlockNode, SemanticError> {
 
     for child in pair.into_inner() {
         match child.as_rule() {
-            Rule::name => name = Some(child.as_str().to_string()).ok_or(SemanticError::MissingBlockName)?,
+            Rule::name => {
+                name = Some(child.as_str().to_string()).ok_or(SemanticError::MissingBlockName)?
+            }
             Rule::optional_arg => optional_args.push(build_optional_arg(child)?),
             Rule::required_arg => required_args.push(build_required_arg(child)?),
             Rule::content => {
-
-                if matches!(name.as_str(), "comment" | "verbatim" | "lstlisting") {
-                    // Se siamo in un ambiente verbatim o comment, trattiamo tutto il contenuto come testo, senza cercare di interpretarlo
-                    let verbatim_content = child.as_str().to_string();
-                    items.push(AstItemNode::Text(TextNode { value: verbatim_content }));
-                } else {
-                    for item in child.into_inner() {
-                        match item.as_rule() {
-                            Rule::item => items.push(build_item(item)?),
-                            other => return Err(SemanticError::UnexpectedRule(other)),
-                        }
+                for item in child.into_inner() {
+                    match item.as_rule() {
+                        Rule::item => items.push(build_item(item)?),
+                        other => return Err(SemanticError::UnexpectedRule(other)),
                     }
                 }
-
             }
+            _ => {}
+        }
+    }
+
+    Ok(BlockNode {
+        name,
+        optional_args,
+        required_args,
+        items,
+    })
+}
+
+// Un blocco raw rappresenta ambienti come verbatim o lstlisting dove il contenuto deve essere preservato esattamente.
+fn build_block_raw(pair: Pair<Rule>) -> Result<BlockNode, SemanticError> {
+    let mut name: String = String::new();
+    let mut optional_args: Vec<OptionalArgNode> = Vec::new();
+    let mut required_args: Vec<RequiredArgNode> = Vec::new();
+    let mut items: Vec<AstItemNode> = Vec::new();
+
+    for child in pair.into_inner() {
+        match child.as_rule() {
+            Rule::raw_name => name = child.as_str().to_string(),
+            Rule::optional_arg => optional_args.push(build_optional_arg(child)?),
+            Rule::required_arg => required_args.push(build_required_arg(child)?),
+            Rule::content_raw => items.push(AstItemNode::RawText(TextNode {
+                value: child.as_str().to_string(),
+            })),
             _ => {}
         }
     }
@@ -124,7 +146,9 @@ fn build_command(pair: Pair<Rule>) -> Result<CommandNode, SemanticError> {
 
     for child in pair.into_inner() {
         match child.as_rule() {
-            Rule::name => name = Some(child.as_str().to_string()).ok_or(SemanticError::MissingCommandName)?, // Some diventerà string
+            Rule::name => {
+                name = Some(child.as_str().to_string()).ok_or(SemanticError::MissingCommandName)?
+            } // Some diventerà string
             Rule::optional_arg => optional_args.push(build_optional_arg(child)?), // optional_arg = { "[" ~ optional_list? ~ "]" }
             Rule::required_arg => required_args.push(build_required_arg(child)?), // required_arg = { "{" ~ argument ~ "}" }
             other => return Err(SemanticError::UnexpectedRule(other)),
@@ -137,7 +161,6 @@ fn build_command(pair: Pair<Rule>) -> Result<CommandNode, SemanticError> {
         required_args,
     })
 }
-
 
 // Un testo é qualsiasi cosa che non inizi con un \ di comando o una nuova linea ed é composto da qualsiasi carattere
 // se il nodo é vuoto (anche se non dovrebbe esserlo, visto che la regola richiede almeno un carattere), allora cacca addosso -> EmptyTextValue

@@ -1,0 +1,3493 @@
+AstDocument {
+    items: [
+        Command(
+            CommandNode {
+                name: "documentclass",
+                optional_args: [],
+                required_args: [
+                    RequiredArgNode {
+                        items: [
+                            Text(
+                                TextNode {
+                                    value: "article",
+                                },
+                            ),
+                        ],
+                    },
+                ],
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Command(
+            CommandNode {
+                name: "usepackage",
+                optional_args: [],
+                required_args: [
+                    RequiredArgNode {
+                        items: [
+                            Text(
+                                TextNode {
+                                    value: "graphicx",
+                                },
+                            ),
+                        ],
+                    },
+                ],
+            },
+        ),
+        Text(
+            TextNode {
+                value: " ",
+            },
+        ),
+        Comment(
+            CommentNode {
+                value: "% Required for inserting images",
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Command(
+            CommandNode {
+                name: "usepackage",
+                optional_args: [],
+                required_args: [
+                    RequiredArgNode {
+                        items: [
+                            Text(
+                                TextNode {
+                                    value: "hyperref",
+                                },
+                            ),
+                        ],
+                    },
+                ],
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Command(
+            CommandNode {
+                name: "usepackage",
+                optional_args: [],
+                required_args: [
+                    RequiredArgNode {
+                        items: [
+                            Text(
+                                TextNode {
+                                    value: "listings",
+                                },
+                            ),
+                        ],
+                    },
+                ],
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 2,
+            },
+        ),
+        Command(
+            CommandNode {
+                name: "title",
+                optional_args: [],
+                required_args: [
+                    RequiredArgNode {
+                        items: [
+                            Text(
+                                TextNode {
+                                    value: "LaTeX2Typst Documentation",
+                                },
+                            ),
+                        ],
+                    },
+                ],
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Command(
+            CommandNode {
+                name: "author",
+                optional_args: [],
+                required_args: [
+                    RequiredArgNode {
+                        items: [
+                            Text(
+                                TextNode {
+                                    value: "Gianfranco Baccarella e Vito Di Bari",
+                                },
+                            ),
+                        ],
+                    },
+                ],
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Command(
+            CommandNode {
+                name: "date",
+                optional_args: [],
+                required_args: [
+                    RequiredArgNode {
+                        items: [
+                            Text(
+                                TextNode {
+                                    value: "13 April 2026",
+                                },
+                            ),
+                        ],
+                    },
+                ],
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 2,
+            },
+        ),
+        Block(
+            BlockNode {
+                name: "document",
+                required_args: [],
+                optional_args: [],
+                items: [
+                    Newlines(
+                        NewlinesNode {
+                            count: 2,
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "maketitle",
+                            optional_args: [],
+                            required_args: [],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "tableofcontents",
+                            optional_args: [],
+                            required_args: [],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 2,
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "chapter",
+                            optional_args: [],
+                            required_args: [
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "Capitolo prova",
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "agagag",
+                            optional_args: [],
+                            required_args: [
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "fpa",
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 2,
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "section",
+                            optional_args: [],
+                            required_args: [
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "Introduction",
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 2,
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "subsection",
+                            optional_args: [],
+                            required_args: [
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "Contesto dello sviluppo",
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "LaTeX rappresenta un potente linguaggio di markup attualmente utilizzato in numerosi contesti accademici e non per la sua potenza rappresentativa di documenti di testo ordinati secondo regole di formattazione ben definite. Nonostante ciò la sua sintassi e semantica possono risultare complesse per dei neofiti che si approcciano per la prima volta ad un nuovo strumento per la formattazione di testi differente dai classici programmi come Word di Microsoft. Per questo esiste Typst un nuovo linguaggio di markup che ha l'obiettivo di ricoprire le stesse funzioni di LaTeX, ma con una sintassi più semplici e senza la necessità di implementare package per funzioni base come le immagini o i commenti.",
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "Da questo nasce l'idea di creare un Compilatore che possa prendere in input un file di testo in linguaggio LaTeX e fornire in output un file in linguaggio Typst effettuando quindi una traduzione da un linguaggio di markup ad un altro.",
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 2,
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "subsection",
+                            optional_args: [],
+                            required_args: [
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "Stato dell'arte",
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "Al momento della realizzazione del progetto é stata individuata una repository github con lo stesso obiettivo: convertire dell'input in linguagguio LaTeX in output Typst. La repository, denominata ",
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "href",
+                            optional_args: [],
+                            required_args: [
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "https://github.com/scipenai/tylax",
+                                            },
+                                        ),
+                                    ],
+                                },
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "Tylax",
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: " realizzata dall'utente scipenai, di cui é possibile provare il funzionamento al seguente ",
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "href",
+                            optional_args: [],
+                            required_args: [
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "https://convert.silkyai.cn",
+                                            },
+                                        ),
+                                    ],
+                                },
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "link",
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: ", é ancora in corso di sviluppo, ma dai risultati pubblicati si nota uno sviluppo avanzato che permette già di tradurre molte strutture sintattiche, compresa una sezione separata esclusiva per la matematica. Nonostante ciò Tylax non supporta al momento la traduzione di differenti comandi come: \"maketitle\" per la realizzazione del titolo e  alcuni blocchi begin/end come \"comment\" per creare blocchi di commenti e \"flush\" per l'allineamento del testo. Inoltre le repository si propone di effettuare una traduzione inversa prendendo in input un file in linguaggio Typst e restituendo quindi un file in linguaggio LaTeX.",
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 2,
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "section",
+                            optional_args: [],
+                            required_args: [
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "Sturuttura del progetto",
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "Il software é stato scritto in linguaggio RUST per poter sfruttare la potenzialità della sua libreria ",
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "href",
+                            optional_args: [],
+                            required_args: [
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "https://docs.rs/pest/2.8.6/pest/",
+                                            },
+                                        ),
+                                    ],
+                                },
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "Pest",
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: ", un parser general purpose, con cui é stato possibile definire una grammatica di riferimento ed effettuare un parsing sul testo scritto secondo il markup LaTeX per ottenere un ParseTree, una rappresentazione ad albero della struttura sintattica dell'intero file, basata sulla grammatica da noi definita in modo da scomporre nelle varie componenti il testo.",
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "La struttura del progetto é abbastanza lineare, prendiamo in input il file LaTeX ed ogni componente dà in input il proprio output alla successiva, i vari passaggi possono essere rappresentati cosi:",
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Block(
+                        BlockNode {
+                            name: "enumerate",
+                            required_args: [],
+                            optional_args: [],
+                            items: [
+                                Newlines(
+                                    NewlinesNode {
+                                        count: 1,
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: "    ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "item",
+                                        optional_args: [],
+                                        required_args: [],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: " ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "textbf",
+                                        optional_args: [],
+                                        required_args: [
+                                            RequiredArgNode {
+                                                items: [
+                                                    Text(
+                                                        TextNode {
+                                                            value: "Input",
+                                                        },
+                                                    ),
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: ": File Latex + LaTeX Grammar ->",
+                                    },
+                                ),
+                                Newlines(
+                                    NewlinesNode {
+                                        count: 1,
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: "    ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "item",
+                                        optional_args: [],
+                                        required_args: [],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: " Parser -> Parse Tree ->",
+                                    },
+                                ),
+                                Newlines(
+                                    NewlinesNode {
+                                        count: 1,
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: "    ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "item",
+                                        optional_args: [],
+                                        required_args: [],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: " Semantic -> Abastract Syntatx Tree -> ",
+                                    },
+                                ),
+                                Newlines(
+                                    NewlinesNode {
+                                        count: 1,
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: "    ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "item",
+                                        optional_args: [],
+                                        required_args: [],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: " CodeGen -> ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "textbf",
+                                        optional_args: [],
+                                        required_args: [
+                                            RequiredArgNode {
+                                                items: [
+                                                    Text(
+                                                        TextNode {
+                                                            value: "Output",
+                                                        },
+                                                    ),
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: ": File Typst",
+                                    },
+                                ),
+                                Newlines(
+                                    NewlinesNode {
+                                        count: 1,
+                                    },
+                                ),
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 2,
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "subsection",
+                            optional_args: [],
+                            required_args: [
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "Analisi Sintattica - Parsing",
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "Come già inizialmente definito, il software prende in input un file scritto in linguaggio LaTeX (input.tex) e per prima cosa quindi viene effettuato il parsing del testo in modo da poter ottenere il precedentemente citato ParseTree. Per effettuare ciò abbiamo deciso di utilizzare la libreria Pest di Rust, la cui ci ha fornito delle funzioni per potere generare un Parser che potesse seguire determinate regole grammaticali definite nel file ",
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "textbf",
+                            optional_args: [],
+                            required_args: [
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "latex.pest",
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: ". La grammatica si basa su definite regole che la stringa dovrà rispettare fino a potersi identificare nella regola più \"restrittiva\" navigando verso il basso dell'albero, quindi possiamo immaginare anche le regola grammaticali come un albero rovesciato in cui in cima, alla root, vi é presente la regola più generale in questo caso ",
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "textbf",
+                            optional_args: [],
+                            required_args: [
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "file",
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: ", che si dirama verso il basso definendo altre regole che possono essere composte dai loro nodi figli. Senza entrare nel dettaglio, in questo documento, della grammatica possiamo fare l'esempio iniziale in cui:",
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 2,
+                        },
+                    ),
+                    Block(
+                        BlockNode {
+                            name: "lstlisting",
+                            required_args: [],
+                            optional_args: [],
+                            items: [
+                                RawText(
+                                    TextNode {
+                                        value: "\nfile = { SOI ~ item* ~ EOI }\nitem = { block | command | text | newlines | linebreak | comment }\ntext = { (!(\"\\\\\" | NEWLINE | comment) ~ ANY)+ }\n",
+                                    },
+                                ),
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 2,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "Come possiamo vedere un file può essere composto da zero o più di un item, la definizione delle regole segue delle espressioni molto simili alle regex, ed a sua volta l'item deve essere composto da uno solo dei diversi elementi definiti. Item definisce quindi una regola generale che identifica ogni elemento presente nel file, successivamente si entra nello specifico di questi elementi come nella regola text che definisce come testo qualsiasi elemento che contenga uno o più caratteri che non inizi con la backslash, altrimenti identificherebbe come comando, e che non rispetti la regola \"NEWLINE\" o \"comment\".",
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "Dopo aver generato un Parser basato sulla nostra grammatica, il sofware effettua quindi il parsing del file di input restituendo in output un Parse Tree in cui suddividiamo ogni elemento del file nella rispettiva regola grammaticale ed organizzati come un albero in cui ogni elemento, definito come Pair, possiede:",
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Block(
+                        BlockNode {
+                            name: "itemize",
+                            required_args: [],
+                            optional_args: [],
+                            items: [
+                                Newlines(
+                                    NewlinesNode {
+                                        count: 1,
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: "    ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "item",
+                                        optional_args: [],
+                                        required_args: [],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: " ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "textbf",
+                                        optional_args: [],
+                                        required_args: [
+                                            RequiredArgNode {
+                                                items: [
+                                                    Text(
+                                                        TextNode {
+                                                            value: "rule",
+                                                        },
+                                                    ),
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: ", la regola grammaticale rispettata",
+                                    },
+                                ),
+                                Newlines(
+                                    NewlinesNode {
+                                        count: 1,
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: "    ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "item",
+                                        optional_args: [],
+                                        required_args: [],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: " ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "textbf",
+                                        optional_args: [],
+                                        required_args: [
+                                            RequiredArgNode {
+                                                items: [
+                                                    Text(
+                                                        TextNode {
+                                                            value: "span",
+                                                        },
+                                                    ),
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: ", un oggetto di tipo Span, che contiene a sua volta ",
+                                    },
+                                ),
+                                Block(
+                                    BlockNode {
+                                        name: "itemize",
+                                        required_args: [],
+                                        optional_args: [],
+                                        items: [
+                                            Newlines(
+                                                NewlinesNode {
+                                                    count: 1,
+                                                },
+                                            ),
+                                            Text(
+                                                TextNode {
+                                                    value: "        ",
+                                                },
+                                            ),
+                                            Command(
+                                                CommandNode {
+                                                    name: "item",
+                                                    optional_args: [],
+                                                    required_args: [],
+                                                },
+                                            ),
+                                            Text(
+                                                TextNode {
+                                                    value: " ",
+                                                },
+                                            ),
+                                            Command(
+                                                CommandNode {
+                                                    name: "textbf",
+                                                    optional_args: [],
+                                                    required_args: [
+                                                        RequiredArgNode {
+                                                            items: [
+                                                                Text(
+                                                                    TextNode {
+                                                                        value: "str",
+                                                                    },
+                                                                ),
+                                                            ],
+                                                        },
+                                                    ],
+                                                },
+                                            ),
+                                            Text(
+                                                TextNode {
+                                                    value: ", la stringa di riferimento estratta",
+                                                },
+                                            ),
+                                            Newlines(
+                                                NewlinesNode {
+                                                    count: 1,
+                                                },
+                                            ),
+                                            Text(
+                                                TextNode {
+                                                    value: "        ",
+                                                },
+                                            ),
+                                            Command(
+                                                CommandNode {
+                                                    name: "item",
+                                                    optional_args: [],
+                                                    required_args: [],
+                                                },
+                                            ),
+                                            Text(
+                                                TextNode {
+                                                    value: " ",
+                                                },
+                                            ),
+                                            Command(
+                                                CommandNode {
+                                                    name: "textbf",
+                                                    optional_args: [],
+                                                    required_args: [
+                                                        RequiredArgNode {
+                                                            items: [
+                                                                Text(
+                                                                    TextNode {
+                                                                        value: "range",
+                                                                    },
+                                                                ),
+                                                            ],
+                                                        },
+                                                    ],
+                                                },
+                                            ),
+                                            Text(
+                                                TextNode {
+                                                    value: ", il range occupato dai caratteri",
+                                                },
+                                            ),
+                                            Newlines(
+                                                NewlinesNode {
+                                                    count: 1,
+                                                },
+                                            ),
+                                            Text(
+                                                TextNode {
+                                                    value: "    ",
+                                                },
+                                            ),
+                                        ],
+                                    },
+                                ),
+                                Newlines(
+                                    NewlinesNode {
+                                        count: 1,
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: "    ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "item",
+                                        optional_args: [],
+                                        required_args: [],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: " ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "textbf",
+                                        optional_args: [],
+                                        required_args: [
+                                            RequiredArgNode {
+                                                items: [
+                                                    Text(
+                                                        TextNode {
+                                                            value: "inner",
+                                                        },
+                                                    ),
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: ", gli elementi figli",
+                                    },
+                                ),
+                                Newlines(
+                                    NewlinesNode {
+                                        count: 1,
+                                    },
+                                ),
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 2,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "Qui inseriamo la lista delle regole grammaticali definite per il parsing del testo.",
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Block(
+                        BlockNode {
+                            name: "itemize",
+                            required_args: [],
+                            optional_args: [],
+                            items: [
+                                Newlines(
+                                    NewlinesNode {
+                                        count: 1,
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: "    ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "item",
+                                        optional_args: [],
+                                        required_args: [],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: " ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "textbf",
+                                        optional_args: [],
+                                        required_args: [
+                                            RequiredArgNode {
+                                                items: [
+                                                    Text(
+                                                        TextNode {
+                                                            value: "file",
+                                                        },
+                                                    ),
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: ", intero testo del file di input",
+                                    },
+                                ),
+                                Newlines(
+                                    NewlinesNode {
+                                        count: 1,
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: "    ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "item",
+                                        optional_args: [],
+                                        required_args: [],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: " ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "textbf",
+                                        optional_args: [],
+                                        required_args: [
+                                            RequiredArgNode {
+                                                items: [
+                                                    Text(
+                                                        TextNode {
+                                                            value: "item",
+                                                        },
+                                                    ),
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: ", componente generale del testo",
+                                    },
+                                ),
+                                Newlines(
+                                    NewlinesNode {
+                                        count: 1,
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: "    ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "item",
+                                        optional_args: [],
+                                        required_args: [],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: " ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "textbf",
+                                        optional_args: [],
+                                        required_args: [
+                                            RequiredArgNode {
+                                                items: [
+                                                    Text(
+                                                        TextNode {
+                                                            value: "name",
+                                                        },
+                                                    ),
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: ", nome del comando",
+                                    },
+                                ),
+                                Newlines(
+                                    NewlinesNode {
+                                        count: 1,
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: "    ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "item",
+                                        optional_args: [],
+                                        required_args: [],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: " ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "textbf",
+                                        optional_args: [],
+                                        required_args: [
+                                            RequiredArgNode {
+                                                items: [
+                                                    Text(
+                                                        TextNode {
+                                                            value: "block",
+                                                        },
+                                                    ),
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: ", blocco begin e end",
+                                    },
+                                ),
+                                Newlines(
+                                    NewlinesNode {
+                                        count: 1,
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: "    ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "item",
+                                        optional_args: [],
+                                        required_args: [],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: " ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "textbf",
+                                        optional_args: [],
+                                        required_args: [
+                                            RequiredArgNode {
+                                                items: [
+                                                    Text(
+                                                        TextNode {
+                                                            value: "command",
+                                                        },
+                                                    ),
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: ", comando generale",
+                                    },
+                                ),
+                                Newlines(
+                                    NewlinesNode {
+                                        count: 1,
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: "    ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "item",
+                                        optional_args: [],
+                                        required_args: [],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: " ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "textbf",
+                                        optional_args: [],
+                                        required_args: [
+                                            RequiredArgNode {
+                                                items: [
+                                                    Text(
+                                                        TextNode {
+                                                            value: "linebreak",
+                                                        },
+                                                    ),
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: ", interruzione di riga segnalate in latex come doppio backslash",
+                                    },
+                                ),
+                                Newlines(
+                                    NewlinesNode {
+                                        count: 1,
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: "    ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "item",
+                                        optional_args: [],
+                                        required_args: [],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: " ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "textbf",
+                                        optional_args: [],
+                                        required_args: [
+                                            RequiredArgNode {
+                                                items: [
+                                                    Text(
+                                                        TextNode {
+                                                            value: "newlines",
+                                                        },
+                                                    ),
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: ", interruzione di riga e nuove righe",
+                                    },
+                                ),
+                                Newlines(
+                                    NewlinesNode {
+                                        count: 1,
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: "    ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "item",
+                                        optional_args: [],
+                                        required_args: [],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: " ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "textbf",
+                                        optional_args: [],
+                                        required_args: [
+                                            RequiredArgNode {
+                                                items: [
+                                                    Text(
+                                                        TextNode {
+                                                            value: "comment",
+                                                        },
+                                                    ),
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: ", commento mono riga",
+                                    },
+                                ),
+                                Newlines(
+                                    NewlinesNode {
+                                        count: 1,
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: "    ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "item",
+                                        optional_args: [],
+                                        required_args: [],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: " ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "textbf",
+                                        optional_args: [],
+                                        required_args: [
+                                            RequiredArgNode {
+                                                items: [
+                                                    Text(
+                                                        TextNode {
+                                                            value: "text",
+                                                        },
+                                                    ),
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: ", testo semplice",
+                                    },
+                                ),
+                                Newlines(
+                                    NewlinesNode {
+                                        count: 1,
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: "    ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "item",
+                                        optional_args: [],
+                                        required_args: [],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: " ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "textbf",
+                                        optional_args: [],
+                                        required_args: [
+                                            RequiredArgNode {
+                                                items: [
+                                                    Text(
+                                                        TextNode {
+                                                            value: "required arg",
+                                                        },
+                                                    ),
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: ", argomento obbligatorio del comando",
+                                    },
+                                ),
+                                Newlines(
+                                    NewlinesNode {
+                                        count: 1,
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: "    ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "item",
+                                        optional_args: [],
+                                        required_args: [],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: " ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "textbf",
+                                        optional_args: [],
+                                        required_args: [
+                                            RequiredArgNode {
+                                                items: [
+                                                    Text(
+                                                        TextNode {
+                                                            value: "argument",
+                                                        },
+                                                    ),
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: ", argomento del required arg",
+                                    },
+                                ),
+                                Newlines(
+                                    NewlinesNode {
+                                        count: 1,
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: "    ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "item",
+                                        optional_args: [],
+                                        required_args: [],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: " ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "textbf",
+                                        optional_args: [],
+                                        required_args: [
+                                            RequiredArgNode {
+                                                items: [
+                                                    Text(
+                                                        TextNode {
+                                                            value: "arg item",
+                                                        },
+                                                    ),
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: ", tipologia di argomento di argument, può essere un altro comando o un testo, permettendo cosi il nesting dei comandi",
+                                    },
+                                ),
+                                Newlines(
+                                    NewlinesNode {
+                                        count: 1,
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: "    ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "item",
+                                        optional_args: [],
+                                        required_args: [],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: " ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "textbf",
+                                        optional_args: [],
+                                        required_args: [
+                                            RequiredArgNode {
+                                                items: [
+                                                    Text(
+                                                        TextNode {
+                                                            value: "arg text",
+                                                        },
+                                                    ),
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: ", testo semplice di un argument",
+                                    },
+                                ),
+                                Newlines(
+                                    NewlinesNode {
+                                        count: 1,
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: "    ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "item",
+                                        optional_args: [],
+                                        required_args: [],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: " ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "textbf",
+                                        optional_args: [],
+                                        required_args: [
+                                            RequiredArgNode {
+                                                items: [
+                                                    Text(
+                                                        TextNode {
+                                                            value: "optional arg",
+                                                        },
+                                                    ),
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: ", argomento opzionale del comando",
+                                    },
+                                ),
+                                Newlines(
+                                    NewlinesNode {
+                                        count: 1,
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: "    ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "item",
+                                        optional_args: [],
+                                        required_args: [],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: " ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "textbf",
+                                        optional_args: [],
+                                        required_args: [
+                                            RequiredArgNode {
+                                                items: [
+                                                    Text(
+                                                        TextNode {
+                                                            value: "optional list",
+                                                        },
+                                                    ),
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: ", lista di argomenti che possono comporre un argomento opzionale",
+                                    },
+                                ),
+                                Newlines(
+                                    NewlinesNode {
+                                        count: 1,
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: "    ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "item",
+                                        optional_args: [],
+                                        required_args: [],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: " ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "textbf",
+                                        optional_args: [],
+                                        required_args: [
+                                            RequiredArgNode {
+                                                items: [
+                                                    Text(
+                                                        TextNode {
+                                                            value: "opt entry",
+                                                        },
+                                                    ),
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: ", argomento singolo della lista",
+                                    },
+                                ),
+                                Newlines(
+                                    NewlinesNode {
+                                        count: 1,
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: "    ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "item",
+                                        optional_args: [],
+                                        required_args: [],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: " ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "textbf",
+                                        optional_args: [],
+                                        required_args: [
+                                            RequiredArgNode {
+                                                items: [
+                                                    Text(
+                                                        TextNode {
+                                                            value: "kv pair",
+                                                        },
+                                                    ),
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: ", argomento chiave valore",
+                                    },
+                                ),
+                                Newlines(
+                                    NewlinesNode {
+                                        count: 1,
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: "    ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "item",
+                                        optional_args: [],
+                                        required_args: [],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: " ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "textbf",
+                                        optional_args: [],
+                                        required_args: [
+                                            RequiredArgNode {
+                                                items: [
+                                                    Text(
+                                                        TextNode {
+                                                            value: "key",
+                                                        },
+                                                    ),
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: ", chiave del kv pair",
+                                    },
+                                ),
+                                Newlines(
+                                    NewlinesNode {
+                                        count: 1,
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: "    ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "item",
+                                        optional_args: [],
+                                        required_args: [],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: " ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "textbf",
+                                        optional_args: [],
+                                        required_args: [
+                                            RequiredArgNode {
+                                                items: [
+                                                    Text(
+                                                        TextNode {
+                                                            value: "value",
+                                                        },
+                                                    ),
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: ", valore del kv pair può essere un semplice testo o una lista",
+                                    },
+                                ),
+                                Newlines(
+                                    NewlinesNode {
+                                        count: 1,
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: "    ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "item",
+                                        optional_args: [],
+                                        required_args: [],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: " ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "textbf",
+                                        optional_args: [],
+                                        required_args: [
+                                            RequiredArgNode {
+                                                items: [
+                                                    Text(
+                                                        TextNode {
+                                                            value: "simple value",
+                                                        },
+                                                    ),
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: ", valore composto da testo semplice",
+                                    },
+                                ),
+                                Newlines(
+                                    NewlinesNode {
+                                        count: 1,
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: "    ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "item",
+                                        optional_args: [],
+                                        required_args: [],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: " ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "textbf",
+                                        optional_args: [],
+                                        required_args: [
+                                            RequiredArgNode {
+                                                items: [
+                                                    Text(
+                                                        TextNode {
+                                                            value: "value list",
+                                                        },
+                                                    ),
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: ", valore composto da una lista di sottovalori",
+                                    },
+                                ),
+                                Newlines(
+                                    NewlinesNode {
+                                        count: 1,
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: "    ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "item",
+                                        optional_args: [],
+                                        required_args: [],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: " ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "textbf",
+                                        optional_args: [],
+                                        required_args: [
+                                            RequiredArgNode {
+                                                items: [
+                                                    Text(
+                                                        TextNode {
+                                                            value: "sub value list",
+                                                        },
+                                                    ),
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: ", sottovalori della value list",
+                                    },
+                                ),
+                                Newlines(
+                                    NewlinesNode {
+                                        count: 1,
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: "    ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "item",
+                                        optional_args: [],
+                                        required_args: [],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: " ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "textbf",
+                                        optional_args: [],
+                                        required_args: [
+                                            RequiredArgNode {
+                                                items: [
+                                                    Text(
+                                                        TextNode {
+                                                            value: "opt item",
+                                                        },
+                                                    ),
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: ", argomenti opzionali differenti dalla kv pair",
+                                    },
+                                ),
+                                Newlines(
+                                    NewlinesNode {
+                                        count: 1,
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: "    ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "item",
+                                        optional_args: [],
+                                        required_args: [],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: " ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "textbf",
+                                        optional_args: [],
+                                        required_args: [
+                                            RequiredArgNode {
+                                                items: [
+                                                    Text(
+                                                        TextNode {
+                                                            value: "opt text",
+                                                        },
+                                                    ),
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: ", testo semplice dell'opt item",
+                                    },
+                                ),
+                                Newlines(
+                                    NewlinesNode {
+                                        count: 1,
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: "    ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "item",
+                                        optional_args: [],
+                                        required_args: [],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: " ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "textbf",
+                                        optional_args: [],
+                                        required_args: [
+                                            RequiredArgNode {
+                                                items: [
+                                                    Text(
+                                                        TextNode {
+                                                            value: "forbidden char",
+                                                        },
+                                                    ),
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: ", insieme di caratteri da non considerare in determinate regole",
+                                    },
+                                ),
+                                Newlines(
+                                    NewlinesNode {
+                                        count: 1,
+                                    },
+                                ),
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 2,
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "subsection",
+                            optional_args: [],
+                            required_args: [
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "Analisi Semantica - AST",
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "Dopo aver effettuato il parsing sul testo ed aver ottenuto un ParseTree che ci permette di suddividere il testo in componenti sintattici incapsulando la loro logica, possiamo passare ad un analisi semantica del testo prendendo in input il ParseTree ed ottenere in output una rappresentazione intermedia del codice attraverso l'Abstract Syntax Tree in cui rappresentiamo il testo in una nuova rappresentazione logica ad albero in cui possiamo semplificare la rappresentazione del ParseTree, che risulta essere troppo innestato a causa delle varie regole grammaticali, ottenendo cosi un albero meno folto accomunando differenti regole sotto un unico enumerativo in modo da ragrupparli in base alle funzioni di rendering da utilizzare durante la generazione del nuovo codice; ed inoltre per aggiungere o semplificare informazioni come ad esempio il numero di nuove righe che nel ParseTree vengono rappresentate semplicemente come testo \"n\" differentemente dall'AST in l'oggetto ",
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "textbf",
+                            optional_args: [],
+                            required_args: [
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "NewLineNode",
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: " possiede un attributo ",
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "textbf",
+                            optional_args: [],
+                            required_args: [
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "count",
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: ". Ad esempio la stringa ",
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "textbf",
+                            optional_args: [],
+                            required_args: [
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "title",
+                                            },
+                                        ),
+                                        Group(
+                                            RequiredArgNode {
+                                                items: [
+                                                    Text(
+                                                        TextNode {
+                                                            value: "LaTeX To Typst",
+                                                        },
+                                                    ),
+                                                ],
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: " che nel ParseTree viene scomposta in 7 nodi ognuno padre dell'altro, differentemente nell'AST é rappresentato con solo 3 nodi.",
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Block(
+                        BlockNode {
+                            name: "itemize",
+                            required_args: [],
+                            optional_args: [],
+                            items: [
+                                Newlines(
+                                    NewlinesNode {
+                                        count: 1,
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: "    ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "item",
+                                        optional_args: [],
+                                        required_args: [],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: " ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "textbf",
+                                        optional_args: [],
+                                        required_args: [
+                                            RequiredArgNode {
+                                                items: [
+                                                    Text(
+                                                        TextNode {
+                                                            value: "CommandNode",
+                                                        },
+                                                    ),
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: ", che possiede gli attributi ",
+                                    },
+                                ),
+                                Block(
+                                    BlockNode {
+                                        name: "itemize",
+                                        required_args: [],
+                                        optional_args: [],
+                                        items: [
+                                            Newlines(
+                                                NewlinesNode {
+                                                    count: 1,
+                                                },
+                                            ),
+                                            Text(
+                                                TextNode {
+                                                    value: "        ",
+                                                },
+                                            ),
+                                            Command(
+                                                CommandNode {
+                                                    name: "item",
+                                                    optional_args: [],
+                                                    required_args: [],
+                                                },
+                                            ),
+                                            Text(
+                                                TextNode {
+                                                    value: " ",
+                                                },
+                                            ),
+                                            Command(
+                                                CommandNode {
+                                                    name: "textbf",
+                                                    optional_args: [],
+                                                    required_args: [
+                                                        RequiredArgNode {
+                                                            items: [
+                                                                Text(
+                                                                    TextNode {
+                                                                        value: "Name",
+                                                                    },
+                                                                ),
+                                                            ],
+                                                        },
+                                                    ],
+                                                },
+                                            ),
+                                            Text(
+                                                TextNode {
+                                                    value: ", il nome del comando",
+                                                },
+                                            ),
+                                            Newlines(
+                                                NewlinesNode {
+                                                    count: 1,
+                                                },
+                                            ),
+                                            Text(
+                                                TextNode {
+                                                    value: "        ",
+                                                },
+                                            ),
+                                            Command(
+                                                CommandNode {
+                                                    name: "item",
+                                                    optional_args: [],
+                                                    required_args: [],
+                                                },
+                                            ),
+                                            Text(
+                                                TextNode {
+                                                    value: " ",
+                                                },
+                                            ),
+                                            Command(
+                                                CommandNode {
+                                                    name: "textbf",
+                                                    optional_args: [],
+                                                    required_args: [
+                                                        RequiredArgNode {
+                                                            items: [
+                                                                Text(
+                                                                    TextNode {
+                                                                        value: "OptionalArgs",
+                                                                    },
+                                                                ),
+                                                            ],
+                                                        },
+                                                    ],
+                                                },
+                                            ),
+                                            Text(
+                                                TextNode {
+                                                    value: ", gli argomenti opzionali di un comando racchiusi tra parentesi quadre",
+                                                },
+                                            ),
+                                            Newlines(
+                                                NewlinesNode {
+                                                    count: 1,
+                                                },
+                                            ),
+                                            Text(
+                                                TextNode {
+                                                    value: "        ",
+                                                },
+                                            ),
+                                            Command(
+                                                CommandNode {
+                                                    name: "item",
+                                                    optional_args: [],
+                                                    required_args: [],
+                                                },
+                                            ),
+                                            Text(
+                                                TextNode {
+                                                    value: " ",
+                                                },
+                                            ),
+                                            Command(
+                                                CommandNode {
+                                                    name: "textbf",
+                                                    optional_args: [],
+                                                    required_args: [
+                                                        RequiredArgNode {
+                                                            items: [
+                                                                Text(
+                                                                    TextNode {
+                                                                        value: "RequiredArgs",
+                                                                    },
+                                                                ),
+                                                            ],
+                                                        },
+                                                    ],
+                                                },
+                                            ),
+                                            Text(
+                                                TextNode {
+                                                    value: ", gli argomenti obbligatori di un comando racchiusi tra parentesi graffe, in questo caso contiene un solo ",
+                                                },
+                                            ),
+                                            Command(
+                                                CommandNode {
+                                                    name: "textbf",
+                                                    optional_args: [],
+                                                    required_args: [
+                                                        RequiredArgNode {
+                                                            items: [
+                                                                Text(
+                                                                    TextNode {
+                                                                        value: "RequiredArgNode",
+                                                                    },
+                                                                ),
+                                                            ],
+                                                        },
+                                                    ],
+                                                },
+                                            ),
+                                            Text(
+                                                TextNode {
+                                                    value: ", che a sua volta possiede un attributo items di tipo ",
+                                                },
+                                            ),
+                                            Command(
+                                                CommandNode {
+                                                    name: "textbf",
+                                                    optional_args: [],
+                                                    required_args: [
+                                                        RequiredArgNode {
+                                                            items: [
+                                                                Text(
+                                                                    TextNode {
+                                                                        value: "Text",
+                                                                    },
+                                                                ),
+                                                            ],
+                                                        },
+                                                    ],
+                                                },
+                                            ),
+                                            Text(
+                                                TextNode {
+                                                    value: " ",
+                                                },
+                                            ),
+                                            Block(
+                                                BlockNode {
+                                                    name: "itemize",
+                                                    required_args: [],
+                                                    optional_args: [],
+                                                    items: [
+                                                        Newlines(
+                                                            NewlinesNode {
+                                                                count: 1,
+                                                            },
+                                                        ),
+                                                        Text(
+                                                            TextNode {
+                                                                value: "            ",
+                                                            },
+                                                        ),
+                                                        Command(
+                                                            CommandNode {
+                                                                name: "item",
+                                                                optional_args: [],
+                                                                required_args: [],
+                                                            },
+                                                        ),
+                                                        Text(
+                                                            TextNode {
+                                                                value: " ",
+                                                            },
+                                                        ),
+                                                        Command(
+                                                            CommandNode {
+                                                                name: "textbf",
+                                                                optional_args: [],
+                                                                required_args: [
+                                                                    RequiredArgNode {
+                                                                        items: [
+                                                                            Text(
+                                                                                TextNode {
+                                                                                    value: "TextNode",
+                                                                                },
+                                                                            ),
+                                                                        ],
+                                                                    },
+                                                                ],
+                                                            },
+                                                        ),
+                                                        Text(
+                                                            TextNode {
+                                                                value: ", contiene il valore testuale all'interno delle parentesi quadre.",
+                                                            },
+                                                        ),
+                                                        Newlines(
+                                                            NewlinesNode {
+                                                                count: 1,
+                                                            },
+                                                        ),
+                                                        Text(
+                                                            TextNode {
+                                                                value: "        ",
+                                                            },
+                                                        ),
+                                                    ],
+                                                },
+                                            ),
+                                            Newlines(
+                                                NewlinesNode {
+                                                    count: 1,
+                                                },
+                                            ),
+                                            Text(
+                                                TextNode {
+                                                    value: "    ",
+                                                },
+                                            ),
+                                        ],
+                                    },
+                                ),
+                                Newlines(
+                                    NewlinesNode {
+                                        count: 1,
+                                    },
+                                ),
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 2,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "Se la precedente struttura ad albero era basata sulla grammatica, questa nuova struttura ad albero che andiamo a realizzare é basata su una lista di strutture ed enumerativi da noi definiti, nel file ",
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "textit",
+                            optional_args: [],
+                            required_args: [
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "ast structure",
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: ", che vengono assegnati ai vari nodi in base alle loro regole grammaticali d'origine. Rimanendo sull'esempio del precedente comando, vediamo la struttura con cui costruiamo un ",
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "textbf",
+                            optional_args: [],
+                            required_args: [
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "ComandNode",
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: ":",
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Block(
+                        BlockNode {
+                            name: "lstlisting",
+                            required_args: [],
+                            optional_args: [],
+                            items: [
+                                RawText(
+                                    TextNode {
+                                        value: "\npub struct CommandNode {\n    pub name: String,\n    pub optional_args: Vec<OptionalArgNode>,\n    pub required_args: Vec<RequiredArgNode>,\n}\n",
+                                    },
+                                ),
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "Come si può notare la struttura ComandNode possiede i tre 3 attributi prima definiti; particolare da notare sono gli ultimi due attributi che sono dei vettori di altri tipi di strutture definiti per poter incapsulare le rispettive tipologie di argomenti.",
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "Nella definizione della struttura dell'AST sono stati definiti 15 tra strutture ed enumerativi:",
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Block(
+                        BlockNode {
+                            name: "itemize",
+                            required_args: [],
+                            optional_args: [],
+                            items: [
+                                Newlines(
+                                    NewlinesNode {
+                                        count: 1,
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: "    ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "item",
+                                        optional_args: [],
+                                        required_args: [],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: " ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "textbf",
+                                        optional_args: [],
+                                        required_args: [
+                                            RequiredArgNode {
+                                                items: [
+                                                    Text(
+                                                        TextNode {
+                                                            value: "AstDocument",
+                                                        },
+                                                    ),
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: ", nodo radice - struct",
+                                    },
+                                ),
+                                Newlines(
+                                    NewlinesNode {
+                                        count: 1,
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: "    ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "item",
+                                        optional_args: [],
+                                        required_args: [],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: " ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "textbf",
+                                        optional_args: [],
+                                        required_args: [
+                                            RequiredArgNode {
+                                                items: [
+                                                    Text(
+                                                        TextNode {
+                                                            value: "AstItemNode",
+                                                        },
+                                                    ),
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: ", nodo generale per una regola - enum",
+                                    },
+                                ),
+                                Newlines(
+                                    NewlinesNode {
+                                        count: 1,
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: "    ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "item",
+                                        optional_args: [],
+                                        required_args: [],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: " ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "textbf",
+                                        optional_args: [],
+                                        required_args: [
+                                            RequiredArgNode {
+                                                items: [
+                                                    Text(
+                                                        TextNode {
+                                                            value: "BlockNode",
+                                                        },
+                                                    ),
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: ", blocco begin/end - struct",
+                                    },
+                                ),
+                                Newlines(
+                                    NewlinesNode {
+                                        count: 1,
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: "    ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "item",
+                                        optional_args: [],
+                                        required_args: [],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: " ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "textbf",
+                                        optional_args: [],
+                                        required_args: [
+                                            RequiredArgNode {
+                                                items: [
+                                                    Text(
+                                                        TextNode {
+                                                            value: "TextNode",
+                                                        },
+                                                    ),
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: ", testo semplice - struct",
+                                    },
+                                ),
+                                Newlines(
+                                    NewlinesNode {
+                                        count: 1,
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: "    ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "item",
+                                        optional_args: [],
+                                        required_args: [],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: " ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "textbf",
+                                        optional_args: [],
+                                        required_args: [
+                                            RequiredArgNode {
+                                                items: [
+                                                    Text(
+                                                        TextNode {
+                                                            value: "NewLinesNode",
+                                                        },
+                                                    ),
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: ", numero di nuove righe - struct",
+                                    },
+                                ),
+                                Newlines(
+                                    NewlinesNode {
+                                        count: 1,
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: "    ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "item",
+                                        optional_args: [],
+                                        required_args: [],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: " ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "textbf",
+                                        optional_args: [],
+                                        required_args: [
+                                            RequiredArgNode {
+                                                items: [
+                                                    Text(
+                                                        TextNode {
+                                                            value: "LinebreakNode",
+                                                        },
+                                                    ),
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: ", numero di interuzzione di riga - struct",
+                                    },
+                                ),
+                                Newlines(
+                                    NewlinesNode {
+                                        count: 1,
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: "    ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "item",
+                                        optional_args: [],
+                                        required_args: [],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: " ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "textbf",
+                                        optional_args: [],
+                                        required_args: [
+                                            RequiredArgNode {
+                                                items: [
+                                                    Text(
+                                                        TextNode {
+                                                            value: "CommentNode",
+                                                        },
+                                                    ),
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: ", commenti mono riga - struct",
+                                    },
+                                ),
+                                Newlines(
+                                    NewlinesNode {
+                                        count: 1,
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: "    ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "item",
+                                        optional_args: [],
+                                        required_args: [],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: " ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "textbf",
+                                        optional_args: [],
+                                        required_args: [
+                                            RequiredArgNode {
+                                                items: [
+                                                    Text(
+                                                        TextNode {
+                                                            value: "CommandNode",
+                                                        },
+                                                    ),
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: ", comandi latex - struct",
+                                    },
+                                ),
+                                Newlines(
+                                    NewlinesNode {
+                                        count: 1,
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: "    ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "item",
+                                        optional_args: [],
+                                        required_args: [],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: " ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "textbf",
+                                        optional_args: [],
+                                        required_args: [
+                                            RequiredArgNode {
+                                                items: [
+                                                    Text(
+                                                        TextNode {
+                                                            value: "RequiredArgNode",
+                                                        },
+                                                    ),
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: ", argomenti richiesti dai comandi nelle parentesi graffe - struct",
+                                    },
+                                ),
+                                Newlines(
+                                    NewlinesNode {
+                                        count: 1,
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: "    ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "item",
+                                        optional_args: [],
+                                        required_args: [],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: " ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "textbf",
+                                        optional_args: [],
+                                        required_args: [
+                                            RequiredArgNode {
+                                                items: [
+                                                    Text(
+                                                        TextNode {
+                                                            value: "ArgItemNode",
+                                                        },
+                                                    ),
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: ", oggetto presente nell'argomento richiesto - enum",
+                                    },
+                                ),
+                                Newlines(
+                                    NewlinesNode {
+                                        count: 1,
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: "    ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "item",
+                                        optional_args: [],
+                                        required_args: [],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: " ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "textbf",
+                                        optional_args: [],
+                                        required_args: [
+                                            RequiredArgNode {
+                                                items: [
+                                                    Text(
+                                                        TextNode {
+                                                            value: "OptionalArgNode",
+                                                        },
+                                                    ),
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: ", argomenti opzionali dei comandi nelle parentesi quadre - struct",
+                                    },
+                                ),
+                                Newlines(
+                                    NewlinesNode {
+                                        count: 1,
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: "    ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "item",
+                                        optional_args: [],
+                                        required_args: [],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: " ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "textbf",
+                                        optional_args: [],
+                                        required_args: [
+                                            RequiredArgNode {
+                                                items: [
+                                                    Text(
+                                                        TextNode {
+                                                            value: "OptionalEntryNode",
+                                                        },
+                                                    ),
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: ", oggetto presente nell'argomento opzionale - enum",
+                                    },
+                                ),
+                                Newlines(
+                                    NewlinesNode {
+                                        count: 1,
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: "    ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "item",
+                                        optional_args: [],
+                                        required_args: [],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: " ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "textbf",
+                                        optional_args: [],
+                                        required_args: [
+                                            RequiredArgNode {
+                                                items: [
+                                                    Text(
+                                                        TextNode {
+                                                            value: "KvPairNode",
+                                                        },
+                                                    ),
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: ", argomento definito da una chiave ed un valore - struct",
+                                    },
+                                ),
+                                Newlines(
+                                    NewlinesNode {
+                                        count: 1,
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: "    ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "item",
+                                        optional_args: [],
+                                        required_args: [],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: " ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "textbf",
+                                        optional_args: [],
+                                        required_args: [
+                                            RequiredArgNode {
+                                                items: [
+                                                    Text(
+                                                        TextNode {
+                                                            value: "OptValueNode",
+                                                        },
+                                                    ),
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: ", oggetto presente come valore nel KvPairNode - enum",
+                                    },
+                                ),
+                                Newlines(
+                                    NewlinesNode {
+                                        count: 1,
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: "    ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "item",
+                                        optional_args: [],
+                                        required_args: [],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: " ",
+                                    },
+                                ),
+                                Command(
+                                    CommandNode {
+                                        name: "textbf",
+                                        optional_args: [],
+                                        required_args: [
+                                            RequiredArgNode {
+                                                items: [
+                                                    Text(
+                                                        TextNode {
+                                                            value: "OptItemNode",
+                                                        },
+                                                    ),
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ),
+                                Text(
+                                    TextNode {
+                                        value: ", oggetto presente nell'argomento opzionale - enum",
+                                    },
+                                ),
+                                Newlines(
+                                    NewlinesNode {
+                                        count: 1,
+                                    },
+                                ),
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "Inoltre nella stessa struttura sono definiti degli errori Semantici come enumerativi, che vengono stampati dalla console in caso di errore durante la fare di generazione dell'AST: ",
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "textit",
+                            optional_args: [],
+                            required_args: [
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "MissingFileNode,    MissingItemChild, MissingCommandName, MissingBlockName, MissingRequiredArgItems, MissingOptionalArgEntries, MissingOptionalEntryItems, MissingKeyInKvPair, MissingValueInKvPair, EmptyTextValue, EmptyCommentValue, InvalidNewlineCount, InvalidLinebreakValue, UnexpectedItemRule(Rule), UnexpectedArgItemRule(Rule), UnexpectedOptItemRule(Rule), UnexpectedOptionalEntryRule(Rule), UnexpectedRule(Rule).",
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 2,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "In questa fase quindi passiamo al setaccio l'intero ParseTree foglia per foglia per ottenere alla fine una rappresentazione intermedia del codice che però non é ancora il nostro linguaggio di destinazione. L'AST rappresenta una via di mezzo tra il linguaggio di partenza e quello di destinazione che ci permette di effettuare una più facile e corretta traduzione, attraverso la componente di ",
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "textbf",
+                            optional_args: [],
+                            required_args: [
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "CodeGen",
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: ", nel nuovo linguaggio, nel nostro caso Typst.",
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 2,
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "subsection",
+                            optional_args: [],
+                            required_args: [
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "Generazione del codice Typst - CodeGen",
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "Come introdotto, l'ultima fase della traduzione é la generazione del nuovo linguaggio mantenendo la semantica invariata; vogliamo quindi lo stesso risultato da parte del nuovo linguaggio. Per fare ciò prendiamo in input l'Abstract Syntax Tree e tramite la navigazione in esso, foglia per foglia, generiamo un codice equivalente, effettuiamo un \"rendering\"; che nel nostro caso assume il significato di scrivere la traduzione nel file di output.",
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "Il rendering del nuovo codice avviene iterando una funzione di mapping su ogni item dell'AstDocument raccogliendo i risultati che saranno mano mano aggiunti al file. Per ogni nodo foglia su cui iteriamo effettuiamo una funzione di mapping differente poiché bisogna gestire le differenti casistiche, questa scelta é effettuata in base al rispettivo enumerativo del nodo foglia. Un esempio semplice é il rendering del nodo TextNode il cui risultato della funzione di mappamento é una semplice stringa da cui vengono rimosse le parentesi graffe poiché in latex queste non vengono renderizzate nel file pdf differentemente da typst in cui invece compaiono nel documento finale.",
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Block(
+                        BlockNode {
+                            name: "lstlisting",
+                            required_args: [],
+                            optional_args: [],
+                            items: [
+                                RawText(
+                                    TextNode {
+                                        value: "\npub(crate) fn render_text(text_node: &TextNode) -> String {\n    text_node\n        .value\n        .chars()\n        .filter(|c| *c != '{' && *c != '}')\n        .collect()\n}\n",
+                                    },
+                                ),
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "Differentemente per situazioni più complesse come i blocchi ed i comandi é stata implementata un hashmap, denominata ",
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "textbf",
+                            optional_args: [],
+                            required_args: [
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "TransMap",
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: ", in cui la chiave é rappresentata dal nome del commando e il valore la specifica funzione per trattarlo.",
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 2,
+                        },
+                    ),
+                ],
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+    ],
+}

@@ -1,0 +1,165 @@
+AstDocument {
+    items: [
+        Text(
+            TextNode {
+                value: "\u{feff}",
+            },
+        ),
+        Command(
+            CommandNode {
+                name: "documentclass",
+                optional_args: [
+                    OptionalArgNode {
+                        entries: [
+                            Items(
+                                [
+                                    Text(
+                                        TextNode {
+                                            value: "11",
+                                        },
+                                    ),
+                                ],
+                            ),
+                        ],
+                    },
+                ],
+                required_args: [
+                    RequiredArgNode {
+                        items: [
+                            Text(
+                                TextNode {
+                                    value: "article",
+                                },
+                            ),
+                        ],
+                    },
+                ],
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 2,
+            },
+        ),
+        Comment(
+            CommentNode {
+                value: "% Packages",
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Command(
+            CommandNode {
+                name: "usepackage",
+                optional_args: [],
+                required_args: [
+                    RequiredArgNode {
+                        items: [
+                            Text(
+                                TextNode {
+                                    value: "amsmath",
+                                },
+                            ),
+                        ],
+                    },
+                ],
+            },
+        ),
+        Text(
+            TextNode {
+                value: " ",
+            },
+        ),
+        Comment(
+            CommentNode {
+                value: "% PACCHETTO NON ANCORA IMPLEMENTATO",
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 2,
+            },
+        ),
+        Comment(
+            CommentNode {
+                value: "% Document",
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Block(
+            BlockNode {
+                name: "document",
+                required_args: [],
+                optional_args: [],
+                items: [
+                    Newlines(
+                        NewlinesNode {
+                            count: 2,
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "chapter",
+                            optional_args: [],
+                            required_args: [
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "Capitolo 1: Caso di errore",
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: " ",
+                        },
+                    ),
+                    Comment(
+                        CommentNode {
+                            value: "% TITOLO NON ANCORA IMPLEMENTATO",
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 2,
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "commandoInesistente",
+                            optional_args: [],
+                            required_args: [
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "argomento inesistente",
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 2,
+                        },
+                    ),
+                ],
+            },
+        ),
+    ],
+}

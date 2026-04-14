@@ -1,6 +1,7 @@
 use std::fs;
 use chrono::Datelike;
 use chrono::NaiveDate;
+use log::warn;
 use crate::codegen::command_trans_map::{out_of_bounds_reqs_arg, render_args_item};
 use crate::globals::{get_part_counter, update_part_counter};
 use crate::latex_semantic::{OptionalArgNode, RequiredArgNode};
@@ -26,7 +27,11 @@ pub fn render_section_chapter(name: &str, reqs: Vec<RequiredArgNode>, _opts: Vec
         "subparagraph" => out.push_str(format!("===== {}\n", render_args_item(&reqs[0].items)).as_str()),
 
 
-        _ => out.push_str(format!("/*RENDER-ERROR = {}*/", name).as_str()),
+        _ => {
+            let error_msg = format!("ERROR: NOT-YET-IMPLEMENTED \\{}{{{}}}", name, reqs.iter().map(|r| render_args_item(&r.items)).collect::<Vec<_>>().join("}{"));
+            warn!("==> {}", error_msg);
+            out.push_str(format!("/*{}*/",error_msg).as_str());
+        },
     }
     out.push_str(&out_of_bounds_reqs_arg(&reqs, 1));
     out
@@ -43,7 +48,11 @@ pub fn render_info_document(name: &str, reqs: Vec<RequiredArgNode>, _opts: Vec<O
         "maketitle" => out.push_str("#set document(title: title)\n#align(center)[\n#text(3em, weight: \"bold\")[#title]\n#v(0em)\n#text(1.8em)[#author]\n#v(0em)\n#text(1.5em)[#date.display(\"[day] [month repr:long] [year]\")]\n]\n#v(2em)"),
         "tableofcontents" => out.push_str("#outline()"),
 
-        _ => out.push_str(format!("/*RENDER-ERROR = {}*/", name).as_str()),
+        _ => {
+            let error_msg = format!("ERROR: NOT-YET-IMPLEMENTED \\{}{{{}}}", name, reqs.iter().map(|r| render_args_item(&r.items)).collect::<Vec<_>>().join("}{"));
+            warn!("==> {}", error_msg);
+            out.push_str(format!("/*{}*/",error_msg).as_str());
+        },
     }
 
     out.push_str(&out_of_bounds_reqs_arg(&reqs, 1));

@@ -3,11 +3,11 @@ use std::path::Path;
 use crate::latex_semantic::AstDocument;
 
 
-// Salva un output in un file di testo, creando la cartella parent se necessario (es. "OutputExample/")
+// Salva un output in un file di testo, creando la cartella parent se necessario (es. "Output/")
 pub fn save_output_file<P: AsRef<Path>>(path: P, content: &str) -> Result<(), std::io::Error> {
     let path = path.as_ref();
 
-    // Crea la cartella parent se non esiste (es. "OutputExample/")
+    // Crea la cartella parent se non esiste (es. "Output/")
     if let Some(parent) = path.parent().filter(|p| !p.as_os_str().is_empty()) {
         fs::create_dir_all(parent)?;
     }

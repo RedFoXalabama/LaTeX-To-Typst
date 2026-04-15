@@ -14,7 +14,7 @@ block_raw = {  "\\begin{" ~ PUSH(raw_name) ~ "}" ~ required_arg* ~ optional_arg*
     content_raw = { (!("\\end{" ~ PEEK ~ "}") ~ ANY)* }
 
 // Only match command if it is NOT followed by "begin{" or "end{"
-command = { "\\" ~ !("begin" | "end") ~ name ~ required_arg* ~optional_arg* }
+command = { "\\" ~ !("begin" | "end") ~ name ~ optional_arg* ~ required_arg* }
 
 linebreak = { "\\\\" }
 newlines = { NEWLINE+ }

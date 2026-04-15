@@ -6,6 +6,7 @@ mod globals;
 
 // ----------------------------------- SAVE PATH FOR DOC -------------------------------------------
 static DOC_PATH: &str = "Assets/Input/Documentation/doc.tex";
+//static DOC_PATH: &str = "Assets/Input/input.tex";
 static DOC_PARSETREE_PATH: &str = "Assets/Output/Documentation/output_ParseTree.txt";
 static DOC_AST_PATH: &str = "Assets/Output/Documentation/output_AST.txt";
 static DOC_CODEGEN_PATH: &str = "Assets/Output/Documentation/doc.typ";

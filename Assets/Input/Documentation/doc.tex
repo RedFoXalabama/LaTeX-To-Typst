@@ -27,12 +27,12 @@ Al momento della realizzazione del progetto é stata individuata una repository 
 \section{Sturuttura del progetto}
 Il software é stato scritto in linguaggio RUST per poter sfruttare la potenzialità della sua libreria \href{https://docs.rs/pest/2.8.6/pest/}{Pest}, un parser general purpose, con cui é stato possibile definire una grammatica di riferimento ed effettuare un parsing sul testo scritto secondo il markup LaTeX per ottenere un ParseTree, una rappresentazione ad albero della struttura sintattica dell'intero file, basata sulla grammatica da noi definita in modo da scomporre nelle varie componenti il testo.
 La struttura del progetto é abbastanza lineare, prendiamo in input il file LaTeX ed ogni componente dà in input il proprio output alla successiva, i vari passaggi possono essere rappresentati cosi:
-\begin{enumerate}
-    \item \textbf{Input}: File Latex + LaTeX Grammar ->
-    \item Parser -> Parse Tree ->
-    \item Semantic -> Abastract Syntatx Tree -> 
-    \item CodeGen -> \textbf{Output}: File Typst
-\end{enumerate}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{Latex2Typst.png}
+    \caption{}
+    \label{fig:placeholder}
+\end{figure}
 
 \subsection{Analisi Sintattica - Parsing}
 Come già inizialmente definito, il software prende in input un file scritto in linguaggio LaTeX (input.tex) e per prima cosa quindi viene effettuato il parsing del testo in modo da poter ottenere il precedentemente citato ParseTree. Per effettuare ciò abbiamo deciso di utilizzare la libreria Pest di Rust, la cui ci ha fornito delle funzioni per potere generare un Parser che potesse seguire determinate regole grammaticali definite nel file \textbf{latex.pest}. La grammatica si basa su definite regole che la stringa dovrà rispettare fino a potersi identificare nella regola più "restrittiva" navigando verso il basso dell'albero, quindi possiamo immaginare anche le regola grammaticali come un albero rovesciato in cui in cima, alla root, vi é presente la regola più generale in questo caso \textbf{file}, che si dirama verso il basso definendo altre regole che possono essere composte dai loro nodi figli. Senza entrare nel dettaglio, in questo documento, della grammatica possiamo fare l'esempio iniziale in cui:

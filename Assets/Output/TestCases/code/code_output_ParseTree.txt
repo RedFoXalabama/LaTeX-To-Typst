@@ -1,0 +1,182 @@
+[
+    Pair {
+        rule: file,
+        span: Span {
+            str: "\u{feff}\\begin{verbatim}\r\n    Text enclosed inside \\texttt{verbatim} environment\r\n    is printed directly\r\n    and all \\LaTeX{} commands are ignored.\r\n\\end{verbatim}\r\n\r\n\\begin{lstlisting}[language=Python]\r\nimport numpy as np\r\n\r\ndef incmatrix(genl1,genl2):\r\n    m = len(genl1)\r\n    n = len(genl2)\r\n    M = None #to become the incidence matrix\r\n    VT = np.zeros((n*m,1), int)  #dummy variable\r\n\r\n    #compute the bitwise xor matrix\r\n    M1 = bitxormatrix(genl1)\r\n    M2 = np.triu(bitxormatrix(genl2),1)\r\n\r\n    for i in range(m-1):\r\n        for j in range(i+1, m):\r\n            [r,c] = np.where(M2 == M1[i,j])\r\n            for k in range(len(r)):\r\n                VT[(i)*n + r[k]] = 1;\r\n                VT[(i)*n + c[k]] = 1;\r\n                VT[(j)*n + r[k]] = 1;\r\n                VT[(j)*n + c[k]] = 1;\r\n\r\n                if M is None:\r\n                    M = np.copy(VT)\r\n                else:\r\n                    M = np.concatenate((M, VT), 1)\r\n\r\n                VT = np.zeros((n*m,1), int)\r\n\r\n    return M\r\n\\end{lstlisting}",
+            range: 0..1021,
+        },
+        inner: [
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\u{feff}",
+                    range: 0..3,
+                },
+                inner: [
+                    Pair {
+                        rule: text,
+                        span: Span {
+                            str: "\u{feff}",
+                            range: 0..3,
+                        },
+                        inner: [],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\\begin{verbatim}\r\n    Text enclosed inside \\texttt{verbatim} environment\r\n    is printed directly\r\n    and all \\LaTeX{} commands are ignored.\r\n\\end{verbatim}",
+                    range: 3..160,
+                },
+                inner: [
+                    Pair {
+                        rule: block_raw,
+                        span: Span {
+                            str: "\\begin{verbatim}\r\n    Text enclosed inside \\texttt{verbatim} environment\r\n    is printed directly\r\n    and all \\LaTeX{} commands are ignored.\r\n\\end{verbatim}",
+                            range: 3..160,
+                        },
+                        inner: [
+                            Pair {
+                                rule: raw_name,
+                                span: Span {
+                                    str: "verbatim",
+                                    range: 10..18,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: content_raw,
+                                span: Span {
+                                    str: "\r\n    Text enclosed inside \\texttt{verbatim} environment\r\n    is printed directly\r\n    and all \\LaTeX{} commands are ignored.\r\n",
+                                    range: 19..146,
+                                },
+                                inner: [],
+                            },
+                        ],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\r\n\r\n",
+                    range: 160..164,
+                },
+                inner: [
+                    Pair {
+                        rule: newlines,
+                        span: Span {
+                            str: "\r\n\r\n",
+                            range: 160..164,
+                        },
+                        inner: [],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\\begin{lstlisting}[language=Python]\r\nimport numpy as np\r\n\r\ndef incmatrix(genl1,genl2):\r\n    m = len(genl1)\r\n    n = len(genl2)\r\n    M = None #to become the incidence matrix\r\n    VT = np.zeros((n*m,1), int)  #dummy variable\r\n\r\n    #compute the bitwise xor matrix\r\n    M1 = bitxormatrix(genl1)\r\n    M2 = np.triu(bitxormatrix(genl2),1)\r\n\r\n    for i in range(m-1):\r\n        for j in range(i+1, m):\r\n            [r,c] = np.where(M2 == M1[i,j])\r\n            for k in range(len(r)):\r\n                VT[(i)*n + r[k]] = 1;\r\n                VT[(i)*n + c[k]] = 1;\r\n                VT[(j)*n + r[k]] = 1;\r\n                VT[(j)*n + c[k]] = 1;\r\n\r\n                if M is None:\r\n                    M = np.copy(VT)\r\n                else:\r\n                    M = np.concatenate((M, VT), 1)\r\n\r\n                VT = np.zeros((n*m,1), int)\r\n\r\n    return M\r\n\\end{lstlisting}",
+                    range: 164..1021,
+                },
+                inner: [
+                    Pair {
+                        rule: block_raw,
+                        span: Span {
+                            str: "\\begin{lstlisting}[language=Python]\r\nimport numpy as np\r\n\r\ndef incmatrix(genl1,genl2):\r\n    m = len(genl1)\r\n    n = len(genl2)\r\n    M = None #to become the incidence matrix\r\n    VT = np.zeros((n*m,1), int)  #dummy variable\r\n\r\n    #compute the bitwise xor matrix\r\n    M1 = bitxormatrix(genl1)\r\n    M2 = np.triu(bitxormatrix(genl2),1)\r\n\r\n    for i in range(m-1):\r\n        for j in range(i+1, m):\r\n            [r,c] = np.where(M2 == M1[i,j])\r\n            for k in range(len(r)):\r\n                VT[(i)*n + r[k]] = 1;\r\n                VT[(i)*n + c[k]] = 1;\r\n                VT[(j)*n + r[k]] = 1;\r\n                VT[(j)*n + c[k]] = 1;\r\n\r\n                if M is None:\r\n                    M = np.copy(VT)\r\n                else:\r\n                    M = np.concatenate((M, VT), 1)\r\n\r\n                VT = np.zeros((n*m,1), int)\r\n\r\n    return M\r\n\\end{lstlisting}",
+                            range: 164..1021,
+                        },
+                        inner: [
+                            Pair {
+                                rule: raw_name,
+                                span: Span {
+                                    str: "lstlisting",
+                                    range: 171..181,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: optional_arg,
+                                span: Span {
+                                    str: "[language=Python]",
+                                    range: 182..199,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: optional_list,
+                                        span: Span {
+                                            str: "language=Python",
+                                            range: 183..198,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: opt_entry,
+                                                span: Span {
+                                                    str: "language=Python",
+                                                    range: 183..198,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: kv_pair,
+                                                        span: Span {
+                                                            str: "language=Python",
+                                                            range: 183..198,
+                                                        },
+                                                        inner: [
+                                                            Pair {
+                                                                rule: key,
+                                                                span: Span {
+                                                                    str: "language",
+                                                                    range: 183..191,
+                                                                },
+                                                                inner: [],
+                                                            },
+                                                            Pair {
+                                                                rule: value,
+                                                                span: Span {
+                                                                    str: "Python",
+                                                                    range: 192..198,
+                                                                },
+                                                                inner: [
+                                                                    Pair {
+                                                                        rule: simple_value,
+                                                                        span: Span {
+                                                                            str: "Python",
+                                                                            range: 192..198,
+                                                                        },
+                                                                        inner: [],
+                                                                    },
+                                                                ],
+                                                            },
+                                                        ],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                            Pair {
+                                rule: content_raw,
+                                span: Span {
+                                    str: "\r\nimport numpy as np\r\n\r\ndef incmatrix(genl1,genl2):\r\n    m = len(genl1)\r\n    n = len(genl2)\r\n    M = None #to become the incidence matrix\r\n    VT = np.zeros((n*m,1), int)  #dummy variable\r\n\r\n    #compute the bitwise xor matrix\r\n    M1 = bitxormatrix(genl1)\r\n    M2 = np.triu(bitxormatrix(genl2),1)\r\n\r\n    for i in range(m-1):\r\n        for j in range(i+1, m):\r\n            [r,c] = np.where(M2 == M1[i,j])\r\n            for k in range(len(r)):\r\n                VT[(i)*n + r[k]] = 1;\r\n                VT[(i)*n + c[k]] = 1;\r\n                VT[(j)*n + r[k]] = 1;\r\n                VT[(j)*n + c[k]] = 1;\r\n\r\n                if M is None:\r\n                    M = np.copy(VT)\r\n                else:\r\n                    M = np.concatenate((M, VT), 1)\r\n\r\n                VT = np.zeros((n*m,1), int)\r\n\r\n    return M\r\n",
+                                    range: 199..1005,
+                                },
+                                inner: [],
+                            },
+                        ],
+                    },
+                ],
+            },
+            Pair {
+                rule: EOI,
+                span: Span {
+                    str: "",
+                    range: 1021..1021,
+                },
+                inner: [],
+            },
+        ],
+    },
+]

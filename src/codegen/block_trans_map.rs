@@ -36,6 +36,14 @@ fn get_trans_map() -> &'static HashMap<&'static str, BlockTranslationFn> {
             alignment::render_flushleft_block as BlockTranslationFn,
         );
         m.insert(
+            "FlushLeft",
+            alignment::render_flushleft_block as BlockTranslationFn,
+        );
+        m.insert(
+            "FlushRight",
+            alignment::render_flushright_block as BlockTranslationFn,
+        );
+        m.insert(
             "comment",
             comments::render_comment_block as BlockTranslationFn,
         );

@@ -9,9 +9,6 @@ pub fn render_list(name: &str, reqs: Vec<RequiredArgNode>, opts: Vec<OptionalArg
         "item" => {
             match read_in_listing_priority() {
                 Some(ListType::Itemize) => {
-                    // out.push('\n');
-                    // out.push_str(&"\t".repeat(get_in_listing_priority().len() - 1));
-                    // out.push('-');
                     render_list_line('-', &mut out, opts);
                 }
                 Some(ListType::Enumerate) => {

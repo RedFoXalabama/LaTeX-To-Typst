@@ -12,6 +12,8 @@ pub fn package_handler(name: &str, reqs: Vec<RequiredArgNode>, _opts: Vec<Option
             "verbatim" => out.push_str("/* usepackage{verbatim} */"),
             "hyperref" => out.push_str("/* usepackage{hyperref} */"),
             "listings" => out.push_str("/* usepackage{listings} */"),
+            "graphicx" => out.push_str("/* usepackage{graphicx} */"),
+
 
             _ => {
                 let error_msg = format!("ERROR: NOT-YET-IMPLEMENTED \\{}{{{}}}", name, reqs.iter().map(|r| render_args_item(&r.items)).collect::<Vec<_>>().join("}{"));

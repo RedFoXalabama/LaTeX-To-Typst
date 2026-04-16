@@ -1,0 +1,123 @@
+AstDocument {
+    items: [
+        Text(
+            TextNode {
+                value: "\u{feff}",
+            },
+        ),
+        Command(
+            CommandNode {
+                name: "textbf",
+                optional_args: [],
+                required_args: [
+                    RequiredArgNode {
+                        items: [
+                            Text(
+                                TextNode {
+                                    value: "Bold",
+                                },
+                            ),
+                        ],
+                    },
+                ],
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Command(
+            CommandNode {
+                name: "textit",
+                optional_args: [],
+                required_args: [
+                    RequiredArgNode {
+                        items: [
+                            Text(
+                                TextNode {
+                                    value: "italic",
+                                },
+                            ),
+                        ],
+                    },
+                ],
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Command(
+            CommandNode {
+                name: "underline",
+                optional_args: [],
+                required_args: [
+                    RequiredArgNode {
+                        items: [
+                            Text(
+                                TextNode {
+                                    value: "underline",
+                                },
+                            ),
+                        ],
+                    },
+                ],
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 2,
+            },
+        ),
+        Command(
+            CommandNode {
+                name: "textcolor",
+                optional_args: [],
+                required_args: [
+                    RequiredArgNode {
+                        items: [
+                            Text(
+                                TextNode {
+                                    value: "blue",
+                                },
+                            ),
+                        ],
+                    },
+                    RequiredArgNode {
+                        items: [
+                            Text(
+                                TextNode {
+                                    value: "This is ",
+                                },
+                            ),
+                            Command(
+                                CommandNode {
+                                    name: "textbf",
+                                    optional_args: [],
+                                    required_args: [
+                                        RequiredArgNode {
+                                            items: [
+                                                Text(
+                                                    TextNode {
+                                                        value: "bold and blue",
+                                                    },
+                                                ),
+                                            ],
+                                        },
+                                    ],
+                                },
+                            ),
+                            Text(
+                                TextNode {
+                                    value: ".",
+                                },
+                            ),
+                        ],
+                    },
+                ],
+            },
+        ),
+    ],
+}

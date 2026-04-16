@@ -1,3 +1,6 @@
+use std::fs;
+use std::path::{Path, PathBuf};
+
 mod codegen;
 mod latex_parser;
 mod latex_semantic;
@@ -13,10 +16,10 @@ static DOC_CODEGEN_PATH: &str = "Assets/Output/Documentation/doc.typ";
 
 
 // -------------------------------- SAVE PATH FOR ERROR --------------------------------------------
-static ERROR_DOC_PATH: &str = "Assets/Input/ErrorCase/error_case.tex";
-static ERROR_DOC_PARSETREE_PATH: &str = "Assets/Output/ErrorCase/error_output_ParseTree.txt";
-static ERROR_DOC_AST_PATH: &str = "Assets/Output/ErrorCase/error_output_AST.txt";
-static ERROR_DOC_CODEGEN_PATH: &str = "Assets/Output/ErrorCase/error_output_codegen.typ";
+static ERROR_DOC_PATH: &str = "Assets/Input/ErrorCases/error_case.tex";
+static ERROR_DOC_PARSETREE_PATH: &str = "Assets/Output/ErrorCases/error_output_ParseTree.txt";
+static ERROR_DOC_AST_PATH: &str = "Assets/Output/ErrorCases/error_output_AST.txt";
+static ERROR_DOC_CODEGEN_PATH: &str = "Assets/Output/ErrorCases/error_output_codegen.typ";
 
 
 // FLAG DI CONFIGURAZIONE PER LE RUN
@@ -41,8 +44,14 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         )?;
     }
 
-    // ----------------------------------- RENDERING ERROR DOC -------------------------------------
-    if env_flag("RUN_ERROR_CASES") {
+    // ----------------------------------- RENDERING TEST CASE DOC ---------------------------------
+    if env_flag("RUN_TEST_CASES") {
+        translate_all_test_cases(
+            "Assets/Input/TestCases",
+            "Assets/Output/TestCases",
+        )?;
+
+
         translate_file(
             ERROR_DOC_PATH,
             ERROR_DOC_PARSETREE_PATH,
@@ -74,6 +83,56 @@ fn translate_file(input_path: &str, output_parsetree_path: &str, output_ast_path
     // -------------------------------- TYPST GENERATION -------------------------------------------
     let typst_output = codegen::ast_to_typst(&ast);
     utils::save_output_file(output_codegen_path, &typst_output)?;
+
+    let _child = utils::start_typst_watch(output_codegen_path)?;
+    Ok(())
+}
+
+// ------------------------------------- TEST CASES TRANSLATION ------------------------------------
+fn translate_all_test_cases(
+    input_testcases_dir: &str,
+    output_testcases_dir: &str,
+) -> Result<(), Box<dyn std::error::Error>> {
+    let input_dir = Path::new(input_testcases_dir);
+    let output_dir = Path::new(output_testcases_dir);
+
+    if !input_dir.exists() {
+        return Err(format!("Input TestCases directory not found: {}", input_dir.display()).into());
+    }
+
+    // Raccoglie tutti i file .tex nella cartella
+    let mut tex_files: Vec<PathBuf> = fs::read_dir(input_dir)?
+        .filter_map(|entry| entry.ok().map(|e| e.path()))
+        .filter(|p| p.is_file())
+        .filter(|p| {
+            p.extension()
+                .and_then(|e| e.to_str())
+                .map(|e| e.eq_ignore_ascii_case("tex"))
+                .unwrap_or(false)
+        })
+        .collect();
+
+    // Ordinamento per output deterministico
+    tex_files.sort();
+
+    for input_file in tex_files {
+        let stem = input_file
+            .file_stem()
+            .and_then(|s| s.to_str())
+            .ok_or_else(|| format!("Invalid test file name: {}", input_file.display()))?;
+
+        let case_output_dir = output_dir.join(stem);
+        let output_parse = case_output_dir.join(format!("{}_output_ParseTree.txt", stem));
+        let output_ast = case_output_dir.join(format!("{}_output_AST.txt", stem));
+        let output_typ = case_output_dir.join(format!("{}_output.typ", stem));
+
+        translate_file(
+            &input_file.to_string_lossy(),
+            &output_parse.to_string_lossy(),
+            &output_ast.to_string_lossy(),
+            &output_typ.to_string_lossy(),
+        )?;
+    }
 
     Ok(())
 }

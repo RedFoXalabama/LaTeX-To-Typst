@@ -1,0 +1,130 @@
+AstDocument {
+    items: [
+        Text(
+            TextNode {
+                value: "\u{feff}",
+            },
+        ),
+        Command(
+            CommandNode {
+                name: "href",
+                optional_args: [],
+                required_args: [
+                    RequiredArgNode {
+                        items: [
+                            Text(
+                                TextNode {
+                                    value: "https://www.overleaf.com/learn",
+                                },
+                            ),
+                        ],
+                    },
+                ],
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Command(
+            CommandNode {
+                name: "href",
+                optional_args: [],
+                required_args: [
+                    RequiredArgNode {
+                        items: [
+                            Text(
+                                TextNode {
+                                    value: "https://www.overleaf.com/learn",
+                                },
+                            ),
+                        ],
+                    },
+                    RequiredArgNode {
+                        items: [
+                            Text(
+                                TextNode {
+                                    value: "Overleaf Learn",
+                                },
+                            ),
+                        ],
+                    },
+                ],
+            },
+        ),
+        Text(
+            TextNode {
+                value: " ",
+            },
+        ),
+        Comment(
+            CommentNode {
+                value: "% testo del link",
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 2,
+            },
+        ),
+        Command(
+            CommandNode {
+                name: "url",
+                optional_args: [],
+                required_args: [
+                    RequiredArgNode {
+                        items: [
+                            Text(
+                                TextNode {
+                                    value: "http://www.overleaf.com",
+                                },
+                            ),
+                        ],
+                    },
+                ],
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Command(
+            CommandNode {
+                name: "hypertarget",
+                optional_args: [],
+                required_args: [
+                    RequiredArgNode {
+                        items: [
+                            Text(
+                                TextNode {
+                                    value: "thesentence",
+                                },
+                            ),
+                        ],
+                    },
+                    RequiredArgNode {
+                        items: [
+                            Text(
+                                TextNode {
+                                    value: "this sentence",
+                                },
+                            ),
+                        ],
+                    },
+                ],
+            },
+        ),
+        Text(
+            TextNode {
+                value: ".",
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+    ],
+}

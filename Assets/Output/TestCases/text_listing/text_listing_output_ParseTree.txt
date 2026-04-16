@@ -1,0 +1,1831 @@
+[
+    Pair {
+        rule: file,
+        span: Span {
+            str: "\u{feff}\\begin{itemize}\r\n    \\item item 1\r\n    \\item item 2\r\n\\end{itemize}\r\n\r\n\\begin{enumerate}\r\n    \\item enum 1\r\n    \\item enum 2\r\n\\end{enumerate}\r\n\r\n\\begin{description}\r\n    \\item[description 1] description text 1\r\n\\end{description}\r\n\r\n\\begin{itemize}\r\n    \\item[!] itemize 1\r\n    \\item \\begin{enumerate}\r\n              \\item enumerate 1\r\n              \\item \\begin{itemize}\r\n                        \\item itemize 3\r\n                        \\item \\begin{enumerate}\r\n                                  \\item enum 2\r\n                                  \\item \\begin{enumerate}\r\n                                            \\item enum 3\r\n                                  \\end{enumerate}\r\n                        \\end{enumerate}\r\n              \\end{itemize}\r\n    \\end{enumerate}\r\n    \\item itemize 2\r\n\\end{itemize}\r\n",
+            range: 0..807,
+        },
+        inner: [
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\u{feff}",
+                    range: 0..3,
+                },
+                inner: [
+                    Pair {
+                        rule: text,
+                        span: Span {
+                            str: "\u{feff}",
+                            range: 0..3,
+                        },
+                        inner: [],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\\begin{itemize}\r\n    \\item item 1\r\n    \\item item 2\r\n\\end{itemize}",
+                    range: 3..69,
+                },
+                inner: [
+                    Pair {
+                        rule: block,
+                        span: Span {
+                            str: "\\begin{itemize}\r\n    \\item item 1\r\n    \\item item 2\r\n\\end{itemize}",
+                            range: 3..69,
+                        },
+                        inner: [
+                            Pair {
+                                rule: name,
+                                span: Span {
+                                    str: "itemize",
+                                    range: 10..17,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: content,
+                                span: Span {
+                                    str: "\r\n    \\item item 1\r\n    \\item item 2\r\n",
+                                    range: 18..56,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "\r\n",
+                                            range: 18..20,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: newlines,
+                                                span: Span {
+                                                    str: "\r\n",
+                                                    range: 18..20,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "    ",
+                                            range: 20..24,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: text,
+                                                span: Span {
+                                                    str: "    ",
+                                                    range: 20..24,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "\\item",
+                                            range: 24..29,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: command,
+                                                span: Span {
+                                                    str: "\\item",
+                                                    range: 24..29,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: name,
+                                                        span: Span {
+                                                            str: "item",
+                                                            range: 25..29,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: " item 1",
+                                            range: 29..36,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: text,
+                                                span: Span {
+                                                    str: " item 1",
+                                                    range: 29..36,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "\r\n",
+                                            range: 36..38,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: newlines,
+                                                span: Span {
+                                                    str: "\r\n",
+                                                    range: 36..38,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "    ",
+                                            range: 38..42,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: text,
+                                                span: Span {
+                                                    str: "    ",
+                                                    range: 38..42,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "\\item",
+                                            range: 42..47,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: command,
+                                                span: Span {
+                                                    str: "\\item",
+                                                    range: 42..47,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: name,
+                                                        span: Span {
+                                                            str: "item",
+                                                            range: 43..47,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: " item 2",
+                                            range: 47..54,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: text,
+                                                span: Span {
+                                                    str: " item 2",
+                                                    range: 47..54,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "\r\n",
+                                            range: 54..56,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: newlines,
+                                                span: Span {
+                                                    str: "\r\n",
+                                                    range: 54..56,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\r\n\r\n",
+                    range: 69..73,
+                },
+                inner: [
+                    Pair {
+                        rule: newlines,
+                        span: Span {
+                            str: "\r\n\r\n",
+                            range: 69..73,
+                        },
+                        inner: [],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\\begin{enumerate}\r\n    \\item enum 1\r\n    \\item enum 2\r\n\\end{enumerate}",
+                    range: 73..143,
+                },
+                inner: [
+                    Pair {
+                        rule: block,
+                        span: Span {
+                            str: "\\begin{enumerate}\r\n    \\item enum 1\r\n    \\item enum 2\r\n\\end{enumerate}",
+                            range: 73..143,
+                        },
+                        inner: [
+                            Pair {
+                                rule: name,
+                                span: Span {
+                                    str: "enumerate",
+                                    range: 80..89,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: content,
+                                span: Span {
+                                    str: "\r\n    \\item enum 1\r\n    \\item enum 2\r\n",
+                                    range: 90..128,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "\r\n",
+                                            range: 90..92,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: newlines,
+                                                span: Span {
+                                                    str: "\r\n",
+                                                    range: 90..92,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "    ",
+                                            range: 92..96,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: text,
+                                                span: Span {
+                                                    str: "    ",
+                                                    range: 92..96,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "\\item",
+                                            range: 96..101,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: command,
+                                                span: Span {
+                                                    str: "\\item",
+                                                    range: 96..101,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: name,
+                                                        span: Span {
+                                                            str: "item",
+                                                            range: 97..101,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: " enum 1",
+                                            range: 101..108,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: text,
+                                                span: Span {
+                                                    str: " enum 1",
+                                                    range: 101..108,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "\r\n",
+                                            range: 108..110,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: newlines,
+                                                span: Span {
+                                                    str: "\r\n",
+                                                    range: 108..110,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "    ",
+                                            range: 110..114,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: text,
+                                                span: Span {
+                                                    str: "    ",
+                                                    range: 110..114,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "\\item",
+                                            range: 114..119,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: command,
+                                                span: Span {
+                                                    str: "\\item",
+                                                    range: 114..119,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: name,
+                                                        span: Span {
+                                                            str: "item",
+                                                            range: 115..119,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: " enum 2",
+                                            range: 119..126,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: text,
+                                                span: Span {
+                                                    str: " enum 2",
+                                                    range: 119..126,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "\r\n",
+                                            range: 126..128,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: newlines,
+                                                span: Span {
+                                                    str: "\r\n",
+                                                    range: 126..128,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\r\n\r\n",
+                    range: 143..147,
+                },
+                inner: [
+                    Pair {
+                        rule: newlines,
+                        span: Span {
+                            str: "\r\n\r\n",
+                            range: 143..147,
+                        },
+                        inner: [],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\\begin{description}\r\n    \\item[description 1] description text 1\r\n\\end{description}",
+                    range: 147..230,
+                },
+                inner: [
+                    Pair {
+                        rule: block,
+                        span: Span {
+                            str: "\\begin{description}\r\n    \\item[description 1] description text 1\r\n\\end{description}",
+                            range: 147..230,
+                        },
+                        inner: [
+                            Pair {
+                                rule: name,
+                                span: Span {
+                                    str: "description",
+                                    range: 154..165,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: content,
+                                span: Span {
+                                    str: "\r\n    \\item[description 1] description text 1\r\n",
+                                    range: 166..213,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "\r\n",
+                                            range: 166..168,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: newlines,
+                                                span: Span {
+                                                    str: "\r\n",
+                                                    range: 166..168,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "    ",
+                                            range: 168..172,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: text,
+                                                span: Span {
+                                                    str: "    ",
+                                                    range: 168..172,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "\\item[description 1]",
+                                            range: 172..192,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: command,
+                                                span: Span {
+                                                    str: "\\item[description 1]",
+                                                    range: 172..192,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: name,
+                                                        span: Span {
+                                                            str: "item",
+                                                            range: 173..177,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                    Pair {
+                                                        rule: optional_arg,
+                                                        span: Span {
+                                                            str: "[description 1]",
+                                                            range: 177..192,
+                                                        },
+                                                        inner: [
+                                                            Pair {
+                                                                rule: optional_list,
+                                                                span: Span {
+                                                                    str: "description 1",
+                                                                    range: 178..191,
+                                                                },
+                                                                inner: [
+                                                                    Pair {
+                                                                        rule: opt_entry,
+                                                                        span: Span {
+                                                                            str: "description 1",
+                                                                            range: 178..191,
+                                                                        },
+                                                                        inner: [
+                                                                            Pair {
+                                                                                rule: opt_item,
+                                                                                span: Span {
+                                                                                    str: "description 1",
+                                                                                    range: 178..191,
+                                                                                },
+                                                                                inner: [
+                                                                                    Pair {
+                                                                                        rule: opt_text,
+                                                                                        span: Span {
+                                                                                            str: "description 1",
+                                                                                            range: 178..191,
+                                                                                        },
+                                                                                        inner: [],
+                                                                                    },
+                                                                                ],
+                                                                            },
+                                                                        ],
+                                                                    },
+                                                                ],
+                                                            },
+                                                        ],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: " description text 1",
+                                            range: 192..211,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: text,
+                                                span: Span {
+                                                    str: " description text 1",
+                                                    range: 192..211,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "\r\n",
+                                            range: 211..213,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: newlines,
+                                                span: Span {
+                                                    str: "\r\n",
+                                                    range: 211..213,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\r\n\r\n",
+                    range: 230..234,
+                },
+                inner: [
+                    Pair {
+                        rule: newlines,
+                        span: Span {
+                            str: "\r\n\r\n",
+                            range: 230..234,
+                        },
+                        inner: [],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\\begin{itemize}\r\n    \\item[!] itemize 1\r\n    \\item \\begin{enumerate}\r\n              \\item enumerate 1\r\n              \\item \\begin{itemize}\r\n                        \\item itemize 3\r\n                        \\item \\begin{enumerate}\r\n                                  \\item enum 2\r\n                                  \\item \\begin{enumerate}\r\n                                            \\item enum 3\r\n                                  \\end{enumerate}\r\n                        \\end{enumerate}\r\n              \\end{itemize}\r\n    \\end{enumerate}\r\n    \\item itemize 2\r\n\\end{itemize}",
+                    range: 234..805,
+                },
+                inner: [
+                    Pair {
+                        rule: block,
+                        span: Span {
+                            str: "\\begin{itemize}\r\n    \\item[!] itemize 1\r\n    \\item \\begin{enumerate}\r\n              \\item enumerate 1\r\n              \\item \\begin{itemize}\r\n                        \\item itemize 3\r\n                        \\item \\begin{enumerate}\r\n                                  \\item enum 2\r\n                                  \\item \\begin{enumerate}\r\n                                            \\item enum 3\r\n                                  \\end{enumerate}\r\n                        \\end{enumerate}\r\n              \\end{itemize}\r\n    \\end{enumerate}\r\n    \\item itemize 2\r\n\\end{itemize}",
+                            range: 234..805,
+                        },
+                        inner: [
+                            Pair {
+                                rule: name,
+                                span: Span {
+                                    str: "itemize",
+                                    range: 241..248,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: content,
+                                span: Span {
+                                    str: "\r\n    \\item[!] itemize 1\r\n    \\item \\begin{enumerate}\r\n              \\item enumerate 1\r\n              \\item \\begin{itemize}\r\n                        \\item itemize 3\r\n                        \\item \\begin{enumerate}\r\n                                  \\item enum 2\r\n                                  \\item \\begin{enumerate}\r\n                                            \\item enum 3\r\n                                  \\end{enumerate}\r\n                        \\end{enumerate}\r\n              \\end{itemize}\r\n    \\end{enumerate}\r\n    \\item itemize 2\r\n",
+                                    range: 249..792,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "\r\n",
+                                            range: 249..251,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: newlines,
+                                                span: Span {
+                                                    str: "\r\n",
+                                                    range: 249..251,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "    ",
+                                            range: 251..255,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: text,
+                                                span: Span {
+                                                    str: "    ",
+                                                    range: 251..255,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "\\item[!]",
+                                            range: 255..263,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: command,
+                                                span: Span {
+                                                    str: "\\item[!]",
+                                                    range: 255..263,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: name,
+                                                        span: Span {
+                                                            str: "item",
+                                                            range: 256..260,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                    Pair {
+                                                        rule: optional_arg,
+                                                        span: Span {
+                                                            str: "[!]",
+                                                            range: 260..263,
+                                                        },
+                                                        inner: [
+                                                            Pair {
+                                                                rule: optional_list,
+                                                                span: Span {
+                                                                    str: "!",
+                                                                    range: 261..262,
+                                                                },
+                                                                inner: [
+                                                                    Pair {
+                                                                        rule: opt_entry,
+                                                                        span: Span {
+                                                                            str: "!",
+                                                                            range: 261..262,
+                                                                        },
+                                                                        inner: [
+                                                                            Pair {
+                                                                                rule: opt_item,
+                                                                                span: Span {
+                                                                                    str: "!",
+                                                                                    range: 261..262,
+                                                                                },
+                                                                                inner: [
+                                                                                    Pair {
+                                                                                        rule: opt_text,
+                                                                                        span: Span {
+                                                                                            str: "!",
+                                                                                            range: 261..262,
+                                                                                        },
+                                                                                        inner: [],
+                                                                                    },
+                                                                                ],
+                                                                            },
+                                                                        ],
+                                                                    },
+                                                                ],
+                                                            },
+                                                        ],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: " itemize 1",
+                                            range: 263..273,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: text,
+                                                span: Span {
+                                                    str: " itemize 1",
+                                                    range: 263..273,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "\r\n",
+                                            range: 273..275,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: newlines,
+                                                span: Span {
+                                                    str: "\r\n",
+                                                    range: 273..275,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "    ",
+                                            range: 275..279,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: text,
+                                                span: Span {
+                                                    str: "    ",
+                                                    range: 275..279,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "\\item",
+                                            range: 279..284,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: command,
+                                                span: Span {
+                                                    str: "\\item",
+                                                    range: 279..284,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: name,
+                                                        span: Span {
+                                                            str: "item",
+                                                            range: 280..284,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: " ",
+                                            range: 284..285,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: text,
+                                                span: Span {
+                                                    str: " ",
+                                                    range: 284..285,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "\\begin{enumerate}\r\n              \\item enumerate 1\r\n              \\item \\begin{itemize}\r\n                        \\item itemize 3\r\n                        \\item \\begin{enumerate}\r\n                                  \\item enum 2\r\n                                  \\item \\begin{enumerate}\r\n                                            \\item enum 3\r\n                                  \\end{enumerate}\r\n                        \\end{enumerate}\r\n              \\end{itemize}\r\n    \\end{enumerate}",
+                                            range: 285..769,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: block,
+                                                span: Span {
+                                                    str: "\\begin{enumerate}\r\n              \\item enumerate 1\r\n              \\item \\begin{itemize}\r\n                        \\item itemize 3\r\n                        \\item \\begin{enumerate}\r\n                                  \\item enum 2\r\n                                  \\item \\begin{enumerate}\r\n                                            \\item enum 3\r\n                                  \\end{enumerate}\r\n                        \\end{enumerate}\r\n              \\end{itemize}\r\n    \\end{enumerate}",
+                                                    range: 285..769,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: name,
+                                                        span: Span {
+                                                            str: "enumerate",
+                                                            range: 292..301,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                    Pair {
+                                                        rule: content,
+                                                        span: Span {
+                                                            str: "\r\n              \\item enumerate 1\r\n              \\item \\begin{itemize}\r\n                        \\item itemize 3\r\n                        \\item \\begin{enumerate}\r\n                                  \\item enum 2\r\n                                  \\item \\begin{enumerate}\r\n                                            \\item enum 3\r\n                                  \\end{enumerate}\r\n                        \\end{enumerate}\r\n              \\end{itemize}\r\n    ",
+                                                            range: 302..754,
+                                                        },
+                                                        inner: [
+                                                            Pair {
+                                                                rule: item,
+                                                                span: Span {
+                                                                    str: "\r\n",
+                                                                    range: 302..304,
+                                                                },
+                                                                inner: [
+                                                                    Pair {
+                                                                        rule: newlines,
+                                                                        span: Span {
+                                                                            str: "\r\n",
+                                                                            range: 302..304,
+                                                                        },
+                                                                        inner: [],
+                                                                    },
+                                                                ],
+                                                            },
+                                                            Pair {
+                                                                rule: item,
+                                                                span: Span {
+                                                                    str: "              ",
+                                                                    range: 304..318,
+                                                                },
+                                                                inner: [
+                                                                    Pair {
+                                                                        rule: text,
+                                                                        span: Span {
+                                                                            str: "              ",
+                                                                            range: 304..318,
+                                                                        },
+                                                                        inner: [],
+                                                                    },
+                                                                ],
+                                                            },
+                                                            Pair {
+                                                                rule: item,
+                                                                span: Span {
+                                                                    str: "\\item",
+                                                                    range: 318..323,
+                                                                },
+                                                                inner: [
+                                                                    Pair {
+                                                                        rule: command,
+                                                                        span: Span {
+                                                                            str: "\\item",
+                                                                            range: 318..323,
+                                                                        },
+                                                                        inner: [
+                                                                            Pair {
+                                                                                rule: name,
+                                                                                span: Span {
+                                                                                    str: "item",
+                                                                                    range: 319..323,
+                                                                                },
+                                                                                inner: [],
+                                                                            },
+                                                                        ],
+                                                                    },
+                                                                ],
+                                                            },
+                                                            Pair {
+                                                                rule: item,
+                                                                span: Span {
+                                                                    str: " enumerate 1",
+                                                                    range: 323..335,
+                                                                },
+                                                                inner: [
+                                                                    Pair {
+                                                                        rule: text,
+                                                                        span: Span {
+                                                                            str: " enumerate 1",
+                                                                            range: 323..335,
+                                                                        },
+                                                                        inner: [],
+                                                                    },
+                                                                ],
+                                                            },
+                                                            Pair {
+                                                                rule: item,
+                                                                span: Span {
+                                                                    str: "\r\n",
+                                                                    range: 335..337,
+                                                                },
+                                                                inner: [
+                                                                    Pair {
+                                                                        rule: newlines,
+                                                                        span: Span {
+                                                                            str: "\r\n",
+                                                                            range: 335..337,
+                                                                        },
+                                                                        inner: [],
+                                                                    },
+                                                                ],
+                                                            },
+                                                            Pair {
+                                                                rule: item,
+                                                                span: Span {
+                                                                    str: "              ",
+                                                                    range: 337..351,
+                                                                },
+                                                                inner: [
+                                                                    Pair {
+                                                                        rule: text,
+                                                                        span: Span {
+                                                                            str: "              ",
+                                                                            range: 337..351,
+                                                                        },
+                                                                        inner: [],
+                                                                    },
+                                                                ],
+                                                            },
+                                                            Pair {
+                                                                rule: item,
+                                                                span: Span {
+                                                                    str: "\\item",
+                                                                    range: 351..356,
+                                                                },
+                                                                inner: [
+                                                                    Pair {
+                                                                        rule: command,
+                                                                        span: Span {
+                                                                            str: "\\item",
+                                                                            range: 351..356,
+                                                                        },
+                                                                        inner: [
+                                                                            Pair {
+                                                                                rule: name,
+                                                                                span: Span {
+                                                                                    str: "item",
+                                                                                    range: 352..356,
+                                                                                },
+                                                                                inner: [],
+                                                                            },
+                                                                        ],
+                                                                    },
+                                                                ],
+                                                            },
+                                                            Pair {
+                                                                rule: item,
+                                                                span: Span {
+                                                                    str: " ",
+                                                                    range: 356..357,
+                                                                },
+                                                                inner: [
+                                                                    Pair {
+                                                                        rule: text,
+                                                                        span: Span {
+                                                                            str: " ",
+                                                                            range: 356..357,
+                                                                        },
+                                                                        inner: [],
+                                                                    },
+                                                                ],
+                                                            },
+                                                            Pair {
+                                                                rule: item,
+                                                                span: Span {
+                                                                    str: "\\begin{itemize}\r\n                        \\item itemize 3\r\n                        \\item \\begin{enumerate}\r\n                                  \\item enum 2\r\n                                  \\item \\begin{enumerate}\r\n                                            \\item enum 3\r\n                                  \\end{enumerate}\r\n                        \\end{enumerate}\r\n              \\end{itemize}",
+                                                                    range: 357..748,
+                                                                },
+                                                                inner: [
+                                                                    Pair {
+                                                                        rule: block,
+                                                                        span: Span {
+                                                                            str: "\\begin{itemize}\r\n                        \\item itemize 3\r\n                        \\item \\begin{enumerate}\r\n                                  \\item enum 2\r\n                                  \\item \\begin{enumerate}\r\n                                            \\item enum 3\r\n                                  \\end{enumerate}\r\n                        \\end{enumerate}\r\n              \\end{itemize}",
+                                                                            range: 357..748,
+                                                                        },
+                                                                        inner: [
+                                                                            Pair {
+                                                                                rule: name,
+                                                                                span: Span {
+                                                                                    str: "itemize",
+                                                                                    range: 364..371,
+                                                                                },
+                                                                                inner: [],
+                                                                            },
+                                                                            Pair {
+                                                                                rule: content,
+                                                                                span: Span {
+                                                                                    str: "\r\n                        \\item itemize 3\r\n                        \\item \\begin{enumerate}\r\n                                  \\item enum 2\r\n                                  \\item \\begin{enumerate}\r\n                                            \\item enum 3\r\n                                  \\end{enumerate}\r\n                        \\end{enumerate}\r\n              ",
+                                                                                    range: 372..735,
+                                                                                },
+                                                                                inner: [
+                                                                                    Pair {
+                                                                                        rule: item,
+                                                                                        span: Span {
+                                                                                            str: "\r\n",
+                                                                                            range: 372..374,
+                                                                                        },
+                                                                                        inner: [
+                                                                                            Pair {
+                                                                                                rule: newlines,
+                                                                                                span: Span {
+                                                                                                    str: "\r\n",
+                                                                                                    range: 372..374,
+                                                                                                },
+                                                                                                inner: [],
+                                                                                            },
+                                                                                        ],
+                                                                                    },
+                                                                                    Pair {
+                                                                                        rule: item,
+                                                                                        span: Span {
+                                                                                            str: "                        ",
+                                                                                            range: 374..398,
+                                                                                        },
+                                                                                        inner: [
+                                                                                            Pair {
+                                                                                                rule: text,
+                                                                                                span: Span {
+                                                                                                    str: "                        ",
+                                                                                                    range: 374..398,
+                                                                                                },
+                                                                                                inner: [],
+                                                                                            },
+                                                                                        ],
+                                                                                    },
+                                                                                    Pair {
+                                                                                        rule: item,
+                                                                                        span: Span {
+                                                                                            str: "\\item",
+                                                                                            range: 398..403,
+                                                                                        },
+                                                                                        inner: [
+                                                                                            Pair {
+                                                                                                rule: command,
+                                                                                                span: Span {
+                                                                                                    str: "\\item",
+                                                                                                    range: 398..403,
+                                                                                                },
+                                                                                                inner: [
+                                                                                                    Pair {
+                                                                                                        rule: name,
+                                                                                                        span: Span {
+                                                                                                            str: "item",
+                                                                                                            range: 399..403,
+                                                                                                        },
+                                                                                                        inner: [],
+                                                                                                    },
+                                                                                                ],
+                                                                                            },
+                                                                                        ],
+                                                                                    },
+                                                                                    Pair {
+                                                                                        rule: item,
+                                                                                        span: Span {
+                                                                                            str: " itemize 3",
+                                                                                            range: 403..413,
+                                                                                        },
+                                                                                        inner: [
+                                                                                            Pair {
+                                                                                                rule: text,
+                                                                                                span: Span {
+                                                                                                    str: " itemize 3",
+                                                                                                    range: 403..413,
+                                                                                                },
+                                                                                                inner: [],
+                                                                                            },
+                                                                                        ],
+                                                                                    },
+                                                                                    Pair {
+                                                                                        rule: item,
+                                                                                        span: Span {
+                                                                                            str: "\r\n",
+                                                                                            range: 413..415,
+                                                                                        },
+                                                                                        inner: [
+                                                                                            Pair {
+                                                                                                rule: newlines,
+                                                                                                span: Span {
+                                                                                                    str: "\r\n",
+                                                                                                    range: 413..415,
+                                                                                                },
+                                                                                                inner: [],
+                                                                                            },
+                                                                                        ],
+                                                                                    },
+                                                                                    Pair {
+                                                                                        rule: item,
+                                                                                        span: Span {
+                                                                                            str: "                        ",
+                                                                                            range: 415..439,
+                                                                                        },
+                                                                                        inner: [
+                                                                                            Pair {
+                                                                                                rule: text,
+                                                                                                span: Span {
+                                                                                                    str: "                        ",
+                                                                                                    range: 415..439,
+                                                                                                },
+                                                                                                inner: [],
+                                                                                            },
+                                                                                        ],
+                                                                                    },
+                                                                                    Pair {
+                                                                                        rule: item,
+                                                                                        span: Span {
+                                                                                            str: "\\item",
+                                                                                            range: 439..444,
+                                                                                        },
+                                                                                        inner: [
+                                                                                            Pair {
+                                                                                                rule: command,
+                                                                                                span: Span {
+                                                                                                    str: "\\item",
+                                                                                                    range: 439..444,
+                                                                                                },
+                                                                                                inner: [
+                                                                                                    Pair {
+                                                                                                        rule: name,
+                                                                                                        span: Span {
+                                                                                                            str: "item",
+                                                                                                            range: 440..444,
+                                                                                                        },
+                                                                                                        inner: [],
+                                                                                                    },
+                                                                                                ],
+                                                                                            },
+                                                                                        ],
+                                                                                    },
+                                                                                    Pair {
+                                                                                        rule: item,
+                                                                                        span: Span {
+                                                                                            str: " ",
+                                                                                            range: 444..445,
+                                                                                        },
+                                                                                        inner: [
+                                                                                            Pair {
+                                                                                                rule: text,
+                                                                                                span: Span {
+                                                                                                    str: " ",
+                                                                                                    range: 444..445,
+                                                                                                },
+                                                                                                inner: [],
+                                                                                            },
+                                                                                        ],
+                                                                                    },
+                                                                                    Pair {
+                                                                                        rule: item,
+                                                                                        span: Span {
+                                                                                            str: "\\begin{enumerate}\r\n                                  \\item enum 2\r\n                                  \\item \\begin{enumerate}\r\n                                            \\item enum 3\r\n                                  \\end{enumerate}\r\n                        \\end{enumerate}",
+                                                                                            range: 445..719,
+                                                                                        },
+                                                                                        inner: [
+                                                                                            Pair {
+                                                                                                rule: block,
+                                                                                                span: Span {
+                                                                                                    str: "\\begin{enumerate}\r\n                                  \\item enum 2\r\n                                  \\item \\begin{enumerate}\r\n                                            \\item enum 3\r\n                                  \\end{enumerate}\r\n                        \\end{enumerate}",
+                                                                                                    range: 445..719,
+                                                                                                },
+                                                                                                inner: [
+                                                                                                    Pair {
+                                                                                                        rule: name,
+                                                                                                        span: Span {
+                                                                                                            str: "enumerate",
+                                                                                                            range: 452..461,
+                                                                                                        },
+                                                                                                        inner: [],
+                                                                                                    },
+                                                                                                    Pair {
+                                                                                                        rule: content,
+                                                                                                        span: Span {
+                                                                                                            str: "\r\n                                  \\item enum 2\r\n                                  \\item \\begin{enumerate}\r\n                                            \\item enum 3\r\n                                  \\end{enumerate}\r\n                        ",
+                                                                                                            range: 462..704,
+                                                                                                        },
+                                                                                                        inner: [
+                                                                                                            Pair {
+                                                                                                                rule: item,
+                                                                                                                span: Span {
+                                                                                                                    str: "\r\n",
+                                                                                                                    range: 462..464,
+                                                                                                                },
+                                                                                                                inner: [
+                                                                                                                    Pair {
+                                                                                                                        rule: newlines,
+                                                                                                                        span: Span {
+                                                                                                                            str: "\r\n",
+                                                                                                                            range: 462..464,
+                                                                                                                        },
+                                                                                                                        inner: [],
+                                                                                                                    },
+                                                                                                                ],
+                                                                                                            },
+                                                                                                            Pair {
+                                                                                                                rule: item,
+                                                                                                                span: Span {
+                                                                                                                    str: "                                  ",
+                                                                                                                    range: 464..498,
+                                                                                                                },
+                                                                                                                inner: [
+                                                                                                                    Pair {
+                                                                                                                        rule: text,
+                                                                                                                        span: Span {
+                                                                                                                            str: "                                  ",
+                                                                                                                            range: 464..498,
+                                                                                                                        },
+                                                                                                                        inner: [],
+                                                                                                                    },
+                                                                                                                ],
+                                                                                                            },
+                                                                                                            Pair {
+                                                                                                                rule: item,
+                                                                                                                span: Span {
+                                                                                                                    str: "\\item",
+                                                                                                                    range: 498..503,
+                                                                                                                },
+                                                                                                                inner: [
+                                                                                                                    Pair {
+                                                                                                                        rule: command,
+                                                                                                                        span: Span {
+                                                                                                                            str: "\\item",
+                                                                                                                            range: 498..503,
+                                                                                                                        },
+                                                                                                                        inner: [
+                                                                                                                            Pair {
+                                                                                                                                rule: name,
+                                                                                                                                span: Span {
+                                                                                                                                    str: "item",
+                                                                                                                                    range: 499..503,
+                                                                                                                                },
+                                                                                                                                inner: [],
+                                                                                                                            },
+                                                                                                                        ],
+                                                                                                                    },
+                                                                                                                ],
+                                                                                                            },
+                                                                                                            Pair {
+                                                                                                                rule: item,
+                                                                                                                span: Span {
+                                                                                                                    str: " enum 2",
+                                                                                                                    range: 503..510,
+                                                                                                                },
+                                                                                                                inner: [
+                                                                                                                    Pair {
+                                                                                                                        rule: text,
+                                                                                                                        span: Span {
+                                                                                                                            str: " enum 2",
+                                                                                                                            range: 503..510,
+                                                                                                                        },
+                                                                                                                        inner: [],
+                                                                                                                    },
+                                                                                                                ],
+                                                                                                            },
+                                                                                                            Pair {
+                                                                                                                rule: item,
+                                                                                                                span: Span {
+                                                                                                                    str: "\r\n",
+                                                                                                                    range: 510..512,
+                                                                                                                },
+                                                                                                                inner: [
+                                                                                                                    Pair {
+                                                                                                                        rule: newlines,
+                                                                                                                        span: Span {
+                                                                                                                            str: "\r\n",
+                                                                                                                            range: 510..512,
+                                                                                                                        },
+                                                                                                                        inner: [],
+                                                                                                                    },
+                                                                                                                ],
+                                                                                                            },
+                                                                                                            Pair {
+                                                                                                                rule: item,
+                                                                                                                span: Span {
+                                                                                                                    str: "                                  ",
+                                                                                                                    range: 512..546,
+                                                                                                                },
+                                                                                                                inner: [
+                                                                                                                    Pair {
+                                                                                                                        rule: text,
+                                                                                                                        span: Span {
+                                                                                                                            str: "                                  ",
+                                                                                                                            range: 512..546,
+                                                                                                                        },
+                                                                                                                        inner: [],
+                                                                                                                    },
+                                                                                                                ],
+                                                                                                            },
+                                                                                                            Pair {
+                                                                                                                rule: item,
+                                                                                                                span: Span {
+                                                                                                                    str: "\\item",
+                                                                                                                    range: 546..551,
+                                                                                                                },
+                                                                                                                inner: [
+                                                                                                                    Pair {
+                                                                                                                        rule: command,
+                                                                                                                        span: Span {
+                                                                                                                            str: "\\item",
+                                                                                                                            range: 546..551,
+                                                                                                                        },
+                                                                                                                        inner: [
+                                                                                                                            Pair {
+                                                                                                                                rule: name,
+                                                                                                                                span: Span {
+                                                                                                                                    str: "item",
+                                                                                                                                    range: 547..551,
+                                                                                                                                },
+                                                                                                                                inner: [],
+                                                                                                                            },
+                                                                                                                        ],
+                                                                                                                    },
+                                                                                                                ],
+                                                                                                            },
+                                                                                                            Pair {
+                                                                                                                rule: item,
+                                                                                                                span: Span {
+                                                                                                                    str: " ",
+                                                                                                                    range: 551..552,
+                                                                                                                },
+                                                                                                                inner: [
+                                                                                                                    Pair {
+                                                                                                                        rule: text,
+                                                                                                                        span: Span {
+                                                                                                                            str: " ",
+                                                                                                                            range: 551..552,
+                                                                                                                        },
+                                                                                                                        inner: [],
+                                                                                                                    },
+                                                                                                                ],
+                                                                                                            },
+                                                                                                            Pair {
+                                                                                                                rule: item,
+                                                                                                                span: Span {
+                                                                                                                    str: "\\begin{enumerate}\r\n                                            \\item enum 3\r\n                                  \\end{enumerate}",
+                                                                                                                    range: 552..678,
+                                                                                                                },
+                                                                                                                inner: [
+                                                                                                                    Pair {
+                                                                                                                        rule: block,
+                                                                                                                        span: Span {
+                                                                                                                            str: "\\begin{enumerate}\r\n                                            \\item enum 3\r\n                                  \\end{enumerate}",
+                                                                                                                            range: 552..678,
+                                                                                                                        },
+                                                                                                                        inner: [
+                                                                                                                            Pair {
+                                                                                                                                rule: name,
+                                                                                                                                span: Span {
+                                                                                                                                    str: "enumerate",
+                                                                                                                                    range: 559..568,
+                                                                                                                                },
+                                                                                                                                inner: [],
+                                                                                                                            },
+                                                                                                                            Pair {
+                                                                                                                                rule: content,
+                                                                                                                                span: Span {
+                                                                                                                                    str: "\r\n                                            \\item enum 3\r\n                                  ",
+                                                                                                                                    range: 569..663,
+                                                                                                                                },
+                                                                                                                                inner: [
+                                                                                                                                    Pair {
+                                                                                                                                        rule: item,
+                                                                                                                                        span: Span {
+                                                                                                                                            str: "\r\n",
+                                                                                                                                            range: 569..571,
+                                                                                                                                        },
+                                                                                                                                        inner: [
+                                                                                                                                            Pair {
+                                                                                                                                                rule: newlines,
+                                                                                                                                                span: Span {
+                                                                                                                                                    str: "\r\n",
+                                                                                                                                                    range: 569..571,
+                                                                                                                                                },
+                                                                                                                                                inner: [],
+                                                                                                                                            },
+                                                                                                                                        ],
+                                                                                                                                    },
+                                                                                                                                    Pair {
+                                                                                                                                        rule: item,
+                                                                                                                                        span: Span {
+                                                                                                                                            str: "                                            ",
+                                                                                                                                            range: 571..615,
+                                                                                                                                        },
+                                                                                                                                        inner: [
+                                                                                                                                            Pair {
+                                                                                                                                                rule: text,
+                                                                                                                                                span: Span {
+                                                                                                                                                    str: "                                            ",
+                                                                                                                                                    range: 571..615,
+                                                                                                                                                },
+                                                                                                                                                inner: [],
+                                                                                                                                            },
+                                                                                                                                        ],
+                                                                                                                                    },
+                                                                                                                                    Pair {
+                                                                                                                                        rule: item,
+                                                                                                                                        span: Span {
+                                                                                                                                            str: "\\item",
+                                                                                                                                            range: 615..620,
+                                                                                                                                        },
+                                                                                                                                        inner: [
+                                                                                                                                            Pair {
+                                                                                                                                                rule: command,
+                                                                                                                                                span: Span {
+                                                                                                                                                    str: "\\item",
+                                                                                                                                                    range: 615..620,
+                                                                                                                                                },
+                                                                                                                                                inner: [
+                                                                                                                                                    Pair {
+                                                                                                                                                        rule: name,
+                                                                                                                                                        span: Span {
+                                                                                                                                                            str: "item",
+                                                                                                                                                            range: 616..620,
+                                                                                                                                                        },
+                                                                                                                                                        inner: [],
+                                                                                                                                                    },
+                                                                                                                                                ],
+                                                                                                                                            },
+                                                                                                                                        ],
+                                                                                                                                    },
+                                                                                                                                    Pair {
+                                                                                                                                        rule: item,
+                                                                                                                                        span: Span {
+                                                                                                                                            str: " enum 3",
+                                                                                                                                            range: 620..627,
+                                                                                                                                        },
+                                                                                                                                        inner: [
+                                                                                                                                            Pair {
+                                                                                                                                                rule: text,
+                                                                                                                                                span: Span {
+                                                                                                                                                    str: " enum 3",
+                                                                                                                                                    range: 620..627,
+                                                                                                                                                },
+                                                                                                                                                inner: [],
+                                                                                                                                            },
+                                                                                                                                        ],
+                                                                                                                                    },
+                                                                                                                                    Pair {
+                                                                                                                                        rule: item,
+                                                                                                                                        span: Span {
+                                                                                                                                            str: "\r\n",
+                                                                                                                                            range: 627..629,
+                                                                                                                                        },
+                                                                                                                                        inner: [
+                                                                                                                                            Pair {
+                                                                                                                                                rule: newlines,
+                                                                                                                                                span: Span {
+                                                                                                                                                    str: "\r\n",
+                                                                                                                                                    range: 627..629,
+                                                                                                                                                },
+                                                                                                                                                inner: [],
+                                                                                                                                            },
+                                                                                                                                        ],
+                                                                                                                                    },
+                                                                                                                                    Pair {
+                                                                                                                                        rule: item,
+                                                                                                                                        span: Span {
+                                                                                                                                            str: "                                  ",
+                                                                                                                                            range: 629..663,
+                                                                                                                                        },
+                                                                                                                                        inner: [
+                                                                                                                                            Pair {
+                                                                                                                                                rule: text,
+                                                                                                                                                span: Span {
+                                                                                                                                                    str: "                                  ",
+                                                                                                                                                    range: 629..663,
+                                                                                                                                                },
+                                                                                                                                                inner: [],
+                                                                                                                                            },
+                                                                                                                                        ],
+                                                                                                                                    },
+                                                                                                                                ],
+                                                                                                                            },
+                                                                                                                        ],
+                                                                                                                    },
+                                                                                                                ],
+                                                                                                            },
+                                                                                                            Pair {
+                                                                                                                rule: item,
+                                                                                                                span: Span {
+                                                                                                                    str: "\r\n",
+                                                                                                                    range: 678..680,
+                                                                                                                },
+                                                                                                                inner: [
+                                                                                                                    Pair {
+                                                                                                                        rule: newlines,
+                                                                                                                        span: Span {
+                                                                                                                            str: "\r\n",
+                                                                                                                            range: 678..680,
+                                                                                                                        },
+                                                                                                                        inner: [],
+                                                                                                                    },
+                                                                                                                ],
+                                                                                                            },
+                                                                                                            Pair {
+                                                                                                                rule: item,
+                                                                                                                span: Span {
+                                                                                                                    str: "                        ",
+                                                                                                                    range: 680..704,
+                                                                                                                },
+                                                                                                                inner: [
+                                                                                                                    Pair {
+                                                                                                                        rule: text,
+                                                                                                                        span: Span {
+                                                                                                                            str: "                        ",
+                                                                                                                            range: 680..704,
+                                                                                                                        },
+                                                                                                                        inner: [],
+                                                                                                                    },
+                                                                                                                ],
+                                                                                                            },
+                                                                                                        ],
+                                                                                                    },
+                                                                                                ],
+                                                                                            },
+                                                                                        ],
+                                                                                    },
+                                                                                    Pair {
+                                                                                        rule: item,
+                                                                                        span: Span {
+                                                                                            str: "\r\n",
+                                                                                            range: 719..721,
+                                                                                        },
+                                                                                        inner: [
+                                                                                            Pair {
+                                                                                                rule: newlines,
+                                                                                                span: Span {
+                                                                                                    str: "\r\n",
+                                                                                                    range: 719..721,
+                                                                                                },
+                                                                                                inner: [],
+                                                                                            },
+                                                                                        ],
+                                                                                    },
+                                                                                    Pair {
+                                                                                        rule: item,
+                                                                                        span: Span {
+                                                                                            str: "              ",
+                                                                                            range: 721..735,
+                                                                                        },
+                                                                                        inner: [
+                                                                                            Pair {
+                                                                                                rule: text,
+                                                                                                span: Span {
+                                                                                                    str: "              ",
+                                                                                                    range: 721..735,
+                                                                                                },
+                                                                                                inner: [],
+                                                                                            },
+                                                                                        ],
+                                                                                    },
+                                                                                ],
+                                                                            },
+                                                                        ],
+                                                                    },
+                                                                ],
+                                                            },
+                                                            Pair {
+                                                                rule: item,
+                                                                span: Span {
+                                                                    str: "\r\n",
+                                                                    range: 748..750,
+                                                                },
+                                                                inner: [
+                                                                    Pair {
+                                                                        rule: newlines,
+                                                                        span: Span {
+                                                                            str: "\r\n",
+                                                                            range: 748..750,
+                                                                        },
+                                                                        inner: [],
+                                                                    },
+                                                                ],
+                                                            },
+                                                            Pair {
+                                                                rule: item,
+                                                                span: Span {
+                                                                    str: "    ",
+                                                                    range: 750..754,
+                                                                },
+                                                                inner: [
+                                                                    Pair {
+                                                                        rule: text,
+                                                                        span: Span {
+                                                                            str: "    ",
+                                                                            range: 750..754,
+                                                                        },
+                                                                        inner: [],
+                                                                    },
+                                                                ],
+                                                            },
+                                                        ],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "\r\n",
+                                            range: 769..771,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: newlines,
+                                                span: Span {
+                                                    str: "\r\n",
+                                                    range: 769..771,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "    ",
+                                            range: 771..775,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: text,
+                                                span: Span {
+                                                    str: "    ",
+                                                    range: 771..775,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "\\item",
+                                            range: 775..780,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: command,
+                                                span: Span {
+                                                    str: "\\item",
+                                                    range: 775..780,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: name,
+                                                        span: Span {
+                                                            str: "item",
+                                                            range: 776..780,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: " itemize 2",
+                                            range: 780..790,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: text,
+                                                span: Span {
+                                                    str: " itemize 2",
+                                                    range: 780..790,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "\r\n",
+                                            range: 790..792,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: newlines,
+                                                span: Span {
+                                                    str: "\r\n",
+                                                    range: 790..792,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\r\n",
+                    range: 805..807,
+                },
+                inner: [
+                    Pair {
+                        rule: newlines,
+                        span: Span {
+                            str: "\r\n",
+                            range: 805..807,
+                        },
+                        inner: [],
+                    },
+                ],
+            },
+            Pair {
+                rule: EOI,
+                span: Span {
+                    str: "",
+                    range: 807..807,
+                },
+                inner: [],
+            },
+        ],
+    },
+]

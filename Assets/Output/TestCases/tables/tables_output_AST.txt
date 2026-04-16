@@ -1,0 +1,168 @@
+AstDocument {
+    items: [
+        Text(
+            TextNode {
+                value: "\u{feff}",
+            },
+        ),
+        Block(
+            BlockNode {
+                name: "tabular",
+                required_args: [
+                    RequiredArgNode {
+                        items: [
+                            Text(
+                                TextNode {
+                                    value: " |c|c|c| ",
+                                },
+                            ),
+                        ],
+                    },
+                ],
+                optional_args: [],
+                items: [
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "    ",
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "hline",
+                            optional_args: [],
+                            required_args: [],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "    ",
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "textbf",
+                            optional_args: [],
+                            required_args: [
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "cell1",
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: " & cell2 & cell3 ",
+                        },
+                    ),
+                    Linebreak(
+                        LinebreakNode {
+                            value: "\\\\",
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "    ",
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "hline",
+                            optional_args: [],
+                            required_args: [],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "    cell4 & cell5 & cell6 ",
+                        },
+                    ),
+                    Linebreak(
+                        LinebreakNode {
+                            value: "\\\\",
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "    ",
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "hline",
+                            optional_args: [],
+                            required_args: [],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "    cell7 & cell8 & cell9 ",
+                        },
+                    ),
+                    Linebreak(
+                        LinebreakNode {
+                            value: "\\\\",
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "    ",
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "hline",
+                            optional_args: [],
+                            required_args: [],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                ],
+            },
+        ),
+    ],
+}

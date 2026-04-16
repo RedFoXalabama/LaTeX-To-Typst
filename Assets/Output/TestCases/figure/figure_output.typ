@@ -1,41 +1,4 @@
-﻿﻿// ------------------------ ARTICLE HEADER -----------------------
-#set page(
-  paper: "a4",
-  margin: (x: 2.5cm, y: 3cm),
-  numbering: "1",       // Numerazione pagine semplice a fondo pagina
-  header: none,         // Solitamente senza header particolare
-)
-
-#set heading(numbering: "1.1")
-
-#show heading.where(level: 1): it => {
-  v(1.5em, weak: true)
-  it
-  v(1em, weak: true)
-}
-
-#set math.equation(numbering: "(1)")
-
-#set par(
-  first-line-indent: 1em, // Rientro di un carattere
-  leading: 0.65em,        // Interlinea
-  spacing: 1.2em,         // Spazio tra paragrafi
-)
-
-#show link: underline // Impostiano lo stile dei link a sottolineato
-// ----------------------- END ARTICLE HEADER -----------------------
-
-
-
-// Packages
-/*ERROR: NOT-YET-IMPLEMENTED \usepackage{amsmath}*/ // PACCHETTO NON ANCORA IMPLEMENTATO
-
-// Document
-
-
-/*ERROR: NOT-YET-IMPLEMENTED \chapter{Capitolo 1: Caso di errore}*/ // TITOLO NON ANCORA IMPLEMENTATO
-
-/*ERROR: NOT-YET-IMPLEMENTED \comandoerrato{argomento inesistente}*//*ERROR: NOT-YET-IMPLEMENTED \prova{argomento inesistente}*/#context figure(
+﻿/*ERROR: NOT-YET-IMPLEMENTED \comandoerrato{argomento inesistente}*//*ERROR: NOT-YET-IMPLEMENTED \prova{argomento inesistente}*/#context figure(
   image("Latex2Typst.png", width: 80%),
   placement: none,
   caption: [caption test],
@@ -128,6 +91,3 @@
   image("Latex2Typst.png", width: 10em),
   caption: [test width=20ex],
 ) <fig-test-ex>
-
-/*ERROR: WRONG-COMMAND OR NOT-IMPLEMENTED \commandoInesistente{argomento inesistente}*/
-

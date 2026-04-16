@@ -19,11 +19,7 @@ pub fn render_formatting(name: &str, reqs: Vec<RequiredArgNode>, _opts: Vec<Opti
                 out.push_str(format!("/*{}*/",error_msg).as_str());
             },
         }
-    } else {
-        
     }
-
-    // metto in coda gli altri elementi in modo che rispetti l'ordine dell'input
 
     out
 }
@@ -40,38 +36,3 @@ pub fn render_textcolor(_name: &str, reqs: Vec<RequiredArgNode>, _opts: Vec<Opti
     out.push_str(&out_of_bounds_reqs_arg(&reqs, 2));
     out
 }
-
-// ------------------------------ SINGOLE FUNZIONI -------------------------------------------------
-// DEAD CODE
-// pub fn render_bold(_name: &str, reqs: Vec<RequiredArgNode>, _opts: Vec<OptionalArgNode>) -> String {
-//     let mut out = String::new();
-//     if let Some(first) = reqs.first() {
-//         out.push_str(&format!("*{}*", render_args_item(&first.items)));
-//     }
-// 
-//     // metto in coda gli altri elementi in modo che rispetti l'ordine dell'input
-//     out.push_str(&out_of_bounds_reqs_arg(&reqs, 1));
-//     out
-// }
-// 
-// pub fn render_italic(_name: &str, reqs: Vec<RequiredArgNode>, _opts: Vec<OptionalArgNode>) -> String {
-//     let mut out = String::new();
-//     if let Some(first) = reqs.first() {
-//         out.push_str(&format!("_{}_", render_args_item(&first.items)));
-//     }
-// 
-//     // metto in coda gli altri elementi in modo che rispetti l'ordine dell'input
-//     out.push_str(&out_of_bounds_reqs_arg(&reqs, 1));
-//     out
-// }
-// 
-// pub fn render_underline(_name: &str, reqs: Vec<RequiredArgNode>, _opts: Vec<OptionalArgNode>) -> String {
-//     let mut out = String::new();
-//     if let Some(first) = reqs.first() {
-//         out.push_str(&format!("#underline[{}]", render_args_item(&first.items)));
-//     }
-// 
-//     // metto in coda gli altri elementi in modo che rispetti l'ordine dell'input
-//     out.push_str(&out_of_bounds_reqs_arg(&reqs, 1));
-//     out
-// }

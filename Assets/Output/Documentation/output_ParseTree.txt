@@ -1821,15 +1821,15 @@
                                                             Pair {
                                                                 rule: item,
                                                                 span: Span {
-                                                                    str: "\\includegraphics[width=0.5\\linewidth]",
-                                                                    range: 3115..3152,
+                                                                    str: "\\includegraphics[width=0.5\\linewidth]{Latex2Typst.png}",
+                                                                    range: 3115..3169,
                                                                 },
                                                                 inner: [
                                                                     Pair {
                                                                         rule: command,
                                                                         span: Span {
-                                                                            str: "\\includegraphics[width=0.5\\linewidth]",
-                                                                            range: 3115..3152,
+                                                                            str: "\\includegraphics[width=0.5\\linewidth]{Latex2Typst.png}",
+                                                                            range: 3115..3169,
                                                                         },
                                                                         inner: [
                                                                             Pair {
@@ -1901,24 +1901,42 @@
                                                                                     },
                                                                                 ],
                                                                             },
+                                                                            Pair {
+                                                                                rule: required_arg,
+                                                                                span: Span {
+                                                                                    str: "{Latex2Typst.png}",
+                                                                                    range: 3152..3169,
+                                                                                },
+                                                                                inner: [
+                                                                                    Pair {
+                                                                                        rule: argument,
+                                                                                        span: Span {
+                                                                                            str: "Latex2Typst.png",
+                                                                                            range: 3153..3168,
+                                                                                        },
+                                                                                        inner: [
+                                                                                            Pair {
+                                                                                                rule: arg_item,
+                                                                                                span: Span {
+                                                                                                    str: "Latex2Typst.png",
+                                                                                                    range: 3153..3168,
+                                                                                                },
+                                                                                                inner: [
+                                                                                                    Pair {
+                                                                                                        rule: arg_text,
+                                                                                                        span: Span {
+                                                                                                            str: "Latex2Typst.png",
+                                                                                                            range: 3153..3168,
+                                                                                                        },
+                                                                                                        inner: [],
+                                                                                                    },
+                                                                                                ],
+                                                                                            },
+                                                                                        ],
+                                                                                    },
+                                                                                ],
+                                                                            },
                                                                         ],
-                                                                    },
-                                                                ],
-                                                            },
-                                                            Pair {
-                                                                rule: item,
-                                                                span: Span {
-                                                                    str: "{Latex2Typst.png}",
-                                                                    range: 3152..3169,
-                                                                },
-                                                                inner: [
-                                                                    Pair {
-                                                                        rule: text,
-                                                                        span: Span {
-                                                                            str: "{Latex2Typst.png}",
-                                                                            range: 3152..3169,
-                                                                        },
-                                                                        inner: [],
                                                                     },
                                                                 ],
                                                             },

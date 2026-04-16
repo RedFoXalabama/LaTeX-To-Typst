@@ -232,9 +232,10 @@ fn build_required_arg(pair: Pair<Rule>) -> Result<RequiredArgNode, SemanticError
         }
     }
 
-    if items.is_empty() {
-        return Err(SemanticError::MissingRequiredArgItems);
-    }
+    // commentato perché ci possono essere comandi con argomenti vuoti
+    // if items.is_empty() {
+    //     return Err(SemanticError::MissingRequiredArgItems);
+    // }
 
     Ok(RequiredArgNode { items })
 }
@@ -284,9 +285,10 @@ fn build_optional_arg(pair: Pair<Rule>) -> Result<OptionalArgNode, SemanticError
         }
     }
 
-    if entries.is_empty() {
-        return Err(SemanticError::MissingOptionalArgEntries);
-    }
+    // commentato perché ci possono essere comandi con argomenti vuoti
+    // if entries.is_empty() {
+    //     return Err(SemanticError::MissingOptionalArgEntries);
+    // }
 
     Ok(OptionalArgNode { entries })
 }

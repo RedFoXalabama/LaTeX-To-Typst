@@ -1,8 +1,12 @@
 mod ast_structure;
+mod reqarg_map;
+
+use log::warn;
 pub use ast_structure::*; //importo tutte le strutture e gli enumerati che compongono l'AST
 
 use crate::latex_parser::Rule;
 use pest::iterators::{Pair, Pairs};
+use crate::latex_semantic::reqarg_map::reqarg_count;
 
 // ALBERO AST (Abstract Syntax Tree) - rappresentazione ad albero della struttura sintattica del documento LaTeX,
 // costruita a partire dal parse tree di pest.
@@ -27,7 +31,7 @@ pub fn build_ast(mut pairs: Pairs<Rule>) -> Result<AstDocument, SemanticError> {
     if file_pair.as_rule() != Rule::file {
         return Err(SemanticError::UnexpectedRule(file_pair.as_rule()));
     }
-    println!("BUILDIAMO IL FILE");
+    println!("ANALISI DOCUMENTO PARSATO");
 
     build_document(file_pair)
 }
@@ -43,6 +47,7 @@ fn build_document(file_pair: Pair<Rule>) -> Result<AstDocument, SemanticError> {
         match child.as_rule() {
             Rule::item => items.push(build_item(child)?),
             Rule::EOI => {} // ignorato nell'AST
+
             other => return Err(SemanticError::UnexpectedRule(other)),
         }
     }
@@ -69,6 +74,7 @@ fn build_item(pair: Pair<Rule>) -> Result<AstItemNode, SemanticError> {
         Rule::newlines => Ok(AstItemNode::Newlines(build_newlines(child)?)),
         Rule::linebreak => Ok(AstItemNode::Linebreak(build_linebreak(child)?)), // trattiamo i linebreak come newlines, visto che rappresentano un andare a capo
         Rule::comment => Ok(AstItemNode::Comment(build_comment(child)?)),
+
         other => Err(SemanticError::UnexpectedItemRule(other)),
     }
 }
@@ -87,8 +93,8 @@ fn build_block(pair: Pair<Rule>) -> Result<BlockNode, SemanticError> {
             Rule::name => {
                 name = Some(child.as_str().to_string()).ok_or(SemanticError::MissingBlockName)?
             }
-            Rule::optional_arg => optional_args.push(build_optional_arg(child)?),
-            Rule::required_arg => required_args.push(build_required_arg(child)?),
+            Rule::optional_arg => optional_args.push(build_optional_arg(&name, child)?),
+            Rule::required_arg => required_args.push(build_required_arg(&name, child)?),
             Rule::content => {
                 for item in child.into_inner() {
                     match item.as_rule() {
@@ -97,7 +103,8 @@ fn build_block(pair: Pair<Rule>) -> Result<BlockNode, SemanticError> {
                     }
                 }
             }
-            _ => {}
+
+            other => return Err(SemanticError::UnexpectedRule(other)),
         }
     }
 
@@ -119,12 +126,13 @@ fn build_block_raw(pair: Pair<Rule>) -> Result<BlockNode, SemanticError> {
     for child in pair.into_inner() {
         match child.as_rule() {
             Rule::raw_name => name = child.as_str().to_string(),
-            Rule::optional_arg => optional_args.push(build_optional_arg(child)?),
-            Rule::required_arg => required_args.push(build_required_arg(child)?),
+            Rule::optional_arg => optional_args.push(build_optional_arg(&name, child)?),
+            Rule::required_arg => required_args.push(build_required_arg(&name, child)?),
             Rule::content_raw => items.push(AstItemNode::RawText(TextNode {
                 value: child.as_str().to_string(),
             })),
-            _ => {}
+
+            other => return Err(SemanticError::UnexpectedRule(other)),
         }
     }
 
@@ -149,9 +157,18 @@ fn build_command(pair: Pair<Rule>) -> Result<CommandNode, SemanticError> {
             Rule::name => {
                 name = Some(child.as_str().to_string()).ok_or(SemanticError::MissingCommandName)?
             } // Some diventerà string
-            Rule::optional_arg => optional_args.push(build_optional_arg(child)?), // optional_arg = { "[" ~ optional_list? ~ "]" }
-            Rule::required_arg => required_args.push(build_required_arg(child)?), // required_arg = { "{" ~ argument ~ "}" }
+            Rule::optional_arg => optional_args.push(build_optional_arg(&name, child)?), // optional_arg = { "[" ~ optional_list? ~ "]" }
+            Rule::required_arg => required_args.push(build_required_arg(&name, child)?), // required_arg = { "{" ~ argument ~ "}" }
+
             other => return Err(SemanticError::UnexpectedRule(other)),
+        }
+    }
+
+    if let Some(expected) = reqarg_count(&name) {
+        if required_args.len() < expected as usize {
+            warn!("Comando \\{}: expected {} required arguments, found {}", name, expected, required_args.len());
+
+            return Err(SemanticError::MissingRequiredArgItems);
         }
     }
 
@@ -170,6 +187,7 @@ fn build_text(pair: Pair<Rule>) -> Result<TextNode, SemanticError> {
     if value.is_empty() {
         return Err(SemanticError::EmptyTextValue);
     }
+
     Ok(TextNode { value })
 }
 
@@ -181,6 +199,7 @@ fn build_newlines(pair: Pair<Rule>) -> Result<NewlinesNode, SemanticError> {
     if count == 0 {
         return Err(SemanticError::InvalidNewlineCount);
     }
+
     Ok(NewlinesNode { count })
 }
 
@@ -192,6 +211,7 @@ fn build_linebreak(pair: Pair<Rule>) -> Result<LinebreakNode, SemanticError> {
     if value != "\\\\" {
         return Err(SemanticError::InvalidLinebreakValue);
     }
+
     Ok(LinebreakNode { value })
 }
 
@@ -204,6 +224,7 @@ fn build_comment(pair: Pair<Rule>) -> Result<CommentNode, SemanticError> {
     if value.is_empty() {
         return Err(SemanticError::EmptyCommentValue);
     }
+
     Ok(CommentNode { value })
 }
 
@@ -214,7 +235,7 @@ fn build_comment(pair: Pair<Rule>) -> Result<CommentNode, SemanticError> {
 // un argument é composto da arg_item multipli poiché possiamo avere comandi e testo insieme o anche un altro elemento rinchiuso in {esempio}
 // se l'argument con contiene un oggetto che rispetta la regola di Arg_item, allora cacca addosso -> UnexpectedArgItemRule
 // required_arg = { "{" ~ argument ~ "}" }
-fn build_required_arg(pair: Pair<Rule>) -> Result<RequiredArgNode, SemanticError> {
+fn build_required_arg(cmd_name: &str, pair: Pair<Rule>) -> Result<RequiredArgNode, SemanticError> {
     let mut items: Vec<ArgItemNode> = Vec::new();
 
     // iteriamo per estrarre ogni arg_item che può rappresentare differenti strutture di Nodi
@@ -223,17 +244,22 @@ fn build_required_arg(pair: Pair<Rule>) -> Result<RequiredArgNode, SemanticError
             Rule::argument => {
                 for arg_item in child.into_inner() {
                     match arg_item.as_rule() {
-                        Rule::arg_item => items.push(build_arg_item(arg_item)?),
+                        Rule::arg_item => items.push(build_arg_item(cmd_name, arg_item)?),
+
                         other => return Err(SemanticError::UnexpectedArgItemRule(other)),
                     }
                 }
             }
+
             other => return Err(SemanticError::UnexpectedRule(other)),
         }
     }
 
     if items.is_empty() {
-        return Err(SemanticError::MissingRequiredArgItems);
+        if reqarg_count(cmd_name) > Option::from(0) {
+            warn!("Comando \\{}: expected at least 1 argument item, found EMPTY BRACKET", cmd_name);
+            // return Err(SemanticError::MissingRequiredArgItems);
+        }
     }
 
     Ok(RequiredArgNode { items })
@@ -244,7 +270,7 @@ fn build_required_arg(pair: Pair<Rule>) -> Result<RequiredArgNode, SemanticError
 // Un argument item può essere un comando + un testo + un andare a capo + un nuovo required_arg:
 // Ex: \textbf{\title[opt1]{Il gatto} era sul \n tavolo {} }
 // arg_item = { command | required_arg | newline | arg_text }
-fn build_arg_item(pair: Pair<Rule>) -> Result<ArgItemNode, SemanticError> {
+fn build_arg_item(cmd_name: &str, pair: Pair<Rule>) -> Result<ArgItemNode, SemanticError> {
     let child = pair
         .into_inner()
         .next()
@@ -252,10 +278,11 @@ fn build_arg_item(pair: Pair<Rule>) -> Result<ArgItemNode, SemanticError> {
 
     match child.as_rule() {
         Rule::command => Ok(ArgItemNode::Command(build_command(child)?)),
-        Rule::required_arg => Ok(ArgItemNode::Group(build_required_arg(child)?)),
+        Rule::required_arg => Ok(ArgItemNode::Group(build_required_arg(cmd_name, child)?)),
         Rule::newlines => Ok(ArgItemNode::Newlines(build_newlines(child)?)),
         Rule::linebreak => Ok(ArgItemNode::Linebreak(build_linebreak(child)?)),
         Rule::arg_text => Ok(ArgItemNode::Text(build_text(child)?)), //usiamo la stessa regola per buildare il testo
+
         other => Err(SemanticError::UnexpectedArgItemRule(other)),
     }
 }
@@ -266,7 +293,7 @@ fn build_arg_item(pair: Pair<Rule>) -> Result<ArgItemNode, SemanticError> {
 // che può essere una coppia chiave-valore o una serie di opt_item (comando, testo, andare a capo, required_arg)
 // EX: \usepackage[letterpaper = true,top=2cm\textwidth, points={1, cane,3 ,4}]{geometry}
 // optional_arg  = { "[" ~ optional_list? ~ "]" }
-fn build_optional_arg(pair: Pair<Rule>) -> Result<OptionalArgNode, SemanticError> {
+fn build_optional_arg(cmd_name: &str, pair: Pair<Rule>) -> Result<OptionalArgNode, SemanticError> {
     let mut entries = Vec::new();
 
     for child in pair.into_inner() {
@@ -275,18 +302,22 @@ fn build_optional_arg(pair: Pair<Rule>) -> Result<OptionalArgNode, SemanticError
                 // optional_list = { opt_entry ~ ("," ~ opt_entry)* }
                 for entry in child.into_inner() {
                     match entry.as_rule() {
-                        Rule::opt_entry => entries.push(build_opt_entry(entry)?),
+                        Rule::opt_entry => entries.push(build_opt_entry(cmd_name, entry)?),
                         other => return Err(SemanticError::UnexpectedOptionalEntryRule(other)),
                     }
                 }
             }
+
             other => return Err(SemanticError::UnexpectedRule(other)),
         }
     }
 
-    if entries.is_empty() {
-        return Err(SemanticError::MissingOptionalArgEntries);
-    }
+    // --- Non facciamo nessun controllo sull'entità opzionali poiché in latex se presenti delle [] vuote
+    // --- o contenenti argomenti non gestiti dopo un comando vengono semplicemente ignorati
+    // --- il rendering avviene senza warn o errori
+    // if entries.is_empty() {
+    //     return Err(SemanticError::MissingOptionalArgEntries);
+    // }
 
     Ok(OptionalArgNode { entries })
 }
@@ -294,7 +325,7 @@ fn build_optional_arg(pair: Pair<Rule>) -> Result<OptionalArgNode, SemanticError
 // Una opt_entry può essere una kv_pair separati da spazi oppure un opt_item che può essere composto da { command | required_arg | newline | opt_text }
 // quindi possiamo avere una lista di coppie valori insieme ad un testo, opportunamente separati da una virgola
 // opt_entry = { (WHITE_SPACE* ~ kv_pair ~ WHITE_SPACE*) | opt_item+ }
-fn build_opt_entry(pair: Pair<Rule>) -> Result<OptionalEntryNode, SemanticError> {
+fn build_opt_entry(cmd_name: &str, pair: Pair<Rule>) -> Result<OptionalEntryNode, SemanticError> {
     let first_rule = pair.clone().into_inner().next().map(|p| p.as_rule());
 
     match first_rule {
@@ -304,9 +335,10 @@ fn build_opt_entry(pair: Pair<Rule>) -> Result<OptionalEntryNode, SemanticError>
         }
         Some(Rule::opt_item) => {
             let items: Result<Vec<OptItemNode>, SemanticError> =
-                pair.into_inner().map(build_opt_item).collect();
+                pair.into_inner().map(|p| build_opt_item(cmd_name, p)).collect();
             Ok(OptionalEntryNode::Items(items?))
         }
+
         Some(other) => Err(SemanticError::UnexpectedOptionalEntryRule(other)),
         None => Err(SemanticError::MissingOptionalEntryItems),
     }
@@ -325,6 +357,7 @@ fn build_kv_pair(pair: Pair<Rule>) -> Result<KvPairNode, SemanticError> {
         match child.as_rule() {
             Rule::key => key = Some(child.as_str().to_string()), // strina
             Rule::value => value = Some(build_value(child)?), // stringa semplice o lista di valori tra {,}
+
             other => return Err(SemanticError::UnexpectedRule(other)),
         }
     }
@@ -356,6 +389,7 @@ fn build_value(pair: Pair<Rule>) -> Result<OptValueNode, SemanticError> {
                 .collect();
             Ok(OptValueNode::List(sub_values))
         }
+
         other => Err(SemanticError::UnexpectedRule(other)),
     }
 }
@@ -363,7 +397,7 @@ fn build_value(pair: Pair<Rule>) -> Result<OptValueNode, SemanticError> {
 // Un optional item é un nodo presente solo negli optional argument e può essere composto da una serie di comandi, {}, \n o opt_text
 // opt_text, é differente da arg_text, infatti opt_text = { (!("\\" | "[" | "]" | NEWLINE) ~ ANY)+ }, quindi non può iniziare con altre [] o nuove linee
 // opt_item = { command | required_arg | newline | opt_text }
-fn build_opt_item(pair: Pair<Rule>) -> Result<OptItemNode, SemanticError> {
+fn build_opt_item(cmd_name: &str, pair: Pair<Rule>) -> Result<OptItemNode, SemanticError> {
     let child = pair
         .into_inner()
         .next()
@@ -371,9 +405,10 @@ fn build_opt_item(pair: Pair<Rule>) -> Result<OptItemNode, SemanticError> {
 
     match child.as_rule() {
         Rule::command => Ok(OptItemNode::Command(build_command(child)?)),
-        Rule::required_arg => Ok(OptItemNode::Group(build_required_arg(child)?)),
+        Rule::required_arg => Ok(OptItemNode::Group(build_required_arg(cmd_name, child)?)),
         Rule::newlines => Ok(OptItemNode::Newlines(build_newlines(child)?)),
         Rule::opt_text => Ok(OptItemNode::Text(build_text(child)?)), // usiamo la stessa funzione per buildare tanto é sempre testo
+
         other => Err(SemanticError::UnexpectedOptItemRule(other)),
     }
 }

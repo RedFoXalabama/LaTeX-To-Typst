@@ -5,6 +5,219 @@ AstDocument {
                 value: "\u{feff}",
             },
         ),
+        Comment(
+            CommentNode {
+                value: "%\\begin{}",
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Comment(
+            CommentNode {
+                value: "%\\end{}",
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 2,
+            },
+        ),
+        Comment(
+            CommentNode {
+                value: "%\\begin{document}",
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Comment(
+            CommentNode {
+                value: "%    Contenuto del documento",
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 2,
+            },
+        ),
+        Comment(
+            CommentNode {
+                value: "%\\begin{document}",
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Comment(
+            CommentNode {
+                value: "%    Contenuto",
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Comment(
+            CommentNode {
+                value: "%\\end{article}",
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 2,
+            },
+        ),
+        Comment(
+            CommentNode {
+                value: "%\\ test",
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 2,
+            },
+        ),
+        Comment(
+            CommentNode {
+                value: "%\\textbf{testo non chiuso % rompe il documento",
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 2,
+            },
+        ),
+        Comment(
+            CommentNode {
+                value: "%\\begin{document123}",
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Comment(
+            CommentNode {
+                value: "%\\end{document123}",
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 2,
+            },
+        ),
+        Command(
+            CommandNode {
+                name: "usepackage",
+                optional_args: [
+                    OptionalArgNode {
+                        entries: [
+                            KeyValue(
+                                KvPairNode {
+                                    key: "key",
+                                    value: Simple(
+                                        "{value non chiuso",
+                                    ),
+                                },
+                            ),
+                        ],
+                    },
+                ],
+                required_args: [
+                    RequiredArgNode {
+                        items: [
+                            Text(
+                                TextNode {
+                                    value: "geometry",
+                                },
+                            ),
+                        ],
+                    },
+                ],
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 2,
+            },
+        ),
+        Block(
+            BlockNode {
+                name: "unknown",
+                required_args: [],
+                optional_args: [],
+                items: [
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "    contenuto",
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                ],
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 2,
+            },
+        ),
+        Command(
+            CommandNode {
+                name: "includegraphics",
+                optional_args: [],
+                required_args: [],
+            },
+        ),
+        Text(
+            TextNode {
+                value: "[width=5cm testo ",
+            },
+        ),
+        Comment(
+            CommentNode {
+                value: "% non rompe il documento",
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 2,
+            },
+        ),
+        Command(
+            CommandNode {
+                name: "command",
+                optional_args: [],
+                required_args: [],
+            },
+        ),
+        Text(
+            TextNode {
+                value: "123 test",
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 2,
+            },
+        ),
         Command(
             CommandNode {
                 name: "usepackage",

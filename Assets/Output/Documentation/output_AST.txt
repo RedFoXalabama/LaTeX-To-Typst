@@ -201,50 +201,6 @@ AstDocument {
                     ),
                     Command(
                         CommandNode {
-                            name: "chapter",
-                            optional_args: [],
-                            required_args: [
-                                RequiredArgNode {
-                                    items: [
-                                        Text(
-                                            TextNode {
-                                                value: "Capitolo prova",
-                                            },
-                                        ),
-                                    ],
-                                },
-                            ],
-                        },
-                    ),
-                    Newlines(
-                        NewlinesNode {
-                            count: 1,
-                        },
-                    ),
-                    Command(
-                        CommandNode {
-                            name: "agagag",
-                            optional_args: [],
-                            required_args: [
-                                RequiredArgNode {
-                                    items: [
-                                        Text(
-                                            TextNode {
-                                                value: "fpa",
-                                            },
-                                        ),
-                                    ],
-                                },
-                            ],
-                        },
-                    ),
-                    Newlines(
-                        NewlinesNode {
-                            count: 2,
-                        },
-                    ),
-                    Command(
-                        CommandNode {
                             name: "section",
                             optional_args: [],
                             required_args: [
@@ -553,7 +509,13 @@ AstDocument {
                                         optional_args: [],
                                         required_args: [
                                             RequiredArgNode {
-                                                items: [],
+                                                items: [
+                                                    Text(
+                                                        TextNode {
+                                                            value: "struttura progetto",
+                                                        },
+                                                    ),
+                                                ],
                                             },
                                         ],
                                     },
@@ -3451,7 +3413,7 @@ AstDocument {
                     ),
                     Newlines(
                         NewlinesNode {
-                            count: 2,
+                            count: 3,
                         },
                     ),
                 ],

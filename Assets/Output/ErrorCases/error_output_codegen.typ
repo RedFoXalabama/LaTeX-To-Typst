@@ -1,4 +1,31 @@
-﻿/*ERROR: NOT-YET-IMPLEMENTED \usepackage{amsmath}*/ // PACCHETTO NON ANCORA IMPLEMENTATO
+﻿//\begin{}
+//\end{}
+
+//\begin{document}
+//    Contenuto del documento
+
+//\begin{document}
+//    Contenuto
+//\end{article}
+
+//\ test
+
+//\textbf{testo non chiuso % rompe il documento
+
+//\begin{document123}
+//\end{document123}
+
+/*ERROR: NOT-YET-IMPLEMENTED \usepackage{geometry}*/
+
+
+    contenuto
+
+
+/*ERROR: WRONG-COMMAND OR NOT-IMPLEMENTED \includegraphics{}*/[width=5cm testo // non rompe il documento
+
+/*ERROR: WRONG-COMMAND OR NOT-IMPLEMENTED \command{}*/123 test
+
+/*ERROR: NOT-YET-IMPLEMENTED \usepackage{amsmath}*/ // PACCHETTO NON ANCORA IMPLEMENTATO
 /*ERROR: NOT-YET-IMPLEMENTED \usepackage{geometry}*/
 /*ERROR: NOT-YET-IMPLEMENTED \usepackage{babel}*/
 /*ERROR: NOT-YET-IMPLEMENTED \usepackage{tikz}*/

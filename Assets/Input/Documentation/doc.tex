@@ -12,9 +12,6 @@
 \maketitle
 \tableofcontents
 
-\chapter{Capitolo prova}
-\agagag{fpa}
-
 \section{Introduction}
 
 \subsection{Contesto dello sviluppo}
@@ -30,7 +27,7 @@ La struttura del progetto é abbastanza lineare, prendiamo in input il file LaTe
 \begin{figure}
     \centering
     \includegraphics[width=0.5\linewidth]{Latex2Typst.png}
-    \caption{}
+    \caption{struttura progetto}
     \label{fig:placeholder}
 \end{figure}
 
@@ -139,5 +136,6 @@ pub(crate) fn render_text(text_node: &TextNode) -> String {
 }
 \end{lstlisting}
 Differentemente per situazioni più complesse come i blocchi ed i comandi é stata implementata un hashmap, denominata \textbf{TransMap}, in cui la chiave é rappresentata dal nome del commando e il valore la specifica funzione per trattarlo.
+
 
 \end{document}

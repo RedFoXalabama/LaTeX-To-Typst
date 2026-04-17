@@ -31,9 +31,16 @@ fn env_flag(name: &str) -> bool {
 }
 
 // ------------------------------ MAIN EXECUTION ---------------------------------------------------
-fn main() -> Result<(), Box<dyn std::error::Error>> {
+fn main() {
     env_logger::init(); // EVENT LOGGER PER GLI ERRORI
 
+    if let Err(err) = run() {
+        eprintln!("{}", err);
+        std::process::exit(1);
+    }
+}
+
+fn run() -> Result<(), Box<dyn std::error::Error>> {
     // ----------------------------------- RENDERING DOC -------------------------------------------
     if env_flag("RUN_DOC_CASE") {
         translate_file(
@@ -50,8 +57,10 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
             "Assets/Input/TestCases",
             "Assets/Output/TestCases",
         )?;
+    }
 
-
+    // ------------------------------- RENDERING ERROR CASE ----------------------------------------
+    if env_flag("ERROR_CASES") {
         translate_file(
             ERROR_DOC_PATH,
             ERROR_DOC_PARSETREE_PATH,

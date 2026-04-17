@@ -49,9 +49,6 @@
 #v(2em)
 #outline()
 
-/*ERROR: NOT-YET-IMPLEMENTED \chapter{Capitolo prova}*/
-/*ERROR: WRONG-COMMAND OR NOT-IMPLEMENTED \agagag{fpa}*/
-
 = Introduction
 
 
@@ -70,7 +67,7 @@ Il software é stato scritto in linguaggio RUST per poter sfruttare la potenzial
 La struttura del progetto é abbastanza lineare, prendiamo in input il file LaTeX ed ogni componente dà in input il proprio output alla successiva, i vari passaggi possono essere rappresentati cosi:
 #context figure(
   image("Latex2Typst.png", width: 50%),
-  caption: [Qui va la tua didascalia],
+  caption: [struttura progetto],
 ) <fig-placeholder>
 
 == Analisi Sintattica - Parsing
@@ -174,5 +171,6 @@ pub(crate) fn render_text(text_node: &TextNode) -> String {
 }
 ```
 Differentemente per situazioni più complesse come i blocchi ed i comandi é stata implementata un hashmap, denominata *TransMap*, in cui la chiave é rappresentata dal nome del commando e il valore la specifica funzione per trattarlo.
+
 
 

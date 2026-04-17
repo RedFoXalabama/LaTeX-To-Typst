@@ -31,7 +31,7 @@ pub fn build_ast(mut pairs: Pairs<Rule>) -> Result<AstDocument, SemanticError> {
     if file_pair.as_rule() != Rule::file {
         return Err(SemanticError::UnexpectedRule(file_pair.as_rule()));
     }
-    println!("ANALISI DOCUMENTO PARSATO");
+    println!("2. ParseTree ==> Starting AST construction...");
 
     build_document(file_pair)
 }

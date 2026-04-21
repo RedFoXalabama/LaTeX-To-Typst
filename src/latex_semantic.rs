@@ -1,7 +1,7 @@
 mod ast_structure;
 mod reqarg_map;
 
-use log::warn;
+use log::{error, warn};
 pub use ast_structure::*; //importo tutte le strutture e gli enumerati che compongono l'AST
 
 use crate::latex_parser::Rule;
@@ -166,7 +166,7 @@ fn build_command(pair: Pair<Rule>) -> Result<CommandNode, SemanticError> {
 
     if let Some(expected) = reqarg_count(&name) {
         if required_args.len() < expected as usize {
-            warn!("Comando \\{}: expected {} required arguments, found {}", name, expected, required_args.len());
+            error!("Comando \\{}: expected {} required arguments, found {}", name, expected, required_args.len());
 
             return Err(SemanticError::MissingRequiredArgItems);
         }

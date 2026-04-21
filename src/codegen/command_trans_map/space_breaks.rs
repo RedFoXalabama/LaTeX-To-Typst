@@ -12,7 +12,7 @@ pub fn render_space_breaks(name: &str, reqs: Vec<RequiredArgNode>, _opts: Vec<Op
         "pagebreak" | "newpage" | "clearpage" => out.push_str("#pagebreak()"),
 
         _ => {
-            let error_msg = format!("ERROR: NOT-YET-IMPLEMENTED \\{}{{{}}}", name, reqs.iter().map(|r| render_args_item(&r.items)).collect::<Vec<_>>().join("}{"));
+            let error_msg = format!("ERROR: NOT-IMPLEMENTED \\{}{{{}}}", name, reqs.iter().map(|r| render_args_item(&r.items)).collect::<Vec<_>>().join("}{"));
             warn!("==> {}", error_msg);
             out.push_str(format!("/*{}*/",error_msg).as_str());
         },

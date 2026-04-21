@@ -14,13 +14,13 @@ pub fn render_formatting(name: &str, reqs: Vec<RequiredArgNode>, _opts: Vec<Opti
             "underline" => out.push_str(&format!("#underline[{}]", render_args_item(&first.items))),
 
             _ => {
-                let error_msg = format!("ERROR: NOT-YET-IMPLEMENTED \\{}{{{}}}", name, reqs.iter().map(|r| render_args_item(&r.items)).collect::<Vec<_>>().join("}{"));
+                let error_msg = format!("ERROR: NOT-IMPLEMENTED \\{}{{{}}}", name, reqs.iter().map(|r| render_args_item(&r.items)).collect::<Vec<_>>().join("}{"));
                 warn!("==> {}", error_msg);
                 out.push_str(format!("/*{}*/",error_msg).as_str());
             },
         }
     }
-
+    out.push_str(&out_of_bounds_reqs_arg(&reqs, 1));
     out
 }
 

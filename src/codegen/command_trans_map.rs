@@ -182,7 +182,7 @@ fn get_trans_map() -> &'static HashMap<&'static str, CommandTranslationFn> {
 fn out_of_bounds_reqs_arg(reqs: &[RequiredArgNode], start: usize) -> String {
     let mut extra = String::new();
     for req in reqs.iter().skip(start) {
-        extra.push_str(&render_args_item(&req.items));
+        extra.push_str(format!(" {}", &render_args_item(&req.items)).as_str());
     }
     extra
 }

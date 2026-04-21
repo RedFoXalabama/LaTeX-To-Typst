@@ -117,6 +117,22 @@ AstDocument {
         ),
         Command(
             CommandNode {
+                name: "textbf",
+                optional_args: [],
+                required_args: [
+                    RequiredArgNode {
+                        items: [],
+                    },
+                ],
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 2,
+            },
+        ),
+        Command(
+            CommandNode {
                 name: "usepackage",
                 optional_args: [
                     OptionalArgNode {

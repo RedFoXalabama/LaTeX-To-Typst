@@ -1,0 +1,444 @@
+[
+    Pair {
+        rule: file,
+        span: Span {
+            str: "\u{feff}\\textbf{Bold}\r\n\\textit{italic}\r\n\\underline{underline}\r\n\r\n\\textcolor{blue}{This is \\textbf{bold and blue}.}",
+            range: 0..109,
+        },
+        inner: [
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\u{feff}",
+                    range: 0..3,
+                },
+                inner: [
+                    Pair {
+                        rule: text,
+                        span: Span {
+                            str: "\u{feff}",
+                            range: 0..3,
+                        },
+                        inner: [],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\\textbf{Bold}",
+                    range: 3..16,
+                },
+                inner: [
+                    Pair {
+                        rule: command,
+                        span: Span {
+                            str: "\\textbf{Bold}",
+                            range: 3..16,
+                        },
+                        inner: [
+                            Pair {
+                                rule: name,
+                                span: Span {
+                                    str: "textbf",
+                                    range: 4..10,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: required_arg,
+                                span: Span {
+                                    str: "{Bold}",
+                                    range: 10..16,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: argument,
+                                        span: Span {
+                                            str: "Bold",
+                                            range: 11..15,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: arg_item,
+                                                span: Span {
+                                                    str: "Bold",
+                                                    range: 11..15,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: arg_text,
+                                                        span: Span {
+                                                            str: "Bold",
+                                                            range: 11..15,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\r\n",
+                    range: 16..18,
+                },
+                inner: [
+                    Pair {
+                        rule: newlines,
+                        span: Span {
+                            str: "\r\n",
+                            range: 16..18,
+                        },
+                        inner: [],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\\textit{italic}",
+                    range: 18..33,
+                },
+                inner: [
+                    Pair {
+                        rule: command,
+                        span: Span {
+                            str: "\\textit{italic}",
+                            range: 18..33,
+                        },
+                        inner: [
+                            Pair {
+                                rule: name,
+                                span: Span {
+                                    str: "textit",
+                                    range: 19..25,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: required_arg,
+                                span: Span {
+                                    str: "{italic}",
+                                    range: 25..33,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: argument,
+                                        span: Span {
+                                            str: "italic",
+                                            range: 26..32,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: arg_item,
+                                                span: Span {
+                                                    str: "italic",
+                                                    range: 26..32,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: arg_text,
+                                                        span: Span {
+                                                            str: "italic",
+                                                            range: 26..32,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\r\n",
+                    range: 33..35,
+                },
+                inner: [
+                    Pair {
+                        rule: newlines,
+                        span: Span {
+                            str: "\r\n",
+                            range: 33..35,
+                        },
+                        inner: [],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\\underline{underline}",
+                    range: 35..56,
+                },
+                inner: [
+                    Pair {
+                        rule: command,
+                        span: Span {
+                            str: "\\underline{underline}",
+                            range: 35..56,
+                        },
+                        inner: [
+                            Pair {
+                                rule: name,
+                                span: Span {
+                                    str: "underline",
+                                    range: 36..45,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: required_arg,
+                                span: Span {
+                                    str: "{underline}",
+                                    range: 45..56,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: argument,
+                                        span: Span {
+                                            str: "underline",
+                                            range: 46..55,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: arg_item,
+                                                span: Span {
+                                                    str: "underline",
+                                                    range: 46..55,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: arg_text,
+                                                        span: Span {
+                                                            str: "underline",
+                                                            range: 46..55,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\r\n\r\n",
+                    range: 56..60,
+                },
+                inner: [
+                    Pair {
+                        rule: newlines,
+                        span: Span {
+                            str: "\r\n\r\n",
+                            range: 56..60,
+                        },
+                        inner: [],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\\textcolor{blue}{This is \\textbf{bold and blue}.}",
+                    range: 60..109,
+                },
+                inner: [
+                    Pair {
+                        rule: command,
+                        span: Span {
+                            str: "\\textcolor{blue}{This is \\textbf{bold and blue}.}",
+                            range: 60..109,
+                        },
+                        inner: [
+                            Pair {
+                                rule: name,
+                                span: Span {
+                                    str: "textcolor",
+                                    range: 61..70,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: required_arg,
+                                span: Span {
+                                    str: "{blue}",
+                                    range: 70..76,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: argument,
+                                        span: Span {
+                                            str: "blue",
+                                            range: 71..75,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: arg_item,
+                                                span: Span {
+                                                    str: "blue",
+                                                    range: 71..75,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: arg_text,
+                                                        span: Span {
+                                                            str: "blue",
+                                                            range: 71..75,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                            Pair {
+                                rule: required_arg,
+                                span: Span {
+                                    str: "{This is \\textbf{bold and blue}.}",
+                                    range: 76..109,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: argument,
+                                        span: Span {
+                                            str: "This is \\textbf{bold and blue}.",
+                                            range: 77..108,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: arg_item,
+                                                span: Span {
+                                                    str: "This is ",
+                                                    range: 77..85,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: arg_text,
+                                                        span: Span {
+                                                            str: "This is ",
+                                                            range: 77..85,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                ],
+                                            },
+                                            Pair {
+                                                rule: arg_item,
+                                                span: Span {
+                                                    str: "\\textbf{bold and blue}",
+                                                    range: 85..107,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: command,
+                                                        span: Span {
+                                                            str: "\\textbf{bold and blue}",
+                                                            range: 85..107,
+                                                        },
+                                                        inner: [
+                                                            Pair {
+                                                                rule: name,
+                                                                span: Span {
+                                                                    str: "textbf",
+                                                                    range: 86..92,
+                                                                },
+                                                                inner: [],
+                                                            },
+                                                            Pair {
+                                                                rule: required_arg,
+                                                                span: Span {
+                                                                    str: "{bold and blue}",
+                                                                    range: 92..107,
+                                                                },
+                                                                inner: [
+                                                                    Pair {
+                                                                        rule: argument,
+                                                                        span: Span {
+                                                                            str: "bold and blue",
+                                                                            range: 93..106,
+                                                                        },
+                                                                        inner: [
+                                                                            Pair {
+                                                                                rule: arg_item,
+                                                                                span: Span {
+                                                                                    str: "bold and blue",
+                                                                                    range: 93..106,
+                                                                                },
+                                                                                inner: [
+                                                                                    Pair {
+                                                                                        rule: arg_text,
+                                                                                        span: Span {
+                                                                                            str: "bold and blue",
+                                                                                            range: 93..106,
+                                                                                        },
+                                                                                        inner: [],
+                                                                                    },
+                                                                                ],
+                                                                            },
+                                                                        ],
+                                                                    },
+                                                                ],
+                                                            },
+                                                        ],
+                                                    },
+                                                ],
+                                            },
+                                            Pair {
+                                                rule: arg_item,
+                                                span: Span {
+                                                    str: ".",
+                                                    range: 107..108,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: arg_text,
+                                                        span: Span {
+                                                            str: ".",
+                                                            range: 107..108,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                ],
+            },
+            Pair {
+                rule: EOI,
+                span: Span {
+                    str: "",
+                    range: 109..109,
+                },
+                inner: [],
+            },
+        ],
+    },
+]

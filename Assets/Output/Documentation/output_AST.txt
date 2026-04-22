@@ -1,0 +1,73 @@
+AstDocument {
+    items: [
+        Block(
+            BlockNode {
+                name: "verbatim",
+                required_args: [
+                    RequiredArgNode {
+                        items: [
+                            Text(
+                                TextNode {
+                                    value: "cccc",
+                                },
+                            ),
+                        ],
+                    },
+                ],
+                optional_args: [
+                    OptionalArgNode {
+                        entries: [
+                            Items(
+                                [
+                                    Text(
+                                        TextNode {
+                                            value: "dddd",
+                                        },
+                                    ),
+                                ],
+                            ),
+                        ],
+                    },
+                ],
+                items: [
+                    RawText(
+                        TextNode {
+                            value: "\n    prova\n",
+                        },
+                    ),
+                ],
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 2,
+            },
+        ),
+        Command(
+            CommandNode {
+                name: "textbf",
+                optional_args: [],
+                required_args: [
+                    RequiredArgNode {
+                        items: [
+                            Text(
+                                TextNode {
+                                    value: "fff",
+                                },
+                            ),
+                        ],
+                    },
+                    RequiredArgNode {
+                        items: [
+                            Text(
+                                TextNode {
+                                    value: "ddd",
+                                },
+                            ),
+                        ],
+                    },
+                ],
+            },
+        ),
+    ],
+}

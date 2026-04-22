@@ -1,0 +1,2232 @@
+AstDocument {
+    items: [
+        Text(
+            TextNode {
+                value: "\u{feff}",
+            },
+        ),
+        Block(
+            BlockNode {
+                name: "figure",
+                required_args: [],
+                optional_args: [
+                    OptionalArgNode {
+                        entries: [
+                            Items(
+                                [
+                                    Text(
+                                        TextNode {
+                                            value: "h",
+                                        },
+                                    ),
+                                ],
+                            ),
+                        ],
+                    },
+                ],
+                items: [
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "    ",
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "comandoerrato",
+                            optional_args: [],
+                            required_args: [
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "argomento inesistente",
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "    ",
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "centering",
+                            optional_args: [],
+                            required_args: [],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "    ",
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "includegraphics",
+                            optional_args: [
+                                OptionalArgNode {
+                                    entries: [
+                                        KeyValue(
+                                            KvPairNode {
+                                                key: "width",
+                                                value: Simple(
+                                                    "0.8\\textwidth",
+                                                ),
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                            required_args: [
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "Latex2Typst.png",
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "    ",
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "caption",
+                            optional_args: [],
+                            required_args: [
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "caption test",
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "    ",
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "label",
+                            optional_args: [],
+                            required_args: [
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "fig:placeholder",
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "    ",
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "prova",
+                            optional_args: [],
+                            required_args: [
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "argomento inesistente",
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                ],
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 2,
+            },
+        ),
+        Comment(
+            CommentNode {
+                value: "% 1) linewidth (caso base)",
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Block(
+            BlockNode {
+                name: "figure",
+                required_args: [],
+                optional_args: [
+                    OptionalArgNode {
+                        entries: [
+                            Items(
+                                [
+                                    Text(
+                                        TextNode {
+                                            value: "t",
+                                        },
+                                    ),
+                                ],
+                            ),
+                        ],
+                    },
+                ],
+                items: [
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "    ",
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "centering",
+                            optional_args: [],
+                            required_args: [],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "    ",
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "includegraphics",
+                            optional_args: [
+                                OptionalArgNode {
+                                    entries: [
+                                        KeyValue(
+                                            KvPairNode {
+                                                key: "width",
+                                                value: Simple(
+                                                    "0.5\\linewidth",
+                                                ),
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                            required_args: [
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "Latex2Typst.png",
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "    ",
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "caption",
+                            optional_args: [],
+                            required_args: [
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "test width=0.5/linewidth",
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "    ",
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "label",
+                            optional_args: [],
+                            required_args: [
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "fig:test-linewidth",
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                ],
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 2,
+            },
+        ),
+        Comment(
+            CommentNode {
+                value: "% 2) textwidth",
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Block(
+            BlockNode {
+                name: "figure",
+                required_args: [],
+                optional_args: [
+                    OptionalArgNode {
+                        entries: [
+                            Items(
+                                [
+                                    Text(
+                                        TextNode {
+                                            value: "b",
+                                        },
+                                    ),
+                                ],
+                            ),
+                        ],
+                    },
+                ],
+                items: [
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "    ",
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "centering",
+                            optional_args: [],
+                            required_args: [],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "    ",
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "includegraphics",
+                            optional_args: [
+                                OptionalArgNode {
+                                    entries: [
+                                        KeyValue(
+                                            KvPairNode {
+                                                key: "width",
+                                                value: Simple(
+                                                    "0.8\\textwidth",
+                                                ),
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                            required_args: [
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "Latex2Typst.png",
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "    ",
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "caption",
+                            optional_args: [],
+                            required_args: [
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "test width=0.8/textwidth",
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "    ",
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "label",
+                            optional_args: [],
+                            required_args: [
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "fig:test-textwidth",
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                ],
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 2,
+            },
+        ),
+        Comment(
+            CommentNode {
+                value: "% 3) columnwidth",
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Block(
+            BlockNode {
+                name: "figure",
+                required_args: [],
+                optional_args: [
+                    OptionalArgNode {
+                        entries: [
+                            Items(
+                                [
+                                    Text(
+                                        TextNode {
+                                            value: "H",
+                                        },
+                                    ),
+                                ],
+                            ),
+                        ],
+                    },
+                ],
+                items: [
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "    ",
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "centering",
+                            optional_args: [],
+                            required_args: [],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "    ",
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "includegraphics",
+                            optional_args: [
+                                OptionalArgNode {
+                                    entries: [
+                                        KeyValue(
+                                            KvPairNode {
+                                                key: "width",
+                                                value: Simple(
+                                                    "\\columnwidth",
+                                                ),
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                            required_args: [
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "Latex2Typst.png",
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "    ",
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "caption",
+                            optional_args: [],
+                            required_args: [
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "test width=columnwidth",
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "    ",
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "label",
+                            optional_args: [],
+                            required_args: [
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "fig:test-columnwidth",
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                ],
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 2,
+            },
+        ),
+        Comment(
+            CommentNode {
+                value: "% 4) paperwidth",
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Block(
+            BlockNode {
+                name: "figure",
+                required_args: [],
+                optional_args: [
+                    OptionalArgNode {
+                        entries: [
+                            Items(
+                                [
+                                    Text(
+                                        TextNode {
+                                            value: "p",
+                                        },
+                                    ),
+                                ],
+                            ),
+                        ],
+                    },
+                ],
+                items: [
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "    ",
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "centering",
+                            optional_args: [],
+                            required_args: [],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "    ",
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "includegraphics",
+                            optional_args: [
+                                OptionalArgNode {
+                                    entries: [
+                                        KeyValue(
+                                            KvPairNode {
+                                                key: "width",
+                                                value: Simple(
+                                                    "0.25\\paperwidth",
+                                                ),
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                            required_args: [
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "Latex2Typst.png",
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "    ",
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "caption",
+                            optional_args: [],
+                            required_args: [
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "test width=0.25/paperwidth",
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "    ",
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "label",
+                            optional_args: [],
+                            required_args: [
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "fig:test-paperwidth",
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                ],
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 2,
+            },
+        ),
+        Comment(
+            CommentNode {
+                value: "% 5) paperheight",
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Block(
+            BlockNode {
+                name: "figure",
+                required_args: [],
+                optional_args: [
+                    OptionalArgNode {
+                        entries: [
+                            Items(
+                                [
+                                    Text(
+                                        TextNode {
+                                            value: "!",
+                                        },
+                                    ),
+                                ],
+                            ),
+                        ],
+                    },
+                ],
+                items: [
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "    ",
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "centering",
+                            optional_args: [],
+                            required_args: [],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "    ",
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "includegraphics",
+                            optional_args: [
+                                OptionalArgNode {
+                                    entries: [
+                                        KeyValue(
+                                            KvPairNode {
+                                                key: "width",
+                                                value: Simple(
+                                                    "0.2\\paperheight",
+                                                ),
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                            required_args: [
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "Latex2Typst.png",
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "    ",
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "caption",
+                            optional_args: [],
+                            required_args: [
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "test width=0.2/paperheight",
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "    ",
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "label",
+                            optional_args: [],
+                            required_args: [
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "fig:test-paperheight",
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                ],
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 2,
+            },
+        ),
+        Comment(
+            CommentNode {
+                value: "% 6) textheight",
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Block(
+            BlockNode {
+                name: "figure",
+                required_args: [],
+                optional_args: [],
+                items: [
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "    ",
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "centering",
+                            optional_args: [],
+                            required_args: [],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "    ",
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "includegraphics",
+                            optional_args: [
+                                OptionalArgNode {
+                                    entries: [
+                                        KeyValue(
+                                            KvPairNode {
+                                                key: "width",
+                                                value: Simple(
+                                                    "0.15\\textheight",
+                                                ),
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                            required_args: [
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "Latex2Typst.png",
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "    ",
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "caption",
+                            optional_args: [],
+                            required_args: [
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "test width=0.15/textheight",
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "    ",
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "label",
+                            optional_args: [],
+                            required_args: [
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "fig:test-textheight",
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                ],
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 2,
+            },
+        ),
+        Comment(
+            CommentNode {
+                value: "% 7) columnsep",
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Block(
+            BlockNode {
+                name: "figure",
+                required_args: [],
+                optional_args: [],
+                items: [
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "    ",
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "centering",
+                            optional_args: [],
+                            required_args: [],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "    ",
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "includegraphics",
+                            optional_args: [
+                                OptionalArgNode {
+                                    entries: [
+                                        KeyValue(
+                                            KvPairNode {
+                                                key: "width",
+                                                value: Simple(
+                                                    "\\columnsep",
+                                                ),
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                            required_args: [
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "Latex2Typst.png",
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "    ",
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "caption",
+                            optional_args: [],
+                            required_args: [
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "test width=/columnsep",
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "    ",
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "label",
+                            optional_args: [],
+                            required_args: [
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "fig:test-columnsep",
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                ],
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 2,
+            },
+        ),
+        Comment(
+            CommentNode {
+                value: "% 8) unitlength",
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Block(
+            BlockNode {
+                name: "figure",
+                required_args: [],
+                optional_args: [],
+                items: [
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "    ",
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "centering",
+                            optional_args: [],
+                            required_args: [],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "    ",
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "includegraphics",
+                            optional_args: [
+                                OptionalArgNode {
+                                    entries: [
+                                        KeyValue(
+                                            KvPairNode {
+                                                key: "width",
+                                                value: Simple(
+                                                    "2\\unitlength",
+                                                ),
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                            required_args: [
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "Latex2Typst.png",
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "    ",
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "caption",
+                            optional_args: [],
+                            required_args: [
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "test width=2/unitlength",
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "    ",
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "label",
+                            optional_args: [],
+                            required_args: [
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "fig:test-unitlength",
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                ],
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 2,
+            },
+        ),
+        Comment(
+            CommentNode {
+                value: "% 9) pt",
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Block(
+            BlockNode {
+                name: "figure",
+                required_args: [],
+                optional_args: [],
+                items: [
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "    ",
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "centering",
+                            optional_args: [],
+                            required_args: [],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "    ",
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "includegraphics",
+                            optional_args: [
+                                OptionalArgNode {
+                                    entries: [
+                                        KeyValue(
+                                            KvPairNode {
+                                                key: "width",
+                                                value: Simple(
+                                                    "120pt",
+                                                ),
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                            required_args: [
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "Latex2Typst.png",
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "    ",
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "caption",
+                            optional_args: [],
+                            required_args: [
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "test width=120pt",
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "    ",
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "label",
+                            optional_args: [],
+                            required_args: [
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "fig:test-pt",
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                ],
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 2,
+            },
+        ),
+        Comment(
+            CommentNode {
+                value: "% 10) mm",
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Block(
+            BlockNode {
+                name: "figure",
+                required_args: [],
+                optional_args: [],
+                items: [
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "    ",
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "centering",
+                            optional_args: [],
+                            required_args: [],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "    ",
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "includegraphics",
+                            optional_args: [
+                                OptionalArgNode {
+                                    entries: [
+                                        KeyValue(
+                                            KvPairNode {
+                                                key: "width",
+                                                value: Simple(
+                                                    "35mm",
+                                                ),
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                            required_args: [
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "Latex2Typst.png",
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "    ",
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "caption",
+                            optional_args: [],
+                            required_args: [
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "test width=35mm",
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "    ",
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "label",
+                            optional_args: [],
+                            required_args: [
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "fig:test-mm",
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                ],
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 2,
+            },
+        ),
+        Comment(
+            CommentNode {
+                value: "% 11) cm",
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Block(
+            BlockNode {
+                name: "figure",
+                required_args: [],
+                optional_args: [],
+                items: [
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "    ",
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "centering",
+                            optional_args: [],
+                            required_args: [],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "    ",
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "includegraphics",
+                            optional_args: [
+                                OptionalArgNode {
+                                    entries: [
+                                        KeyValue(
+                                            KvPairNode {
+                                                key: "width",
+                                                value: Simple(
+                                                    "4cm",
+                                                ),
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                            required_args: [
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "Latex2Typst.png",
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "    ",
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "caption",
+                            optional_args: [],
+                            required_args: [
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "test width=4cm",
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "    ",
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "label",
+                            optional_args: [],
+                            required_args: [
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "fig:test-cm",
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                ],
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 2,
+            },
+        ),
+        Comment(
+            CommentNode {
+                value: "% 12) in",
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Block(
+            BlockNode {
+                name: "figure",
+                required_args: [],
+                optional_args: [],
+                items: [
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "    ",
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "centering",
+                            optional_args: [],
+                            required_args: [],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "    ",
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "includegraphics",
+                            optional_args: [
+                                OptionalArgNode {
+                                    entries: [
+                                        KeyValue(
+                                            KvPairNode {
+                                                key: "width",
+                                                value: Simple(
+                                                    "2in",
+                                                ),
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                            required_args: [
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "Latex2Typst.png",
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "    ",
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "caption",
+                            optional_args: [],
+                            required_args: [
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "test width=2in",
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "    ",
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "label",
+                            optional_args: [],
+                            required_args: [
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "fig:test-in",
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                ],
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 2,
+            },
+        ),
+        Comment(
+            CommentNode {
+                value: "% 13) em",
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Block(
+            BlockNode {
+                name: "figure",
+                required_args: [],
+                optional_args: [],
+                items: [
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "    ",
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "centering",
+                            optional_args: [],
+                            required_args: [],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "    ",
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "includegraphics",
+                            optional_args: [
+                                OptionalArgNode {
+                                    entries: [
+                                        KeyValue(
+                                            KvPairNode {
+                                                key: "width",
+                                                value: Simple(
+                                                    "18em",
+                                                ),
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                            required_args: [
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "Latex2Typst.png",
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "    ",
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "caption",
+                            optional_args: [],
+                            required_args: [
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "test width=18em",
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "    ",
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "label",
+                            optional_args: [],
+                            required_args: [
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "fig:test-em",
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                ],
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 2,
+            },
+        ),
+        Comment(
+            CommentNode {
+                value: "% 14) ex",
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Block(
+            BlockNode {
+                name: "figure",
+                required_args: [],
+                optional_args: [],
+                items: [
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "    ",
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "centering",
+                            optional_args: [],
+                            required_args: [],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "    ",
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "includegraphics",
+                            optional_args: [
+                                OptionalArgNode {
+                                    entries: [
+                                        KeyValue(
+                                            KvPairNode {
+                                                key: "width",
+                                                value: Simple(
+                                                    "20ex",
+                                                ),
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                            required_args: [
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "Latex2Typst.png",
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "    ",
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "caption",
+                            optional_args: [],
+                            required_args: [
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "test width=20ex",
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "    ",
+                        },
+                    ),
+                    Command(
+                        CommandNode {
+                            name: "label",
+                            optional_args: [],
+                            required_args: [
+                                RequiredArgNode {
+                                    items: [
+                                        Text(
+                                            TextNode {
+                                                value: "fig:test-ex",
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ],
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 1,
+                        },
+                    ),
+                ],
+            },
+        ),
+    ],
+}

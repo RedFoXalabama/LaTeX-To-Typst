@@ -1,0 +1,3022 @@
+[
+    Pair {
+        rule: file,
+        span: Span {
+            str: "\u{feff}\\documentclass{book}\r\n\r\n\\title{LaTeX To Typst}\r\n\\author{Gianfranco e Vito}\r\n\r\n\\date{\\today}\r\n\\date{31/12/2026}\r\n\\date{2026/12/31}\r\n\\date{12/31/2026}\r\n\\date{31-12-2026}\r\n\\date{2026-12-31}\r\n\\date{12-31-2026}\r\n\\date{31.12.2026}\r\n\\date{2026.12.31}\r\n\\date{12.31.2026}\r\n\\date{31:12:2026}\r\n\\date{2026:12:31}\r\n\\date{12:31:2026}\r\n\\date{31 12 2026}\r\n\\date{2026 12 31}\r\n\\date{12 31 2026}\r\n\\date{20261231}\r\n\\date{31122026}\r\n\\date{12312026}\r\n\\date{31 December 2026}\r\n\\date{December 31 2026}\r\n\\date{31 Dec 2026}\r\n\\date{Dec 31 2026}\r\n\r\n\\begin{document}\r\n    \\maketitle\r\n    \\tableofcontents\r\n\r\n    \\part{part 1}\r\n    \\part{part 2}\r\n    \\chapter{chapter}\r\n    \\section{section}\r\n    \\subsection{subsection}\r\n    \\subsubsection{subsubsection}\r\n    \\paragraph{paragraph}\r\n    \\subparagraph{subparagraph}\r\n\r\n\\end{document}\r\n",
+            range: 0..808,
+        },
+        inner: [
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\u{feff}",
+                    range: 0..3,
+                },
+                inner: [
+                    Pair {
+                        rule: text,
+                        span: Span {
+                            str: "\u{feff}",
+                            range: 0..3,
+                        },
+                        inner: [],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\\documentclass{book}",
+                    range: 3..23,
+                },
+                inner: [
+                    Pair {
+                        rule: command,
+                        span: Span {
+                            str: "\\documentclass{book}",
+                            range: 3..23,
+                        },
+                        inner: [
+                            Pair {
+                                rule: name,
+                                span: Span {
+                                    str: "documentclass",
+                                    range: 4..17,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: required_arg,
+                                span: Span {
+                                    str: "{book}",
+                                    range: 17..23,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: argument,
+                                        span: Span {
+                                            str: "book",
+                                            range: 18..22,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: arg_item,
+                                                span: Span {
+                                                    str: "book",
+                                                    range: 18..22,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: arg_text,
+                                                        span: Span {
+                                                            str: "book",
+                                                            range: 18..22,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\r\n\r\n",
+                    range: 23..27,
+                },
+                inner: [
+                    Pair {
+                        rule: newlines,
+                        span: Span {
+                            str: "\r\n\r\n",
+                            range: 23..27,
+                        },
+                        inner: [],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\\title{LaTeX To Typst}",
+                    range: 27..49,
+                },
+                inner: [
+                    Pair {
+                        rule: command,
+                        span: Span {
+                            str: "\\title{LaTeX To Typst}",
+                            range: 27..49,
+                        },
+                        inner: [
+                            Pair {
+                                rule: name,
+                                span: Span {
+                                    str: "title",
+                                    range: 28..33,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: required_arg,
+                                span: Span {
+                                    str: "{LaTeX To Typst}",
+                                    range: 33..49,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: argument,
+                                        span: Span {
+                                            str: "LaTeX To Typst",
+                                            range: 34..48,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: arg_item,
+                                                span: Span {
+                                                    str: "LaTeX To Typst",
+                                                    range: 34..48,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: arg_text,
+                                                        span: Span {
+                                                            str: "LaTeX To Typst",
+                                                            range: 34..48,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\r\n",
+                    range: 49..51,
+                },
+                inner: [
+                    Pair {
+                        rule: newlines,
+                        span: Span {
+                            str: "\r\n",
+                            range: 49..51,
+                        },
+                        inner: [],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\\author{Gianfranco e Vito}",
+                    range: 51..77,
+                },
+                inner: [
+                    Pair {
+                        rule: command,
+                        span: Span {
+                            str: "\\author{Gianfranco e Vito}",
+                            range: 51..77,
+                        },
+                        inner: [
+                            Pair {
+                                rule: name,
+                                span: Span {
+                                    str: "author",
+                                    range: 52..58,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: required_arg,
+                                span: Span {
+                                    str: "{Gianfranco e Vito}",
+                                    range: 58..77,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: argument,
+                                        span: Span {
+                                            str: "Gianfranco e Vito",
+                                            range: 59..76,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: arg_item,
+                                                span: Span {
+                                                    str: "Gianfranco e Vito",
+                                                    range: 59..76,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: arg_text,
+                                                        span: Span {
+                                                            str: "Gianfranco e Vito",
+                                                            range: 59..76,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\r\n\r\n",
+                    range: 77..81,
+                },
+                inner: [
+                    Pair {
+                        rule: newlines,
+                        span: Span {
+                            str: "\r\n\r\n",
+                            range: 77..81,
+                        },
+                        inner: [],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\\date{\\today}",
+                    range: 81..94,
+                },
+                inner: [
+                    Pair {
+                        rule: command,
+                        span: Span {
+                            str: "\\date{\\today}",
+                            range: 81..94,
+                        },
+                        inner: [
+                            Pair {
+                                rule: name,
+                                span: Span {
+                                    str: "date",
+                                    range: 82..86,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: required_arg,
+                                span: Span {
+                                    str: "{\\today}",
+                                    range: 86..94,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: argument,
+                                        span: Span {
+                                            str: "\\today",
+                                            range: 87..93,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: arg_item,
+                                                span: Span {
+                                                    str: "\\today",
+                                                    range: 87..93,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: command,
+                                                        span: Span {
+                                                            str: "\\today",
+                                                            range: 87..93,
+                                                        },
+                                                        inner: [
+                                                            Pair {
+                                                                rule: name,
+                                                                span: Span {
+                                                                    str: "today",
+                                                                    range: 88..93,
+                                                                },
+                                                                inner: [],
+                                                            },
+                                                        ],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\r\n",
+                    range: 94..96,
+                },
+                inner: [
+                    Pair {
+                        rule: newlines,
+                        span: Span {
+                            str: "\r\n",
+                            range: 94..96,
+                        },
+                        inner: [],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\\date{31/12/2026}",
+                    range: 96..113,
+                },
+                inner: [
+                    Pair {
+                        rule: command,
+                        span: Span {
+                            str: "\\date{31/12/2026}",
+                            range: 96..113,
+                        },
+                        inner: [
+                            Pair {
+                                rule: name,
+                                span: Span {
+                                    str: "date",
+                                    range: 97..101,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: required_arg,
+                                span: Span {
+                                    str: "{31/12/2026}",
+                                    range: 101..113,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: argument,
+                                        span: Span {
+                                            str: "31/12/2026",
+                                            range: 102..112,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: arg_item,
+                                                span: Span {
+                                                    str: "31/12/2026",
+                                                    range: 102..112,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: arg_text,
+                                                        span: Span {
+                                                            str: "31/12/2026",
+                                                            range: 102..112,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\r\n",
+                    range: 113..115,
+                },
+                inner: [
+                    Pair {
+                        rule: newlines,
+                        span: Span {
+                            str: "\r\n",
+                            range: 113..115,
+                        },
+                        inner: [],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\\date{2026/12/31}",
+                    range: 115..132,
+                },
+                inner: [
+                    Pair {
+                        rule: command,
+                        span: Span {
+                            str: "\\date{2026/12/31}",
+                            range: 115..132,
+                        },
+                        inner: [
+                            Pair {
+                                rule: name,
+                                span: Span {
+                                    str: "date",
+                                    range: 116..120,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: required_arg,
+                                span: Span {
+                                    str: "{2026/12/31}",
+                                    range: 120..132,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: argument,
+                                        span: Span {
+                                            str: "2026/12/31",
+                                            range: 121..131,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: arg_item,
+                                                span: Span {
+                                                    str: "2026/12/31",
+                                                    range: 121..131,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: arg_text,
+                                                        span: Span {
+                                                            str: "2026/12/31",
+                                                            range: 121..131,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\r\n",
+                    range: 132..134,
+                },
+                inner: [
+                    Pair {
+                        rule: newlines,
+                        span: Span {
+                            str: "\r\n",
+                            range: 132..134,
+                        },
+                        inner: [],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\\date{12/31/2026}",
+                    range: 134..151,
+                },
+                inner: [
+                    Pair {
+                        rule: command,
+                        span: Span {
+                            str: "\\date{12/31/2026}",
+                            range: 134..151,
+                        },
+                        inner: [
+                            Pair {
+                                rule: name,
+                                span: Span {
+                                    str: "date",
+                                    range: 135..139,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: required_arg,
+                                span: Span {
+                                    str: "{12/31/2026}",
+                                    range: 139..151,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: argument,
+                                        span: Span {
+                                            str: "12/31/2026",
+                                            range: 140..150,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: arg_item,
+                                                span: Span {
+                                                    str: "12/31/2026",
+                                                    range: 140..150,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: arg_text,
+                                                        span: Span {
+                                                            str: "12/31/2026",
+                                                            range: 140..150,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\r\n",
+                    range: 151..153,
+                },
+                inner: [
+                    Pair {
+                        rule: newlines,
+                        span: Span {
+                            str: "\r\n",
+                            range: 151..153,
+                        },
+                        inner: [],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\\date{31-12-2026}",
+                    range: 153..170,
+                },
+                inner: [
+                    Pair {
+                        rule: command,
+                        span: Span {
+                            str: "\\date{31-12-2026}",
+                            range: 153..170,
+                        },
+                        inner: [
+                            Pair {
+                                rule: name,
+                                span: Span {
+                                    str: "date",
+                                    range: 154..158,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: required_arg,
+                                span: Span {
+                                    str: "{31-12-2026}",
+                                    range: 158..170,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: argument,
+                                        span: Span {
+                                            str: "31-12-2026",
+                                            range: 159..169,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: arg_item,
+                                                span: Span {
+                                                    str: "31-12-2026",
+                                                    range: 159..169,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: arg_text,
+                                                        span: Span {
+                                                            str: "31-12-2026",
+                                                            range: 159..169,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\r\n",
+                    range: 170..172,
+                },
+                inner: [
+                    Pair {
+                        rule: newlines,
+                        span: Span {
+                            str: "\r\n",
+                            range: 170..172,
+                        },
+                        inner: [],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\\date{2026-12-31}",
+                    range: 172..189,
+                },
+                inner: [
+                    Pair {
+                        rule: command,
+                        span: Span {
+                            str: "\\date{2026-12-31}",
+                            range: 172..189,
+                        },
+                        inner: [
+                            Pair {
+                                rule: name,
+                                span: Span {
+                                    str: "date",
+                                    range: 173..177,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: required_arg,
+                                span: Span {
+                                    str: "{2026-12-31}",
+                                    range: 177..189,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: argument,
+                                        span: Span {
+                                            str: "2026-12-31",
+                                            range: 178..188,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: arg_item,
+                                                span: Span {
+                                                    str: "2026-12-31",
+                                                    range: 178..188,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: arg_text,
+                                                        span: Span {
+                                                            str: "2026-12-31",
+                                                            range: 178..188,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\r\n",
+                    range: 189..191,
+                },
+                inner: [
+                    Pair {
+                        rule: newlines,
+                        span: Span {
+                            str: "\r\n",
+                            range: 189..191,
+                        },
+                        inner: [],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\\date{12-31-2026}",
+                    range: 191..208,
+                },
+                inner: [
+                    Pair {
+                        rule: command,
+                        span: Span {
+                            str: "\\date{12-31-2026}",
+                            range: 191..208,
+                        },
+                        inner: [
+                            Pair {
+                                rule: name,
+                                span: Span {
+                                    str: "date",
+                                    range: 192..196,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: required_arg,
+                                span: Span {
+                                    str: "{12-31-2026}",
+                                    range: 196..208,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: argument,
+                                        span: Span {
+                                            str: "12-31-2026",
+                                            range: 197..207,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: arg_item,
+                                                span: Span {
+                                                    str: "12-31-2026",
+                                                    range: 197..207,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: arg_text,
+                                                        span: Span {
+                                                            str: "12-31-2026",
+                                                            range: 197..207,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\r\n",
+                    range: 208..210,
+                },
+                inner: [
+                    Pair {
+                        rule: newlines,
+                        span: Span {
+                            str: "\r\n",
+                            range: 208..210,
+                        },
+                        inner: [],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\\date{31.12.2026}",
+                    range: 210..227,
+                },
+                inner: [
+                    Pair {
+                        rule: command,
+                        span: Span {
+                            str: "\\date{31.12.2026}",
+                            range: 210..227,
+                        },
+                        inner: [
+                            Pair {
+                                rule: name,
+                                span: Span {
+                                    str: "date",
+                                    range: 211..215,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: required_arg,
+                                span: Span {
+                                    str: "{31.12.2026}",
+                                    range: 215..227,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: argument,
+                                        span: Span {
+                                            str: "31.12.2026",
+                                            range: 216..226,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: arg_item,
+                                                span: Span {
+                                                    str: "31.12.2026",
+                                                    range: 216..226,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: arg_text,
+                                                        span: Span {
+                                                            str: "31.12.2026",
+                                                            range: 216..226,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\r\n",
+                    range: 227..229,
+                },
+                inner: [
+                    Pair {
+                        rule: newlines,
+                        span: Span {
+                            str: "\r\n",
+                            range: 227..229,
+                        },
+                        inner: [],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\\date{2026.12.31}",
+                    range: 229..246,
+                },
+                inner: [
+                    Pair {
+                        rule: command,
+                        span: Span {
+                            str: "\\date{2026.12.31}",
+                            range: 229..246,
+                        },
+                        inner: [
+                            Pair {
+                                rule: name,
+                                span: Span {
+                                    str: "date",
+                                    range: 230..234,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: required_arg,
+                                span: Span {
+                                    str: "{2026.12.31}",
+                                    range: 234..246,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: argument,
+                                        span: Span {
+                                            str: "2026.12.31",
+                                            range: 235..245,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: arg_item,
+                                                span: Span {
+                                                    str: "2026.12.31",
+                                                    range: 235..245,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: arg_text,
+                                                        span: Span {
+                                                            str: "2026.12.31",
+                                                            range: 235..245,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\r\n",
+                    range: 246..248,
+                },
+                inner: [
+                    Pair {
+                        rule: newlines,
+                        span: Span {
+                            str: "\r\n",
+                            range: 246..248,
+                        },
+                        inner: [],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\\date{12.31.2026}",
+                    range: 248..265,
+                },
+                inner: [
+                    Pair {
+                        rule: command,
+                        span: Span {
+                            str: "\\date{12.31.2026}",
+                            range: 248..265,
+                        },
+                        inner: [
+                            Pair {
+                                rule: name,
+                                span: Span {
+                                    str: "date",
+                                    range: 249..253,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: required_arg,
+                                span: Span {
+                                    str: "{12.31.2026}",
+                                    range: 253..265,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: argument,
+                                        span: Span {
+                                            str: "12.31.2026",
+                                            range: 254..264,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: arg_item,
+                                                span: Span {
+                                                    str: "12.31.2026",
+                                                    range: 254..264,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: arg_text,
+                                                        span: Span {
+                                                            str: "12.31.2026",
+                                                            range: 254..264,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\r\n",
+                    range: 265..267,
+                },
+                inner: [
+                    Pair {
+                        rule: newlines,
+                        span: Span {
+                            str: "\r\n",
+                            range: 265..267,
+                        },
+                        inner: [],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\\date{31:12:2026}",
+                    range: 267..284,
+                },
+                inner: [
+                    Pair {
+                        rule: command,
+                        span: Span {
+                            str: "\\date{31:12:2026}",
+                            range: 267..284,
+                        },
+                        inner: [
+                            Pair {
+                                rule: name,
+                                span: Span {
+                                    str: "date",
+                                    range: 268..272,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: required_arg,
+                                span: Span {
+                                    str: "{31:12:2026}",
+                                    range: 272..284,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: argument,
+                                        span: Span {
+                                            str: "31:12:2026",
+                                            range: 273..283,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: arg_item,
+                                                span: Span {
+                                                    str: "31:12:2026",
+                                                    range: 273..283,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: arg_text,
+                                                        span: Span {
+                                                            str: "31:12:2026",
+                                                            range: 273..283,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\r\n",
+                    range: 284..286,
+                },
+                inner: [
+                    Pair {
+                        rule: newlines,
+                        span: Span {
+                            str: "\r\n",
+                            range: 284..286,
+                        },
+                        inner: [],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\\date{2026:12:31}",
+                    range: 286..303,
+                },
+                inner: [
+                    Pair {
+                        rule: command,
+                        span: Span {
+                            str: "\\date{2026:12:31}",
+                            range: 286..303,
+                        },
+                        inner: [
+                            Pair {
+                                rule: name,
+                                span: Span {
+                                    str: "date",
+                                    range: 287..291,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: required_arg,
+                                span: Span {
+                                    str: "{2026:12:31}",
+                                    range: 291..303,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: argument,
+                                        span: Span {
+                                            str: "2026:12:31",
+                                            range: 292..302,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: arg_item,
+                                                span: Span {
+                                                    str: "2026:12:31",
+                                                    range: 292..302,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: arg_text,
+                                                        span: Span {
+                                                            str: "2026:12:31",
+                                                            range: 292..302,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\r\n",
+                    range: 303..305,
+                },
+                inner: [
+                    Pair {
+                        rule: newlines,
+                        span: Span {
+                            str: "\r\n",
+                            range: 303..305,
+                        },
+                        inner: [],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\\date{12:31:2026}",
+                    range: 305..322,
+                },
+                inner: [
+                    Pair {
+                        rule: command,
+                        span: Span {
+                            str: "\\date{12:31:2026}",
+                            range: 305..322,
+                        },
+                        inner: [
+                            Pair {
+                                rule: name,
+                                span: Span {
+                                    str: "date",
+                                    range: 306..310,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: required_arg,
+                                span: Span {
+                                    str: "{12:31:2026}",
+                                    range: 310..322,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: argument,
+                                        span: Span {
+                                            str: "12:31:2026",
+                                            range: 311..321,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: arg_item,
+                                                span: Span {
+                                                    str: "12:31:2026",
+                                                    range: 311..321,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: arg_text,
+                                                        span: Span {
+                                                            str: "12:31:2026",
+                                                            range: 311..321,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\r\n",
+                    range: 322..324,
+                },
+                inner: [
+                    Pair {
+                        rule: newlines,
+                        span: Span {
+                            str: "\r\n",
+                            range: 322..324,
+                        },
+                        inner: [],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\\date{31 12 2026}",
+                    range: 324..341,
+                },
+                inner: [
+                    Pair {
+                        rule: command,
+                        span: Span {
+                            str: "\\date{31 12 2026}",
+                            range: 324..341,
+                        },
+                        inner: [
+                            Pair {
+                                rule: name,
+                                span: Span {
+                                    str: "date",
+                                    range: 325..329,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: required_arg,
+                                span: Span {
+                                    str: "{31 12 2026}",
+                                    range: 329..341,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: argument,
+                                        span: Span {
+                                            str: "31 12 2026",
+                                            range: 330..340,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: arg_item,
+                                                span: Span {
+                                                    str: "31 12 2026",
+                                                    range: 330..340,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: arg_text,
+                                                        span: Span {
+                                                            str: "31 12 2026",
+                                                            range: 330..340,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\r\n",
+                    range: 341..343,
+                },
+                inner: [
+                    Pair {
+                        rule: newlines,
+                        span: Span {
+                            str: "\r\n",
+                            range: 341..343,
+                        },
+                        inner: [],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\\date{2026 12 31}",
+                    range: 343..360,
+                },
+                inner: [
+                    Pair {
+                        rule: command,
+                        span: Span {
+                            str: "\\date{2026 12 31}",
+                            range: 343..360,
+                        },
+                        inner: [
+                            Pair {
+                                rule: name,
+                                span: Span {
+                                    str: "date",
+                                    range: 344..348,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: required_arg,
+                                span: Span {
+                                    str: "{2026 12 31}",
+                                    range: 348..360,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: argument,
+                                        span: Span {
+                                            str: "2026 12 31",
+                                            range: 349..359,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: arg_item,
+                                                span: Span {
+                                                    str: "2026 12 31",
+                                                    range: 349..359,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: arg_text,
+                                                        span: Span {
+                                                            str: "2026 12 31",
+                                                            range: 349..359,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\r\n",
+                    range: 360..362,
+                },
+                inner: [
+                    Pair {
+                        rule: newlines,
+                        span: Span {
+                            str: "\r\n",
+                            range: 360..362,
+                        },
+                        inner: [],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\\date{12 31 2026}",
+                    range: 362..379,
+                },
+                inner: [
+                    Pair {
+                        rule: command,
+                        span: Span {
+                            str: "\\date{12 31 2026}",
+                            range: 362..379,
+                        },
+                        inner: [
+                            Pair {
+                                rule: name,
+                                span: Span {
+                                    str: "date",
+                                    range: 363..367,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: required_arg,
+                                span: Span {
+                                    str: "{12 31 2026}",
+                                    range: 367..379,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: argument,
+                                        span: Span {
+                                            str: "12 31 2026",
+                                            range: 368..378,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: arg_item,
+                                                span: Span {
+                                                    str: "12 31 2026",
+                                                    range: 368..378,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: arg_text,
+                                                        span: Span {
+                                                            str: "12 31 2026",
+                                                            range: 368..378,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\r\n",
+                    range: 379..381,
+                },
+                inner: [
+                    Pair {
+                        rule: newlines,
+                        span: Span {
+                            str: "\r\n",
+                            range: 379..381,
+                        },
+                        inner: [],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\\date{20261231}",
+                    range: 381..396,
+                },
+                inner: [
+                    Pair {
+                        rule: command,
+                        span: Span {
+                            str: "\\date{20261231}",
+                            range: 381..396,
+                        },
+                        inner: [
+                            Pair {
+                                rule: name,
+                                span: Span {
+                                    str: "date",
+                                    range: 382..386,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: required_arg,
+                                span: Span {
+                                    str: "{20261231}",
+                                    range: 386..396,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: argument,
+                                        span: Span {
+                                            str: "20261231",
+                                            range: 387..395,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: arg_item,
+                                                span: Span {
+                                                    str: "20261231",
+                                                    range: 387..395,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: arg_text,
+                                                        span: Span {
+                                                            str: "20261231",
+                                                            range: 387..395,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\r\n",
+                    range: 396..398,
+                },
+                inner: [
+                    Pair {
+                        rule: newlines,
+                        span: Span {
+                            str: "\r\n",
+                            range: 396..398,
+                        },
+                        inner: [],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\\date{31122026}",
+                    range: 398..413,
+                },
+                inner: [
+                    Pair {
+                        rule: command,
+                        span: Span {
+                            str: "\\date{31122026}",
+                            range: 398..413,
+                        },
+                        inner: [
+                            Pair {
+                                rule: name,
+                                span: Span {
+                                    str: "date",
+                                    range: 399..403,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: required_arg,
+                                span: Span {
+                                    str: "{31122026}",
+                                    range: 403..413,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: argument,
+                                        span: Span {
+                                            str: "31122026",
+                                            range: 404..412,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: arg_item,
+                                                span: Span {
+                                                    str: "31122026",
+                                                    range: 404..412,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: arg_text,
+                                                        span: Span {
+                                                            str: "31122026",
+                                                            range: 404..412,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\r\n",
+                    range: 413..415,
+                },
+                inner: [
+                    Pair {
+                        rule: newlines,
+                        span: Span {
+                            str: "\r\n",
+                            range: 413..415,
+                        },
+                        inner: [],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\\date{12312026}",
+                    range: 415..430,
+                },
+                inner: [
+                    Pair {
+                        rule: command,
+                        span: Span {
+                            str: "\\date{12312026}",
+                            range: 415..430,
+                        },
+                        inner: [
+                            Pair {
+                                rule: name,
+                                span: Span {
+                                    str: "date",
+                                    range: 416..420,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: required_arg,
+                                span: Span {
+                                    str: "{12312026}",
+                                    range: 420..430,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: argument,
+                                        span: Span {
+                                            str: "12312026",
+                                            range: 421..429,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: arg_item,
+                                                span: Span {
+                                                    str: "12312026",
+                                                    range: 421..429,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: arg_text,
+                                                        span: Span {
+                                                            str: "12312026",
+                                                            range: 421..429,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\r\n",
+                    range: 430..432,
+                },
+                inner: [
+                    Pair {
+                        rule: newlines,
+                        span: Span {
+                            str: "\r\n",
+                            range: 430..432,
+                        },
+                        inner: [],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\\date{31 December 2026}",
+                    range: 432..455,
+                },
+                inner: [
+                    Pair {
+                        rule: command,
+                        span: Span {
+                            str: "\\date{31 December 2026}",
+                            range: 432..455,
+                        },
+                        inner: [
+                            Pair {
+                                rule: name,
+                                span: Span {
+                                    str: "date",
+                                    range: 433..437,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: required_arg,
+                                span: Span {
+                                    str: "{31 December 2026}",
+                                    range: 437..455,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: argument,
+                                        span: Span {
+                                            str: "31 December 2026",
+                                            range: 438..454,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: arg_item,
+                                                span: Span {
+                                                    str: "31 December 2026",
+                                                    range: 438..454,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: arg_text,
+                                                        span: Span {
+                                                            str: "31 December 2026",
+                                                            range: 438..454,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\r\n",
+                    range: 455..457,
+                },
+                inner: [
+                    Pair {
+                        rule: newlines,
+                        span: Span {
+                            str: "\r\n",
+                            range: 455..457,
+                        },
+                        inner: [],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\\date{December 31 2026}",
+                    range: 457..480,
+                },
+                inner: [
+                    Pair {
+                        rule: command,
+                        span: Span {
+                            str: "\\date{December 31 2026}",
+                            range: 457..480,
+                        },
+                        inner: [
+                            Pair {
+                                rule: name,
+                                span: Span {
+                                    str: "date",
+                                    range: 458..462,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: required_arg,
+                                span: Span {
+                                    str: "{December 31 2026}",
+                                    range: 462..480,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: argument,
+                                        span: Span {
+                                            str: "December 31 2026",
+                                            range: 463..479,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: arg_item,
+                                                span: Span {
+                                                    str: "December 31 2026",
+                                                    range: 463..479,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: arg_text,
+                                                        span: Span {
+                                                            str: "December 31 2026",
+                                                            range: 463..479,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\r\n",
+                    range: 480..482,
+                },
+                inner: [
+                    Pair {
+                        rule: newlines,
+                        span: Span {
+                            str: "\r\n",
+                            range: 480..482,
+                        },
+                        inner: [],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\\date{31 Dec 2026}",
+                    range: 482..500,
+                },
+                inner: [
+                    Pair {
+                        rule: command,
+                        span: Span {
+                            str: "\\date{31 Dec 2026}",
+                            range: 482..500,
+                        },
+                        inner: [
+                            Pair {
+                                rule: name,
+                                span: Span {
+                                    str: "date",
+                                    range: 483..487,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: required_arg,
+                                span: Span {
+                                    str: "{31 Dec 2026}",
+                                    range: 487..500,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: argument,
+                                        span: Span {
+                                            str: "31 Dec 2026",
+                                            range: 488..499,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: arg_item,
+                                                span: Span {
+                                                    str: "31 Dec 2026",
+                                                    range: 488..499,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: arg_text,
+                                                        span: Span {
+                                                            str: "31 Dec 2026",
+                                                            range: 488..499,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\r\n",
+                    range: 500..502,
+                },
+                inner: [
+                    Pair {
+                        rule: newlines,
+                        span: Span {
+                            str: "\r\n",
+                            range: 500..502,
+                        },
+                        inner: [],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\\date{Dec 31 2026}",
+                    range: 502..520,
+                },
+                inner: [
+                    Pair {
+                        rule: command,
+                        span: Span {
+                            str: "\\date{Dec 31 2026}",
+                            range: 502..520,
+                        },
+                        inner: [
+                            Pair {
+                                rule: name,
+                                span: Span {
+                                    str: "date",
+                                    range: 503..507,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: required_arg,
+                                span: Span {
+                                    str: "{Dec 31 2026}",
+                                    range: 507..520,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: argument,
+                                        span: Span {
+                                            str: "Dec 31 2026",
+                                            range: 508..519,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: arg_item,
+                                                span: Span {
+                                                    str: "Dec 31 2026",
+                                                    range: 508..519,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: arg_text,
+                                                        span: Span {
+                                                            str: "Dec 31 2026",
+                                                            range: 508..519,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\r\n\r\n",
+                    range: 520..524,
+                },
+                inner: [
+                    Pair {
+                        rule: newlines,
+                        span: Span {
+                            str: "\r\n\r\n",
+                            range: 520..524,
+                        },
+                        inner: [],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\\begin{document}\r\n    \\maketitle\r\n    \\tableofcontents\r\n\r\n    \\part{part 1}\r\n    \\part{part 2}\r\n    \\chapter{chapter}\r\n    \\section{section}\r\n    \\subsection{subsection}\r\n    \\subsubsection{subsubsection}\r\n    \\paragraph{paragraph}\r\n    \\subparagraph{subparagraph}\r\n\r\n\\end{document}",
+                    range: 524..806,
+                },
+                inner: [
+                    Pair {
+                        rule: block,
+                        span: Span {
+                            str: "\\begin{document}\r\n    \\maketitle\r\n    \\tableofcontents\r\n\r\n    \\part{part 1}\r\n    \\part{part 2}\r\n    \\chapter{chapter}\r\n    \\section{section}\r\n    \\subsection{subsection}\r\n    \\subsubsection{subsubsection}\r\n    \\paragraph{paragraph}\r\n    \\subparagraph{subparagraph}\r\n\r\n\\end{document}",
+                            range: 524..806,
+                        },
+                        inner: [
+                            Pair {
+                                rule: name,
+                                span: Span {
+                                    str: "document",
+                                    range: 531..539,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: content,
+                                span: Span {
+                                    str: "\r\n    \\maketitle\r\n    \\tableofcontents\r\n\r\n    \\part{part 1}\r\n    \\part{part 2}\r\n    \\chapter{chapter}\r\n    \\section{section}\r\n    \\subsection{subsection}\r\n    \\subsubsection{subsubsection}\r\n    \\paragraph{paragraph}\r\n    \\subparagraph{subparagraph}\r\n\r\n",
+                                    range: 540..792,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "\r\n",
+                                            range: 540..542,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: newlines,
+                                                span: Span {
+                                                    str: "\r\n",
+                                                    range: 540..542,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "    ",
+                                            range: 542..546,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: text,
+                                                span: Span {
+                                                    str: "    ",
+                                                    range: 542..546,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "\\maketitle",
+                                            range: 546..556,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: command,
+                                                span: Span {
+                                                    str: "\\maketitle",
+                                                    range: 546..556,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: name,
+                                                        span: Span {
+                                                            str: "maketitle",
+                                                            range: 547..556,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "\r\n",
+                                            range: 556..558,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: newlines,
+                                                span: Span {
+                                                    str: "\r\n",
+                                                    range: 556..558,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "    ",
+                                            range: 558..562,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: text,
+                                                span: Span {
+                                                    str: "    ",
+                                                    range: 558..562,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "\\tableofcontents",
+                                            range: 562..578,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: command,
+                                                span: Span {
+                                                    str: "\\tableofcontents",
+                                                    range: 562..578,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: name,
+                                                        span: Span {
+                                                            str: "tableofcontents",
+                                                            range: 563..578,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "\r\n\r\n",
+                                            range: 578..582,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: newlines,
+                                                span: Span {
+                                                    str: "\r\n\r\n",
+                                                    range: 578..582,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "    ",
+                                            range: 582..586,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: text,
+                                                span: Span {
+                                                    str: "    ",
+                                                    range: 582..586,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "\\part{part 1}",
+                                            range: 586..599,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: command,
+                                                span: Span {
+                                                    str: "\\part{part 1}",
+                                                    range: 586..599,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: name,
+                                                        span: Span {
+                                                            str: "part",
+                                                            range: 587..591,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                    Pair {
+                                                        rule: required_arg,
+                                                        span: Span {
+                                                            str: "{part 1}",
+                                                            range: 591..599,
+                                                        },
+                                                        inner: [
+                                                            Pair {
+                                                                rule: argument,
+                                                                span: Span {
+                                                                    str: "part 1",
+                                                                    range: 592..598,
+                                                                },
+                                                                inner: [
+                                                                    Pair {
+                                                                        rule: arg_item,
+                                                                        span: Span {
+                                                                            str: "part 1",
+                                                                            range: 592..598,
+                                                                        },
+                                                                        inner: [
+                                                                            Pair {
+                                                                                rule: arg_text,
+                                                                                span: Span {
+                                                                                    str: "part 1",
+                                                                                    range: 592..598,
+                                                                                },
+                                                                                inner: [],
+                                                                            },
+                                                                        ],
+                                                                    },
+                                                                ],
+                                                            },
+                                                        ],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "\r\n",
+                                            range: 599..601,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: newlines,
+                                                span: Span {
+                                                    str: "\r\n",
+                                                    range: 599..601,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "    ",
+                                            range: 601..605,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: text,
+                                                span: Span {
+                                                    str: "    ",
+                                                    range: 601..605,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "\\part{part 2}",
+                                            range: 605..618,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: command,
+                                                span: Span {
+                                                    str: "\\part{part 2}",
+                                                    range: 605..618,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: name,
+                                                        span: Span {
+                                                            str: "part",
+                                                            range: 606..610,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                    Pair {
+                                                        rule: required_arg,
+                                                        span: Span {
+                                                            str: "{part 2}",
+                                                            range: 610..618,
+                                                        },
+                                                        inner: [
+                                                            Pair {
+                                                                rule: argument,
+                                                                span: Span {
+                                                                    str: "part 2",
+                                                                    range: 611..617,
+                                                                },
+                                                                inner: [
+                                                                    Pair {
+                                                                        rule: arg_item,
+                                                                        span: Span {
+                                                                            str: "part 2",
+                                                                            range: 611..617,
+                                                                        },
+                                                                        inner: [
+                                                                            Pair {
+                                                                                rule: arg_text,
+                                                                                span: Span {
+                                                                                    str: "part 2",
+                                                                                    range: 611..617,
+                                                                                },
+                                                                                inner: [],
+                                                                            },
+                                                                        ],
+                                                                    },
+                                                                ],
+                                                            },
+                                                        ],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "\r\n",
+                                            range: 618..620,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: newlines,
+                                                span: Span {
+                                                    str: "\r\n",
+                                                    range: 618..620,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "    ",
+                                            range: 620..624,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: text,
+                                                span: Span {
+                                                    str: "    ",
+                                                    range: 620..624,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "\\chapter{chapter}",
+                                            range: 624..641,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: command,
+                                                span: Span {
+                                                    str: "\\chapter{chapter}",
+                                                    range: 624..641,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: name,
+                                                        span: Span {
+                                                            str: "chapter",
+                                                            range: 625..632,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                    Pair {
+                                                        rule: required_arg,
+                                                        span: Span {
+                                                            str: "{chapter}",
+                                                            range: 632..641,
+                                                        },
+                                                        inner: [
+                                                            Pair {
+                                                                rule: argument,
+                                                                span: Span {
+                                                                    str: "chapter",
+                                                                    range: 633..640,
+                                                                },
+                                                                inner: [
+                                                                    Pair {
+                                                                        rule: arg_item,
+                                                                        span: Span {
+                                                                            str: "chapter",
+                                                                            range: 633..640,
+                                                                        },
+                                                                        inner: [
+                                                                            Pair {
+                                                                                rule: arg_text,
+                                                                                span: Span {
+                                                                                    str: "chapter",
+                                                                                    range: 633..640,
+                                                                                },
+                                                                                inner: [],
+                                                                            },
+                                                                        ],
+                                                                    },
+                                                                ],
+                                                            },
+                                                        ],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "\r\n",
+                                            range: 641..643,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: newlines,
+                                                span: Span {
+                                                    str: "\r\n",
+                                                    range: 641..643,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "    ",
+                                            range: 643..647,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: text,
+                                                span: Span {
+                                                    str: "    ",
+                                                    range: 643..647,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "\\section{section}",
+                                            range: 647..664,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: command,
+                                                span: Span {
+                                                    str: "\\section{section}",
+                                                    range: 647..664,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: name,
+                                                        span: Span {
+                                                            str: "section",
+                                                            range: 648..655,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                    Pair {
+                                                        rule: required_arg,
+                                                        span: Span {
+                                                            str: "{section}",
+                                                            range: 655..664,
+                                                        },
+                                                        inner: [
+                                                            Pair {
+                                                                rule: argument,
+                                                                span: Span {
+                                                                    str: "section",
+                                                                    range: 656..663,
+                                                                },
+                                                                inner: [
+                                                                    Pair {
+                                                                        rule: arg_item,
+                                                                        span: Span {
+                                                                            str: "section",
+                                                                            range: 656..663,
+                                                                        },
+                                                                        inner: [
+                                                                            Pair {
+                                                                                rule: arg_text,
+                                                                                span: Span {
+                                                                                    str: "section",
+                                                                                    range: 656..663,
+                                                                                },
+                                                                                inner: [],
+                                                                            },
+                                                                        ],
+                                                                    },
+                                                                ],
+                                                            },
+                                                        ],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "\r\n",
+                                            range: 664..666,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: newlines,
+                                                span: Span {
+                                                    str: "\r\n",
+                                                    range: 664..666,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "    ",
+                                            range: 666..670,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: text,
+                                                span: Span {
+                                                    str: "    ",
+                                                    range: 666..670,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "\\subsection{subsection}",
+                                            range: 670..693,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: command,
+                                                span: Span {
+                                                    str: "\\subsection{subsection}",
+                                                    range: 670..693,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: name,
+                                                        span: Span {
+                                                            str: "subsection",
+                                                            range: 671..681,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                    Pair {
+                                                        rule: required_arg,
+                                                        span: Span {
+                                                            str: "{subsection}",
+                                                            range: 681..693,
+                                                        },
+                                                        inner: [
+                                                            Pair {
+                                                                rule: argument,
+                                                                span: Span {
+                                                                    str: "subsection",
+                                                                    range: 682..692,
+                                                                },
+                                                                inner: [
+                                                                    Pair {
+                                                                        rule: arg_item,
+                                                                        span: Span {
+                                                                            str: "subsection",
+                                                                            range: 682..692,
+                                                                        },
+                                                                        inner: [
+                                                                            Pair {
+                                                                                rule: arg_text,
+                                                                                span: Span {
+                                                                                    str: "subsection",
+                                                                                    range: 682..692,
+                                                                                },
+                                                                                inner: [],
+                                                                            },
+                                                                        ],
+                                                                    },
+                                                                ],
+                                                            },
+                                                        ],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "\r\n",
+                                            range: 693..695,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: newlines,
+                                                span: Span {
+                                                    str: "\r\n",
+                                                    range: 693..695,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "    ",
+                                            range: 695..699,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: text,
+                                                span: Span {
+                                                    str: "    ",
+                                                    range: 695..699,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "\\subsubsection{subsubsection}",
+                                            range: 699..728,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: command,
+                                                span: Span {
+                                                    str: "\\subsubsection{subsubsection}",
+                                                    range: 699..728,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: name,
+                                                        span: Span {
+                                                            str: "subsubsection",
+                                                            range: 700..713,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                    Pair {
+                                                        rule: required_arg,
+                                                        span: Span {
+                                                            str: "{subsubsection}",
+                                                            range: 713..728,
+                                                        },
+                                                        inner: [
+                                                            Pair {
+                                                                rule: argument,
+                                                                span: Span {
+                                                                    str: "subsubsection",
+                                                                    range: 714..727,
+                                                                },
+                                                                inner: [
+                                                                    Pair {
+                                                                        rule: arg_item,
+                                                                        span: Span {
+                                                                            str: "subsubsection",
+                                                                            range: 714..727,
+                                                                        },
+                                                                        inner: [
+                                                                            Pair {
+                                                                                rule: arg_text,
+                                                                                span: Span {
+                                                                                    str: "subsubsection",
+                                                                                    range: 714..727,
+                                                                                },
+                                                                                inner: [],
+                                                                            },
+                                                                        ],
+                                                                    },
+                                                                ],
+                                                            },
+                                                        ],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "\r\n",
+                                            range: 728..730,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: newlines,
+                                                span: Span {
+                                                    str: "\r\n",
+                                                    range: 728..730,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "    ",
+                                            range: 730..734,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: text,
+                                                span: Span {
+                                                    str: "    ",
+                                                    range: 730..734,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "\\paragraph{paragraph}",
+                                            range: 734..755,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: command,
+                                                span: Span {
+                                                    str: "\\paragraph{paragraph}",
+                                                    range: 734..755,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: name,
+                                                        span: Span {
+                                                            str: "paragraph",
+                                                            range: 735..744,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                    Pair {
+                                                        rule: required_arg,
+                                                        span: Span {
+                                                            str: "{paragraph}",
+                                                            range: 744..755,
+                                                        },
+                                                        inner: [
+                                                            Pair {
+                                                                rule: argument,
+                                                                span: Span {
+                                                                    str: "paragraph",
+                                                                    range: 745..754,
+                                                                },
+                                                                inner: [
+                                                                    Pair {
+                                                                        rule: arg_item,
+                                                                        span: Span {
+                                                                            str: "paragraph",
+                                                                            range: 745..754,
+                                                                        },
+                                                                        inner: [
+                                                                            Pair {
+                                                                                rule: arg_text,
+                                                                                span: Span {
+                                                                                    str: "paragraph",
+                                                                                    range: 745..754,
+                                                                                },
+                                                                                inner: [],
+                                                                            },
+                                                                        ],
+                                                                    },
+                                                                ],
+                                                            },
+                                                        ],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "\r\n",
+                                            range: 755..757,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: newlines,
+                                                span: Span {
+                                                    str: "\r\n",
+                                                    range: 755..757,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "    ",
+                                            range: 757..761,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: text,
+                                                span: Span {
+                                                    str: "    ",
+                                                    range: 757..761,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "\\subparagraph{subparagraph}",
+                                            range: 761..788,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: command,
+                                                span: Span {
+                                                    str: "\\subparagraph{subparagraph}",
+                                                    range: 761..788,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: name,
+                                                        span: Span {
+                                                            str: "subparagraph",
+                                                            range: 762..774,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                    Pair {
+                                                        rule: required_arg,
+                                                        span: Span {
+                                                            str: "{subparagraph}",
+                                                            range: 774..788,
+                                                        },
+                                                        inner: [
+                                                            Pair {
+                                                                rule: argument,
+                                                                span: Span {
+                                                                    str: "subparagraph",
+                                                                    range: 775..787,
+                                                                },
+                                                                inner: [
+                                                                    Pair {
+                                                                        rule: arg_item,
+                                                                        span: Span {
+                                                                            str: "subparagraph",
+                                                                            range: 775..787,
+                                                                        },
+                                                                        inner: [
+                                                                            Pair {
+                                                                                rule: arg_text,
+                                                                                span: Span {
+                                                                                    str: "subparagraph",
+                                                                                    range: 775..787,
+                                                                                },
+                                                                                inner: [],
+                                                                            },
+                                                                        ],
+                                                                    },
+                                                                ],
+                                                            },
+                                                        ],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "\r\n\r\n",
+                                            range: 788..792,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: newlines,
+                                                span: Span {
+                                                    str: "\r\n\r\n",
+                                                    range: 788..792,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\r\n",
+                    range: 806..808,
+                },
+                inner: [
+                    Pair {
+                        rule: newlines,
+                        span: Span {
+                            str: "\r\n",
+                            range: 806..808,
+                        },
+                        inner: [],
+                    },
+                ],
+            },
+            Pair {
+                rule: EOI,
+                span: Span {
+                    str: "",
+                    range: 808..808,
+                },
+                inner: [],
+            },
+        ],
+    },
+]

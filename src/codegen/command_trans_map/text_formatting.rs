@@ -1,3 +1,4 @@
+use log::warn;
 use crate::codegen::command_trans_map::{out_of_bounds_reqs_arg, render_args_item};
 use crate::latex_semantic::{OptionalArgNode, RequiredArgNode};
 
@@ -11,7 +12,12 @@ pub fn render_formatting(name: &str, reqs: Vec<RequiredArgNode>, _opts: Vec<Opti
             "textbf" => out.push_str(&format!("*{}*", render_args_item(&first.items))),
             "textit" => out.push_str(&format!("_{}_", render_args_item(&first.items))),
             "underline" => out.push_str(&format!("#underline[{}]", render_args_item(&first.items))),
-            _ => out.push_str(format!("RENDER-ERROR = {}", name).as_str()),
+
+            _ => {
+                let error_msg = format!("ERROR: NOT-IMPLEMENTED \\{}{{{}}}", name, reqs.iter().map(|r| render_args_item(&r.items)).collect::<Vec<_>>().join("}{"));
+                warn!("==> {}", error_msg);
+                out.push_str(format!("/*{}*/",error_msg).as_str());
+            },
         }
     } else {
         match name {
@@ -19,9 +25,7 @@ pub fn render_formatting(name: &str, reqs: Vec<RequiredArgNode>, _opts: Vec<Opti
             _ => out.push_str(format!("RENDER-ERROR = {}", name).as_str()),
         }
     }
-
-    // metto in coda gli altri elementi in modo che rispetti l'ordine dell'input
-
+    out.push_str(&out_of_bounds_reqs_arg(&reqs, 1));
     out
 }
 
@@ -37,38 +41,3 @@ pub fn render_textcolor(_name: &str, reqs: Vec<RequiredArgNode>, _opts: Vec<Opti
     out.push_str(&out_of_bounds_reqs_arg(&reqs, 2));
     out
 }
-
-// ------------------------------ SINGOLE FUNZIONI -------------------------------------------------
-// DEAD CODE
-// pub fn render_bold(_name: &str, reqs: Vec<RequiredArgNode>, _opts: Vec<OptionalArgNode>) -> String {
-//     let mut out = String::new();
-//     if let Some(first) = reqs.first() {
-//         out.push_str(&format!("*{}*", render_args_item(&first.items)));
-//     }
-// 
-//     // metto in coda gli altri elementi in modo che rispetti l'ordine dell'input
-//     out.push_str(&out_of_bounds_reqs_arg(&reqs, 1));
-//     out
-// }
-// 
-// pub fn render_italic(_name: &str, reqs: Vec<RequiredArgNode>, _opts: Vec<OptionalArgNode>) -> String {
-//     let mut out = String::new();
-//     if let Some(first) = reqs.first() {
-//         out.push_str(&format!("_{}_", render_args_item(&first.items)));
-//     }
-// 
-//     // metto in coda gli altri elementi in modo che rispetti l'ordine dell'input
-//     out.push_str(&out_of_bounds_reqs_arg(&reqs, 1));
-//     out
-// }
-// 
-// pub fn render_underline(_name: &str, reqs: Vec<RequiredArgNode>, _opts: Vec<OptionalArgNode>) -> String {
-//     let mut out = String::new();
-//     if let Some(first) = reqs.first() {
-//         out.push_str(&format!("#underline[{}]", render_args_item(&first.items)));
-//     }
-// 
-//     // metto in coda gli altri elementi in modo che rispetti l'ordine dell'input
-//     out.push_str(&out_of_bounds_reqs_arg(&reqs, 1));
-//     out
-// }

@@ -1,0 +1,120 @@
+﻿\begin{figure}[h]
+    \comandoerrato{argomento inesistente}
+    \centering
+    \includegraphics[width=0.8\textwidth]{Latex2Typst.png}
+    \caption{caption test}
+    \label{fig:placeholder}
+    \prova{argomento inesistente}
+\end{figure}
+
+% 1) linewidth (caso base)
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=0.5\linewidth]{Latex2Typst.png}
+    \caption{test width=0.5/linewidth}
+    \label{fig:test-linewidth}
+\end{figure}
+
+% 2) textwidth
+\begin{figure}[b]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Latex2Typst.png}
+    \caption{test width=0.8/textwidth}
+    \label{fig:test-textwidth}
+\end{figure}
+
+% 3) columnwidth
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\columnwidth]{Latex2Typst.png}
+    \caption{test width=columnwidth}
+    \label{fig:test-columnwidth}
+\end{figure}
+
+% 4) paperwidth
+\begin{figure}[p]
+    \centering
+    \includegraphics[width=0.25\paperwidth]{Latex2Typst.png}
+    \caption{test width=0.25/paperwidth}
+    \label{fig:test-paperwidth}
+\end{figure}
+
+% 5) paperheight
+\begin{figure}[!]
+    \centering
+    \includegraphics[width=0.2\paperheight]{Latex2Typst.png}
+    \caption{test width=0.2/paperheight}
+    \label{fig:test-paperheight}
+\end{figure}
+
+% 6) textheight
+\begin{figure}
+    \centering
+    \includegraphics[width=0.15\textheight]{Latex2Typst.png}
+    \caption{test width=0.15/textheight}
+    \label{fig:test-textheight}
+\end{figure}
+
+% 7) columnsep
+\begin{figure}
+    \centering
+    \includegraphics[width=\columnsep]{Latex2Typst.png}
+    \caption{test width=/columnsep}
+    \label{fig:test-columnsep}
+\end{figure}
+
+% 8) unitlength
+\begin{figure}
+    \centering
+    \includegraphics[width=2\unitlength]{Latex2Typst.png}
+    \caption{test width=2/unitlength}
+    \label{fig:test-unitlength}
+\end{figure}
+
+% 9) pt
+\begin{figure}
+    \centering
+    \includegraphics[width=120pt]{Latex2Typst.png}
+    \caption{test width=120pt}
+    \label{fig:test-pt}
+\end{figure}
+
+% 10) mm
+\begin{figure}
+    \centering
+    \includegraphics[width=35mm]{Latex2Typst.png}
+    \caption{test width=35mm}
+    \label{fig:test-mm}
+\end{figure}
+
+% 11) cm
+\begin{figure}
+    \centering
+    \includegraphics[width=4cm]{Latex2Typst.png}
+    \caption{test width=4cm}
+    \label{fig:test-cm}
+\end{figure}
+
+% 12) in
+\begin{figure}
+    \centering
+    \includegraphics[width=2in]{Latex2Typst.png}
+    \caption{test width=2in}
+    \label{fig:test-in}
+\end{figure}
+
+% 13) em
+\begin{figure}
+    \centering
+    \includegraphics[width=18em]{Latex2Typst.png}
+    \caption{test width=18em}
+    \label{fig:test-em}
+\end{figure}
+
+% 14) ex
+\begin{figure}
+    \centering
+    \includegraphics[width=20ex]{Latex2Typst.png}
+    \caption{test width=20ex}
+    \label{fig:test-ex}
+\end{figure}

@@ -1,4 +1,5 @@
-﻿use crate::codegen::command_trans_map::{out_of_bounds_reqs_arg};
+﻿use log::warn;
+use crate::codegen::command_trans_map::{out_of_bounds_reqs_arg, render_args_item};
 use crate::latex_semantic::{OptionalArgNode, RequiredArgNode};
 
 pub fn render_document_alignment(name: &str, reqs: Vec<RequiredArgNode>, _opts: Vec<OptionalArgNode>) -> String {
@@ -7,8 +8,13 @@ pub fn render_document_alignment(name: &str, reqs: Vec<RequiredArgNode>, _opts: 
         "centering" | "Centering" => out.push_str("#set align(center);"),
         "raggedright" | "RaggedRight" | "flushleft" | "FlushLeft" => out.push_str("#set align(left);"), //ragged é al contrario su latex
         "raggedleft" | "RaggedLeft" | "flushright" | "FlushRight" => out.push_str("#set align(right);"), //ragged é al contrario su latex
-        "justifying" => out.push_str("JUSTIFY NOT YET SUPPORTED (#set par(justify: true);)"),
-        _ => out.push_str(format!("RENDER-ERROR = {}", name).as_str()),
+        "justifying" => out.push_str("/*JUSTIFY NOT YET SUPPORTED (#set par(justify: true);)*/"),
+
+        _ => {
+            let error_msg = format!("ERROR: NOT-IMPLEMENTED \\{}{{{}}}", name, reqs.iter().map(|r| render_args_item(&r.items)).collect::<Vec<_>>().join("}{"));
+            warn!("==> {}", error_msg);
+            out.push_str(format!("/*{}*/",error_msg).as_str());
+        },
     }
 
 

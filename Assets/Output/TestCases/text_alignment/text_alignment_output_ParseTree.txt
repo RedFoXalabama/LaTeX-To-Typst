@@ -1,0 +1,769 @@
+[
+    Pair {
+        rule: file,
+        span: Span {
+            str: "\u{feff}\\centering\r\n\\raggedright\r\n\\raggedleft\r\n\\flushright\r\n\\flushleft\r\n\r\n\\usepackage{ragged2e}\r\n\\begin{center}\r\n    center block \\textbf{bold}\r\n\\end{center}\r\n\\begin{flushleft} flushleft block \\end{flushleft}\r\n\\begin{flushright} flushright block \\end{flushright}\r\n\\begin{FlushLeft} FlushLeft block \\end{FlushLeft}\r\n\\begin{FlushRight} FlushRight block \\end{FlushRight}\r\n\r\n",
+            range: 0..366,
+        },
+        inner: [
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\u{feff}",
+                    range: 0..3,
+                },
+                inner: [
+                    Pair {
+                        rule: text,
+                        span: Span {
+                            str: "\u{feff}",
+                            range: 0..3,
+                        },
+                        inner: [],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\\centering",
+                    range: 3..13,
+                },
+                inner: [
+                    Pair {
+                        rule: command,
+                        span: Span {
+                            str: "\\centering",
+                            range: 3..13,
+                        },
+                        inner: [
+                            Pair {
+                                rule: name,
+                                span: Span {
+                                    str: "centering",
+                                    range: 4..13,
+                                },
+                                inner: [],
+                            },
+                        ],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\r\n",
+                    range: 13..15,
+                },
+                inner: [
+                    Pair {
+                        rule: newlines,
+                        span: Span {
+                            str: "\r\n",
+                            range: 13..15,
+                        },
+                        inner: [],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\\raggedright",
+                    range: 15..27,
+                },
+                inner: [
+                    Pair {
+                        rule: command,
+                        span: Span {
+                            str: "\\raggedright",
+                            range: 15..27,
+                        },
+                        inner: [
+                            Pair {
+                                rule: name,
+                                span: Span {
+                                    str: "raggedright",
+                                    range: 16..27,
+                                },
+                                inner: [],
+                            },
+                        ],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\r\n",
+                    range: 27..29,
+                },
+                inner: [
+                    Pair {
+                        rule: newlines,
+                        span: Span {
+                            str: "\r\n",
+                            range: 27..29,
+                        },
+                        inner: [],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\\raggedleft",
+                    range: 29..40,
+                },
+                inner: [
+                    Pair {
+                        rule: command,
+                        span: Span {
+                            str: "\\raggedleft",
+                            range: 29..40,
+                        },
+                        inner: [
+                            Pair {
+                                rule: name,
+                                span: Span {
+                                    str: "raggedleft",
+                                    range: 30..40,
+                                },
+                                inner: [],
+                            },
+                        ],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\r\n",
+                    range: 40..42,
+                },
+                inner: [
+                    Pair {
+                        rule: newlines,
+                        span: Span {
+                            str: "\r\n",
+                            range: 40..42,
+                        },
+                        inner: [],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\\flushright",
+                    range: 42..53,
+                },
+                inner: [
+                    Pair {
+                        rule: command,
+                        span: Span {
+                            str: "\\flushright",
+                            range: 42..53,
+                        },
+                        inner: [
+                            Pair {
+                                rule: name,
+                                span: Span {
+                                    str: "flushright",
+                                    range: 43..53,
+                                },
+                                inner: [],
+                            },
+                        ],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\r\n",
+                    range: 53..55,
+                },
+                inner: [
+                    Pair {
+                        rule: newlines,
+                        span: Span {
+                            str: "\r\n",
+                            range: 53..55,
+                        },
+                        inner: [],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\\flushleft",
+                    range: 55..65,
+                },
+                inner: [
+                    Pair {
+                        rule: command,
+                        span: Span {
+                            str: "\\flushleft",
+                            range: 55..65,
+                        },
+                        inner: [
+                            Pair {
+                                rule: name,
+                                span: Span {
+                                    str: "flushleft",
+                                    range: 56..65,
+                                },
+                                inner: [],
+                            },
+                        ],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\r\n\r\n",
+                    range: 65..69,
+                },
+                inner: [
+                    Pair {
+                        rule: newlines,
+                        span: Span {
+                            str: "\r\n\r\n",
+                            range: 65..69,
+                        },
+                        inner: [],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\\usepackage{ragged2e}",
+                    range: 69..90,
+                },
+                inner: [
+                    Pair {
+                        rule: command,
+                        span: Span {
+                            str: "\\usepackage{ragged2e}",
+                            range: 69..90,
+                        },
+                        inner: [
+                            Pair {
+                                rule: name,
+                                span: Span {
+                                    str: "usepackage",
+                                    range: 70..80,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: required_arg,
+                                span: Span {
+                                    str: "{ragged2e}",
+                                    range: 80..90,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: argument,
+                                        span: Span {
+                                            str: "ragged2e",
+                                            range: 81..89,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: arg_item,
+                                                span: Span {
+                                                    str: "ragged2e",
+                                                    range: 81..89,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: arg_text,
+                                                        span: Span {
+                                                            str: "ragged2e",
+                                                            range: 81..89,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\r\n",
+                    range: 90..92,
+                },
+                inner: [
+                    Pair {
+                        rule: newlines,
+                        span: Span {
+                            str: "\r\n",
+                            range: 90..92,
+                        },
+                        inner: [],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\\begin{center}\r\n    center block \\textbf{bold}\r\n\\end{center}",
+                    range: 92..152,
+                },
+                inner: [
+                    Pair {
+                        rule: block,
+                        span: Span {
+                            str: "\\begin{center}\r\n    center block \\textbf{bold}\r\n\\end{center}",
+                            range: 92..152,
+                        },
+                        inner: [
+                            Pair {
+                                rule: name,
+                                span: Span {
+                                    str: "center",
+                                    range: 99..105,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: content,
+                                span: Span {
+                                    str: "\r\n    center block \\textbf{bold}\r\n",
+                                    range: 106..140,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "\r\n",
+                                            range: 106..108,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: newlines,
+                                                span: Span {
+                                                    str: "\r\n",
+                                                    range: 106..108,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "    center block ",
+                                            range: 108..125,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: text,
+                                                span: Span {
+                                                    str: "    center block ",
+                                                    range: 108..125,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "\\textbf{bold}",
+                                            range: 125..138,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: command,
+                                                span: Span {
+                                                    str: "\\textbf{bold}",
+                                                    range: 125..138,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: name,
+                                                        span: Span {
+                                                            str: "textbf",
+                                                            range: 126..132,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                    Pair {
+                                                        rule: required_arg,
+                                                        span: Span {
+                                                            str: "{bold}",
+                                                            range: 132..138,
+                                                        },
+                                                        inner: [
+                                                            Pair {
+                                                                rule: argument,
+                                                                span: Span {
+                                                                    str: "bold",
+                                                                    range: 133..137,
+                                                                },
+                                                                inner: [
+                                                                    Pair {
+                                                                        rule: arg_item,
+                                                                        span: Span {
+                                                                            str: "bold",
+                                                                            range: 133..137,
+                                                                        },
+                                                                        inner: [
+                                                                            Pair {
+                                                                                rule: arg_text,
+                                                                                span: Span {
+                                                                                    str: "bold",
+                                                                                    range: 133..137,
+                                                                                },
+                                                                                inner: [],
+                                                                            },
+                                                                        ],
+                                                                    },
+                                                                ],
+                                                            },
+                                                        ],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "\r\n",
+                                            range: 138..140,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: newlines,
+                                                span: Span {
+                                                    str: "\r\n",
+                                                    range: 138..140,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\r\n",
+                    range: 152..154,
+                },
+                inner: [
+                    Pair {
+                        rule: newlines,
+                        span: Span {
+                            str: "\r\n",
+                            range: 152..154,
+                        },
+                        inner: [],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\\begin{flushleft} flushleft block \\end{flushleft}",
+                    range: 154..203,
+                },
+                inner: [
+                    Pair {
+                        rule: block,
+                        span: Span {
+                            str: "\\begin{flushleft} flushleft block \\end{flushleft}",
+                            range: 154..203,
+                        },
+                        inner: [
+                            Pair {
+                                rule: name,
+                                span: Span {
+                                    str: "flushleft",
+                                    range: 161..170,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: content,
+                                span: Span {
+                                    str: " flushleft block ",
+                                    range: 171..188,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: " flushleft block ",
+                                            range: 171..188,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: text,
+                                                span: Span {
+                                                    str: " flushleft block ",
+                                                    range: 171..188,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\r\n",
+                    range: 203..205,
+                },
+                inner: [
+                    Pair {
+                        rule: newlines,
+                        span: Span {
+                            str: "\r\n",
+                            range: 203..205,
+                        },
+                        inner: [],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\\begin{flushright} flushright block \\end{flushright}",
+                    range: 205..257,
+                },
+                inner: [
+                    Pair {
+                        rule: block,
+                        span: Span {
+                            str: "\\begin{flushright} flushright block \\end{flushright}",
+                            range: 205..257,
+                        },
+                        inner: [
+                            Pair {
+                                rule: name,
+                                span: Span {
+                                    str: "flushright",
+                                    range: 212..222,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: content,
+                                span: Span {
+                                    str: " flushright block ",
+                                    range: 223..241,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: " flushright block ",
+                                            range: 223..241,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: text,
+                                                span: Span {
+                                                    str: " flushright block ",
+                                                    range: 223..241,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\r\n",
+                    range: 257..259,
+                },
+                inner: [
+                    Pair {
+                        rule: newlines,
+                        span: Span {
+                            str: "\r\n",
+                            range: 257..259,
+                        },
+                        inner: [],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\\begin{FlushLeft} FlushLeft block \\end{FlushLeft}",
+                    range: 259..308,
+                },
+                inner: [
+                    Pair {
+                        rule: block,
+                        span: Span {
+                            str: "\\begin{FlushLeft} FlushLeft block \\end{FlushLeft}",
+                            range: 259..308,
+                        },
+                        inner: [
+                            Pair {
+                                rule: name,
+                                span: Span {
+                                    str: "FlushLeft",
+                                    range: 266..275,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: content,
+                                span: Span {
+                                    str: " FlushLeft block ",
+                                    range: 276..293,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: " FlushLeft block ",
+                                            range: 276..293,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: text,
+                                                span: Span {
+                                                    str: " FlushLeft block ",
+                                                    range: 276..293,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\r\n",
+                    range: 308..310,
+                },
+                inner: [
+                    Pair {
+                        rule: newlines,
+                        span: Span {
+                            str: "\r\n",
+                            range: 308..310,
+                        },
+                        inner: [],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\\begin{FlushRight} FlushRight block \\end{FlushRight}",
+                    range: 310..362,
+                },
+                inner: [
+                    Pair {
+                        rule: block,
+                        span: Span {
+                            str: "\\begin{FlushRight} FlushRight block \\end{FlushRight}",
+                            range: 310..362,
+                        },
+                        inner: [
+                            Pair {
+                                rule: name,
+                                span: Span {
+                                    str: "FlushRight",
+                                    range: 317..327,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: content,
+                                span: Span {
+                                    str: " FlushRight block ",
+                                    range: 328..346,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: " FlushRight block ",
+                                            range: 328..346,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: text,
+                                                span: Span {
+                                                    str: " FlushRight block ",
+                                                    range: 328..346,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\r\n\r\n",
+                    range: 362..366,
+                },
+                inner: [
+                    Pair {
+                        rule: newlines,
+                        span: Span {
+                            str: "\r\n\r\n",
+                            range: 362..366,
+                        },
+                        inner: [],
+                    },
+                ],
+            },
+            Pair {
+                rule: EOI,
+                span: Span {
+                    str: "",
+                    range: 366..366,
+                },
+                inner: [],
+            },
+        ],
+    },
+]

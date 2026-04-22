@@ -1,0 +1,154 @@
+AstDocument {
+    items: [
+        Text(
+            TextNode {
+                value: "\u{feff}",
+            },
+        ),
+        Comment(
+            CommentNode {
+                value: "%%! Author = gianf",
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Comment(
+            CommentNode {
+                value: "%%! Date = 16/04/2026",
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Comment(
+            CommentNode {
+                value: "%",
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Comment(
+            CommentNode {
+                value: "%% Preamble",
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Comment(
+            CommentNode {
+                value: "%\\documentclass[11pt]{article}",
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Comment(
+            CommentNode {
+                value: "%",
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Comment(
+            CommentNode {
+                value: "%% Packages",
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Comment(
+            CommentNode {
+                value: "%\\usepackage{amsmath}",
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Comment(
+            CommentNode {
+                value: "%",
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Comment(
+            CommentNode {
+                value: "%% Document",
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Comment(
+            CommentNode {
+                value: "%\\begin{document}",
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Comment(
+            CommentNode {
+                value: "%",
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Comment(
+            CommentNode {
+                value: "%",
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Comment(
+            CommentNode {
+                value: "%",
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Comment(
+            CommentNode {
+                value: "%\\end{document}",
+            },
+        ),
+    ],
+}

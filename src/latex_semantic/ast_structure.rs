@@ -130,7 +130,7 @@ pub enum SemanticError {
     MissingCommandName,
     MissingBlockName,
     MissingRequiredArgItems,
-    MissingOptionalArgEntries,
+    // MissingOptionalArgEntries, //in latex non sono un problema le [] vuote
     MissingOptionalEntryItems,
     MissingKeyInKvPair,
     MissingValueInKvPair,

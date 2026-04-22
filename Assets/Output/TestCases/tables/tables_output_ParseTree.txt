@@ -1,0 +1,594 @@
+[
+    Pair {
+        rule: file,
+        span: Span {
+            str: "\u{feff}\\begin{tabular}{ |c|c|c| }\r\n    \\hline\r\n    \\textbf{cell1} & cell2 & cell3 \\\\\r\n    \\hline\r\n    cell4 & cell5 & cell6 \\\\\r\n    \\hline\r\n    cell7 & cell8 & cell9 \\\\\r\n    \\hline\r\n\\end{tabular}",
+            range: 0..191,
+        },
+        inner: [
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\u{feff}",
+                    range: 0..3,
+                },
+                inner: [
+                    Pair {
+                        rule: text,
+                        span: Span {
+                            str: "\u{feff}",
+                            range: 0..3,
+                        },
+                        inner: [],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\\begin{tabular}{ |c|c|c| }\r\n    \\hline\r\n    \\textbf{cell1} & cell2 & cell3 \\\\\r\n    \\hline\r\n    cell4 & cell5 & cell6 \\\\\r\n    \\hline\r\n    cell7 & cell8 & cell9 \\\\\r\n    \\hline\r\n\\end{tabular}",
+                    range: 3..191,
+                },
+                inner: [
+                    Pair {
+                        rule: block,
+                        span: Span {
+                            str: "\\begin{tabular}{ |c|c|c| }\r\n    \\hline\r\n    \\textbf{cell1} & cell2 & cell3 \\\\\r\n    \\hline\r\n    cell4 & cell5 & cell6 \\\\\r\n    \\hline\r\n    cell7 & cell8 & cell9 \\\\\r\n    \\hline\r\n\\end{tabular}",
+                            range: 3..191,
+                        },
+                        inner: [
+                            Pair {
+                                rule: name,
+                                span: Span {
+                                    str: "tabular",
+                                    range: 10..17,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: required_arg,
+                                span: Span {
+                                    str: "{ |c|c|c| }",
+                                    range: 18..29,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: argument,
+                                        span: Span {
+                                            str: " |c|c|c| ",
+                                            range: 19..28,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: arg_item,
+                                                span: Span {
+                                                    str: " |c|c|c| ",
+                                                    range: 19..28,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: arg_text,
+                                                        span: Span {
+                                                            str: " |c|c|c| ",
+                                                            range: 19..28,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                            Pair {
+                                rule: content,
+                                span: Span {
+                                    str: "\r\n    \\hline\r\n    \\textbf{cell1} & cell2 & cell3 \\\\\r\n    \\hline\r\n    cell4 & cell5 & cell6 \\\\\r\n    \\hline\r\n    cell7 & cell8 & cell9 \\\\\r\n    \\hline\r\n",
+                                    range: 29..178,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "\r\n",
+                                            range: 29..31,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: newlines,
+                                                span: Span {
+                                                    str: "\r\n",
+                                                    range: 29..31,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "    ",
+                                            range: 31..35,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: text,
+                                                span: Span {
+                                                    str: "    ",
+                                                    range: 31..35,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "\\hline",
+                                            range: 35..41,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: command,
+                                                span: Span {
+                                                    str: "\\hline",
+                                                    range: 35..41,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: name,
+                                                        span: Span {
+                                                            str: "hline",
+                                                            range: 36..41,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "\r\n",
+                                            range: 41..43,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: newlines,
+                                                span: Span {
+                                                    str: "\r\n",
+                                                    range: 41..43,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "    ",
+                                            range: 43..47,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: text,
+                                                span: Span {
+                                                    str: "    ",
+                                                    range: 43..47,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "\\textbf{cell1}",
+                                            range: 47..61,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: command,
+                                                span: Span {
+                                                    str: "\\textbf{cell1}",
+                                                    range: 47..61,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: name,
+                                                        span: Span {
+                                                            str: "textbf",
+                                                            range: 48..54,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                    Pair {
+                                                        rule: required_arg,
+                                                        span: Span {
+                                                            str: "{cell1}",
+                                                            range: 54..61,
+                                                        },
+                                                        inner: [
+                                                            Pair {
+                                                                rule: argument,
+                                                                span: Span {
+                                                                    str: "cell1",
+                                                                    range: 55..60,
+                                                                },
+                                                                inner: [
+                                                                    Pair {
+                                                                        rule: arg_item,
+                                                                        span: Span {
+                                                                            str: "cell1",
+                                                                            range: 55..60,
+                                                                        },
+                                                                        inner: [
+                                                                            Pair {
+                                                                                rule: arg_text,
+                                                                                span: Span {
+                                                                                    str: "cell1",
+                                                                                    range: 55..60,
+                                                                                },
+                                                                                inner: [],
+                                                                            },
+                                                                        ],
+                                                                    },
+                                                                ],
+                                                            },
+                                                        ],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: " & cell2 & cell3 ",
+                                            range: 61..78,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: text,
+                                                span: Span {
+                                                    str: " & cell2 & cell3 ",
+                                                    range: 61..78,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "\\\\",
+                                            range: 78..80,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: linebreak,
+                                                span: Span {
+                                                    str: "\\\\",
+                                                    range: 78..80,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "\r\n",
+                                            range: 80..82,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: newlines,
+                                                span: Span {
+                                                    str: "\r\n",
+                                                    range: 80..82,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "    ",
+                                            range: 82..86,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: text,
+                                                span: Span {
+                                                    str: "    ",
+                                                    range: 82..86,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "\\hline",
+                                            range: 86..92,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: command,
+                                                span: Span {
+                                                    str: "\\hline",
+                                                    range: 86..92,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: name,
+                                                        span: Span {
+                                                            str: "hline",
+                                                            range: 87..92,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "\r\n",
+                                            range: 92..94,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: newlines,
+                                                span: Span {
+                                                    str: "\r\n",
+                                                    range: 92..94,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "    cell4 & cell5 & cell6 ",
+                                            range: 94..120,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: text,
+                                                span: Span {
+                                                    str: "    cell4 & cell5 & cell6 ",
+                                                    range: 94..120,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "\\\\",
+                                            range: 120..122,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: linebreak,
+                                                span: Span {
+                                                    str: "\\\\",
+                                                    range: 120..122,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "\r\n",
+                                            range: 122..124,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: newlines,
+                                                span: Span {
+                                                    str: "\r\n",
+                                                    range: 122..124,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "    ",
+                                            range: 124..128,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: text,
+                                                span: Span {
+                                                    str: "    ",
+                                                    range: 124..128,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "\\hline",
+                                            range: 128..134,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: command,
+                                                span: Span {
+                                                    str: "\\hline",
+                                                    range: 128..134,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: name,
+                                                        span: Span {
+                                                            str: "hline",
+                                                            range: 129..134,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "\r\n",
+                                            range: 134..136,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: newlines,
+                                                span: Span {
+                                                    str: "\r\n",
+                                                    range: 134..136,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "    cell7 & cell8 & cell9 ",
+                                            range: 136..162,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: text,
+                                                span: Span {
+                                                    str: "    cell7 & cell8 & cell9 ",
+                                                    range: 136..162,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "\\\\",
+                                            range: 162..164,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: linebreak,
+                                                span: Span {
+                                                    str: "\\\\",
+                                                    range: 162..164,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "\r\n",
+                                            range: 164..166,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: newlines,
+                                                span: Span {
+                                                    str: "\r\n",
+                                                    range: 164..166,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "    ",
+                                            range: 166..170,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: text,
+                                                span: Span {
+                                                    str: "    ",
+                                                    range: 166..170,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "\\hline",
+                                            range: 170..176,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: command,
+                                                span: Span {
+                                                    str: "\\hline",
+                                                    range: 170..176,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: name,
+                                                        span: Span {
+                                                            str: "hline",
+                                                            range: 171..176,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "\r\n",
+                                            range: 176..178,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: newlines,
+                                                span: Span {
+                                                    str: "\r\n",
+                                                    range: 176..178,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                ],
+            },
+            Pair {
+                rule: EOI,
+                span: Span {
+                    str: "",
+                    range: 191..191,
+                },
+                inner: [],
+            },
+        ],
+    },
+]

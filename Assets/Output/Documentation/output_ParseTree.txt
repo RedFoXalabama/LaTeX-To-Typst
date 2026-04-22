@@ -1,0 +1,245 @@
+[
+    Pair {
+        rule: file,
+        span: Span {
+            str: "\\begin{verbatim}{cccc}[dddd]\n    prova\n\\end{verbatim}\n\n\\textbf{fff}{ddd}",
+            range: 0..72,
+        },
+        inner: [
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\\begin{verbatim}{cccc}[dddd]\n    prova\n\\end{verbatim}",
+                    range: 0..53,
+                },
+                inner: [
+                    Pair {
+                        rule: block_raw,
+                        span: Span {
+                            str: "\\begin{verbatim}{cccc}[dddd]\n    prova\n\\end{verbatim}",
+                            range: 0..53,
+                        },
+                        inner: [
+                            Pair {
+                                rule: raw_name,
+                                span: Span {
+                                    str: "verbatim",
+                                    range: 7..15,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: required_arg,
+                                span: Span {
+                                    str: "{cccc}",
+                                    range: 16..22,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: argument,
+                                        span: Span {
+                                            str: "cccc",
+                                            range: 17..21,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: arg_item,
+                                                span: Span {
+                                                    str: "cccc",
+                                                    range: 17..21,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: arg_text,
+                                                        span: Span {
+                                                            str: "cccc",
+                                                            range: 17..21,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                            Pair {
+                                rule: optional_arg,
+                                span: Span {
+                                    str: "[dddd]",
+                                    range: 22..28,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: optional_list,
+                                        span: Span {
+                                            str: "dddd",
+                                            range: 23..27,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: opt_entry,
+                                                span: Span {
+                                                    str: "dddd",
+                                                    range: 23..27,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: opt_item,
+                                                        span: Span {
+                                                            str: "dddd",
+                                                            range: 23..27,
+                                                        },
+                                                        inner: [
+                                                            Pair {
+                                                                rule: opt_text,
+                                                                span: Span {
+                                                                    str: "dddd",
+                                                                    range: 23..27,
+                                                                },
+                                                                inner: [],
+                                                            },
+                                                        ],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                            Pair {
+                                rule: content_raw,
+                                span: Span {
+                                    str: "\n    prova\n",
+                                    range: 28..39,
+                                },
+                                inner: [],
+                            },
+                        ],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\n\n",
+                    range: 53..55,
+                },
+                inner: [
+                    Pair {
+                        rule: newlines,
+                        span: Span {
+                            str: "\n\n",
+                            range: 53..55,
+                        },
+                        inner: [],
+                    },
+                ],
+            },
+            Pair {
+                rule: item,
+                span: Span {
+                    str: "\\textbf{fff}{ddd}",
+                    range: 55..72,
+                },
+                inner: [
+                    Pair {
+                        rule: command,
+                        span: Span {
+                            str: "\\textbf{fff}{ddd}",
+                            range: 55..72,
+                        },
+                        inner: [
+                            Pair {
+                                rule: name,
+                                span: Span {
+                                    str: "textbf",
+                                    range: 56..62,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: required_arg,
+                                span: Span {
+                                    str: "{fff}",
+                                    range: 62..67,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: argument,
+                                        span: Span {
+                                            str: "fff",
+                                            range: 63..66,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: arg_item,
+                                                span: Span {
+                                                    str: "fff",
+                                                    range: 63..66,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: arg_text,
+                                                        span: Span {
+                                                            str: "fff",
+                                                            range: 63..66,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                            Pair {
+                                rule: required_arg,
+                                span: Span {
+                                    str: "{ddd}",
+                                    range: 67..72,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: argument,
+                                        span: Span {
+                                            str: "ddd",
+                                            range: 68..71,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: arg_item,
+                                                span: Span {
+                                                    str: "ddd",
+                                                    range: 68..71,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: arg_text,
+                                                        span: Span {
+                                                            str: "ddd",
+                                                            range: 68..71,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                ],
+            },
+            Pair {
+                rule: EOI,
+                span: Span {
+                    str: "",
+                    range: 72..72,
+                },
+                inner: [],
+            },
+        ],
+    },
+]

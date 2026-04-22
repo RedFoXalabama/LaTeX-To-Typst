@@ -119,11 +119,7 @@ AstDocument {
             CommandNode {
                 name: "textbf",
                 optional_args: [],
-                required_args: [
-                    RequiredArgNode {
-                        items: [],
-                    },
-                ],
+                required_args: [],
             },
         ),
         Newlines(

@@ -1,6 +1,7 @@
 ﻿use log::warn;
 use crate::codegen::command_trans_map::render_args_item;
 use crate::latex_semantic::{AstItemNode, OptItemNode, OptValueNode, OptionalArgNode, OptionalEntryNode, RequiredArgNode};
+use crate::utils::{drop_command_warn, COMMANDWARNING};
 
 pub fn render_figure(
     _name: &str,
@@ -43,9 +44,9 @@ pub fn render_figure(
                     //non fare nulla perché in typst le immagini sono centrate di default, mentre in latex serve il comando per centrarle
                 }
                 _ => {
-                    let error_msg = format!("ERROR: NOT-YET-IMPLEMENTED \\{}{{{}}}", cmd.name, cmd.required_args.iter().map(|r| render_args_item(&r.items)).collect::<Vec<_>>().join("}{"));
-                    warn!("==> {}", error_msg);
-                    out.push_str(format!("/*{}*/",error_msg).as_str());
+                    out = drop_command_warn(COMMANDWARNING::NotImplemented(cmd.name.to_string()), 
+                                            Option::from(out), Option::from(cmd.name.as_str()), 
+                                            Option::from(cmd.required_args.clone()));
                 }
             }
         }

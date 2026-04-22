@@ -1,7 +1,7 @@
-﻿use log::warn;
-use crate::codegen::command_trans_map::{out_of_bounds_reqs_arg, render_args_item, render_opt_entry};
+﻿use crate::codegen::command_trans_map::{out_of_bounds_reqs_arg, render_opt_entry};
 use crate::globals::{get_in_listing_priority, read_in_listing_priority, ListType};
 use crate::latex_semantic::{OptionalArgNode, RequiredArgNode};
+use crate::utils::{drop_command_warn, COMMANDWARNING};
 
 pub fn render_list(name: &str, reqs: Vec<RequiredArgNode>, opts: Vec<OptionalArgNode>) -> String {
     let mut out = String::new();
@@ -26,17 +26,19 @@ pub fn render_list(name: &str, reqs: Vec<RequiredArgNode>, opts: Vec<OptionalArg
                     }
                 },
                 None => {
-                    let error_msg = format!("ERROR: NOT-IMPLEMENTED \\{}{{{}}}", name, reqs.iter().map(|r| render_args_item(&r.items)).collect::<Vec<_>>().join("}{"));
-                    warn!("==> {}", error_msg);
-                    out.push_str(format!("/*{}*/",error_msg).as_str());
+                    out = drop_command_warn(COMMANDWARNING::NotImplemented(name.to_string()),
+                                            Option::from(out),
+                                            Option::from(name),
+                                            Option::from(reqs.clone()));
                 },
             }
         },
 
         _ => {
-            let error_msg = format!("ERROR: NOT-IMPLEMENTED \\{}{{{}}}", name, reqs.iter().map(|r| render_args_item(&r.items)).collect::<Vec<_>>().join("}{"));
-            warn!("==> {}", error_msg);
-            out.push_str(format!("/*{}*/",error_msg).as_str());
+            out = drop_command_warn(COMMANDWARNING::NotImplemented(name.to_string()),
+                                    Option::from(out),
+                                    Option::from(name),
+                                    Option::from(reqs.clone()));
         },
     }
     out_of_bounds_reqs_arg(&reqs, 0);

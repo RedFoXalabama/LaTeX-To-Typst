@@ -1,6 +1,6 @@
-use log::warn;
 use crate::codegen::command_trans_map::{out_of_bounds_reqs_arg, render_args_item};
 use crate::latex_semantic::{OptionalArgNode, RequiredArgNode};
+use crate::utils::{drop_command_warn, COMMANDWARNING};
 
 //--------------------------------------------------------------------------------------------------
 // un unica funzione per gestire tutti i tipi di caso di formatting in base al nome del comando
@@ -14,9 +14,10 @@ pub fn render_formatting(name: &str, reqs: Vec<RequiredArgNode>, _opts: Vec<Opti
             "underline" => out.push_str(&format!("#underline[{}]", render_args_item(&first.items))),
 
             _ => {
-                let error_msg = format!("ERROR: NOT-IMPLEMENTED \\{}{{{}}}", name, reqs.iter().map(|r| render_args_item(&r.items)).collect::<Vec<_>>().join("}{"));
-                warn!("==> {}", error_msg);
-                out.push_str(format!("/*{}*/",error_msg).as_str());
+                out = drop_command_warn(COMMANDWARNING::NotImplemented(name.to_string()),
+                                        Option::from(out),
+                                        Option::from(name),
+                                        Option::from(reqs.clone()));
             },
         }
     }

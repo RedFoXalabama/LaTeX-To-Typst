@@ -15,32 +15,32 @@
 //\begin{document123}
 //\end{document123}
 
-**
 
-/*ERROR: NOT-IMPLEMENTED \usepackage{geometry}*/
+
+/*WARN: NotImplemented("usepackage"): usepackage \usepackage{geometry}*/
 
 
     contenuto
 
 
-/*ERROR: WRONG-COMMAND OR NOT-IMPLEMENTED \includegraphics{}*/[width=5cm testo // non rompe il documento
+/*WARN: WrongCommandOrNotImplemented("includegraphics"): includegraphics \includegraphics{}*/[width=5cm testo // non rompe il documento
 
-/*ERROR: WRONG-COMMAND OR NOT-IMPLEMENTED \command{}*/123 test
+/*WARN: WrongCommandOrNotImplemented("command"): command \command{}*/123 test
 
-/*ERROR: NOT-IMPLEMENTED \usepackage{amsmath}*/ // PACCHETTO NON ANCORA IMPLEMENTATO
-/*ERROR: NOT-IMPLEMENTED \usepackage{geometry}*/
-/*ERROR: NOT-IMPLEMENTED \usepackage{babel}*/
-/*ERROR: NOT-IMPLEMENTED \usepackage{tikz}*/
+/*WARN: NotImplemented("usepackage"): usepackage \usepackage{amsmath}*/ // PACCHETTO NON ANCORA IMPLEMENTATO
+/*WARN: NotImplemented("usepackage"): usepackage \usepackage{geometry}*/
+/*WARN: NotImplemented("usepackage"): usepackage \usepackage{babel}*/
+/*WARN: NotImplemented("usepackage"): usepackage \usepackage{tikz}*/
 
-/*ERROR: NOT-IMPLEMENTED \chapter{Capitolo 1: Caso di errore}*/ // TITOLO NON ANCORA IMPLEMENTATO
+/*WARN: NotImplemented("chapter"): chapter \chapter{Capitolo 1: Caso di errore}*/ // TITOLO NON ANCORA IMPLEMENTATO
 
-/*ERROR: WRONG-COMMAND OR NOT-IMPLEMENTED \url{http://www.overleaf.com}*/
-/*ERROR: WRONG-COMMAND OR NOT-IMPLEMENTED \hypertarget{thesentence}{this sentence}*/.
+/*WARN: WrongCommandOrNotImplemented("url"): url \url{http://www.overleaf.com}*/
+/*WARN: WrongCommandOrNotImplemented("hypertarget"): hypertarget \hypertarget{thesentence}{this sentence}*/.
 
-/*ERROR: WRONG-COMMAND OR NOT-IMPLEMENTED \vspace{5mm}*/
-/*ERROR: WRONG-COMMAND OR NOT-IMPLEMENTED \hspace{1cm}*/
-/*ERROR: WRONG-COMMAND OR NOT-IMPLEMENTED \smallskip{}*/
-/*ERROR: WRONG-COMMAND OR NOT-IMPLEMENTED \medskip{}*/
-/*ERROR: WRONG-COMMAND OR NOT-IMPLEMENTED \bigskip{}*/
+/*WARN: WrongCommandOrNotImplemented("vspace"): vspace \vspace{5mm}*/
+/*WARN: WrongCommandOrNotImplemented("hspace"): hspace \hspace{1cm}*/
+/*WARN: WrongCommandOrNotImplemented("smallskip"): smallskip \smallskip{}*/
+/*WARN: WrongCommandOrNotImplemented("medskip"): medskip \medskip{}*/
+/*WARN: WrongCommandOrNotImplemented("bigskip"): bigskip \bigskip{}*/
 
-/*ERROR: WRONG-COMMAND OR NOT-IMPLEMENTED \commandoInesistente{argomento inesistente}*/
+/*WARN: WrongCommandOrNotImplemented("commandoInesistente"): commandoInesistente \commandoInesistente{argomento inesistente}*/

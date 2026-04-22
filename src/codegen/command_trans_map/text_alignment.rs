@@ -1,6 +1,6 @@
-﻿use log::warn;
-use crate::codegen::command_trans_map::{out_of_bounds_reqs_arg, render_args_item};
+﻿use crate::codegen::command_trans_map::{out_of_bounds_reqs_arg};
 use crate::latex_semantic::{OptionalArgNode, RequiredArgNode};
+use crate::utils::{drop_command_warn, COMMANDWARNING};
 
 pub fn render_document_alignment(name: &str, reqs: Vec<RequiredArgNode>, _opts: Vec<OptionalArgNode>) -> String {
     let mut out = String::new();
@@ -11,9 +11,10 @@ pub fn render_document_alignment(name: &str, reqs: Vec<RequiredArgNode>, _opts: 
         "justifying" => out.push_str("/*JUSTIFY NOT YET SUPPORTED (#set par(justify: true);)*/"),
 
         _ => {
-            let error_msg = format!("ERROR: NOT-IMPLEMENTED \\{}{{{}}}", name, reqs.iter().map(|r| render_args_item(&r.items)).collect::<Vec<_>>().join("}{"));
-            warn!("==> {}", error_msg);
-            out.push_str(format!("/*{}*/",error_msg).as_str());
+            out = drop_command_warn(COMMANDWARNING::NotImplemented(name.to_string()),
+                                    Option::from(out),
+                                    Option::from(name),
+                                    Option::from(reqs.clone()));
         },
     }
 

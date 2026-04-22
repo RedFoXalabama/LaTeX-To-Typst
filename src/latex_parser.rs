@@ -5,6 +5,7 @@ use std::fs;
 use std::io::Error;
 use std::path::Path;
 use pest::error::{ErrorVariant, LineColLocation};
+use crate::utils::PARSEERROR;
 
 // Definisce il parser per LaTeX utilizzando pest. La grammatica è definita in un file .pest separato (latex.pest).
 // !! ⚠ SE SI VUOLE AGGIORNARE LA GRAMMATICA E NON AVERE ERRORE NELL'IDE PER CHIAMATE A RULE -> Cargo clean -> Cargo check -> RIAVVIARE L'IDE ⚠ !!
@@ -66,11 +67,10 @@ fn format_pest_error(err: &pest::error::Error<Rule>, input: &str) -> String {
         _ => "Errore di parsing".to_string(),
     };
 
-
-
     format!(
-        "{} PARSE ERROR {}\nErrore di parsing LaTeX alla riga {}, colonna {}\n{}\n{}^",
+        "{} PARSE ERROR: {:?} {}\nErrore di parsing LaTeX alla riga {}, colonna {}\n{}\n{}^",
         separator,
+        PARSEERROR::GrammaticError,
         separator,
         line,
         col,

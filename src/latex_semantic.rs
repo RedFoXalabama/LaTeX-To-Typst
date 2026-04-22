@@ -7,7 +7,7 @@ pub use ast_structure::*; //importo tutte le strutture e gli enumerati che compo
 use crate::latex_parser::Rule;
 use pest::iterators::{Pair, Pairs};
 use crate::latex_semantic::reqarg_map::reqarg_count;
-
+use crate::utils::{drop_command_warn, COMMANDWARNING};
 // ALBERO AST (Abstract Syntax Tree) - rappresentazione ad albero della struttura sintattica del documento LaTeX,
 // costruita a partire dal parse tree di pest.
 // L'AST è più astratto e semantico rispetto al parse tree, e viene utilizzato per analisi successive o trasformazioni.
@@ -257,7 +257,7 @@ fn build_required_arg(cmd_name: &str, pair: Pair<Rule>) -> Result<RequiredArgNod
 
     if items.is_empty() {
         if reqarg_count(cmd_name) > Option::from(0) {
-            warn!("Comando \\{}: expected at least 1 argument item, found EMPTY BRACKET", cmd_name);
+            drop_command_warn(COMMANDWARNING::EmptyBracket(cmd_name.to_string()), None, Some(cmd_name), None);
             // return Err(SemanticError::MissingRequiredArgItems);
         }
     }

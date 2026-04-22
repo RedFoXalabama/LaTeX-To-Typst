@@ -1,3 +1,4 @@
+use log::{error, warn};
 use crate::latex_parser::Rule;
 
 // NODO PADRE

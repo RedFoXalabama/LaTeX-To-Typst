@@ -1,7 +1,7 @@
 mod ast_structure;
 mod reqarg_map;
 
-use log::{error, warn};
+use log::{error};
 pub use ast_structure::*; //importo tutte le strutture e gli enumerati che compongono l'AST
 
 use crate::latex_parser::Rule;

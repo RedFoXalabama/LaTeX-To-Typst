@@ -8,7 +8,7 @@
 //    Contenuto
 //\end{article}
 
-//\ test
+//\ tests
 
 //\textbf{testo non chiuso % rompe il documento
 

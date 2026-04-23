@@ -46,8 +46,7 @@ fn validate_item(item: &AstItemNode) -> Result<(), crate::latex_semantic::Semant
             // Standard missing arguments validation based on standard LaTeX commands
             let reqs_len = command_node.required_args.len();
             match command_node.name.as_str() {
-                "textbf" | "textit" | "underline" | "centering" | "raggedright" | "raggedleft" |
-                "flushright" | "flushleft" | "item" | "part" | "chapter" | "section" | 
+                "textbf" | "textit" | "underline" | "part" | "chapter" | "section" | 
                 "subsection" | "subsubsection" | "paragraph" | "subparagraph" | "title" | 
                 "author" | "date" | "documentclass" | "href" => {
                     if reqs_len < 1 {

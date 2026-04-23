@@ -1,11 +1,7 @@
 use std::fs;
 use std::path::{Path, PathBuf};
 
-mod codegen;
-mod latex_parser;
-mod latex_semantic;
-mod utils;
-mod globals;
+use LaTeX_To_Typst::{codegen, latex_parser, latex_semantic, utils};
 
 // ----------------------------------- SAVE PATH FOR DOC -------------------------------------------
 static DOC_PATH: &str = "Assets/Input/Documentation/doc.tex";
@@ -136,7 +132,7 @@ fn translate_all_test_cases(
         let stem = input_file
             .file_stem()
             .and_then(|s| s.to_str())
-            .ok_or_else(|| format!("Invalid test file name: {}", input_file.display()))?;
+            .ok_or_else(|| format!("Invalid tests file name: {}", input_file.display()))?;
 
         let case_output_dir = output_dir.join(stem);
         let output_parse = case_output_dir.join(format!("{}_output_ParseTree.txt", stem));

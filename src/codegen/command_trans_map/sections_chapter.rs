@@ -1,11 +1,10 @@
 use std::fs;
 use chrono::Datelike;
 use chrono::NaiveDate;
-use log::warn;
 use crate::codegen::command_trans_map::{out_of_bounds_reqs_arg, render_args_item};
 use crate::globals::{get_part_counter, update_part_counter};
 use crate::latex_semantic::{OptionalArgNode, RequiredArgNode};
-
+use crate::utils::{drop_command_warn, COMMANDWARNING};
 
 static ARTICLE_HEADER: &str = "Assets/Headers/article_header.txt";
 static REPORT_HEADER: &str = "Assets/Headers/report_header.txt";
@@ -28,9 +27,10 @@ pub fn render_section_chapter(name: &str, reqs: Vec<RequiredArgNode>, _opts: Vec
 
 
         _ => {
-            let error_msg = format!("ERROR: NOT-IMPLEMENTED \\{}{{{}}}", name, reqs.iter().map(|r| render_args_item(&r.items)).collect::<Vec<_>>().join("}{"));
-            warn!("==> {}", error_msg);
-            out.push_str(format!("/*{}*/",error_msg).as_str());
+            out = drop_command_warn(COMMANDWARNING::NotImplemented(name.to_string()),
+                                    Option::from(out),
+                                    Option::from(name),
+                                    Option::from(reqs.clone()));
         },
     }
     out.push_str(&out_of_bounds_reqs_arg(&reqs, 1));
@@ -49,9 +49,10 @@ pub fn render_info_document(name: &str, reqs: Vec<RequiredArgNode>, _opts: Vec<O
         "tableofcontents" => out.push_str("#outline()"),
 
         _ => {
-            let error_msg = format!("ERROR: NOT-IMPLEMENTED \\{}{{{}}}", name, reqs.iter().map(|r| render_args_item(&r.items)).collect::<Vec<_>>().join("}{"));
-            warn!("==> {}", error_msg);
-            out.push_str(format!("/*{}*/",error_msg).as_str());
+            out = drop_command_warn(COMMANDWARNING::NotImplemented(name.to_string()),
+                                    Option::from(out),
+                                    Option::from(name),
+                                    Option::from(reqs.clone()));
         },
     }
 

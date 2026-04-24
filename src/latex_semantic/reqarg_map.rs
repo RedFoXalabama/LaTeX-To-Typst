@@ -135,7 +135,7 @@ fn get_reqarg_map() -> &'static HashMap<&'static str, &'static i32> {
         );
         m.insert(
             "today",
-            &1,
+            &0,
         );
         m.insert(
             "tableofcontents",

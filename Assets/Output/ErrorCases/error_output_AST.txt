@@ -115,15 +115,9 @@ AstDocument {
                 count: 2,
             },
         ),
-        Command(
-            CommandNode {
-                name: "textbf",
-                optional_args: [],
-                required_args: [
-                    RequiredArgNode {
-                        items: [],
-                    },
-                ],
+        Comment(
+            CommentNode {
+                value: "%\\textbf",
             },
         ),
         Newlines(

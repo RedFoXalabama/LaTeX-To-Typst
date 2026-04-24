@@ -1,7 +1,7 @@
-﻿use log::warn;
-// Il comando \\ é gestito tramite la grammatica che lo considera una regola Linebreak e non command e lo gestisce con la sua funzione
-use crate::codegen::command_trans_map::{out_of_bounds_reqs_arg, render_args_item};
+﻿// Il comando \\ é gestito tramite la grammatica che lo considera una regola Linebreak e non command e lo gestisce con la sua funzione
+use crate::codegen::command_trans_map::{out_of_bounds_reqs_arg};
 use crate::latex_semantic::{OptionalArgNode, RequiredArgNode};
+use crate::utils::{drop_command_warn, COMMANDWARNING};
 
 pub fn render_space_breaks(name: &str, reqs: Vec<RequiredArgNode>, _opts: Vec<OptionalArgNode>) -> String {
     let mut out = String::new();
@@ -12,9 +12,10 @@ pub fn render_space_breaks(name: &str, reqs: Vec<RequiredArgNode>, _opts: Vec<Op
         "pagebreak" | "newpage" | "clearpage" => out.push_str("#pagebreak()"),
 
         _ => {
-            let error_msg = format!("ERROR: NOT-IMPLEMENTED \\{}{{{}}}", name, reqs.iter().map(|r| render_args_item(&r.items)).collect::<Vec<_>>().join("}{"));
-            warn!("==> {}", error_msg);
-            out.push_str(format!("/*{}*/",error_msg).as_str());
+            out = drop_command_warn(COMMANDWARNING::NotImplemented(name.to_string()),
+                                    Option::from(out),
+                                    Option::from(name),
+                                    Option::from(reqs.clone()));
         },
     }
 

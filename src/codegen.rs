@@ -1,13 +1,13 @@
 mod block_trans_map;
-mod command_trans_map;
+pub(crate) mod command_trans_map;
 pub mod trans_map;
 
-use log::warn;
 use crate::codegen::block_trans_map::BlockTransMap;
-use crate::codegen::command_trans_map::{render_args_item, CommandTransMap};
+use crate::codegen::command_trans_map::{CommandTransMap};
 use crate::codegen::trans_map::TransMap;
 use crate::globals::get_in_listing_value;
 use crate::latex_semantic::*;
+use crate::utils::{drop_command_warn, COMMANDWARNING};
 
 pub fn ast_to_typst(doc: &AstDocument) -> String {
     println!("3. AST ==> Starting Traduction in Typst...");
@@ -156,9 +156,11 @@ pub(crate) fn render_command(command_node: &CommandNode) -> String {
     if let Some(rendered) = CommandTransMap::translate(command_node) {
         rendered
     } else {
-        let error_msg = format!("ERROR: WRONG-COMMAND OR NOT-IMPLEMENTED \\{}{{{}}}", command_node.name, command_node.required_args.iter().map(|r| render_args_item(&r.items)).collect::<Vec<_>>().join("}{"));
-        warn!("==> {}", error_msg);
-        format!("/*{}*/",error_msg)
+        let out = String::new();
+        drop_command_warn(COMMANDWARNING::WrongCommandOrNotImplemented(command_node.name.clone()),
+                          Option::from(out),
+                          Option::from(&*command_node.name),
+                          Option::from(command_node.required_args.clone()))
     }
 }
 

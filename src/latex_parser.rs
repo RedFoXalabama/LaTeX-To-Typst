@@ -20,7 +20,7 @@ pub fn read_latex_file<P: AsRef<Path>>(path: P) -> Result<String, Error> {
 
 /// Simple scanner to perform preliminary checks on the LaTeX text,
 /// such as verifying that all open curly brackets have a closing one.
-pub fn scan_latex(input: &str) -> Result<(), std::io::Error> {
+pub fn scan_latex(input: &str) -> Result<(), Error> {
     let mut bracket_count: i32 = 0;
     let mut block_stack: Vec<(String, usize, usize)> = Vec::new(); // name, line, col
     let mut line = 1;
@@ -78,7 +78,7 @@ pub fn scan_latex(input: &str) -> Result<(), std::io::Error> {
         } else if c == '}' {
             bracket_count -= 1;
             if bracket_count < 0 {
-                return Err(std::io::Error::new(
+                return Err(Error::new(
                     std::io::ErrorKind::InvalidData,
                     format!("Scanner Error: Unmatched closing bracket '}}' at line {}, column {}", line, col),
                 ));
@@ -89,14 +89,14 @@ pub fn scan_latex(input: &str) -> Result<(), std::io::Error> {
     }
 
     if bracket_count > 0 {
-         return Err(std::io::Error::new(
+         return Err(Error::new(
              std::io::ErrorKind::InvalidData,
              format!("Scanner Error: Found {} unclosed opening bracket(s) '{{'", bracket_count),
          ));
     }
     
     if let Some((name, line, col)) = block_stack.pop() {
-        return Err(std::io::Error::new(
+        return Err(Error::new(
             std::io::ErrorKind::InvalidData,
             format!("Scanner Error: Unclosed \\begin{{{}}} starting at line {}, column {}", name, line, col),
         ));

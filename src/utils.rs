@@ -1,5 +1,5 @@
 use std::fs;
-use std::path::Path;
+use std::path::{Path};
 use crate::latex_semantic::AstDocument;
 use std::io;
 use std::process::{Child, Command, Stdio};

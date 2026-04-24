@@ -1,5 +1,5 @@
 [package]
-name = "LaTeX-To-Typst"
+name = "latex_to_typst"
 version = "0.1.0"
 edition = "2024"
 

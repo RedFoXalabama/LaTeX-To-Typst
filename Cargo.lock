@@ -3,17 +3,6 @@
 version = 4
 
 [[package]]
-name = "LaTeX-To-Typst"
-version = "0.1.0"
-dependencies = [
- "chrono",
- "env_logger",
- "log",
- "pest",
- "pest_derive",
-]
-
-[[package]]
 name = "aho-corasick"
 version = "1.1.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -273,6 +262,17 @@ checksum = "b49715b7073f385ba4bc528e5747d02e66cb39c6146efb66b781f131f0fb399c"
 dependencies = [
  "once_cell",
  "wasm-bindgen",
+]
+
+[[package]]
+name = "latex_to_typst"
+version = "0.1.0"
+dependencies = [
+ "chrono",
+ "env_logger",
+ "log",
+ "pest",
+ "pest_derive",
 ]
 
 [[package]]

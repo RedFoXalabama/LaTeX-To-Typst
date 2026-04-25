@@ -10,7 +10,6 @@ use crate::latex_semantic::*;
 use crate::utils::{COMMANDWARNING, drop_command_warn};
 
 pub fn ast_to_typst(doc: &AstDocument) -> String {
-    println!("3. AST ==> Starting Traduction in Typst...");
     doc.items.iter().map(render_item).collect()
 }
 

@@ -1,5 +1,5 @@
 use crate::codegen;
-use crate::codegen::trans_map::{CommandTranslationFn, TransMap};
+use crate::codegen::trans_map::{CommandTranslationFn, TransMap, render_empty};
 use crate::latex_semantic::{
     ArgItemNode, CommandNode, KvPairNode, OptItemNode, OptValueNode, OptionalEntryNode,
     RequiredArgNode,
@@ -207,6 +207,9 @@ fn get_trans_map() -> &'static HashMap<&'static str, CommandTranslationFn> {
         );
         // HYPERLINKS
         m.insert("href", hyperlinks::render_href as CommandTranslationFn);
+        // TABLES
+        // hlines are handled in the block translation of tabular, so we can ignore the command
+        m.insert("hline", render_empty as CommandTranslationFn);
         m
     })
 }

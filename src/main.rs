@@ -15,7 +15,8 @@ fn main() {
         let entry = file.expect("Failed to read directory entry");
         let path = entry.path();
         if path.is_file() && path.extension().and_then(|s| s.to_str()) == Some("tex") {
-            log::info!("Processing file: {}", path.display());
+            println!("Translating file: {}", path.display());
+            log::info!("Translating file: {}", path.display());
 
             let input_path = path.to_str().unwrap();
             let codegen_path: &str = &format!(
@@ -27,6 +28,9 @@ fn main() {
             if let Err(err) = translate_file(input_path, PARSETREE_PATH, AST_PATH, codegen_path) {
                 eprintln!("{}", err);
                 std::process::exit(1);
+            } else {
+                log::info!("File translated successfully: {}", codegen_path);
+                println!("File translated successfully: {}", codegen_path);
             }
         }
     }

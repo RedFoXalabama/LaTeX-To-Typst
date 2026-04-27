@@ -1,43 +1,58 @@
-use std::fs;
-use chrono::Datelike;
-use chrono::NaiveDate;
 use crate::codegen::command_trans_map::{out_of_bounds_reqs_arg, render_args_item};
 use crate::globals::{get_part_counter, update_part_counter};
 use crate::latex_semantic::{OptionalArgNode, RequiredArgNode};
-use crate::utils::{drop_command_warn, COMMANDWARNING};
+use crate::utils::{COMMANDWARNING, drop_command_warn};
+use chrono::Datelike;
+use chrono::NaiveDate;
+use std::fs;
 
 static ARTICLE_HEADER: &str = "Assets/Headers/article_header.txt";
 static REPORT_HEADER: &str = "Assets/Headers/report_header.txt";
 static BOOK_HEADER: &str = "Assets/Headers/book_header.txt";
 static STANDARD_HEADER: &str = "Assets/Headers/standard_header.txt";
 
-pub fn render_section_chapter(name: &str, reqs: Vec<RequiredArgNode>, _opts: Vec<OptionalArgNode>) -> String {
+pub fn render_section_chapter(
+    name: &str,
+    reqs: Vec<RequiredArgNode>,
+    _opts: Vec<OptionalArgNode>,
+) -> String {
     let mut out = String::new();
     match name {
         "part" => {
             update_part_counter();
             out.push_str(format!("#v(2em)\n#align(center)[\n#text(1.2em)[Part {}]\n#v(0.5em)\n#text(2em, weight: \"bold\")[{}]\n]\n#v(2em)\n", get_part_counter(), render_args_item(&reqs[0].items)).as_str())
         }
-        //"chapter" => out.push_str(format!("= {}\n", render_args_item(&reqs[0].items)).as_str()),
-        "section" => out.push_str(format!("= {}\n", render_args_item(&reqs[0].items)).as_str()),
-        "subsection" => out.push_str(format!("== {}\n", render_args_item(&reqs[0].items)).as_str()),
-        "subsubsection" => out.push_str(format!("=== {}\n", render_args_item(&reqs[0].items)).as_str()),
-        "paragraph" => out.push_str(format!("==== {}\n", render_args_item(&reqs[0].items)).as_str()),
-        "subparagraph" => out.push_str(format!("===== {}\n", render_args_item(&reqs[0].items)).as_str()),
-
+        "chapter" => out.push_str(format!("= {}\n", render_args_item(&reqs[0].items)).as_str()),
+        "section" => out.push_str(format!("== {}\n", render_args_item(&reqs[0].items)).as_str()),
+        "subsection" => out.push_str(format!("=== {}\n", render_args_item(&reqs[0].items)).as_str()),
+        "subsubsection" => {
+            out.push_str(format!("==== {}\n", render_args_item(&reqs[0].items)).as_str())
+        }
+        "paragraph" => {
+            out.push_str(format!("===== {}\n", render_args_item(&reqs[0].items)).as_str())
+        }
+        "subparagraph" => {
+            out.push_str(format!("====== {}\n", render_args_item(&reqs[0].items)).as_str())
+        }
 
         _ => {
-            out = drop_command_warn(COMMANDWARNING::NotImplemented(name.to_string()),
-                                    Option::from(out),
-                                    Option::from(name),
-                                    Option::from(reqs.clone()));
-        },
+            out = drop_command_warn(
+                COMMANDWARNING::NotImplemented(name.to_string()),
+                Option::from(out),
+                Option::from(name),
+                Option::from(reqs.clone()),
+            );
+        }
     }
     out.push_str(&out_of_bounds_reqs_arg(&reqs, 1));
     out
 }
 
-pub fn render_info_document(name: &str, reqs: Vec<RequiredArgNode>, _opts: Vec<OptionalArgNode>) -> String {
+pub fn render_info_document(
+    name: &str,
+    reqs: Vec<RequiredArgNode>,
+    _opts: Vec<OptionalArgNode>,
+) -> String {
     let mut out = String::new();
     match name {
         "title" => out.push_str(format!("#let title = [{}]", render_args_item(&reqs[0].items)).as_str()),
@@ -68,13 +83,10 @@ fn render_daytime(date: String) -> String {
     let mut normalized_date = String::new();
 
     let formats = [
-        "%d/%m/%Y", "%Y/%m/%d", "%m/%d/%Y",
-        "%d-%m-%Y", "%Y-%m-%d", "%m-%d-%Y",
-        "%d.%m.%Y", "%Y.%m.%d", "%m.%d.%Y",
-        "%d:%m:%Y", "%Y:%m:%d", "%m:%d:%Y",
-        "%d %m %Y", "%Y %m %d", "%m %d %Y",
-        "%Y%m%d", "%d%m%Y", "%m%d%Y",
-        "%d %B %Y", "%B %d %Y", "%d %b %Y", "%b %d %Y",
+        "%d/%m/%Y", "%Y/%m/%d", "%m/%d/%Y", "%d-%m-%Y", "%Y-%m-%d", "%m-%d-%Y", "%d.%m.%Y",
+        "%Y.%m.%d", "%m.%d.%Y", "%d:%m:%Y", "%Y:%m:%d", "%m:%d:%Y", "%d %m %Y", "%Y %m %d",
+        "%m %d %Y", "%Y%m%d", "%d%m%Y", "%m%d%Y", "%d %B %Y", "%B %d %Y", "%d %b %Y",
+        "%b %d %Y",
         //AGGIUNGERE ALTRI TIPI DI DATE SE SI VUOLE
     ];
 
@@ -90,10 +102,13 @@ fn render_daytime(date: String) -> String {
     }
 
     normalized_date
-
 }
 
-pub fn render_doc_class(_name: &str, reqs: Vec<RequiredArgNode>, _opts: Vec<OptionalArgNode>) -> String {
+pub fn render_doc_class(
+    _name: &str,
+    reqs: Vec<RequiredArgNode>,
+    _opts: Vec<OptionalArgNode>,
+) -> String {
     let mut out = String::new();
     let mut header_path = String::new();
     if let Some(first) = reqs.first() {
@@ -103,7 +118,6 @@ pub fn render_doc_class(_name: &str, reqs: Vec<RequiredArgNode>, _opts: Vec<Opti
             "book" => header_path = BOOK_HEADER.to_string(),
 
             _ => header_path = STANDARD_HEADER.to_string(),
-
         }
     }
     let header = fs::read_to_string(header_path).unwrap();

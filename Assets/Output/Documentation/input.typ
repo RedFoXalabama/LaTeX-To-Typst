@@ -127,17 +127,16 @@ _italic_
 ]
 #v(2em)
 
-= chapter
 
-== section
+= section
 
-=== subsection
+== subsection
 
-==== subsubsection
+=== subsubsection
 
-===== paragraph
+==== paragraph
 
-====== subparagraph
+===== subparagraph
 
 
 #text(blue)[This is *bold and blue*.]

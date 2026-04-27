@@ -6,10 +6,10 @@ use chrono::Datelike;
 use chrono::NaiveDate;
 use std::fs;
 
-static ARTICLE_HEADER: &str = "Assets/Headers/article_header.txt";
-static REPORT_HEADER: &str = "Assets/Headers/report_header.txt";
-static BOOK_HEADER: &str = "Assets/Headers/book_header.txt";
-static STANDARD_HEADER: &str = "Assets/Headers/standard_header.txt";
+static ARTICLE_HEADER: &str = "Assets/Headers/article_header.typ";
+static REPORT_HEADER: &str = "Assets/Headers/report_header.typ";
+static BOOK_HEADER: &str = "Assets/Headers/book_header.typ";
+static STANDARD_HEADER: &str = "Assets/Headers/standard_header.typ";
 
 pub fn render_section_chapter(
     name: &str,
@@ -22,17 +22,17 @@ pub fn render_section_chapter(
             update_part_counter();
             out.push_str(format!("#v(2em)\n#align(center)[\n#text(1.2em)[Part {}]\n#v(0.5em)\n#text(2em, weight: \"bold\")[{}]\n]\n#v(2em)\n", get_part_counter(), render_args_item(&reqs[0].items)).as_str())
         }
-        "chapter" => out.push_str(format!("= {}\n", render_args_item(&reqs[0].items)).as_str()),
-        "section" => out.push_str(format!("== {}\n", render_args_item(&reqs[0].items)).as_str()),
-        "subsection" => out.push_str(format!("=== {}\n", render_args_item(&reqs[0].items)).as_str()),
+        "chapter" => out.push_str(""), // TODO: abilita in base al tipo di documento
+        "section" => out.push_str(format!("= {}\n", render_args_item(&reqs[0].items)).as_str()),
+        "subsection" => out.push_str(format!("== {}\n", render_args_item(&reqs[0].items)).as_str()),
         "subsubsection" => {
-            out.push_str(format!("==== {}\n", render_args_item(&reqs[0].items)).as_str())
+            out.push_str(format!("=== {}\n", render_args_item(&reqs[0].items)).as_str())
         }
         "paragraph" => {
-            out.push_str(format!("===== {}\n", render_args_item(&reqs[0].items)).as_str())
+            out.push_str(format!("==== {}\n", render_args_item(&reqs[0].items)).as_str())
         }
         "subparagraph" => {
-            out.push_str(format!("====== {}\n", render_args_item(&reqs[0].items)).as_str())
+            out.push_str(format!("===== {}\n", render_args_item(&reqs[0].items)).as_str())
         }
 
         _ => {

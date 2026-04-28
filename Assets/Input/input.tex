@@ -19,7 +19,7 @@ testo pre commento % prova commento monolinea
 \end{comment}
 
 \begin{comment}
-    \begin{tabular}{ |c|c|c| }
+    \begin{tabular}{ |c|c|csss| }
         \hline
         \textbf{cell1} & cell2 & cell3 \\
         \hline
@@ -78,7 +78,6 @@ testo pre commento % prova commento monolinea
     \item[description 1] description text 1
 \end{description}
 
-
 \part{part 1}
 \part{part 2}
 \chapter{chapter}
@@ -93,18 +92,27 @@ testo pre commento % prova commento monolinea
 \href{https://www.overleaf.com/learn}
 \href{https://www.overleaf.com/learn}{Overleaf Learn} % testo del link
 
-\usepackage[letterpaper = true,top=2cm\textwidth, points={1, cane,3 ,4}]{geometry}
+\usepackage{geometry}[letterpaper = true,top=2cm\textwidth, points={1, cane,3 ,4}]
 \usepackage{listings}
 
-\begin{tabular}{ |c|c|c| }
+\begin{tabularr}{ |c|c|c| }
     \hline
     \textbf{cell1} & cell2 & cell3 \\
     \hline
     cell4 & cell5 & cell6 \\
     \hline
-    cell7 & cell8 & cell9 \\
-    \hline
+    cell7 & cell8 & \begin{tabular}{ |c|c|c| }
+\hlinee
+\textbf{cell1} & cell2 & cell3 \\
+\hline
+cell4 & cell5 & cell6 \\
+\hline
+cell7 & cell8 & cell9 \\
+\hline
 \end{tabular}
+\\
+    \hline
+\end{tabularr}
 
 \begin{verbatim}
     Text enclosed inside \texttt{verbatim} environment

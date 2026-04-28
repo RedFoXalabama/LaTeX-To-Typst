@@ -25,7 +25,6 @@ pub fn parse_latex<'a>(input: &'a str) -> Result<Pairs<'a, Rule>, Error> {
     // In parse_latex, serve a dire che il Pairs<'a, Rule> restituito contiene riferimenti validi finché è valido anche input: &'a str.
     // Quindi lega la durata dell`output` alla durata dell`input`, evitando riferimenti pendenti.
     // In breve: <'a> = “l`output` prende in prestito i dati dall`input` con la stessa durata”.
-    println!("1. Latex Input ==> Starting AST construction...");
     
     LatexParser::parse(Rule::file, input).map_err(|e| {
         // In caso di errore, restituisce un messaggio di errore più leggibile.

@@ -1,7 +1,9 @@
 file = { SOI ~ item* ~ EOI }
 
 // Add alignment_tab to items
-item = { block_raw | block | command | text | newlines | linebreak | comment }
+item = { whitespace | block_raw | block | command | text | newlines | linebreak | comment }
+
+whitespace = { (" " | "\t")+ }
 
 name = { ASCII_ALPHA+ } // Il nome del comando è composto da lettere ASCII, ma non può essere vuoto. Se si vuole permettere anche comandi con nomi più complessi, si potrebbe modificare questa regola.
 
@@ -14,13 +16,14 @@ block_raw = {  "\\begin{" ~ PUSH(raw_name) ~ "}" ~ required_arg* ~ optional_arg*
     content_raw = { (!("\\end{" ~ PEEK ~ "}") ~ ANY)* }
 
 // Only match command if it is NOT followed by "begin{" or "end{"
-command = { "\\" ~ !("begin" | "end") ~ name ~ optional_arg* ~ required_arg* }
+command = { "\\" ~ !("begin" | "end") ~ (name | escaped_symbols) ~ required_arg* ~ optional_arg* }
+escaped_symbols = { "{" | "}" | "%" | "&" | "$" | "#" | "_" }
 
 linebreak = { "\\\\" }
 newlines = { NEWLINE+ }
 comment = { ("%" ~ (!NEWLINE ~ ANY)*) }
 
-text = { (!("\\" | NEWLINE | comment) ~ ANY)+ }
+text = { (!("\\" | NEWLINE | comment ) ~ ANY)+ }
 
 required_arg = { "{" ~ argument ~ "}" }
     argument = { arg_item* } //se si vuole avere un req_arg vuoto impostare -> * invece che +, con + almeno 1 arg

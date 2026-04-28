@@ -20,6 +20,11 @@ pub fn render_formatting(name: &str, reqs: Vec<RequiredArgNode>, _opts: Vec<Opti
                                         Option::from(reqs.clone()));
             },
         }
+    } else {
+        match name {
+            "{" | "}" | "%" | "&" | "$" | "#" | "_" => out.push_str(&format!("\\{}", name)),
+            _ => out.push_str(format!("RENDER-ERROR = {}", name).as_str()),
+        }
     }
     out.push_str(&out_of_bounds_reqs_arg(&reqs, 1));
     out

@@ -1,5 +1,146 @@
-\begin{verbatim}{cccc}[dddd]
-    prova
-\end{verbatim}
+\documentclass{article}
+\title{LaTeX To Typst}
+\author{Gianfranco e Vito}
+\date{\today}
+\date{31/12/2026}
 
-\textbf{fff}{ddd}
+\usepackage{verbatim}
+\usepackage{listing}
+\usepackage{hyperref}
+
+\begin{document}
+    \maketitle
+    \tableofcontents
+
+    prova{-tra parentesi graffe-}
+    testo pre commento % prova commento monolinea
+    \begin{comment}
+        Questo é un commento multilinea \textbf{aa}
+    \end{comment}
+
+    \begin{comment}
+        \begin{tabular}{ |c|c|csss| }
+            \hline
+            \textbf{cell1} & cell2 & cell3 \\
+            \hline
+            cell4 & cell5 & cell6 \\
+            \hline
+            cell7 & cell8 & cell9 \\
+            \hline
+        \end{tabular}
+    \end{comment}
+
+
+    \textbf{Bold}
+    \textit{italic}
+    \underline{underline}
+
+    \centering
+    \raggedright
+    \raggedleft
+    \flushright
+    \flushleft
+    \usepackage{ragged2e}
+    \begin{center}
+        center block \textbf{bold}
+    \end{center}
+    \begin{flushleft} flushleft block \end{flushleft}
+    \begin{flushright} flushright block \end{flushright}
+    \begin{FlushLeft} FlushLeft block \end{FlushLeft}
+    \begin{FlushRight} FlushRight block \end{FlushRight}
+
+    \\
+    \newline
+    \break
+    \hfill
+    \vfill
+    \pagebreak
+    \newpage
+    \clearpage
+
+    \begin{itemize}
+        \item[!] itemize 1
+        \item \begin{enumerate}
+                  \item enumerate 1
+                  \item \begin{itemize}
+                            \item itemize 3
+                            \item \begin{enumerate}
+                                      \item enum 2
+                                      \item \begin{enumerate}
+                                                \item enum 3
+                                      \end{enumerate}
+                            \end{enumerate}
+                  \end{itemize}
+        \end{enumerate}
+        \item itemize 2
+    \end{itemize}
+    \begin{description}
+        \item[description 1] description text 1
+    \end{description}
+
+
+    \part{part 1}
+    \part{part 2}
+    \chapter{chapter}
+    \section{section}
+    \subsection{subsection}
+    \subsubsection{subsubsection}
+    \paragraph{paragraph}
+    \subparagraph{subparagraph}
+
+    \textcolor{blue}{This is \textbf{bold and blue}.}
+
+    \href{https://www.overleaf.com/learn}
+    \href{https://www.overleaf.com/learn}{Overleaf Learn} % testo del link
+
+    \usepackage[letterpaper = true,top=2cm\textwidth, points={1, cane,3 ,4}]{geometry}
+    \usepackage{listings}
+
+    \begin{tabular}{ |c|c|c| }
+        \hline
+        \textbf{cell1} & cell2 & cell3 \\
+        \hline
+        cell4 & cell5 & cell6 \\
+        \hline
+        cell7 & cell8 & cell9 \\
+        \hline
+    \end{tabular}
+
+    \begin{verbatim}
+    Text enclosed inside \texttt{verbatim} environment
+    is printed directly
+    and all \LaTeX{} commands are ignored.
+    \end{verbatim}
+
+    \begin{lstlisting}[language=Python]
+import numpy as np
+
+def incmatrix(genl1,genl2):
+    m = len(genl1)
+    n = len(genl2)
+    M = None #to become the incidence matrix
+    VT = np.zeros((n*m,1), int)  #dummy variable
+
+    #compute the bitwise xor matrix
+    M1 = bitxormatrix(genl1)
+    M2 = np.triu(bitxormatrix(genl2),1)
+
+    for i in range(m-1):
+        for j in range(i+1, m):
+            [r,c] = np.where(M2 == M1[i,j])
+            for k in range(len(r)):
+                VT[(i)*n + r[k]] = 1;
+                VT[(i)*n + c[k]] = 1;
+                VT[(j)*n + r[k]] = 1;
+                VT[(j)*n + c[k]] = 1;
+
+                if M is None:
+                    M = np.copy(VT)
+                else:
+                    M = np.concatenate((M, VT), 1)
+
+                VT = np.zeros((n*m,1), int)
+
+    return M
+    \end{lstlisting}\}\}}
+\end{document}

@@ -1,13 +1,13 @@
 mod ast_structure;
 mod reqarg_map;
 
-use log::{error};
-pub use ast_structure::*; //importo tutte le strutture e gli enumerati che compongono l'AST
+pub use ast_structure::*;
+use log::error; //importo tutte le strutture e gli enumerati che compongono l'AST
 
 use crate::latex_parser::Rule;
-use pest::iterators::{Pair, Pairs};
 use crate::latex_semantic::reqarg_map::reqarg_count;
-use crate::utils::{drop_command_warn, COMMANDWARNING};
+use crate::utils::{COMMANDWARNING, drop_command_warn};
+use pest::iterators::{Pair, Pairs};
 // ALBERO AST (Abstract Syntax Tree) - rappresentazione ad albero della struttura sintattica del documento LaTeX,
 // costruita a partire dal parse tree di pest.
 // L'AST è più astratto e semantico rispetto al parse tree, e viene utilizzato per analisi successive o trasformazioni.
@@ -31,7 +31,6 @@ pub fn build_ast(mut pairs: Pairs<Rule>) -> Result<AstDocument, SemanticError> {
     if file_pair.as_rule() != Rule::file {
         return Err(SemanticError::UnexpectedRule(file_pair.as_rule()));
     }
-    println!("2. ParseTree ==> Starting AST construction...");
 
     build_document(file_pair)
 }
@@ -41,11 +40,37 @@ pub fn build_ast(mut pairs: Pairs<Rule>) -> Result<AstDocument, SemanticError> {
 // file = { SOI ~ item* ~ EOI }
 fn build_document(file_pair: Pair<Rule>) -> Result<AstDocument, SemanticError> {
     let mut items: Vec<AstItemNode> = Vec::new();
+    let mut found_document = false;
 
     // iteriamo sui figli del nodo file, che possono essere item o EOI (End Of Input)
     for child in file_pair.into_inner() {
         match child.as_rule() {
-            Rule::item => items.push(build_item(child)?),
+            Rule::item => {
+                let item = build_item(child)?;
+
+                // Track where we are regarding `\begin{document}`
+                if let AstItemNode::Block(b) = &item {
+                    if b.name == "document" {
+                        found_document = true;
+                    }
+                }
+
+                // Check for text before `\begin{document}`
+                if !found_document {
+                    match &item {
+                        AstItemNode::Text(t) | AstItemNode::RawText(t) => {
+                            if !t.value.trim().is_empty() {
+                                return Err(SemanticError::TextBeforeDocument);
+                            }
+                        }
+                        _ => {}
+                    }
+                }
+
+                if !matches!(item, AstItemNode::Whitespace(_)) {
+                    items.push(item);
+                }
+            }
             Rule::EOI => {} // ignorato nell'AST
 
             other => return Err(SemanticError::UnexpectedRule(other)),
@@ -73,6 +98,7 @@ fn build_item(pair: Pair<Rule>) -> Result<AstItemNode, SemanticError> {
         Rule::text => Ok(AstItemNode::Text(build_text(child)?)),
         Rule::newlines => Ok(AstItemNode::Newlines(build_newlines(child)?)),
         Rule::linebreak => Ok(AstItemNode::Linebreak(build_linebreak(child)?)), // trattiamo i linebreak come newlines, visto che rappresentano un andare a capo
+        Rule::whitespace => Ok(AstItemNode::Whitespace(build_whitespace(child)?)),
         Rule::comment => Ok(AstItemNode::Comment(build_comment(child)?)),
 
         other => Err(SemanticError::UnexpectedItemRule(other)),
@@ -98,7 +124,12 @@ fn build_block(pair: Pair<Rule>) -> Result<BlockNode, SemanticError> {
             Rule::content => {
                 for item in child.into_inner() {
                     match item.as_rule() {
-                        Rule::item => items.push(build_item(item)?),
+                        Rule::item => {
+                            let built = build_item(item)?;
+                            if !matches!(built, AstItemNode::Whitespace(_)) {
+                                items.push(built);
+                            }
+                        }
                         other => return Err(SemanticError::UnexpectedRule(other)),
                     }
                 }
@@ -154,7 +185,7 @@ fn build_command(pair: Pair<Rule>) -> Result<CommandNode, SemanticError> {
 
     for child in pair.into_inner() {
         match child.as_rule() {
-            Rule::name => {
+            Rule::name | Rule::escaped_symbols => {
                 name = Some(child.as_str().to_string()).ok_or(SemanticError::MissingCommandName)?
             } // Some diventerà string
             Rule::optional_arg => optional_args.push(build_optional_arg(&name, child)?), // optional_arg = { "[" ~ optional_list? ~ "]" }
@@ -166,7 +197,12 @@ fn build_command(pair: Pair<Rule>) -> Result<CommandNode, SemanticError> {
 
     if let Some(expected) = reqarg_count(&name) {
         if required_args.len() < expected as usize {
-            error!("Comando \\{}: expected {} required arguments, found {}", name, expected, required_args.len());
+            error!(
+                "Comando \\{}: expected {} required arguments, found {}",
+                name,
+                expected,
+                required_args.len()
+            );
 
             return Err(SemanticError::MissingRequiredArgItems);
         }
@@ -189,6 +225,13 @@ fn build_text(pair: Pair<Rule>) -> Result<TextNode, SemanticError> {
     }
 
     Ok(TextNode { value })
+}
+
+// Un whitespace é uno o più spazi o tabulazioni
+fn build_whitespace(pair: Pair<Rule>) -> Result<WhitespaceNode, SemanticError> {
+    Ok(WhitespaceNode {
+        value: pair.as_str().to_string(),
+    })
 }
 
 // Una nuova linea é composta da uno o più caratteri di nuova linea (\n), e viene rappresentata da un nodo che conta quante nuove linee ci sono
@@ -244,7 +287,10 @@ fn build_required_arg(cmd_name: &str, pair: Pair<Rule>) -> Result<RequiredArgNod
             Rule::argument => {
                 for arg_item in child.into_inner() {
                     match arg_item.as_rule() {
-                        Rule::arg_item => items.push(build_arg_item(cmd_name, arg_item)?),
+                        Rule::arg_item => {
+                            let built = build_arg_item(cmd_name, arg_item)?;
+                            items.push(built);
+                        }
 
                         other => return Err(SemanticError::UnexpectedArgItemRule(other)),
                     }
@@ -257,7 +303,12 @@ fn build_required_arg(cmd_name: &str, pair: Pair<Rule>) -> Result<RequiredArgNod
 
     if items.is_empty() {
         if reqarg_count(cmd_name) > Option::from(0) {
-            drop_command_warn(COMMANDWARNING::EmptyBracket(cmd_name.to_string()), None, Some(cmd_name), None);
+            drop_command_warn(
+                COMMANDWARNING::EmptyBracket(cmd_name.to_string()),
+                None,
+                Some(cmd_name),
+                None,
+            );
             // return Err(SemanticError::MissingRequiredArgItems);
         }
     }
@@ -334,8 +385,10 @@ fn build_opt_entry(cmd_name: &str, pair: Pair<Rule>) -> Result<OptionalEntryNode
             Ok(OptionalEntryNode::KeyValue(kv))
         }
         Some(Rule::opt_item) => {
-            let items: Result<Vec<OptItemNode>, SemanticError> =
-                pair.into_inner().map(|p| build_opt_item(cmd_name, p)).collect();
+            let items: Result<Vec<OptItemNode>, SemanticError> = pair
+                .into_inner()
+                .map(|p| build_opt_item(cmd_name, p))
+                .collect();
             Ok(OptionalEntryNode::Items(items?))
         }
 

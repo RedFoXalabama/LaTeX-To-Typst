@@ -30,8 +30,6 @@ pub fn save_ast_to_file<P: AsRef<Path>>(path: P, ast: &AstDocument) -> Result<()
 }
 
 pub fn start_typst_watch(typ_path: &str) -> io::Result<Child> {
-    println!("4. Typst Input ==> Starting PDF construction...");
-
     if !Path::new(typ_path).exists() {
         return Err(io::Error::new(
             io::ErrorKind::NotFound,
@@ -97,3 +95,5 @@ pub fn drop_command_warn(
 
     out
 }
+
+// pub fn drop_block_warn()

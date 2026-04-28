@@ -1,5 +1,5 @@
 use crate::codegen;
-use crate::codegen::trans_map::{CommandTranslationFn, TransMap};
+use crate::codegen::trans_map::{CommandTranslationFn, TransMap, render_empty};
 use crate::latex_semantic::{
     ArgItemNode, CommandNode, KvPairNode, OptItemNode, OptValueNode, OptionalEntryNode,
     RequiredArgNode,
@@ -37,6 +37,10 @@ impl TransMap<CommandNode> for CommandTransMap {
             )
         })
     }
+
+    fn is_supported(name: &str) -> bool {
+        get_trans_map().contains_key(name)
+    }
 }
 
 fn get_trans_map() -> &'static HashMap<&'static str, CommandTranslationFn> {
@@ -63,6 +67,34 @@ fn get_trans_map() -> &'static HashMap<&'static str, CommandTranslationFn> {
         m.insert(
             "textcolor",
             text_formatting::render_textcolor as CommandTranslationFn,
+        );
+        m.insert(
+            "{",
+            text_formatting::render_formatting as CommandTranslationFn,
+        );
+        m.insert(
+            "}",
+            text_formatting::render_formatting as CommandTranslationFn,
+        );
+        m.insert(
+            "%",
+            text_formatting::render_formatting as CommandTranslationFn,
+        );
+        m.insert(
+            "&",
+            text_formatting::render_formatting as CommandTranslationFn,
+        );
+        m.insert(
+            "$",
+            text_formatting::render_formatting as CommandTranslationFn,
+        );
+        m.insert(
+            "#",
+            text_formatting::render_formatting as CommandTranslationFn,
+        );
+        m.insert(
+            "_",
+            text_formatting::render_formatting as CommandTranslationFn,
         );
         // TEXT ALIGNMENT
         m.insert(
@@ -95,7 +127,9 @@ fn get_trans_map() -> &'static HashMap<&'static str, CommandTranslationFn> {
             space_breaks::render_space_breaks as CommandTranslationFn,
         );
         m.insert(
-            "hfill", space_breaks::render_space_breaks as CommandTranslationFn, );
+            "hfill",
+            space_breaks::render_space_breaks as CommandTranslationFn,
+        );
         m.insert(
             "vfill",
             space_breaks::render_space_breaks as CommandTranslationFn,
@@ -173,6 +207,9 @@ fn get_trans_map() -> &'static HashMap<&'static str, CommandTranslationFn> {
         );
         // HYPERLINKS
         m.insert("href", hyperlinks::render_href as CommandTranslationFn);
+        // TABLES
+        // hlines are handled in the block translation of tabular, so we can ignore the command
+        m.insert("hline", render_empty as CommandTranslationFn);
         m
     })
 }

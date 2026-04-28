@@ -85,7 +85,6 @@ pub enum ArgItemNode {
     Group(RequiredArgNode),   // rule: required_arg annidato
     Newlines(NewlinesNode),   // rule: newlines
     Linebreak(LinebreakNode), // rule: linebreak
-    Whitespace(WhitespaceNode), // rule: whitespace
     Text(TextNode),           // rule: arg_text
 }
 
@@ -127,7 +126,6 @@ pub enum OptItemNode {
     Command(CommandNode),   // rule: command
     Group(RequiredArgNode), // rule: required_arg
     Newlines(NewlinesNode), // rule: newlines
-    Whitespace(WhitespaceNode), // rule: whitespace
     Text(TextNode),         // rule: opt_text
 }
 
@@ -152,6 +150,7 @@ pub enum SemanticError {
     UnexpectedOptItemRule(Rule),
     UnexpectedOptionalEntryRule(Rule),
     UnsupportedCommand(String),
+    UnsupportedEnvironment(String),
     MissingArgsForCommand(String, usize, usize),
     TextBeforeDocument,
     UnexpectedRule(Rule),

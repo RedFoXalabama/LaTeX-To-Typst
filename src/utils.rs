@@ -95,3 +95,5 @@ pub fn drop_command_warn(
 
     out
 }
+
+// pub fn drop_block_warn()

@@ -289,9 +289,7 @@ fn build_required_arg(cmd_name: &str, pair: Pair<Rule>) -> Result<RequiredArgNod
                     match arg_item.as_rule() {
                         Rule::arg_item => {
                             let built = build_arg_item(cmd_name, arg_item)?;
-                            if !matches!(built, ArgItemNode::Whitespace(_)) {
-                                items.push(built);
-                            }
+                            items.push(built);
                         }
 
                         other => return Err(SemanticError::UnexpectedArgItemRule(other)),
@@ -391,11 +389,7 @@ fn build_opt_entry(cmd_name: &str, pair: Pair<Rule>) -> Result<OptionalEntryNode
                 .into_inner()
                 .map(|p| build_opt_item(cmd_name, p))
                 .collect();
-            let filtered_items: Vec<OptItemNode> = items?
-                .into_iter()
-                .filter(|item| !matches!(item, OptItemNode::Whitespace(_)))
-                .collect();
-            Ok(OptionalEntryNode::Items(filtered_items))
+            Ok(OptionalEntryNode::Items(items?))
         }
 
         Some(other) => Err(SemanticError::UnexpectedOptionalEntryRule(other)),

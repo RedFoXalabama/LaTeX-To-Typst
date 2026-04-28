@@ -1,7 +1,7 @@
 file = { SOI ~ item* ~ EOI }
 
 // Add alignment_tab to items
-item = { block_raw | block | command | whitespace | text | newlines | linebreak | comment }
+item = { whitespace | block_raw | block | command | text | newlines | linebreak | comment }
 
 whitespace = { (" " | "\t")+ }
 
@@ -16,7 +16,7 @@ block_raw = {  "\\begin{" ~ PUSH(raw_name) ~ "}" ~ required_arg* ~ optional_arg*
     content_raw = { (!("\\end{" ~ PEEK ~ "}") ~ ANY)* }
 
 // Only match command if it is NOT followed by "begin{" or "end{"
-command = { "\\" ~ !("begin" | "end") ~ (name | escaped_symbols) ~ required_arg* ~optional_arg* }
+command = { "\\" ~ !("begin" | "end") ~ (name | escaped_symbols) ~ required_arg* ~ optional_arg* }
 escaped_symbols = { "{" | "}" | "%" | "&" | "$" | "#" | "_" }
 
 linebreak = { "\\\\" }

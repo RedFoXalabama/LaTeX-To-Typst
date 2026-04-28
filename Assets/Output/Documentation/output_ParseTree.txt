@@ -2,8 +2,8 @@
     Pair {
         rule: file,
         span: Span {
-            str: "\\documentclass{article}\n\\title{LaTeX To Typst}\n\\author{Gianfranco e Vito}\n\\date{\\today}\n\\date{31/12/2026}\n\n\\usepackage{verbatim}\n\\usepackage{listing}\n\\usepackage{hyperref}\n\n\\begin{document}\n\\maketitle\n\\tableofcontents\n\nprova{-tra parentesi graffe-}\ntesto pre commento % prova commento monolinea\n\\begin{comment}\n    Questo é un commento multilinea \\textbf{aa}\n\\end{comment}\n\n\\begin{comment}\n    \\begin{tabular}{ |c|c|csss| }\n        \\hline\n        \\textbf{cell1} & cell2 & cell3 \\\\\n        \\hline\n        cell4 & cell5 & cell6 \\\\\n        \\hline\n        cell7 & cell8 & cell9 \\\\\n        \\hline\n    \\end{tabular}\n\\end{comment}\n\n\n\\textbf{Bold}\n\\textit{italic}\n\\underline{underline}\n\n\\centering\n\\raggedright\n\\raggedleft\n\\flushright\n\\flushleft\n\\usepackage{ragged2e}\n\\begin{center}\n    center block \\textbf{bold}\n\\end{center}\n\\begin{flushleft} flushleft block \\end{flushleft}\n\\begin{flushright} flushright block \\end{flushright}\n\\begin{FlushLeft} FlushLeft block \\end{FlushLeft}\n\\begin{FlushRight} FlushRight block \\end{FlushRight}\n\n\\\\\n\\newline\n\\break\n\\hfill\n\\vfill\n\\pagebreak\n\\newpage\n\\clearpage\n\n\\begin{itemize}\n    \\item[!] itemize 1\n    \\item \\begin{enumerate}\n              \\item enumerate 1\n              \\item \\begin{itemize}\n                        \\item itemize 3\n                        \\item \\begin{enumerate}\n                                  \\item enum 2\n                                  \\item \\begin{enumerate}\n                                            \\item enum 3\n                                  \\end{enumerate}\n                        \\end{enumerate}\n              \\end{itemize}\n    \\end{enumerate}\n    \\item itemize 2\n\\end{itemize}\n\\begin{description}\n    \\item[description 1] description text 1\n\\end{description}\n\n\\part{part 1}\n\\part{part 2}\n\\chapter{chapter}\n\\section{section}\n\\subsection{subsection}\n\\subsubsection{subsubsection}\n\\paragraph{paragraph}\n\\subparagraph{subparagraph}\n\n\\textcolor{blue}{This is \\textbf{bold and blue}.}\n\n\\href{https://www.overleaf.com/learn}\n\\href{https://www.overleaf.com/learn}{Overleaf Learn} % testo del link\n\n%\\usepackage[letterpaper = true,top=2cm\\textwidth, points={1, cane,3 ,4}]{geometry}\n\\usepackage{listings}\n\n\\begin{tabular}{ |c|c|c| }\n    \\hline\n    \\textbf{cell1} & cell2 & cell3 \\\\\n    \\hline\n    cell4 & cell5 & cell6 \\\\\n    \\hline\n    cell7 & cell8 & \\begin{tabular}{ |c|c|c| }\n\\hline\n\\textbf{cell1} & cell2 & cell3 \\\\\n\\hline\ncell4 & cell5 & cell6 \\\\\n\\hline\ncell7 & cell8 & cell9 \\\\\n\\hline\n\\end{tabular}\n\\\\\n    \\hline\n\\end{tabular}\n\n\\begin{verbatim}\n    Text enclosed inside \\texttt{verbatim} environment\n    is printed directly\n    and all \\LaTeX{} commands are ignored.\n\\end{verbatim}\n\n\\begin{lstlisting}[language=Python]\nimport numpy as np\n\ndef incmatrix(genl1,genl2):\n    m = len(genl1)\n    n = len(genl2)\n    M = None #to become the incidence matrix\n    VT = np.zeros((n*m,1), int)  #dummy variable\n\n    #compute the bitwise xor matrix\n    M1 = bitxormatrix(genl1)\n    M2 = np.triu(bitxormatrix(genl2),1)\n\n    for i in range(m-1):\n        for j in range(i+1, m):\n            [r,c] = np.where(M2 == M1[i,j])\n            for k in range(len(r)):\n                VT[(i)*n + r[k]] = 1;\n                VT[(i)*n + c[k]] = 1;\n                VT[(j)*n + r[k]] = 1;\n                VT[(j)*n + c[k]] = 1;\n\n                if M is None:\n                    M = np.copy(VT)\n                else:\n                    M = np.concatenate((M, VT), 1)\n\n                VT = np.zeros((n*m,1), int)\n\n    return M\n\\end{lstlisting}\n\n\\end{document}",
-            range: 0..3496,
+            str: "\\documentclass{article}\n\\title{LaTeX To Typst}\n\\author{Gianfranco e Vito}\n\\date{\\today}\n\\date{31/12/2026}\n\n\\usepackage{verbatim}\n\\usepackage{listing}\n\\usepackage{hyperref}\n\n\\begin{document}\n\\maketitle\n\\tableofcontents\n\nprova{-tra parentesi graffe-}\ntesto pre commento % prova commento monolinea\n\\begin{comment}\n    Questo é un commento multilinea \\textbf{aa}\n\\end{comment}\n\n\\begin{comment}\n    \\begin{tabular}{ |c|c|csss| }\n        \\hline\n        \\textbf{cell1} & cell2 & cell3 \\\\\n        \\hline\n        cell4 & cell5 & cell6 \\\\\n        \\hline\n        cell7 & cell8 & cell9 \\\\\n        \\hline\n    \\end{tabular}\n\\end{comment}\n\n\n\\textbf{Bold}\n\\textit{italic}\n\\underline{underline}\n\n\\centering\n\\raggedright\n\\raggedleft\n\\flushright\n\\flushleft\n\\usepackage{ragged2e}\n\\begin{center}\n    center block \\textbf{bold}\n\\end{center}\n\\begin{flushleft} flushleft block \\end{flushleft}\n\\begin{flushright} flushright block \\end{flushright}\n\\begin{FlushLeft} FlushLeft block \\end{FlushLeft}\n\\begin{FlushRight} FlushRight block \\end{FlushRight}\n\n\\\\\n\\newline\n\\break\n\\hfill\n\\vfill\n\\pagebreak\n\\newpage\n\\clearpage\n\n\\begin{itemize}\n    \\item[!] itemize 1\n    \\item \\begin{enumerate}\n              \\item enumerate 1\n              \\item \\begin{itemize}\n                        \\item itemize 3\n                        \\item \\begin{enumerate}\n                                  \\item enum 2\n                                  \\item \\begin{enumerate}\n                                            \\item enum 3\n                                  \\end{enumerate}\n                        \\end{enumerate}\n              \\end{itemize}\n    \\end{enumerate}\n    \\item itemize 2\n\\end{itemize}\n\\begin{description}\n    \\item[description 1] description text 1\n\\end{description}\n\n\\part{part 1}\n\\part{part 2}\n\\chapter{chapter}\n\\section{section}\n\\subsection{subsection}\n\\subsubsection{subsubsection}\n\\paragraph{paragraph}\n\\subparagraph{subparagraph}\n\n\\textcolor{blue}{This is \\textbf{bold and blue}.}\n\n\\href{https://www.overleaf.com/learn}\n\\href{https://www.overleaf.com/learn}{Overleaf Learn} % testo del link\n\n\\usepackage{geometry}[letterpaper = true,top=2cm\\textwidth, points={1, cane,3 ,4}]\n\\usepackage{listings}\n\n\\begin{tabularr}{ |c|c|c| }\n    \\hline\n    \\textbf{cell1} & cell2 & cell3 \\\\\n    \\hline\n    cell4 & cell5 & cell6 \\\\\n    \\hline\n    cell7 & cell8 & \\begin{tabular}{ |c|c|c| }\n\\hlinee\n\\textbf{cell1} & cell2 & cell3 \\\\\n\\hline\ncell4 & cell5 & cell6 \\\\\n\\hline\ncell7 & cell8 & cell9 \\\\\n\\hline\n\\end{tabular}\n\\\\\n    \\hline\n\\end{tabularr}\n\n\\begin{verbatim}\n    Text enclosed inside \\texttt{verbatim} environment\n    is printed directly\n    and all \\LaTeX{} commands are ignored.\n\\end{verbatim}\n\n\\begin{lstlisting}[language=Python]\nimport numpy as np\n\ndef incmatrix(genl1,genl2):\n    m = len(genl1)\n    n = len(genl2)\n    M = None #to become the incidence matrix\n    VT = np.zeros((n*m,1), int)  #dummy variable\n\n    #compute the bitwise xor matrix\n    M1 = bitxormatrix(genl1)\n    M2 = np.triu(bitxormatrix(genl2),1)\n\n    for i in range(m-1):\n        for j in range(i+1, m):\n            [r,c] = np.where(M2 == M1[i,j])\n            for k in range(len(r)):\n                VT[(i)*n + r[k]] = 1;\n                VT[(i)*n + c[k]] = 1;\n                VT[(j)*n + r[k]] = 1;\n                VT[(j)*n + c[k]] = 1;\n\n                if M is None:\n                    M = np.copy(VT)\n                else:\n                    M = np.concatenate((M, VT), 1)\n\n                VT = np.zeros((n*m,1), int)\n\n    return M\n\\end{lstlisting}\n\n\\end{document}",
+            range: 0..3498,
         },
         inner: [
             Pair {
@@ -642,15 +642,15 @@
             Pair {
                 rule: item,
                 span: Span {
-                    str: "\\begin{document}\n\\maketitle\n\\tableofcontents\n\nprova{-tra parentesi graffe-}\ntesto pre commento % prova commento monolinea\n\\begin{comment}\n    Questo é un commento multilinea \\textbf{aa}\n\\end{comment}\n\n\\begin{comment}\n    \\begin{tabular}{ |c|c|csss| }\n        \\hline\n        \\textbf{cell1} & cell2 & cell3 \\\\\n        \\hline\n        cell4 & cell5 & cell6 \\\\\n        \\hline\n        cell7 & cell8 & cell9 \\\\\n        \\hline\n    \\end{tabular}\n\\end{comment}\n\n\n\\textbf{Bold}\n\\textit{italic}\n\\underline{underline}\n\n\\centering\n\\raggedright\n\\raggedleft\n\\flushright\n\\flushleft\n\\usepackage{ragged2e}\n\\begin{center}\n    center block \\textbf{bold}\n\\end{center}\n\\begin{flushleft} flushleft block \\end{flushleft}\n\\begin{flushright} flushright block \\end{flushright}\n\\begin{FlushLeft} FlushLeft block \\end{FlushLeft}\n\\begin{FlushRight} FlushRight block \\end{FlushRight}\n\n\\\\\n\\newline\n\\break\n\\hfill\n\\vfill\n\\pagebreak\n\\newpage\n\\clearpage\n\n\\begin{itemize}\n    \\item[!] itemize 1\n    \\item \\begin{enumerate}\n              \\item enumerate 1\n              \\item \\begin{itemize}\n                        \\item itemize 3\n                        \\item \\begin{enumerate}\n                                  \\item enum 2\n                                  \\item \\begin{enumerate}\n                                            \\item enum 3\n                                  \\end{enumerate}\n                        \\end{enumerate}\n              \\end{itemize}\n    \\end{enumerate}\n    \\item itemize 2\n\\end{itemize}\n\\begin{description}\n    \\item[description 1] description text 1\n\\end{description}\n\n\\part{part 1}\n\\part{part 2}\n\\chapter{chapter}\n\\section{section}\n\\subsection{subsection}\n\\subsubsection{subsubsection}\n\\paragraph{paragraph}\n\\subparagraph{subparagraph}\n\n\\textcolor{blue}{This is \\textbf{bold and blue}.}\n\n\\href{https://www.overleaf.com/learn}\n\\href{https://www.overleaf.com/learn}{Overleaf Learn} % testo del link\n\n%\\usepackage[letterpaper = true,top=2cm\\textwidth, points={1, cane,3 ,4}]{geometry}\n\\usepackage{listings}\n\n\\begin{tabular}{ |c|c|c| }\n    \\hline\n    \\textbf{cell1} & cell2 & cell3 \\\\\n    \\hline\n    cell4 & cell5 & cell6 \\\\\n    \\hline\n    cell7 & cell8 & \\begin{tabular}{ |c|c|c| }\n\\hline\n\\textbf{cell1} & cell2 & cell3 \\\\\n\\hline\ncell4 & cell5 & cell6 \\\\\n\\hline\ncell7 & cell8 & cell9 \\\\\n\\hline\n\\end{tabular}\n\\\\\n    \\hline\n\\end{tabular}\n\n\\begin{verbatim}\n    Text enclosed inside \\texttt{verbatim} environment\n    is printed directly\n    and all \\LaTeX{} commands are ignored.\n\\end{verbatim}\n\n\\begin{lstlisting}[language=Python]\nimport numpy as np\n\ndef incmatrix(genl1,genl2):\n    m = len(genl1)\n    n = len(genl2)\n    M = None #to become the incidence matrix\n    VT = np.zeros((n*m,1), int)  #dummy variable\n\n    #compute the bitwise xor matrix\n    M1 = bitxormatrix(genl1)\n    M2 = np.triu(bitxormatrix(genl2),1)\n\n    for i in range(m-1):\n        for j in range(i+1, m):\n            [r,c] = np.where(M2 == M1[i,j])\n            for k in range(len(r)):\n                VT[(i)*n + r[k]] = 1;\n                VT[(i)*n + c[k]] = 1;\n                VT[(j)*n + r[k]] = 1;\n                VT[(j)*n + c[k]] = 1;\n\n                if M is None:\n                    M = np.copy(VT)\n                else:\n                    M = np.concatenate((M, VT), 1)\n\n                VT = np.zeros((n*m,1), int)\n\n    return M\n\\end{lstlisting}\n\n\\end{document}",
-                    range: 173..3496,
+                    str: "\\begin{document}\n\\maketitle\n\\tableofcontents\n\nprova{-tra parentesi graffe-}\ntesto pre commento % prova commento monolinea\n\\begin{comment}\n    Questo é un commento multilinea \\textbf{aa}\n\\end{comment}\n\n\\begin{comment}\n    \\begin{tabular}{ |c|c|csss| }\n        \\hline\n        \\textbf{cell1} & cell2 & cell3 \\\\\n        \\hline\n        cell4 & cell5 & cell6 \\\\\n        \\hline\n        cell7 & cell8 & cell9 \\\\\n        \\hline\n    \\end{tabular}\n\\end{comment}\n\n\n\\textbf{Bold}\n\\textit{italic}\n\\underline{underline}\n\n\\centering\n\\raggedright\n\\raggedleft\n\\flushright\n\\flushleft\n\\usepackage{ragged2e}\n\\begin{center}\n    center block \\textbf{bold}\n\\end{center}\n\\begin{flushleft} flushleft block \\end{flushleft}\n\\begin{flushright} flushright block \\end{flushright}\n\\begin{FlushLeft} FlushLeft block \\end{FlushLeft}\n\\begin{FlushRight} FlushRight block \\end{FlushRight}\n\n\\\\\n\\newline\n\\break\n\\hfill\n\\vfill\n\\pagebreak\n\\newpage\n\\clearpage\n\n\\begin{itemize}\n    \\item[!] itemize 1\n    \\item \\begin{enumerate}\n              \\item enumerate 1\n              \\item \\begin{itemize}\n                        \\item itemize 3\n                        \\item \\begin{enumerate}\n                                  \\item enum 2\n                                  \\item \\begin{enumerate}\n                                            \\item enum 3\n                                  \\end{enumerate}\n                        \\end{enumerate}\n              \\end{itemize}\n    \\end{enumerate}\n    \\item itemize 2\n\\end{itemize}\n\\begin{description}\n    \\item[description 1] description text 1\n\\end{description}\n\n\\part{part 1}\n\\part{part 2}\n\\chapter{chapter}\n\\section{section}\n\\subsection{subsection}\n\\subsubsection{subsubsection}\n\\paragraph{paragraph}\n\\subparagraph{subparagraph}\n\n\\textcolor{blue}{This is \\textbf{bold and blue}.}\n\n\\href{https://www.overleaf.com/learn}\n\\href{https://www.overleaf.com/learn}{Overleaf Learn} % testo del link\n\n\\usepackage{geometry}[letterpaper = true,top=2cm\\textwidth, points={1, cane,3 ,4}]\n\\usepackage{listings}\n\n\\begin{tabularr}{ |c|c|c| }\n    \\hline\n    \\textbf{cell1} & cell2 & cell3 \\\\\n    \\hline\n    cell4 & cell5 & cell6 \\\\\n    \\hline\n    cell7 & cell8 & \\begin{tabular}{ |c|c|c| }\n\\hlinee\n\\textbf{cell1} & cell2 & cell3 \\\\\n\\hline\ncell4 & cell5 & cell6 \\\\\n\\hline\ncell7 & cell8 & cell9 \\\\\n\\hline\n\\end{tabular}\n\\\\\n    \\hline\n\\end{tabularr}\n\n\\begin{verbatim}\n    Text enclosed inside \\texttt{verbatim} environment\n    is printed directly\n    and all \\LaTeX{} commands are ignored.\n\\end{verbatim}\n\n\\begin{lstlisting}[language=Python]\nimport numpy as np\n\ndef incmatrix(genl1,genl2):\n    m = len(genl1)\n    n = len(genl2)\n    M = None #to become the incidence matrix\n    VT = np.zeros((n*m,1), int)  #dummy variable\n\n    #compute the bitwise xor matrix\n    M1 = bitxormatrix(genl1)\n    M2 = np.triu(bitxormatrix(genl2),1)\n\n    for i in range(m-1):\n        for j in range(i+1, m):\n            [r,c] = np.where(M2 == M1[i,j])\n            for k in range(len(r)):\n                VT[(i)*n + r[k]] = 1;\n                VT[(i)*n + c[k]] = 1;\n                VT[(j)*n + r[k]] = 1;\n                VT[(j)*n + c[k]] = 1;\n\n                if M is None:\n                    M = np.copy(VT)\n                else:\n                    M = np.concatenate((M, VT), 1)\n\n                VT = np.zeros((n*m,1), int)\n\n    return M\n\\end{lstlisting}\n\n\\end{document}",
+                    range: 173..3498,
                 },
                 inner: [
                     Pair {
                         rule: block,
                         span: Span {
-                            str: "\\begin{document}\n\\maketitle\n\\tableofcontents\n\nprova{-tra parentesi graffe-}\ntesto pre commento % prova commento monolinea\n\\begin{comment}\n    Questo é un commento multilinea \\textbf{aa}\n\\end{comment}\n\n\\begin{comment}\n    \\begin{tabular}{ |c|c|csss| }\n        \\hline\n        \\textbf{cell1} & cell2 & cell3 \\\\\n        \\hline\n        cell4 & cell5 & cell6 \\\\\n        \\hline\n        cell7 & cell8 & cell9 \\\\\n        \\hline\n    \\end{tabular}\n\\end{comment}\n\n\n\\textbf{Bold}\n\\textit{italic}\n\\underline{underline}\n\n\\centering\n\\raggedright\n\\raggedleft\n\\flushright\n\\flushleft\n\\usepackage{ragged2e}\n\\begin{center}\n    center block \\textbf{bold}\n\\end{center}\n\\begin{flushleft} flushleft block \\end{flushleft}\n\\begin{flushright} flushright block \\end{flushright}\n\\begin{FlushLeft} FlushLeft block \\end{FlushLeft}\n\\begin{FlushRight} FlushRight block \\end{FlushRight}\n\n\\\\\n\\newline\n\\break\n\\hfill\n\\vfill\n\\pagebreak\n\\newpage\n\\clearpage\n\n\\begin{itemize}\n    \\item[!] itemize 1\n    \\item \\begin{enumerate}\n              \\item enumerate 1\n              \\item \\begin{itemize}\n                        \\item itemize 3\n                        \\item \\begin{enumerate}\n                                  \\item enum 2\n                                  \\item \\begin{enumerate}\n                                            \\item enum 3\n                                  \\end{enumerate}\n                        \\end{enumerate}\n              \\end{itemize}\n    \\end{enumerate}\n    \\item itemize 2\n\\end{itemize}\n\\begin{description}\n    \\item[description 1] description text 1\n\\end{description}\n\n\\part{part 1}\n\\part{part 2}\n\\chapter{chapter}\n\\section{section}\n\\subsection{subsection}\n\\subsubsection{subsubsection}\n\\paragraph{paragraph}\n\\subparagraph{subparagraph}\n\n\\textcolor{blue}{This is \\textbf{bold and blue}.}\n\n\\href{https://www.overleaf.com/learn}\n\\href{https://www.overleaf.com/learn}{Overleaf Learn} % testo del link\n\n%\\usepackage[letterpaper = true,top=2cm\\textwidth, points={1, cane,3 ,4}]{geometry}\n\\usepackage{listings}\n\n\\begin{tabular}{ |c|c|c| }\n    \\hline\n    \\textbf{cell1} & cell2 & cell3 \\\\\n    \\hline\n    cell4 & cell5 & cell6 \\\\\n    \\hline\n    cell7 & cell8 & \\begin{tabular}{ |c|c|c| }\n\\hline\n\\textbf{cell1} & cell2 & cell3 \\\\\n\\hline\ncell4 & cell5 & cell6 \\\\\n\\hline\ncell7 & cell8 & cell9 \\\\\n\\hline\n\\end{tabular}\n\\\\\n    \\hline\n\\end{tabular}\n\n\\begin{verbatim}\n    Text enclosed inside \\texttt{verbatim} environment\n    is printed directly\n    and all \\LaTeX{} commands are ignored.\n\\end{verbatim}\n\n\\begin{lstlisting}[language=Python]\nimport numpy as np\n\ndef incmatrix(genl1,genl2):\n    m = len(genl1)\n    n = len(genl2)\n    M = None #to become the incidence matrix\n    VT = np.zeros((n*m,1), int)  #dummy variable\n\n    #compute the bitwise xor matrix\n    M1 = bitxormatrix(genl1)\n    M2 = np.triu(bitxormatrix(genl2),1)\n\n    for i in range(m-1):\n        for j in range(i+1, m):\n            [r,c] = np.where(M2 == M1[i,j])\n            for k in range(len(r)):\n                VT[(i)*n + r[k]] = 1;\n                VT[(i)*n + c[k]] = 1;\n                VT[(j)*n + r[k]] = 1;\n                VT[(j)*n + c[k]] = 1;\n\n                if M is None:\n                    M = np.copy(VT)\n                else:\n                    M = np.concatenate((M, VT), 1)\n\n                VT = np.zeros((n*m,1), int)\n\n    return M\n\\end{lstlisting}\n\n\\end{document}",
-                            range: 173..3496,
+                            str: "\\begin{document}\n\\maketitle\n\\tableofcontents\n\nprova{-tra parentesi graffe-}\ntesto pre commento % prova commento monolinea\n\\begin{comment}\n    Questo é un commento multilinea \\textbf{aa}\n\\end{comment}\n\n\\begin{comment}\n    \\begin{tabular}{ |c|c|csss| }\n        \\hline\n        \\textbf{cell1} & cell2 & cell3 \\\\\n        \\hline\n        cell4 & cell5 & cell6 \\\\\n        \\hline\n        cell7 & cell8 & cell9 \\\\\n        \\hline\n    \\end{tabular}\n\\end{comment}\n\n\n\\textbf{Bold}\n\\textit{italic}\n\\underline{underline}\n\n\\centering\n\\raggedright\n\\raggedleft\n\\flushright\n\\flushleft\n\\usepackage{ragged2e}\n\\begin{center}\n    center block \\textbf{bold}\n\\end{center}\n\\begin{flushleft} flushleft block \\end{flushleft}\n\\begin{flushright} flushright block \\end{flushright}\n\\begin{FlushLeft} FlushLeft block \\end{FlushLeft}\n\\begin{FlushRight} FlushRight block \\end{FlushRight}\n\n\\\\\n\\newline\n\\break\n\\hfill\n\\vfill\n\\pagebreak\n\\newpage\n\\clearpage\n\n\\begin{itemize}\n    \\item[!] itemize 1\n    \\item \\begin{enumerate}\n              \\item enumerate 1\n              \\item \\begin{itemize}\n                        \\item itemize 3\n                        \\item \\begin{enumerate}\n                                  \\item enum 2\n                                  \\item \\begin{enumerate}\n                                            \\item enum 3\n                                  \\end{enumerate}\n                        \\end{enumerate}\n              \\end{itemize}\n    \\end{enumerate}\n    \\item itemize 2\n\\end{itemize}\n\\begin{description}\n    \\item[description 1] description text 1\n\\end{description}\n\n\\part{part 1}\n\\part{part 2}\n\\chapter{chapter}\n\\section{section}\n\\subsection{subsection}\n\\subsubsection{subsubsection}\n\\paragraph{paragraph}\n\\subparagraph{subparagraph}\n\n\\textcolor{blue}{This is \\textbf{bold and blue}.}\n\n\\href{https://www.overleaf.com/learn}\n\\href{https://www.overleaf.com/learn}{Overleaf Learn} % testo del link\n\n\\usepackage{geometry}[letterpaper = true,top=2cm\\textwidth, points={1, cane,3 ,4}]\n\\usepackage{listings}\n\n\\begin{tabularr}{ |c|c|c| }\n    \\hline\n    \\textbf{cell1} & cell2 & cell3 \\\\\n    \\hline\n    cell4 & cell5 & cell6 \\\\\n    \\hline\n    cell7 & cell8 & \\begin{tabular}{ |c|c|c| }\n\\hlinee\n\\textbf{cell1} & cell2 & cell3 \\\\\n\\hline\ncell4 & cell5 & cell6 \\\\\n\\hline\ncell7 & cell8 & cell9 \\\\\n\\hline\n\\end{tabular}\n\\\\\n    \\hline\n\\end{tabularr}\n\n\\begin{verbatim}\n    Text enclosed inside \\texttt{verbatim} environment\n    is printed directly\n    and all \\LaTeX{} commands are ignored.\n\\end{verbatim}\n\n\\begin{lstlisting}[language=Python]\nimport numpy as np\n\ndef incmatrix(genl1,genl2):\n    m = len(genl1)\n    n = len(genl2)\n    M = None #to become the incidence matrix\n    VT = np.zeros((n*m,1), int)  #dummy variable\n\n    #compute the bitwise xor matrix\n    M1 = bitxormatrix(genl1)\n    M2 = np.triu(bitxormatrix(genl2),1)\n\n    for i in range(m-1):\n        for j in range(i+1, m):\n            [r,c] = np.where(M2 == M1[i,j])\n            for k in range(len(r)):\n                VT[(i)*n + r[k]] = 1;\n                VT[(i)*n + c[k]] = 1;\n                VT[(j)*n + r[k]] = 1;\n                VT[(j)*n + c[k]] = 1;\n\n                if M is None:\n                    M = np.copy(VT)\n                else:\n                    M = np.concatenate((M, VT), 1)\n\n                VT = np.zeros((n*m,1), int)\n\n    return M\n\\end{lstlisting}\n\n\\end{document}",
+                            range: 173..3498,
                         },
                         inner: [
                             Pair {
@@ -664,8 +664,8 @@
                             Pair {
                                 rule: content,
                                 span: Span {
-                                    str: "\n\\maketitle\n\\tableofcontents\n\nprova{-tra parentesi graffe-}\ntesto pre commento % prova commento monolinea\n\\begin{comment}\n    Questo é un commento multilinea \\textbf{aa}\n\\end{comment}\n\n\\begin{comment}\n    \\begin{tabular}{ |c|c|csss| }\n        \\hline\n        \\textbf{cell1} & cell2 & cell3 \\\\\n        \\hline\n        cell4 & cell5 & cell6 \\\\\n        \\hline\n        cell7 & cell8 & cell9 \\\\\n        \\hline\n    \\end{tabular}\n\\end{comment}\n\n\n\\textbf{Bold}\n\\textit{italic}\n\\underline{underline}\n\n\\centering\n\\raggedright\n\\raggedleft\n\\flushright\n\\flushleft\n\\usepackage{ragged2e}\n\\begin{center}\n    center block \\textbf{bold}\n\\end{center}\n\\begin{flushleft} flushleft block \\end{flushleft}\n\\begin{flushright} flushright block \\end{flushright}\n\\begin{FlushLeft} FlushLeft block \\end{FlushLeft}\n\\begin{FlushRight} FlushRight block \\end{FlushRight}\n\n\\\\\n\\newline\n\\break\n\\hfill\n\\vfill\n\\pagebreak\n\\newpage\n\\clearpage\n\n\\begin{itemize}\n    \\item[!] itemize 1\n    \\item \\begin{enumerate}\n              \\item enumerate 1\n              \\item \\begin{itemize}\n                        \\item itemize 3\n                        \\item \\begin{enumerate}\n                                  \\item enum 2\n                                  \\item \\begin{enumerate}\n                                            \\item enum 3\n                                  \\end{enumerate}\n                        \\end{enumerate}\n              \\end{itemize}\n    \\end{enumerate}\n    \\item itemize 2\n\\end{itemize}\n\\begin{description}\n    \\item[description 1] description text 1\n\\end{description}\n\n\\part{part 1}\n\\part{part 2}\n\\chapter{chapter}\n\\section{section}\n\\subsection{subsection}\n\\subsubsection{subsubsection}\n\\paragraph{paragraph}\n\\subparagraph{subparagraph}\n\n\\textcolor{blue}{This is \\textbf{bold and blue}.}\n\n\\href{https://www.overleaf.com/learn}\n\\href{https://www.overleaf.com/learn}{Overleaf Learn} % testo del link\n\n%\\usepackage[letterpaper = true,top=2cm\\textwidth, points={1, cane,3 ,4}]{geometry}\n\\usepackage{listings}\n\n\\begin{tabular}{ |c|c|c| }\n    \\hline\n    \\textbf{cell1} & cell2 & cell3 \\\\\n    \\hline\n    cell4 & cell5 & cell6 \\\\\n    \\hline\n    cell7 & cell8 & \\begin{tabular}{ |c|c|c| }\n\\hline\n\\textbf{cell1} & cell2 & cell3 \\\\\n\\hline\ncell4 & cell5 & cell6 \\\\\n\\hline\ncell7 & cell8 & cell9 \\\\\n\\hline\n\\end{tabular}\n\\\\\n    \\hline\n\\end{tabular}\n\n\\begin{verbatim}\n    Text enclosed inside \\texttt{verbatim} environment\n    is printed directly\n    and all \\LaTeX{} commands are ignored.\n\\end{verbatim}\n\n\\begin{lstlisting}[language=Python]\nimport numpy as np\n\ndef incmatrix(genl1,genl2):\n    m = len(genl1)\n    n = len(genl2)\n    M = None #to become the incidence matrix\n    VT = np.zeros((n*m,1), int)  #dummy variable\n\n    #compute the bitwise xor matrix\n    M1 = bitxormatrix(genl1)\n    M2 = np.triu(bitxormatrix(genl2),1)\n\n    for i in range(m-1):\n        for j in range(i+1, m):\n            [r,c] = np.where(M2 == M1[i,j])\n            for k in range(len(r)):\n                VT[(i)*n + r[k]] = 1;\n                VT[(i)*n + c[k]] = 1;\n                VT[(j)*n + r[k]] = 1;\n                VT[(j)*n + c[k]] = 1;\n\n                if M is None:\n                    M = np.copy(VT)\n                else:\n                    M = np.concatenate((M, VT), 1)\n\n                VT = np.zeros((n*m,1), int)\n\n    return M\n\\end{lstlisting}\n\n",
-                                    range: 189..3482,
+                                    str: "\n\\maketitle\n\\tableofcontents\n\nprova{-tra parentesi graffe-}\ntesto pre commento % prova commento monolinea\n\\begin{comment}\n    Questo é un commento multilinea \\textbf{aa}\n\\end{comment}\n\n\\begin{comment}\n    \\begin{tabular}{ |c|c|csss| }\n        \\hline\n        \\textbf{cell1} & cell2 & cell3 \\\\\n        \\hline\n        cell4 & cell5 & cell6 \\\\\n        \\hline\n        cell7 & cell8 & cell9 \\\\\n        \\hline\n    \\end{tabular}\n\\end{comment}\n\n\n\\textbf{Bold}\n\\textit{italic}\n\\underline{underline}\n\n\\centering\n\\raggedright\n\\raggedleft\n\\flushright\n\\flushleft\n\\usepackage{ragged2e}\n\\begin{center}\n    center block \\textbf{bold}\n\\end{center}\n\\begin{flushleft} flushleft block \\end{flushleft}\n\\begin{flushright} flushright block \\end{flushright}\n\\begin{FlushLeft} FlushLeft block \\end{FlushLeft}\n\\begin{FlushRight} FlushRight block \\end{FlushRight}\n\n\\\\\n\\newline\n\\break\n\\hfill\n\\vfill\n\\pagebreak\n\\newpage\n\\clearpage\n\n\\begin{itemize}\n    \\item[!] itemize 1\n    \\item \\begin{enumerate}\n              \\item enumerate 1\n              \\item \\begin{itemize}\n                        \\item itemize 3\n                        \\item \\begin{enumerate}\n                                  \\item enum 2\n                                  \\item \\begin{enumerate}\n                                            \\item enum 3\n                                  \\end{enumerate}\n                        \\end{enumerate}\n              \\end{itemize}\n    \\end{enumerate}\n    \\item itemize 2\n\\end{itemize}\n\\begin{description}\n    \\item[description 1] description text 1\n\\end{description}\n\n\\part{part 1}\n\\part{part 2}\n\\chapter{chapter}\n\\section{section}\n\\subsection{subsection}\n\\subsubsection{subsubsection}\n\\paragraph{paragraph}\n\\subparagraph{subparagraph}\n\n\\textcolor{blue}{This is \\textbf{bold and blue}.}\n\n\\href{https://www.overleaf.com/learn}\n\\href{https://www.overleaf.com/learn}{Overleaf Learn} % testo del link\n\n\\usepackage{geometry}[letterpaper = true,top=2cm\\textwidth, points={1, cane,3 ,4}]\n\\usepackage{listings}\n\n\\begin{tabularr}{ |c|c|c| }\n    \\hline\n    \\textbf{cell1} & cell2 & cell3 \\\\\n    \\hline\n    cell4 & cell5 & cell6 \\\\\n    \\hline\n    cell7 & cell8 & \\begin{tabular}{ |c|c|c| }\n\\hlinee\n\\textbf{cell1} & cell2 & cell3 \\\\\n\\hline\ncell4 & cell5 & cell6 \\\\\n\\hline\ncell7 & cell8 & cell9 \\\\\n\\hline\n\\end{tabular}\n\\\\\n    \\hline\n\\end{tabularr}\n\n\\begin{verbatim}\n    Text enclosed inside \\texttt{verbatim} environment\n    is printed directly\n    and all \\LaTeX{} commands are ignored.\n\\end{verbatim}\n\n\\begin{lstlisting}[language=Python]\nimport numpy as np\n\ndef incmatrix(genl1,genl2):\n    m = len(genl1)\n    n = len(genl2)\n    M = None #to become the incidence matrix\n    VT = np.zeros((n*m,1), int)  #dummy variable\n\n    #compute the bitwise xor matrix\n    M1 = bitxormatrix(genl1)\n    M2 = np.triu(bitxormatrix(genl2),1)\n\n    for i in range(m-1):\n        for j in range(i+1, m):\n            [r,c] = np.where(M2 == M1[i,j])\n            for k in range(len(r)):\n                VT[(i)*n + r[k]] = 1;\n                VT[(i)*n + c[k]] = 1;\n                VT[(j)*n + r[k]] = 1;\n                VT[(j)*n + c[k]] = 1;\n\n                if M is None:\n                    M = np.copy(VT)\n                else:\n                    M = np.concatenate((M, VT), 1)\n\n                VT = np.zeros((n*m,1), int)\n\n    return M\n\\end{lstlisting}\n\n",
+                                    range: 189..3484,
                                 },
                                 inner: [
                                     Pair {
@@ -4856,17 +4856,241 @@
                                     Pair {
                                         rule: item,
                                         span: Span {
-                                            str: "%\\usepackage[letterpaper = true,top=2cm\\textwidth, points={1, cane,3 ,4}]{geometry}",
-                                            range: 2062..2145,
+                                            str: "\\usepackage{geometry}[letterpaper = true,top=2cm\\textwidth, points={1, cane,3 ,4}]",
+                                            range: 2062..2144,
                                         },
                                         inner: [
                                             Pair {
-                                                rule: comment,
+                                                rule: command,
                                                 span: Span {
-                                                    str: "%\\usepackage[letterpaper = true,top=2cm\\textwidth, points={1, cane,3 ,4}]{geometry}",
-                                                    range: 2062..2145,
+                                                    str: "\\usepackage{geometry}[letterpaper = true,top=2cm\\textwidth, points={1, cane,3 ,4}]",
+                                                    range: 2062..2144,
                                                 },
-                                                inner: [],
+                                                inner: [
+                                                    Pair {
+                                                        rule: name,
+                                                        span: Span {
+                                                            str: "usepackage",
+                                                            range: 2063..2073,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                    Pair {
+                                                        rule: required_arg,
+                                                        span: Span {
+                                                            str: "{geometry}",
+                                                            range: 2073..2083,
+                                                        },
+                                                        inner: [
+                                                            Pair {
+                                                                rule: argument,
+                                                                span: Span {
+                                                                    str: "geometry",
+                                                                    range: 2074..2082,
+                                                                },
+                                                                inner: [
+                                                                    Pair {
+                                                                        rule: arg_item,
+                                                                        span: Span {
+                                                                            str: "geometry",
+                                                                            range: 2074..2082,
+                                                                        },
+                                                                        inner: [
+                                                                            Pair {
+                                                                                rule: arg_text,
+                                                                                span: Span {
+                                                                                    str: "geometry",
+                                                                                    range: 2074..2082,
+                                                                                },
+                                                                                inner: [],
+                                                                            },
+                                                                        ],
+                                                                    },
+                                                                ],
+                                                            },
+                                                        ],
+                                                    },
+                                                    Pair {
+                                                        rule: optional_arg,
+                                                        span: Span {
+                                                            str: "[letterpaper = true,top=2cm\\textwidth, points={1, cane,3 ,4}]",
+                                                            range: 2083..2144,
+                                                        },
+                                                        inner: [
+                                                            Pair {
+                                                                rule: optional_list,
+                                                                span: Span {
+                                                                    str: "letterpaper = true,top=2cm\\textwidth, points={1, cane,3 ,4}",
+                                                                    range: 2084..2143,
+                                                                },
+                                                                inner: [
+                                                                    Pair {
+                                                                        rule: opt_entry,
+                                                                        span: Span {
+                                                                            str: "letterpaper = true",
+                                                                            range: 2084..2102,
+                                                                        },
+                                                                        inner: [
+                                                                            Pair {
+                                                                                rule: kv_pair,
+                                                                                span: Span {
+                                                                                    str: "letterpaper = true",
+                                                                                    range: 2084..2102,
+                                                                                },
+                                                                                inner: [
+                                                                                    Pair {
+                                                                                        rule: key,
+                                                                                        span: Span {
+                                                                                            str: "letterpaper",
+                                                                                            range: 2084..2095,
+                                                                                        },
+                                                                                        inner: [],
+                                                                                    },
+                                                                                    Pair {
+                                                                                        rule: value,
+                                                                                        span: Span {
+                                                                                            str: "true",
+                                                                                            range: 2098..2102,
+                                                                                        },
+                                                                                        inner: [
+                                                                                            Pair {
+                                                                                                rule: simple_value,
+                                                                                                span: Span {
+                                                                                                    str: "true",
+                                                                                                    range: 2098..2102,
+                                                                                                },
+                                                                                                inner: [],
+                                                                                            },
+                                                                                        ],
+                                                                                    },
+                                                                                ],
+                                                                            },
+                                                                        ],
+                                                                    },
+                                                                    Pair {
+                                                                        rule: opt_entry,
+                                                                        span: Span {
+                                                                            str: "top=2cm\\textwidth",
+                                                                            range: 2103..2120,
+                                                                        },
+                                                                        inner: [
+                                                                            Pair {
+                                                                                rule: kv_pair,
+                                                                                span: Span {
+                                                                                    str: "top=2cm\\textwidth",
+                                                                                    range: 2103..2120,
+                                                                                },
+                                                                                inner: [
+                                                                                    Pair {
+                                                                                        rule: key,
+                                                                                        span: Span {
+                                                                                            str: "top",
+                                                                                            range: 2103..2106,
+                                                                                        },
+                                                                                        inner: [],
+                                                                                    },
+                                                                                    Pair {
+                                                                                        rule: value,
+                                                                                        span: Span {
+                                                                                            str: "2cm\\textwidth",
+                                                                                            range: 2107..2120,
+                                                                                        },
+                                                                                        inner: [
+                                                                                            Pair {
+                                                                                                rule: simple_value,
+                                                                                                span: Span {
+                                                                                                    str: "2cm\\textwidth",
+                                                                                                    range: 2107..2120,
+                                                                                                },
+                                                                                                inner: [],
+                                                                                            },
+                                                                                        ],
+                                                                                    },
+                                                                                ],
+                                                                            },
+                                                                        ],
+                                                                    },
+                                                                    Pair {
+                                                                        rule: opt_entry,
+                                                                        span: Span {
+                                                                            str: " points={1, cane,3 ,4}",
+                                                                            range: 2121..2143,
+                                                                        },
+                                                                        inner: [
+                                                                            Pair {
+                                                                                rule: kv_pair,
+                                                                                span: Span {
+                                                                                    str: "points={1, cane,3 ,4}",
+                                                                                    range: 2122..2143,
+                                                                                },
+                                                                                inner: [
+                                                                                    Pair {
+                                                                                        rule: key,
+                                                                                        span: Span {
+                                                                                            str: "points",
+                                                                                            range: 2122..2128,
+                                                                                        },
+                                                                                        inner: [],
+                                                                                    },
+                                                                                    Pair {
+                                                                                        rule: value,
+                                                                                        span: Span {
+                                                                                            str: "{1, cane,3 ,4}",
+                                                                                            range: 2129..2143,
+                                                                                        },
+                                                                                        inner: [
+                                                                                            Pair {
+                                                                                                rule: value_list,
+                                                                                                span: Span {
+                                                                                                    str: "{1, cane,3 ,4}",
+                                                                                                    range: 2129..2143,
+                                                                                                },
+                                                                                                inner: [
+                                                                                                    Pair {
+                                                                                                        rule: sub_value_list,
+                                                                                                        span: Span {
+                                                                                                            str: "1",
+                                                                                                            range: 2130..2131,
+                                                                                                        },
+                                                                                                        inner: [],
+                                                                                                    },
+                                                                                                    Pair {
+                                                                                                        rule: sub_value_list,
+                                                                                                        span: Span {
+                                                                                                            str: "cane",
+                                                                                                            range: 2133..2137,
+                                                                                                        },
+                                                                                                        inner: [],
+                                                                                                    },
+                                                                                                    Pair {
+                                                                                                        rule: sub_value_list,
+                                                                                                        span: Span {
+                                                                                                            str: "3",
+                                                                                                            range: 2138..2139,
+                                                                                                        },
+                                                                                                        inner: [],
+                                                                                                    },
+                                                                                                    Pair {
+                                                                                                        rule: sub_value_list,
+                                                                                                        span: Span {
+                                                                                                            str: "4",
+                                                                                                            range: 2141..2142,
+                                                                                                        },
+                                                                                                        inner: [],
+                                                                                                    },
+                                                                                                ],
+                                                                                            },
+                                                                                        ],
+                                                                                    },
+                                                                                ],
+                                                                            },
+                                                                        ],
+                                                                    },
+                                                                ],
+                                                            },
+                                                        ],
+                                                    },
+                                                ],
                                             },
                                         ],
                                     },
@@ -4874,14 +5098,14 @@
                                         rule: item,
                                         span: Span {
                                             str: "\n",
-                                            range: 2145..2146,
+                                            range: 2144..2145,
                                         },
                                         inner: [
                                             Pair {
                                                 rule: newlines,
                                                 span: Span {
                                                     str: "\n",
-                                                    range: 2145..2146,
+                                                    range: 2144..2145,
                                                 },
                                                 inner: [],
                                             },
@@ -4891,21 +5115,21 @@
                                         rule: item,
                                         span: Span {
                                             str: "\\usepackage{listings}",
-                                            range: 2146..2167,
+                                            range: 2145..2166,
                                         },
                                         inner: [
                                             Pair {
                                                 rule: command,
                                                 span: Span {
                                                     str: "\\usepackage{listings}",
-                                                    range: 2146..2167,
+                                                    range: 2145..2166,
                                                 },
                                                 inner: [
                                                     Pair {
                                                         rule: name,
                                                         span: Span {
                                                             str: "usepackage",
-                                                            range: 2147..2157,
+                                                            range: 2146..2156,
                                                         },
                                                         inner: [],
                                                     },
@@ -4913,28 +5137,28 @@
                                                         rule: required_arg,
                                                         span: Span {
                                                             str: "{listings}",
-                                                            range: 2157..2167,
+                                                            range: 2156..2166,
                                                         },
                                                         inner: [
                                                             Pair {
                                                                 rule: argument,
                                                                 span: Span {
                                                                     str: "listings",
-                                                                    range: 2158..2166,
+                                                                    range: 2157..2165,
                                                                 },
                                                                 inner: [
                                                                     Pair {
                                                                         rule: arg_item,
                                                                         span: Span {
                                                                             str: "listings",
-                                                                            range: 2158..2166,
+                                                                            range: 2157..2165,
                                                                         },
                                                                         inner: [
                                                                             Pair {
                                                                                 rule: arg_text,
                                                                                 span: Span {
                                                                                     str: "listings",
-                                                                                    range: 2158..2166,
+                                                                                    range: 2157..2165,
                                                                                 },
                                                                                 inner: [],
                                                                             },
@@ -4952,14 +5176,14 @@
                                         rule: item,
                                         span: Span {
                                             str: "\n\n",
-                                            range: 2167..2169,
+                                            range: 2166..2168,
                                         },
                                         inner: [
                                             Pair {
                                                 rule: newlines,
                                                 span: Span {
                                                     str: "\n\n",
-                                                    range: 2167..2169,
+                                                    range: 2166..2168,
                                                 },
                                                 inner: [],
                                             },
@@ -4968,22 +5192,22 @@
                                     Pair {
                                         rule: item,
                                         span: Span {
-                                            str: "\\begin{tabular}{ |c|c|c| }\n    \\hline\n    \\textbf{cell1} & cell2 & cell3 \\\\\n    \\hline\n    cell4 & cell5 & cell6 \\\\\n    \\hline\n    cell7 & cell8 & \\begin{tabular}{ |c|c|c| }\n\\hline\n\\textbf{cell1} & cell2 & cell3 \\\\\n\\hline\ncell4 & cell5 & cell6 \\\\\n\\hline\ncell7 & cell8 & cell9 \\\\\n\\hline\n\\end{tabular}\n\\\\\n    \\hline\n\\end{tabular}",
-                                            range: 2169..2496,
+                                            str: "\\begin{tabularr}{ |c|c|c| }\n    \\hline\n    \\textbf{cell1} & cell2 & cell3 \\\\\n    \\hline\n    cell4 & cell5 & cell6 \\\\\n    \\hline\n    cell7 & cell8 & \\begin{tabular}{ |c|c|c| }\n\\hlinee\n\\textbf{cell1} & cell2 & cell3 \\\\\n\\hline\ncell4 & cell5 & cell6 \\\\\n\\hline\ncell7 & cell8 & cell9 \\\\\n\\hline\n\\end{tabular}\n\\\\\n    \\hline\n\\end{tabularr}",
+                                            range: 2168..2498,
                                         },
                                         inner: [
                                             Pair {
                                                 rule: block,
                                                 span: Span {
-                                                    str: "\\begin{tabular}{ |c|c|c| }\n    \\hline\n    \\textbf{cell1} & cell2 & cell3 \\\\\n    \\hline\n    cell4 & cell5 & cell6 \\\\\n    \\hline\n    cell7 & cell8 & \\begin{tabular}{ |c|c|c| }\n\\hline\n\\textbf{cell1} & cell2 & cell3 \\\\\n\\hline\ncell4 & cell5 & cell6 \\\\\n\\hline\ncell7 & cell8 & cell9 \\\\\n\\hline\n\\end{tabular}\n\\\\\n    \\hline\n\\end{tabular}",
-                                                    range: 2169..2496,
+                                                    str: "\\begin{tabularr}{ |c|c|c| }\n    \\hline\n    \\textbf{cell1} & cell2 & cell3 \\\\\n    \\hline\n    cell4 & cell5 & cell6 \\\\\n    \\hline\n    cell7 & cell8 & \\begin{tabular}{ |c|c|c| }\n\\hlinee\n\\textbf{cell1} & cell2 & cell3 \\\\\n\\hline\ncell4 & cell5 & cell6 \\\\\n\\hline\ncell7 & cell8 & cell9 \\\\\n\\hline\n\\end{tabular}\n\\\\\n    \\hline\n\\end{tabularr}",
+                                                    range: 2168..2498,
                                                 },
                                                 inner: [
                                                     Pair {
                                                         rule: name,
                                                         span: Span {
-                                                            str: "tabular",
-                                                            range: 2176..2183,
+                                                            str: "tabularr",
+                                                            range: 2175..2183,
                                                         },
                                                         inner: [],
                                                     },
@@ -5025,8 +5249,8 @@
                                                     Pair {
                                                         rule: content,
                                                         span: Span {
-                                                            str: "\n    \\hline\n    \\textbf{cell1} & cell2 & cell3 \\\\\n    \\hline\n    cell4 & cell5 & cell6 \\\\\n    \\hline\n    cell7 & cell8 & \\begin{tabular}{ |c|c|c| }\n\\hline\n\\textbf{cell1} & cell2 & cell3 \\\\\n\\hline\ncell4 & cell5 & cell6 \\\\\n\\hline\ncell7 & cell8 & cell9 \\\\\n\\hline\n\\end{tabular}\n\\\\\n    \\hline\n",
-                                                            range: 2195..2483,
+                                                            str: "\n    \\hline\n    \\textbf{cell1} & cell2 & cell3 \\\\\n    \\hline\n    cell4 & cell5 & cell6 \\\\\n    \\hline\n    cell7 & cell8 & \\begin{tabular}{ |c|c|c| }\n\\hlinee\n\\textbf{cell1} & cell2 & cell3 \\\\\n\\hline\ncell4 & cell5 & cell6 \\\\\n\\hline\ncell7 & cell8 & cell9 \\\\\n\\hline\n\\end{tabular}\n\\\\\n    \\hline\n",
+                                                            range: 2195..2484,
                                                         },
                                                         inner: [
                                                             Pair {
@@ -5477,15 +5701,15 @@
                                                             Pair {
                                                                 rule: item,
                                                                 span: Span {
-                                                                    str: "\\begin{tabular}{ |c|c|c| }\n\\hline\n\\textbf{cell1} & cell2 & cell3 \\\\\n\\hline\ncell4 & cell5 & cell6 \\\\\n\\hline\ncell7 & cell8 & cell9 \\\\\n\\hline\n\\end{tabular}",
-                                                                    range: 2316..2468,
+                                                                    str: "\\begin{tabular}{ |c|c|c| }\n\\hlinee\n\\textbf{cell1} & cell2 & cell3 \\\\\n\\hline\ncell4 & cell5 & cell6 \\\\\n\\hline\ncell7 & cell8 & cell9 \\\\\n\\hline\n\\end{tabular}",
+                                                                    range: 2316..2469,
                                                                 },
                                                                 inner: [
                                                                     Pair {
                                                                         rule: block,
                                                                         span: Span {
-                                                                            str: "\\begin{tabular}{ |c|c|c| }\n\\hline\n\\textbf{cell1} & cell2 & cell3 \\\\\n\\hline\ncell4 & cell5 & cell6 \\\\\n\\hline\ncell7 & cell8 & cell9 \\\\\n\\hline\n\\end{tabular}",
-                                                                            range: 2316..2468,
+                                                                            str: "\\begin{tabular}{ |c|c|c| }\n\\hlinee\n\\textbf{cell1} & cell2 & cell3 \\\\\n\\hline\ncell4 & cell5 & cell6 \\\\\n\\hline\ncell7 & cell8 & cell9 \\\\\n\\hline\n\\end{tabular}",
+                                                                            range: 2316..2469,
                                                                         },
                                                                         inner: [
                                                                             Pair {
@@ -5534,8 +5758,8 @@
                                                                             Pair {
                                                                                 rule: content,
                                                                                 span: Span {
-                                                                                    str: "\n\\hline\n\\textbf{cell1} & cell2 & cell3 \\\\\n\\hline\ncell4 & cell5 & cell6 \\\\\n\\hline\ncell7 & cell8 & cell9 \\\\\n\\hline\n",
-                                                                                    range: 2342..2455,
+                                                                                    str: "\n\\hlinee\n\\textbf{cell1} & cell2 & cell3 \\\\\n\\hline\ncell4 & cell5 & cell6 \\\\\n\\hline\ncell7 & cell8 & cell9 \\\\\n\\hline\n",
+                                                                                    range: 2342..2456,
                                                                                 },
                                                                                 inner: [
                                                                                     Pair {
@@ -5558,22 +5782,22 @@
                                                                                     Pair {
                                                                                         rule: item,
                                                                                         span: Span {
-                                                                                            str: "\\hline",
-                                                                                            range: 2343..2349,
+                                                                                            str: "\\hlinee",
+                                                                                            range: 2343..2350,
                                                                                         },
                                                                                         inner: [
                                                                                             Pair {
                                                                                                 rule: command,
                                                                                                 span: Span {
-                                                                                                    str: "\\hline",
-                                                                                                    range: 2343..2349,
+                                                                                                    str: "\\hlinee",
+                                                                                                    range: 2343..2350,
                                                                                                 },
                                                                                                 inner: [
                                                                                                     Pair {
                                                                                                         rule: name,
                                                                                                         span: Span {
-                                                                                                            str: "hline",
-                                                                                                            range: 2344..2349,
+                                                                                                            str: "hlinee",
+                                                                                                            range: 2344..2350,
                                                                                                         },
                                                                                                         inner: [],
                                                                                                     },
@@ -5585,14 +5809,14 @@
                                                                                         rule: item,
                                                                                         span: Span {
                                                                                             str: "\n",
-                                                                                            range: 2349..2350,
+                                                                                            range: 2350..2351,
                                                                                         },
                                                                                         inner: [
                                                                                             Pair {
                                                                                                 rule: newlines,
                                                                                                 span: Span {
                                                                                                     str: "\n",
-                                                                                                    range: 2349..2350,
+                                                                                                    range: 2350..2351,
                                                                                                 },
                                                                                                 inner: [],
                                                                                             },
@@ -5602,21 +5826,21 @@
                                                                                         rule: item,
                                                                                         span: Span {
                                                                                             str: "\\textbf{cell1}",
-                                                                                            range: 2350..2364,
+                                                                                            range: 2351..2365,
                                                                                         },
                                                                                         inner: [
                                                                                             Pair {
                                                                                                 rule: command,
                                                                                                 span: Span {
                                                                                                     str: "\\textbf{cell1}",
-                                                                                                    range: 2350..2364,
+                                                                                                    range: 2351..2365,
                                                                                                 },
                                                                                                 inner: [
                                                                                                     Pair {
                                                                                                         rule: name,
                                                                                                         span: Span {
                                                                                                             str: "textbf",
-                                                                                                            range: 2351..2357,
+                                                                                                            range: 2352..2358,
                                                                                                         },
                                                                                                         inner: [],
                                                                                                     },
@@ -5624,28 +5848,28 @@
                                                                                                         rule: required_arg,
                                                                                                         span: Span {
                                                                                                             str: "{cell1}",
-                                                                                                            range: 2357..2364,
+                                                                                                            range: 2358..2365,
                                                                                                         },
                                                                                                         inner: [
                                                                                                             Pair {
                                                                                                                 rule: argument,
                                                                                                                 span: Span {
                                                                                                                     str: "cell1",
-                                                                                                                    range: 2358..2363,
+                                                                                                                    range: 2359..2364,
                                                                                                                 },
                                                                                                                 inner: [
                                                                                                                     Pair {
                                                                                                                         rule: arg_item,
                                                                                                                         span: Span {
                                                                                                                             str: "cell1",
-                                                                                                                            range: 2358..2363,
+                                                                                                                            range: 2359..2364,
                                                                                                                         },
                                                                                                                         inner: [
                                                                                                                             Pair {
                                                                                                                                 rule: arg_text,
                                                                                                                                 span: Span {
                                                                                                                                     str: "cell1",
-                                                                                                                                    range: 2358..2363,
+                                                                                                                                    range: 2359..2364,
                                                                                                                                 },
                                                                                                                                 inner: [],
                                                                                                                             },
@@ -5663,14 +5887,14 @@
                                                                                         rule: item,
                                                                                         span: Span {
                                                                                             str: " ",
-                                                                                            range: 2364..2365,
+                                                                                            range: 2365..2366,
                                                                                         },
                                                                                         inner: [
                                                                                             Pair {
                                                                                                 rule: whitespace,
                                                                                                 span: Span {
                                                                                                     str: " ",
-                                                                                                    range: 2364..2365,
+                                                                                                    range: 2365..2366,
                                                                                                 },
                                                                                                 inner: [],
                                                                                             },
@@ -5680,14 +5904,14 @@
                                                                                         rule: item,
                                                                                         span: Span {
                                                                                             str: "& cell2 & cell3 ",
-                                                                                            range: 2365..2381,
+                                                                                            range: 2366..2382,
                                                                                         },
                                                                                         inner: [
                                                                                             Pair {
                                                                                                 rule: text,
                                                                                                 span: Span {
                                                                                                     str: "& cell2 & cell3 ",
-                                                                                                    range: 2365..2381,
+                                                                                                    range: 2366..2382,
                                                                                                 },
                                                                                                 inner: [],
                                                                                             },
@@ -5697,14 +5921,14 @@
                                                                                         rule: item,
                                                                                         span: Span {
                                                                                             str: "\\\\",
-                                                                                            range: 2381..2383,
+                                                                                            range: 2382..2384,
                                                                                         },
                                                                                         inner: [
                                                                                             Pair {
                                                                                                 rule: linebreak,
                                                                                                 span: Span {
                                                                                                     str: "\\\\",
-                                                                                                    range: 2381..2383,
+                                                                                                    range: 2382..2384,
                                                                                                 },
                                                                                                 inner: [],
                                                                                             },
@@ -5714,14 +5938,14 @@
                                                                                         rule: item,
                                                                                         span: Span {
                                                                                             str: "\n",
-                                                                                            range: 2383..2384,
+                                                                                            range: 2384..2385,
                                                                                         },
                                                                                         inner: [
                                                                                             Pair {
                                                                                                 rule: newlines,
                                                                                                 span: Span {
                                                                                                     str: "\n",
-                                                                                                    range: 2383..2384,
+                                                                                                    range: 2384..2385,
                                                                                                 },
                                                                                                 inner: [],
                                                                                             },
@@ -5731,21 +5955,21 @@
                                                                                         rule: item,
                                                                                         span: Span {
                                                                                             str: "\\hline",
-                                                                                            range: 2384..2390,
+                                                                                            range: 2385..2391,
                                                                                         },
                                                                                         inner: [
                                                                                             Pair {
                                                                                                 rule: command,
                                                                                                 span: Span {
                                                                                                     str: "\\hline",
-                                                                                                    range: 2384..2390,
+                                                                                                    range: 2385..2391,
                                                                                                 },
                                                                                                 inner: [
                                                                                                     Pair {
                                                                                                         rule: name,
                                                                                                         span: Span {
                                                                                                             str: "hline",
-                                                                                                            range: 2385..2390,
+                                                                                                            range: 2386..2391,
                                                                                                         },
                                                                                                         inner: [],
                                                                                                     },
@@ -5757,14 +5981,14 @@
                                                                                         rule: item,
                                                                                         span: Span {
                                                                                             str: "\n",
-                                                                                            range: 2390..2391,
+                                                                                            range: 2391..2392,
                                                                                         },
                                                                                         inner: [
                                                                                             Pair {
                                                                                                 rule: newlines,
                                                                                                 span: Span {
                                                                                                     str: "\n",
-                                                                                                    range: 2390..2391,
+                                                                                                    range: 2391..2392,
                                                                                                 },
                                                                                                 inner: [],
                                                                                             },
@@ -5774,14 +5998,14 @@
                                                                                         rule: item,
                                                                                         span: Span {
                                                                                             str: "cell4 & cell5 & cell6 ",
-                                                                                            range: 2391..2413,
+                                                                                            range: 2392..2414,
                                                                                         },
                                                                                         inner: [
                                                                                             Pair {
                                                                                                 rule: text,
                                                                                                 span: Span {
                                                                                                     str: "cell4 & cell5 & cell6 ",
-                                                                                                    range: 2391..2413,
+                                                                                                    range: 2392..2414,
                                                                                                 },
                                                                                                 inner: [],
                                                                                             },
@@ -5791,14 +6015,14 @@
                                                                                         rule: item,
                                                                                         span: Span {
                                                                                             str: "\\\\",
-                                                                                            range: 2413..2415,
+                                                                                            range: 2414..2416,
                                                                                         },
                                                                                         inner: [
                                                                                             Pair {
                                                                                                 rule: linebreak,
                                                                                                 span: Span {
                                                                                                     str: "\\\\",
-                                                                                                    range: 2413..2415,
+                                                                                                    range: 2414..2416,
                                                                                                 },
                                                                                                 inner: [],
                                                                                             },
@@ -5808,14 +6032,14 @@
                                                                                         rule: item,
                                                                                         span: Span {
                                                                                             str: "\n",
-                                                                                            range: 2415..2416,
+                                                                                            range: 2416..2417,
                                                                                         },
                                                                                         inner: [
                                                                                             Pair {
                                                                                                 rule: newlines,
                                                                                                 span: Span {
                                                                                                     str: "\n",
-                                                                                                    range: 2415..2416,
+                                                                                                    range: 2416..2417,
                                                                                                 },
                                                                                                 inner: [],
                                                                                             },
@@ -5825,21 +6049,21 @@
                                                                                         rule: item,
                                                                                         span: Span {
                                                                                             str: "\\hline",
-                                                                                            range: 2416..2422,
+                                                                                            range: 2417..2423,
                                                                                         },
                                                                                         inner: [
                                                                                             Pair {
                                                                                                 rule: command,
                                                                                                 span: Span {
                                                                                                     str: "\\hline",
-                                                                                                    range: 2416..2422,
+                                                                                                    range: 2417..2423,
                                                                                                 },
                                                                                                 inner: [
                                                                                                     Pair {
                                                                                                         rule: name,
                                                                                                         span: Span {
                                                                                                             str: "hline",
-                                                                                                            range: 2417..2422,
+                                                                                                            range: 2418..2423,
                                                                                                         },
                                                                                                         inner: [],
                                                                                                     },
@@ -5851,14 +6075,14 @@
                                                                                         rule: item,
                                                                                         span: Span {
                                                                                             str: "\n",
-                                                                                            range: 2422..2423,
+                                                                                            range: 2423..2424,
                                                                                         },
                                                                                         inner: [
                                                                                             Pair {
                                                                                                 rule: newlines,
                                                                                                 span: Span {
                                                                                                     str: "\n",
-                                                                                                    range: 2422..2423,
+                                                                                                    range: 2423..2424,
                                                                                                 },
                                                                                                 inner: [],
                                                                                             },
@@ -5868,14 +6092,14 @@
                                                                                         rule: item,
                                                                                         span: Span {
                                                                                             str: "cell7 & cell8 & cell9 ",
-                                                                                            range: 2423..2445,
+                                                                                            range: 2424..2446,
                                                                                         },
                                                                                         inner: [
                                                                                             Pair {
                                                                                                 rule: text,
                                                                                                 span: Span {
                                                                                                     str: "cell7 & cell8 & cell9 ",
-                                                                                                    range: 2423..2445,
+                                                                                                    range: 2424..2446,
                                                                                                 },
                                                                                                 inner: [],
                                                                                             },
@@ -5885,14 +6109,14 @@
                                                                                         rule: item,
                                                                                         span: Span {
                                                                                             str: "\\\\",
-                                                                                            range: 2445..2447,
+                                                                                            range: 2446..2448,
                                                                                         },
                                                                                         inner: [
                                                                                             Pair {
                                                                                                 rule: linebreak,
                                                                                                 span: Span {
                                                                                                     str: "\\\\",
-                                                                                                    range: 2445..2447,
+                                                                                                    range: 2446..2448,
                                                                                                 },
                                                                                                 inner: [],
                                                                                             },
@@ -5902,14 +6126,14 @@
                                                                                         rule: item,
                                                                                         span: Span {
                                                                                             str: "\n",
-                                                                                            range: 2447..2448,
+                                                                                            range: 2448..2449,
                                                                                         },
                                                                                         inner: [
                                                                                             Pair {
                                                                                                 rule: newlines,
                                                                                                 span: Span {
                                                                                                     str: "\n",
-                                                                                                    range: 2447..2448,
+                                                                                                    range: 2448..2449,
                                                                                                 },
                                                                                                 inner: [],
                                                                                             },
@@ -5919,21 +6143,21 @@
                                                                                         rule: item,
                                                                                         span: Span {
                                                                                             str: "\\hline",
-                                                                                            range: 2448..2454,
+                                                                                            range: 2449..2455,
                                                                                         },
                                                                                         inner: [
                                                                                             Pair {
                                                                                                 rule: command,
                                                                                                 span: Span {
                                                                                                     str: "\\hline",
-                                                                                                    range: 2448..2454,
+                                                                                                    range: 2449..2455,
                                                                                                 },
                                                                                                 inner: [
                                                                                                     Pair {
                                                                                                         rule: name,
                                                                                                         span: Span {
                                                                                                             str: "hline",
-                                                                                                            range: 2449..2454,
+                                                                                                            range: 2450..2455,
                                                                                                         },
                                                                                                         inner: [],
                                                                                                     },
@@ -5945,14 +6169,14 @@
                                                                                         rule: item,
                                                                                         span: Span {
                                                                                             str: "\n",
-                                                                                            range: 2454..2455,
+                                                                                            range: 2455..2456,
                                                                                         },
                                                                                         inner: [
                                                                                             Pair {
                                                                                                 rule: newlines,
                                                                                                 span: Span {
                                                                                                     str: "\n",
-                                                                                                    range: 2454..2455,
+                                                                                                    range: 2455..2456,
                                                                                                 },
                                                                                                 inner: [],
                                                                                             },
@@ -5968,14 +6192,14 @@
                                                                 rule: item,
                                                                 span: Span {
                                                                     str: "\n",
-                                                                    range: 2468..2469,
+                                                                    range: 2469..2470,
                                                                 },
                                                                 inner: [
                                                                     Pair {
                                                                         rule: newlines,
                                                                         span: Span {
                                                                             str: "\n",
-                                                                            range: 2468..2469,
+                                                                            range: 2469..2470,
                                                                         },
                                                                         inner: [],
                                                                     },
@@ -5985,14 +6209,14 @@
                                                                 rule: item,
                                                                 span: Span {
                                                                     str: "\\\\",
-                                                                    range: 2469..2471,
+                                                                    range: 2470..2472,
                                                                 },
                                                                 inner: [
                                                                     Pair {
                                                                         rule: linebreak,
                                                                         span: Span {
                                                                             str: "\\\\",
-                                                                            range: 2469..2471,
+                                                                            range: 2470..2472,
                                                                         },
                                                                         inner: [],
                                                                     },
@@ -6002,14 +6226,14 @@
                                                                 rule: item,
                                                                 span: Span {
                                                                     str: "\n",
-                                                                    range: 2471..2472,
+                                                                    range: 2472..2473,
                                                                 },
                                                                 inner: [
                                                                     Pair {
                                                                         rule: newlines,
                                                                         span: Span {
                                                                             str: "\n",
-                                                                            range: 2471..2472,
+                                                                            range: 2472..2473,
                                                                         },
                                                                         inner: [],
                                                                     },
@@ -6019,14 +6243,14 @@
                                                                 rule: item,
                                                                 span: Span {
                                                                     str: "    ",
-                                                                    range: 2472..2476,
+                                                                    range: 2473..2477,
                                                                 },
                                                                 inner: [
                                                                     Pair {
                                                                         rule: whitespace,
                                                                         span: Span {
                                                                             str: "    ",
-                                                                            range: 2472..2476,
+                                                                            range: 2473..2477,
                                                                         },
                                                                         inner: [],
                                                                     },
@@ -6036,21 +6260,21 @@
                                                                 rule: item,
                                                                 span: Span {
                                                                     str: "\\hline",
-                                                                    range: 2476..2482,
+                                                                    range: 2477..2483,
                                                                 },
                                                                 inner: [
                                                                     Pair {
                                                                         rule: command,
                                                                         span: Span {
                                                                             str: "\\hline",
-                                                                            range: 2476..2482,
+                                                                            range: 2477..2483,
                                                                         },
                                                                         inner: [
                                                                             Pair {
                                                                                 rule: name,
                                                                                 span: Span {
                                                                                     str: "hline",
-                                                                                    range: 2477..2482,
+                                                                                    range: 2478..2483,
                                                                                 },
                                                                                 inner: [],
                                                                             },
@@ -6062,14 +6286,14 @@
                                                                 rule: item,
                                                                 span: Span {
                                                                     str: "\n",
-                                                                    range: 2482..2483,
+                                                                    range: 2483..2484,
                                                                 },
                                                                 inner: [
                                                                     Pair {
                                                                         rule: newlines,
                                                                         span: Span {
                                                                             str: "\n",
-                                                                            range: 2482..2483,
+                                                                            range: 2483..2484,
                                                                         },
                                                                         inner: [],
                                                                     },
@@ -6085,14 +6309,14 @@
                                         rule: item,
                                         span: Span {
                                             str: "\n\n",
-                                            range: 2496..2498,
+                                            range: 2498..2500,
                                         },
                                         inner: [
                                             Pair {
                                                 rule: newlines,
                                                 span: Span {
                                                     str: "\n\n",
-                                                    range: 2496..2498,
+                                                    range: 2498..2500,
                                                 },
                                                 inner: [],
                                             },
@@ -6102,21 +6326,21 @@
                                         rule: item,
                                         span: Span {
                                             str: "\\begin{verbatim}\n    Text enclosed inside \\texttt{verbatim} environment\n    is printed directly\n    and all \\LaTeX{} commands are ignored.\n\\end{verbatim}",
-                                            range: 2498..2651,
+                                            range: 2500..2653,
                                         },
                                         inner: [
                                             Pair {
                                                 rule: block_raw,
                                                 span: Span {
                                                     str: "\\begin{verbatim}\n    Text enclosed inside \\texttt{verbatim} environment\n    is printed directly\n    and all \\LaTeX{} commands are ignored.\n\\end{verbatim}",
-                                                    range: 2498..2651,
+                                                    range: 2500..2653,
                                                 },
                                                 inner: [
                                                     Pair {
                                                         rule: raw_name,
                                                         span: Span {
                                                             str: "verbatim",
-                                                            range: 2505..2513,
+                                                            range: 2507..2515,
                                                         },
                                                         inner: [],
                                                     },
@@ -6124,7 +6348,7 @@
                                                         rule: content_raw,
                                                         span: Span {
                                                             str: "\n    Text enclosed inside \\texttt{verbatim} environment\n    is printed directly\n    and all \\LaTeX{} commands are ignored.\n",
-                                                            range: 2514..2637,
+                                                            range: 2516..2639,
                                                         },
                                                         inner: [],
                                                     },
@@ -6136,14 +6360,14 @@
                                         rule: item,
                                         span: Span {
                                             str: "\n\n",
-                                            range: 2651..2653,
+                                            range: 2653..2655,
                                         },
                                         inner: [
                                             Pair {
                                                 rule: newlines,
                                                 span: Span {
                                                     str: "\n\n",
-                                                    range: 2651..2653,
+                                                    range: 2653..2655,
                                                 },
                                                 inner: [],
                                             },
@@ -6153,21 +6377,21 @@
                                         rule: item,
                                         span: Span {
                                             str: "\\begin{lstlisting}[language=Python]\nimport numpy as np\n\ndef incmatrix(genl1,genl2):\n    m = len(genl1)\n    n = len(genl2)\n    M = None #to become the incidence matrix\n    VT = np.zeros((n*m,1), int)  #dummy variable\n\n    #compute the bitwise xor matrix\n    M1 = bitxormatrix(genl1)\n    M2 = np.triu(bitxormatrix(genl2),1)\n\n    for i in range(m-1):\n        for j in range(i+1, m):\n            [r,c] = np.where(M2 == M1[i,j])\n            for k in range(len(r)):\n                VT[(i)*n + r[k]] = 1;\n                VT[(i)*n + c[k]] = 1;\n                VT[(j)*n + r[k]] = 1;\n                VT[(j)*n + c[k]] = 1;\n\n                if M is None:\n                    M = np.copy(VT)\n                else:\n                    M = np.concatenate((M, VT), 1)\n\n                VT = np.zeros((n*m,1), int)\n\n    return M\n\\end{lstlisting}",
-                                            range: 2653..3480,
+                                            range: 2655..3482,
                                         },
                                         inner: [
                                             Pair {
                                                 rule: block_raw,
                                                 span: Span {
                                                     str: "\\begin{lstlisting}[language=Python]\nimport numpy as np\n\ndef incmatrix(genl1,genl2):\n    m = len(genl1)\n    n = len(genl2)\n    M = None #to become the incidence matrix\n    VT = np.zeros((n*m,1), int)  #dummy variable\n\n    #compute the bitwise xor matrix\n    M1 = bitxormatrix(genl1)\n    M2 = np.triu(bitxormatrix(genl2),1)\n\n    for i in range(m-1):\n        for j in range(i+1, m):\n            [r,c] = np.where(M2 == M1[i,j])\n            for k in range(len(r)):\n                VT[(i)*n + r[k]] = 1;\n                VT[(i)*n + c[k]] = 1;\n                VT[(j)*n + r[k]] = 1;\n                VT[(j)*n + c[k]] = 1;\n\n                if M is None:\n                    M = np.copy(VT)\n                else:\n                    M = np.concatenate((M, VT), 1)\n\n                VT = np.zeros((n*m,1), int)\n\n    return M\n\\end{lstlisting}",
-                                                    range: 2653..3480,
+                                                    range: 2655..3482,
                                                 },
                                                 inner: [
                                                     Pair {
                                                         rule: raw_name,
                                                         span: Span {
                                                             str: "lstlisting",
-                                                            range: 2660..2670,
+                                                            range: 2662..2672,
                                                         },
                                                         inner: [],
                                                     },
@@ -6175,35 +6399,35 @@
                                                         rule: optional_arg,
                                                         span: Span {
                                                             str: "[language=Python]",
-                                                            range: 2671..2688,
+                                                            range: 2673..2690,
                                                         },
                                                         inner: [
                                                             Pair {
                                                                 rule: optional_list,
                                                                 span: Span {
                                                                     str: "language=Python",
-                                                                    range: 2672..2687,
+                                                                    range: 2674..2689,
                                                                 },
                                                                 inner: [
                                                                     Pair {
                                                                         rule: opt_entry,
                                                                         span: Span {
                                                                             str: "language=Python",
-                                                                            range: 2672..2687,
+                                                                            range: 2674..2689,
                                                                         },
                                                                         inner: [
                                                                             Pair {
                                                                                 rule: kv_pair,
                                                                                 span: Span {
                                                                                     str: "language=Python",
-                                                                                    range: 2672..2687,
+                                                                                    range: 2674..2689,
                                                                                 },
                                                                                 inner: [
                                                                                     Pair {
                                                                                         rule: key,
                                                                                         span: Span {
                                                                                             str: "language",
-                                                                                            range: 2672..2680,
+                                                                                            range: 2674..2682,
                                                                                         },
                                                                                         inner: [],
                                                                                     },
@@ -6211,14 +6435,14 @@
                                                                                         rule: value,
                                                                                         span: Span {
                                                                                             str: "Python",
-                                                                                            range: 2681..2687,
+                                                                                            range: 2683..2689,
                                                                                         },
                                                                                         inner: [
                                                                                             Pair {
                                                                                                 rule: simple_value,
                                                                                                 span: Span {
                                                                                                     str: "Python",
-                                                                                                    range: 2681..2687,
+                                                                                                    range: 2683..2689,
                                                                                                 },
                                                                                                 inner: [],
                                                                                             },
@@ -6236,7 +6460,7 @@
                                                         rule: content_raw,
                                                         span: Span {
                                                             str: "\nimport numpy as np\n\ndef incmatrix(genl1,genl2):\n    m = len(genl1)\n    n = len(genl2)\n    M = None #to become the incidence matrix\n    VT = np.zeros((n*m,1), int)  #dummy variable\n\n    #compute the bitwise xor matrix\n    M1 = bitxormatrix(genl1)\n    M2 = np.triu(bitxormatrix(genl2),1)\n\n    for i in range(m-1):\n        for j in range(i+1, m):\n            [r,c] = np.where(M2 == M1[i,j])\n            for k in range(len(r)):\n                VT[(i)*n + r[k]] = 1;\n                VT[(i)*n + c[k]] = 1;\n                VT[(j)*n + r[k]] = 1;\n                VT[(j)*n + c[k]] = 1;\n\n                if M is None:\n                    M = np.copy(VT)\n                else:\n                    M = np.concatenate((M, VT), 1)\n\n                VT = np.zeros((n*m,1), int)\n\n    return M\n",
-                                                            range: 2688..3464,
+                                                            range: 2690..3466,
                                                         },
                                                         inner: [],
                                                     },
@@ -6248,14 +6472,14 @@
                                         rule: item,
                                         span: Span {
                                             str: "\n\n",
-                                            range: 3480..3482,
+                                            range: 3482..3484,
                                         },
                                         inner: [
                                             Pair {
                                                 rule: newlines,
                                                 span: Span {
                                                     str: "\n\n",
-                                                    range: 3480..3482,
+                                                    range: 3482..3484,
                                                 },
                                                 inner: [],
                                             },
@@ -6271,7 +6495,7 @@
                 rule: EOI,
                 span: Span {
                     str: "",
-                    range: 3496..3496,
+                    range: 3498..3498,
                 },
                 inner: [],
             },

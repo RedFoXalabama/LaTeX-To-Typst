@@ -143,21 +143,18 @@ center block *bold*
 #link("https://www.overleaf.com/learn")
 #link("https://www.overleaf.com/learn")[Overleaf Learn]// testo del link
 
-//\usepackage[letterpaper = true,top=2cm\textwidth, points={1, cane,3 ,4}]{geometry}
+/*WARN: NotImplemented("usepackage"): usepackage \usepackage{geometry}*/
 /* usepackage{listings} */
 
-#table(
+
+
+*cell1*& cell2 & cell3 \
+
+cell4 & cell5 & cell6 \
+
+cell7 & cell8 & #table(
 	columns: 3,
-	[*cell1*],
-	[cell2],
-	[cell3],
-	[cell4],
-	[cell5],
-	[cell6],
-	[cell7],
-	[cell8],
-	[#table(
-	columns: 3,
+	[/*WARN: WrongCommandOrNotImplemented("hlinee"): hlinee \hlinee{}*/],
 	[*cell1*],
 	[cell2],
 	[cell3],
@@ -167,8 +164,10 @@ center block *bold*
 	[cell7],
 	[cell8],
 	[cell9],
-)],
 )
+\
+
+
 
 ```
     Text enclosed inside \texttt{verbatim} environment

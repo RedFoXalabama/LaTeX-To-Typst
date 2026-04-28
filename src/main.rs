@@ -62,8 +62,8 @@ fn translate_file(
 
     log::info!("4. AST ==> Starting AST validation...");
     // Validazione AST (es. comandi supportati)
-    codegen::validate_ast(&ast)
-        .map_err(|e| std::io::Error::new(std::io::ErrorKind::InvalidData, format!("{e:?}")))?;
+    // codegen::validate_ast(&ast)
+    //     .map_err(|e| std::io::Error::new(std::io::ErrorKind::InvalidData, format!("{e:?}")))?;
 
     // -------------------------------- TYPST GENERATION -------------------------------------------
     log::info!("5. AST ==> Starting Traduction in Typst...");

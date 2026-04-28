@@ -38,6 +38,7 @@
 /* usepackage{listing} */
 /* usepackage{hyperref} */
 
+
 #set document(title: title)
 #align(center)[
 #text(3em, weight: "bold")[#title]
@@ -46,12 +47,16 @@
 #v(0em)
 #text(1.5em)[#date.display("[day] [month repr:long] [year]")]
 ]
-#v(2em)#outline()
+#v(2em)
+#outline()
 
 prova-tra parentesi graffe-
-testo pre commento // prova commento monolinea/*
+testo pre commento // prova commento monolinea
+/*
     Questo é un commento multilinea \textbf{aa}
-*//*
+*/
+
+/*
     \begin{tabular}{ |c|c|csss| }
         \hline
         \textbf{cell1} & cell2 & cell3 \\
@@ -61,25 +66,50 @@ testo pre commento // prova commento monolinea/*
         cell7 & cell8 & cell9 \\
         \hline
     \end{tabular}
-*/*Bold*_italic_#underline[underline]#set align(center);#set align(left);#set align(right);#set align(right);#set align(left);/* usepackage{ragged2e} */#align(center)[
-    center block *bold*]#align(left)[ flushleft block ]#align(right)[ flushright block ]#align(left)[ FlushLeft block ]#align(right)[ FlushRight block ]\\\#h(1fr)#v(1fr)#pagebreak()#pagebreak()#pagebreak()
-- [!] itemize 1
-    
--
-	+ enumerate 1
-              
-	+
-		- itemize 3
-                        
-		-
-			+ enum 2
-                                  
-			+
-				+ enum 3
-                                  
-- itemize 2
+*/
 
-/ description 1: description text 1
+
+*Bold*
+_italic_
+#underline[underline]
+
+#set align(center);
+#set align(left);
+#set align(right);
+#set align(right);
+#set align(left);
+/* usepackage{ragged2e} */
+#align(center)[
+center block *bold*
+]
+#align(left)[flushleft block ]
+#align(right)[flushright block ]
+#align(left)[FlushLeft block ]
+#align(right)[FlushRight block ]
+
+\
+\
+\
+#h(1fr)
+#v(1fr)
+#pagebreak()
+#pagebreak()
+#pagebreak()
+
+
+- [!]itemize 1
+-
+	+enumerate 1
+	+
+		-itemize 3
+		-
+			+enum 2
+			+
+				+enum 3
+-itemize 2
+
+/ description 1:description text 1
+
 #v(2em)
 #align(center)[
 #text(1.2em)[Part I]
@@ -87,6 +117,7 @@ testo pre commento // prova commento monolinea/*
 #text(2em, weight: "bold")[part 1]
 ]
 #v(2em)
+
 #v(2em)
 #align(center)[
 #text(1.2em)[Part II]
@@ -94,12 +125,28 @@ testo pre commento // prova commento monolinea/*
 #text(2em, weight: "bold")[part 2]
 ]
 #v(2em)
+
+
 = section
+
 == subsection
+
 === subsubsection
+
 ==== paragraph
+
 ===== subparagraph
-#text(blue)[This is *bold and blue*.]#link("https://www.overleaf.com/learn")#link("https://www.overleaf.com/learn")[Overleaf Learn]// testo del link//\usepackage[letterpaper = true,top=2cm\textwidth, points={1, cane,3 ,4}]{geometry}/* usepackage{listings} */#table(
+
+
+#text(blue)[This is *bold and blue*.]
+
+#link("https://www.overleaf.com/learn")
+#link("https://www.overleaf.com/learn")[Overleaf Learn]// testo del link
+
+//\usepackage[letterpaper = true,top=2cm\textwidth, points={1, cane,3 ,4}]{geometry}
+/* usepackage{listings} */
+
+#table(
 	columns: 3,
 	[*cell1*],
 	[cell2],
@@ -121,11 +168,15 @@ testo pre commento // prova commento monolinea/*
 	[cell8],
 	[cell9],
 )],
-)```
-    Text enclosed inside \texttt{verbatim} environment
+)
+
+```
+        Text enclosed inside \texttt{verbatim} environment
     is printed directly
     and all \LaTeX{} commands are ignored.
-``````python
+```
+
+```python
 import numpy as np
 
 def incmatrix(genl1,genl2):
@@ -156,3 +207,4 @@ def incmatrix(genl1,genl2):
 
     return M
 ```
+

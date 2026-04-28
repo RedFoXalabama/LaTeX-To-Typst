@@ -1,13 +1,13 @@
 mod ast_structure;
 mod reqarg_map;
 
-use log::{error};
-pub use ast_structure::*; //importo tutte le strutture e gli enumerati che compongono l'AST
+pub use ast_structure::*;
+use log::error; //importo tutte le strutture e gli enumerati che compongono l'AST
 
 use crate::latex_parser::Rule;
-use pest::iterators::{Pair, Pairs};
 use crate::latex_semantic::reqarg_map::reqarg_count;
-use crate::utils::{drop_command_warn, COMMANDWARNING};
+use crate::utils::{COMMANDWARNING, drop_command_warn};
+use pest::iterators::{Pair, Pairs};
 // ALBERO AST (Abstract Syntax Tree) - rappresentazione ad albero della struttura sintattica del documento LaTeX,
 // costruita a partire dal parse tree di pest.
 // L'AST è più astratto e semantico rispetto al parse tree, e viene utilizzato per analisi successive o trasformazioni.
@@ -67,7 +67,9 @@ fn build_document(file_pair: Pair<Rule>) -> Result<AstDocument, SemanticError> {
                     }
                 }
 
-                items.push(item);
+                if !matches!(item, AstItemNode::Whitespace(_)) {
+                    items.push(item);
+                }
             }
             Rule::EOI => {} // ignorato nell'AST
 
@@ -75,27 +77,7 @@ fn build_document(file_pair: Pair<Rule>) -> Result<AstDocument, SemanticError> {
         }
     }
 
-    // let filtered_items = filter_useless_ast_items(items);
     Ok(AstDocument { items })
-}
-
-fn filter_useless_ast_items(items: Vec<AstItemNode>) -> Vec<AstItemNode> {
-    let mut res = Vec::new();
-    for (i, item) in items.iter().enumerate() {
-        if let AstItemNode::Whitespace(_) = item {
-            let prev = if i > 0 { items.get(i - 1) } else { None };
-            let next = items.get(i + 1);
-
-            let is_prev_cmd_or_block = prev.map_or(true, |p| matches!(p, AstItemNode::Command(_) | AstItemNode::Block(_) | AstItemNode::Linebreak(_) | AstItemNode::Newlines(_) | AstItemNode::Comment(_)));
-            let is_next_cmd_or_block = next.map_or(true, |n| matches!(n, AstItemNode::Command(_) | AstItemNode::Block(_) | AstItemNode::Linebreak(_) | AstItemNode::Newlines(_) | AstItemNode::Comment(_)));
-
-            if is_prev_cmd_or_block && is_next_cmd_or_block {
-                continue;
-            }
-        }
-        res.push(item.clone());
-    }
-    res
 }
 
 // ----------------------------- ITEM = COMMAND | TEXT | NEWLINES | LINEBREAK ----------------------------------
@@ -142,7 +124,12 @@ fn build_block(pair: Pair<Rule>) -> Result<BlockNode, SemanticError> {
             Rule::content => {
                 for item in child.into_inner() {
                     match item.as_rule() {
-                        Rule::item => items.push(build_item(item)?),
+                        Rule::item => {
+                            let built = build_item(item)?;
+                            if !matches!(built, AstItemNode::Whitespace(_)) {
+                                items.push(built);
+                            }
+                        }
                         other => return Err(SemanticError::UnexpectedRule(other)),
                     }
                 }
@@ -152,13 +139,11 @@ fn build_block(pair: Pair<Rule>) -> Result<BlockNode, SemanticError> {
         }
     }
 
-    let filtered_items = filter_useless_ast_items(items);
-
     Ok(BlockNode {
         name,
         optional_args,
         required_args,
-        items: filtered_items,
+        items,
     })
 }
 
@@ -212,7 +197,12 @@ fn build_command(pair: Pair<Rule>) -> Result<CommandNode, SemanticError> {
 
     if let Some(expected) = reqarg_count(&name) {
         if required_args.len() < expected as usize {
-            error!("Comando \\{}: expected {} required arguments, found {}", name, expected, required_args.len());
+            error!(
+                "Comando \\{}: expected {} required arguments, found {}",
+                name,
+                expected,
+                required_args.len()
+            );
 
             return Err(SemanticError::MissingRequiredArgItems);
         }
@@ -297,7 +287,12 @@ fn build_required_arg(cmd_name: &str, pair: Pair<Rule>) -> Result<RequiredArgNod
             Rule::argument => {
                 for arg_item in child.into_inner() {
                     match arg_item.as_rule() {
-                        Rule::arg_item => items.push(build_arg_item(cmd_name, arg_item)?),
+                        Rule::arg_item => {
+                            let built = build_arg_item(cmd_name, arg_item)?;
+                            if !matches!(built, ArgItemNode::Whitespace(_)) {
+                                items.push(built);
+                            }
+                        }
 
                         other => return Err(SemanticError::UnexpectedArgItemRule(other)),
                     }
@@ -310,33 +305,17 @@ fn build_required_arg(cmd_name: &str, pair: Pair<Rule>) -> Result<RequiredArgNod
 
     if items.is_empty() {
         if reqarg_count(cmd_name) > Option::from(0) {
-            drop_command_warn(COMMANDWARNING::EmptyBracket(cmd_name.to_string()), None, Some(cmd_name), None);
+            drop_command_warn(
+                COMMANDWARNING::EmptyBracket(cmd_name.to_string()),
+                None,
+                Some(cmd_name),
+                None,
+            );
             // return Err(SemanticError::MissingRequiredArgItems);
         }
     }
 
-    // let filtered_items = filter_useless_arg_items(items);
-
     Ok(RequiredArgNode { items })
-}
-
-fn filter_useless_arg_items(items: Vec<ArgItemNode>) -> Vec<ArgItemNode> {
-    let mut res = Vec::new();
-    for (i, item) in items.iter().enumerate() {
-        if let ArgItemNode::Whitespace(_) = item {
-            let prev = if i > 0 { items.get(i - 1) } else { None };
-            let next = items.get(i + 1);
-
-            let is_prev_cmd_or_group = prev.map_or(true, |p| matches!(p, ArgItemNode::Command(_) | ArgItemNode::Group(_) | ArgItemNode::Linebreak(_) | ArgItemNode::Newlines(_)));
-            let is_next_cmd_or_group = next.map_or(true, |n| matches!(n, ArgItemNode::Command(_) | ArgItemNode::Group(_) | ArgItemNode::Linebreak(_) | ArgItemNode::Newlines(_)));
-
-            if is_prev_cmd_or_group && is_next_cmd_or_group {
-                continue;
-            }
-        }
-        res.push(item.clone());
-    }
-    res
 }
 
 // Un argument item é un oggetto che viene utilizzato come required argument in presenza multipla, quindi un required argument può essere composto
@@ -408,11 +387,15 @@ fn build_opt_entry(cmd_name: &str, pair: Pair<Rule>) -> Result<OptionalEntryNode
             Ok(OptionalEntryNode::KeyValue(kv))
         }
         Some(Rule::opt_item) => {
-            let items: Result<Vec<OptItemNode>, SemanticError> =
-                pair.into_inner().map(|p| build_opt_item(cmd_name, p)).collect();
-            // let filtered_items = filter_useless_opt_items(items?);
-            // Ok(OptionalEntryNode::Items(filtered_items))
-            Ok(OptionalEntryNode::Items(items?))
+            let items: Result<Vec<OptItemNode>, SemanticError> = pair
+                .into_inner()
+                .map(|p| build_opt_item(cmd_name, p))
+                .collect();
+            let filtered_items: Vec<OptItemNode> = items?
+                .into_iter()
+                .filter(|item| !matches!(item, OptItemNode::Whitespace(_)))
+                .collect();
+            Ok(OptionalEntryNode::Items(filtered_items))
         }
 
         Some(other) => Err(SemanticError::UnexpectedOptionalEntryRule(other)),
@@ -487,23 +470,4 @@ fn build_opt_item(cmd_name: &str, pair: Pair<Rule>) -> Result<OptItemNode, Seman
 
         other => Err(SemanticError::UnexpectedOptItemRule(other)),
     }
-}
-
-fn filter_useless_opt_items(items: Vec<OptItemNode>) -> Vec<OptItemNode> {
-    let mut res = Vec::new();
-    for (i, item) in items.iter().enumerate() {
-        if let OptItemNode::Whitespace(_) = item {
-            let prev = if i > 0 { items.get(i - 1) } else { None };
-            let next = items.get(i + 1);
-
-            let is_prev_cmd_or_group = prev.map_or(true, |p| matches!(p, OptItemNode::Command(_) | OptItemNode::Group(_) | OptItemNode::Newlines(_)));
-            let is_next_cmd_or_group = next.map_or(true, |n| matches!(n, OptItemNode::Command(_) | OptItemNode::Group(_) | OptItemNode::Newlines(_)));
-
-            if is_prev_cmd_or_group && is_next_cmd_or_group {
-                continue;
-            }
-        }
-        res.push(item.clone());
-    }
-    res
 }

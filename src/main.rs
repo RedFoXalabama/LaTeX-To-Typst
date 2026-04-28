@@ -46,11 +46,7 @@ fn translate_file(
     // Prendo l'input da un file .tex
     let source = latex_parser::read_latex_file(input_path)?;
 
-    log::info!("1. Latex Input ==> Starting Lexical Analysis...");
-    // Scansione preliminare per eventuali errori formali semplici
-    // latex_parser::scan_latex(&source)?;
-
-    log::info!("2. Latex Input ==> Starting PEST parse tree construction...");
+    log::info!("1. Latex Input ==> Starting PEST lexical analysis and parse tree construction...");
     // Effettuo il parsing del LaTeX, ottenendo un parse tree (Pest Pairs)
     let parse_tree = latex_parser::parse_latex(&source)?;
     // Salvo il parse tree in un file di testo (in formato debug leggibile)

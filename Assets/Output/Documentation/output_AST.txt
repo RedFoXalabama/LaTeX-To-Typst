@@ -1534,7 +1534,7 @@ AstDocument {
                             items: [
                                 RawText(
                                     TextNode {
-                                        value: "\n        Text enclosed inside \\texttt{verbatim} environment\n    is printed directly\n    and all \\LaTeX{} commands are ignored.\n",
+                                        value: "\n    Text enclosed inside \\texttt{verbatim} environment\n    is printed directly\n    and all \\LaTeX{} commands are ignored.\n",
                                     },
                                 ),
                             ],

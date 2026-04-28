@@ -2,7 +2,6 @@ use latex_to_typst::{codegen, latex_parser, latex_semantic}; // Accedo al file l
 
 fn run_transpilation(input_path: &str) -> Result<String, Box<dyn std::error::Error>> {
     let source = latex_parser::read_latex_file(input_path)?;
-    latex_parser::scan_latex(&source)?;
     let parse_tree = latex_parser::parse_latex(&source)?;
     let ast = latex_semantic::build_ast(parse_tree)
         .map_err(|e| std::io::Error::new(std::io::ErrorKind::InvalidData, format!("{e:?}")))?;

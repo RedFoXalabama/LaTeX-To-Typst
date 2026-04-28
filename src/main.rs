@@ -9,7 +9,8 @@ static CODEGEN_DIR: &str = "Assets/Output/Documentation/";
 
 // ------------------------------ MAIN EXECUTION ---------------------------------------------------
 fn main() {
-    env_logger::init();
+    // Di default, mostro i log da livello warn in poi. Se interessati a log verbosi da livello info, impostare env RUST_LOG=info
+    env_logger::Builder::from_env(env_logger::Env::default().default_filter_or("warn")).init();
 
     for file in fs::read_dir(INPUT_DIR).expect("Failed to read input directory") {
         let entry = file.expect("Failed to read directory entry");
@@ -60,17 +61,12 @@ fn translate_file(
         .map_err(|e| std::io::Error::new(std::io::ErrorKind::InvalidData, format!("{e:?}")))?; // Effettuiamo la mappatura e conversione dell'errore in modo che il main possa restituirlo.
     utils::save_ast_to_file(output_ast_path, &ast)?;
 
-    log::info!("4. AST ==> Starting AST validation...");
-    // Validazione AST (es. comandi supportati)
-    // codegen::validate_ast(&ast)
-    //     .map_err(|e| std::io::Error::new(std::io::ErrorKind::InvalidData, format!("{e:?}")))?;
-
     // -------------------------------- TYPST GENERATION -------------------------------------------
-    log::info!("5. AST ==> Starting Traduction in Typst...");
+    log::info!("4. AST ==> Starting Traduction in Typst...");
     let typst_output = codegen::ast_to_typst(&ast);
     utils::save_output_file(output_codegen_path, &typst_output)?;
 
-    log::info!("6. Typst input ==> Starting PDF construction...");
+    log::info!("5. Typst input ==> Starting PDF construction...");
     let _child = utils::start_typst_watch(output_codegen_path)?;
     Ok(())
 }

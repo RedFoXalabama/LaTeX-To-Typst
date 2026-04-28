@@ -67,7 +67,7 @@ fn build_table_entries(items: &[AstItemNode]) -> Vec<TableEntry> {
             AstItemNode::Command(command) if command.name == "hline" => {
                 entries.push(TableEntry::HLine);
             }
-            AstItemNode::Linebreak(_) | AstItemNode::Newlines(_) | AstItemNode::Comment(_) => {}
+            AstItemNode::Linebreak(_) | AstItemNode::Newlines(_) | AstItemNode::Comment(_) | AstItemNode::Whitespace(_) => {}
             AstItemNode::Command(command) => {
                 let rendered = crate::codegen::render_command(command);
                 if !rendered.is_empty() {

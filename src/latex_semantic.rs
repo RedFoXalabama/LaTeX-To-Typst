@@ -47,14 +47,14 @@ fn build_document(file_pair: Pair<Rule>) -> Result<AstDocument, SemanticError> {
         match child.as_rule() {
             Rule::item => {
                 let item = build_item(child)?;
-                
+
                 // Track where we are regarding `\begin{document}`
                 if let AstItemNode::Block(b) = &item {
                     if b.name == "document" {
                         found_document = true;
                     }
                 }
-                
+
                 // Check for text before `\begin{document}`
                 if !found_document {
                     match &item {
@@ -75,7 +75,27 @@ fn build_document(file_pair: Pair<Rule>) -> Result<AstDocument, SemanticError> {
         }
     }
 
+    // let filtered_items = filter_useless_ast_items(items);
     Ok(AstDocument { items })
+}
+
+fn filter_useless_ast_items(items: Vec<AstItemNode>) -> Vec<AstItemNode> {
+    let mut res = Vec::new();
+    for (i, item) in items.iter().enumerate() {
+        if let AstItemNode::Whitespace(_) = item {
+            let prev = if i > 0 { items.get(i - 1) } else { None };
+            let next = items.get(i + 1);
+
+            let is_prev_cmd_or_block = prev.map_or(true, |p| matches!(p, AstItemNode::Command(_) | AstItemNode::Block(_) | AstItemNode::Linebreak(_) | AstItemNode::Newlines(_) | AstItemNode::Comment(_)));
+            let is_next_cmd_or_block = next.map_or(true, |n| matches!(n, AstItemNode::Command(_) | AstItemNode::Block(_) | AstItemNode::Linebreak(_) | AstItemNode::Newlines(_) | AstItemNode::Comment(_)));
+
+            if is_prev_cmd_or_block && is_next_cmd_or_block {
+                continue;
+            }
+        }
+        res.push(item.clone());
+    }
+    res
 }
 
 // ----------------------------- ITEM = COMMAND | TEXT | NEWLINES | LINEBREAK ----------------------------------
@@ -96,6 +116,7 @@ fn build_item(pair: Pair<Rule>) -> Result<AstItemNode, SemanticError> {
         Rule::text => Ok(AstItemNode::Text(build_text(child)?)),
         Rule::newlines => Ok(AstItemNode::Newlines(build_newlines(child)?)),
         Rule::linebreak => Ok(AstItemNode::Linebreak(build_linebreak(child)?)), // trattiamo i linebreak come newlines, visto che rappresentano un andare a capo
+        Rule::whitespace => Ok(AstItemNode::Whitespace(build_whitespace(child)?)),
         Rule::comment => Ok(AstItemNode::Comment(build_comment(child)?)),
 
         other => Err(SemanticError::UnexpectedItemRule(other)),
@@ -131,11 +152,13 @@ fn build_block(pair: Pair<Rule>) -> Result<BlockNode, SemanticError> {
         }
     }
 
+    let filtered_items = filter_useless_ast_items(items);
+
     Ok(BlockNode {
         name,
         optional_args,
         required_args,
-        items,
+        items: filtered_items,
     })
 }
 
@@ -214,6 +237,13 @@ fn build_text(pair: Pair<Rule>) -> Result<TextNode, SemanticError> {
     Ok(TextNode { value })
 }
 
+// Un whitespace é uno o più spazi o tabulazioni
+fn build_whitespace(pair: Pair<Rule>) -> Result<WhitespaceNode, SemanticError> {
+    Ok(WhitespaceNode {
+        value: pair.as_str().to_string(),
+    })
+}
+
 // Una nuova linea é composta da uno o più caratteri di nuova linea (\n), e viene rappresentata da un nodo che conta quante nuove linee ci sono
 // se il nodo é segnato come NEWLINE, ma non contiene "nuove linee", allora cacca addosso -> InvalidNewlineCount
 // newlines = { NEWLINE+ }
@@ -285,7 +315,28 @@ fn build_required_arg(cmd_name: &str, pair: Pair<Rule>) -> Result<RequiredArgNod
         }
     }
 
+    // let filtered_items = filter_useless_arg_items(items);
+
     Ok(RequiredArgNode { items })
+}
+
+fn filter_useless_arg_items(items: Vec<ArgItemNode>) -> Vec<ArgItemNode> {
+    let mut res = Vec::new();
+    for (i, item) in items.iter().enumerate() {
+        if let ArgItemNode::Whitespace(_) = item {
+            let prev = if i > 0 { items.get(i - 1) } else { None };
+            let next = items.get(i + 1);
+
+            let is_prev_cmd_or_group = prev.map_or(true, |p| matches!(p, ArgItemNode::Command(_) | ArgItemNode::Group(_) | ArgItemNode::Linebreak(_) | ArgItemNode::Newlines(_)));
+            let is_next_cmd_or_group = next.map_or(true, |n| matches!(n, ArgItemNode::Command(_) | ArgItemNode::Group(_) | ArgItemNode::Linebreak(_) | ArgItemNode::Newlines(_)));
+
+            if is_prev_cmd_or_group && is_next_cmd_or_group {
+                continue;
+            }
+        }
+        res.push(item.clone());
+    }
+    res
 }
 
 // Un argument item é un oggetto che viene utilizzato come required argument in presenza multipla, quindi un required argument può essere composto
@@ -359,6 +410,8 @@ fn build_opt_entry(cmd_name: &str, pair: Pair<Rule>) -> Result<OptionalEntryNode
         Some(Rule::opt_item) => {
             let items: Result<Vec<OptItemNode>, SemanticError> =
                 pair.into_inner().map(|p| build_opt_item(cmd_name, p)).collect();
+            // let filtered_items = filter_useless_opt_items(items?);
+            // Ok(OptionalEntryNode::Items(filtered_items))
             Ok(OptionalEntryNode::Items(items?))
         }
 
@@ -434,4 +487,23 @@ fn build_opt_item(cmd_name: &str, pair: Pair<Rule>) -> Result<OptItemNode, Seman
 
         other => Err(SemanticError::UnexpectedOptItemRule(other)),
     }
+}
+
+fn filter_useless_opt_items(items: Vec<OptItemNode>) -> Vec<OptItemNode> {
+    let mut res = Vec::new();
+    for (i, item) in items.iter().enumerate() {
+        if let OptItemNode::Whitespace(_) = item {
+            let prev = if i > 0 { items.get(i - 1) } else { None };
+            let next = items.get(i + 1);
+
+            let is_prev_cmd_or_group = prev.map_or(true, |p| matches!(p, OptItemNode::Command(_) | OptItemNode::Group(_) | OptItemNode::Newlines(_)));
+            let is_next_cmd_or_group = next.map_or(true, |n| matches!(n, OptItemNode::Command(_) | OptItemNode::Group(_) | OptItemNode::Newlines(_)));
+
+            if is_prev_cmd_or_group && is_next_cmd_or_group {
+                continue;
+            }
+        }
+        res.push(item.clone());
+    }
+    res
 }

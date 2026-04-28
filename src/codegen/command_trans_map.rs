@@ -231,6 +231,7 @@ pub(crate) fn render_args_item(seq: &Vec<ArgItemNode>) -> String {
             ArgItemNode::Group(group) => render_args_item(&group.items),
             ArgItemNode::Newlines(newlines) => codegen::render_newlines(&newlines),
             ArgItemNode::Linebreak(linebreak) => codegen::render_linebreak(&linebreak),
+            ArgItemNode::Whitespace(whitespace) => codegen::render_whitespace(&whitespace),
             ArgItemNode::Text(text) => codegen::render_text(&text),
         })
         .collect()
@@ -269,6 +270,7 @@ fn render_opt_items(items: &Vec<OptItemNode>) -> String {
             OptItemNode::Command(cmd) => codegen::render_command(&cmd),
             OptItemNode::Group(group) => render_args_item(&group.items),
             OptItemNode::Newlines(newlines) => codegen::render_newlines(&newlines),
+            OptItemNode::Whitespace(whitespace) => codegen::render_whitespace(&whitespace),
             OptItemNode::Text(text) => codegen::render_text(&text),
         })
         .collect()

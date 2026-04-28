@@ -78,7 +78,6 @@ testo pre commento % prova commento monolinea
     \item[description 1] description text 1
 \end{description}
 
-
 \part{part 1}
 \part{part 2}
 \chapter{chapter}
@@ -102,7 +101,16 @@ testo pre commento % prova commento monolinea
     \hline
     cell4 & cell5 & cell6 \\
     \hline
-    cell7 & cell8 & cell9 \\
+    cell7 & cell8 & \begin{tabular}{ |c|c|c| }
+\hline
+\textbf{cell1} & cell2 & cell3 \\
+\hline
+cell4 & cell5 & cell6 \\
+\hline
+cell7 & cell8 & cell9 \\
+\hline
+\end{tabular}
+\\
     \hline
 \end{tabular}
 

@@ -17,6 +17,7 @@ pub enum AstItemNode {
     Linebreak(LinebreakNode), // rule: linebreak
     Command(CommandNode),     // rule: command
     Comment(CommentNode),     // rule: comment
+    Whitespace(WhitespaceNode), // rule: whitespace
     RawText(TextNode),        // rule: text (raw)
 }
 
@@ -34,6 +35,12 @@ pub struct BlockNode {
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub struct TextNode {
     pub value: String, // rule: text
+}
+
+// WhitespaceNode rappresenta spazi e tabulazioni
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct WhitespaceNode {
+    pub value: String, // rule: whitespace
 }
 
 // NewLineNode rappresenta tutti gli andare a capo, e contiene un contatore per contare le nuove linee
@@ -78,6 +85,7 @@ pub enum ArgItemNode {
     Group(RequiredArgNode),   // rule: required_arg annidato
     Newlines(NewlinesNode),   // rule: newlines
     Linebreak(LinebreakNode), // rule: linebreak
+    Whitespace(WhitespaceNode), // rule: whitespace
     Text(TextNode),           // rule: arg_text
 }
 
@@ -119,6 +127,7 @@ pub enum OptItemNode {
     Command(CommandNode),   // rule: command
     Group(RequiredArgNode), // rule: required_arg
     Newlines(NewlinesNode), // rule: newlines
+    Whitespace(WhitespaceNode), // rule: whitespace
     Text(TextNode),         // rule: opt_text
 }
 

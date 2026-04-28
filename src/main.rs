@@ -48,7 +48,7 @@ fn translate_file(
 
     log::info!("1. Latex Input ==> Starting Lexical Analysis...");
     // Scansione preliminare per eventuali errori formali semplici
-    latex_parser::scan_latex(&source)?;
+    // latex_parser::scan_latex(&source)?;
 
     log::info!("2. Latex Input ==> Starting PEST parse tree construction...");
     // Effettuo il parsing del LaTeX, ottenendo un parse tree (Pest Pairs)

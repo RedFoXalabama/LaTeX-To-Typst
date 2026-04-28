@@ -75,7 +75,7 @@
                 },
                 inner: [
                     Pair {
-                        rule: newlines,
+                        rule: whitespace,
                         span: Span {
                             str: "\n",
                             range: 23..24,
@@ -153,7 +153,7 @@
                 },
                 inner: [
                     Pair {
-                        rule: newlines,
+                        rule: whitespace,
                         span: Span {
                             str: "\n",
                             range: 46..47,
@@ -231,7 +231,7 @@
                 },
                 inner: [
                     Pair {
-                        rule: newlines,
+                        rule: whitespace,
                         span: Span {
                             str: "\n",
                             range: 73..74,
@@ -318,7 +318,7 @@
                 },
                 inner: [
                     Pair {
-                        rule: newlines,
+                        rule: whitespace,
                         span: Span {
                             str: "\n",
                             range: 87..88,
@@ -396,7 +396,7 @@
                 },
                 inner: [
                     Pair {
-                        rule: newlines,
+                        rule: whitespace,
                         span: Span {
                             str: "\n\n",
                             range: 105..107,
@@ -474,7 +474,7 @@
                 },
                 inner: [
                     Pair {
-                        rule: newlines,
+                        rule: whitespace,
                         span: Span {
                             str: "\n",
                             range: 128..129,
@@ -552,7 +552,7 @@
                 },
                 inner: [
                     Pair {
-                        rule: newlines,
+                        rule: whitespace,
                         span: Span {
                             str: "\n",
                             range: 149..150,
@@ -630,7 +630,7 @@
                 },
                 inner: [
                     Pair {
-                        rule: newlines,
+                        rule: whitespace,
                         span: Span {
                             str: "\n\n",
                             range: 171..173,
@@ -676,7 +676,7 @@
                                         },
                                         inner: [
                                             Pair {
-                                                rule: newlines,
+                                                rule: whitespace,
                                                 span: Span {
                                                     str: "\n",
                                                     range: 189..190,
@@ -719,7 +719,7 @@
                                         },
                                         inner: [
                                             Pair {
-                                                rule: newlines,
+                                                rule: whitespace,
                                                 span: Span {
                                                     str: "\n",
                                                     range: 200..201,
@@ -762,7 +762,7 @@
                                         },
                                         inner: [
                                             Pair {
-                                                rule: newlines,
+                                                rule: whitespace,
                                                 span: Span {
                                                     str: "\n\n",
                                                     range: 217..219,
@@ -796,7 +796,7 @@
                                         },
                                         inner: [
                                             Pair {
-                                                rule: newlines,
+                                                rule: whitespace,
                                                 span: Span {
                                                     str: "\n",
                                                     range: 248..249,
@@ -847,7 +847,7 @@
                                         },
                                         inner: [
                                             Pair {
-                                                rule: newlines,
+                                                rule: whitespace,
                                                 span: Span {
                                                     str: "\n",
                                                     range: 294..295,
@@ -898,7 +898,7 @@
                                         },
                                         inner: [
                                             Pair {
-                                                rule: newlines,
+                                                rule: whitespace,
                                                 span: Span {
                                                     str: "\n\n",
                                                     range: 373..375,
@@ -949,7 +949,7 @@
                                         },
                                         inner: [
                                             Pair {
-                                                rule: newlines,
+                                                rule: whitespace,
                                                 span: Span {
                                                     str: "\n\n\n",
                                                     range: 624..627,
@@ -1027,7 +1027,7 @@
                                         },
                                         inner: [
                                             Pair {
-                                                rule: newlines,
+                                                rule: whitespace,
                                                 span: Span {
                                                     str: "\n",
                                                     range: 640..641,
@@ -1105,7 +1105,7 @@
                                         },
                                         inner: [
                                             Pair {
-                                                rule: newlines,
+                                                rule: whitespace,
                                                 span: Span {
                                                     str: "\n",
                                                     range: 656..657,
@@ -1183,7 +1183,7 @@
                                         },
                                         inner: [
                                             Pair {
-                                                rule: newlines,
+                                                rule: whitespace,
                                                 span: Span {
                                                     str: "\n\n",
                                                     range: 678..680,
@@ -1226,7 +1226,7 @@
                                         },
                                         inner: [
                                             Pair {
-                                                rule: newlines,
+                                                rule: whitespace,
                                                 span: Span {
                                                     str: "\n",
                                                     range: 690..691,
@@ -1269,7 +1269,7 @@
                                         },
                                         inner: [
                                             Pair {
-                                                rule: newlines,
+                                                rule: whitespace,
                                                 span: Span {
                                                     str: "\n",
                                                     range: 703..704,
@@ -1312,7 +1312,7 @@
                                         },
                                         inner: [
                                             Pair {
-                                                rule: newlines,
+                                                rule: whitespace,
                                                 span: Span {
                                                     str: "\n",
                                                     range: 715..716,
@@ -1355,7 +1355,7 @@
                                         },
                                         inner: [
                                             Pair {
-                                                rule: newlines,
+                                                rule: whitespace,
                                                 span: Span {
                                                     str: "\n",
                                                     range: 727..728,
@@ -1398,7 +1398,7 @@
                                         },
                                         inner: [
                                             Pair {
-                                                rule: newlines,
+                                                rule: whitespace,
                                                 span: Span {
                                                     str: "\n",
                                                     range: 738..739,
@@ -1476,7 +1476,7 @@
                                         },
                                         inner: [
                                             Pair {
-                                                rule: newlines,
+                                                rule: whitespace,
                                                 span: Span {
                                                     str: "\n",
                                                     range: 760..761,
@@ -1517,32 +1517,15 @@
                                                             Pair {
                                                                 rule: item,
                                                                 span: Span {
-                                                                    str: "\n",
-                                                                    range: 775..776,
-                                                                },
-                                                                inner: [
-                                                                    Pair {
-                                                                        rule: newlines,
-                                                                        span: Span {
-                                                                            str: "\n",
-                                                                            range: 775..776,
-                                                                        },
-                                                                        inner: [],
-                                                                    },
-                                                                ],
-                                                            },
-                                                            Pair {
-                                                                rule: item,
-                                                                span: Span {
-                                                                    str: "    ",
-                                                                    range: 776..780,
+                                                                    str: "\n    ",
+                                                                    range: 775..780,
                                                                 },
                                                                 inner: [
                                                                     Pair {
                                                                         rule: whitespace,
                                                                         span: Span {
-                                                                            str: "    ",
-                                                                            range: 776..780,
+                                                                            str: "\n    ",
+                                                                            range: 775..780,
                                                                         },
                                                                         inner: [],
                                                                     },
@@ -1634,7 +1617,7 @@
                                                                 },
                                                                 inner: [
                                                                     Pair {
-                                                                        rule: newlines,
+                                                                        rule: whitespace,
                                                                         span: Span {
                                                                             str: "\n",
                                                                             range: 806..807,
@@ -1657,7 +1640,7 @@
                                         },
                                         inner: [
                                             Pair {
-                                                rule: newlines,
+                                                rule: whitespace,
                                                 span: Span {
                                                     str: "\n",
                                                     range: 819..820,
@@ -1743,7 +1726,7 @@
                                         },
                                         inner: [
                                             Pair {
-                                                rule: newlines,
+                                                rule: whitespace,
                                                 span: Span {
                                                     str: "\n",
                                                     range: 869..870,
@@ -1829,7 +1812,7 @@
                                         },
                                         inner: [
                                             Pair {
-                                                rule: newlines,
+                                                rule: whitespace,
                                                 span: Span {
                                                     str: "\n",
                                                     range: 922..923,
@@ -1915,7 +1898,7 @@
                                         },
                                         inner: [
                                             Pair {
-                                                rule: newlines,
+                                                rule: whitespace,
                                                 span: Span {
                                                     str: "\n",
                                                     range: 972..973,
@@ -2001,7 +1984,7 @@
                                         },
                                         inner: [
                                             Pair {
-                                                rule: newlines,
+                                                rule: whitespace,
                                                 span: Span {
                                                     str: "\n\n",
                                                     range: 1025..1027,
@@ -2035,7 +2018,7 @@
                                         },
                                         inner: [
                                             Pair {
-                                                rule: newlines,
+                                                rule: whitespace,
                                                 span: Span {
                                                     str: "\n",
                                                     range: 1029..1030,
@@ -2078,7 +2061,7 @@
                                         },
                                         inner: [
                                             Pair {
-                                                rule: newlines,
+                                                rule: whitespace,
                                                 span: Span {
                                                     str: "\n",
                                                     range: 1038..1039,
@@ -2121,7 +2104,7 @@
                                         },
                                         inner: [
                                             Pair {
-                                                rule: newlines,
+                                                rule: whitespace,
                                                 span: Span {
                                                     str: "\n",
                                                     range: 1045..1046,
@@ -2164,7 +2147,7 @@
                                         },
                                         inner: [
                                             Pair {
-                                                rule: newlines,
+                                                rule: whitespace,
                                                 span: Span {
                                                     str: "\n",
                                                     range: 1052..1053,
@@ -2207,7 +2190,7 @@
                                         },
                                         inner: [
                                             Pair {
-                                                rule: newlines,
+                                                rule: whitespace,
                                                 span: Span {
                                                     str: "\n",
                                                     range: 1059..1060,
@@ -2250,7 +2233,7 @@
                                         },
                                         inner: [
                                             Pair {
-                                                rule: newlines,
+                                                rule: whitespace,
                                                 span: Span {
                                                     str: "\n",
                                                     range: 1070..1071,
@@ -2293,7 +2276,7 @@
                                         },
                                         inner: [
                                             Pair {
-                                                rule: newlines,
+                                                rule: whitespace,
                                                 span: Span {
                                                     str: "\n",
                                                     range: 1079..1080,
@@ -2336,7 +2319,7 @@
                                         },
                                         inner: [
                                             Pair {
-                                                rule: newlines,
+                                                rule: whitespace,
                                                 span: Span {
                                                     str: "\n\n",
                                                     range: 1090..1092,
@@ -2377,32 +2360,15 @@
                                                             Pair {
                                                                 rule: item,
                                                                 span: Span {
-                                                                    str: "\n",
-                                                                    range: 1107..1108,
-                                                                },
-                                                                inner: [
-                                                                    Pair {
-                                                                        rule: newlines,
-                                                                        span: Span {
-                                                                            str: "\n",
-                                                                            range: 1107..1108,
-                                                                        },
-                                                                        inner: [],
-                                                                    },
-                                                                ],
-                                                            },
-                                                            Pair {
-                                                                rule: item,
-                                                                span: Span {
-                                                                    str: "    ",
-                                                                    range: 1108..1112,
+                                                                    str: "\n    ",
+                                                                    range: 1107..1112,
                                                                 },
                                                                 inner: [
                                                                     Pair {
                                                                         rule: whitespace,
                                                                         span: Span {
-                                                                            str: "    ",
-                                                                            range: 1108..1112,
+                                                                            str: "\n    ",
+                                                                            range: 1107..1112,
                                                                         },
                                                                         inner: [],
                                                                     },
@@ -2515,32 +2481,15 @@
                                                             Pair {
                                                                 rule: item,
                                                                 span: Span {
-                                                                    str: "\n",
-                                                                    range: 1130..1131,
-                                                                },
-                                                                inner: [
-                                                                    Pair {
-                                                                        rule: newlines,
-                                                                        span: Span {
-                                                                            str: "\n",
-                                                                            range: 1130..1131,
-                                                                        },
-                                                                        inner: [],
-                                                                    },
-                                                                ],
-                                                            },
-                                                            Pair {
-                                                                rule: item,
-                                                                span: Span {
-                                                                    str: "    ",
-                                                                    range: 1131..1135,
+                                                                    str: "\n    ",
+                                                                    range: 1130..1135,
                                                                 },
                                                                 inner: [
                                                                     Pair {
                                                                         rule: whitespace,
                                                                         span: Span {
-                                                                            str: "    ",
-                                                                            range: 1131..1135,
+                                                                            str: "\n    ",
+                                                                            range: 1130..1135,
                                                                         },
                                                                         inner: [],
                                                                     },
@@ -2621,32 +2570,15 @@
                                                                                     Pair {
                                                                                         rule: item,
                                                                                         span: Span {
-                                                                                            str: "\n",
-                                                                                            range: 1158..1159,
-                                                                                        },
-                                                                                        inner: [
-                                                                                            Pair {
-                                                                                                rule: newlines,
-                                                                                                span: Span {
-                                                                                                    str: "\n",
-                                                                                                    range: 1158..1159,
-                                                                                                },
-                                                                                                inner: [],
-                                                                                            },
-                                                                                        ],
-                                                                                    },
-                                                                                    Pair {
-                                                                                        rule: item,
-                                                                                        span: Span {
-                                                                                            str: "              ",
-                                                                                            range: 1159..1173,
+                                                                                            str: "\n              ",
+                                                                                            range: 1158..1173,
                                                                                         },
                                                                                         inner: [
                                                                                             Pair {
                                                                                                 rule: whitespace,
                                                                                                 span: Span {
-                                                                                                    str: "              ",
-                                                                                                    range: 1159..1173,
+                                                                                                    str: "\n              ",
+                                                                                                    range: 1158..1173,
                                                                                                 },
                                                                                                 inner: [],
                                                                                             },
@@ -2715,32 +2647,15 @@
                                                                                     Pair {
                                                                                         rule: item,
                                                                                         span: Span {
-                                                                                            str: "\n",
-                                                                                            range: 1190..1191,
-                                                                                        },
-                                                                                        inner: [
-                                                                                            Pair {
-                                                                                                rule: newlines,
-                                                                                                span: Span {
-                                                                                                    str: "\n",
-                                                                                                    range: 1190..1191,
-                                                                                                },
-                                                                                                inner: [],
-                                                                                            },
-                                                                                        ],
-                                                                                    },
-                                                                                    Pair {
-                                                                                        rule: item,
-                                                                                        span: Span {
-                                                                                            str: "              ",
-                                                                                            range: 1191..1205,
+                                                                                            str: "\n              ",
+                                                                                            range: 1190..1205,
                                                                                         },
                                                                                         inner: [
                                                                                             Pair {
                                                                                                 rule: whitespace,
                                                                                                 span: Span {
-                                                                                                    str: "              ",
-                                                                                                    range: 1191..1205,
+                                                                                                    str: "\n              ",
+                                                                                                    range: 1190..1205,
                                                                                                 },
                                                                                                 inner: [],
                                                                                             },
@@ -2821,32 +2736,15 @@
                                                                                                             Pair {
                                                                                                                 rule: item,
                                                                                                                 span: Span {
-                                                                                                                    str: "\n",
-                                                                                                                    range: 1226..1227,
-                                                                                                                },
-                                                                                                                inner: [
-                                                                                                                    Pair {
-                                                                                                                        rule: newlines,
-                                                                                                                        span: Span {
-                                                                                                                            str: "\n",
-                                                                                                                            range: 1226..1227,
-                                                                                                                        },
-                                                                                                                        inner: [],
-                                                                                                                    },
-                                                                                                                ],
-                                                                                                            },
-                                                                                                            Pair {
-                                                                                                                rule: item,
-                                                                                                                span: Span {
-                                                                                                                    str: "                        ",
-                                                                                                                    range: 1227..1251,
+                                                                                                                    str: "\n                        ",
+                                                                                                                    range: 1226..1251,
                                                                                                                 },
                                                                                                                 inner: [
                                                                                                                     Pair {
                                                                                                                         rule: whitespace,
                                                                                                                         span: Span {
-                                                                                                                            str: "                        ",
-                                                                                                                            range: 1227..1251,
+                                                                                                                            str: "\n                        ",
+                                                                                                                            range: 1226..1251,
                                                                                                                         },
                                                                                                                         inner: [],
                                                                                                                     },
@@ -2915,32 +2813,15 @@
                                                                                                             Pair {
                                                                                                                 rule: item,
                                                                                                                 span: Span {
-                                                                                                                    str: "\n",
-                                                                                                                    range: 1266..1267,
-                                                                                                                },
-                                                                                                                inner: [
-                                                                                                                    Pair {
-                                                                                                                        rule: newlines,
-                                                                                                                        span: Span {
-                                                                                                                            str: "\n",
-                                                                                                                            range: 1266..1267,
-                                                                                                                        },
-                                                                                                                        inner: [],
-                                                                                                                    },
-                                                                                                                ],
-                                                                                                            },
-                                                                                                            Pair {
-                                                                                                                rule: item,
-                                                                                                                span: Span {
-                                                                                                                    str: "                        ",
-                                                                                                                    range: 1267..1291,
+                                                                                                                    str: "\n                        ",
+                                                                                                                    range: 1266..1291,
                                                                                                                 },
                                                                                                                 inner: [
                                                                                                                     Pair {
                                                                                                                         rule: whitespace,
                                                                                                                         span: Span {
-                                                                                                                            str: "                        ",
-                                                                                                                            range: 1267..1291,
+                                                                                                                            str: "\n                        ",
+                                                                                                                            range: 1266..1291,
                                                                                                                         },
                                                                                                                         inner: [],
                                                                                                                     },
@@ -3021,32 +2902,15 @@
                                                                                                                                     Pair {
                                                                                                                                         rule: item,
                                                                                                                                         span: Span {
-                                                                                                                                            str: "\n",
-                                                                                                                                            range: 1314..1315,
-                                                                                                                                        },
-                                                                                                                                        inner: [
-                                                                                                                                            Pair {
-                                                                                                                                                rule: newlines,
-                                                                                                                                                span: Span {
-                                                                                                                                                    str: "\n",
-                                                                                                                                                    range: 1314..1315,
-                                                                                                                                                },
-                                                                                                                                                inner: [],
-                                                                                                                                            },
-                                                                                                                                        ],
-                                                                                                                                    },
-                                                                                                                                    Pair {
-                                                                                                                                        rule: item,
-                                                                                                                                        span: Span {
-                                                                                                                                            str: "                                  ",
-                                                                                                                                            range: 1315..1349,
+                                                                                                                                            str: "\n                                  ",
+                                                                                                                                            range: 1314..1349,
                                                                                                                                         },
                                                                                                                                         inner: [
                                                                                                                                             Pair {
                                                                                                                                                 rule: whitespace,
                                                                                                                                                 span: Span {
-                                                                                                                                                    str: "                                  ",
-                                                                                                                                                    range: 1315..1349,
+                                                                                                                                                    str: "\n                                  ",
+                                                                                                                                                    range: 1314..1349,
                                                                                                                                                 },
                                                                                                                                                 inner: [],
                                                                                                                                             },
@@ -3115,32 +2979,15 @@
                                                                                                                                     Pair {
                                                                                                                                         rule: item,
                                                                                                                                         span: Span {
-                                                                                                                                            str: "\n",
-                                                                                                                                            range: 1361..1362,
-                                                                                                                                        },
-                                                                                                                                        inner: [
-                                                                                                                                            Pair {
-                                                                                                                                                rule: newlines,
-                                                                                                                                                span: Span {
-                                                                                                                                                    str: "\n",
-                                                                                                                                                    range: 1361..1362,
-                                                                                                                                                },
-                                                                                                                                                inner: [],
-                                                                                                                                            },
-                                                                                                                                        ],
-                                                                                                                                    },
-                                                                                                                                    Pair {
-                                                                                                                                        rule: item,
-                                                                                                                                        span: Span {
-                                                                                                                                            str: "                                  ",
-                                                                                                                                            range: 1362..1396,
+                                                                                                                                            str: "\n                                  ",
+                                                                                                                                            range: 1361..1396,
                                                                                                                                         },
                                                                                                                                         inner: [
                                                                                                                                             Pair {
                                                                                                                                                 rule: whitespace,
                                                                                                                                                 span: Span {
-                                                                                                                                                    str: "                                  ",
-                                                                                                                                                    range: 1362..1396,
+                                                                                                                                                    str: "\n                                  ",
+                                                                                                                                                    range: 1361..1396,
                                                                                                                                                 },
                                                                                                                                                 inner: [],
                                                                                                                                             },
@@ -3221,32 +3068,15 @@
                                                                                                                                                             Pair {
                                                                                                                                                                 rule: item,
                                                                                                                                                                 span: Span {
-                                                                                                                                                                    str: "\n",
-                                                                                                                                                                    range: 1419..1420,
-                                                                                                                                                                },
-                                                                                                                                                                inner: [
-                                                                                                                                                                    Pair {
-                                                                                                                                                                        rule: newlines,
-                                                                                                                                                                        span: Span {
-                                                                                                                                                                            str: "\n",
-                                                                                                                                                                            range: 1419..1420,
-                                                                                                                                                                        },
-                                                                                                                                                                        inner: [],
-                                                                                                                                                                    },
-                                                                                                                                                                ],
-                                                                                                                                                            },
-                                                                                                                                                            Pair {
-                                                                                                                                                                rule: item,
-                                                                                                                                                                span: Span {
-                                                                                                                                                                    str: "                                            ",
-                                                                                                                                                                    range: 1420..1464,
+                                                                                                                                                                    str: "\n                                            ",
+                                                                                                                                                                    range: 1419..1464,
                                                                                                                                                                 },
                                                                                                                                                                 inner: [
                                                                                                                                                                     Pair {
                                                                                                                                                                         rule: whitespace,
                                                                                                                                                                         span: Span {
-                                                                                                                                                                            str: "                                            ",
-                                                                                                                                                                            range: 1420..1464,
+                                                                                                                                                                            str: "\n                                            ",
+                                                                                                                                                                            range: 1419..1464,
                                                                                                                                                                         },
                                                                                                                                                                         inner: [],
                                                                                                                                                                     },
@@ -3315,32 +3145,15 @@
                                                                                                                                                             Pair {
                                                                                                                                                                 rule: item,
                                                                                                                                                                 span: Span {
-                                                                                                                                                                    str: "\n",
-                                                                                                                                                                    range: 1476..1477,
-                                                                                                                                                                },
-                                                                                                                                                                inner: [
-                                                                                                                                                                    Pair {
-                                                                                                                                                                        rule: newlines,
-                                                                                                                                                                        span: Span {
-                                                                                                                                                                            str: "\n",
-                                                                                                                                                                            range: 1476..1477,
-                                                                                                                                                                        },
-                                                                                                                                                                        inner: [],
-                                                                                                                                                                    },
-                                                                                                                                                                ],
-                                                                                                                                                            },
-                                                                                                                                                            Pair {
-                                                                                                                                                                rule: item,
-                                                                                                                                                                span: Span {
-                                                                                                                                                                    str: "                                  ",
-                                                                                                                                                                    range: 1477..1511,
+                                                                                                                                                                    str: "\n                                  ",
+                                                                                                                                                                    range: 1476..1511,
                                                                                                                                                                 },
                                                                                                                                                                 inner: [
                                                                                                                                                                     Pair {
                                                                                                                                                                         rule: whitespace,
                                                                                                                                                                         span: Span {
-                                                                                                                                                                            str: "                                  ",
-                                                                                                                                                                            range: 1477..1511,
+                                                                                                                                                                            str: "\n                                  ",
+                                                                                                                                                                            range: 1476..1511,
                                                                                                                                                                         },
                                                                                                                                                                         inner: [],
                                                                                                                                                                     },
@@ -3355,32 +3168,15 @@
                                                                                                                                     Pair {
                                                                                                                                         rule: item,
                                                                                                                                         span: Span {
-                                                                                                                                            str: "\n",
-                                                                                                                                            range: 1526..1527,
-                                                                                                                                        },
-                                                                                                                                        inner: [
-                                                                                                                                            Pair {
-                                                                                                                                                rule: newlines,
-                                                                                                                                                span: Span {
-                                                                                                                                                    str: "\n",
-                                                                                                                                                    range: 1526..1527,
-                                                                                                                                                },
-                                                                                                                                                inner: [],
-                                                                                                                                            },
-                                                                                                                                        ],
-                                                                                                                                    },
-                                                                                                                                    Pair {
-                                                                                                                                        rule: item,
-                                                                                                                                        span: Span {
-                                                                                                                                            str: "                        ",
-                                                                                                                                            range: 1527..1551,
+                                                                                                                                            str: "\n                        ",
+                                                                                                                                            range: 1526..1551,
                                                                                                                                         },
                                                                                                                                         inner: [
                                                                                                                                             Pair {
                                                                                                                                                 rule: whitespace,
                                                                                                                                                 span: Span {
-                                                                                                                                                    str: "                        ",
-                                                                                                                                                    range: 1527..1551,
+                                                                                                                                                    str: "\n                        ",
+                                                                                                                                                    range: 1526..1551,
                                                                                                                                                 },
                                                                                                                                                 inner: [],
                                                                                                                                             },
@@ -3395,32 +3191,15 @@
                                                                                                             Pair {
                                                                                                                 rule: item,
                                                                                                                 span: Span {
-                                                                                                                    str: "\n",
-                                                                                                                    range: 1566..1567,
-                                                                                                                },
-                                                                                                                inner: [
-                                                                                                                    Pair {
-                                                                                                                        rule: newlines,
-                                                                                                                        span: Span {
-                                                                                                                            str: "\n",
-                                                                                                                            range: 1566..1567,
-                                                                                                                        },
-                                                                                                                        inner: [],
-                                                                                                                    },
-                                                                                                                ],
-                                                                                                            },
-                                                                                                            Pair {
-                                                                                                                rule: item,
-                                                                                                                span: Span {
-                                                                                                                    str: "              ",
-                                                                                                                    range: 1567..1581,
+                                                                                                                    str: "\n              ",
+                                                                                                                    range: 1566..1581,
                                                                                                                 },
                                                                                                                 inner: [
                                                                                                                     Pair {
                                                                                                                         rule: whitespace,
                                                                                                                         span: Span {
-                                                                                                                            str: "              ",
-                                                                                                                            range: 1567..1581,
+                                                                                                                            str: "\n              ",
+                                                                                                                            range: 1566..1581,
                                                                                                                         },
                                                                                                                         inner: [],
                                                                                                                     },
@@ -3435,32 +3214,15 @@
                                                                                     Pair {
                                                                                         rule: item,
                                                                                         span: Span {
-                                                                                            str: "\n",
-                                                                                            range: 1594..1595,
-                                                                                        },
-                                                                                        inner: [
-                                                                                            Pair {
-                                                                                                rule: newlines,
-                                                                                                span: Span {
-                                                                                                    str: "\n",
-                                                                                                    range: 1594..1595,
-                                                                                                },
-                                                                                                inner: [],
-                                                                                            },
-                                                                                        ],
-                                                                                    },
-                                                                                    Pair {
-                                                                                        rule: item,
-                                                                                        span: Span {
-                                                                                            str: "    ",
-                                                                                            range: 1595..1599,
+                                                                                            str: "\n    ",
+                                                                                            range: 1594..1599,
                                                                                         },
                                                                                         inner: [
                                                                                             Pair {
                                                                                                 rule: whitespace,
                                                                                                 span: Span {
-                                                                                                    str: "    ",
-                                                                                                    range: 1595..1599,
+                                                                                                    str: "\n    ",
+                                                                                                    range: 1594..1599,
                                                                                                 },
                                                                                                 inner: [],
                                                                                             },
@@ -3475,32 +3237,15 @@
                                                             Pair {
                                                                 rule: item,
                                                                 span: Span {
-                                                                    str: "\n",
-                                                                    range: 1614..1615,
-                                                                },
-                                                                inner: [
-                                                                    Pair {
-                                                                        rule: newlines,
-                                                                        span: Span {
-                                                                            str: "\n",
-                                                                            range: 1614..1615,
-                                                                        },
-                                                                        inner: [],
-                                                                    },
-                                                                ],
-                                                            },
-                                                            Pair {
-                                                                rule: item,
-                                                                span: Span {
-                                                                    str: "    ",
-                                                                    range: 1615..1619,
+                                                                    str: "\n    ",
+                                                                    range: 1614..1619,
                                                                 },
                                                                 inner: [
                                                                     Pair {
                                                                         rule: whitespace,
                                                                         span: Span {
-                                                                            str: "    ",
-                                                                            range: 1615..1619,
+                                                                            str: "\n    ",
+                                                                            range: 1614..1619,
                                                                         },
                                                                         inner: [],
                                                                     },
@@ -3574,7 +3319,7 @@
                                                                 },
                                                                 inner: [
                                                                     Pair {
-                                                                        rule: newlines,
+                                                                        rule: whitespace,
                                                                         span: Span {
                                                                             str: "\n",
                                                                             range: 1634..1635,
@@ -3597,7 +3342,7 @@
                                         },
                                         inner: [
                                             Pair {
-                                                rule: newlines,
+                                                rule: whitespace,
                                                 span: Span {
                                                     str: "\n",
                                                     range: 1648..1649,
@@ -3638,32 +3383,15 @@
                                                             Pair {
                                                                 rule: item,
                                                                 span: Span {
-                                                                    str: "\n",
-                                                                    range: 1668..1669,
-                                                                },
-                                                                inner: [
-                                                                    Pair {
-                                                                        rule: newlines,
-                                                                        span: Span {
-                                                                            str: "\n",
-                                                                            range: 1668..1669,
-                                                                        },
-                                                                        inner: [],
-                                                                    },
-                                                                ],
-                                                            },
-                                                            Pair {
-                                                                rule: item,
-                                                                span: Span {
-                                                                    str: "    ",
-                                                                    range: 1669..1673,
+                                                                    str: "\n    ",
+                                                                    range: 1668..1673,
                                                                 },
                                                                 inner: [
                                                                     Pair {
                                                                         rule: whitespace,
                                                                         span: Span {
-                                                                            str: "    ",
-                                                                            range: 1669..1673,
+                                                                            str: "\n    ",
+                                                                            range: 1668..1673,
                                                                         },
                                                                         inner: [],
                                                                     },
@@ -3781,7 +3509,7 @@
                                                                 },
                                                                 inner: [
                                                                     Pair {
-                                                                        rule: newlines,
+                                                                        rule: whitespace,
                                                                         span: Span {
                                                                             str: "\n",
                                                                             range: 1712..1713,
@@ -3804,7 +3532,7 @@
                                         },
                                         inner: [
                                             Pair {
-                                                rule: newlines,
+                                                rule: whitespace,
                                                 span: Span {
                                                     str: "\n\n",
                                                     range: 1730..1732,
@@ -3882,7 +3610,7 @@
                                         },
                                         inner: [
                                             Pair {
-                                                rule: newlines,
+                                                rule: whitespace,
                                                 span: Span {
                                                     str: "\n",
                                                     range: 1745..1746,
@@ -3960,7 +3688,7 @@
                                         },
                                         inner: [
                                             Pair {
-                                                rule: newlines,
+                                                rule: whitespace,
                                                 span: Span {
                                                     str: "\n",
                                                     range: 1759..1760,
@@ -4038,7 +3766,7 @@
                                         },
                                         inner: [
                                             Pair {
-                                                rule: newlines,
+                                                rule: whitespace,
                                                 span: Span {
                                                     str: "\n",
                                                     range: 1777..1778,
@@ -4116,7 +3844,7 @@
                                         },
                                         inner: [
                                             Pair {
-                                                rule: newlines,
+                                                rule: whitespace,
                                                 span: Span {
                                                     str: "\n",
                                                     range: 1795..1796,
@@ -4194,7 +3922,7 @@
                                         },
                                         inner: [
                                             Pair {
-                                                rule: newlines,
+                                                rule: whitespace,
                                                 span: Span {
                                                     str: "\n",
                                                     range: 1819..1820,
@@ -4272,7 +4000,7 @@
                                         },
                                         inner: [
                                             Pair {
-                                                rule: newlines,
+                                                rule: whitespace,
                                                 span: Span {
                                                     str: "\n",
                                                     range: 1849..1850,
@@ -4350,7 +4078,7 @@
                                         },
                                         inner: [
                                             Pair {
-                                                rule: newlines,
+                                                rule: whitespace,
                                                 span: Span {
                                                     str: "\n",
                                                     range: 1871..1872,
@@ -4428,7 +4156,7 @@
                                         },
                                         inner: [
                                             Pair {
-                                                rule: newlines,
+                                                rule: whitespace,
                                                 span: Span {
                                                     str: "\n\n",
                                                     range: 1899..1901,
@@ -4619,7 +4347,7 @@
                                         },
                                         inner: [
                                             Pair {
-                                                rule: newlines,
+                                                rule: whitespace,
                                                 span: Span {
                                                     str: "\n\n",
                                                     range: 1950..1952,
@@ -4697,7 +4425,7 @@
                                         },
                                         inner: [
                                             Pair {
-                                                rule: newlines,
+                                                rule: whitespace,
                                                 span: Span {
                                                     str: "\n",
                                                     range: 1989..1990,
@@ -4844,7 +4572,7 @@
                                         },
                                         inner: [
                                             Pair {
-                                                rule: newlines,
+                                                rule: whitespace,
                                                 span: Span {
                                                     str: "\n\n",
                                                     range: 2060..2062,
@@ -5102,7 +4830,7 @@
                                         },
                                         inner: [
                                             Pair {
-                                                rule: newlines,
+                                                rule: whitespace,
                                                 span: Span {
                                                     str: "\n",
                                                     range: 2144..2145,
@@ -5180,7 +4908,7 @@
                                         },
                                         inner: [
                                             Pair {
-                                                rule: newlines,
+                                                rule: whitespace,
                                                 span: Span {
                                                     str: "\n\n",
                                                     range: 2166..2168,
@@ -5256,32 +4984,15 @@
                                                             Pair {
                                                                 rule: item,
                                                                 span: Span {
-                                                                    str: "\n",
-                                                                    range: 2195..2196,
-                                                                },
-                                                                inner: [
-                                                                    Pair {
-                                                                        rule: newlines,
-                                                                        span: Span {
-                                                                            str: "\n",
-                                                                            range: 2195..2196,
-                                                                        },
-                                                                        inner: [],
-                                                                    },
-                                                                ],
-                                                            },
-                                                            Pair {
-                                                                rule: item,
-                                                                span: Span {
-                                                                    str: "    ",
-                                                                    range: 2196..2200,
+                                                                    str: "\n    ",
+                                                                    range: 2195..2200,
                                                                 },
                                                                 inner: [
                                                                     Pair {
                                                                         rule: whitespace,
                                                                         span: Span {
-                                                                            str: "    ",
-                                                                            range: 2196..2200,
+                                                                            str: "\n    ",
+                                                                            range: 2195..2200,
                                                                         },
                                                                         inner: [],
                                                                     },
@@ -5316,32 +5027,15 @@
                                                             Pair {
                                                                 rule: item,
                                                                 span: Span {
-                                                                    str: "\n",
-                                                                    range: 2206..2207,
-                                                                },
-                                                                inner: [
-                                                                    Pair {
-                                                                        rule: newlines,
-                                                                        span: Span {
-                                                                            str: "\n",
-                                                                            range: 2206..2207,
-                                                                        },
-                                                                        inner: [],
-                                                                    },
-                                                                ],
-                                                            },
-                                                            Pair {
-                                                                rule: item,
-                                                                span: Span {
-                                                                    str: "    ",
-                                                                    range: 2207..2211,
+                                                                    str: "\n    ",
+                                                                    range: 2206..2211,
                                                                 },
                                                                 inner: [
                                                                     Pair {
                                                                         rule: whitespace,
                                                                         span: Span {
-                                                                            str: "    ",
-                                                                            range: 2207..2211,
+                                                                            str: "\n    ",
+                                                                            range: 2206..2211,
                                                                         },
                                                                         inner: [],
                                                                     },
@@ -5462,32 +5156,15 @@
                                                             Pair {
                                                                 rule: item,
                                                                 span: Span {
-                                                                    str: "\n",
-                                                                    range: 2244..2245,
-                                                                },
-                                                                inner: [
-                                                                    Pair {
-                                                                        rule: newlines,
-                                                                        span: Span {
-                                                                            str: "\n",
-                                                                            range: 2244..2245,
-                                                                        },
-                                                                        inner: [],
-                                                                    },
-                                                                ],
-                                                            },
-                                                            Pair {
-                                                                rule: item,
-                                                                span: Span {
-                                                                    str: "    ",
-                                                                    range: 2245..2249,
+                                                                    str: "\n    ",
+                                                                    range: 2244..2249,
                                                                 },
                                                                 inner: [
                                                                     Pair {
                                                                         rule: whitespace,
                                                                         span: Span {
-                                                                            str: "    ",
-                                                                            range: 2245..2249,
+                                                                            str: "\n    ",
+                                                                            range: 2244..2249,
                                                                         },
                                                                         inner: [],
                                                                     },
@@ -5522,32 +5199,15 @@
                                                             Pair {
                                                                 rule: item,
                                                                 span: Span {
-                                                                    str: "\n",
-                                                                    range: 2255..2256,
-                                                                },
-                                                                inner: [
-                                                                    Pair {
-                                                                        rule: newlines,
-                                                                        span: Span {
-                                                                            str: "\n",
-                                                                            range: 2255..2256,
-                                                                        },
-                                                                        inner: [],
-                                                                    },
-                                                                ],
-                                                            },
-                                                            Pair {
-                                                                rule: item,
-                                                                span: Span {
-                                                                    str: "    ",
-                                                                    range: 2256..2260,
+                                                                    str: "\n    ",
+                                                                    range: 2255..2260,
                                                                 },
                                                                 inner: [
                                                                     Pair {
                                                                         rule: whitespace,
                                                                         span: Span {
-                                                                            str: "    ",
-                                                                            range: 2256..2260,
+                                                                            str: "\n    ",
+                                                                            range: 2255..2260,
                                                                         },
                                                                         inner: [],
                                                                     },
@@ -5590,32 +5250,15 @@
                                                             Pair {
                                                                 rule: item,
                                                                 span: Span {
-                                                                    str: "\n",
-                                                                    range: 2284..2285,
-                                                                },
-                                                                inner: [
-                                                                    Pair {
-                                                                        rule: newlines,
-                                                                        span: Span {
-                                                                            str: "\n",
-                                                                            range: 2284..2285,
-                                                                        },
-                                                                        inner: [],
-                                                                    },
-                                                                ],
-                                                            },
-                                                            Pair {
-                                                                rule: item,
-                                                                span: Span {
-                                                                    str: "    ",
-                                                                    range: 2285..2289,
+                                                                    str: "\n    ",
+                                                                    range: 2284..2289,
                                                                 },
                                                                 inner: [
                                                                     Pair {
                                                                         rule: whitespace,
                                                                         span: Span {
-                                                                            str: "    ",
-                                                                            range: 2285..2289,
+                                                                            str: "\n    ",
+                                                                            range: 2284..2289,
                                                                         },
                                                                         inner: [],
                                                                     },
@@ -5650,32 +5293,15 @@
                                                             Pair {
                                                                 rule: item,
                                                                 span: Span {
-                                                                    str: "\n",
-                                                                    range: 2295..2296,
-                                                                },
-                                                                inner: [
-                                                                    Pair {
-                                                                        rule: newlines,
-                                                                        span: Span {
-                                                                            str: "\n",
-                                                                            range: 2295..2296,
-                                                                        },
-                                                                        inner: [],
-                                                                    },
-                                                                ],
-                                                            },
-                                                            Pair {
-                                                                rule: item,
-                                                                span: Span {
-                                                                    str: "    ",
-                                                                    range: 2296..2300,
+                                                                    str: "\n    ",
+                                                                    range: 2295..2300,
                                                                 },
                                                                 inner: [
                                                                     Pair {
                                                                         rule: whitespace,
                                                                         span: Span {
-                                                                            str: "    ",
-                                                                            range: 2296..2300,
+                                                                            str: "\n    ",
+                                                                            range: 2295..2300,
                                                                         },
                                                                         inner: [],
                                                                     },
@@ -5770,7 +5396,7 @@
                                                                                         },
                                                                                         inner: [
                                                                                             Pair {
-                                                                                                rule: newlines,
+                                                                                                rule: whitespace,
                                                                                                 span: Span {
                                                                                                     str: "\n",
                                                                                                     range: 2342..2343,
@@ -5813,7 +5439,7 @@
                                                                                         },
                                                                                         inner: [
                                                                                             Pair {
-                                                                                                rule: newlines,
+                                                                                                rule: whitespace,
                                                                                                 span: Span {
                                                                                                     str: "\n",
                                                                                                     range: 2350..2351,
@@ -5942,7 +5568,7 @@
                                                                                         },
                                                                                         inner: [
                                                                                             Pair {
-                                                                                                rule: newlines,
+                                                                                                rule: whitespace,
                                                                                                 span: Span {
                                                                                                     str: "\n",
                                                                                                     range: 2384..2385,
@@ -5985,7 +5611,7 @@
                                                                                         },
                                                                                         inner: [
                                                                                             Pair {
-                                                                                                rule: newlines,
+                                                                                                rule: whitespace,
                                                                                                 span: Span {
                                                                                                     str: "\n",
                                                                                                     range: 2391..2392,
@@ -6036,7 +5662,7 @@
                                                                                         },
                                                                                         inner: [
                                                                                             Pair {
-                                                                                                rule: newlines,
+                                                                                                rule: whitespace,
                                                                                                 span: Span {
                                                                                                     str: "\n",
                                                                                                     range: 2416..2417,
@@ -6079,7 +5705,7 @@
                                                                                         },
                                                                                         inner: [
                                                                                             Pair {
-                                                                                                rule: newlines,
+                                                                                                rule: whitespace,
                                                                                                 span: Span {
                                                                                                     str: "\n",
                                                                                                     range: 2423..2424,
@@ -6130,7 +5756,7 @@
                                                                                         },
                                                                                         inner: [
                                                                                             Pair {
-                                                                                                rule: newlines,
+                                                                                                rule: whitespace,
                                                                                                 span: Span {
                                                                                                     str: "\n",
                                                                                                     range: 2448..2449,
@@ -6173,7 +5799,7 @@
                                                                                         },
                                                                                         inner: [
                                                                                             Pair {
-                                                                                                rule: newlines,
+                                                                                                rule: whitespace,
                                                                                                 span: Span {
                                                                                                     str: "\n",
                                                                                                     range: 2455..2456,
@@ -6196,7 +5822,7 @@
                                                                 },
                                                                 inner: [
                                                                     Pair {
-                                                                        rule: newlines,
+                                                                        rule: whitespace,
                                                                         span: Span {
                                                                             str: "\n",
                                                                             range: 2469..2470,
@@ -6290,7 +5916,7 @@
                                                                 },
                                                                 inner: [
                                                                     Pair {
-                                                                        rule: newlines,
+                                                                        rule: whitespace,
                                                                         span: Span {
                                                                             str: "\n",
                                                                             range: 2483..2484,
@@ -6313,7 +5939,7 @@
                                         },
                                         inner: [
                                             Pair {
-                                                rule: newlines,
+                                                rule: whitespace,
                                                 span: Span {
                                                     str: "\n\n",
                                                     range: 2498..2500,
@@ -6364,7 +5990,7 @@
                                         },
                                         inner: [
                                             Pair {
-                                                rule: newlines,
+                                                rule: whitespace,
                                                 span: Span {
                                                     str: "\n\n",
                                                     range: 2653..2655,
@@ -6476,7 +6102,7 @@
                                         },
                                         inner: [
                                             Pair {
-                                                rule: newlines,
+                                                rule: whitespace,
                                                 span: Span {
                                                     str: "\n\n",
                                                     range: 3482..3484,

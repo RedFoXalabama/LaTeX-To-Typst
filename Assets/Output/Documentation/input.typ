@@ -1,4 +1,4 @@
-﻿// ------------------------ ARTICLE HEADER -----------------------
+// ------------------------ ARTICLE HEADER -----------------------
 #set page(
   paper: "a4",
   margin: (x: 2.5cm, y: 3cm),
@@ -33,12 +33,9 @@
 #set document(date: date)
 #let date = datetime(day: 31, month: 12, year: 2026)
 #set document(date: date)
-
 /* usepackage{verbatim} */
 /* usepackage{listing} */
 /* usepackage{hyperref} */
-
-
 #set document(title: title)
 #align(center)[
 #text(3em, weight: "bold")[#title]
@@ -49,13 +46,13 @@
 ]
 #v(2em)
 #outline()
-
 prova-tra parentesi graffe-
-testo pre commento // prova commento monolinea
+testo pre commento 
+// prova commento monolinea
 /*
     Questo é un commento multilinea \textbf{aa}
-*/
 
+*/
 /*
     \begin{tabular}{ |c|c|csss| }
         \hline
@@ -66,27 +63,28 @@ testo pre commento // prova commento monolinea
         cell7 & cell8 & cell9 \\
         \hline
     \end{tabular}
+
 */
-
-
 *Bold*
 _italic_
 #underline[underline]
-
 #set align(center);
 #set align(left);
 #set align(right);
 #set align(right);
 #set align(left);
 /* usepackage{ragged2e} */
-#align(center)[
-center block *bold*
+#align(center)[center block 
+*bold*
 ]
-#align(left)[flushleft block ]
-#align(right)[flushright block ]
-#align(left)[FlushLeft block ]
-#align(right)[FlushRight block ]
-
+#align(left)[flushleft block 
+]
+#align(right)[flushright block 
+]
+#align(left)[FlushLeft block 
+]
+#align(right)[FlushRight block 
+]
 \
 \
 \
@@ -96,19 +94,39 @@ center block *bold*
 #pagebreak()
 #pagebreak()
 
+- [!]
+itemize 1
 
-- [!]itemize 1
 -
-	+enumerate 1
-	+
-		-itemize 3
-		-
-			+enum 2
-			+
-				+enum 3
--itemize 2
 
-/ description 1:description text 1
+	+
+enumerate 1
+
+	+
+
+		-
+itemize 3
+
+		-
+
+			+
+enum 2
+
+			+
+
+				+
+enum 3
+
+
+
+
+
+-
+itemize 2
+
+
+/ description 1:
+description text 1
 
 #v(2em)
 #align(center)[
@@ -137,9 +155,7 @@ center block *bold*
 
 ===== subparagraph
 
-
 #text(blue)[This is *bold and blue*.]
-
 #link("https://www.overleaf.com/learn")
 #link("https://www.overleaf.com/learn")[Overleaf Learn]// testo del link
 
@@ -173,8 +189,8 @@ cell7 & cell8 & #table(
     Text enclosed inside \texttt{verbatim} environment
     is printed directly
     and all \LaTeX{} commands are ignored.
-```
 
+```
 ```python
 import numpy as np
 
@@ -205,5 +221,6 @@ def incmatrix(genl1,genl2):
                 VT = np.zeros((n*m,1), int)
 
     return M
+
 ```
 

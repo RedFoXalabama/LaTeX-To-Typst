@@ -17,11 +17,6 @@ AstDocument {
                 ],
             },
         ),
-        Newlines(
-            NewlinesNode {
-                count: 1,
-            },
-        ),
         Command(
             CommandNode {
                 name: "title",
@@ -39,11 +34,6 @@ AstDocument {
                 ],
             },
         ),
-        Newlines(
-            NewlinesNode {
-                count: 1,
-            },
-        ),
         Command(
             CommandNode {
                 name: "author",
@@ -59,11 +49,6 @@ AstDocument {
                         ],
                     },
                 ],
-            },
-        ),
-        Newlines(
-            NewlinesNode {
-                count: 1,
             },
         ),
         Command(
@@ -85,11 +70,6 @@ AstDocument {
                 ],
             },
         ),
-        Newlines(
-            NewlinesNode {
-                count: 1,
-            },
-        ),
         Command(
             CommandNode {
                 name: "date",
@@ -105,11 +85,6 @@ AstDocument {
                         ],
                     },
                 ],
-            },
-        ),
-        Newlines(
-            NewlinesNode {
-                count: 2,
             },
         ),
         Command(
@@ -129,11 +104,6 @@ AstDocument {
                 ],
             },
         ),
-        Newlines(
-            NewlinesNode {
-                count: 1,
-            },
-        ),
         Command(
             CommandNode {
                 name: "usepackage",
@@ -149,11 +119,6 @@ AstDocument {
                         ],
                     },
                 ],
-            },
-        ),
-        Newlines(
-            NewlinesNode {
-                count: 1,
             },
         ),
         Command(
@@ -173,32 +138,17 @@ AstDocument {
                 ],
             },
         ),
-        Newlines(
-            NewlinesNode {
-                count: 2,
-            },
-        ),
         Block(
             BlockNode {
                 name: "document",
                 required_args: [],
                 optional_args: [],
                 items: [
-                    Newlines(
-                        NewlinesNode {
-                            count: 1,
-                        },
-                    ),
                     Command(
                         CommandNode {
                             name: "maketitle",
                             optional_args: [],
                             required_args: [],
-                        },
-                    ),
-                    Newlines(
-                        NewlinesNode {
-                            count: 1,
                         },
                     ),
                     Command(
@@ -208,19 +158,9 @@ AstDocument {
                             required_args: [],
                         },
                     ),
-                    Newlines(
-                        NewlinesNode {
-                            count: 2,
-                        },
-                    ),
                     Text(
                         TextNode {
                             value: "prova{-tra parentesi graffe-}",
-                        },
-                    ),
-                    Newlines(
-                        NewlinesNode {
-                            count: 1,
                         },
                     ),
                     Text(
@@ -231,11 +171,6 @@ AstDocument {
                     Comment(
                         CommentNode {
                             value: "% prova commento monolinea",
-                        },
-                    ),
-                    Newlines(
-                        NewlinesNode {
-                            count: 1,
                         },
                     ),
                     Block(
@@ -252,11 +187,6 @@ AstDocument {
                             ],
                         },
                     ),
-                    Newlines(
-                        NewlinesNode {
-                            count: 2,
-                        },
-                    ),
                     Block(
                         BlockNode {
                             name: "comment",
@@ -269,11 +199,6 @@ AstDocument {
                                     },
                                 ),
                             ],
-                        },
-                    ),
-                    Newlines(
-                        NewlinesNode {
-                            count: 3,
                         },
                     ),
                     Command(
@@ -293,11 +218,6 @@ AstDocument {
                             ],
                         },
                     ),
-                    Newlines(
-                        NewlinesNode {
-                            count: 1,
-                        },
-                    ),
                     Command(
                         CommandNode {
                             name: "textit",
@@ -313,11 +233,6 @@ AstDocument {
                                     ],
                                 },
                             ],
-                        },
-                    ),
-                    Newlines(
-                        NewlinesNode {
-                            count: 1,
                         },
                     ),
                     Command(
@@ -337,21 +252,11 @@ AstDocument {
                             ],
                         },
                     ),
-                    Newlines(
-                        NewlinesNode {
-                            count: 2,
-                        },
-                    ),
                     Command(
                         CommandNode {
                             name: "centering",
                             optional_args: [],
                             required_args: [],
-                        },
-                    ),
-                    Newlines(
-                        NewlinesNode {
-                            count: 1,
                         },
                     ),
                     Command(
@@ -361,21 +266,11 @@ AstDocument {
                             required_args: [],
                         },
                     ),
-                    Newlines(
-                        NewlinesNode {
-                            count: 1,
-                        },
-                    ),
                     Command(
                         CommandNode {
                             name: "raggedleft",
                             optional_args: [],
                             required_args: [],
-                        },
-                    ),
-                    Newlines(
-                        NewlinesNode {
-                            count: 1,
                         },
                     ),
                     Command(
@@ -385,21 +280,11 @@ AstDocument {
                             required_args: [],
                         },
                     ),
-                    Newlines(
-                        NewlinesNode {
-                            count: 1,
-                        },
-                    ),
                     Command(
                         CommandNode {
                             name: "flushleft",
                             optional_args: [],
                             required_args: [],
-                        },
-                    ),
-                    Newlines(
-                        NewlinesNode {
-                            count: 1,
                         },
                     ),
                     Command(
@@ -419,22 +304,12 @@ AstDocument {
                             ],
                         },
                     ),
-                    Newlines(
-                        NewlinesNode {
-                            count: 1,
-                        },
-                    ),
                     Block(
                         BlockNode {
                             name: "center",
                             required_args: [],
                             optional_args: [],
                             items: [
-                                Newlines(
-                                    NewlinesNode {
-                                        count: 1,
-                                    },
-                                ),
                                 Text(
                                     TextNode {
                                         value: "center block ",
@@ -457,17 +332,7 @@ AstDocument {
                                         ],
                                     },
                                 ),
-                                Newlines(
-                                    NewlinesNode {
-                                        count: 1,
-                                    },
-                                ),
                             ],
-                        },
-                    ),
-                    Newlines(
-                        NewlinesNode {
-                            count: 1,
                         },
                     ),
                     Block(
@@ -484,11 +349,6 @@ AstDocument {
                             ],
                         },
                     ),
-                    Newlines(
-                        NewlinesNode {
-                            count: 1,
-                        },
-                    ),
                     Block(
                         BlockNode {
                             name: "flushright",
@@ -501,11 +361,6 @@ AstDocument {
                                     },
                                 ),
                             ],
-                        },
-                    ),
-                    Newlines(
-                        NewlinesNode {
-                            count: 1,
                         },
                     ),
                     Block(
@@ -522,11 +377,6 @@ AstDocument {
                             ],
                         },
                     ),
-                    Newlines(
-                        NewlinesNode {
-                            count: 1,
-                        },
-                    ),
                     Block(
                         BlockNode {
                             name: "FlushRight",
@@ -541,19 +391,9 @@ AstDocument {
                             ],
                         },
                     ),
-                    Newlines(
-                        NewlinesNode {
-                            count: 2,
-                        },
-                    ),
                     Linebreak(
                         LinebreakNode {
                             value: "\\\\",
-                        },
-                    ),
-                    Newlines(
-                        NewlinesNode {
-                            count: 1,
                         },
                     ),
                     Command(
@@ -563,21 +403,11 @@ AstDocument {
                             required_args: [],
                         },
                     ),
-                    Newlines(
-                        NewlinesNode {
-                            count: 1,
-                        },
-                    ),
                     Command(
                         CommandNode {
                             name: "break",
                             optional_args: [],
                             required_args: [],
-                        },
-                    ),
-                    Newlines(
-                        NewlinesNode {
-                            count: 1,
                         },
                     ),
                     Command(
@@ -587,21 +417,11 @@ AstDocument {
                             required_args: [],
                         },
                     ),
-                    Newlines(
-                        NewlinesNode {
-                            count: 1,
-                        },
-                    ),
                     Command(
                         CommandNode {
                             name: "vfill",
                             optional_args: [],
                             required_args: [],
-                        },
-                    ),
-                    Newlines(
-                        NewlinesNode {
-                            count: 1,
                         },
                     ),
                     Command(
@@ -611,21 +431,11 @@ AstDocument {
                             required_args: [],
                         },
                     ),
-                    Newlines(
-                        NewlinesNode {
-                            count: 1,
-                        },
-                    ),
                     Command(
                         CommandNode {
                             name: "newpage",
                             optional_args: [],
                             required_args: [],
-                        },
-                    ),
-                    Newlines(
-                        NewlinesNode {
-                            count: 1,
                         },
                     ),
                     Command(
@@ -635,22 +445,12 @@ AstDocument {
                             required_args: [],
                         },
                     ),
-                    Newlines(
-                        NewlinesNode {
-                            count: 2,
-                        },
-                    ),
                     Block(
                         BlockNode {
                             name: "itemize",
                             required_args: [],
                             optional_args: [],
                             items: [
-                                Newlines(
-                                    NewlinesNode {
-                                        count: 1,
-                                    },
-                                ),
                                 Command(
                                     CommandNode {
                                         name: "item",
@@ -677,11 +477,6 @@ AstDocument {
                                         value: "itemize 1",
                                     },
                                 ),
-                                Newlines(
-                                    NewlinesNode {
-                                        count: 1,
-                                    },
-                                ),
                                 Command(
                                     CommandNode {
                                         name: "item",
@@ -695,11 +490,6 @@ AstDocument {
                                         required_args: [],
                                         optional_args: [],
                                         items: [
-                                            Newlines(
-                                                NewlinesNode {
-                                                    count: 1,
-                                                },
-                                            ),
                                             Command(
                                                 CommandNode {
                                                     name: "item",
@@ -710,11 +500,6 @@ AstDocument {
                                             Text(
                                                 TextNode {
                                                     value: "enumerate 1",
-                                                },
-                                            ),
-                                            Newlines(
-                                                NewlinesNode {
-                                                    count: 1,
                                                 },
                                             ),
                                             Command(
@@ -730,11 +515,6 @@ AstDocument {
                                                     required_args: [],
                                                     optional_args: [],
                                                     items: [
-                                                        Newlines(
-                                                            NewlinesNode {
-                                                                count: 1,
-                                                            },
-                                                        ),
                                                         Command(
                                                             CommandNode {
                                                                 name: "item",
@@ -745,11 +525,6 @@ AstDocument {
                                                         Text(
                                                             TextNode {
                                                                 value: "itemize 3",
-                                                            },
-                                                        ),
-                                                        Newlines(
-                                                            NewlinesNode {
-                                                                count: 1,
                                                             },
                                                         ),
                                                         Command(
@@ -765,11 +540,6 @@ AstDocument {
                                                                 required_args: [],
                                                                 optional_args: [],
                                                                 items: [
-                                                                    Newlines(
-                                                                        NewlinesNode {
-                                                                            count: 1,
-                                                                        },
-                                                                    ),
                                                                     Command(
                                                                         CommandNode {
                                                                             name: "item",
@@ -780,11 +550,6 @@ AstDocument {
                                                                     Text(
                                                                         TextNode {
                                                                             value: "enum 2",
-                                                                        },
-                                                                    ),
-                                                                    Newlines(
-                                                                        NewlinesNode {
-                                                                            count: 1,
                                                                         },
                                                                     ),
                                                                     Command(
@@ -800,11 +565,6 @@ AstDocument {
                                                                             required_args: [],
                                                                             optional_args: [],
                                                                             items: [
-                                                                                Newlines(
-                                                                                    NewlinesNode {
-                                                                                        count: 1,
-                                                                                    },
-                                                                                ),
                                                                                 Command(
                                                                                     CommandNode {
                                                                                         name: "item",
@@ -817,41 +577,16 @@ AstDocument {
                                                                                         value: "enum 3",
                                                                                     },
                                                                                 ),
-                                                                                Newlines(
-                                                                                    NewlinesNode {
-                                                                                        count: 1,
-                                                                                    },
-                                                                                ),
                                                                             ],
-                                                                        },
-                                                                    ),
-                                                                    Newlines(
-                                                                        NewlinesNode {
-                                                                            count: 1,
                                                                         },
                                                                     ),
                                                                 ],
                                                             },
                                                         ),
-                                                        Newlines(
-                                                            NewlinesNode {
-                                                                count: 1,
-                                                            },
-                                                        ),
                                                     ],
                                                 },
                                             ),
-                                            Newlines(
-                                                NewlinesNode {
-                                                    count: 1,
-                                                },
-                                            ),
                                         ],
-                                    },
-                                ),
-                                Newlines(
-                                    NewlinesNode {
-                                        count: 1,
                                     },
                                 ),
                                 Command(
@@ -866,17 +601,7 @@ AstDocument {
                                         value: "itemize 2",
                                     },
                                 ),
-                                Newlines(
-                                    NewlinesNode {
-                                        count: 1,
-                                    },
-                                ),
                             ],
-                        },
-                    ),
-                    Newlines(
-                        NewlinesNode {
-                            count: 1,
                         },
                     ),
                     Block(
@@ -885,11 +610,6 @@ AstDocument {
                             required_args: [],
                             optional_args: [],
                             items: [
-                                Newlines(
-                                    NewlinesNode {
-                                        count: 1,
-                                    },
-                                ),
                                 Command(
                                     CommandNode {
                                         name: "item",
@@ -916,17 +636,7 @@ AstDocument {
                                         value: "description text 1",
                                     },
                                 ),
-                                Newlines(
-                                    NewlinesNode {
-                                        count: 1,
-                                    },
-                                ),
                             ],
-                        },
-                    ),
-                    Newlines(
-                        NewlinesNode {
-                            count: 2,
                         },
                     ),
                     Command(
@@ -946,11 +656,6 @@ AstDocument {
                             ],
                         },
                     ),
-                    Newlines(
-                        NewlinesNode {
-                            count: 1,
-                        },
-                    ),
                     Command(
                         CommandNode {
                             name: "part",
@@ -966,11 +671,6 @@ AstDocument {
                                     ],
                                 },
                             ],
-                        },
-                    ),
-                    Newlines(
-                        NewlinesNode {
-                            count: 1,
                         },
                     ),
                     Command(
@@ -990,11 +690,6 @@ AstDocument {
                             ],
                         },
                     ),
-                    Newlines(
-                        NewlinesNode {
-                            count: 1,
-                        },
-                    ),
                     Command(
                         CommandNode {
                             name: "section",
@@ -1010,11 +705,6 @@ AstDocument {
                                     ],
                                 },
                             ],
-                        },
-                    ),
-                    Newlines(
-                        NewlinesNode {
-                            count: 1,
                         },
                     ),
                     Command(
@@ -1034,11 +724,6 @@ AstDocument {
                             ],
                         },
                     ),
-                    Newlines(
-                        NewlinesNode {
-                            count: 1,
-                        },
-                    ),
                     Command(
                         CommandNode {
                             name: "subsubsection",
@@ -1054,11 +739,6 @@ AstDocument {
                                     ],
                                 },
                             ],
-                        },
-                    ),
-                    Newlines(
-                        NewlinesNode {
-                            count: 1,
                         },
                     ),
                     Command(
@@ -1078,11 +758,6 @@ AstDocument {
                             ],
                         },
                     ),
-                    Newlines(
-                        NewlinesNode {
-                            count: 1,
-                        },
-                    ),
                     Command(
                         CommandNode {
                             name: "subparagraph",
@@ -1098,11 +773,6 @@ AstDocument {
                                     ],
                                 },
                             ],
-                        },
-                    ),
-                    Newlines(
-                        NewlinesNode {
-                            count: 2,
                         },
                     ),
                     Command(
@@ -1153,11 +823,6 @@ AstDocument {
                             ],
                         },
                     ),
-                    Newlines(
-                        NewlinesNode {
-                            count: 2,
-                        },
-                    ),
                     Command(
                         CommandNode {
                             name: "href",
@@ -1173,11 +838,6 @@ AstDocument {
                                     ],
                                 },
                             ],
-                        },
-                    ),
-                    Newlines(
-                        NewlinesNode {
-                            count: 1,
                         },
                     ),
                     Command(
@@ -1267,11 +927,6 @@ AstDocument {
                             ],
                         },
                     ),
-                    Newlines(
-                        NewlinesNode {
-                            count: 1,
-                        },
-                    ),
                     Command(
                         CommandNode {
                             name: "usepackage",
@@ -1287,11 +942,6 @@ AstDocument {
                                     ],
                                 },
                             ],
-                        },
-                    ),
-                    Newlines(
-                        NewlinesNode {
-                            count: 2,
                         },
                     ),
                     Block(
@@ -1310,21 +960,11 @@ AstDocument {
                             ],
                             optional_args: [],
                             items: [
-                                Newlines(
-                                    NewlinesNode {
-                                        count: 1,
-                                    },
-                                ),
                                 Command(
                                     CommandNode {
                                         name: "hline",
                                         optional_args: [],
                                         required_args: [],
-                                    },
-                                ),
-                                Newlines(
-                                    NewlinesNode {
-                                        count: 1,
                                     },
                                 ),
                                 Command(
@@ -1354,21 +994,11 @@ AstDocument {
                                         value: "\\\\",
                                     },
                                 ),
-                                Newlines(
-                                    NewlinesNode {
-                                        count: 1,
-                                    },
-                                ),
                                 Command(
                                     CommandNode {
                                         name: "hline",
                                         optional_args: [],
                                         required_args: [],
-                                    },
-                                ),
-                                Newlines(
-                                    NewlinesNode {
-                                        count: 1,
                                     },
                                 ),
                                 Text(
@@ -1381,21 +1011,11 @@ AstDocument {
                                         value: "\\\\",
                                     },
                                 ),
-                                Newlines(
-                                    NewlinesNode {
-                                        count: 1,
-                                    },
-                                ),
                                 Command(
                                     CommandNode {
                                         name: "hline",
                                         optional_args: [],
                                         required_args: [],
-                                    },
-                                ),
-                                Newlines(
-                                    NewlinesNode {
-                                        count: 1,
                                     },
                                 ),
                                 Text(
@@ -1419,21 +1039,11 @@ AstDocument {
                                         ],
                                         optional_args: [],
                                         items: [
-                                            Newlines(
-                                                NewlinesNode {
-                                                    count: 1,
-                                                },
-                                            ),
                                             Command(
                                                 CommandNode {
                                                     name: "hlinee",
                                                     optional_args: [],
                                                     required_args: [],
-                                                },
-                                            ),
-                                            Newlines(
-                                                NewlinesNode {
-                                                    count: 1,
                                                 },
                                             ),
                                             Command(
@@ -1463,21 +1073,11 @@ AstDocument {
                                                     value: "\\\\",
                                                 },
                                             ),
-                                            Newlines(
-                                                NewlinesNode {
-                                                    count: 1,
-                                                },
-                                            ),
                                             Command(
                                                 CommandNode {
                                                     name: "hline",
                                                     optional_args: [],
                                                     required_args: [],
-                                                },
-                                            ),
-                                            Newlines(
-                                                NewlinesNode {
-                                                    count: 1,
                                                 },
                                             ),
                                             Text(
@@ -1490,21 +1090,11 @@ AstDocument {
                                                     value: "\\\\",
                                                 },
                                             ),
-                                            Newlines(
-                                                NewlinesNode {
-                                                    count: 1,
-                                                },
-                                            ),
                                             Command(
                                                 CommandNode {
                                                     name: "hline",
                                                     optional_args: [],
                                                     required_args: [],
-                                                },
-                                            ),
-                                            Newlines(
-                                                NewlinesNode {
-                                                    count: 1,
                                                 },
                                             ),
                                             Text(
@@ -1517,11 +1107,6 @@ AstDocument {
                                                     value: "\\\\",
                                                 },
                                             ),
-                                            Newlines(
-                                                NewlinesNode {
-                                                    count: 1,
-                                                },
-                                            ),
                                             Command(
                                                 CommandNode {
                                                     name: "hline",
@@ -1529,27 +1114,12 @@ AstDocument {
                                                     required_args: [],
                                                 },
                                             ),
-                                            Newlines(
-                                                NewlinesNode {
-                                                    count: 1,
-                                                },
-                                            ),
                                         ],
-                                    },
-                                ),
-                                Newlines(
-                                    NewlinesNode {
-                                        count: 1,
                                     },
                                 ),
                                 Linebreak(
                                     LinebreakNode {
                                         value: "\\\\",
-                                    },
-                                ),
-                                Newlines(
-                                    NewlinesNode {
-                                        count: 1,
                                     },
                                 ),
                                 Command(
@@ -1559,17 +1129,7 @@ AstDocument {
                                         required_args: [],
                                     },
                                 ),
-                                Newlines(
-                                    NewlinesNode {
-                                        count: 1,
-                                    },
-                                ),
                             ],
-                        },
-                    ),
-                    Newlines(
-                        NewlinesNode {
-                            count: 2,
                         },
                     ),
                     Block(
@@ -1584,11 +1144,6 @@ AstDocument {
                                     },
                                 ),
                             ],
-                        },
-                    ),
-                    Newlines(
-                        NewlinesNode {
-                            count: 2,
                         },
                     ),
                     Block(
@@ -1616,11 +1171,6 @@ AstDocument {
                                     },
                                 ),
                             ],
-                        },
-                    ),
-                    Newlines(
-                        NewlinesNode {
-                            count: 2,
                         },
                     ),
                 ],

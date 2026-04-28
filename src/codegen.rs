@@ -88,7 +88,7 @@ pub fn translate_items(items: Vec<AstItemNode>) -> String {
 }
 
 pub(crate) fn render_item(item: &AstItemNode) -> String {
-    match item {
+    let rendered = match item {
         AstItemNode::Block(block_node) => render_block(block_node),
         AstItemNode::Text(text_node) => render_text(text_node),
         AstItemNode::RawText(text_node) => render_raw_text(text_node),
@@ -97,7 +97,9 @@ pub(crate) fn render_item(item: &AstItemNode) -> String {
         AstItemNode::Linebreak(linebreak_node) => render_linebreak(linebreak_node),
         AstItemNode::Whitespace(whitespace_node) => render_whitespace(whitespace_node),
         AstItemNode::Comment(comment_node) => render_comment(comment_node),
-    }
+    };
+    // inserisco una newline tra un elemento e l'altro per una migliore leggibilità del file di output in linguaggio target
+    format!("{rendered}\n")
 }
 
 pub(crate) fn render_whitespace(whitespace_node: &WhitespaceNode) -> String {

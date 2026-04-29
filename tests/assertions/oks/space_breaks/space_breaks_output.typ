@@ -1,4 +1,5 @@
-﻿\
+
+\
 \
 \
 #h(1fr)
@@ -7,8 +8,10 @@
 #pagebreak()
 #pagebreak()
 
-/*ERROR: WRONG-COMMAND OR NOT-IMPLEMENTED \vspace{5mm}*/
-/*ERROR: WRONG-COMMAND OR NOT-IMPLEMENTED \hspace{1cm}*/
-/*ERROR: WRONG-COMMAND OR NOT-IMPLEMENTED \smallskip{}*/
-/*ERROR: WRONG-COMMAND OR NOT-IMPLEMENTED \medskip{}*/
-/*ERROR: WRONG-COMMAND OR NOT-IMPLEMENTED \bigskip{}*/
+/*WARN: WrongCommandOrNotImplemented("vspace"): vspace \vspace{5mm}*/
+/*WARN: WrongCommandOrNotImplemented("hspace"): hspace \hspace{1cm}*/
+/*WARN: WrongCommandOrNotImplemented("smallskip"): smallskip \smallskip{}*/
+/*WARN: WrongCommandOrNotImplemented("medskip"): medskip \medskip{}*/
+/*WARN: WrongCommandOrNotImplemented("bigskip"): bigskip \bigskip{}*/
+
+

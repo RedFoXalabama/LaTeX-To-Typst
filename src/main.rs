@@ -9,8 +9,9 @@ static CODEGEN_DIR: &str = "Assets/Output/Documentation/";
 
 // ------------------------------ MAIN EXECUTION ---------------------------------------------------
 fn main() {
-    // Di default, mostro i log da livello warn in poi. Se interessati a log verbosi da livello info, impostare env RUST_LOG=info
-    env_logger::Builder::from_env(env_logger::Env::default().default_filter_or("warn")).init();
+    // Di default, mostro i log da livello warn in poi (vedi .cargo/config.toml).
+    // Se interessati a log verbosi da livello info, impostare env RUST_LOG=info
+    env_logger::init();
 
     for file in fs::read_dir(INPUT_DIR).expect("Failed to read input directory") {
         let entry = file.expect("Failed to read directory entry");

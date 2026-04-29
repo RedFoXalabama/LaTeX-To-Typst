@@ -22,7 +22,14 @@ pub fn render_section_chapter(
             update_part_counter();
             out.push_str(format!("#v(2em)\n#align(center)[\n#text(1.2em)[Part {}]\n#v(0.5em)\n#text(2em, weight: \"bold\")[{}]\n]\n#v(2em)\n", get_part_counter(), render_args_item(&reqs[0].items)).as_str())
         }
-        "chapter" => out.push_str(""), // TODO: abilita in base al tipo di documento
+        "chapter" => {
+            out = drop_command_warn(
+                COMMANDWARNING::NotImplemented(name.to_string()),
+                Option::from(out),
+                Option::from(name),
+                Option::from(reqs.clone()),
+            );
+        }
         "section" => out.push_str(format!("= {}\n", render_args_item(&reqs[0].items)).as_str()),
         "subsection" => out.push_str(format!("== {}\n", render_args_item(&reqs[0].items)).as_str()),
         "subsubsection" => {

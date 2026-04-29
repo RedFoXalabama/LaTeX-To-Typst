@@ -1,0 +1,10 @@
+[*]
+charset = utf-8
+
+# Rules for LaTeX files
+[*.tex]
+trim_trailing_whitespace = false
+
+# Rules for Typst files
+[*.typ]
+trim_trailing_whitespace = false

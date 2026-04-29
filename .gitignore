@@ -21,3 +21,6 @@ target/
 
 # Logs
 *.log
+
+# Integration tests output
+/tests/results/

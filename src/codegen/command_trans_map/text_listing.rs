@@ -1,4 +1,4 @@
-﻿use crate::codegen::command_trans_map::{out_of_bounds_reqs_arg, render_opt_entry};
+use crate::codegen::command_trans_map::{out_of_bounds_reqs_arg, render_opt_entry};
 use crate::globals::{get_in_listing_priority, read_in_listing_priority, ListType};
 use crate::latex_semantic::{OptionalArgNode, RequiredArgNode};
 use crate::utils::{drop_command_warn, COMMANDWARNING};
@@ -21,7 +21,7 @@ pub fn render_list(name: &str, reqs: Vec<RequiredArgNode>, opts: Vec<OptionalArg
                     if let Some(first) = opts.first() {
                         let opts_arg = render_opt_entry(&first.entries);
                         if !opts_arg.is_empty() {
-                            out.push_str(&format!(" {}:", opts_arg));
+                            out.push_str(&format!(" {}: ", opts_arg));
                         }
                     }
                 },
@@ -55,5 +55,6 @@ fn render_list_line(sign: char, out: &mut String, opts: Vec<OptionalArgNode>) ->
             out.push_str(&format!(" [{}]", opts_arg));
         }
     }
+    out.push(' ');
     out
 }

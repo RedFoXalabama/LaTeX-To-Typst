@@ -1,5 +1,4 @@
 use crate::codegen::translate_items;
-// use crate::codegen::translate_items_raw;
 use crate::latex_semantic::{AstItemNode, OptionalArgNode, RequiredArgNode};
 
 pub fn render_verbatim(

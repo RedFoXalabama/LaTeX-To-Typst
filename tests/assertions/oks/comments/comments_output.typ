@@ -1,4 +1,5 @@
-﻿//%! Author = gianf
+
+//%! Author = gianf
 //%! Date = 16/04/2026
 //
 //% Preamble
@@ -8,8 +9,6 @@
 //\usepackage{amsmath}
 //
 //% Document
-//\begin{document}
 //
 //
 //
-//\end{document}

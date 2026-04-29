@@ -1,4 +1,4 @@
-﻿// ------------------------ ARTICLE HEADER -----------------------
+// ------------------------ ARTICLE HEADER -----------------------
 #set page(
   paper: "a4",
   margin: (x: 2.5cm, y: 3cm),
@@ -97,18 +97,18 @@ center block *bold*
 #pagebreak()
 
 
-- [!]itemize 1
--
-	+enumerate 1
-	+
-		-itemize 3
-		-
-			+enum 2
-			+
-				+enum 3
--itemize 2
+- [!] itemize 1
+- 
+	+ enumerate 1
+	+ 
+		- itemize 3
+		- 
+			+ enum 2
+			+ 
+				+ enum 3
+- itemize 2
 
-/ description 1:description text 1
+/ description 1: description text 1
 
 #v(2em)
 #align(center)[
@@ -126,7 +126,7 @@ center block *bold*
 ]
 #v(2em)
 
-
+/*WARN: NotImplemented("chapter"): chapter \chapter{chapter}*/
 = section
 
 == subsection

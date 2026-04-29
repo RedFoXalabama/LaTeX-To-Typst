@@ -1,4 +1,4 @@
-﻿/*ERROR: NOT-YET-IMPLEMENTED \comandoerrato{argomento inesistente}*//*ERROR: NOT-YET-IMPLEMENTED \prova{argomento inesistente}*/#context figure(
+/*ERROR: NOT-YET-IMPLEMENTED \comandoerrato{argomento inesistente}*//*ERROR: NOT-YET-IMPLEMENTED \prova{argomento inesistente}*/#context figure(
   image("Latex2Typst.png", width: 80%),
   placement: none,
   caption: [caption test],

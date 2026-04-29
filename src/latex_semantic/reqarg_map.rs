@@ -1,4 +1,4 @@
-﻿use std::collections::HashMap;
+use std::collections::HashMap;
 use std::sync::OnceLock;
 
 static REQARG_MAP: OnceLock<HashMap<&'static str, &'static i32>> = OnceLock::new();

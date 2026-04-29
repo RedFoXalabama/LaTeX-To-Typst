@@ -1,4 +1,4 @@
-﻿use std::sync::atomic::{AtomicBool, AtomicUsize, Ordering};
+use std::sync::atomic::{AtomicBool, AtomicUsize, Ordering};
 use std::sync::Mutex;
 
 // IN_ITEMIZE definisce il contesto temporaneo in cui é iniziata la lettura del \begin{itemize}

@@ -1,4 +1,4 @@
-﻿//%! Author = gianf
+//%! Author = gianf
 //%! Date = 16/04/2026
 //
 //% Preamble

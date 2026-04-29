@@ -1,4 +1,4 @@
-﻿use crate::codegen::command_trans_map::{out_of_bounds_reqs_arg};
+use crate::codegen::command_trans_map::{out_of_bounds_reqs_arg};
 use crate::latex_semantic::{OptionalArgNode, RequiredArgNode};
 use crate::utils::{drop_command_warn, COMMANDWARNING};
 

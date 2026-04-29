@@ -1,4 +1,4 @@
-﻿/* usepackage{verbatim} */
+/* usepackage{verbatim} */
 /* usepackage{listings} */
 /* usepackage{hyperref} */
 /* usepackage{ragged2e} */

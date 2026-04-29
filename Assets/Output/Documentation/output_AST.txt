@@ -246,7 +246,7 @@ AstDocument {
                             items: [
                                 RawText(
                                     TextNode {
-                                        value: "\n    Questo é un commento multilinea \\textbf{aa}\n",
+                                        value: "\r\n    Questo é un commento multilinea \\textbf{aa}\r\n",
                                     },
                                 ),
                             ],
@@ -265,7 +265,7 @@ AstDocument {
                             items: [
                                 RawText(
                                     TextNode {
-                                        value: "\n    \\begin{tabular}{ |c|c|csss| }\n        \\hline\n        \\textbf{cell1} & cell2 & cell3 \\\\\n        \\hline\n        cell4 & cell5 & cell6 \\\\\n        \\hline\n        cell7 & cell8 & cell9 \\\\\n        \\hline\n    \\end{tabular}\n",
+                                        value: "\r\n    \\begin{tabular}{ |c|c|csss| }\r\n        \\hline\r\n        \\textbf{cell1} & cell2 & cell3 \\\\\r\n        \\hline\r\n        cell4 & cell5 & cell6 \\\\\r\n        \\hline\r\n        cell7 & cell8 & cell9 \\\\\r\n        \\hline\r\n    \\end{tabular}\r\n",
                                     },
                                 ),
                             ],
@@ -1580,7 +1580,7 @@ AstDocument {
                             items: [
                                 RawText(
                                     TextNode {
-                                        value: "\n    Text enclosed inside \\texttt{verbatim} environment\n    is printed directly\n    and all \\LaTeX{} commands are ignored.\n",
+                                        value: "\r\n    Text enclosed inside \\texttt{verbatim} environment\r\n    is printed directly\r\n    and all \\LaTeX{} commands are ignored.\r\n",
                                     },
                                 ),
                             ],
@@ -1612,7 +1612,7 @@ AstDocument {
                             items: [
                                 RawText(
                                     TextNode {
-                                        value: "\nimport numpy as np\n\ndef incmatrix(genl1,genl2):\n    m = len(genl1)\n    n = len(genl2)\n    M = None #to become the incidence matrix\n    VT = np.zeros((n*m,1), int)  #dummy variable\n\n    #compute the bitwise xor matrix\n    M1 = bitxormatrix(genl1)\n    M2 = np.triu(bitxormatrix(genl2),1)\n\n    for i in range(m-1):\n        for j in range(i+1, m):\n            [r,c] = np.where(M2 == M1[i,j])\n            for k in range(len(r)):\n                VT[(i)*n + r[k]] = 1;\n                VT[(i)*n + c[k]] = 1;\n                VT[(j)*n + r[k]] = 1;\n                VT[(j)*n + c[k]] = 1;\n\n                if M is None:\n                    M = np.copy(VT)\n                else:\n                    M = np.concatenate((M, VT), 1)\n\n                VT = np.zeros((n*m,1), int)\n\n    return M\n",
+                                        value: "\r\nimport numpy as np\r\n\r\ndef incmatrix(genl1,genl2):\r\n    m = len(genl1)\r\n    n = len(genl2)\r\n    M = None #to become the incidence matrix\r\n    VT = np.zeros((n*m,1), int)  #dummy variable\r\n\r\n    #compute the bitwise xor matrix\r\n    M1 = bitxormatrix(genl1)\r\n    M2 = np.triu(bitxormatrix(genl2),1)\r\n\r\n    for i in range(m-1):\r\n        for j in range(i+1, m):\r\n            [r,c] = np.where(M2 == M1[i,j])\r\n            for k in range(len(r)):\r\n                VT[(i)*n + r[k]] = 1;\r\n                VT[(i)*n + c[k]] = 1;\r\n                VT[(j)*n + r[k]] = 1;\r\n                VT[(j)*n + c[k]] = 1;\r\n\r\n                if M is None:\r\n                    M = np.copy(VT)\r\n                else:\r\n                    M = np.concatenate((M, VT), 1)\r\n\r\n                VT = np.zeros((n*m,1), int)\r\n\r\n    return M\r\n",
                                     },
                                 ),
                             ],

@@ -2,7 +2,10 @@
 //\end{}
 
 //\begin{document}
-//    Contenuto del documento
+//   Contenuto del documento
+
+//Contento del documento
+//\end{verbatim}
 
 //\begin{document}
 //    Contenuto
@@ -10,37 +13,43 @@
 
 //\ tests
 
-//\textbf{testo non chiuso % rompe il documento
-
 //\begin{document123}
 //\end{document123}
 
 //\textbf
 
+//\textbf{testo non chiuso % rompe il documento
+
+//\begin{dad}
+//    prova
+//\end{dad}
+
+//\textbf
+
 /*WARN: NotImplemented("usepackage"): usepackage \usepackage{geometry}*/
-
-
-    contenuto
-
-
-/*WARN: WrongCommandOrNotImplemented("includegraphics"): includegraphics \includegraphics{}*/[width=5cm testo // non rompe il documento
-
-/*WARN: WrongCommandOrNotImplemented("command"): command \command{}*/123 test
-
-/*WARN: NotImplemented("usepackage"): usepackage \usepackage{amsmath}*/ // PACCHETTO NON ANCORA IMPLEMENTATO
-/*WARN: NotImplemented("usepackage"): usepackage \usepackage{geometry}*/
-/*WARN: NotImplemented("usepackage"): usepackage \usepackage{babel}*/
-/*WARN: NotImplemented("usepackage"): usepackage \usepackage{tikz}*/
-
-/*WARN: NotImplemented("chapter"): chapter \chapter{Capitolo 1: Caso di errore}*/ // TITOLO NON ANCORA IMPLEMENTATO
-
-/*WARN: WrongCommandOrNotImplemented("url"): url \url{http://www.overleaf.com}*/
-/*WARN: WrongCommandOrNotImplemented("hypertarget"): hypertarget \hypertarget{thesentence}{this sentence}*/.
-
-/*WARN: WrongCommandOrNotImplemented("vspace"): vspace \vspace{5mm}*/
-/*WARN: WrongCommandOrNotImplemented("hspace"): hspace \hspace{1cm}*/
-/*WARN: WrongCommandOrNotImplemented("smallskip"): smallskip \smallskip{}*/
-/*WARN: WrongCommandOrNotImplemented("medskip"): medskip \medskip{}*/
-/*WARN: WrongCommandOrNotImplemented("bigskip"): bigskip \bigskip{}*/
-
-/*WARN: WrongCommandOrNotImplemented("commandoInesistente"): commandoInesistente \commandoInesistente{argomento inesistente}*/
+//
+//\begin{unknown}
+//    contenuto
+//\end{unknown}
+//
+//\includegraphics[width=5cm testo % non rompe il documento
+//
+//\command123 test
+//
+//\usepackage{amsmath} % PACCHETTO NON ANCORA IMPLEMENTATO
+//\usepackage{geometry}
+//\usepackage{babel}
+//\usepackage{tikz}
+//
+//\chapter{Capitolo 1: Caso di errore} % TITOLO NON ANCORA IMPLEMENTATO
+//
+//\url{http://www.overleaf.com}
+//\hypertarget{thesentence}{this sentence}.
+//
+//\vspace{5mm}
+//\hspace{1cm}
+//\smallskip
+//\medskip
+//\bigskip
+//
+//\commandoInesistente{argomento inesistente}

@@ -33,6 +33,8 @@ pub fn parse_latex<'a>(input: &'a str) -> Result<Pairs<'a, Rule>, Error> {
     })
 }
 
+// Formatta il messaggio di errore cercando di classificarlo in base alla riga e al contesto del codice LaTeX che ha causato l`errore,
+// per fornire un feedback più specifico all`utente.
 fn format_pest_error(err: &pest::error::Error<Rule>, input: &str) -> String {
     let (line, col) = match err.line_col {
         LineColLocation::Pos((line, col)) => (line, col),
@@ -43,7 +45,7 @@ fn format_pest_error(err: &pest::error::Error<Rule>, input: &str) -> String {
     let caret_padding = " ".repeat(col.saturating_sub(1));
     let separator = "-".repeat(25);
 
-    let message = match &err.variant {
+    let (parse_error, error_msg) = match &err.variant {
         ErrorVariant::ParsingError { positives, negatives } => {
             if !positives.is_empty() {
                 let expected = positives
@@ -51,29 +53,60 @@ fn format_pest_error(err: &pest::error::Error<Rule>, input: &str) -> String {
                     .map(|r| format!("{:?}", r))
                     .collect::<Vec<_>>()
                     .join(", ");
-                format!("Atteso: {}", expected)
+                classify_offending_line(offending_line, expected)
             } else if !negatives.is_empty() {
                 let unexpected = negatives
                     .iter()
                     .map(|r| format!("{:?}", r))
                     .collect::<Vec<_>>()
                     .join(", ");
-                format!("Non atteso: {}", unexpected)
+                classify_offending_line(offending_line, unexpected)
             } else {
-                "Errore di parsing".to_string()
+                (PARSEERROR::GrammaticError, "Errore di parsing".to_string())
             }
         }
-        _ => "Errore di parsing".to_string(),
+        _ => (PARSEERROR::GrammaticError, "Errore di parsing".to_string()),
     };
 
     format!(
-        "{} PARSE ERROR: {:?} {}\nErrore di parsing LaTeX alla riga {}, colonna {}\n{}\n{}^",
+        "{} PARSE ERROR: {:?} {}\nErrore di parsing LaTeX alla riga {}, colonna {}\n{}\n{}^\n{}\n{}",
         separator,
-        PARSEERROR::GrammaticError,
+        parse_error,
         separator,
         line,
         col,
         offending_line,
-        caret_padding
-    ) + &format!("\n{}\n{}", message, separator)
+        caret_padding,
+        error_msg,
+        separator
+    )
+}
+
+// Implementati al momento gli errori possibili individuati
+fn classify_offending_line(line: &str, error_class: String) -> (PARSEERROR, String) {
+    let trimmed = line.trim_start_matches('\u{feff}').trim();
+
+    let error = match () {
+        _ if trimmed.starts_with("\\begin") => match error_class.as_str() {
+            "name, raw_name" => PARSEERROR::MissingEnvironmentName,
+            "item" => PARSEERROR::UnmatchedEnvironmentStart,
+            "raw_name" => PARSEERROR::InvalidEnvironmentName,
+            _ => PARSEERROR::GrammaticError,
+        },
+
+        _ if trimmed.starts_with("\\end") => match error_class.as_str() {
+            "name, raw_name" => PARSEERROR::MissingEnvironmentName,
+            "EOI, item" | "item" => PARSEERROR::UnmatchedEnvironmentEnd,
+            _ => PARSEERROR::GrammaticError,
+        }
+
+        _ if trimmed.starts_with("\\") => match error_class.as_str() {
+            "name" => PARSEERROR::MissingCommandName,
+            _ => PARSEERROR::GrammaticError,
+        }
+
+        _ => PARSEERROR::GrammaticError,
+    };
+
+    (error.clone(), error.message().to_string())
 }

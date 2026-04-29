@@ -81,12 +81,14 @@ pub fn render_figure(
     out
 }
 
+// Estrae il testo dal primo argomento richiesto, rimuovendo spazi vuoti e scartando stringhe vuote
 fn first_required_arg_text(reqs: &[RequiredArgNode]) -> Option<String> {
     reqs.first()
         .map(|r| render_args_item(&r.items).trim().to_string())
         .filter(|s| !s.is_empty())
 }
 
+// Estrae la larghezza dagli argomenti opzionali, cercando una chiave "width" o un argomento posizionale che contenga specifiche di larghezza
 fn extract_width(opts: &[OptionalArgNode]) -> Option<String> {
     for opt in opts {
         for entry in &opt.entries {
@@ -148,6 +150,7 @@ fn figure_placement(optional_args: &[OptionalArgNode]) -> Option<String> {
     None
 }
 
+// Gestisce il posizionamento delle immagini nel testo prendendo in input l'argomento opzionale del posizionamento
 fn map_placement_spec(raw: &str) -> Option<String> {
     let spec: String = raw
         .chars()
@@ -212,6 +215,7 @@ fn latex_width_to_typst(raw: &str) -> String {
     compact
 }
 
+// Estrae il fattore numerico e il nome della macro da una stringa come "0.5\linewidth"
 fn split_number_macro(s: &str) -> Option<(f64, &str)> {
     let idx = s.find('\\')?;
     if idx == 0 {
@@ -222,6 +226,7 @@ fn split_number_macro(s: &str) -> Option<(f64, &str)> {
     Some((factor, macro_part))
 }
 
+// Estrae il numero e l'unità da una stringa come "12pt" o "3.5cm"
 fn split_number_unit(s: &str) -> Option<(f64, &'static str)> {
     // Ordine importante: unità di 2 caratteri tutte uguali qui, ma resta esplicito.
     const UNITS: [&str; 6] = ["pt", "mm", "cm", "in", "ex", "em"];
@@ -236,6 +241,7 @@ fn split_number_unit(s: &str) -> Option<(f64, &'static str)> {
     None
 }
 
+// Mappa le macro di lunghezza di LaTeX a espressioni di Typst, applicando un fattore se necessario (es. 0.5\linewidth)
 fn map_latex_length_macro(factor: f64, macro_name: &str) -> Option<String> {
     match macro_name {
         // Relative al contenitore corrente: in Typst rendono bene come percentuale
@@ -254,6 +260,9 @@ fn map_latex_length_macro(factor: f64, macro_name: &str) -> Option<String> {
     }
 }
 
+// Questa funzione crea un'espressione di scala per Typst:
+// Se il fattore è prossimo a 1.0 (entro f64::EPSILON), restituisce semplicemente la base (es. "page.width")
+// Altrimenti, restituisce un'espressione moltiplicativa (es. "0.5 * page.width") formattata con il fattore trimato e la base
 fn scale_expr(factor: f64, base: &str) -> String {
     if (factor - 1.0).abs() < f64::EPSILON {
         base.to_string()
@@ -262,6 +271,8 @@ fn scale_expr(factor: f64, base: &str) -> String {
     }
 }
 
+// trim_float converte un f64 in una stringa più pulita: rimuove la parte decimale quando il numero è intero,
+// altrimenti limita la precisione a 6 decimali ed elimina zeri finali e il punto finale.
 fn trim_float(v: f64) -> String {
     if v.fract().abs() < f64::EPSILON {
         format!("{}", v as i64)

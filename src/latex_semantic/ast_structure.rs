@@ -129,7 +129,7 @@ pub enum OptItemNode {
     Text(TextNode),         // rule: opt_text
 }
 
-// ERRORI PROPOSTI DA AI
+// ERRORI SEMANTICI
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub enum SemanticError {
     MissingFileNode,

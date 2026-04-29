@@ -15,8 +15,13 @@ use pest::iterators::{Pair, Pairs};
 // build_ast
 // └─ build_document        (file)
 //      └─ build_item        (item → text | newline | command)
+//          ├─ build_block (name + optional_arg* + required_arg* + content) -> block_content = item*
+//          ├─ build_block_raw (raw_name + optional_arg* + required_arg* + content_raw) -> content_raw = testo preservato esattamente
 //          ├─ build_text
 //          ├─ build_newline
+//          ├─ build_linebreak
+//          ├─ build_whitespace
+//          ├─ build_comment
 //          └─ build_command (name + optional_arg* + required_arg*)
 //              ├─ build_optional_arg → build_opt_entry
 //              │   ├─ build_kv_pair → build_value
@@ -83,7 +88,7 @@ fn build_document(file_pair: Pair<Rule>) -> Result<AstDocument, SemanticError> {
 // ----------------------------- ITEM = COMMAND | TEXT | NEWLINES | LINEBREAK ----------------------------------
 
 // Un item può essere composto da un comando, un testo o una nuova linea a capo
-// se l'elemento non corrisponde a nessuno di questi elementi, beh cacca addosso -> UnexpectedRule
+// se l'elemento non corrisponde a nessuno di questi elementi -> UnexpectedRule
 // item = { command | text | newlines }
 fn build_item(pair: Pair<Rule>) -> Result<AstItemNode, SemanticError> {
     let child = pair
@@ -176,7 +181,7 @@ fn build_block_raw(pair: Pair<Rule>) -> Result<BlockNode, SemanticError> {
 }
 
 // Un comando é composto da un nome (che segue il \) e da una serie di argomenti opzionali (racchiusi tra []) e argomenti obbligatori (racchiusi tra {})
-// se il comando presenta elementi che non rispecchiano le Rule degli elementi, allora cacca addosso -> UnexpectedRule
+// se il comando presenta elementi che non rispecchiano le Rule degli elementi -> UnexpectedRule
 // command = { "\\" ~ name ~ optional_arg* ~ required_arg* }
 fn build_command(pair: Pair<Rule>) -> Result<CommandNode, SemanticError> {
     let mut name: String = String::new();
@@ -216,7 +221,7 @@ fn build_command(pair: Pair<Rule>) -> Result<CommandNode, SemanticError> {
 }
 
 // Un testo é qualsiasi cosa che non inizi con un \ di comando o una nuova linea ed é composto da qualsiasi carattere
-// se il nodo é vuoto (anche se non dovrebbe esserlo, visto che la regola richiede almeno un carattere), allora cacca addosso -> EmptyTextValue
+// se il nodo é vuoto (anche se non dovrebbe esserlo, visto che la regola richiede almeno un carattere) -> EmptyTextValue
 // text = { (!("\\" | NEWLINE) ~ ANY)+ }
 fn build_text(pair: Pair<Rule>) -> Result<TextNode, SemanticError> {
     let value = pair.as_str().to_string();
@@ -235,7 +240,7 @@ fn build_whitespace(pair: Pair<Rule>) -> Result<WhitespaceNode, SemanticError> {
 }
 
 // Una nuova linea é composta da uno o più caratteri di nuova linea (\n), e viene rappresentata da un nodo che conta quante nuove linee ci sono
-// se il nodo é segnato come NEWLINE, ma non contiene "nuove linee", allora cacca addosso -> InvalidNewlineCount
+// se il nodo é segnato come NEWLINE, ma non contiene "nuove linee" -> InvalidNewlineCount
 // newlines = { NEWLINE+ }
 fn build_newlines(pair: Pair<Rule>) -> Result<NewlinesNode, SemanticError> {
     let count = pair.as_str().chars().filter(|&c| c == '\n').count();
@@ -276,7 +281,7 @@ fn build_comment(pair: Pair<Rule>) -> Result<CommentNode, SemanticError> {
 
 // Un Required Argument é un argomento obbligatorio di un comando che può essere composto da un argument
 // un argument é composto da arg_item multipli poiché possiamo avere comandi e testo insieme o anche un altro elemento rinchiuso in {esempio}
-// se l'argument con contiene un oggetto che rispetta la regola di Arg_item, allora cacca addosso -> UnexpectedArgItemRule
+// se l'argument con contiene un oggetto che rispetta la regola di Arg_item -> UnexpectedArgItemRule
 // required_arg = { "{" ~ argument ~ "}" }
 fn build_required_arg(cmd_name: &str, pair: Pair<Rule>) -> Result<RequiredArgNode, SemanticError> {
     let mut items: Vec<ArgItemNode> = Vec::new();

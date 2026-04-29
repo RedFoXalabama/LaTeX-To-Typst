@@ -37,7 +37,27 @@ AstDocument {
         ),
         Comment(
             CommentNode {
-                value: "%    Contenuto del documento",
+                value: "%   Contenuto del documento",
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 2,
+            },
+        ),
+        Comment(
+            CommentNode {
+                value: "%Contento del documento",
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Comment(
+            CommentNode {
+                value: "%\\end{verbatim}",
             },
         ),
         Newlines(
@@ -87,16 +107,6 @@ AstDocument {
         ),
         Comment(
             CommentNode {
-                value: "%\\textbf{testo non chiuso % rompe il documento",
-            },
-        ),
-        Newlines(
-            NewlinesNode {
-                count: 2,
-            },
-        ),
-        Comment(
-            CommentNode {
                 value: "%\\begin{document123}",
             },
         ),
@@ -112,12 +122,52 @@ AstDocument {
         ),
         Newlines(
             NewlinesNode {
-                count: 2,
+                count: 3,
             },
         ),
         Comment(
             CommentNode {
                 value: "%\\textbf",
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 2,
+            },
+        ),
+        Comment(
+            CommentNode {
+                value: "%\\textbf{testo non chiuso % rompe il documento",
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 2,
+            },
+        ),
+        Comment(
+            CommentNode {
+                value: "%\\begin{dad}",
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Comment(
+            CommentNode {
+                value: "%    prova",
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Comment(
+            CommentNode {
+                value: "%\\end{dad}",
             },
         ),
         Newlines(
@@ -157,222 +207,32 @@ AstDocument {
         ),
         Newlines(
             NewlinesNode {
-                count: 2,
-            },
-        ),
-        Block(
-            BlockNode {
-                name: "unknown",
-                required_args: [],
-                optional_args: [],
-                items: [
-                    Newlines(
-                        NewlinesNode {
-                            count: 1,
-                        },
-                    ),
-                    Text(
-                        TextNode {
-                            value: "    contenuto",
-                        },
-                    ),
-                    Newlines(
-                        NewlinesNode {
-                            count: 1,
-                        },
-                    ),
-                ],
-            },
-        ),
-        Newlines(
-            NewlinesNode {
-                count: 2,
-            },
-        ),
-        Command(
-            CommandNode {
-                name: "includegraphics",
-                optional_args: [],
-                required_args: [],
-            },
-        ),
-        Text(
-            TextNode {
-                value: "[width=5cm testo ",
+                count: 1,
             },
         ),
         Comment(
             CommentNode {
-                value: "% non rompe il documento",
+                value: "%",
             },
         ),
         Newlines(
             NewlinesNode {
-                count: 2,
-            },
-        ),
-        Command(
-            CommandNode {
-                name: "command",
-                optional_args: [],
-                required_args: [],
-            },
-        ),
-        Text(
-            TextNode {
-                value: "123 test",
-            },
-        ),
-        Newlines(
-            NewlinesNode {
-                count: 2,
-            },
-        ),
-        Command(
-            CommandNode {
-                name: "usepackage",
-                optional_args: [],
-                required_args: [
-                    RequiredArgNode {
-                        items: [
-                            Text(
-                                TextNode {
-                                    value: "amsmath",
-                                },
-                            ),
-                        ],
-                    },
-                ],
-            },
-        ),
-        Text(
-            TextNode {
-                value: " ",
+                count: 1,
             },
         ),
         Comment(
             CommentNode {
-                value: "% PACCHETTO NON ANCORA IMPLEMENTATO",
+                value: "%\\begin{unknown}",
             },
         ),
         Newlines(
             NewlinesNode {
                 count: 1,
-            },
-        ),
-        Command(
-            CommandNode {
-                name: "usepackage",
-                optional_args: [],
-                required_args: [
-                    RequiredArgNode {
-                        items: [
-                            Text(
-                                TextNode {
-                                    value: "geometry",
-                                },
-                            ),
-                        ],
-                    },
-                ],
-            },
-        ),
-        Newlines(
-            NewlinesNode {
-                count: 1,
-            },
-        ),
-        Command(
-            CommandNode {
-                name: "usepackage",
-                optional_args: [],
-                required_args: [
-                    RequiredArgNode {
-                        items: [
-                            Text(
-                                TextNode {
-                                    value: "babel",
-                                },
-                            ),
-                        ],
-                    },
-                ],
-            },
-        ),
-        Newlines(
-            NewlinesNode {
-                count: 1,
-            },
-        ),
-        Command(
-            CommandNode {
-                name: "usepackage",
-                optional_args: [],
-                required_args: [
-                    RequiredArgNode {
-                        items: [
-                            Text(
-                                TextNode {
-                                    value: "tikz",
-                                },
-                            ),
-                        ],
-                    },
-                ],
-            },
-        ),
-        Newlines(
-            NewlinesNode {
-                count: 2,
-            },
-        ),
-        Command(
-            CommandNode {
-                name: "chapter",
-                optional_args: [],
-                required_args: [
-                    RequiredArgNode {
-                        items: [
-                            Text(
-                                TextNode {
-                                    value: "Capitolo 1: Caso di errore",
-                                },
-                            ),
-                        ],
-                    },
-                ],
-            },
-        ),
-        Text(
-            TextNode {
-                value: " ",
             },
         ),
         Comment(
             CommentNode {
-                value: "% TITOLO NON ANCORA IMPLEMENTATO",
-            },
-        ),
-        Newlines(
-            NewlinesNode {
-                count: 2,
-            },
-        ),
-        Command(
-            CommandNode {
-                name: "url",
-                optional_args: [],
-                required_args: [
-                    RequiredArgNode {
-                        items: [
-                            Text(
-                                TextNode {
-                                    value: "http://www.overleaf.com",
-                                },
-                            ),
-                        ],
-                    },
-                ],
+                value: "%    contenuto",
             },
         ),
         Newlines(
@@ -380,57 +240,9 @@ AstDocument {
                 count: 1,
             },
         ),
-        Command(
-            CommandNode {
-                name: "hypertarget",
-                optional_args: [],
-                required_args: [
-                    RequiredArgNode {
-                        items: [
-                            Text(
-                                TextNode {
-                                    value: "thesentence",
-                                },
-                            ),
-                        ],
-                    },
-                    RequiredArgNode {
-                        items: [
-                            Text(
-                                TextNode {
-                                    value: "this sentence",
-                                },
-                            ),
-                        ],
-                    },
-                ],
-            },
-        ),
-        Text(
-            TextNode {
-                value: ".",
-            },
-        ),
-        Newlines(
-            NewlinesNode {
-                count: 2,
-            },
-        ),
-        Command(
-            CommandNode {
-                name: "vspace",
-                optional_args: [],
-                required_args: [
-                    RequiredArgNode {
-                        items: [
-                            Text(
-                                TextNode {
-                                    value: "5mm",
-                                },
-                            ),
-                        ],
-                    },
-                ],
+        Comment(
+            CommentNode {
+                value: "%\\end{unknown}",
             },
         ),
         Newlines(
@@ -438,21 +250,9 @@ AstDocument {
                 count: 1,
             },
         ),
-        Command(
-            CommandNode {
-                name: "hspace",
-                optional_args: [],
-                required_args: [
-                    RequiredArgNode {
-                        items: [
-                            Text(
-                                TextNode {
-                                    value: "1cm",
-                                },
-                            ),
-                        ],
-                    },
-                ],
+        Comment(
+            CommentNode {
+                value: "%",
             },
         ),
         Newlines(
@@ -460,11 +260,9 @@ AstDocument {
                 count: 1,
             },
         ),
-        Command(
-            CommandNode {
-                name: "smallskip",
-                optional_args: [],
-                required_args: [],
+        Comment(
+            CommentNode {
+                value: "%\\includegraphics[width=5cm testo % non rompe il documento",
             },
         ),
         Newlines(
@@ -472,11 +270,9 @@ AstDocument {
                 count: 1,
             },
         ),
-        Command(
-            CommandNode {
-                name: "medskip",
-                optional_args: [],
-                required_args: [],
+        Comment(
+            CommentNode {
+                value: "%",
             },
         ),
         Newlines(
@@ -484,33 +280,189 @@ AstDocument {
                 count: 1,
             },
         ),
-        Command(
-            CommandNode {
-                name: "bigskip",
-                optional_args: [],
-                required_args: [],
+        Comment(
+            CommentNode {
+                value: "%\\command123 test",
             },
         ),
         Newlines(
             NewlinesNode {
-                count: 2,
+                count: 1,
             },
         ),
-        Command(
-            CommandNode {
-                name: "commandoInesistente",
-                optional_args: [],
-                required_args: [
-                    RequiredArgNode {
-                        items: [
-                            Text(
-                                TextNode {
-                                    value: "argomento inesistente",
-                                },
-                            ),
-                        ],
-                    },
-                ],
+        Comment(
+            CommentNode {
+                value: "%",
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Comment(
+            CommentNode {
+                value: "%\\usepackage{amsmath} % PACCHETTO NON ANCORA IMPLEMENTATO",
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Comment(
+            CommentNode {
+                value: "%\\usepackage{geometry}",
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Comment(
+            CommentNode {
+                value: "%\\usepackage{babel}",
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Comment(
+            CommentNode {
+                value: "%\\usepackage{tikz}",
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Comment(
+            CommentNode {
+                value: "%",
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Comment(
+            CommentNode {
+                value: "%\\chapter{Capitolo 1: Caso di errore} % TITOLO NON ANCORA IMPLEMENTATO",
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Comment(
+            CommentNode {
+                value: "%",
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Comment(
+            CommentNode {
+                value: "%\\url{http://www.overleaf.com}",
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Comment(
+            CommentNode {
+                value: "%\\hypertarget{thesentence}{this sentence}.",
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Comment(
+            CommentNode {
+                value: "%",
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Comment(
+            CommentNode {
+                value: "%\\vspace{5mm}",
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Comment(
+            CommentNode {
+                value: "%\\hspace{1cm}",
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Comment(
+            CommentNode {
+                value: "%\\smallskip",
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Comment(
+            CommentNode {
+                value: "%\\medskip",
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Comment(
+            CommentNode {
+                value: "%\\bigskip",
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Comment(
+            CommentNode {
+                value: "%",
+            },
+        ),
+        Newlines(
+            NewlinesNode {
+                count: 1,
+            },
+        ),
+        Comment(
+            CommentNode {
+                value: "%\\commandoInesistente{argomento inesistente}",
             },
         ),
         Newlines(

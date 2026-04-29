@@ -108,8 +108,16 @@ pub(crate) fn render_block(block_node: &BlockNode) -> String {
     if let Some(rendered) = BlockTransMap::translate(block_node) {
         rendered
     } else {
+        let error_msg = String::new();
+        let mut out = drop_command_warn(COMMANDWARNING::EnvironmentBlockNotImplemented(block_node.name.clone()),
+                          Option::from(error_msg),
+                          Option::from(&*block_node.name),
+                          Option::from(block_node.required_args.clone()));
+
         // Fallback: render the items inside the block normally
-        block_node.items.iter().map(render_item).collect()
+        let block_content : String = block_node.items.iter().map(render_item).collect();
+        out.push_str(&block_content);
+        out
     }
 }
 

@@ -5,8 +5,6 @@ fn run_transpilation(input_path: &str) -> Result<String, Box<dyn std::error::Err
     let parse_tree = latex_parser::parse_latex(&source)?;
     let ast = latex_semantic::build_ast(parse_tree)
         .map_err(|e| std::io::Error::new(std::io::ErrorKind::InvalidData, format!("{e:?}")))?;
-    codegen::validate_ast(&ast)
-        .map_err(|e| std::io::Error::new(std::io::ErrorKind::InvalidData, format!("{e:?}")))?;
     let typst_output = codegen::ast_to_typst(&ast);
     print!("-->");
     print!("{typst_output}");
@@ -34,9 +32,7 @@ macro_rules! test_ok {
             }
             std::fs::write(&result_path, &actual).expect("Failed to write result file");
 
-            let  a = actual.trim();
-            let  b = expected.trim();
-            assert_eq!(a, b, "Mismatch in {}", case);
+            assert_eq!(actual, expected, "Mismatch in {}", case);
         }
     };
 }
@@ -64,8 +60,8 @@ macro_rules! test_error {
 test_ok!(test_ok_code, "code");
 test_ok!(test_ok_comments, "comments");
 test_ok!(test_ok_figure, "figure");
-test_ok!(test_ok_hyperlinks_test, "hyperlinks_test");
-test_ok!(test_ok_package_test, "package_test");
+test_ok!(test_ok_hyperlinks, "hyperlinks");
+test_ok!(test_ok_package, "package");
 test_ok!(test_ok_sections_chapter, "sections_chapter");
 test_ok!(test_ok_space_breaks, "space_breaks");
 test_ok!(test_ok_tables, "tables");

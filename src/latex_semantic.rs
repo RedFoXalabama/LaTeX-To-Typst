@@ -59,7 +59,7 @@ fn build_document(file_pair: Pair<Rule>) -> Result<AstDocument, SemanticError> {
                 if !found_document {
                     match &item {
                         AstItemNode::Text(t) | AstItemNode::RawText(t) => {
-                            if !t.value.trim().trim_start_matches('\u{feff}').is_empty() {
+                            if !t.value.trim().is_empty() {
                                 return Err(SemanticError::TextBeforeDocument);
                             }
                         }

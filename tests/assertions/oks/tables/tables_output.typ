@@ -1,3 +1,4 @@
+
 #table(
 	columns: 3,
 	[*cell1*],

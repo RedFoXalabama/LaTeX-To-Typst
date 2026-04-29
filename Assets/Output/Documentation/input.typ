@@ -146,7 +146,7 @@ center block *bold*
 /*ERROR: NOT-YET-IMPLEMENTED \usepackage{geometry}*/
 /* usepackage{listings} */
 
-
+/*WARN: EnvironmentBlockNotImplemented("tabularr"): Environment block 'tabularr' not implemented or wrong*/
 
 *cell1*& cell2 & cell3 \
 

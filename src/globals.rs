@@ -2,6 +2,8 @@ use std::sync::atomic::{AtomicBool, AtomicUsize, Ordering};
 use std::sync::Mutex;
 
 // IN_ITEMIZE definisce il contesto temporaneo in cui é iniziata la lettura del \begin{itemize}
+// serve per poter gestire i comandi \item della lista
+// approccio datato, ma non aggiornato poiché implementato prima della gestione dei blocchi
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ListType {
     Itemize,
@@ -27,6 +29,8 @@ pub fn get_in_listing_value() -> bool {
     IN_LISTING.value.load(Ordering::SeqCst)
 }
 
+// per gestire l'ordine delle liste e la nidificazione usiamo un semplice vettore in cui creiamo una cronologia delle tipologie
+// di liste utilizzate, in modo da popolarlo come una coda e leggerlo come una pila
 pub fn get_in_listing_priority() -> Vec<ListType> {
     IN_LISTING.priority.lock().unwrap().clone()
 }
@@ -67,6 +71,8 @@ pub fn pop_in_listing_priority() {
 
 
 // ---------------------------- SECTIONS AND CHAPTER PART COUNTER ----------------------------------
+// Gestione counter delle part in latex,
+// per ora non gestisce i capitoli, ma solo le part, in quanto non sono ancora stati implementati i capitoli
 pub struct PartCounter{
     value: AtomicUsize,
 }

@@ -1,4 +1,4 @@
------------------------- BOOK HEADER -----------------------
+// ------------------------ BOOK HEADER -----------------------
 #set page(
   paper: "a4",
   // Margine interno (gutter) più ampio per la rilegatura
@@ -96,7 +96,7 @@
 #set document(date: date)
 
 
-    #set document(title: title)
+#set document(title: title)
 #align(center)[
 #text(3em, weight: "bold")[#title]
 #v(0em)
@@ -105,9 +105,9 @@
 #text(1.5em)[#date.display("[day] [month repr:long] [year]")]
 ]
 #v(2em)
-    #outline()
+#outline()
 
-    #v(2em)
+#v(2em)
 #align(center)[
 #text(1.2em)[Part I]
 #v(0.5em)
@@ -115,7 +115,7 @@
 ]
 #v(2em)
 
-    #v(2em)
+#v(2em)
 #align(center)[
 #text(1.2em)[Part II]
 #v(0.5em)
@@ -123,16 +123,15 @@
 ]
 #v(2em)
 
-    /*ERROR: NOT-YET-IMPLEMENTED \chapter{chapter}*/
-    = section
+/*WARN: NotImplemented("chapter"): chapter \chapter{chapter}*/
+= section
 
-    == subsection
+== subsection
 
-    === subsubsection
+=== subsubsection
 
-    ==== paragraph
+==== paragraph
 
-    ===== subparagraph
-
+===== subparagraph
 
 

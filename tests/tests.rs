@@ -8,6 +8,9 @@ fn run_transpilation(input_path: &str) -> Result<String, Box<dyn std::error::Err
     codegen::validate_ast(&ast)
         .map_err(|e| std::io::Error::new(std::io::ErrorKind::InvalidData, format!("{e:?}")))?;
     let typst_output = codegen::ast_to_typst(&ast);
+    print!("-->");
+    print!("{typst_output}");
+    print!("<--");
     Ok(typst_output)
 }
 

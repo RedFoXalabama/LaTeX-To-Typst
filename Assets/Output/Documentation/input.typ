@@ -97,18 +97,18 @@ center block *bold*
 #pagebreak()
 
 
-- [!]itemize 1
--
-	+enumerate 1
-	+
-		-itemize 3
-		-
-			+enum 2
-			+
-				+enum 3
--itemize 2
+- [!] itemize 1
+- 
+	+ enumerate 1
+	+ 
+		- itemize 3
+		- 
+			+ enum 2
+			+ 
+				+ enum 3
+- itemize 2
 
-/ description 1:description text 1
+/ description 1: description text 1
 
 #v(2em)
 #align(center)[
@@ -126,7 +126,7 @@ center block *bold*
 ]
 #v(2em)
 
-
+/*ERROR: NOT-YET-IMPLEMENTED \chapter{chapter}*/
 = section
 
 == subsection
@@ -143,7 +143,7 @@ center block *bold*
 #link("https://www.overleaf.com/learn")
 #link("https://www.overleaf.com/learn")[Overleaf Learn]// testo del link
 
-/*WARN: NotImplemented("usepackage"): usepackage \usepackage{geometry}*/
+/*ERROR: NOT-YET-IMPLEMENTED \usepackage{geometry}*/
 /* usepackage{listings} */
 
 
@@ -154,7 +154,7 @@ cell4 & cell5 & cell6 \
 
 cell7 & cell8 & #table(
 	columns: 3,
-	[/*WARN: WrongCommandOrNotImplemented("hlinee"): hlinee \hlinee{}*/],
+	[/*ERROR: WRONG-COMMAND OR NOT-IMPLEMENTED \hlinee{}*/],
 	[*cell1*],
 	[cell2],
 	[cell3],

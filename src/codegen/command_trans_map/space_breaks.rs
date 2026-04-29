@@ -1,4 +1,4 @@
-﻿// Il comando \\ é gestito tramite la grammatica che lo considera una regola Linebreak e non command e lo gestisce con la sua funzione
+// Il comando \\ é gestito tramite la grammatica che lo considera una regola Linebreak e non command e lo gestisce con la sua funzione
 use crate::codegen::command_trans_map::{out_of_bounds_reqs_arg};
 use crate::latex_semantic::{OptionalArgNode, RequiredArgNode};
 use crate::utils::{drop_command_warn, COMMANDWARNING};

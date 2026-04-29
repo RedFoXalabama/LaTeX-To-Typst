@@ -1,7 +1,7 @@
 ﻿```
-    Text enclosed inside \texttt{verbatim} environment
-    is printed directly
-    and all \LaTeX{} commands are ignored.
+Text enclosed inside \texttt{verbatim} environment
+is printed directly
+and all \LaTeX{} commands are ignored.
 ```
 
 ```python

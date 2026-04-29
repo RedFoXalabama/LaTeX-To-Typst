@@ -8,8 +8,6 @@
 //\usepackage{amsmath}
 //
 //% Document
-//\begin{document}
 //
 //
 //
-//\end{document}

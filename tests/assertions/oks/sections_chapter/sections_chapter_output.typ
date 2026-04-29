@@ -1,4 +1,4 @@
-﻿﻿// ------------------------ BOOK HEADER -----------------------
+------------------------ BOOK HEADER -----------------------
 #set page(
   paper: "a4",
   // Margine interno (gutter) più ampio per la rilegatura

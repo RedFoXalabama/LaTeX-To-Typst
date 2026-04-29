@@ -1,4 +1,4 @@
-﻿#set align(center);
+#set align(center);
 #set align(left);
 #set align(right);
 #set align(right);

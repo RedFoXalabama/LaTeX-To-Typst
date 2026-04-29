@@ -1,4 +1,4 @@
-﻿#table(
+#table(
 	columns: 3,
 	[*cell1*],
 	[cell2],

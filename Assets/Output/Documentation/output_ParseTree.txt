@@ -2,8 +2,8 @@
     Pair {
         rule: file,
         span: Span {
-            str: "\\documentclass{article}\n\\title{LaTeX To Typst}\n\\author{Gianfranco e Vito}\n\\date{\\today}\n\\date{31/12/2026}\n\n\\usepackage{verbatim}\n\\usepackage{listing}\n\\usepackage{hyperref}\n\n\\begin{document}\n\\maketitle\n\\tableofcontents\n\nprova{-tra parentesi graffe-}\ntesto pre commento % prova commento monolinea\n\\begin{comment}\n    Questo é un commento multilinea \\textbf{aa}\n\\end{comment}\n\n\\begin{comment}\n    \\begin{tabular}{ |c|c|csss| }\n        \\hline\n        \\textbf{cell1} & cell2 & cell3 \\\\\n        \\hline\n        cell4 & cell5 & cell6 \\\\\n        \\hline\n        cell7 & cell8 & cell9 \\\\\n        \\hline\n    \\end{tabular}\n\\end{comment}\n\n\n\\textbf{Bold}\n\\textit{italic}\n\\underline{underline}\n\n\\centering\n\\raggedright\n\\raggedleft\n\\flushright\n\\flushleft\n\\usepackage{ragged2e}\n\\begin{center}\n    center block \\textbf{bold}\n\\end{center}\n\\begin{flushleft} flushleft block \\end{flushleft}\n\\begin{flushright} flushright block \\end{flushright}\n\\begin{FlushLeft} FlushLeft block \\end{FlushLeft}\n\\begin{FlushRight} FlushRight block \\end{FlushRight}\n\n\\\\\n\\newline\n\\break\n\\hfill\n\\vfill\n\\pagebreak\n\\newpage\n\\clearpage\n\n\\begin{itemize}\n    \\item[!] itemize 1\n    \\item \\begin{enumerate}\n              \\item enumerate 1\n              \\item \\begin{itemize}\n                        \\item itemize 3\n                        \\item \\begin{enumerate}\n                                  \\item enum 2\n                                  \\item \\begin{enumerate}\n                                            \\item enum 3\n                                  \\end{enumerate}\n                        \\end{enumerate}\n              \\end{itemize}\n    \\end{enumerate}\n    \\item itemize 2\n\\end{itemize}\n\\begin{description}\n    \\item[description 1] description text 1\n\\end{description}\n\n\\part{part 1}\n\\part{part 2}\n\\chapter{chapter}\n\\section{section}\n\\subsection{subsection}\n\\subsubsection{subsubsection}\n\\paragraph{paragraph}\n\\subparagraph{subparagraph}\n\n\\textcolor{blue}{This is \\textbf{bold and blue}.}\n\n\\href{https://www.overleaf.com/learn}\n\\href{https://www.overleaf.com/learn}{Overleaf Learn} % testo del link\n\n\\usepackage{geometry}[letterpaper = true,top=2cm\\textwidth, points={1, cane,3 ,4}]\n\\usepackage{listings}\n\n\\begin{tabularr}{ |c|c|c| }\n    \\hline\n    \\textbf{cell1} & cell2 & cell3 \\\\\n    \\hline\n    cell4 & cell5 & cell6 \\\\\n    \\hline\n    cell7 & cell8 & \\begin{tabular}{ |c|c|c| }\n\\hlinee\n\\textbf{cell1} & cell2 & cell3 \\\\\n\\hline\ncell4 & cell5 & cell6 \\\\\n\\hline\ncell7 & cell8 & cell9 \\\\\n\\hline\n\\end{tabular}\n\\\\\n    \\hline\n\\end{tabularr}\n\n\\begin{verbatim}\n    Text enclosed inside \\texttt{verbatim} environment\n    is printed directly\n    and all \\LaTeX{} commands are ignored.\n\\end{verbatim}\n\n\\begin{lstlisting}[language=Python]\nimport numpy as np\n\ndef incmatrix(genl1,genl2):\n    m = len(genl1)\n    n = len(genl2)\n    M = None #to become the incidence matrix\n    VT = np.zeros((n*m,1), int)  #dummy variable\n\n    #compute the bitwise xor matrix\n    M1 = bitxormatrix(genl1)\n    M2 = np.triu(bitxormatrix(genl2),1)\n\n    for i in range(m-1):\n        for j in range(i+1, m):\n            [r,c] = np.where(M2 == M1[i,j])\n            for k in range(len(r)):\n                VT[(i)*n + r[k]] = 1;\n                VT[(i)*n + c[k]] = 1;\n                VT[(j)*n + r[k]] = 1;\n                VT[(j)*n + c[k]] = 1;\n\n                if M is None:\n                    M = np.copy(VT)\n                else:\n                    M = np.concatenate((M, VT), 1)\n\n                VT = np.zeros((n*m,1), int)\n\n    return M\n\\end{lstlisting}\n\n\\end{document}",
-            range: 0..3498,
+            str: "\\documentclass{article}\n\\title{LaTeX To Typst}\n\\author{Gianfranco e Vito}\n\\date{\\today}\n\\date{31/12/2026}\n\n\\usepackage{verbatim}\n\\usepackage{listing}\n\\usepackage{hyperref}\n\n\\begin{document}\n\\maketitle\n\\tableofcontents\n\nprova{-tra parentesi graffe-}\ntesto pre commento % prova commento monolinea\n\\begin{comment}\n    Questo é un commento multilinea \\textbf{aa}\n\\end{comment}\n\n\\begin{comment}\n    \\begin{tabular}{ |c|c|csss| }\n        \\hline\n        \\textbf{cell1} & cell2 & cell3 \\\\\n        \\hline\n        cell4 & cell5 & cell6 \\\\\n        \\hline\n        cell7 & cell8 & cell9 \\\\\n        \\hline\n    \\end{tabular}\n\\end{comment}\n\n\n\\textbf{Bold}\n\\textit{italic}\n\\underline{underline}\n\n\\centering\n\\raggedright\n\\raggedleft\n\\flushright\n\\flushleft\n\\usepackage{ragged2e}\n\\begin{center}\n    center block \\textbf{bold}\n\\end{center}\n\\begin{flushleft} flushleft block \\end{flushleft}\n\\begin{flushright} flushright block \\end{flushright}\n\\begin{FlushLeft} FlushLeft block \\end{FlushLeft}\n\\begin{FlushRight} FlushRight block \\end{FlushRight}\n\n\\\\\n\\newline\n\\break\n\\hfill\n\\vfill\n\\pagebreak\n\\newpage\n\\clearpage\n\n\\begin{itemize}\n    \\item[!] itemize 1\n    \\item \\begin{enumerate}\n              \\item enumerate 1\n              \\item \\begin{itemize}\n                        \\item itemize 3\n                        \\item \\begin{enumerate}\n                                  \\item enum 2\n                                  \\item \\begin{enumerate}\n                                            \\item enum 3\n                                  \\end{enumerate}\n                        \\end{enumerate}\n              \\end{itemize}\n    \\end{enumerate}\n    \\item itemize 2\n\\end{itemize}\n\\begin{description}\n    \\item[description 1] description text 1\n\\end{description}\n\n\\part{part 1}\n\\part{part 2}\n\\chapter{chapter}\n\\section{section}\n\\subsection{subsection}\n\\subsubsection{subsubsection}\n\\paragraph{paragraph}\n\\subparagraph{subparagraph}\n\n\\textcolor{blue}{This is \\textbf{bold and blue}.}\n\n\\href{https://www.overleaf.com/learn}\n\\href{https://www.overleaf.com/learn}{Overleaf Learn} % testo del link\n\n\\usepackage{geometry}[letterpaper = true,top=2cm\\textwidth, points={1, cane,3 ,4}]\n\\usepackage{listings}\n\n\\begin{tabularr}{ |c|c|c| }\n    \\hline\n    \\textbf{cell1} & cell2 & cell3 \\\\\n    \\hline\n    cell4 & cell5 & cell6 \\\\\n    \\hline\n    cell7 & cell8 & \\begin{tabular}{ |c|c|c| }\n\\hlinee\n\\textbf{cell1} & cell2 & cell3 \\\\\n\\hline\ncell4 & cell5 & cell6 \\\\\n\\hline\ncell7 & cell8 & cell9 \\\\\n\\hline\n\\end{tabular}\n\\\\\n    \\hline\n\\end{tabularr}\n\n\\begin{verbatim}\n    Text enclosed inside \\texttt{verbatim} environment\n    is printed directly\n    and all \\LaTeX{} commands are ignored.\n\\end{verbatim}\n\n\\begin{lstlisting}[language=Python]\nimport numpy as np\n\ndef incmatrix(genl1,genl2):\n    m = len(genl1)\n    n = len(genl2)\n    M = None #to become the incidence matrix\n    VT = np.zeros((n*m,1), int)  #dummy variable\n\n    #compute the bitwise xor matrix\n    M1 = bitxormatrix(genl1)\n    M2 = np.triu(bitxormatrix(genl2),1)\n\n    for i in range(m-1):\n        for j in range(i+1, m):\n            [r,c] = np.where(M2 == M1[i,j])\n            for k in range(len(r)):\n                VT[(i)*n + r[k]] = 1;\n                VT[(i)*n + c[k]] = 1;\n                VT[(j)*n + r[k]] = 1;\n                VT[(j)*n + c[k]] = 1;\n\n                if M is None:\n                    M = np.copy(VT)\n                else:\n                    M = np.concatenate((M, VT), 1)\n\n                VT = np.zeros((n*m,1), int)\n\n    return M\n\\end{lstlisting}\n\nInline math\n\n\\( 2+2=4 \\)\n\n$ 2+2=4 $\n\n\\begin{math}\n2+2=4\n\\end{math}\n\n\\\\\n\nBlock math\n\n\\[ 2+2=4 \\]\n\n\\begin{equation}\n2+2=4\n\\end{equation}\n\n\\begin{displaymath}\n2+2=4\n\\end{displaymath}\n\n\\end{document}",
+            range: 0..3679,
         },
         inner: [
             Pair {
@@ -642,15 +642,15 @@
             Pair {
                 rule: item,
                 span: Span {
-                    str: "\\begin{document}\n\\maketitle\n\\tableofcontents\n\nprova{-tra parentesi graffe-}\ntesto pre commento % prova commento monolinea\n\\begin{comment}\n    Questo é un commento multilinea \\textbf{aa}\n\\end{comment}\n\n\\begin{comment}\n    \\begin{tabular}{ |c|c|csss| }\n        \\hline\n        \\textbf{cell1} & cell2 & cell3 \\\\\n        \\hline\n        cell4 & cell5 & cell6 \\\\\n        \\hline\n        cell7 & cell8 & cell9 \\\\\n        \\hline\n    \\end{tabular}\n\\end{comment}\n\n\n\\textbf{Bold}\n\\textit{italic}\n\\underline{underline}\n\n\\centering\n\\raggedright\n\\raggedleft\n\\flushright\n\\flushleft\n\\usepackage{ragged2e}\n\\begin{center}\n    center block \\textbf{bold}\n\\end{center}\n\\begin{flushleft} flushleft block \\end{flushleft}\n\\begin{flushright} flushright block \\end{flushright}\n\\begin{FlushLeft} FlushLeft block \\end{FlushLeft}\n\\begin{FlushRight} FlushRight block \\end{FlushRight}\n\n\\\\\n\\newline\n\\break\n\\hfill\n\\vfill\n\\pagebreak\n\\newpage\n\\clearpage\n\n\\begin{itemize}\n    \\item[!] itemize 1\n    \\item \\begin{enumerate}\n              \\item enumerate 1\n              \\item \\begin{itemize}\n                        \\item itemize 3\n                        \\item \\begin{enumerate}\n                                  \\item enum 2\n                                  \\item \\begin{enumerate}\n                                            \\item enum 3\n                                  \\end{enumerate}\n                        \\end{enumerate}\n              \\end{itemize}\n    \\end{enumerate}\n    \\item itemize 2\n\\end{itemize}\n\\begin{description}\n    \\item[description 1] description text 1\n\\end{description}\n\n\\part{part 1}\n\\part{part 2}\n\\chapter{chapter}\n\\section{section}\n\\subsection{subsection}\n\\subsubsection{subsubsection}\n\\paragraph{paragraph}\n\\subparagraph{subparagraph}\n\n\\textcolor{blue}{This is \\textbf{bold and blue}.}\n\n\\href{https://www.overleaf.com/learn}\n\\href{https://www.overleaf.com/learn}{Overleaf Learn} % testo del link\n\n\\usepackage{geometry}[letterpaper = true,top=2cm\\textwidth, points={1, cane,3 ,4}]\n\\usepackage{listings}\n\n\\begin{tabularr}{ |c|c|c| }\n    \\hline\n    \\textbf{cell1} & cell2 & cell3 \\\\\n    \\hline\n    cell4 & cell5 & cell6 \\\\\n    \\hline\n    cell7 & cell8 & \\begin{tabular}{ |c|c|c| }\n\\hlinee\n\\textbf{cell1} & cell2 & cell3 \\\\\n\\hline\ncell4 & cell5 & cell6 \\\\\n\\hline\ncell7 & cell8 & cell9 \\\\\n\\hline\n\\end{tabular}\n\\\\\n    \\hline\n\\end{tabularr}\n\n\\begin{verbatim}\n    Text enclosed inside \\texttt{verbatim} environment\n    is printed directly\n    and all \\LaTeX{} commands are ignored.\n\\end{verbatim}\n\n\\begin{lstlisting}[language=Python]\nimport numpy as np\n\ndef incmatrix(genl1,genl2):\n    m = len(genl1)\n    n = len(genl2)\n    M = None #to become the incidence matrix\n    VT = np.zeros((n*m,1), int)  #dummy variable\n\n    #compute the bitwise xor matrix\n    M1 = bitxormatrix(genl1)\n    M2 = np.triu(bitxormatrix(genl2),1)\n\n    for i in range(m-1):\n        for j in range(i+1, m):\n            [r,c] = np.where(M2 == M1[i,j])\n            for k in range(len(r)):\n                VT[(i)*n + r[k]] = 1;\n                VT[(i)*n + c[k]] = 1;\n                VT[(j)*n + r[k]] = 1;\n                VT[(j)*n + c[k]] = 1;\n\n                if M is None:\n                    M = np.copy(VT)\n                else:\n                    M = np.concatenate((M, VT), 1)\n\n                VT = np.zeros((n*m,1), int)\n\n    return M\n\\end{lstlisting}\n\n\\end{document}",
-                    range: 173..3498,
+                    str: "\\begin{document}\n\\maketitle\n\\tableofcontents\n\nprova{-tra parentesi graffe-}\ntesto pre commento % prova commento monolinea\n\\begin{comment}\n    Questo é un commento multilinea \\textbf{aa}\n\\end{comment}\n\n\\begin{comment}\n    \\begin{tabular}{ |c|c|csss| }\n        \\hline\n        \\textbf{cell1} & cell2 & cell3 \\\\\n        \\hline\n        cell4 & cell5 & cell6 \\\\\n        \\hline\n        cell7 & cell8 & cell9 \\\\\n        \\hline\n    \\end{tabular}\n\\end{comment}\n\n\n\\textbf{Bold}\n\\textit{italic}\n\\underline{underline}\n\n\\centering\n\\raggedright\n\\raggedleft\n\\flushright\n\\flushleft\n\\usepackage{ragged2e}\n\\begin{center}\n    center block \\textbf{bold}\n\\end{center}\n\\begin{flushleft} flushleft block \\end{flushleft}\n\\begin{flushright} flushright block \\end{flushright}\n\\begin{FlushLeft} FlushLeft block \\end{FlushLeft}\n\\begin{FlushRight} FlushRight block \\end{FlushRight}\n\n\\\\\n\\newline\n\\break\n\\hfill\n\\vfill\n\\pagebreak\n\\newpage\n\\clearpage\n\n\\begin{itemize}\n    \\item[!] itemize 1\n    \\item \\begin{enumerate}\n              \\item enumerate 1\n              \\item \\begin{itemize}\n                        \\item itemize 3\n                        \\item \\begin{enumerate}\n                                  \\item enum 2\n                                  \\item \\begin{enumerate}\n                                            \\item enum 3\n                                  \\end{enumerate}\n                        \\end{enumerate}\n              \\end{itemize}\n    \\end{enumerate}\n    \\item itemize 2\n\\end{itemize}\n\\begin{description}\n    \\item[description 1] description text 1\n\\end{description}\n\n\\part{part 1}\n\\part{part 2}\n\\chapter{chapter}\n\\section{section}\n\\subsection{subsection}\n\\subsubsection{subsubsection}\n\\paragraph{paragraph}\n\\subparagraph{subparagraph}\n\n\\textcolor{blue}{This is \\textbf{bold and blue}.}\n\n\\href{https://www.overleaf.com/learn}\n\\href{https://www.overleaf.com/learn}{Overleaf Learn} % testo del link\n\n\\usepackage{geometry}[letterpaper = true,top=2cm\\textwidth, points={1, cane,3 ,4}]\n\\usepackage{listings}\n\n\\begin{tabularr}{ |c|c|c| }\n    \\hline\n    \\textbf{cell1} & cell2 & cell3 \\\\\n    \\hline\n    cell4 & cell5 & cell6 \\\\\n    \\hline\n    cell7 & cell8 & \\begin{tabular}{ |c|c|c| }\n\\hlinee\n\\textbf{cell1} & cell2 & cell3 \\\\\n\\hline\ncell4 & cell5 & cell6 \\\\\n\\hline\ncell7 & cell8 & cell9 \\\\\n\\hline\n\\end{tabular}\n\\\\\n    \\hline\n\\end{tabularr}\n\n\\begin{verbatim}\n    Text enclosed inside \\texttt{verbatim} environment\n    is printed directly\n    and all \\LaTeX{} commands are ignored.\n\\end{verbatim}\n\n\\begin{lstlisting}[language=Python]\nimport numpy as np\n\ndef incmatrix(genl1,genl2):\n    m = len(genl1)\n    n = len(genl2)\n    M = None #to become the incidence matrix\n    VT = np.zeros((n*m,1), int)  #dummy variable\n\n    #compute the bitwise xor matrix\n    M1 = bitxormatrix(genl1)\n    M2 = np.triu(bitxormatrix(genl2),1)\n\n    for i in range(m-1):\n        for j in range(i+1, m):\n            [r,c] = np.where(M2 == M1[i,j])\n            for k in range(len(r)):\n                VT[(i)*n + r[k]] = 1;\n                VT[(i)*n + c[k]] = 1;\n                VT[(j)*n + r[k]] = 1;\n                VT[(j)*n + c[k]] = 1;\n\n                if M is None:\n                    M = np.copy(VT)\n                else:\n                    M = np.concatenate((M, VT), 1)\n\n                VT = np.zeros((n*m,1), int)\n\n    return M\n\\end{lstlisting}\n\nInline math\n\n\\( 2+2=4 \\)\n\n$ 2+2=4 $\n\n\\begin{math}\n2+2=4\n\\end{math}\n\n\\\\\n\nBlock math\n\n\\[ 2+2=4 \\]\n\n\\begin{equation}\n2+2=4\n\\end{equation}\n\n\\begin{displaymath}\n2+2=4\n\\end{displaymath}\n\n\\end{document}",
+                    range: 173..3679,
                 },
                 inner: [
                     Pair {
                         rule: block,
                         span: Span {
-                            str: "\\begin{document}\n\\maketitle\n\\tableofcontents\n\nprova{-tra parentesi graffe-}\ntesto pre commento % prova commento monolinea\n\\begin{comment}\n    Questo é un commento multilinea \\textbf{aa}\n\\end{comment}\n\n\\begin{comment}\n    \\begin{tabular}{ |c|c|csss| }\n        \\hline\n        \\textbf{cell1} & cell2 & cell3 \\\\\n        \\hline\n        cell4 & cell5 & cell6 \\\\\n        \\hline\n        cell7 & cell8 & cell9 \\\\\n        \\hline\n    \\end{tabular}\n\\end{comment}\n\n\n\\textbf{Bold}\n\\textit{italic}\n\\underline{underline}\n\n\\centering\n\\raggedright\n\\raggedleft\n\\flushright\n\\flushleft\n\\usepackage{ragged2e}\n\\begin{center}\n    center block \\textbf{bold}\n\\end{center}\n\\begin{flushleft} flushleft block \\end{flushleft}\n\\begin{flushright} flushright block \\end{flushright}\n\\begin{FlushLeft} FlushLeft block \\end{FlushLeft}\n\\begin{FlushRight} FlushRight block \\end{FlushRight}\n\n\\\\\n\\newline\n\\break\n\\hfill\n\\vfill\n\\pagebreak\n\\newpage\n\\clearpage\n\n\\begin{itemize}\n    \\item[!] itemize 1\n    \\item \\begin{enumerate}\n              \\item enumerate 1\n              \\item \\begin{itemize}\n                        \\item itemize 3\n                        \\item \\begin{enumerate}\n                                  \\item enum 2\n                                  \\item \\begin{enumerate}\n                                            \\item enum 3\n                                  \\end{enumerate}\n                        \\end{enumerate}\n              \\end{itemize}\n    \\end{enumerate}\n    \\item itemize 2\n\\end{itemize}\n\\begin{description}\n    \\item[description 1] description text 1\n\\end{description}\n\n\\part{part 1}\n\\part{part 2}\n\\chapter{chapter}\n\\section{section}\n\\subsection{subsection}\n\\subsubsection{subsubsection}\n\\paragraph{paragraph}\n\\subparagraph{subparagraph}\n\n\\textcolor{blue}{This is \\textbf{bold and blue}.}\n\n\\href{https://www.overleaf.com/learn}\n\\href{https://www.overleaf.com/learn}{Overleaf Learn} % testo del link\n\n\\usepackage{geometry}[letterpaper = true,top=2cm\\textwidth, points={1, cane,3 ,4}]\n\\usepackage{listings}\n\n\\begin{tabularr}{ |c|c|c| }\n    \\hline\n    \\textbf{cell1} & cell2 & cell3 \\\\\n    \\hline\n    cell4 & cell5 & cell6 \\\\\n    \\hline\n    cell7 & cell8 & \\begin{tabular}{ |c|c|c| }\n\\hlinee\n\\textbf{cell1} & cell2 & cell3 \\\\\n\\hline\ncell4 & cell5 & cell6 \\\\\n\\hline\ncell7 & cell8 & cell9 \\\\\n\\hline\n\\end{tabular}\n\\\\\n    \\hline\n\\end{tabularr}\n\n\\begin{verbatim}\n    Text enclosed inside \\texttt{verbatim} environment\n    is printed directly\n    and all \\LaTeX{} commands are ignored.\n\\end{verbatim}\n\n\\begin{lstlisting}[language=Python]\nimport numpy as np\n\ndef incmatrix(genl1,genl2):\n    m = len(genl1)\n    n = len(genl2)\n    M = None #to become the incidence matrix\n    VT = np.zeros((n*m,1), int)  #dummy variable\n\n    #compute the bitwise xor matrix\n    M1 = bitxormatrix(genl1)\n    M2 = np.triu(bitxormatrix(genl2),1)\n\n    for i in range(m-1):\n        for j in range(i+1, m):\n            [r,c] = np.where(M2 == M1[i,j])\n            for k in range(len(r)):\n                VT[(i)*n + r[k]] = 1;\n                VT[(i)*n + c[k]] = 1;\n                VT[(j)*n + r[k]] = 1;\n                VT[(j)*n + c[k]] = 1;\n\n                if M is None:\n                    M = np.copy(VT)\n                else:\n                    M = np.concatenate((M, VT), 1)\n\n                VT = np.zeros((n*m,1), int)\n\n    return M\n\\end{lstlisting}\n\n\\end{document}",
-                            range: 173..3498,
+                            str: "\\begin{document}\n\\maketitle\n\\tableofcontents\n\nprova{-tra parentesi graffe-}\ntesto pre commento % prova commento monolinea\n\\begin{comment}\n    Questo é un commento multilinea \\textbf{aa}\n\\end{comment}\n\n\\begin{comment}\n    \\begin{tabular}{ |c|c|csss| }\n        \\hline\n        \\textbf{cell1} & cell2 & cell3 \\\\\n        \\hline\n        cell4 & cell5 & cell6 \\\\\n        \\hline\n        cell7 & cell8 & cell9 \\\\\n        \\hline\n    \\end{tabular}\n\\end{comment}\n\n\n\\textbf{Bold}\n\\textit{italic}\n\\underline{underline}\n\n\\centering\n\\raggedright\n\\raggedleft\n\\flushright\n\\flushleft\n\\usepackage{ragged2e}\n\\begin{center}\n    center block \\textbf{bold}\n\\end{center}\n\\begin{flushleft} flushleft block \\end{flushleft}\n\\begin{flushright} flushright block \\end{flushright}\n\\begin{FlushLeft} FlushLeft block \\end{FlushLeft}\n\\begin{FlushRight} FlushRight block \\end{FlushRight}\n\n\\\\\n\\newline\n\\break\n\\hfill\n\\vfill\n\\pagebreak\n\\newpage\n\\clearpage\n\n\\begin{itemize}\n    \\item[!] itemize 1\n    \\item \\begin{enumerate}\n              \\item enumerate 1\n              \\item \\begin{itemize}\n                        \\item itemize 3\n                        \\item \\begin{enumerate}\n                                  \\item enum 2\n                                  \\item \\begin{enumerate}\n                                            \\item enum 3\n                                  \\end{enumerate}\n                        \\end{enumerate}\n              \\end{itemize}\n    \\end{enumerate}\n    \\item itemize 2\n\\end{itemize}\n\\begin{description}\n    \\item[description 1] description text 1\n\\end{description}\n\n\\part{part 1}\n\\part{part 2}\n\\chapter{chapter}\n\\section{section}\n\\subsection{subsection}\n\\subsubsection{subsubsection}\n\\paragraph{paragraph}\n\\subparagraph{subparagraph}\n\n\\textcolor{blue}{This is \\textbf{bold and blue}.}\n\n\\href{https://www.overleaf.com/learn}\n\\href{https://www.overleaf.com/learn}{Overleaf Learn} % testo del link\n\n\\usepackage{geometry}[letterpaper = true,top=2cm\\textwidth, points={1, cane,3 ,4}]\n\\usepackage{listings}\n\n\\begin{tabularr}{ |c|c|c| }\n    \\hline\n    \\textbf{cell1} & cell2 & cell3 \\\\\n    \\hline\n    cell4 & cell5 & cell6 \\\\\n    \\hline\n    cell7 & cell8 & \\begin{tabular}{ |c|c|c| }\n\\hlinee\n\\textbf{cell1} & cell2 & cell3 \\\\\n\\hline\ncell4 & cell5 & cell6 \\\\\n\\hline\ncell7 & cell8 & cell9 \\\\\n\\hline\n\\end{tabular}\n\\\\\n    \\hline\n\\end{tabularr}\n\n\\begin{verbatim}\n    Text enclosed inside \\texttt{verbatim} environment\n    is printed directly\n    and all \\LaTeX{} commands are ignored.\n\\end{verbatim}\n\n\\begin{lstlisting}[language=Python]\nimport numpy as np\n\ndef incmatrix(genl1,genl2):\n    m = len(genl1)\n    n = len(genl2)\n    M = None #to become the incidence matrix\n    VT = np.zeros((n*m,1), int)  #dummy variable\n\n    #compute the bitwise xor matrix\n    M1 = bitxormatrix(genl1)\n    M2 = np.triu(bitxormatrix(genl2),1)\n\n    for i in range(m-1):\n        for j in range(i+1, m):\n            [r,c] = np.where(M2 == M1[i,j])\n            for k in range(len(r)):\n                VT[(i)*n + r[k]] = 1;\n                VT[(i)*n + c[k]] = 1;\n                VT[(j)*n + r[k]] = 1;\n                VT[(j)*n + c[k]] = 1;\n\n                if M is None:\n                    M = np.copy(VT)\n                else:\n                    M = np.concatenate((M, VT), 1)\n\n                VT = np.zeros((n*m,1), int)\n\n    return M\n\\end{lstlisting}\n\nInline math\n\n\\( 2+2=4 \\)\n\n$ 2+2=4 $\n\n\\begin{math}\n2+2=4\n\\end{math}\n\n\\\\\n\nBlock math\n\n\\[ 2+2=4 \\]\n\n\\begin{equation}\n2+2=4\n\\end{equation}\n\n\\begin{displaymath}\n2+2=4\n\\end{displaymath}\n\n\\end{document}",
+                            range: 173..3679,
                         },
                         inner: [
                             Pair {
@@ -664,8 +664,8 @@
                             Pair {
                                 rule: content,
                                 span: Span {
-                                    str: "\n\\maketitle\n\\tableofcontents\n\nprova{-tra parentesi graffe-}\ntesto pre commento % prova commento monolinea\n\\begin{comment}\n    Questo é un commento multilinea \\textbf{aa}\n\\end{comment}\n\n\\begin{comment}\n    \\begin{tabular}{ |c|c|csss| }\n        \\hline\n        \\textbf{cell1} & cell2 & cell3 \\\\\n        \\hline\n        cell4 & cell5 & cell6 \\\\\n        \\hline\n        cell7 & cell8 & cell9 \\\\\n        \\hline\n    \\end{tabular}\n\\end{comment}\n\n\n\\textbf{Bold}\n\\textit{italic}\n\\underline{underline}\n\n\\centering\n\\raggedright\n\\raggedleft\n\\flushright\n\\flushleft\n\\usepackage{ragged2e}\n\\begin{center}\n    center block \\textbf{bold}\n\\end{center}\n\\begin{flushleft} flushleft block \\end{flushleft}\n\\begin{flushright} flushright block \\end{flushright}\n\\begin{FlushLeft} FlushLeft block \\end{FlushLeft}\n\\begin{FlushRight} FlushRight block \\end{FlushRight}\n\n\\\\\n\\newline\n\\break\n\\hfill\n\\vfill\n\\pagebreak\n\\newpage\n\\clearpage\n\n\\begin{itemize}\n    \\item[!] itemize 1\n    \\item \\begin{enumerate}\n              \\item enumerate 1\n              \\item \\begin{itemize}\n                        \\item itemize 3\n                        \\item \\begin{enumerate}\n                                  \\item enum 2\n                                  \\item \\begin{enumerate}\n                                            \\item enum 3\n                                  \\end{enumerate}\n                        \\end{enumerate}\n              \\end{itemize}\n    \\end{enumerate}\n    \\item itemize 2\n\\end{itemize}\n\\begin{description}\n    \\item[description 1] description text 1\n\\end{description}\n\n\\part{part 1}\n\\part{part 2}\n\\chapter{chapter}\n\\section{section}\n\\subsection{subsection}\n\\subsubsection{subsubsection}\n\\paragraph{paragraph}\n\\subparagraph{subparagraph}\n\n\\textcolor{blue}{This is \\textbf{bold and blue}.}\n\n\\href{https://www.overleaf.com/learn}\n\\href{https://www.overleaf.com/learn}{Overleaf Learn} % testo del link\n\n\\usepackage{geometry}[letterpaper = true,top=2cm\\textwidth, points={1, cane,3 ,4}]\n\\usepackage{listings}\n\n\\begin{tabularr}{ |c|c|c| }\n    \\hline\n    \\textbf{cell1} & cell2 & cell3 \\\\\n    \\hline\n    cell4 & cell5 & cell6 \\\\\n    \\hline\n    cell7 & cell8 & \\begin{tabular}{ |c|c|c| }\n\\hlinee\n\\textbf{cell1} & cell2 & cell3 \\\\\n\\hline\ncell4 & cell5 & cell6 \\\\\n\\hline\ncell7 & cell8 & cell9 \\\\\n\\hline\n\\end{tabular}\n\\\\\n    \\hline\n\\end{tabularr}\n\n\\begin{verbatim}\n    Text enclosed inside \\texttt{verbatim} environment\n    is printed directly\n    and all \\LaTeX{} commands are ignored.\n\\end{verbatim}\n\n\\begin{lstlisting}[language=Python]\nimport numpy as np\n\ndef incmatrix(genl1,genl2):\n    m = len(genl1)\n    n = len(genl2)\n    M = None #to become the incidence matrix\n    VT = np.zeros((n*m,1), int)  #dummy variable\n\n    #compute the bitwise xor matrix\n    M1 = bitxormatrix(genl1)\n    M2 = np.triu(bitxormatrix(genl2),1)\n\n    for i in range(m-1):\n        for j in range(i+1, m):\n            [r,c] = np.where(M2 == M1[i,j])\n            for k in range(len(r)):\n                VT[(i)*n + r[k]] = 1;\n                VT[(i)*n + c[k]] = 1;\n                VT[(j)*n + r[k]] = 1;\n                VT[(j)*n + c[k]] = 1;\n\n                if M is None:\n                    M = np.copy(VT)\n                else:\n                    M = np.concatenate((M, VT), 1)\n\n                VT = np.zeros((n*m,1), int)\n\n    return M\n\\end{lstlisting}\n\n",
-                                    range: 189..3484,
+                                    str: "\n\\maketitle\n\\tableofcontents\n\nprova{-tra parentesi graffe-}\ntesto pre commento % prova commento monolinea\n\\begin{comment}\n    Questo é un commento multilinea \\textbf{aa}\n\\end{comment}\n\n\\begin{comment}\n    \\begin{tabular}{ |c|c|csss| }\n        \\hline\n        \\textbf{cell1} & cell2 & cell3 \\\\\n        \\hline\n        cell4 & cell5 & cell6 \\\\\n        \\hline\n        cell7 & cell8 & cell9 \\\\\n        \\hline\n    \\end{tabular}\n\\end{comment}\n\n\n\\textbf{Bold}\n\\textit{italic}\n\\underline{underline}\n\n\\centering\n\\raggedright\n\\raggedleft\n\\flushright\n\\flushleft\n\\usepackage{ragged2e}\n\\begin{center}\n    center block \\textbf{bold}\n\\end{center}\n\\begin{flushleft} flushleft block \\end{flushleft}\n\\begin{flushright} flushright block \\end{flushright}\n\\begin{FlushLeft} FlushLeft block \\end{FlushLeft}\n\\begin{FlushRight} FlushRight block \\end{FlushRight}\n\n\\\\\n\\newline\n\\break\n\\hfill\n\\vfill\n\\pagebreak\n\\newpage\n\\clearpage\n\n\\begin{itemize}\n    \\item[!] itemize 1\n    \\item \\begin{enumerate}\n              \\item enumerate 1\n              \\item \\begin{itemize}\n                        \\item itemize 3\n                        \\item \\begin{enumerate}\n                                  \\item enum 2\n                                  \\item \\begin{enumerate}\n                                            \\item enum 3\n                                  \\end{enumerate}\n                        \\end{enumerate}\n              \\end{itemize}\n    \\end{enumerate}\n    \\item itemize 2\n\\end{itemize}\n\\begin{description}\n    \\item[description 1] description text 1\n\\end{description}\n\n\\part{part 1}\n\\part{part 2}\n\\chapter{chapter}\n\\section{section}\n\\subsection{subsection}\n\\subsubsection{subsubsection}\n\\paragraph{paragraph}\n\\subparagraph{subparagraph}\n\n\\textcolor{blue}{This is \\textbf{bold and blue}.}\n\n\\href{https://www.overleaf.com/learn}\n\\href{https://www.overleaf.com/learn}{Overleaf Learn} % testo del link\n\n\\usepackage{geometry}[letterpaper = true,top=2cm\\textwidth, points={1, cane,3 ,4}]\n\\usepackage{listings}\n\n\\begin{tabularr}{ |c|c|c| }\n    \\hline\n    \\textbf{cell1} & cell2 & cell3 \\\\\n    \\hline\n    cell4 & cell5 & cell6 \\\\\n    \\hline\n    cell7 & cell8 & \\begin{tabular}{ |c|c|c| }\n\\hlinee\n\\textbf{cell1} & cell2 & cell3 \\\\\n\\hline\ncell4 & cell5 & cell6 \\\\\n\\hline\ncell7 & cell8 & cell9 \\\\\n\\hline\n\\end{tabular}\n\\\\\n    \\hline\n\\end{tabularr}\n\n\\begin{verbatim}\n    Text enclosed inside \\texttt{verbatim} environment\n    is printed directly\n    and all \\LaTeX{} commands are ignored.\n\\end{verbatim}\n\n\\begin{lstlisting}[language=Python]\nimport numpy as np\n\ndef incmatrix(genl1,genl2):\n    m = len(genl1)\n    n = len(genl2)\n    M = None #to become the incidence matrix\n    VT = np.zeros((n*m,1), int)  #dummy variable\n\n    #compute the bitwise xor matrix\n    M1 = bitxormatrix(genl1)\n    M2 = np.triu(bitxormatrix(genl2),1)\n\n    for i in range(m-1):\n        for j in range(i+1, m):\n            [r,c] = np.where(M2 == M1[i,j])\n            for k in range(len(r)):\n                VT[(i)*n + r[k]] = 1;\n                VT[(i)*n + c[k]] = 1;\n                VT[(j)*n + r[k]] = 1;\n                VT[(j)*n + c[k]] = 1;\n\n                if M is None:\n                    M = np.copy(VT)\n                else:\n                    M = np.concatenate((M, VT), 1)\n\n                VT = np.zeros((n*m,1), int)\n\n    return M\n\\end{lstlisting}\n\nInline math\n\n\\( 2+2=4 \\)\n\n$ 2+2=4 $\n\n\\begin{math}\n2+2=4\n\\end{math}\n\n\\\\\n\nBlock math\n\n\\[ 2+2=4 \\]\n\n\\begin{equation}\n2+2=4\n\\end{equation}\n\n\\begin{displaymath}\n2+2=4\n\\end{displaymath}\n\n",
+                                    range: 189..3665,
                                 },
                                 inner: [
                                     Pair {
@@ -6485,6 +6485,366 @@
                                             },
                                         ],
                                     },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "Inline math",
+                                            range: 3484..3495,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: text,
+                                                span: Span {
+                                                    str: "Inline math",
+                                                    range: 3484..3495,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "\n\n",
+                                            range: 3495..3497,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: newlines,
+                                                span: Span {
+                                                    str: "\n\n",
+                                                    range: 3495..3497,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "\\( 2+2=4 \\)",
+                                            range: 3497..3508,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: math_inline,
+                                                span: Span {
+                                                    str: "\\( 2+2=4 \\)",
+                                                    range: 3497..3508,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: math_content_round,
+                                                        span: Span {
+                                                            str: " 2+2=4 ",
+                                                            range: 3499..3506,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "\n\n",
+                                            range: 3508..3510,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: newlines,
+                                                span: Span {
+                                                    str: "\n\n",
+                                                    range: 3508..3510,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "$ 2+2=4 $",
+                                            range: 3510..3519,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: math_inline,
+                                                span: Span {
+                                                    str: "$ 2+2=4 $",
+                                                    range: 3510..3519,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: math_content_dollar,
+                                                        span: Span {
+                                                            str: " 2+2=4 ",
+                                                            range: 3511..3518,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "\n\n",
+                                            range: 3519..3521,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: newlines,
+                                                span: Span {
+                                                    str: "\n\n",
+                                                    range: 3519..3521,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "\\begin{math}\n2+2=4\n\\end{math}",
+                                            range: 3521..3550,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: math_inline,
+                                                span: Span {
+                                                    str: "\\begin{math}\n2+2=4\n\\end{math}",
+                                                    range: 3521..3550,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: math_content_math,
+                                                        span: Span {
+                                                            str: "\n2+2=4\n",
+                                                            range: 3533..3540,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "\n\n",
+                                            range: 3550..3552,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: newlines,
+                                                span: Span {
+                                                    str: "\n\n",
+                                                    range: 3550..3552,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "\\\\",
+                                            range: 3552..3554,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: linebreak,
+                                                span: Span {
+                                                    str: "\\\\",
+                                                    range: 3552..3554,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "\n\n",
+                                            range: 3554..3556,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: newlines,
+                                                span: Span {
+                                                    str: "\n\n",
+                                                    range: 3554..3556,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "Block math",
+                                            range: 3556..3566,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: text,
+                                                span: Span {
+                                                    str: "Block math",
+                                                    range: 3556..3566,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "\n\n",
+                                            range: 3566..3568,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: newlines,
+                                                span: Span {
+                                                    str: "\n\n",
+                                                    range: 3566..3568,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "\\[ 2+2=4 \\]",
+                                            range: 3568..3579,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: math_block,
+                                                span: Span {
+                                                    str: "\\[ 2+2=4 \\]",
+                                                    range: 3568..3579,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: math_content_squared,
+                                                        span: Span {
+                                                            str: " 2+2=4 ",
+                                                            range: 3570..3577,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "\n\n",
+                                            range: 3579..3581,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: newlines,
+                                                span: Span {
+                                                    str: "\n\n",
+                                                    range: 3579..3581,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "\\begin{equation}\n2+2=4\n\\end{equation}",
+                                            range: 3581..3618,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: math_block,
+                                                span: Span {
+                                                    str: "\\begin{equation}\n2+2=4\n\\end{equation}",
+                                                    range: 3581..3618,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: math_content_equation,
+                                                        span: Span {
+                                                            str: "\n2+2=4\n",
+                                                            range: 3597..3604,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "\n\n",
+                                            range: 3618..3620,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: newlines,
+                                                span: Span {
+                                                    str: "\n\n",
+                                                    range: 3618..3620,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "\\begin{displaymath}\n2+2=4\n\\end{displaymath}",
+                                            range: 3620..3663,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: math_block,
+                                                span: Span {
+                                                    str: "\\begin{displaymath}\n2+2=4\n\\end{displaymath}",
+                                                    range: 3620..3663,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: math_content_displaymath,
+                                                        span: Span {
+                                                            str: "\n2+2=4\n",
+                                                            range: 3639..3646,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: item,
+                                        span: Span {
+                                            str: "\n\n",
+                                            range: 3663..3665,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: newlines,
+                                                span: Span {
+                                                    str: "\n\n",
+                                                    range: 3663..3665,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
                                 ],
                             },
                         ],
@@ -6495,7 +6855,7 @@
                 rule: EOI,
                 span: Span {
                     str: "",
-                    range: 3498..3498,
+                    range: 3679..3679,
                 },
                 inner: [],
             },

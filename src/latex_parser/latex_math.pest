@@ -1,0 +1,7 @@
+math_expr = { SOI ~ math_element* ~ EOI }
+math_element = { operator | number | variable | unknown | whitespace }
+operator = { "+" | "-" | "*" | "/" | "=" }
+number = { ASCII_DIGIT+ ~ ("." ~ ASCII_DIGIT+)? }
+variable = { ASCII_ALPHA+ }
+whitespace = _{ WHITE_SPACE+ }
+unknown = { ANY }

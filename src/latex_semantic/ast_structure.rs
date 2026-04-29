@@ -19,6 +19,7 @@ pub enum AstItemNode {
     Comment(CommentNode),     // rule: comment
     Whitespace(WhitespaceNode), // rule: whitespace
     RawText(TextNode),        // rule: text (raw)
+    Math(MathNode),
 }
 
 // BlockNode rappresenta una qualsiasi porzione di codice Latex racchiuso tra i comandi \begin e \end.
@@ -129,6 +130,13 @@ pub enum OptItemNode {
     Text(TextNode),         // rule: opt_text
 }
 
+// MathNode rappresenta un blocco o elemento matematico
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct MathNode {
+    pub content: String,
+    pub is_inline: bool,
+}
+
 // ERRORI SEMANTICI
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub enum SemanticError {
@@ -154,4 +162,5 @@ pub enum SemanticError {
     MissingArgsForCommand(String, usize, usize),
     TextBeforeDocument,
     UnexpectedRule(Rule),
+    UnexpectedMathRule(Rule),
 }

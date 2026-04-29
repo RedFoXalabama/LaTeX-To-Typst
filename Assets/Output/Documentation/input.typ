@@ -207,3 +207,21 @@ def incmatrix(genl1,genl2):
     return M
 ```
 
+Inline math
+
+$2+2=4$
+
+$2+2=4$
+
+$2+2=4$
+
+\
+
+Block math
+
+$ 2+2=4 $
+
+$ 2+2=4 $
+
+$ 2+2=4 $
+

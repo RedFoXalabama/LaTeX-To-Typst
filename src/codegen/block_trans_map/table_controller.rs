@@ -87,6 +87,12 @@ fn build_table_entries(items: &[AstItemNode]) -> Vec<TableEntry> {
                     entries.push(TableEntry::Row(vec![rendered]));
                 }
             }
+            AstItemNode::Math(math) => {
+                let rendered = crate::codegen::render_math(math);
+                if !rendered.is_empty() {
+                    entries.push(TableEntry::Row(vec![rendered]));
+                }
+            }
         }
     }
 

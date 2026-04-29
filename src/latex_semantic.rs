@@ -5,8 +5,10 @@ pub use ast_structure::*;
 use log::error; //importo tutte le strutture e gli enumerati che compongono l'AST
 
 use crate::latex_parser::Rule;
+use crate::latex_parser::math::{LatexMathParser, Rule as MathRule};
 use crate::latex_semantic::reqarg_map::reqarg_count;
 use crate::utils::{COMMANDWARNING, drop_command_warn};
+use pest::Parser;
 use pest::iterators::{Pair, Pairs};
 // ALBERO AST (Abstract Syntax Tree) - rappresentazione ad albero della struttura sintattica del documento LaTeX,
 // costruita a partire dal parse tree di pest.
@@ -99,6 +101,8 @@ fn build_item(pair: Pair<Rule>) -> Result<AstItemNode, SemanticError> {
     match child.as_rule() {
         Rule::block => Ok(AstItemNode::Block(build_block(child)?)),
         Rule::block_raw => Ok(AstItemNode::Block(build_block_raw(child)?)),
+        Rule::math_inline => Ok(AstItemNode::Math(build_math(child, true)?)),
+        Rule::math_block => Ok(AstItemNode::Math(build_math(child, false)?)),
         Rule::command => Ok(AstItemNode::Command(build_command(child)?)),
         Rule::text => Ok(AstItemNode::Text(build_text(child)?)),
         Rule::newlines => Ok(AstItemNode::Newlines(build_newlines(child)?)),
@@ -108,6 +112,33 @@ fn build_item(pair: Pair<Rule>) -> Result<AstItemNode, SemanticError> {
 
         other => Err(SemanticError::UnexpectedItemRule(other)),
     }
+}
+
+// Un blocco matematico rappresenta una formula in linea o a blocchi.
+fn build_math(pair: Pair<Rule>, is_inline: bool) -> Result<MathNode, SemanticError> {
+    let mut content = String::new();
+    for child in pair.into_inner() {
+        match child.as_rule() {
+            Rule::math_content_round | Rule::math_content_dollar | Rule::math_content_math | Rule::math_content_squared | Rule::math_content_displaymath | Rule::math_content_equation => {
+                content = child.as_str().to_string();
+            }
+            _ => return Err(SemanticError::UnexpectedMathRule(child.as_rule())),
+        }
+    }
+
+    match LatexMathParser::parse(MathRule::math_expr, &content) {
+        Ok(_) => {
+            // parsed successfully
+        }
+        Err(e) => {
+            error!("Errore nel parsing della formula matematica: {}", e);
+        }
+    }
+
+    Ok(MathNode {
+        content,
+        is_inline,
+    })
 }
 
 // Un blocco rappresenta un ambiente LaTeX (come \begin{...} ... \end{...}) e viene trasformato in un BlockNode.

@@ -1623,6 +1623,102 @@ AstDocument {
                             count: 2,
                         },
                     ),
+                    Text(
+                        TextNode {
+                            value: "Inline math",
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 2,
+                        },
+                    ),
+                    Math(
+                        MathNode {
+                            content: " 2+2=4 ",
+                            is_inline: true,
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 2,
+                        },
+                    ),
+                    Math(
+                        MathNode {
+                            content: " 2+2=4 ",
+                            is_inline: true,
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 2,
+                        },
+                    ),
+                    Math(
+                        MathNode {
+                            content: "\n2+2=4\n",
+                            is_inline: true,
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 2,
+                        },
+                    ),
+                    Linebreak(
+                        LinebreakNode {
+                            value: "\\\\",
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 2,
+                        },
+                    ),
+                    Text(
+                        TextNode {
+                            value: "Block math",
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 2,
+                        },
+                    ),
+                    Math(
+                        MathNode {
+                            content: " 2+2=4 ",
+                            is_inline: false,
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 2,
+                        },
+                    ),
+                    Math(
+                        MathNode {
+                            content: "\n2+2=4\n",
+                            is_inline: false,
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 2,
+                        },
+                    ),
+                    Math(
+                        MathNode {
+                            content: "\n2+2=4\n",
+                            is_inline: false,
+                        },
+                    ),
+                    Newlines(
+                        NewlinesNode {
+                            count: 2,
+                        },
+                    ),
                 ],
             },
         ),

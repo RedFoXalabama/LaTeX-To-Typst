@@ -1,7 +1,17 @@
 file = { SOI ~ item* ~ EOI }
 
 // Add alignment_tab to items
-item = { whitespace | block_raw | block | command | text | newlines | linebreak | comment }
+item = { whitespace | math_block | math_inline | block_raw | block | command | text | newlines | linebreak | comment }
+
+math_inline = { "\\(" ~ math_content_round ~ "\\)" | "$" ~ math_content_dollar ~ "$" | "\\begin{math}" ~ math_content_math ~ "\\end{math}" }
+math_block = { "\\[" ~ math_content_squared ~ "\\]" | "\\begin{displaymath}" ~ math_content_displaymath ~ "\\end{displaymath}" | "\\begin{equation}" ~ math_content_equation ~ "\\end{equation}" }
+
+math_content_round = { (!"\\)" ~ ANY)* }
+math_content_dollar = { (!"$" ~ ANY)* }
+math_content_math = { (!"\\end{math}" ~ ANY)* }
+math_content_squared = { (!"\\]" ~ ANY)* }
+math_content_displaymath = { (!"\\end{displaymath}" ~ ANY)* }
+math_content_equation = { (!"\\end{equation}" ~ ANY)* }
 
 whitespace = { (" " | "\t")+ }
 
@@ -23,12 +33,12 @@ linebreak = { "\\\\" }
 newlines = { NEWLINE+ }
 comment = { ("%" ~ (!NEWLINE ~ ANY)*) }
 
-text = { (!("\\" | NEWLINE | comment ) ~ ANY)+ }
+text = { (!("\\" | "$" | "\\[" | NEWLINE | comment ) ~ ANY)+ }
 
 required_arg = { "{" ~ argument ~ "}" }
     argument = { arg_item* } //se si vuole avere un req_arg vuoto impostare -> * invece che +, con + almeno 1 arg
         arg_item = { command | required_arg | newlines | linebreak | arg_text }
-            arg_text = { (!("\\" | "{" | "}" | NEWLINE) ~ ANY)+ }
+            arg_text = { (!("\\" | "{" | "}" | "$" | "\\[" | NEWLINE) ~ ANY)+ }
 
 optional_arg = { "[" ~ optional_list? ~ "]" } // Un argomento opzionale può essere vuoto o contenere una lista di opzioni
     optional_list = { opt_entry ~ ("," ~ opt_entry)* } // Una lista di opzioni è composta da coppie chiave-valore o valori singoli separati da virgole
@@ -42,7 +52,7 @@ optional_arg = { "[" ~ optional_list? ~ "]" } // Un argomento opzionale può ess
                         sub_value_list = { (!forbidden_char ~ ANY)+}
 
             opt_item = { command | required_arg | newlines | opt_text } //non sono presenti linebreak, ASSUMO CHE NON CI SIANO LINEBREAK ALL'INTERNO DEGLI ARGOMENTI OPZIONALI
-                opt_text = { (!("\\" | "[" | "]" | NEWLINE) ~ ANY)+ }
+                opt_text = { (!("\\" | "[" | "]" | "$" | "\\[" | NEWLINE) ~ ANY)+ }
 
 // Da utilizzare se assumiamo che ci siano errori nel file di latex, altrimenti non è necessario escludere questi
 // caratteri nei vari argomenti, dato che la sintassi di LaTeX prevede che siano usati in modo specifico e non come testo normale.

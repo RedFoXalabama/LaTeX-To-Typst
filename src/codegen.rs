@@ -10,6 +10,7 @@ use crate::latex_semantic::*;
 use crate::utils::{COMMANDWARNING, drop_command_warn};
 
 pub fn ast_to_typst(doc: &AstDocument) -> String {
+    crate::globals::reset_globals();
     doc.items.iter().map(render_item).collect()
 }
 

@@ -6,9 +6,6 @@ fn run_transpilation(input_path: &str) -> Result<String, Box<dyn std::error::Err
     let ast = latex_semantic::build_ast(parse_tree)
         .map_err(|e| std::io::Error::new(std::io::ErrorKind::InvalidData, format!("{e:?}")))?;
     let typst_output = codegen::ast_to_typst(&ast);
-    print!("-->");
-    print!("{typst_output}");
-    print!("<--");
     Ok(typst_output)
 }
 

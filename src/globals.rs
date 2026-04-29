@@ -56,6 +56,7 @@ pub fn read_in_listing_priority() -> Option<ListType> {
         .last()
         .copied()
 }
+
 pub fn pop_in_listing_priority() {
     IN_LISTING
         .priority
@@ -76,16 +77,26 @@ pub fn pop_in_listing_priority() {
 pub struct PartCounter{
     value: AtomicUsize,
 }
+
 pub static PART_COUNTER: PartCounter = PartCounter {
     value: AtomicUsize::new(0),
 };
+
 pub fn update_part_counter() {
     PART_COUNTER.value.fetch_add(1, Ordering::SeqCst);
 }
+
 pub fn get_part_counter() -> String {
     let value = PART_COUNTER.value.load(Ordering::SeqCst);
     to_roman(value)
 }
+
+pub fn reset_globals() {
+    IN_LISTING.value.store(false, Ordering::SeqCst);
+    IN_LISTING.priority.lock().unwrap().clear();
+    PART_COUNTER.value.store(0, Ordering::SeqCst);
+}
+
 fn to_roman(mut n: usize) -> String {
     if n == 0 { //valore standard in caso di errore
         return "N".to_string();

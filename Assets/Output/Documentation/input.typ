@@ -126,7 +126,7 @@ center block *bold*
 ]
 #v(2em)
 
-/*ERROR: NOT-YET-IMPLEMENTED \chapter{chapter}*/
+/*WARN: NotImplemented("chapter"): chapter \chapter{chapter}*/
 = section
 
 == subsection
@@ -143,7 +143,7 @@ center block *bold*
 #link("https://www.overleaf.com/learn")
 #link("https://www.overleaf.com/learn")[Overleaf Learn]// testo del link
 
-/*ERROR: NOT-YET-IMPLEMENTED \usepackage{geometry}*/
+/*WARN: NotImplemented("usepackage"): usepackage \usepackage{geometry}*/
 /* usepackage{listings} */
 
 /*WARN: EnvironmentBlockNotImplemented("tabularr"): Environment block 'tabularr' not implemented or wrong*/
@@ -154,7 +154,7 @@ cell4 & cell5 & cell6 \
 
 cell7 & cell8 & #table(
 	columns: 3,
-	[/*ERROR: WRONG-COMMAND OR NOT-IMPLEMENTED \hlinee{}*/],
+	[/*WARN: WrongCommandOrNotImplemented("hlinee"): hlinee \hlinee{}*/],
 	[*cell1*],
 	[cell2],
 	[cell3],

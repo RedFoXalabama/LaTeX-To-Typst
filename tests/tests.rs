@@ -87,6 +87,7 @@ test_ok!(test_ok_tables, "tables");
 test_ok!(test_ok_text_alignment, "text_alignment");
 test_ok!(test_ok_text_formatting, "text_formatting");
 test_ok!(test_ok_text_listing, "text_listing");
+test_ok!(test_ok_math, "math");
 
 // ---------------------------------------------------------
 // ERROR CASES

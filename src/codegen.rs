@@ -23,11 +23,20 @@ pub(crate) fn render_item(item: &AstItemNode) -> String {
         AstItemNode::Block(block_node) => render_block(block_node),
         AstItemNode::Text(text_node) => render_text(text_node),
         AstItemNode::RawText(text_node) => render_raw_text(text_node),
+        AstItemNode::Math(math_node) => render_math(math_node),
         AstItemNode::Newlines(newlines_node) => render_newlines(newlines_node),
         AstItemNode::Command(command_node) => render_command(command_node),
         AstItemNode::Linebreak(linebreak_node) => render_linebreak(linebreak_node),
         AstItemNode::Whitespace(whitespace_node) => render_whitespace(whitespace_node),
         AstItemNode::Comment(comment_node) => render_comment(comment_node),
+    }
+}
+
+pub(crate) fn render_math(math_node: &MathNode) -> String {
+    if math_node.is_inline {
+        format!("${}$", math_node.content.trim())
+    } else {
+        format!("$ {} $", math_node.content.trim())
     }
 }
 

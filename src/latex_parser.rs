@@ -14,6 +14,13 @@ use crate::utils::PARSEERROR;
 #[grammar = "latex_parser/latex.pest"] // specifica il file .pest che contiene la grammatica
 pub struct LatexParser;
 
+pub mod math {
+    use pest_derive::Parser;
+    #[derive(Parser)]
+    #[grammar = "latex_parser/latex_math.pest"]
+    pub struct LatexMathParser;
+}
+
 // Legge un file LaTeX e ne restituisce il contenuto in formato STRING.
 pub fn read_latex_file<P: AsRef<Path>>(path: P) -> Result<String, Error> {
     fs::read_to_string(path)

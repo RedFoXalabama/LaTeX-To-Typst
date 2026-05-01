@@ -21,7 +21,7 @@ pub fn render_list(name: &str, reqs: Vec<RequiredArgNode>, opts: Vec<OptionalArg
                     if let Some(first) = opts.first() {
                         let opts_arg = render_opt_entry(&first.entries);
                         if !opts_arg.is_empty() {
-                            out.push_str(&format!(" {}: ", opts_arg));
+                            out.push_str(&format!(" {}:", opts_arg));
                         }
                     }
                 },
@@ -55,6 +55,5 @@ fn render_list_line(sign: char, out: &mut String, opts: Vec<OptionalArgNode>) ->
             out.push_str(&format!(" [{}]", opts_arg));
         }
     }
-    out.push(' ');
     out
 }

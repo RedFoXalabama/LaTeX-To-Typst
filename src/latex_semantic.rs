@@ -74,9 +74,7 @@ fn build_document(file_pair: Pair<Rule>) -> Result<AstDocument, SemanticError> {
                     }
                 }
 
-                if !matches!(item, AstItemNode::Whitespace(_)) {
-                    items.push(item);
-                }
+                items.push(item);
             }
             Rule::EOI => {} // ignorato nell'AST
 

@@ -3,9 +3,7 @@ use std::fs;
 
 // ----------------------------------- SAVE PATH FOR DOC -------------------------------------------
 static INPUT_DIR: &str = "Assets/Input/";
-static PARSETREE_PATH: &str = "Assets/Output/Documentation/output_ParseTree.txt";
-static AST_PATH: &str = "Assets/Output/Documentation/output_AST.txt";
-static CODEGEN_DIR: &str = "Assets/Output/Documentation/";
+static OUTPUT_DIR: &str = "Assets/Output/";
 
 // ------------------------------ MAIN EXECUTION ---------------------------------------------------
 fn main() {
@@ -21,13 +19,23 @@ fn main() {
             log::info!("Translating file: {}", path.display());
 
             let input_path = path.to_str().unwrap();
+            let parse_tree_path: &str = &format!(
+                "{}{}_ParseTree.txt",
+                OUTPUT_DIR,
+                path.file_stem().unwrap().to_str().unwrap()
+            );
+            let ast_path: &str = &format!(
+                "{}{}_AST.txt",
+                OUTPUT_DIR,
+                path.file_stem().unwrap().to_str().unwrap()
+            );
             let codegen_path: &str = &format!(
                 "{}{}.typ",
-                CODEGEN_DIR,
+                OUTPUT_DIR,
                 path.file_stem().unwrap().to_str().unwrap()
             );
 
-            if let Err(err) = translate_file(input_path, PARSETREE_PATH, AST_PATH, codegen_path) {
+            if let Err(err) = translate_file(input_path, parse_tree_path, ast_path, codegen_path) {
                 eprintln!("{}", err);
                 std::process::exit(1);
             } else {

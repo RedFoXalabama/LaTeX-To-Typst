@@ -38,10 +38,6 @@ impl TransMap<CommandNode> for CommandTransMap {
             )
         })
     }
-
-    fn is_supported(name: &str) -> bool {
-        get_trans_map().contains_key(name)
-    }
 }
 
 fn get_trans_map() -> &'static HashMap<&'static str, CommandTranslationFn> {

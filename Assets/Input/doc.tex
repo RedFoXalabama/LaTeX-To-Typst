@@ -6,264 +6,232 @@
 
 \title{LaTeX2Typst Documentation}
 \author{Gianfranco Baccarella e Vito Di Bari}
-\date{13 April 2026}
+\date{1 May 2026}
 
 \begin{document}
 
-\maketitle
-\tableofcontents
+    \maketitle
+    \tableofcontents
 
-\section{Introduzione}
+    \section{Introduzione}
 
-LaTeX rappresenta un potente linguaggio di markup attualmente utilizzato in numerosi contesti, soprattutto accademici. 
-La sua potenza rappresentativa permette di realizzare di documenti di testo secondo regole di formattazione e sintassi ben definite. 
+    LaTeX rappresenta un potente linguaggio di markup attualmente utilizzato in numerosi contesti, soprattutto accademici.
+    La sua potenza rappresentativa permette di realizzare di documenti di testo secondo regole di formattazione e sintassi ben definite.
 
-LaTeX è definito come un linguaggio di markup di tipo WYSIWYM (What You See Is What You Mean), ossia all'utente è richiesto di redigere un file sorgente che sarà successivamente interpretato da un compilatore dedicato per produrre il documento finale.
-Questo approccio risultare può risultare troppo complesso per chi si approccia per la prima volta ad un nuovo strumento per la formattazione di testi differente dai classici programmi come Word di Microsoft. 
+    LaTeX è definito come un linguaggio di markup di tipo WYSIWYM (What You See Is What You Mean), ossia all'utente è richiesto di redigere un file sorgente che sarà successivamente interpretato da un compilatore dedicato per produrre il documento finale.
+    Questo approccio risultare può risultare troppo complesso per chi si approccia per la prima volta ad un nuovo strumento per la formattazione di testi differente dai classici programmi come Word di Microsoft.
 
-Typst è un nuovo linguaggio di mark-up che presenta una sintassi in generale più semplice rispetto a quella di LaTeX e che vanta di una serie di funzionalità built-in, ossia disponibili senza la necessità di importare package specifici, come le immagini o i blocchi di codice.
+    Typst è un nuovo linguaggio di mark-up che presenta una sintassi in generale più semplice rispetto a quella di LaTeX e che vanta di una serie di funzionalità built-in, ossia disponibili senza la necessità di importare package specifici, come le immagini o i blocchi di codice.
 
-Da questo nasce l'idea di creare un compilatore che sia in grado di tradurre un file sorgente scritto in linguaggio LaTeX nel corrispettivo scritto in linguaggio Typst. Il compilatore è stato modellato secondo un'architettura a due fasi:
-\begin{itemize}
-    \item back-end: trasforma il file sorgente scritto in LaTeX in una \textit{rappresentazione intermedia} (IR), basandosi sulle regole di sintassi proprie di LaTeX;
-    \item front-end: trasforma la IR nel file Typst.
-\end{itemize}
+    Da questo nasce l'idea di creare un compilatore che sia in grado di tradurre un file sorgente scritto in linguaggio LaTeX nel corrispettivo scritto in linguaggio Typst. Il compilatore è stato modellato secondo un'architettura a due fasi:
+    \begin{itemize}
+        \item back-end: trasforma il file sorgente scritto in LaTeX in una \textit{rappresentazione intermedia} (IR), basandosi sulle regole di sintassi proprie di LaTeX;
+        \item front-end: trasforma la IR nel file Typst.
+    \end{itemize}
 
-In questo caso specifico, la IR è stata implementata attraverso un Abstract Syntax Tree.
+    In questo caso specifico, la IR è stata implementata attraverso un Abstract Syntax Tree.
 
-\subsection{Lavori correlati}
-\paragraph{\href{https://github.com/scipenai/tylax}{Tylax}}
+    \subsection{Lavori correlati}
+    \paragraph{\href{https://github.com/scipenai/tylax}{Tylax}}
 
-Realizzato dall'utente \href{https://github.com/scipenai}{scipenai}. Si tratta di un progetto analogo, che permette di tradurre file LaTex in Typst e viceversa. Si tratta di progetto ancora in fase sviluppo, ma che si trova in una fase più avanzata rispetto a quello proposto da questo lavoro e che permette già di tradurre molte strutture sintattiche, compresa una sezione separata esclusiva per la matematica.
+    Realizzato dall'utente \href{https://github.com/scipenai}{scipenai}. Si tratta di un progetto analogo, che permette di tradurre file LaTex in Typst e viceversa. Si tratta di progetto ancora in fase sviluppo, ma che si trova in una fase più avanzata rispetto a quello proposto da questo lavoro e che permette già di tradurre molte strutture sintattiche, compresa una sezione separata esclusiva per la matematica.
 
-Tuttavia, al momento, non supporta la traduzione di alcuni comandi che sono stati gestiti dal presente lavoro, come: \texttt{maketitle} per la realizzazione del titolo e alcuni blocchi, l'environment \texttt{comment} per creare blocchi di commenti e \texttt{flush} per l'allineamento del testo.
+    Tuttavia, al momento, non supporta la traduzione di alcuni comandi che sono stati gestiti dal presente lavoro, come: \texttt{maketitle} per la realizzazione del titolo e alcuni blocchi, l'environment \texttt{comment} per creare blocchi di commenti e \texttt{flush} per l'allineamento del testo.
 
-È possibile provare una demo del software navigando verso la \href{https://convert.silkyai.cn}{pagina dedicata}. 
+    È possibile provare una demo del software navigando verso la \href{https://convert.silkyai.cn}{pagina dedicata}.
 
-\section{Scope del traduttore}
-Prima di passare allo sviluppo vero è proprio, è stato definito un documento che delinea lo lo scope del traduttore, ossia tutti i costrutti/comandi/environent che saranno supportati in questa prima versione dello strumento LaTeX2Typst.
+    \section{Scope del traduttore}
+    Prima di passare allo sviluppo vero è proprio, è stato definito un documento che delinea lo lo scope del traduttore, ossia tutti i costrutti/comandi/environent che saranno supportati in questa prima versione dello strumento LaTeX2Typst.
 
-La lista delle feature supportate è contenuta in Tabella 1 ed è basata sull'elenco \textit{LaTeX essentials} riportato nella \href{https://www.overleaf.com/learn}{documentazione ufficiale di Overleaf}.
+    La lista delle feature supportate è contenuta in Tabella 1 ed è basata sull'elenco \textit{LaTeX essentials} riportato nella \href{https://www.overleaf.com/learn}{documentazione ufficiale di Overleaf}.
 
-\begin{table}[ht]
+    \begin{table}[ht]
 
-\caption{Tabella di compatibilità delle feature (LaTeX \textrightarrow Typst)}
+        \caption{Tabella di compatibilità delle feature (LaTeX \textrightarrow Typst)}
 
-\begin{tabular}{|l|c|}
-\hline
-\textbf{Feature} & \textbf{Status} \\ \hline
-Struttura Documento & Supportato \\ \hline
-Metadati e Titoli & Supportato \\ \hline
-Sezionamento & Supportato \\ \hline
-Formattazione Testo & Supportato \\ \hline
-Simboli Speciali & Supportato \\ \hline
-Allineamento & Supportato \\ \hline
-Liste ed Elenchi & Supportato \\ \hline
-Matematica & Supportato \\ \hline
-Codice & Supportato \\ \hline
-Tabelle & Supportato \\ \hline
-Figure & Supportato \\ \hline
-Link & Supportato \\ \hline
-Spazi e Interruzioni & Supportato \\ \hline
-Pacchetti & Supportato \\ \hline
-Commenti & Supportato \\ \hline
-\end{tabular}
-\end{table}
-
-
-\section{Struttura del progetto}
-Il software è stato scritto interamente in linguaggio Rust. 
-L'architettura del transpiler segue una pipeline di elaborazione divisa in tre fasi principali, riportate in figura ed analizzate nei paragrafi seguenti.
-
-Nell'ottica di rendere il software quanto più robusto possibile, si è posta particolare attenzione alla validazione dell'input per ogni fase dell'architettura.
-L'approccio è stato quello di continuare la traduzione in casi di errore ben definiti e circoscritti (es: commentando un comando LaTeX non supportato), altrimenti il processo viene arrestato con un errore quanto più chiaro possibile (es: il nome specificato nell'apertura di un environment LaTeX non combacia con quello in chiusura).
-
-\begin{figure}
-    \centering
-    \includegraphics[width=\linewidth]{Latex2Typst.png}
-    \caption{struttura progetto}
-    \label{fig:placeholder}
-\end{figure}
+        \begin{tabular}{|l|c|}
+            \hline
+            \textbf{Feature} & \textbf{Status} \\ \hline
+            Struttura Documento & Supportato \\ \hline
+            Metadati e Titoli & Supportato \\ \hline
+            Sezionamento & Supportato \\ \hline
+            Formattazione Testo & Supportato \\ \hline
+            Simboli Speciali & Supportato \\ \hline
+            Allineamento & Supportato \\ \hline
+            Liste ed Elenchi & Supportato \\ \hline
+            Matematica & Supportato \\ \hline
+            Codice & Supportato \\ \hline
+            Tabelle & Supportato \\ \hline
+            Figure & Supportato \\ \hline
+            Link & Supportato \\ \hline
+            Spazi e Interruzioni & Supportato \\ \hline
+            Pacchetti & Supportato \\ \hline
+            Commenti & Supportato \\ \hline
+        \end{tabular}
+    \end{table}
 
 
-\subsection{Analisi Sintattica - Parsing}
+    \section{Struttura del progetto}
+    Il software è stato scritto interamente in linguaggio Rust.
+    L'architettura del transpiler segue una pipeline di elaborazione divisa in tre fasi principali, riportate in figura ed analizzate nei paragrafi seguenti.
 
-Durante questo processo, il parser si assicura che il file in input, scritto in linguaggio LaTeX (source), abbia una struttura conforme a una grammatica ben specifica. 
-Il parser non è stato scritto a mano, bensì generato automaticamente dalla libreria \href{https://docs.rs/pest/2.8.6/pest/}{Pest}, un parser generator per Rust, sulla base della grammatica specificata nei file:
-\begin{itemize}
-    \item \texttt{/src/latex|\_parser/latex.pest}
-    \item \texttt{/src/latex\_parser/latex math.pest}
-\end{itemize}
-L'aspetto formale di Pest verrà approfondito nel paragrafo seguente.
+    Nell'ottica di rendere il software quanto più robusto possibile, si è posta particolare attenzione alla validazione dell'input per ogni fase dell'architettura.
+    L'approccio è stato quello di continuare la traduzione in casi di errore ben definiti e circoscritti (es: commentando un comando LaTeX non supportato), altrimenti il processo viene arrestato con un errore quanto più chiaro possibile (es: il nome specificato nell'apertura di un environment LaTeX non combacia con quello in chiusura).
 
-È riportato di seguito un frammento significativo della grammatica, dove è presente lo \textit{start symbol} \texttt{file} della grammatica prevista.
+    \begin{figure}
+        \centering
+        \includegraphics[width=\linewidth]{Latex2Typst.png}
+        \caption{struttura progetto}
+        \label{fig:placeholder}
+    \end{figure}
 
-\begin{verbatim}
+
+    \subsection{Analisi Sintattica - Parsing}
+
+    Durante questo processo, il parser si assicura che il file in input, scritto in linguaggio LaTeX (source), abbia una struttura conforme a una grammatica ben specifica.
+    Il parser non è stato scritto a mano, bensì generato automaticamente dalla libreria \href{https://docs.rs/pest/2.8.6/pest/}{Pest}, un parser generator per Rust, sulla base della grammatica non ricorsiva a sinistra specificata nei file:
+    \begin{itemize}
+        \item \texttt{/src/latex parser/latex.pest}
+        \item \texttt{/src/latex parser/latex math.pest}
+    \end{itemize}
+    L'aspetto formale di Pest verrà approfondito nel paragrafo seguente.
+
+    È riportato di seguito un frammento significativo della grammatica, dove è presente lo \textit{start symbol} \texttt{file} della grammatica prevista.
+
+    \begin{verbatim}
 file = { SOI ~ item* ~ EOI }
 item = { block | command | text | newlines | linebreak | comment }
 text = { (!("\\" | NEWLINE | comment) ~ ANY)+ }
-\end{verbatim}
+    \end{verbatim}
 
-L'ordine di definizione delle regole è fondamentale in quanto il parser si fermerà al primo token non terminale che viene rispettato dal lessema analizzato, quindi per esempio: se si considera un lessema che rispetta sia la regola \textit{command}, sia la regola \textit{text}, il parser lo risolverà con la regola \textit{command} poiché presente prima nel pattern.
+    L'ordine di definizione delle regole è fondamentale in quanto il parser si fermerà al primo token non terminale che viene rispettato dal lessema analizzato, quindi per esempio: se si considera un lessema che rispetta sia la regola \textit{command}, sia la regola \textit{text}, il parser lo risolverà con la regola \textit{command} poiché presente prima nel pattern.
 
-L'output del parser sarà un ParseTree, ossia un albero che si origina da una singola radice, ordinato, e dove ogni nodo corrisponde a un match tra un lessema del file sorgente e token definito in grammatica.
-Ogni nodo rispetta la struttura definita dalla classe \texttt{Pair}, i cui attributi sono:
-\begin{itemize}
-    \item \texttt{rule}: identificatore della regola grammaticale rispettata 
-    \item \texttt{span}:
+    L'output del parser sarà un ParseTree, ossia un albero che si origina da una singola radice, ordinato, e dove ogni nodo corrisponde a un match tra un lessema del file sorgente e token definito in grammatica.
+    Ogni nodo rispetta la struttura definita dalla struttura \texttt{Pair}, i cui attributi sono:
     \begin{itemize}
-        \item \texttt{str}: coordinate esatte del lessame inteso come sottostringa all'interno dell'intero file sorgente rappresentato come un'unica superstringa
-        \item \texttt{range}: il range occupato dai caratteri della sottostringa
+        \item \texttt{rule}: identificatore della regola grammaticale rispettata
+        \item \texttt{span}:
+        \begin{itemize}
+            \item \texttt{str}: coordinate esatte del lessame inteso come sottostringa all'interno dell'intero file sorgente rappresentato come un'unica superstringa
+            \item \texttt{range}: il range occupato dai caratteri della sottostringa
+        \end{itemize}
+        \item \texttt{inner}: lista ordinata di elementi figli, quindi altre istanze di \texttt{Pair}
     \end{itemize}
-    \item \texttt{inner}: lista ordinata di elementi figli, quindi altre istanze di \texttt{Pair}
-\end{itemize}
 
-L'elenco delle regole grammaticali definite per il parsing del testo è riportato di seguito:
-\begin{itemize}
-    \item \texttt{file}: intero testo del file di input
-    \item \texttt{item}: componente generale del testo
-    \item \texttt{name}: nome del comando
-    \item \texttt{block}: blocco begin e end
-    \item \texttt{command}: comando generale
-    \item \texttt{linebreak}: interruzione di riga segnalata in LaTeX come doppio backslash
-    \item \texttt{newlines}: interruzione di riga e nuove righe
-    \item \texttt{comment}: commento monoriga
-    \item \texttt{text}: testo semplice
-    \item \texttt{required arg}: argomento obbligatorio del comando
-    \item \texttt{argument}: contenuto del \texttt{required arg}
-    \item \texttt{arg item}: tipologia di argomento di \texttt{argument}; può essere un altro comando o un testo, permettendo così il nesting dei comandi
-    \item \texttt{arg\_text}: testo semplice di un \texttt{argument}
-    \item \texttt{optional\_arg}: argomento opzionale del comando
-    \item \texttt{optional\_list}: lista di argomenti che possono comporre un argomento opzionale
-    \item \texttt{opt\_entry}: argomento singolo della lista
-    \item \texttt{kv\_pair}: argomento chiave-valore
-    \item \texttt{key}: chiave del \texttt{kv\_pair}
-    \item \texttt{value}: valore del \texttt{kv\_pair}, può essere un semplice testo o una lista
-    \item \texttt{simple\_value}: valore composto da testo semplice
-    \item \texttt{value\_list}: valore composto da una lista di sottovalori
-    \item \texttt{sub\_value\_list}: sottovalori della \texttt{value\_list}
-    \item \texttt{opt\_item}: argomenti opzionali differenti dalla \texttt{kv\_pair}
-    \item \texttt{opt\_text}: testo semplice dell' \texttt{opt\_item}
-    \item \texttt{forbidden\_char}: insieme di caratteri da non considerare in determinate regole
-\end{itemize}
+    L'elenco delle regole grammaticali definite per il parsing del testo è riportato di seguito:
+    \begin{itemize}
+        \item \texttt{file}: intero testo del file di input
+        \item \texttt{item}: componente generale del testo
+        \item \texttt{name}: nome del comando
+        \item \texttt{block}: blocco begin e end
+        \item \texttt{command}: comando generale
+        \item \texttt{linebreak}: interruzione di riga segnalata in LaTeX come doppio backslash
+        \item \texttt{newlines}: interruzione di riga e nuove righe
+        \item \texttt{comment}: commento monoriga
+        \item \texttt{text}: testo semplice
+        \item \texttt{required arg}: argomento obbligatorio del comando
+        \item \texttt{argument}: contenuto del \texttt{required arg}
+        \item \texttt{arg item}: tipologia di argomento di \texttt{argument}; può essere un altro comando o un testo, permettendo così il nesting dei comandi
+        \item \texttt{arg text}: testo semplice di un \texttt{argument}
+        \item \texttt{optional arg}: argomento opzionale del comando
+        \item \texttt{optional list}: lista di argomenti che possono comporre un argomento opzionale
+        \item \texttt{opt entry}: argomento singolo della lista
+        \item \texttt{kv pair}: argomento chiave-valore
+        \item \texttt{key}: chiave del \texttt{kv pair}
+        \item \texttt{value}: valore del \texttt{kv pair}, può essere un semplice testo o una lista
+        \item \texttt{simple value}: valore composto da testo semplice
+        \item \texttt{value list}: valore composto da una lista di sottovalori
+        \item \texttt{sub value list}: sottovalori della \texttt{value list}
+        \item \texttt{opt item}: argomenti opzionali differenti dalla \texttt{kv pair}
+        \item \texttt{opt text}: testo semplice dell' \texttt{opt item}
+        \item \texttt{forbidden char}: insieme di caratteri da non considerare in determinate regole
+    \end{itemize}
 
-\subsubsection{Pest}
-%% TODO
-Pest è un parser generator che utilizza le \textbf{Parsing Expression Grammars} (PEG), ossia delle grammatiche che eliminano l'ambiguità alla radice grazie all'operatore di scelta ordinata `|`: il parser tenta di far corrispondere le espressioni nell'ordine in cui sono definite, selezionando la prima che ha successo.
+    \subsubsection{Pest}
 
-Le PEG, da definizione, adottano il principio di \textit{packrat parsing} tipicamente presente nell'approccio PEG
-Tuttavia Pest,  non adotta
+    Pest è una libreria che genera parser di tipo \textit{Recursive Descent Parser} sulla base di grammatiche della famiglia \textit{Parsing Expression Grammars} (PEG).
 
-Pest non implementa il backtracking quindi durante l'analisi, un'espressione o ha successo o fallisce: se ha successo, il passo successivo viene eseguito normalmente, ma se fallisce, l'intera espressione fallisce e il parsing verrà interrotto risultando in un errore bloccante per il software.
+    Le PEG sono grammatiche non ricorsive a sinistra che eliminano l'ambiguità alla radice grazie all'operatore di scelta ordinata: a differenza delle grammatiche tradizionali, il parser tenta di far corrispondere le espressioni seguendo rigorosamente l'ordine di definizione e selezionando la prima che ha successo. Questo approccio rende il processo di parsing diverso da quello usato per le \textit{context-free grammars}, poiché la scelta di una produzione esclude automaticamente le successive invece che considerarle tutte di pari priorità.
 
-Citando la documentazione di Pest: "in un sistema con backtracking, si tornerebbe indietro di un passo, “non mangiando” un carattere, e poi si riproverebbe. Ma i PEG non fanno questo. Nella regola \textit{first - second}, una volta che \textit{first} viene analizzato con successo, ha consumato alcuni caratteri che non torneranno mai indietro. \textit{second} può essere eseguito solo sull'input che \textit{first} non ha consumato."
-Il parsing attutato tramite pest può essere riassunto cosi: prova a far rispettare la prima espressione, se ha successo continua continua a far rispettare il pattern finché non si conclude, se non ha successo prova con un'altra espressione. Se nessuna espressione ha successo allora genera errore.
+    Le PEG, come \href{https://pdos.csail.mit.edu/~baford/packrat/thesis/thesis.pdf}{formulate originariamente} da Brian Frod, adottano il principio di \textit{packrat parsing} e backtracking arbitrario.
 
-Tornando all'esempio della grammatica prima mostrato: come possiamo vedere un file può essere composto da zero o più di un item, la definizione delle regole segue delle espressioni molto simili alle regex, ed a sua volta l'item deve essere composto da uno solo dei diversi token definiti.
-Item definisce quindi una regola/pattern generale che identifica ogni elemento presente nel file, successivamente si entra nello specifico di questi token come nella regola \textit{text} che definisce come testo qualsiasi elemento che contenga uno o più caratteri che non inizi con il \textit{backslash}, altrimenti verrebbe identificato con il token del comando, e che non rispetti la regola \textit{NEWLINE} o \textit{comment}.
-%% TODO
-\subsubsection{Errori sintattici}
-Affinché il processo di traduzione sia robusto, il sorgente LaTeX dev'essere ben formato e rispettare la grammatica.
-Se il parser incontra un lessema che non riesce a risolvere, l'intero processo viene bloccato e viene prodotto un messaggio di errore in console che fa riferimento alla porzione di input che lo ha generato.
+    Il packrat parsing è un algoritmo che punta ad ottimizzare le prestazioni del parser: l'idea è ridurre i tempi di parsing a costo di un utilizzo più aggressivo di memoria.
+    In un parser tradizionale, se una regola fallisce dopo molti tentativi, il parser fa backtracking e c'è il rischio di ricalcolare la stessa regola sullo stesso pezzo di testo più volte, peggiorando le prestazioni con tempi potenzialmente esponenziali. Il packrat risolve il problema utilizzando una \textit{tabella di memorizzazione}, cioè una struttura di dati in RAM che viene interrogata dal parser prima di risolvere una qualsiasi regola: se il risultato per il lessema corrente è presente (successo o fallimento), lo restituisce istantaneamente, altrimenti il parser lo risolve normalmente e salva il risultato in tabella.
 
-Nella fase di parsing viene effettuato il controllo dei soli \textit{errori sintattici} (o \textit{errori grammaticali}), ossia la sola correttezza sintattica della sequenza di lessemi rispetto alle regole formali definite nella grammatica PEG.
-Errori come comandi non riconosciuti oppure argomenti errati sono detti \textit{errori semantici} e saranno identificati più avanti nel processo di traduzione, dove si hanno più informazioni di contesto sull'intero file sorgente.
+    Un approccio del genere era improponibile quando i compilatori disponevano di poca RAM, richiedendo forte ottimizzazione sull'utilizzo di memoria.
+    Con la disponibilità di memoria odierna, il packrat parsing è sicuramente applicabile e permette di ottenere prestazioni lineari temporali (O(n)), a fronte di un consumo di memoria maggiore e proporzionale alla dimensione del file.
 
-Alcuni esempi di errori sintattici:
-\begin{itemize}
-    \item parentesi graffe di un argomento incomplete, solo aperta o solo chiusa
-    \item solo apertura o sola chiusura di un environment
-    \item apertura e chiusura di due environment differenti
-    \item caratteri numerici nella definizione di un environment    
-\end{itemize}
+    Pest dunque elimina l'ambiguità della grammatica con l'operatore di scelta ordinata indicato con \texttt{|}.
+    Citando la \href{https://pest.rs/book/grammars/peg.html#non-backtracking}{documentazione di Pest}: "in un sistema con backtracking, si tornerebbe indietro di un passo, “non mangiando” un carattere, e poi si riproverebbe. Ma i PEG non fanno questo. Nella regola \texttt{first - second}, una volta che \texttt{first} viene analizzato con successo, ha consumato alcuni caratteri che non torneranno mai indietro. \texttt{second} può essere eseguito solo sull'input che \texttt{first} non ha consumato."
+    Il parsing attutato tramite pest può essere riassunto cosi: prova a far rispettare la prima espressione, se ha successo continua continua a far rispettare il pattern finché non si conclude, se non ha successo prova con un'altra espressione. Se nessuna espressione ha successo allora genera errore.
 
-\subsection{Analisi Semantica - AST}
-Si tratta di uno stadio più avanzato dell'analisi, dove è possibile interpretare le istruzioni scritte in LaTeX e verificarne la loro correttezza in base al contesto in cui si trovano, andando oltre la mera grammatica.
+    Tuttavia, a differenza dell'approccio originale, Pest non implementa il backtracking, quindi, citando ancora la documentazione ufficiale, durante l'analisi un'espressione può avere successo o fallisce direttamente, risultando in un errore bloccante per il software.
 
-Per rendere più agevole la fase di analisi semantica, il ParseTree ottenuto precedentemente viene sintetizzato in un \textit{Abstract Syntax Tree} (AST).
-L'AST è dunque il formato individuato per costruire la \textit{rappresentazione intermedia} del file sorgente. 
-A differenza del ParseTree, l'AST è molto più sintetico, espressivo e leggibile, seppur mantenendo lo stesso contenuto informativo del file originario.
+    \subsubsection{Errori sintattici}
+    Affinché il processo di traduzione sia robusto, il sorgente LaTeX dev'essere ben formato e rispettare la grammatica.
+    Se il parser incontra un lessema che non riesce a risolvere, l'intero processo viene bloccato e viene prodotto un messaggio di errore in console che fa riferimento alla porzione di input che lo ha generato.
 
-Dire che l'AST sia più espressivo del ParseTree sta a significare che i nodi inglobano più informazione al loro interno che può essere di carattere locale (es: informazioni derivati dal fatto che un certo nodo è individuato all'interno in un ambiente LaTeX) o globale (es: informazioni relative al tipo di documento definito a monte del file sorgente).
+    Alcuni esempi di errori sintattici:
+    \begin{itemize}
+        \item parentesi graffe di un argomento incomplete, solo aperta o solo chiusa
+        \item solo apertura o sola chiusura di un environment
+        \item apertura e chiusura di due environment differenti
+        \item caratteri numerici nella definizione di un environment
+    \end{itemize}
 
-%% TODO
-Viene quindi effettuato un processo di decorazione in cui vengono aggiungente o semplificate informazioni come ad esempio il numero di nuove righe che nel ParseTree vengono rappresentate semplicemente come testo "n", differentemente dall'AST in cui l'oggetto \textbf{NewLineNode} possiede un attributo \textbf{count}. Ad esempio la stringa \textbf{title{LaTeX To Typst}} che nel ParseTree viene scomposta in 7 nodi ognuno padre dell'altro, differentemente nell'AST é rappresentato con solo 3 nodi.
+    Nella fase di parsing viene effettuato il controllo dei soli \textit{errori sintattici} (o \textit{errori grammaticali}), ossia la sola correttezza sintattica della sequenza di lessemi rispetto alle regole formali definite nella grammatica PEG.
+    Errori come comandi non riconosciuti oppure argomenti errati sono detti \textit{errori semantici} e saranno identificati più avanti nel processo di traduzione, dove si hanno più informazioni di contesto sull'intero file sorgente.
 
-\begin{itemize}
-    \item \textbf{CommandNode}, che possiede gli attributi \begin{itemize}
-        \item \textbf{Name}, il nome del comando
-        \item \textbf{OptionalArgs}, gli argomenti opzionali di un comando racchiusi tra parentesi quadre
-        \item \textbf{RequiredArgs}, gli argomenti obbligatori di un comando racchiusi tra parentesi graffe, in questo caso contiene un solo \textbf{RequiredArgNode}, che a sua volta possiede un attributo items di tipo \textbf{Text} \begin{itemize}
-            \item \textbf{TextNode}, contiene il valore testuale all'interno delle parentesi quadre.
+    \subsection{Analisi Semantica - AST}
+    Si tratta di uno stadio più avanzato dell'analisi, dove è possibile interpretare le istruzioni scritte in LaTeX e verificarne la loro correttezza in base al contesto in cui si trovano, andando oltre la mera grammatica.
+
+    Per rendere più agevole la fase di analisi semantica, il ParseTree ottenuto precedentemente viene sintetizzato in un \textit{Abstract Syntax Tree} (AST).
+    L'AST è dunque il formato individuato per costruire la \textit{rappresentazione intermedia} del file sorgente.
+    A differenza del ParseTree, l'AST è molto più sintetico, espressivo e leggibile, seppur mantenendo lo stesso contenuto informativo del file originario.
+
+    Dire che l'AST sia più espressivo del ParseTree sta a significare che i nodi inglobano più informazione al loro interno, che può essere di carattere locale (es: informazioni derivati dal fatto che un certo nodo è individuato all'interno in un ambiente LaTeX) o globale (es: informazioni relative al tipo di documento definito a monte del file sorgente).
+
+    Il formato finale di un nodo dell'AST lo si ottiene a valle di un processo di creazione e decorazione dello stesso con informazioni ereditate da nodi genitori o da nodi limitrofi. A titolo di esempio, la rappresentazione di un nodo che modella il comando \texttt{\textbackslash textit} è effettuato come segue: viene definita un'instanza di CommandNode e decorata con un vettore \texttt{required args} che contiene il contenuto testuale da formattare in corsivo, identificato come un argomento obbligatorio. Nel ParseTree, invece, vengono creati molti più nodi annidati che riprendono tutte le regole grammaticali incontrate dal lessema, quindi il comando, l'identificativo del comando, il suo contenuto, il contenuto testuale, e così via, risultando molto più verboso.
+
+    \begin{itemize}
+        \item \texttt{CommandNode}
+        \begin{itemize}
+            \item \texttt{name: String}: il nome del comando
+            \item \texttt{optional args: Vec OptionalArgNode }: gli argomenti opzionali di un comando, racchiusi tra parentesi quadre
+            \item \texttt{required args: Vec RequiredArgNode }: gli argomenti obbligatori di un comando, racchiusi tra parentesi graffe, in questo caso contiene un solo elemento
+            \begin{itemize}
+                \item \texttt{TextNode}: contiene il valore testuale
+            \end{itemize}
         \end{itemize}
     \end{itemize}
-\end{itemize}
 
-%% TODO
+    L'AST è dunque un albero basato su un insieme di strutture ed enumerativi definiti nel file \texttt{ast structure}. Ogni nodo sarà caratterizzato opportunamente dal tipo di struttura che più si addice, in base alla regola grammaticale d'origine.
 
-Se la precedente struttura ad albero era basata sulla grammatica, questa nuova struttura ad albero che andiamo a realizzare è basata su una lista di strutture ed enumerativi da noi definiti, nel file \textit{ast structure}, che vengono assegnati ai vari nodi in base alle loro regole grammaticali d'origine.
+    Nella definizione della struttura dell'AST sono stati definiti 15 tipi di nodi (strutture ed enumerativi):
+    \begin{itemize}
+        \item \texttt{AstDocument}: nodo radice - struct
+        \item \texttt{AstItemNode}: nodo generale per una regola - enum
+        \item \texttt{BlockNode}: blocco begin/end - struct
+        \item \texttt{TextNode}: testo semplice - struct
+        \item \texttt{WhitespaceNode}: spazi bianchi che precedono testo - struct
+        \item \texttt{NewLinesNode}: numero di nuove righe - struct
+        \item \texttt{LinebreakNode}: numero di interuzzione di riga - struct
+        \item \texttt{CommentNode}: commenti mono riga - struct
+        \item \texttt{CommandNode}: comandi latex - struct
+        \item \texttt{RequiredArgNode}: argomenti richiesti dai comandi nelle parentesi graffe - struct
+        \item \texttt{ArgItemNode}: oggetto presente nell'argomento richiesto - enum
+        \item \texttt{OptionalArgNode}: argomenti opzionali dei comandi nelle parentesi quadre - struct
+        \item \texttt{OptionalEntryNode}: oggetto presente nell'argomento opzionale - enum
+        \item \texttt{KvPairNode}: argomento definito da una chiave ed un valore - struct
+        \item \texttt{OptValueNode}: oggetto presente come valore nel KvPairNode - enum
+        \item \texttt{OptItemNode}: oggetto presente nell'argomento opzionale - enum
+        \item \texttt{MathNode}: nodo contente la matematica - struct
+    \end{itemize}
 
-A titolo di esempio, viene riportata la struttura di un nodo di tipo \texttt{CommandNode} dell'AST:
-\begin{verbatim}
-pub struct CommandNode {
-    pub name: String,
-    pub optional_args: Vec<OptionalArgNode>,
-    pub required_args: Vec<RequiredArgNode>,
-}
-\end{verbatim}
-Gli attributi \texttt{optional args} e \texttt{required args} sono i vettori che contengono le rispettive liste di argomenti opzionali e obbligatori accettati dal comando, modellati da altre classi.
+    \subsubsection{Errori semantici}
+    Come accennato in precedenza, in questa fase del processo è possibile effettuare controlli di validità dell'input (quindi dell'AST) più complessi e più sensibili al contesto, come: la verifica che un certo comando sia supportato oppure la verifica di un numero sufficiente di argomenti richiesti da uno specifico comando, ecc. Per realizzare quest'ultimo controllo, è stata realizzata un'ulteriore hashmap che ha come chiave l'identificativo del comando e come valore il numero minimo degli argomenti obbligatori attesi. Di seguito il frammento di codice responsabile del controllo.
 
-È evidente quanto sia più compatto e pratico da gestire rispetto al nodo di tipo \texttt{Pair} visto precedentemente nel \textit{ParseTree}.
-
-Nella definizione della struttura dell'AST sono stati definiti 15 tipi di nodi (strutture ed enumerativi):
-\begin{itemize}
-    \item \texttt{AstDocument}: nodo radice - struct
-    \item \texttt{AstItemNode}: nodo generale per una regola - enum
-    \item \texttt{BlockNode}: blocco begin/end - struct
-    \item \texttt{TextNode}: testo semplice - struct
-    \item \texttt{WhitespaceNode}: spazi bianchi che precedono testo - struct
-    \item \texttt{NewLinesNode}: numero di nuove righe - struct
-    \item \texttt{LinebreakNode}: numero di interuzzione di riga - struct
-    \item \texttt{CommentNode}: commenti mono riga - struct
-    \item \texttt{CommandNode}: comandi latex - struct
-    \item \texttt{RequiredArgNode}: argomenti richiesti dai comandi nelle parentesi graffe - struct
-    \item \texttt{ArgItemNode}: oggetto presente nell'argomento richiesto - enum
-    \item \texttt{OptionalArgNode}: argomenti opzionali dei comandi nelle parentesi quadre - struct
-    \item \texttt{OptionalEntryNode}: oggetto presente nell'argomento opzionale - enum
-    \item \texttt{KvPairNode}: argomento definito da una chiave ed un valore - struct
-    \item \texttt{OptValueNode}: oggetto presente come valore nel KvPairNode - enum
-    \item \texttt{OptItemNode}: oggetto presente nell'argomento opzionale - enum
-    \item \texttt{MathNode}: nodo contente la matematica - struct
-\end{itemize}
-
-Inoltre, sono stati definiti gli errori semantici come enumerativi. Essi vengono stampati in console in caso di errore durante la fare di generazione dell'AST:
-Ecco la trasformazione dei tuoi nodi di errore in una lista LaTeX pronta per essere inserita nel tuo documento:
-
-\begin{itemize}
-    \item \texttt{MissingFileNode}
-    \item \texttt{MissingItemChild}
-    \item \texttt{MissingCommandName}
-    \item \texttt{MissingBlockName}
-    \item \texttt{MissingRequiredArgItems}
-    \item \texttt{MissingOptionalArgEntries}
-    \item \texttt{MissingOptionalEntryItems}
-    \item \texttt{MissingKeyInKvPair}
-    \item \texttt{MissingValueInKvPair}
-    \item \texttt{EmptyTextValue}
-    \item \texttt{EmptyCommentValue}
-    \item \texttt{InvalidNewlineCount}
-    \item \texttt{InvalidLinebreakValue}
-    \item \texttt{UnexpectedItemRule(Rule)}
-    \item \texttt{UnexpectedArgItemRule(Rule)}
-    \item \texttt{UnexpectedOptItemRule(Rule)}
-    \item \texttt{UnexpectedOptionalEntryRule(Rule)}
-    \item \texttt{UnexpectedRule(Rule)}
-\end{itemize}
-
-\subsubsection{Errori semantici}
-Durante la costruzione dell'AST può succedere che il software possa provare ad estendere l'albero aggiungendo un nuovo nodo foglia che però non rispetta la logica della grammatica; ad esempio aggiungiamo un nodo \textbf{text}, che serve a rappresentare un testo semplice, come nodo figlio di un \textbf{command}. Questa sarebbe un incoerenza nella costruzione dell'AST che potrebbe ad errori nella fase di generazione del codice typst, perciò durante la costruzione effettuiamo sempre controlli per verificare che il nodo che stiamo andando a costruire rispecchi una delle possibili regole selezionate per quel determinato contesto, altrimenti rilascia un errore di \textbf{UnexpecxtedRule}.
-Oltre ad un controllo della corretta regola, in questa fase verifichiamo il rispetto di altre condizioni che altrimenti genererebbero problemi nelle fasi successive, come l'assenza del nome del comando oppure, un numero invalido di nuove righe o l'assenza degli argomenti richiesti da un comando. Per quest'ultima tipologia di errore lanciamo un warn sul terminale insieme ad un errore di \textbf{MissingRequiredArgItems}, questa situazione però viene gestita diversamente in base al comando poiché in LaTeX possiamo avere comandi senza argomenti richiesti o con più di uno. Perciò effettuiamo 2 controlli, il primo durante la costruzione del comando per verificare che un comando che necessita di un argomento, come ad esempio textbf, abbia almeno un nodo figlio nel ParseTree che rispetti la regola del \textbf{required args}, in caso negativo il warn ci avvisa che si non si é trovati alcun argomenti. Differente durante la costruzione del required args si controlla che che le parentesi graffe siano popolate, quindi che sia presente una stringa, e non siano vuote. Per effettuare questi controlli é stata creata un'hashmap simile alla TransMap, che restituisce il numero di argomenti minimi attesi per tale argomento, in modo da comprendere se l'assenza di parentesi graffe risulta essere un errore oppure é un comando corretto senza argomenti.
-\begin{verbatim}
+    \begin{verbatim}
 if let Some(expected) = reqarg_count(&name) {
     if required_args.len() < expected as usize {
         warn!("Comando \\{}: expected {} required arguments, 
@@ -272,12 +240,45 @@ if let Some(expected) = reqarg_count(&name) {
         return Err(SemanticError::MissingRequiredArgItems);
     }
 }
-\end{verbatim}
+    \end{verbatim}
 
-\subsection{Generazione del codice Typst - CodeGen}
-Come introdotto, l'ultima fase della traduzione é la generazione del nuovo linguaggio mantenendo la semantica invariata; vogliamo quindi lo stesso risultato da parte del nuovo linguaggio. Per fare ciò prendiamo in input l'Abstract Syntax Tree e tramite la navigazione di esso, foglia per foglia, generiamo un codice equivalente, effettuiamo un "rendering"; che nel nostro caso assume il significato di scrivere la traduzione nel file di output.
-Il rendering del nuovo codice avviene iterando una funzione di mapping su ogni item dell'AstDocument raccogliendo i risultati che saranno mano mano aggiunti al file. Per ogni nodo foglia su cui iteriamo effettuiamo una funzione di mapping differente poiché bisogna gestire le differenti casistiche; questa scelta é effettuata in base al rispettivo enumerativo del nodo foglia. Un esempio semplice é il rendering del nodo TextNode il cui risultato della funzione di mappamento é una semplice stringa da cui vengono rimosse le parentesi graffe poiché in latex queste non vengono renderizzate nel file pdf differentemente da typst in cui invece compaiono nel documento finale.
-\begin{verbatim}
+    Per le sopracitate tipologie di errore, viene stampato un warning a console, insieme ad un errore di tipo \texttt{UnsupportedCommand} o \texttt{MissingRequiredArgItems}, rispettivamente. Si tratta di una scelta fatta in fase di progettazione del software seguendo l'approccio adottato da LaTeX stesso: il compilatore cerca sempre di procedere nel rendering, a volte con forti assunzioni, nel tentativo di produrre comunque un output. Crediamo che si tratti di un approccio valido finché si rimane nel contesto dei linguaggi di markup dove il rischio più elevato è quello di avere un documento non propriamente fedele, a differenza del caso dei linguaggi di programmazione dove si rischia di alterare gravemente il flusso di un algoritmo.
+
+    Sono stati definiti i seguenti errori semantici, come enumerativi. Questi sono stampati in console in caso di errore durante la fare di generazione dell'AST:
+
+    \begin{itemize}
+        \item \texttt{MissingFileNode}
+        \item \texttt{MissingItemChild}
+        \item \texttt{MissingCommandName}
+        \item \texttt{MissingBlockName}
+        \item \texttt{MissingRequiredArgItems}
+        \item \texttt{MissingOptionalEntryItems}
+        \item \texttt{MissingKeyInKvPair}
+        \item \texttt{MissingValueInKvPair}
+        \item \texttt{EmptyTextValue}
+        \item \texttt{EmptyCommentValue}
+        \item \texttt{InvalidNewlineCount}
+        \item \texttt{InvalidLinebreakValue}
+        \item \texttt{UnexpectedItemRule(Rule)}
+        \item \texttt{UnexpectedArgItemRule(Rule)}
+        \item \texttt{UnexpectedOptItemRule(Rule)}
+        \item \texttt{UnexpectedOptionalEntryRule(Rule)}
+        \item \texttt{UnsupportedCommand(String)}
+        \item \texttt{UnsupportedEnvironment(String)}
+        \item \texttt{MissingArgsForCommand(String, usize, usize)}
+        \item \texttt{TextBeforeDocument}
+        \item \texttt{UnexpectedRule(Rule)}
+        \item \texttt{UnexpectedMathRule(Rule)}
+    \end{itemize}
+
+    \subsection{Generazione del codice Typst - CodeGen}
+    Si tratta dell'ultima fase della traduzione, dove avviene il \textit{rendering} dell'AST: consiste nel percorrere l'albero in modo ordinato per costruire il codice di output. La traduzione avviene elaborando i dati di ciascun nodo: il tipo del nodo determina la struttura sintattica da generare, mentre i suoi attributi forniscono il contenuto testuale e i parametri necessari.
+
+    Il tipo di nodo che si vuole elaborare determina la funzione di rendering da richiamare. Tale funzione integra tutta la logica necessaria a recuperare le informazioni dal nodo stesso e dai suoi eventuali attributi, per poi produrre il codice Typst corrispondente.
+
+    Un esempio semplice riguarda il rendering del nodo \texttt{TextNode}: il risultato della funzione di rendering è una semplice stringa da cui vengono rimosse le parentesi graffe. LaTeX non renderizza le parentesi graffe contenute nel testo nel file pdf finale, differentemente da Typst in cui invece compaiono.
+
+    \begin{verbatim}
 pub(crate) fn render_text(text_node: &TextNode) -> String {
     text_node
         .value
@@ -285,48 +286,64 @@ pub(crate) fn render_text(text_node: &TextNode) -> String {
         .filter(|c| *c != '{' && *c != '}')
         .collect()
 }
-\end{verbatim}
-Differentemente per situazioni più complesse come i blocchi ed i comandi é stata implementata un hashmap, denominata \textbf{TransMap}, in cui la chiave, una stringa, é rappresentata dal nome del commando e il valore é la specifica funzione per trattarlo, questa funzione prende come argomenti:
-\begin{itemize}
-    \item \textbf{name}, stringa contente il nome del comando
-    \item \textbf{reqs}, vettore di RequiredArgNode
-    \item \textbf{opts}, vettore di OptionalArgNode
-    \item \textbf{items}, vettore di AstItemNode. Presente solo nelle funzioni della TransMap dedicata ai blocchi, in modo da passare anche le componenti all'interno dei blocchi e poterle trattare con le corrette funzioni poiché ci troviamo all'interno di un environment differente.
-\end{itemize}
-Modellando in questa maniera é possibile avere due sole mappe di riferimento per poter indirizzare verso la funzione di rendering corretta in base alla tipologia di funzione ed environment latex. Le due TransMap, avendo la stessa funzione, sono costruite seguendo lo stesso \textbf{"trait"}, che corrisponde ad una comune "interfaccia", implementando la funzione \textbf{translate} che restituisce il risultato del rendering della singola componente da aggiungere in coda alla traduzione.
-\begin{verbatim}
+    \end{verbatim}
+
+    Differentemente, si è adottato un approccio più strutturato per situazioni più complesse.
+    L'esempio principale è dato dalla gestione di ambienti e comandi LaTeX, dove è stata usata una hashmap, denominata \texttt{TransMap}, la cui chiave è l'identificativo (stringa) del commando e il valore è la specifica funzione di rendering, che presenta la seguente firma:
+
+    \begin{itemize}
+        \item \texttt{name}: stringa contente il nome del comando
+        \item \texttt{reqs}: vettore di RequiredArgNode
+        \item \texttt{opts}: vettore di OptionalArgNode
+        \item \texttt{items}: vettore di AstItemNode. È presente solo nelle funzioni della TransMap dedicata agli ambienti per poter passare anche tutto ciò che è contenuto tra apertura e chiusura dell'ambiente stesso, per poter essere renderizzato di conseguenza.
+    \end{itemize}
+
+    Le due hashmap, essendo usate in modo molto simile, sono state costruite implementando il \textit{trait} \texttt{TransMap}. Lo si può considerare come il corrispettivo dell'\textit{interfaccia} in un contesto object-oriented.
+
+    \begin{verbatim}
 pub trait TransMap<T> {
     fn translate(node: &T) -> Option<String>;
 }
-\end{verbatim}
-\subsubsection{Funzionalità e Environment Implementati}
-Chiaramente a causa del gran numero di funzioni presenti in LaTeX, per il progetto ci siamo posti l'obiettivo di implementare solamente quelle fondamentali, di uso comune, in modo da avere un software funzionante sui documenti più semplici.
-Le funzionalità implementate sono:
-\begin{itemize}
-    \item \textbf{Text Formatting}: bold, italic, underline, color
-    \item \textbf{Text Alignment}: centering, raggedright/left, flushright/left
-    \item \textbf{Space and Breaks}: newline, break, hfill/vfill, pagebreak, newpage, clearpage
-    \item \textbf{Package}: ragged2e, verbatim, hyperref, listings, graphicx \begin{itemize}
-        \item questi pacchetti non essendo necessari in typst, poiché coperti da funzioni built-in, sono semplicemente renderizzati come commenti.
-    \end{itemize}
-    \item \textbf{Section}: section, subsection, subsubsection, paragraph, subparagraph, title, author, date, today, maketitle, tableofcontents
-    \item \textbf{Hyperlinks}: href
-\end{itemize}
-Invece gli environment implementati sono:
-\begin{itemize}
-    \item \textbf{Alignment}: center, flushright/left
-    \item \textbf{Table}: tabular
-    \item \textbf{Comment}: commenti multilinea
-    \item \textbf{Text Listing}: liste itemize e enumerate, description
-    \item \textbf{Graphics}: figure
-    \item \textbf{Code}: verbatim, lstlisting
-\end{itemize}
+    \end{verbatim}
 
-\subsubsection{Error Checking}
-Può succedere che il file di input presenti dei comandi la cui gestione non é ancora stata implementata oppure assenti in typst, quindi un tentativo di gestione porterebbe a generare un errore durante il rendering e quindi nel conseguente arresto del software che non restituirebbe nulla in output, questo perché al momento la scrittura sul file di output avviene tutta in unica volta a fine rendering e non riga per riga.
-Per evitare tutto ciò quindi sono stati implementati due controlli: uno per i comandi non ancora implementati nella traduzione o erroneamente scritti ed uno per quelli non presenti in typst.
-Il primo controllo viene effettuato durante il rendering generico di un comando, quindi quando si cerca la corretta funzione da chiamare, attraverso la TransMap, nel caso non sia presente alcuna key valida, quindi: o il comando desiderato non é ancora stato implementato oppure é stato scritto erroneamente, viene lanciato un warn sul terminale che avvisa l'utente dell'errore ed inoltre renderizza il comando riscrivendo lo stesso messaggio di errore anche sul file di output in modo tale da lasciare una traccia nel file di output dell'errore e poterlo correggere.
-\begin{verbatim}
+    \subsubsection{Funzionalità e Environment Implementati}
+    Chiaramente a causa del gran numero di funzioni presenti in LaTeX, per il progetto ci siamo posti l'obiettivo di implementare solamente quelle fondamentali, di uso comune, in modo da avere un software funzionante sui documenti più semplici.
+    Le funzionalità implementate sono:
+    \begin{itemize}
+        \item \texttt{Text Formatting}: bold, italic, underline, color
+        \item \texttt{Text Alignment}: centering, raggedright/left, flushright/left
+        \item \texttt{Space and Breaks}: newline, break, hfill/vfill, pagebreak, newpage, clearpage
+        \item \texttt{Package}: ragged2e, verbatim, hyperref, listings, graphicx \begin{itemize}
+                                                                                     \item questi pacchetti non essendo necessari in typst, poiché coperti da funzioni built-in, sono semplicemente renderizzati come commenti.
+        \end{itemize}
+        \item \texttt{Section}: section, subsection, subsubsection, paragraph, subparagraph, title, author, date, today, maketitle, tableofcontents
+        \item \texttt{Hyperlinks}: href
+        \item \texttt{Symbol}: textbackslash, textrightarrow, textleftarrow, \_, \{, \}
+    \end{itemize}
+
+    Invece gli environment implementati sono:
+    \begin{itemize}
+        \item \texttt{Alignment}: center, flushright/left
+        \item \texttt{Table}: tabular
+        \item \texttt{Comment}: commenti multilinea
+        \item \texttt{Text Listing}: liste itemize e enumerate, description
+        \item \texttt{Graphics}: figure
+        \item \texttt{Code}: verbatim, lstlisting
+    \end{itemize}
+
+    \subsubsection{Errori codegen}
+    I due tipi di errori identificati in quest'ultima fase sono:
+    \begin{itemize}
+        \item controllo su comandi e ambienti la cui logica di traduzione non è ancora implementata o l'identificativo del comando è stato scritto erroneamente
+        \item controllo su comandi e ambienti il cui corrispettivo in Typst non è stato trovato (al netto di eventuali estensioni)
+    \end{itemize}
+    In entrambi i casi verrà stampato un warning su console, la porzione di documento impattata viene commentata per agevolare il successivo debugging e la codegen prosegue.
+
+    Di seguito, viene riportato il frammento di codice responsabile del rendering dei comandi.
+    Se la TransMap contiene una entry la cui chiave corrisponde al nome del comando, viene restituita la rendering associata e ci si aspetta l'output renderizzato.
+    Altrimenti, l'errore viene gestito come già descritto.
+
+    \begin{verbatim}
 pub(crate) fn render_command(command_node: &CommandNode) -> String {
     if let Some(rendered) = CommandTransMap::translate(command_node) {
         rendered
@@ -341,68 +358,117 @@ pub(crate) fn render_command(command_node: &CommandNode) -> String {
         )
     }
 }
-\end{verbatim}
-Differentemente quando il comando non ha una diretta trasposizione su typst, la TransMap, che presenterà tale comando tra le sue key, restituirà la funzione in cui sarebbe dovuto essere implementato gestendo il comando come avviene nella prima situazione: warn sul terminale e comando commentato sul file di output.
+    \end{verbatim}
 
-\section{Test e Risultati}
-Per verificare il corretto funzionamento del software sono stati definiti dei test d'integrazione per ogni componente della CodeGen e per le situazioni che generano errore, in modo da poter controllarne la corretta gestione. Possiamo quindi distinguere due casi di esecuzione del software: 
-\begin{itemize}
-    \item \textbf{Doc Case}, il caso base in cui il software effettua la sua normale esecuzione di transpiler traducendo il documento latex in input in un file typst e il rendering in pdf.
-    \item \textbf{Test Case}, si esegue un rendering di differenti file di input suddividisi per categoria del comando in modo da avere singole unità con cui é più facile verificare il corretto funzionamento della relativa componente che si occupa della generazione del codice typst.
-\end{itemize}
+    In questa fase dell'architettura, il frontend è il componente responsabile della gestione degli errori, infatti essi dipendono anche dal linguaggio target.
 
-\subsection{Esempio Test Case}
-Il testing si basa su un controllo del risultato dell'esecuzione di ogni singola componente che prende in input un file che presenta lessemi che ci aspettiamo debbano essere gestiti solamente da quella funzione. Questo controllo si basa sul confronto del risultato con il risultato atteso rappresentato da un file typst che dovrà essere coincidere con l'output per poter asserire il corretto funzionamento. Questa logica vale sia per le componenti di traduzione, sia per le funzioni di gestione degli errori.
-Per fare un esempio di input-output delle componenti di traduzione, prendiamo come caso i comandi per la formattazioni del testo.
-Input Latex:
-\begin{lstlisting}
-    \textbf{bold}
-    \textit{italic}
-    \underline{underline}
-    \textcolor{blue}{This is \textbf{bold and blue}.}
-\end{lstlisting}
-Output Typst:
-\begin{lstlisting}
-    *Bold*
-    _italic_
-    #underline[underline]
-    #text(blue)[This is *bold and blue*.]
-\end{lstlisting}
+    \section{Test e Risultati}
+    Per verificare il corretto funzionamento del software sono stati definiti dei test d'integrazione automatici.
+    Il codice sorgente relativo ai test si trova sotto nella directory \texttt{tests/cases} e si dividono in due tipologie:
+    \begin{itemize}
+        \item \texttt{oks}: sono stati testati diversi comandi e ambienti dove ci si aspetta che la traduzione vada a buon fine. L'asserzione finale prevede il confronto tra l'output effettivo e l'output atteso, salvato su un file separato nel percorso \texttt{tests/assertions/oks};
+        \item \texttt{errors}: ci si aspetta che la traduzione si concluda con un errore o con un file di output che presenta determinati commenti. Anche in quest'ultimo caso, l'asserzione finale prevede il confronto tra l'output effettivo e l'output atteso, salvato su un file separato nel percorso \texttt{tests/assertions/errors};
+    \end{itemize}
 
-Nel caso invece della gestione degli errori, nei file di output é atteso un commento che presenta il messaggio d'errore contenente la tipologia d'errore e il lessema che ha generato l'errore.
-Input Latex:
-\begin{lstlisting}
-    \begin{document}
-        \commandoInesistente{argomento inesistente}
-    \end{document}
-\end{lstlisting}
-Output Typst:
-\begin{lstlisting}
-    /*WARN: WrongCommandOrNotImplemented("commandoInesistente"): 
-    commandoInesistente \commandoInesistente{argomento inesistente}*/
-\end{lstlisting}
-Invece un esempio di input che genera un errore che blocca l'esecuzione é:
-Input Latex:
-\begin{lstlisting}
-    \begin{document}
-        apertura e chiusura di environment differenti
-    \end{article}
-\end{lstlisting}
-Output sul terminale:
-\begin{lstlisting}
-    ------------------------- PARSE ERROR -------------------------
-    Errore di parsing LaTeX alla riga 9, colonna 1
-    \end{article}
-    ^
-    Atteso: item
-    -------------------------
-\end{lstlisting}
+    In aggiunta, per semplificare le operazioni di debugging, viene salvato l'output effettivo dei test nel percorso \texttt{tests/results}.
 
-\subsection{Esempio Document}
-Un esempio di documento latex tradotto in typst é questo stesso documento che é stato originalmente scritto in latex e poi tradotto e renderizzato in pdf dal software realizzato.
+    È possibile eseguire tutti i test con il comando da terminale: \texttt{cargo test}.
 
-\section{Conclusioni}
-Il presente elaborato ha delineato la struttura e il funzionamento del software e si può concludere che il software é funzionate e svolge correttamente il compito per cui é stato designato, chiaramente allo stato attuale il software é ancora incompleto poiché non tratta molti comandi presenti in latex ed argomenti opzionali per personalizzare i comandi già implementati.
+    \subsection{Esempio test case ok - text formatting}
+    Il test verifica la capacità del transpiler di convertire un testo LaTeX formattato in grassetto, in corsivo, sottolineato e colorato nel corrispettivo in Typst.
+    I file usati dal test sono i seguenti.
 
-Sviluppi futuri potranno essere sicuramente l'aggiunta dei nuovi comandi nei possibili limiti del rendering di typst.
+    Input in linguaggio Latex:
+    \begin{verbatim}
+\begin{document}
+\textbf{Bold}
+\textit{italic}
+\underline{underline}
+
+\textcolor{blue}{This is \textbf{bold and blue}.}
+\end{document}
+    \end{verbatim}
+
+    Output atteso in linguaggio Typst:
+    \begin{verbatim}
+*Bold*
+_italic_
+#underline[underline]
+
+#text(blue)[This is *bold and blue*.]
+    \end{verbatim}
+
+    \subsection{Esempio test case error - unknown command}
+    Il test verifica che il transpiler sia resiliente nel caso di errori dovuti a comandi inesistenti.
+    I file usati dal test sono i seguenti.
+
+    Input Latex:
+    \begin{verbatim}
+\begin{document}
+\commandoInesistente{argomento inesistente}
+\end{document}
+    \end{verbatim}
+    Output Typst:
+    \begin{verbatim}
+/*WARN: WrongCommandOrNotImplemented("commandoInesistente"): 
+commandoInesistente \commandoInesistente{argomento inesistente}*/
+    \end{verbatim}
+
+    \subsection{Esempio test case error - unmatched end}
+    Invece un esempio di input che genera un errore che blocca l'esecuzione é:
+    Input Latex:
+    \begin{verbatim}
+\begin{document}
+    Contenuto
+\end{article}
+    \end{verbatim}
+
+    Output sul terminale:
+    \begin{lstlisting}
+----------------------- PARSE ERROR -----------------------
+Errore di parsing LaTeX alla riga 9, colonna 1
+\end{article}
+^
+Atteso: item
+-------------------------
+    \end{lstlisting}
+
+    \section{Esecuzione transpiler}
+    I seguenti passaggi illustrano come eseguire la traduzione di uno o più file LaTeX con estensione .tex nei corrispettivi file Typst .typ:
+    \begin{enumerate}
+        \item aprire il terminale ed eseguire il clone della repository \begin{verbatim} git clone https://github.com/RedFoXalabama/LaTeX-To-Typst \end{verbatim}
+        \item entrare nella root di progetto \begin{verbatim} cd LaTeX-To-Typst \end{verbatim}
+        \item installare le dipendenze di Rust \begin{verbatim} cargo build \end{verbatim}
+        \item posizionare il file da tradurre nella directory \texttt{Assets/Input/}
+        \item eseguire il software \begin{verbatim} cargo run \end{verbatim}
+    \end{enumerate}
+
+    Di default, saranno stampati solo i log di livello warning ed error.
+    Per un logging più verboso, impostare la seguente variabile d'ambiente:
+    \begin{verbatim} export RUST_LOG=info \end{verbatim}
+
+    \section{Conclusioni}
+    Il presente lavoro ha documentato la progettazione e l'implementazione di LaTeX2Typst, un transpiler scritto in linguaggio Rust capace di convertire documenti LaTeX in sorgenti Typst attraverso un'architettura modulare a tre fasi.
+
+    Rispetto a soluzioni esistenti come Tylax, questo lavoro ha introdotto con successo il supporto a comandi aggiuntivi specifici quali: \texttt{maketitle}, l'allineamento tramite flush e la gestione dell'ambiente comment.
+
+    Il software è stato realizzato con l'idea di essere resiliente agli errori: l'approccio adottato permette di arrestare il processo solo davanti a errori sintattici bloccanti, mentre gestisce i limiti semantici attraverso un sistema di warning e commenti nel file di output, preservando la continuità della traduzione.
+
+    \subsection{Sviluppi futuri}
+    Il progetto pone solide basi per evoluzioni successive che potrebbero trasformare il prototipo in uno strumento di produzione completo.
+    I punti principali includono:
+    \begin{itemize}
+        \item \textbf{utilizzo di Rust}: l'architettura potrebbe beneficiare di un uso più esteso di pattern avanzati del linguaggio;
+        \item \textbf{miglioramento funzionamento attuale}: si potrebbero rafforzare ed estendere alcune funzioni già implementate come le tabelle e la matematica;
+        \item \textbf{copertura dei comandi e ambienti}: lo scope attuale, seppur funzionale per documenti di base, non copre l'immensa varietà di pacchetti di terze parti dell'ecosistema LaTeX;
+        \item \textbf{gestione del contesto globale}: implementare un sistema per l'analisi del preambolo che permetta di mappare impostazioni globali (es. margini, font) direttamente nei file Typst.
+        \item \textbf{GUI}: creazione di un'interfaccia grafica in modo da avere un'esperienza utente più gradevole e pratica per i meno esperti.
+    \end{itemize}
+
+    In definitiva, LaTeX2Typst può rappresentare uno strumento per chi desidera
+    trasporre i propri documenti verso un formato più modero ed user-friendly Typst.
+
+    \subsection{Note}
+    Il presente documento funge da dimostrazione pratica delle funzionalità implementate: è stato scritto impiegando costrutti LaTeX basilari, comandi ed environment inclusi nella tabella di compatibilità del software. Ciò garantisce che l'intero report possa essere processato dal sistema LaTeX2Typst, fornendo una prova immediata dell'efficacia della pipeline di traduzione.
+
 \end{document}

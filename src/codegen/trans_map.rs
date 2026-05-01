@@ -12,7 +12,6 @@ pub type BlockTranslationFn =
 /// Astrae i metodi usati dalle classi di traduzione
 pub trait TransMap<T> {
     fn translate(node: &T) -> Option<String>;
-    fn is_supported(name: &str) -> bool;
 }
 
 /// Funzione di render usata per ignorare comandi latex nel processo di transpiling

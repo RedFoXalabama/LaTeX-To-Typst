@@ -63,8 +63,8 @@
 
     Da questo nasce l'idea di creare un compilatore che sia in grado di tradurre un file sorgente scritto in linguaggio LaTeX nel corrispettivo scritto in linguaggio Typst. Il compilatore è stato modellato secondo un'architettura a due fasi:
 
-- back-end: trasforma il file sorgente scritto in LaTeX in una _rappresentazione intermedia_ (IR), basandosi sulle regole di sintassi proprie di LaTeX;
-- front-end: trasforma la IR nel file Typst.
+-  back-end: trasforma il file sorgente scritto in LaTeX in una _rappresentazione intermedia_ (IR), basandosi sulle regole di sintassi proprie di LaTeX;
+-  front-end: trasforma la IR nel file Typst.
 
     In questo caso specifico, la IR è stata implementata attraverso un Abstract Syntax Tree.
 
@@ -176,8 +176,8 @@
     Durante questo processo, il parser si assicura che il file in input, scritto in linguaggio LaTeX (source), abbia una struttura conforme a una grammatica ben specifica.
     Il parser non è stato scritto a mano, bensì generato automaticamente dalla libreria #link("https://docs.rs/pest/2.8.6/pest/")[Pest], un parser generator per Rust, sulla base della grammatica specificata nei file:
 
--`/src/latex\_parser/latex.pest`
--`/src/latex\_parser/latex\_math.pest`
+- `/src/latex\_parser/latex.pest`
+- `/src/latex\_parser/latex\_math.pest`
     L'aspetto formale di Pest verrà approfondito nel paragrafo seguente.
 
     È riportato di seguito un frammento significativo della grammatica, dove è presente lo _start symbol_`file` della grammatica prevista.
@@ -193,39 +193,39 @@ text = { (!("\\" | NEWLINE | comment) ~ ANY)+ }
     L'output del parser sarà un ParseTree, ossia un albero che si origina da una singola radice, ordinato, e dove ogni nodo corrisponde a un match tra un lessema del file sorgente e token definito in grammatica.
     Ogni nodo rispetta la struttura definita dalla classe `Pair`, i cui attributi sono:
 
--`rule`: identificatore della regola grammaticale rispettata
--`span`:
-	-`str`: coordinate esatte del lessame inteso come sottostringa all'interno dell'intero file sorgente rappresentato come un'unica superstringa
-	-`range`: il range occupato dai caratteri della sottostringa
--`inner`: lista ordinata di elementi figli, quindi altre istanze di `Pair`
+- `rule`: identificatore della regola grammaticale rispettata
+- `span`:
+	- `str`: coordinate esatte del lessame inteso come sottostringa all'interno dell'intero file sorgente rappresentato come un'unica superstringa
+	- `range`: il range occupato dai caratteri della sottostringa
+- `inner`: lista ordinata di elementi figli, quindi altre istanze di `Pair`
 
     L'elenco delle regole grammaticali definite per il parsing del testo è riportato di seguito:
 
--*file*, intero testo del file di input
--*item*, componente generale del testo
--*name*, nome del comando
--*block*, blocco begin e end
--*command*, comando generale
--*linebreak*, interruzione di riga segnalate in latex come doppio backslash
--*newlines*, interruzione di riga e nuove righe
--*comment*, commento mono riga
--*text*, testo semplice
--*required arg*, argomento obbligatorio del comando
--*argument*, argomento del required arg
--*arg item*, tipologia di argomento di argument, può essere un altro comando o un testo, permettendo cosi il nesting dei comandi
--*arg text*, testo semplice di un argument
--*optional arg*, argomento opzionale del comando
--*optional list*, lista di argomenti che possono comporre un argomento opzionale
--*opt entry*, argomento singolo della lista
--*kv pair*, argomento chiave valore
--*key*, chiave del kv pair
--*value*, valore del kv pair può essere un semplice testo o una lista
--*simple value*, valore composto da testo semplice
--*value list*, valore composto da una lista di sottovalori
--*sub value list*, sottovalori della value list
--*opt item*, argomenti opzionali differenti dalla kv pair
--*opt text*, testo semplice dell'opt item
--*forbidden char*, insieme di caratteri da non considerare in determinate regole
+- *file*, intero testo del file di input
+- *item*, componente generale del testo
+- *name*, nome del comando
+- *block*, blocco begin e end
+- *command*, comando generale
+- *linebreak*, interruzione di riga segnalate in latex come doppio backslash
+- *newlines*, interruzione di riga e nuove righe
+- *comment*, commento mono riga
+- *text*, testo semplice
+- *required arg*, argomento obbligatorio del comando
+- *argument*, argomento del required arg
+- *arg item*, tipologia di argomento di argument, può essere un altro comando o un testo, permettendo cosi il nesting dei comandi
+- *arg text*, testo semplice di un argument
+- *optional arg*, argomento opzionale del comando
+- *optional list*, lista di argomenti che possono comporre un argomento opzionale
+- *opt entry*, argomento singolo della lista
+- *kv pair*, argomento chiave valore
+- *key*, chiave del kv pair
+- *value*, valore del kv pair può essere un semplice testo o una lista
+- *simple value*, valore composto da testo semplice
+- *value list*, valore composto da una lista di sottovalori
+- *sub value list*, sottovalori della value list
+- *opt item*, argomenti opzionali differenti dalla kv pair
+- *opt text*, testo semplice dell'opt item
+- *forbidden char*, insieme di caratteri da non considerare in determinate regole
 
 === Pest
 
@@ -253,10 +253,10 @@ text = { (!("\\" | NEWLINE | comment) ~ ANY)+ }
 
     Alcuni esempi di errori sintattici:
 
-- parentesi graffe di un argomento incomplete, solo aperta o solo chiusa
-- solo apertura o sola chiusura di un environment
-- apertura e chiusura di due environment differenti
-- caratteri numerici nella definizione di un environment
+-  parentesi graffe di un argomento incomplete, solo aperta o solo chiusa
+-  solo apertura o sola chiusura di un environment
+-  apertura e chiusura di due environment differenti
+-  caratteri numerici nella definizione di un environment
 
 == Analisi Semantica - AST
 
@@ -272,11 +272,11 @@ text = { (!("\\" | NEWLINE | comment) ~ ANY)+ }
     Viene quindi effettuato un processo di decorazione in cui vengono aggiungente o semplificate informazioni come ad esempio il numero di nuove righe che nel ParseTree vengono rappresentate semplicemente come testo "n", differentemente dall'AST in cui l'oggetto *NewLineNode* possiede un attributo *count*. Ad esempio la stringa *titleLaTeX To Typst* che nel ParseTree viene scomposta in 7 nodi ognuno padre dell'altro, differentemente nell'AST é rappresentato con solo 3 nodi.
 
 
--*CommandNode*, che possiede gli attributi 
-	-*Name*, il nome del comando
-	-*OptionalArgs*, gli argomenti opzionali di un comando racchiusi tra parentesi quadre
-	-*RequiredArgs*, gli argomenti obbligatori di un comando racchiusi tra parentesi graffe, in questo caso contiene un solo *RequiredArgNode*, che a sua volta possiede un attributo items di tipo *Text*
-		-*TextNode*, contiene il valore testuale all'interno delle parentesi quadre.
+- *CommandNode*, che possiede gli attributi 
+	- *Name*, il nome del comando
+	- *OptionalArgs*, gli argomenti opzionali di un comando racchiusi tra parentesi quadre
+	- *RequiredArgs*, gli argomenti obbligatori di un comando racchiusi tra parentesi graffe, in questo caso contiene un solo *RequiredArgNode*, che a sua volta possiede un attributo items di tipo *Text*
+		- *TextNode*, contiene il valore testuale all'interno delle parentesi quadre.
 
 //% TODO
 
@@ -296,44 +296,44 @@ pub struct CommandNode {
 
     Nella definizione della struttura dell'AST sono stati definiti 15 tra strutture ed enumerativi:
 
--`AstDocument`: nodo radice - struct
--`AstItemNode`: nodo generale per una regola - enum
--`BlockNode`: blocco begin/end - struct
--`TextNode`: testo semplice - struct
--`NewLinesNode`: numero di nuove righe - struct
--`LinebreakNode`: numero di interuzzione di riga - struct
--`CommentNode`: commenti mono riga - struct
--`CommandNode`: comandi latex - struct
--`RequiredArgNode`: argomenti richiesti dai comandi nelle parentesi graffe - struct
--`ArgItemNode`: oggetto presente nell'argomento richiesto - enum
--`OptionalArgNode`: argomenti opzionali dei comandi nelle parentesi quadre - struct
--`OptionalEntryNode`: oggetto presente nell'argomento opzionale - enum
--`KvPairNode`: argomento definito da una chiave ed un valore - struct
--`OptValueNode`: oggetto presente come valore nel KvPairNode - enum
--`OptItemNode`: oggetto presente nell'argomento opzionale - enum
+- `AstDocument`: nodo radice - struct
+- `AstItemNode`: nodo generale per una regola - enum
+- `BlockNode`: blocco begin/end - struct
+- `TextNode`: testo semplice - struct
+- `NewLinesNode`: numero di nuove righe - struct
+- `LinebreakNode`: numero di interuzzione di riga - struct
+- `CommentNode`: commenti mono riga - struct
+- `CommandNode`: comandi latex - struct
+- `RequiredArgNode`: argomenti richiesti dai comandi nelle parentesi graffe - struct
+- `ArgItemNode`: oggetto presente nell'argomento richiesto - enum
+- `OptionalArgNode`: argomenti opzionali dei comandi nelle parentesi quadre - struct
+- `OptionalEntryNode`: oggetto presente nell'argomento opzionale - enum
+- `KvPairNode`: argomento definito da una chiave ed un valore - struct
+- `OptValueNode`: oggetto presente come valore nel KvPairNode - enum
+- `OptItemNode`: oggetto presente nell'argomento opzionale - enum
 
     Inoltre, sono stati definiti gli errori semantici come enumerativi. Essi vengono stampati in console in caso di errore durante la fare di generazione dell'AST:
     Ecco la trasformazione dei tuoi nodi di errore in una lista LaTeX pronta per essere inserita nel tuo documento:
 
 
--`MissingFileNode`
--`MissingItemChild`
--`MissingCommandName`
--`MissingBlockName`
--`MissingRequiredArgItems`
--`MissingOptionalArgEntries`
--`MissingOptionalEntryItems`
--`MissingKeyInKvPair`
--`MissingValueInKvPair`
--`EmptyTextValue`
--`EmptyCommentValue`
--`InvalidNewlineCount`
--`InvalidLinebreakValue`
--`UnexpectedItemRule(Rule)`
--`UnexpectedArgItemRule(Rule)`
--`UnexpectedOptItemRule(Rule)`
--`UnexpectedOptionalEntryRule(Rule)`
--`UnexpectedRule(Rule)`
+- `MissingFileNode`
+- `MissingItemChild`
+- `MissingCommandName`
+- `MissingBlockName`
+- `MissingRequiredArgItems`
+- `MissingOptionalArgEntries`
+- `MissingOptionalEntryItems`
+- `MissingKeyInKvPair`
+- `MissingValueInKvPair`
+- `EmptyTextValue`
+- `EmptyCommentValue`
+- `InvalidNewlineCount`
+- `InvalidLinebreakValue`
+- `UnexpectedItemRule(Rule)`
+- `UnexpectedArgItemRule(Rule)`
+- `UnexpectedOptItemRule(Rule)`
+- `UnexpectedOptionalEntryRule(Rule)`
+- `UnexpectedRule(Rule)`
 
 === Errori semantici
 
@@ -365,10 +365,10 @@ pub(crate) fn render_text(text_node: &TextNode) -> String {
     ```
     Differentemente per situazioni più complesse come i blocchi ed i comandi é stata implementata un hashmap, denominata *TransMap*, in cui la chiave, una stringa, é rappresentata dal nome del commando e il valore é la specifica funzione per trattarlo, questa funzione prende come argomenti:
 
--*name*, stringa contente il nome del comando
--*reqs*, vettore di RequiredArgNode
--*opts*, vettore di OptionalArgNode
--*items*, vettore di AstItemNode. Presente solo nelle funzioni della TransMap dedicata ai blocchi, in modo da passare anche le componenti all'interno dei blocchi e poterle trattare con le corrette funzioni poiché ci troviamo all'interno di un environment differente.
+- *name*, stringa contente il nome del comando
+- *reqs*, vettore di RequiredArgNode
+- *opts*, vettore di OptionalArgNode
+- *items*, vettore di AstItemNode. Presente solo nelle funzioni della TransMap dedicata ai blocchi, in modo da passare anche le componenti all'interno dei blocchi e poterle trattare con le corrette funzioni poiché ci troviamo all'interno di un environment differente.
     Modellando in questa maniera é possibile avere due sole mappe di riferimento per poter indirizzare verso la funzione di rendering corretta in base alla tipologia di funzione ed environment latex. Le due TransMap, avendo la stessa funzione, sono costruite seguendo lo stesso *"trait"*, che corrisponde ad una comune "interfaccia", implementando la funzione *translate* che restituisce il risultato del rendering della singola componente da aggiungere in coda alla traduzione.
 ```
 pub trait TransMap<T> {
@@ -380,21 +380,21 @@ pub trait TransMap<T> {
     Chiaramente a causa del gran numero di funzioni presenti in LaTeX, per il progetto ci siamo posti l'obiettivo di implementare solamente quelle fondamentali, di uso comune, in modo da avere un software funzionante sui documenti più semplici.
     Le funzionalità implementate sono:
 
--*Text Formatting*: bold, italic, underline, color
--*Text Alignment*: centering, raggedright/left, flushright/left
--*Space and Breaks*: newline, break, hfill/vfill, pagebreak, newpage, clearpage
--*Package*: ragged2e, verbatim, hyperref, listings, graphicx 
-	- questi pacchetti non essendo necessari in typst, poiché coperti da funzioni built-in, sono semplicemente renderizzati come commenti.
--*Section*: section, subsection, subsubsection, paragraph, subparagraph, title, author, date, today, maketitle, tableofcontents
--*Hyperlinks*: href
+- *Text Formatting*: bold, italic, underline, color
+- *Text Alignment*: centering, raggedright/left, flushright/left
+- *Space and Breaks*: newline, break, hfill/vfill, pagebreak, newpage, clearpage
+- *Package*: ragged2e, verbatim, hyperref, listings, graphicx 
+	-  questi pacchetti non essendo necessari in typst, poiché coperti da funzioni built-in, sono semplicemente renderizzati come commenti.
+- *Section*: section, subsection, subsubsection, paragraph, subparagraph, title, author, date, today, maketitle, tableofcontents
+- *Hyperlinks*: href
     Invece gli environment implementati sono:
 
--*Alignment*: center, flushright/left
--*Table*: tabular
--*Comment*: commenti multilinea
--*Text Listing*: liste itemize e enumerate, description
--*Graphics*: figure
--*Code*: verbatim, lstlisting
+- *Alignment*: center, flushright/left
+- *Table*: tabular
+- *Comment*: commenti multilinea
+- *Text Listing*: liste itemize e enumerate, description
+- *Graphics*: figure
+- *Code*: verbatim, lstlisting
 
 === Error Checking
 
@@ -423,8 +423,8 @@ pub(crate) fn render_command(command_node: &CommandNode) -> String {
 
     Per verificare il corretto funzionamento del software sono stati definiti dei test d'integrazione per ogni componente della CodeGen e per le situazioni che generano errore, in modo da poter controllarne la corretta gestione. Possiamo quindi distinguere due casi di esecuzione del software:
 
--*Doc Case*, il caso base in cui il software effettua la sua normale esecuzione di transpiler traducendo il documento latex in input in un file typst e il rendering in pdf.
--*Test Case*, si esegue un rendering di differenti file di input suddividisi per categoria del comando in modo da avere singole unità con cui é più facile verificare il corretto funzionamento della relativa componente che si occupa della generazione del codice typst.
+- *Doc Case*, il caso base in cui il software effettua la sua normale esecuzione di transpiler traducendo il documento latex in input in un file typst e il rendering in pdf.
+- *Test Case*, si esegue un rendering di differenti file di input suddividisi per categoria del comando in modo da avere singole unità con cui é più facile verificare il corretto funzionamento della relativa componente che si occupa della generazione del codice typst.
 
 == Esempio Test Case
 

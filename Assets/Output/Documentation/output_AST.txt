@@ -1232,7 +1232,7 @@ AstDocument {
                             items: [
                                 RawText(
                                     TextNode {
-                                        value: "\n        \\begin{table}[ht]\n            \\centering\n            \\caption{Tabella di compatibilità delle feature (LaTeX \\textrightarrow Typst)}\n\n            \\begin{tabular}{|l|c|p{7cm}|}\n                \\hline\n                \\textbf{Feature} & \\textbf{Status} & \\textbf{Comandi e Ambienti Mappati} \\\\ \\hline\n                Struttura Documento & Supportato & \\texttt{\\textbackslash documentclass}, \\texttt{\\textbackslash tableofcontents}, ambiente \\texttt{document} \\\\ \\hline\n                Metadati e Titoli & Supportato & \\texttt{\\textbackslash title}, \\texttt{\\textbackslash author}, \\texttt{\\textbackslash date}, \\texttt{\\textbackslash today}, \\texttt{\\textbackslash maketitle} \\\\ \\hline\n                Sezionamento & Supportato & \\texttt{\\textbackslash part}, \\texttt{\\textbackslash chapter}, \\texttt{\\textbackslash section}, \\texttt{\\textbackslash subsection}, \\texttt{\\textbackslash subsubsection}, \\texttt{\\textbackslash paragraph}, \\texttt{\\textbackslash subparagraph} \\\\ \\hline\n                Formattazione Testo & Supportato & \\texttt{\\textbackslash textbf}, \\texttt{\\textbackslash textit}, \\texttt{\\textbackslash underline}, \\texttt{\\textbackslash textcolor} \\\\ \\hline\n                Simboli Speciali & Supportato & \\texttt{\\textbackslash\\{}, \\texttt{\\textbackslash\\}}, \\texttt{\\textbackslash\\%}, \\texttt{\\textbackslash\\&}, \\texttt{\\textbackslash\\$}, \\texttt{\\textbackslash\\#}, \\texttt{\\textbackslash\\_} \\\\ \\hline\n                Allineamento & Supportato & \\textbf{Cmd:} \\texttt{\\textbackslash centering}, \\texttt{\\textbackslash raggedright}, \\dots \\newline \\textbf{Env:} \\texttt{center}, \\texttt{flushleft}, \\texttt{flushright}, \\texttt{FlushLeft}, \\texttt{FlushRight} \\\\ \\hline\n                Liste ed Elenchi & Supportato & \\textbf{Env:} \\texttt{itemize}, \\texttt{enumerate}, \\texttt{description}. \\textbf{Cmd:} \\texttt{\\textbackslash item} \\\\ \\hline\n                Matematica & Supportato & \\texttt{\\$...\\$}, \\texttt{\\textbackslash(...\\textbackslash)}, \\texttt{math}, \\texttt{\\textbackslash[...\\textbackslash]}, \\texttt{displaymath}, \\texttt{equation} \\\\ \\hline\n                Codice & Supportato & \\texttt{verbatim}, \\texttt{lstlisting} \\\\ \\hline\n                Tabelle & Supportato & \\texttt{tabular}, \\texttt{\\textbackslash hline} \\\\ \\hline\n                Figure & Supportato & \\texttt{figure} \\\\ \\hline\n                Link & Supportato & \\texttt{\\textbackslash href} \\\\ \\hline\n                Spazi e Interruzioni & Supportato & \\texttt{\\textbackslash newline}, \\texttt{\\textbackslash break}, \\texttt{\\textbackslash hfill}, \\texttt{\\textbackslash vfill}, \\texttt{\\textbackslash pagebreak}, \\texttt{\\textbackslash newpage}, \\texttt{\\textbackslash\\textbackslash} \\\\ \\hline\n                Pacchetti & Supportato & \\texttt{\\textbackslash usepackage} \\\\ \\hline\n                Commenti & Supportato & \\texttt{\\%} (LaTeX) \\textrightarrow \\texttt{//} (Typst) \\\\ \\hline\n            \\end{tabular}\n        \\end{table}\n    ",
+                                        value: "\r\n        \\begin{table}[ht]\r\n            \\centering\r\n            \\caption{Tabella di compatibilità delle feature (LaTeX \\textrightarrow Typst)}\r\n\r\n            \\begin{tabular}{|l|c|p{7cm}|}\r\n                \\hline\r\n                \\textbf{Feature} & \\textbf{Status} & \\textbf{Comandi e Ambienti Mappati} \\\\ \\hline\r\n                Struttura Documento & Supportato & \\texttt{\\textbackslash documentclass}, \\texttt{\\textbackslash tableofcontents}, ambiente \\texttt{document} \\\\ \\hline\r\n                Metadati e Titoli & Supportato & \\texttt{\\textbackslash title}, \\texttt{\\textbackslash author}, \\texttt{\\textbackslash date}, \\texttt{\\textbackslash today}, \\texttt{\\textbackslash maketitle} \\\\ \\hline\r\n                Sezionamento & Supportato & \\texttt{\\textbackslash part}, \\texttt{\\textbackslash chapter}, \\texttt{\\textbackslash section}, \\texttt{\\textbackslash subsection}, \\texttt{\\textbackslash subsubsection}, \\texttt{\\textbackslash paragraph}, \\texttt{\\textbackslash subparagraph} \\\\ \\hline\r\n                Formattazione Testo & Supportato & \\texttt{\\textbackslash textbf}, \\texttt{\\textbackslash textit}, \\texttt{\\textbackslash underline}, \\texttt{\\textbackslash textcolor} \\\\ \\hline\r\n                Simboli Speciali & Supportato & \\texttt{\\textbackslash\\{}, \\texttt{\\textbackslash\\}}, \\texttt{\\textbackslash\\%}, \\texttt{\\textbackslash\\&}, \\texttt{\\textbackslash\\$}, \\texttt{\\textbackslash\\#}, \\texttt{\\textbackslash\\_} \\\\ \\hline\r\n                Allineamento & Supportato & \\textbf{Cmd:} \\texttt{\\textbackslash centering}, \\texttt{\\textbackslash raggedright}, \\dots \\newline \\textbf{Env:} \\texttt{center}, \\texttt{flushleft}, \\texttt{flushright}, \\texttt{FlushLeft}, \\texttt{FlushRight} \\\\ \\hline\r\n                Liste ed Elenchi & Supportato & \\textbf{Env:} \\texttt{itemize}, \\texttt{enumerate}, \\texttt{description}. \\textbf{Cmd:} \\texttt{\\textbackslash item} \\\\ \\hline\r\n                Matematica & Supportato & \\texttt{\\$...\\$}, \\texttt{\\textbackslash(...\\textbackslash)}, \\texttt{math}, \\texttt{\\textbackslash[...\\textbackslash]}, \\texttt{displaymath}, \\texttt{equation} \\\\ \\hline\r\n                Codice & Supportato & \\texttt{verbatim}, \\texttt{lstlisting} \\\\ \\hline\r\n                Tabelle & Supportato & \\texttt{tabular}, \\texttt{\\textbackslash hline} \\\\ \\hline\r\n                Figure & Supportato & \\texttt{figure} \\\\ \\hline\r\n                Link & Supportato & \\texttt{\\textbackslash href} \\\\ \\hline\r\n                Spazi e Interruzioni & Supportato & \\texttt{\\textbackslash newline}, \\texttt{\\textbackslash break}, \\texttt{\\textbackslash hfill}, \\texttt{\\textbackslash vfill}, \\texttt{\\textbackslash pagebreak}, \\texttt{\\textbackslash newpage}, \\texttt{\\textbackslash\\textbackslash} \\\\ \\hline\r\n                Pacchetti & Supportato & \\texttt{\\textbackslash usepackage} \\\\ \\hline\r\n                Commenti & Supportato & \\texttt{\\%} (LaTeX) \\textrightarrow \\texttt{//} (Typst) \\\\ \\hline\r\n            \\end{tabular}\r\n        \\end{table}\r\n    ",
                                     },
                                 ),
                             ],
@@ -1663,7 +1663,7 @@ AstDocument {
                             items: [
                                 RawText(
                                     TextNode {
-                                        value: "\nfile = { SOI ~ item* ~ EOI }\nitem = { block | command | text | newlines | linebreak | comment }\ntext = { (!(\"\\\\\" | NEWLINE | comment) ~ ANY)+ }\n    ",
+                                        value: "\r\nfile = { SOI ~ item* ~ EOI }\r\nitem = { block | command | text | newlines | linebreak | comment }\r\ntext = { (!(\"\\\\\" | NEWLINE | comment) ~ ANY)+ }\r\n    ",
                                     },
                                 ),
                             ],
@@ -4014,7 +4014,7 @@ AstDocument {
                             items: [
                                 RawText(
                                     TextNode {
-                                        value: "\npub struct CommandNode {\n    pub name: String,\n    pub optional_args: Vec<OptionalArgNode>,\n    pub required_args: Vec<RequiredArgNode>,\n}\n    ",
+                                        value: "\r\npub struct CommandNode {\r\n    pub name: String,\r\n    pub optional_args: Vec<OptionalArgNode>,\r\n    pub required_args: Vec<RequiredArgNode>,\r\n}\r\n    ",
                                     },
                                 ),
                             ],
@@ -5417,7 +5417,7 @@ AstDocument {
                             items: [
                                 RawText(
                                     TextNode {
-                                        value: "\nif let Some(expected) = reqarg_count(&name) {\n    if required_args.len() < expected as usize {\n        warn!(\"Comando \\\\{}: expected {} required arguments, \n            found {}\", name, expected, required_args.len());\n            \n        return Err(SemanticError::MissingRequiredArgItems);\n    }\n}\n    ",
+                                        value: "\r\nif let Some(expected) = reqarg_count(&name) {\r\n    if required_args.len() < expected as usize {\r\n        warn!(\"Comando \\\\{}: expected {} required arguments, \r\n            found {}\", name, expected, required_args.len());\r\n            \r\n        return Err(SemanticError::MissingRequiredArgItems);\r\n    }\r\n}\r\n    ",
                                     },
                                 ),
                             ],
@@ -5478,7 +5478,7 @@ AstDocument {
                             items: [
                                 RawText(
                                     TextNode {
-                                        value: "\npub(crate) fn render_text(text_node: &TextNode) -> String {\n    text_node\n        .value\n        .chars()\n        .filter(|c| *c != '{' && *c != '}')\n        .collect()\n}\n    ",
+                                        value: "\r\npub(crate) fn render_text(text_node: &TextNode) -> String {\r\n    text_node\r\n        .value\r\n        .chars()\r\n        .filter(|c| *c != '{' && *c != '}')\r\n        .collect()\r\n}\r\n    ",
                                     },
                                 ),
                             ],
@@ -5738,7 +5738,7 @@ AstDocument {
                             items: [
                                 RawText(
                                     TextNode {
-                                        value: "\npub trait TransMap<T> {\n    fn translate(node: &T) -> Option<String>;\n}\n    ",
+                                        value: "\r\npub trait TransMap<T> {\r\n    fn translate(node: &T) -> Option<String>;\r\n}\r\n    ",
                                     },
                                 ),
                             ],
@@ -6338,7 +6338,7 @@ AstDocument {
                             items: [
                                 RawText(
                                     TextNode {
-                                        value: "\npub(crate) fn render_command(command_node: &CommandNode) -> String {\n    if let Some(rendered) = CommandTransMap::translate(command_node) {\n        rendered\n    } else {\n        let out = String::new();\n        drop_command_warn(\n            COMMANDWARNING::WrongCommandOrNotImplemented(\n                command_node.name.clone()),\n            Option::from(out),\n            Option::from(&*command_node.name),\n            Option::from(command_node.required_args.clone()),\n        )\n    }\n}\n    ",
+                                        value: "\r\npub(crate) fn render_command(command_node: &CommandNode) -> String {\r\n    if let Some(rendered) = CommandTransMap::translate(command_node) {\r\n        rendered\r\n    } else {\r\n        let out = String::new();\r\n        drop_command_warn(\r\n            COMMANDWARNING::WrongCommandOrNotImplemented(\r\n                command_node.name.clone()),\r\n            Option::from(out),\r\n            Option::from(&*command_node.name),\r\n            Option::from(command_node.required_args.clone()),\r\n        )\r\n    }\r\n}\r\n    ",
                                     },
                                 ),
                             ],
@@ -6538,7 +6538,7 @@ AstDocument {
                             items: [
                                 RawText(
                                     TextNode {
-                                        value: "\n    \\textbf{bold}\n    \\textit{italic}\n    \\underline{underline}\n    \\textcolor{blue}{This is \\textbf{bold and blue}.}\n    ",
+                                        value: "\r\n    \\textbf{bold}\r\n    \\textit{italic}\r\n    \\underline{underline}\r\n    \\textcolor{blue}{This is \\textbf{bold and blue}.}\r\n    ",
                                     },
                                 ),
                             ],
@@ -6567,7 +6567,7 @@ AstDocument {
                             items: [
                                 RawText(
                                     TextNode {
-                                        value: "\n    *Bold*\n    _italic_\n    #underline[underline]\n    #text(blue)[This is *bold and blue*.]\n    ",
+                                        value: "\r\n    *Bold*\r\n    _italic_\r\n    #underline[underline]\r\n    #text(blue)[This is *bold and blue*.]\r\n    ",
                                     },
                                 ),
                             ],
@@ -6606,7 +6606,7 @@ AstDocument {
                             items: [
                                 RawText(
                                     TextNode {
-                                        value: "\n    \\begin{document}\n        \\commandoInesistente{argomento inesistente}\n    \\end{document}\n    ",
+                                        value: "\r\n    \\begin{document}\r\n        \\commandoInesistente{argomento inesistente}\r\n    \\end{document}\r\n    ",
                                     },
                                 ),
                             ],
@@ -6635,7 +6635,7 @@ AstDocument {
                             items: [
                                 RawText(
                                     TextNode {
-                                        value: "\n    /*WARN: WrongCommandOrNotImplemented(\"commandoInesistente\"): \n    commandoInesistente \\commandoInesistente{argomento inesistente}*/\n    ",
+                                        value: "\r\n    /*WARN: WrongCommandOrNotImplemented(\"commandoInesistente\"): \r\n    commandoInesistente \\commandoInesistente{argomento inesistente}*/\r\n    ",
                                     },
                                 ),
                             ],
@@ -6674,7 +6674,7 @@ AstDocument {
                             items: [
                                 RawText(
                                     TextNode {
-                                        value: "\n    \\begin{document}\n        apertura e chiusura di environment differenti\n    \\end{article}\n    ",
+                                        value: "\r\n    \\begin{document}\r\n        apertura e chiusura di environment differenti\r\n    \\end{article}\r\n    ",
                                     },
                                 ),
                             ],
@@ -6703,7 +6703,7 @@ AstDocument {
                             items: [
                                 RawText(
                                     TextNode {
-                                        value: "\n    ------------------------- PARSE ERROR -------------------------\n    Errore di parsing LaTeX alla riga 9, colonna 1\n    \\end{article}\n    ^\n    Atteso: item\n    -------------------------\n    ",
+                                        value: "\r\n    ------------------------- PARSE ERROR -------------------------\r\n    Errore di parsing LaTeX alla riga 9, colonna 1\r\n    \\end{article}\r\n    ^\r\n    Atteso: item\r\n    -------------------------\r\n    ",
                                     },
                                 ),
                             ],

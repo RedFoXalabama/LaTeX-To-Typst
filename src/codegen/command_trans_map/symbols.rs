@@ -9,6 +9,9 @@ pub fn render_symbols(
         "textbackslash" => r"\\".to_string(),
         "textrightarrow" => "#sym.arrow.r".to_string(),
         "textleftarrow" => "#sym.arrow.l".to_string(),
+        "_" => r"\_".to_string(),
+        "{" => r"\{".to_string(),
+        "}" => r"\}".to_string(),
         _ => "".to_string(),
     }
 }

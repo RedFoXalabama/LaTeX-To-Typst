@@ -9,10 +9,10 @@ pub fn render_list(name: &str, reqs: Vec<RequiredArgNode>, opts: Vec<OptionalArg
         "item" => {
             match read_in_listing_priority() {
                 Some(ListType::Itemize) => {
-                    render_list_line('-', &mut out, opts);
+                    render_list_line("- ".to_string(), &mut out, opts);
                 }
                 Some(ListType::Enumerate) => {
-                    render_list_line('+', &mut out, opts);
+                    render_list_line("+ ".to_string(), &mut out, opts);
                 }
                 Some(ListType::Description) => {
                     out.push('\n');
@@ -45,10 +45,10 @@ pub fn render_list(name: &str, reqs: Vec<RequiredArgNode>, opts: Vec<OptionalArg
     out
 }
 
-fn render_list_line(sign: char, out: &mut String, opts: Vec<OptionalArgNode>) -> &mut String {
+fn render_list_line(sign: String, out: &mut String, opts: Vec<OptionalArgNode>) -> &mut String {
     out.push('\n');
     out.push_str(&"\t".repeat(get_in_listing_priority().len() - 1));
-    out.push(sign);
+    out.push_str(&*sign);
     if let Some(first) = opts.first() {
         let opts_arg = render_opt_entry(&first.entries);
         if !opts_arg.is_empty() {

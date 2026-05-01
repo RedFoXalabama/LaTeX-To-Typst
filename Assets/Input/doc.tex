@@ -243,9 +243,9 @@ text = { (!("\\" | NEWLINE | comment) ~ ANY)+ }
     \begin{verbatim}
 if let Some(expected) = reqarg_count(&name) {
     if required_args.len() < expected as usize {
-        warn!("Comando \\{}: expected {} required arguments, 
+        warn!("Comando \\{}: expected {} required arguments,
             found {}", name, expected, required_args.len());
-            
+
         return Err(SemanticError::MissingRequiredArgItems);
     }
 }
@@ -425,7 +425,7 @@ _italic_
     \end{verbatim}
     Output Typst:
     \begin{verbatim}
-/*WARN: WrongCommandOrNotImplemented("commandoInesistente"): 
+/*WARN: WrongCommandOrNotImplemented("commandoInesistente"):
 commandoInesistente \commandoInesistente{argomento inesistente}*/
     \end{verbatim}
 

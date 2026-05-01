@@ -95,5 +95,5 @@ pub(crate) fn render_command(command_node: &CommandNode) -> String {
 }
 
 pub(crate) fn render_raw_text(raw_text_node: &TextNode) -> String {
-    raw_text_node.value.clone()
+    raw_text_node.value.to_string()
 }

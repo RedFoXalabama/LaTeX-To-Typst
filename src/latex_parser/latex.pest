@@ -3,7 +3,7 @@ file = { SOI ~ item* ~ EOI }
 // Add alignment_tab to items
 item = { whitespace | block_raw | block | command | text | newlines | linebreak | comment }
 
-whitespace = { (" " | "\t")+ }
+whitespace = { (" " | "\t")+ ~ !text }
 
 name = { ASCII_ALPHA+ } // Il nome del comando è composto da lettere ASCII, ma non può essere vuoto. Se si vuole permettere anche comandi con nomi più complessi, si potrebbe modificare questa regola.
 

@@ -12,12 +12,12 @@
 
 
 - [!] itemize 1
-- 
+-
 	+ enumerate 1
-	+ 
+	+
 		- itemize 3
-		- 
+		-
 			+ enum 2
-			+ 
+			+
 				+ enum 3
 - itemize 2

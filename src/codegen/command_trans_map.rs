@@ -16,6 +16,7 @@ mod space_breaks;
 mod text_alignment;
 mod text_formatting;
 mod text_listing;
+mod symbols;
 
 // OnceLock è usato per inizializzare le mappe di traduzione una sola volta, all'avvio del programma.
 // Così facendo si evita di evita di ricostruirle ad ogni invocazione di translate_block e translate_command
@@ -62,6 +63,10 @@ fn get_trans_map() -> &'static HashMap<&'static str, CommandTranslationFn> {
         );
         m.insert(
             "underline",
+            text_formatting::render_formatting as CommandTranslationFn,
+        );
+        m.insert(
+            "texttt",
             text_formatting::render_formatting as CommandTranslationFn,
         );
         m.insert(
@@ -210,6 +215,19 @@ fn get_trans_map() -> &'static HashMap<&'static str, CommandTranslationFn> {
         // TABLES
         // hlines are handled in the block translation of tabular, so we can ignore the command
         m.insert("hline", render_empty as CommandTranslationFn);
+        // SYMBOLS
+        m.insert(
+            "textbackslash",
+            symbols::render_symbols as CommandTranslationFn,
+        );
+        m.insert(
+            "textrightarrow",
+            symbols::render_symbols as CommandTranslationFn,
+        );
+        m.insert(
+            "textleftarrow",
+            symbols::render_symbols as CommandTranslationFn,
+        );
         m
     })
 }

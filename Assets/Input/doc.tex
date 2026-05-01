@@ -41,6 +41,7 @@
     È possibile provare una demo del software navigando verso la \href{https://convert.silkyai.cn}{pagina dedicata}.
 
     \section{Scope del traduttore}
+
     Prima di passare allo sviluppo vero è proprio, è stato definito un documento che delinea lo lo scope del traduttore, ossia tutti i costrutti/comandi/environent che saranno supportati in questa prima versione dello strumento LaTeX2Typst.
 
     La lista delle feature supportate è contenuta in Tabella 1 ed è basata sull'elenco \textit{LaTeX essentials} riportato nella \href{https://www.overleaf.com/learn}{documentazione ufficiale di Overleaf}.
@@ -72,6 +73,7 @@
 
 
     \section{Struttura del progetto}
+
     Il software è stato scritto interamente in linguaggio Rust.
     L'architettura del transpiler segue una pipeline di elaborazione divisa in tre fasi principali, riportate in figura ed analizzate nei paragrafi seguenti.
 
@@ -94,6 +96,7 @@
         \item \texttt{/src/latex parser/latex.pest}
         \item \texttt{/src/latex parser/latex math.pest}
     \end{itemize}
+
     L'aspetto formale di Pest verrà approfondito nel paragrafo seguente.
 
     È riportato di seguito un frammento significativo della grammatica, dove è presente lo \textit{start symbol} \texttt{file} della grammatica prevista.
@@ -108,6 +111,7 @@ text = { (!("\\" | NEWLINE | comment) ~ ANY)+ }
 
     L'output del parser sarà un ParseTree, ossia un albero che si origina da una singola radice, ordinato, e dove ogni nodo corrisponde a un match tra un lessema del file sorgente e token definito in grammatica.
     Ogni nodo rispetta la struttura definita dalla struttura \texttt{Pair}, i cui attributi sono:
+
     \begin{itemize}
         \item \texttt{rule}: identificatore della regola grammaticale rispettata
         \item \texttt{span}:
@@ -119,6 +123,7 @@ text = { (!("\\" | NEWLINE | comment) ~ ANY)+ }
     \end{itemize}
 
     L'elenco delle regole grammaticali definite per il parsing del testo è riportato di seguito:
+
     \begin{itemize}
         \item \texttt{file}: intero testo del file di input
         \item \texttt{item}: componente generale del testo
@@ -168,6 +173,7 @@ text = { (!("\\" | NEWLINE | comment) ~ ANY)+ }
     Tuttavia, a differenza dell'approccio originale, Pest non implementa il backtracking, quindi, citando ancora la documentazione ufficiale, durante l'analisi un'espressione può avere successo o fallisce direttamente, risultando in un errore bloccante per il software.
 
     \subsubsection{Errori sintattici}
+
     Affinché il processo di traduzione sia robusto, il sorgente LaTeX dev'essere ben formato e rispettare la grammatica.
     Se il parser incontra un lessema che non riesce a risolvere, l'intero processo viene bloccato e viene prodotto un messaggio di errore in console che fa riferimento alla porzione di input che lo ha generato.
 
@@ -183,6 +189,7 @@ text = { (!("\\" | NEWLINE | comment) ~ ANY)+ }
     Errori come comandi non riconosciuti oppure argomenti errati sono detti \textit{errori semantici} e saranno identificati più avanti nel processo di traduzione, dove si hanno più informazioni di contesto sull'intero file sorgente.
 
     \subsection{Analisi Semantica - AST}
+
     Si tratta di uno stadio più avanzato dell'analisi, dove è possibile interpretare le istruzioni scritte in LaTeX e verificarne la loro correttezza in base al contesto in cui si trovano, andando oltre la mera grammatica.
 
     Per rendere più agevole la fase di analisi semantica, il ParseTree ottenuto precedentemente viene sintetizzato in un \textit{Abstract Syntax Tree} (AST).
@@ -208,6 +215,7 @@ text = { (!("\\" | NEWLINE | comment) ~ ANY)+ }
     L'AST è dunque un albero basato su un insieme di strutture ed enumerativi definiti nel file \texttt{ast structure}. Ogni nodo sarà caratterizzato opportunamente dal tipo di struttura che più si addice, in base alla regola grammaticale d'origine.
 
     Nella definizione della struttura dell'AST sono stati definiti 15 tipi di nodi (strutture ed enumerativi):
+
     \begin{itemize}
         \item \texttt{AstDocument}: nodo radice - struct
         \item \texttt{AstItemNode}: nodo generale per una regola - enum
@@ -229,6 +237,7 @@ text = { (!("\\" | NEWLINE | comment) ~ ANY)+ }
     \end{itemize}
 
     \subsubsection{Errori semantici}
+
     Come accennato in precedenza, in questa fase del processo è possibile effettuare controlli di validità dell'input (quindi dell'AST) più complessi e più sensibili al contesto, come: la verifica che un certo comando sia supportato oppure la verifica di un numero sufficiente di argomenti richiesti da uno specifico comando, ecc. Per realizzare quest'ultimo controllo, è stata realizzata un'ulteriore hashmap che ha come chiave l'identificativo del comando e come valore il numero minimo degli argomenti obbligatori attesi. Di seguito il frammento di codice responsabile del controllo.
 
     \begin{verbatim}
@@ -272,6 +281,7 @@ if let Some(expected) = reqarg_count(&name) {
     \end{itemize}
 
     \subsection{Generazione del codice Typst - CodeGen}
+
     Si tratta dell'ultima fase della traduzione, dove avviene il \textit{rendering} dell'AST: consiste nel percorrere l'albero in modo ordinato per costruire il codice di output. La traduzione avviene elaborando i dati di ciascun nodo: il tipo del nodo determina la struttura sintattica da generare, mentre i suoi attributi forniscono il contenuto testuale e i parametri necessari.
 
     Il tipo di nodo che si vuole elaborare determina la funzione di rendering da richiamare. Tale funzione integra tutta la logica necessaria a recuperare le informazioni dal nodo stesso e dai suoi eventuali attributi, per poi produrre il codice Typst corrispondente.
@@ -307,6 +317,7 @@ pub trait TransMap<T> {
     \end{verbatim}
 
     \subsubsection{Funzionalità e Environment Implementati}
+
     Chiaramente a causa del gran numero di funzioni presenti in LaTeX, per il progetto ci siamo posti l'obiettivo di implementare solamente quelle fondamentali, di uso comune, in modo da avere un software funzionante sui documenti più semplici.
     Le funzionalità implementate sono:
     \begin{itemize}
@@ -332,6 +343,7 @@ pub trait TransMap<T> {
     \end{itemize}
 
     \subsubsection{Errori codegen}
+
     I due tipi di errori identificati in quest'ultima fase sono:
     \begin{itemize}
         \item controllo su comandi e ambienti la cui logica di traduzione non è ancora implementata o l'identificativo del comando è stato scritto erroneamente
@@ -363,6 +375,7 @@ pub(crate) fn render_command(command_node: &CommandNode) -> String {
     In questa fase dell'architettura, il frontend è il componente responsabile della gestione degli errori, infatti essi dipendono anche dal linguaggio target.
 
     \section{Test e Risultati}
+
     Per verificare il corretto funzionamento del software sono stati definiti dei test d'integrazione automatici.
     Il codice sorgente relativo ai test si trova sotto nella directory \texttt{tests/cases} e si dividono in due tipologie:
     \begin{itemize}
@@ -375,6 +388,7 @@ pub(crate) fn render_command(command_node: &CommandNode) -> String {
     È possibile eseguire tutti i test con il comando da terminale: \texttt{cargo test}.
 
     \subsection{Esempio test case ok - text formatting}
+
     Il test verifica la capacità del transpiler di convertire un testo LaTeX formattato in grassetto, in corsivo, sottolineato e colorato nel corrispettivo in Typst.
     I file usati dal test sono i seguenti.
 
@@ -399,6 +413,7 @@ _italic_
     \end{verbatim}
 
     \subsection{Esempio test case error - unknown command}
+
     Il test verifica che il transpiler sia resiliente nel caso di errori dovuti a comandi inesistenti.
     I file usati dal test sono i seguenti.
 
@@ -415,6 +430,7 @@ commandoInesistente \commandoInesistente{argomento inesistente}*/
     \end{verbatim}
 
     \subsection{Esempio test case error - unmatched end}
+
     Invece un esempio di input che genera un errore che blocca l'esecuzione é:
     Input Latex:
     \begin{verbatim}
@@ -434,6 +450,7 @@ Atteso: item
     \end{lstlisting}
 
     \section{Esecuzione transpiler}
+
     I seguenti passaggi illustrano come eseguire la traduzione di uno o più file LaTeX con estensione .tex nei corrispettivi file Typst .typ:
     \begin{enumerate}
         \item aprire il terminale ed eseguire il clone della repository \begin{verbatim} git clone https://github.com/RedFoXalabama/LaTeX-To-Typst \end{verbatim}
@@ -448,6 +465,7 @@ Atteso: item
     \begin{verbatim} export RUST_LOG=info \end{verbatim}
 
     \section{Conclusioni}
+
     Il presente lavoro ha documentato la progettazione e l'implementazione di LaTeX2Typst, un transpiler scritto in linguaggio Rust capace di convertire documenti LaTeX in sorgenti Typst attraverso un'architettura modulare a tre fasi.
 
     Rispetto a soluzioni esistenti come Tylax, questo lavoro ha introdotto con successo il supporto a comandi aggiuntivi specifici quali: \texttt{maketitle}, l'allineamento tramite flush e la gestione dell'ambiente comment.
@@ -455,8 +473,10 @@ Atteso: item
     Il software è stato realizzato con l'idea di essere resiliente agli errori: l'approccio adottato permette di arrestare il processo solo davanti a errori sintattici bloccanti, mentre gestisce i limiti semantici attraverso un sistema di warning e commenti nel file di output, preservando la continuità della traduzione.
 
     \subsection{Sviluppi futuri}
+
     Il progetto pone solide basi per evoluzioni successive che potrebbero trasformare il prototipo in uno strumento di produzione completo.
     I punti principali includono:
+
     \begin{itemize}
         \item \textbf{utilizzo di Rust}: l'architettura potrebbe beneficiare di un uso più esteso di pattern avanzati del linguaggio;
         \item \textbf{miglioramento funzionamento attuale}: si potrebbero rafforzare ed estendere alcune funzioni già implementate come le tabelle e la matematica;
@@ -469,6 +489,7 @@ Atteso: item
     trasporre i propri documenti verso un formato più modero ed user-friendly Typst.
 
     \subsection{Note}
+
     Il presente documento funge da dimostrazione pratica delle funzionalità implementate: è stato scritto impiegando costrutti LaTeX basilari, comandi ed environment inclusi nella tabella di compatibilità del software. Ciò garantisce che l'intero report possa essere processato dal sistema LaTeX2Typst, fornendo una prova immediata dell'efficacia della pipeline di traduzione.
 
 \end{document}
